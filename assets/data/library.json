@@ -117,7 +117,7 @@
     "name_cn": "-1 坐骑",
     "name_en": "-1 Mount (Offensive)",
     "alias_cn": ["赤兔", "大宛", "紫骍", "惊帆"],
-    "alias_en": ["Red Hare", "Dayuan", "Zixing", "Jingfan"],
+    "alias_en": ["Red Hare", "Da Yuan", "Zi Xing", "Jing Fan"],
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": "当你计算与其他角色的距离时，始终-1。",
