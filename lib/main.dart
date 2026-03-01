@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// 1. Imports: We now link to the separate files in your feature folders
+import 'features/home/screens/home_screen.dart';
+import 'features/generals/screens/general_screen.dart';
+import 'features/library/screens/library_screen.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -12,10 +17,9 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  // variable to stores our current theme choice. Default - system to match phone settings
+  // variable stores our current theme choice. Default - system to match phone settings
   ThemeMode _themeMode = ThemeMode.system;
 
-  // button obj to change the theme 
   void _updateTheme(ThemeMode mode) {
     setState(() {
       _themeMode = mode;
@@ -26,21 +30,20 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '殺',
-      // define light mode theme
+      // debugShowCheckedModeBanner: false, // Professional touch: removes the "Debug" banner
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.red,
+        colorSchemeSeed: Colors.red, 
         useMaterial3: true,
       ),
-      // define dark mode theme
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.red,
+        colorSchemeSeed: Colors.red,
         useMaterial3: true,
       ),
-      // tell the app which mode to currently display
       themeMode: _themeMode, 
-      home: HomeScreen(
+      // pass the theme logic down to the MainScreen (the scaffold)
+      home: MainNavigationScreen(
         currentMode: _themeMode,
         onThemeChanged: _updateTheme,
       ),
@@ -48,35 +51,31 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-// New: Changed to StatefulWidget to track navigation
-class HomeScreen extends StatefulWidget { 
+class MainNavigationScreen extends StatefulWidget { 
   final ThemeMode currentMode;
   final Function(ThemeMode) onThemeChanged;
 
-  const HomeScreen({
+  const MainNavigationScreen({
     super.key, 
     required this.currentMode, 
     required this.onThemeChanged
   });
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MainNavigationScreen> createState() => _MainNavigationScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  // New: This variable tracks which tab is currently selected
-  int _selectedIndex = 1; 
+class _MainNavigationScreenState extends State<MainNavigationScreen> {
+  int _selectedIndex = 0; // Defaulting to Home tab
 
-  // New: List of screens to show for each tab
-  static const List<Widget> _widgetOptions = <Widget>[
-    Center(child: Text('Home')),
-    Center(child: Text('General')),
-    Center(child: Text('Library')),
-    Center(child: Text('TBC')),
-    Center(child: Text('TBC')),
+  late final List<Widget> _screens = [
+    const HomeScreen(),   // From features/home/screens/home_screen.dart
+    const GeneralScreen(), // From features/generals/screens/general_screen.dart
+    const LibraryScreen(), // From features/library/screens/library_screen.dart
+    const Center(child: Text('AI Scanner (TBC)')),
+    const Center(child: Text('More (TBC)')),
   ];
 
-  // function to process tapping on the nav bar
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -100,21 +99,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      // The body now changes based on which index is selected
-      body: _widgetOptions.elementAt(_selectedIndex),
+      // displays the screen based on navbar selection
+      body: _screens[_selectedIndex],
 
-      // New: Adding the Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Necessary when you have 5 items
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red, // Traditional Sanguosha Red
+        selectedItemColor: Colors.red,
         onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Generals'),
-          BottomNavigationBarItem(icon: Icon(Icons.new_releases), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'TBC'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'TBC'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Generals'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Library'),
+          BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scanner'),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         ],
       ),
     );
