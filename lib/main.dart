@@ -48,8 +48,8 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-// HomeScreen
-class HomeScreen extends StatelessWidget {
+// New: Changed to StatefulWidget to track navigation
+class HomeScreen extends StatefulWidget { 
   final ThemeMode currentMode;
   final Function(ThemeMode) onThemeChanged;
 
@@ -60,15 +60,38 @@ class HomeScreen extends StatelessWidget {
   });
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // New: This variable tracks which tab is currently selected
+  int _selectedIndex = 1; // Set to 1 so 'Library' is selected by default like your screenshot
+
+  // New: List of screens to show for each tab
+  static const List<Widget> _widgetOptions = <Widget>[
+    Center(child: Text('General')),
+    Center(child: Text('Library')),
+    Center(child: Text('TBC')),
+    Center(child: Text('TBC')),
+    Center(child: Text('More')),
+  ];
+
+  // function to process tapping on the nav bar
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('殺 (Sanguosha Translator)'),
         actions: [
-          // This button creates a dropdown menu in the top right corner
           PopupMenuButton<ThemeMode>(
             icon: const Icon(Icons.palette),
-            onSelected: onThemeChanged,
+            onSelected: widget.onThemeChanged,
             itemBuilder: (context) => [
               const PopupMenuItem(value: ThemeMode.system, child: Text('System')),
               const PopupMenuItem(value: ThemeMode.light, child: Text('Light')),
@@ -77,18 +100,22 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Welcome to the Translator',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            Text('Current Mode: ${currentMode.name.toUpperCase()}'),
-          ],
-        ),
+      // The body now changes based on which index is selected
+      body: _widgetOptions.elementAt(_selectedIndex),
+
+      // New: Adding the Bottom Navigation Bar
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Necessary when you have 5 items
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.red, // Traditional Sanguosha Red
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Generals'),
+          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Library'),
+          BottomNavigationBarItem(icon: Icon(Icons.new_releases), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'TBC'),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
+        ],
       ),
     );
   }
