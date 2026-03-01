@@ -65,15 +65,15 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // New: This variable tracks which tab is currently selected
-  int _selectedIndex = 1; // Set to 1 so 'Library' is selected by default like your screenshot
+  int _selectedIndex = 1; 
 
   // New: List of screens to show for each tab
   static const List<Widget> _widgetOptions = <Widget>[
+    Center(child: Text('Home')),
     Center(child: Text('General')),
     Center(child: Text('Library')),
     Center(child: Text('TBC')),
     Center(child: Text('TBC')),
-    Center(child: Text('More')),
   ];
 
   // function to process tapping on the nav bar
