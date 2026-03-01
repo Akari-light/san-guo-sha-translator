@@ -1,0 +1,176 @@
+[
+  {
+    "id": "kill",
+    "name_cn": "杀",
+    "name_en": "Kill",
+    "category_cn": "基本牌",
+    "category_en": "Basic",
+    "effect_cn": "出牌阶段对攻击范围内的一名角色使用，造成1点伤害。",
+    "effect_en": "Used during the Action Phase to deal 1 damage to a player within your attack range.",
+    "faq": [
+        {
+        "q_en": "",
+        "a_en": "",
+        "q_cn": "",
+        "a_cn": ""
+        }
+    ]
+  },
+  {
+    "id": "dodge",
+    "name_cn": "闪",
+    "name_en": "Dodge",
+    "category_cn": "基本牌",
+    "category_en": "Basic",
+    "effect_cn": "抵消一张【杀】的效果。",
+    "effect_en": "Used to negate the effect of a [Slash].",
+    "faq": [
+        {
+        "q_en": "",
+        "a_en": "",
+        "q_cn": "",
+        "a_cn": ""
+        }
+    ]
+  },
+  {
+    "id": "snatch",
+    "name_cn": "顺手牵羊",
+    "name_en": "Snatch",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": "对距离为1的一名角色使用，获得其一张牌（手牌、装备或判定区）。",
+    "effect_en": "Target a player at distance 1. Take one card from their hand, equipment, or pending judgment zone.",
+    "faq": [
+        {
+        "q_en": "",
+        "a_en": "",
+        "q_cn": "",
+        "a_cn": ""
+        }
+    ]
+  },
+  {
+    "id": "acedia",
+    "name_cn": "乐不思蜀",
+    "name_en": "Acedia",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "延时锦囊牌",
+    "sub_category_en": "Time-delay",
+    "effect_cn": "判定阶段进行判定：若判定结果不为红桃，跳过其出牌阶段。",
+    "effect_en": "Judgment: If the result is not Hearts, the target player skips their Action Phase this turn.",
+    "faq": [
+        {
+        "q_en": "",
+        "a_en": "",
+        "q_cn": "",
+        "a_cn": ""
+        }
+    ]
+  },
+  {
+    "id": "twin_swords",
+    "name_cn": "雌雄双股剑",
+    "name_en": "Twin Swords",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": "当你使用【杀】指定与你性别不同的一个目标后，你可以令其选择一项：1. 弃置一张手牌；2. 令你摸一张牌。",
+    "effect_en": "When you use [Kill] to target a person of a different gender than you, you can make them choose one of the following: 1. Discard a card from their hand; 2. Make you draw a card.",
+    "faq": [
+        {
+        "q_en": "",
+        "a_en": "",
+        "q_cn": "",
+        "a_cn": ""
+        }
+    ]
+  },
+  {
+    "id": "eight_trigrams",
+    "name_cn": "八卦阵",
+    "name_en": "Eight Trigrams Array",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": "每当你需要使用或打出一张【闪】时，你可以进行一次判定。若判定结果为红色，视为你使用或打出了一张【闪】。",
+    "effect_en": "Whenever you need to use or play a [Dodge], you may perform a Judgment. If the result is Red (Hearts or Diamonds), it is treated as if you used or played a [Dodge].",
+    "faq": [
+        {
+        "q_cn": "如果判定结果是黑色，我还能从手牌打出【闪】吗？",
+        "a_cn": "可以。如果判定失败，你仍然可以正常从手牌使用【闪】。",
+        "q_en": "If the Judgment is Black, can I still play a [Dodge] from my hand?",
+        "a_en": "Yes. If the judgment fails, you are still permitted to play a [Dodge] from your hand as normal."
+        },
+        {
+        "q_cn": "张角可以使用“鬼道”修改这个判定吗？",
+        "a_cn": "可以。所有具备修改判定技能的武将都可以影响八卦阵的判定结果。",
+        "q_en": "Can Zhang Jiao use 'Guidao' to change this judgment?",
+        "a_en": "Yes. Any hero with a judgment-altering skill can change the result of Eight Trigrams."
+        }
+    ]
+  },
+  {
+    "id": "mount_minus_1",
+    "name_cn": "-1 坐骑",
+    "name_en": "-1 Mount (Offensive)",
+    "alias_cn": ["赤兔", "大宛", "紫骍", "惊帆"],
+    "alias_en": ["Red Hare", "Dayuan", "Zixing", "Jingfan"],
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": "当你计算与其他角色的距离时，始终-1。",
+    "effect_en": "When calculating your distance to other characters, the distance is decreased by 1.",
+    "faq": [
+      {
+        "q_cn": "-1 马可以让我攻击到更远的人吗？",
+        "a_cn": "是的。它让你看别人更“近”，从而让对方进入你的武器攻击范围。",
+        "q_en": "Does a -1 Mount allow me to attack further players?",
+        "a_en": "Yes. It makes others appear 'closer' to you, potentially bringing them into your weapon's attack range."
+      }
+    ]
+  },
+  {
+    "id": "mount_plus_1",
+    "name_cn": "+1 坐骑",
+    "name_en": "+1 Mount (Defensive)",
+    "alias_cn": ["的卢", "绝影", "爪黄飞电", "骅骝"],
+    "alias_en": ["Hex", "Shadow Runner", "Zhuahuang Feidian", "Hualiu"],
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": "其他角色计算与你的距离时，始终+1。",
+    "effect_en": "When other characters calculate their distance to you, the distance is increased by 1.",
+    "faq": [
+      {
+        "q_cn": "如果我有+1马，对方只有范围1的武器，他能杀到我吗？",
+        "a_cn": "不能。除非对方装备了-1马或者更长距离的武器。",
+        "q_en": "If I have a +1 Mount and the opponent has a Range 1 weapon, can they Slash me?",
+        "a_en": "No. They would need a -1 Mount or a longer-range weapon to reach you."
+      }
+    ]
+  },
+  {
+    "id": "wooden_ox",
+    "name_cn": "木牛流马",
+    "name_en": "Wooden Ox",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": "出牌阶段限一次，你可以将一张手牌置于武将牌上，称为“储备”。若你的装备区里有“木牛流马”，你可以将“储备”牌交给一名其他角色，并将其移动到该角色的装备区。",
+    "effect_en": "Once per turn during your action phase, you may place one card face down under the [Wooden Ox] in your equipment zone, and then you may place the [Wooden Ox] into another character's equipment zone; you may use or play the cards under the [Wooden Ox and Flowing Horse] as if they were in your hand.",
+    "faq": [
+        {
+        "q_cn": "“木牛流马”里的牌算手牌吗？",
+        "a_cn": "不算。它们不在你的手牌中，因此不受顺手牵羊（对标手牌时）或过河拆桥的影响，除非对方选择弃掉你的装备。",
+        "q_en": "Do the cards in 'Reserve' count as hand cards?",
+        "a_en": "No. They are not in your hand and are unaffected by skills targeting hand cards. They are lost only if the Wooden Ox itself is discarded or stolen."
+        },
+        {
+        "q_cn": "我可以一次性把所有“储备”牌都传给下一个人吗？",
+        "a_cn": "是的。当你把木牛流马传给别人时，所有的“储备”牌都会一并移交给那个人。",
+        "q_en": "Can I transfer all 'Reserve' cards at once?",
+        "a_en": "Yes. When you pass the Wooden Ox to another player, all cards currently in the 'Reserve' are transferred to them."
+        }
+    ]
+  }
+]
