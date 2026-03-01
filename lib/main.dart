@@ -110,9 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: Colors.red, // Traditional Sanguosha Red
         onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Generals'),
-          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.new_releases), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Generals'),
+          BottomNavigationBarItem(icon: Icon(Icons.new_releases), label: 'Library'),
           BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'TBC'),
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         ],
