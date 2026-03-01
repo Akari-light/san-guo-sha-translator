@@ -4,8 +4,6 @@ void main() {
   runApp(const MainApp());
 }
 
-// 1. We changed StatelessWidget to StatefulWidget so the app can "remember" 
-// which theme you picked and redraw the screen.
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
@@ -14,11 +12,10 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  // 2. This variable stores our current theme choice. 
-  // We start with 'system' so it matches your phone's settings.
+  // variable to stores our current theme choice. Default - system to match phone settings
   ThemeMode _themeMode = ThemeMode.system;
 
-  // 3. This function will be called when we click a button to change the theme.
+  // button obj to change the theme 
   void _updateTheme(ThemeMode mode) {
     setState(() {
       _themeMode = mode;
@@ -29,19 +26,19 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '殺',
-      // 4. Define what "Light Mode" looks like
+      // define light mode theme
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.red,
         useMaterial3: true,
       ),
-      // 5. Define what "Dark Mode" looks like (Perfect for night games!)
+      // define dark mode theme
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.red,
         useMaterial3: true,
       ),
-      // 6. Tell the app which mode to currently display
+      // tell the app which mode to currently display
       themeMode: _themeMode, 
       home: HomeScreen(
         currentMode: _themeMode,
@@ -51,7 +48,7 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-// 7. We moved the UI into its own Widget called HomeScreen to keep things clean.
+// HomeScreen
 class HomeScreen extends StatelessWidget {
   final ThemeMode currentMode;
   final Function(ThemeMode) onThemeChanged;
@@ -68,7 +65,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('殺 (Sanguosha Translator)'),
         actions: [
-          // 8. This button creates a dropdown menu in the top right corner
+          // This button creates a dropdown menu in the top right corner
           PopupMenuButton<ThemeMode>(
             icon: const Icon(Icons.palette),
             onSelected: onThemeChanged,
