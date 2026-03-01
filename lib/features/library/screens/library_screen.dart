@@ -33,37 +33,45 @@ class LibraryScreen extends StatelessWidget {
 
         return GridView.builder(
           padding: const EdgeInsets.all(12),
+          // physics: Adds that smooth "rebound" feel on iOS/Android
+          physics: const BouncingScrollPhysics(), 
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, // 3 columns for professional card layout
-            childAspectRatio: 0.7, // Rectangular card shape
+            crossAxisCount: 3,
+            childAspectRatio: 0.7, // Keeps the card shape static
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
           ),
           itemCount: cards.length,
           itemBuilder: (context, index) {
             final card = cards[index];
-            return Card(
-              elevation: 4,
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Image.asset(
-                      'assets/images/library_placeholder.webp', // Placeholder from your assets
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      card.nameEn,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                color: Colors.grey, // Background color while loading
+                child: Image.asset(
+                  card.imagePath,
+                  fit: BoxFit.contain,
+                  cacheWidth: 300,
+                  // This triggers if the image is missing from the assets folder
+                  errorBuilder: (context, error, stackTrace) {
+                    // 1. Log the bug internally for debugging
+                    debugPrint('BUG: Missing asset for card ${card.id} at ${card.imagePath}');
+
+                    // 2. Return the placeholder image so the UI doesn't break
+                    return Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset('assets/images/library_placeholder.webp', fit: BoxFit.contain),
+                        // 3. Visual "Bug" indicator for the user
+                        const Positioned(
+                          top: 5,
+                          right: 5,
+                          child: Icon(Icons.report_problem, color: Colors.amber, size: 20),
+                        ),
+                      ],
+                    );
+                  },
+                ),
               ),
             );
           },
