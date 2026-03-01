@@ -70,9 +70,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   late final List<Widget> _screens = [
     const HomeScreen(),   // From features/home/screens/home_screen.dart
-    // const GeneralScreen(), // From features/generals/screens/general_screen.dart
-    // const LibraryScreen(), // From features/library/screens/library_screen.dart
-    const Center(child: Text('AI Scanner (TBC)')),
+    const GeneralScreen(), // From features/generals/screens/general_screen.dart
+    const LibraryScreen(), // From features/library/screens/library_screen.dart
+    const Center(child: Text('AI Feature (TBC)')),
     const Center(child: Text('More (TBC)')),
   ];
 
