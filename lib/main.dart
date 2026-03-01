@@ -68,10 +68,11 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0; // Defaulting to Home tab
 
+  // This is the variable name you defined
   late final List<Widget> _screens = [
-    const HomeScreen(),   // From features/home/screens/home_screen.dart
-    const GeneralScreen(), // From features/generals/screens/general_screen.dart
-    const LibraryScreen(), // From features/library/screens/library_screen.dart
+    const HomeScreen(),   
+    const GeneralScreen(), 
+    const LibraryScreen(), 
     const Center(child: Text('AI Feature (TBC)')),
     const Center(child: Text('More (TBC)')),
   ];
@@ -99,8 +100,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
         ],
       ),
-      // displays the screen based on navbar selection
-      body: _screens[_selectedIndex],
+      
+      // FIX: Changed _widgetOptions to _screens
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _screens, 
+      ),
 
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
