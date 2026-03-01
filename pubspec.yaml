@@ -1,6 +1,6 @@
 name: sgs_sha
-description: "A new Flutter project."
-publish_to: 'none'
+description: "A translation and rule clarification app for San Guo Sha (SGS/三国杀)"
+publish_to: 'github'
 version: 0.1.0+1
 
 environment:
@@ -17,3 +17,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/data/
+    - assets/images/
