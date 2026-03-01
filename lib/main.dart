@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Generals'),
           BottomNavigationBarItem(icon: Icon(Icons.new_releases), label: 'Library'),
           BottomNavigationBarItem(icon: Icon(Icons.explore), label: 'TBC'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'TBC'),
         ],
       ),
     );
