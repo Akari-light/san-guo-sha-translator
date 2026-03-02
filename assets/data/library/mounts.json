@@ -3,7 +3,6 @@
     "id": "mount_red_hare",
     "name_cn": "赤兔",
     "name_en": "Red Hare",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["你计算与其他角色的距离-1。"],
@@ -19,7 +18,6 @@
     "id": "mount_da_yuan",
     "name_cn": "大宛",
     "name_en": "Da Yuan",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["你计算与其他角色的距离-1。"],
@@ -30,7 +28,6 @@
     "id": "mount_zi_xing",
     "name_cn": "紫骍",
     "name_en": "Zi Xing",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["你计算与其他角色的距离-1。"],
@@ -38,21 +35,9 @@
     "faq": []
   },
   {
-    "id": "mount_jing_fan",
-    "name_cn": "惊帆",
-    "name_en": "Jing Fan",
-    "image_path": "assets/images/library_placeholder.webp",
-    "category_cn": "坐骑牌",
-    "category_en": "Mount",
-    "effect_cn": ["你计算与其他角色的距离-1。"],
-    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
-    "faq": []
-  },
-{
-    "id": "mount_hex",
+    "id": "mount_di_lu",
     "name_cn": "的卢",
-    "name_en": "Hex",
-    "image_path": "assets/images/library_placeholder.webp",
+    "name_en": "Di Lu",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["其他角色计算与你的距离+1。"],
@@ -65,10 +50,9 @@
     ]
   },
   {
-    "id": "mount_shadow_runner",
+    "id": "mount_jue_ying",
     "name_cn": "绝影",
-    "name_en": "Shadow Runner",
-    "image_path": "assets/images/library_placeholder.webp",
+    "name_en": "Jue Ying",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["其他角色计算与你的距离+1。"],
@@ -76,10 +60,9 @@
     "faq": []
   },
   {
-    "id": "mount_zhuahuang",
+    "id": "mount_zhao_huang",
     "name_cn": "爪黄飞电",
-    "name_en": "Zhuahuang Feidian",
-    "image_path": "assets/images/library_placeholder.webp",
+    "name_en": "Zhao Huang Fei Dian",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["其他角色计算与你的距离+1。"],
@@ -87,10 +70,9 @@
     "faq": []
   },
   {
-    "id": "mount_hualiu",
+    "id": "mount_hua_liu",
     "name_cn": "骅骝",
-    "name_en": "Hualiu",
-    "image_path": "assets/images/library_placeholder.webp",
+    "name_en": "Hua Liu",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": ["其他角色计算与你的距离+1。"],

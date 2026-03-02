@@ -3,7 +3,6 @@
     "id": "basic_kill",
     "name_cn": "杀",
     "name_en": "Kill",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -25,7 +24,6 @@
     "id": "basic_dodge",
     "name_cn": "闪",
     "name_en": "Dodge",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -47,7 +45,6 @@
     "id": "basic_peach",
     "name_cn": "桃",
     "name_en": "Peach",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -75,7 +72,6 @@
     "id": "basic_wine",
     "name_cn": "酒",
     "name_en": "Wine",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -97,7 +93,6 @@
     "id": "basic_fire_kill",
     "name_cn": "火杀",
     "name_en": "Fire Kill",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -112,7 +107,6 @@
     "id": "basic_thunder_kill",
     "name_cn": "雷杀",
     "name_en": "Thunder Kill",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
@@ -127,7 +121,6 @@
     "id": "basic_poison",
     "name_cn": "毒",
     "name_en": "Poison",
-    "image_path": "assets/images/library_placeholder.webp",
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
