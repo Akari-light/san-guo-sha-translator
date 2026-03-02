@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:convert'; // Add this for json.decode
-import 'package:flutter/services.dart'; // Add this for rootBundle
-import 'features/library/library_search_delegate.dart'; // Adjust path if needed
-import 'data/models/library_card.dart'; // Required for type casting
-import 'data/repositories/library_repository.dart';
 
 // 1. Imports: We now link to the separate files in your feature folders
 import 'features/home/screens/home_screen.dart';
@@ -121,7 +116,19 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       body: IndexedStack(index: _selectedIndex, children: _screens),
-      // ... keep your BottomNavigationBar as is ...
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.red,
+        onTap: (index) => setState(() => _selectedIndex = index),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Generals'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Library'),
+          BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scanner'),
+          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
+        ],
+      )
     );
   }
 

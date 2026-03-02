@@ -1,71 +1,55 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/library_card.dart';
-import '../../../data/repositories/library_repository.dart';
+import '../../data/models/library_card.dart';
 
-class LibraryScreen extends StatelessWidget {
-  final String searchQuery;
-  const LibraryScreen({super.key, required this.searchQuery});
+class LibrarySearchDelegate extends SearchDelegate<String?> {
+  final List<LibraryCard> allCards;
 
-  Map<String, List<LibraryCard>> _groupCards(List<LibraryCard> cards) {
-    Map<String, List<LibraryCard>> grouped = {};
-    for (var card in cards) {
-      grouped.putIfAbsent(card.categoryEn, () => []).add(card);
-    }
-    return grouped;
+  LibrarySearchDelegate({required this.allCards});
+
+  @override
+  String get searchFieldLabel => 'Search (e.g. 杀, Peach)';
+
+  @override
+  List<Widget>? buildActions(BuildContext context) => [
+    IconButton(icon: const Icon(Icons.clear), onPressed: () => query = '')
+  ];
+
+  @override
+  Widget? buildLeading(BuildContext context) => IconButton(
+    icon: const Icon(Icons.arrow_back),
+    onPressed: () => close(context, null),
+  );
+
+  @override
+  Widget buildResults(BuildContext context) {
+    close(context, query); // Returns the typed text to the main screen
+    return const SizedBox.shrink();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<List<LibraryCard>>(
-      future: LibraryRepository().getCards(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+  Widget buildSuggestions(BuildContext context) {
+    if (query.isEmpty) {
+      return const Center(child: Text('Type to filter the library grid'));
+    }
+    return _buildList(context);
+  }
 
-        // LIVE FILTER LOGIC
-        final filteredCards = snapshot.data!.where((card) {
-          final query = searchQuery.toLowerCase();
-          return card.nameEn.toLowerCase().contains(query) || 
-                 card.nameCn.contains(query);
-        }).toList();
+  Widget _buildList(BuildContext context) {
+    final results = allCards.where((card) {
+      final input = query.toLowerCase();
+      return card.nameEn.toLowerCase().contains(input) || card.nameCn.contains(input);
+    }).toList();
 
-        if (filteredCards.isEmpty) {
-          return const Center(child: Text('No matching cards found.'));
-        }
-
-        final groupedCards = _groupCards(filteredCards);
-
-        return CustomScrollView(
-          slivers: groupedCards.entries.map((entry) {
-            return SliverMainAxisGroup(
-              slivers: [
-                SliverPersistentHeader(
-                  pinned: true,
-                  delegate: _SectionHeaderDelegate(title: entry.key),
-                ),
-                SliverGrid(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    childAspectRatio: 0.7,
-                  ),
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) => _buildCard(entry.value[index]),
-                    childCount: entry.value.length,
-                  ),
-                ),
-              ],
-            );
-          }).toList(),
+    return ListView.builder(
+      itemCount: results.length,
+      itemBuilder: (context, index) {
+        final card = results[index];
+        return ListTile(
+          title: Text(card.nameEn),
+          subtitle: Text(card.nameCn),
+          onTap: () => close(context, card.nameEn), // Return card name to filter grid
         );
       },
     );
   }
-
-  Widget _buildCard(LibraryCard card) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Image.asset(card.imagePath, fit: BoxFit.contain),
-    );
-  }
 }
-
-// Keep your _SectionHeaderDelegate at the bottom...

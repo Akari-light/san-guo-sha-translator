@@ -100,7 +100,7 @@ class _SectionHeaderDelegate extends SliverPersistentHeaderDelegate {
   _SectionHeaderDelegate({required this.title});
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) => Container(
-    color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+    color: Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.95),
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     child: Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red)),
   );
