@@ -77,6 +77,22 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     const Center(child: Text('More (TBC)')),
   ];
 
+  // 1. Helper to get the title based on the selected index
+  String _getAppBarTitle() {
+    switch (_selectedIndex) {
+      case 0:
+        return '殺 - Stop Hesitating, Attack!';
+      case 1:
+        return 'Generals';
+      case 2:
+        return 'Library';
+      case 3:
+        return 'Scanner';
+      default:
+        return 'More';
+    }
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -87,7 +103,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('殺 - Stop Hesitating, Attack!'),
+        title: Text(_getAppBarTitle()),
         actions: [
           PopupMenuButton<ThemeMode>(
             icon: const Icon(Icons.palette),
