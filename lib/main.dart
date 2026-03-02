@@ -87,7 +87,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('殺 (Sanguosha Translator)'),
+        title: const Text('殺 - Stop Hesitating, Attack!'),
         actions: [
           PopupMenuButton<ThemeMode>(
             icon: const Icon(Icons.palette),
