@@ -10,40 +10,31 @@ class LibraryRepository {
   List<LibraryCard>? _cachedCards;
 
   Future<List<LibraryCard>> getCards() async {
-    // If we already have the cards in memory, return them immediately
     if (_cachedCards != null) return _cachedCards!;
 
-    // Define all the category files to be loaded
-    final List<String> categoryFiles = [
+    // List of all your new split files
+    final List<String> jsonFiles = [
       'assets/data/library/basic.json',
       'assets/data/library/tools.json',
-      'assets/data/library/equipment.json',
+      'assets/data/library/weapons.json',
+      'assets/data/library/armor.json',
       'assets/data/library/mounts.json',
       'assets/data/library/treasure.json',
     ];
 
-    List<LibraryCard> allLoadedCards = [];
+    List<LibraryCard> allCards = [];
 
     try {
-      for (String filePath in categoryFiles) {
-        final String response = await rootBundle.loadString(filePath);
+      for (var file in jsonFiles) {
+        final String response = await rootBundle.loadString(file);
         final List<dynamic> data = json.decode(response);
-        
-        // Convert the JSON list into LibraryCard objects
-        final List<LibraryCard> categoryCards = data.map((json) {
-          return LibraryCard.fromJson(json);
-        }).toList();
-
-        allLoadedCards.addAll(categoryCards);
+        allCards.addAll(data.map((json) => LibraryCard.fromJson(json)).toList());
       }
-      
-      _cachedCards = allLoadedCards;
+      _cachedCards = allCards;
     } catch (e) {
-      // Handle potential file loading or parsing errors
-      print("Error loading library categories: $e");
-      return [];
+      print("Error loading JSON files: $e");
     }
     
-    return _cachedCards!;
+    return allCards;
   }
 }

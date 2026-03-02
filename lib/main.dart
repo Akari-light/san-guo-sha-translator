@@ -1,48 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// 1. Imports: We now link to the separate files in your feature folders
+// Core & Theme
+import 'core/theme/app_theme.dart';
+
+// Features: Navigation and Screens
 import 'features/home/screens/home_screen.dart';
 import 'features/generals/screens/general_screen.dart';
 import 'features/library/screens/library_screen.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  // Ensure Flutter is initialized before calling SharedPreferences
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  final prefs = await SharedPreferences.getInstance();
+  
+  // Load the saved string, default to 'system' if nothing is saved
+  final savedTheme = prefs.getString('theme_mode') ?? 'system';
+  
+  runApp(MainApp(initialTheme: _parseTheme(savedTheme)));
+}
+
+// Helper to convert saved String back into a ThemeMode object
+ThemeMode _parseTheme(String theme) {
+  switch (theme) {
+    case 'light': return ThemeMode.light;
+    case 'dark': return ThemeMode.dark;
+    default: return ThemeMode.system;
+  }
 }
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  final ThemeMode initialTheme;
+  const MainApp({super.key, required this.initialTheme});
 
   @override
   State<MainApp> createState() => _MainAppState();
 }
 
 class _MainAppState extends State<MainApp> {
-  // variable stores our current theme choice. Default - system to match phone settings
-  ThemeMode _themeMode = ThemeMode.system;
+  late ThemeMode _themeMode;
 
-  void _updateTheme(ThemeMode mode) {
+  @override
+  void initState() {
+    super.initState();
+    _themeMode = widget.initialTheme;
+  }
+
+  // Updates the UI and saves the preference to disk
+  Future<void> _updateTheme(ThemeMode mode) async {
     setState(() {
       _themeMode = mode;
     });
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('theme_mode', mode.name); 
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '殺',
-      // debugShowCheckedModeBanner: false, // Professional touch: removes the "Debug" banner
-      theme: ThemeData(
-        brightness: Brightness.light,
-        colorSchemeSeed: Colors.red, 
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        colorSchemeSeed: Colors.red,
-        useMaterial3: true,
-      ),
-      themeMode: _themeMode, 
-      // pass the theme logic down to the MainScreen (the scaffold)
+      debugShowCheckedModeBanner: false,
+      // Using your VS Code Dark+ Theme from the core folder
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: _themeMode,
       home: MainNavigationScreen(
         currentMode: _themeMode,
         onThemeChanged: _updateTheme,
@@ -51,14 +73,14 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
-class MainNavigationScreen extends StatefulWidget { 
+class MainNavigationScreen extends StatefulWidget {
   final ThemeMode currentMode;
   final Function(ThemeMode) onThemeChanged;
 
   const MainNavigationScreen({
-    super.key, 
-    required this.currentMode, 
-    required this.onThemeChanged
+    super.key,
+    required this.currentMode,
+    required this.onThemeChanged,
   });
 
   @override
@@ -67,47 +89,78 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
-  bool _isSearching = false; // Tracks if search bar is open
-  String _searchQuery = ""; // Tracks the keystrokes
+  bool _isSearching = false;
+  String _searchQuery = "";
   final TextEditingController _searchController = TextEditingController();
 
   List<Widget> get _screens => [
-    const HomeScreen(),   
-    const GeneralScreen(), 
-    LibraryScreen(searchQuery: _searchQuery), // Pass the live query
-    const Center(child: Text('AI Feature (TBC)')),
-    const Center(child: Text('More (TBC)')),
-  ];
+        const HomeScreen(),
+        const GeneralScreen(),
+        LibraryScreen(searchQuery: _searchQuery),
+        const Center(child: Text('AI Feature (TBC)')),
+        const Center(child: Text('More (TBC)')),
+      ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Toggle between the Title and the Search Field
-        title: !_isSearching 
-          ? Text(_getAppBarTitle()) 
-          : TextField(
-              controller: _searchController,
-              autofocus: true,
-              decoration: const InputDecoration(
-                hintText: 'Search cards...',
-                border: InputBorder.none,
+        title: !_isSearching
+            ? Text(_getAppBarTitle())
+            : TextField(
+                controller: _searchController,
+                autofocus: true,
+                style: const TextStyle(color: Color(0xFFD4D4D4)), // VS Code Text Color
+                decoration: const InputDecoration(
+                  hintText: 'Search cards...',
+                  border: InputBorder.none,
+                  hintStyle: TextStyle(color: Color(0xFF858585)),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    _searchQuery = value;
+                  });
+                },
               ),
-              onChanged: (value) {
-                setState(() {
-                  _searchQuery = value; // This filters the background live
-                });
-              },
-            ),
         actions: [
-          if (_selectedIndex == 2) // Library only
+          // Theme Selection Menu
+          PopupMenuButton<ThemeMode>(
+            icon: Icon(_getThemeIcon(widget.currentMode)),
+            onSelected: (ThemeMode mode) => widget.onThemeChanged(mode),
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: ThemeMode.system,
+                child: ListTile(
+                  leading: Icon(Icons.brightness_auto),
+                  title: Text("System"),
+                ),
+              ),
+              const PopupMenuItem(
+                value: ThemeMode.light,
+                child: ListTile(
+                  leading: Icon(Icons.light_mode),
+                  title: Text("Light"),
+                ),
+              ),
+              const PopupMenuItem(
+                value: ThemeMode.dark,
+                child: ListTile(
+                  leading: Icon(Icons.dark_mode),
+                  title: Text("Dark"),
+                ),
+              ),
+            ],
+          ),
+
+          // Library Search Toggle
+          if (_selectedIndex == 2)
             IconButton(
               icon: Icon(_isSearching ? Icons.close : Icons.search),
               onPressed: () {
                 setState(() {
                   _isSearching = !_isSearching;
                   if (!_isSearching) {
-                    _searchQuery = ""; // Reset filter on close
+                    _searchQuery = "";
                     _searchController.clear();
                   }
                 });
@@ -119,8 +172,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
-        onTap: (index) => setState(() => _selectedIndex = index),
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+            _isSearching = false; 
+            _searchQuery = "";
+            _searchController.clear();
+          });
+        },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Generals'),
@@ -128,8 +187,16 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scanner'),
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         ],
-      )
+      ),
     );
+  }
+
+  IconData _getThemeIcon(ThemeMode mode) {
+    switch (mode) {
+      case ThemeMode.light: return Icons.light_mode;
+      case ThemeMode.dark: return Icons.dark_mode;
+      case ThemeMode.system: return Icons.brightness_auto;
+    }
   }
 
   String _getAppBarTitle() {
@@ -137,6 +204,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       case 1: return 'Generals';
       case 2: return 'Library';
       case 3: return 'Scanner';
+      case 4: return 'More';
       default: return '殺 - Stop Hesitating, Attack!';
     }
   }

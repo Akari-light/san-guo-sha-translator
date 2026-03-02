@@ -27,7 +27,6 @@ class LibraryCard {
       nameCn: json['name_cn'],
       nameEn: json['name_en'],
       categoryEn: json['category_en'],
-      // CHANGED: Map as List<String>
       effectCn: List<String>.from(json['effect_cn'] ?? []),
       effectEn: List<String>.from(json['effect_en'] ?? []),
       aliasEn: json['alias_en'] != null ? List<String>.from(json['alias_en']) : null,
