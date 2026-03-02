@@ -3,7 +3,6 @@ class LibraryCard {
   final String nameCn;
   final String nameEn;
   final String categoryEn;
-  // CHANGED: These are now Lists
   final List<String> effectCn;
   final List<String> effectEn;
   final List<String>? aliasEn;

@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'dart:convert'; // Add this for json.decode
+import 'package:flutter/services.dart'; // Add this for rootBundle
+import 'features/library/library_search_delegate.dart'; // Adjust path if needed
+import 'data/models/library_card.dart'; // Required for type casting
+import 'data/repositories/library_repository.dart';
 
 // 1. Imports: We now link to the separate files in your feature folders
 import 'features/home/screens/home_screen.dart';
@@ -66,76 +71,66 @@ class MainNavigationScreen extends StatefulWidget {
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
-  int _selectedIndex = 0; // Defaulting to Home tab
+  int _selectedIndex = 0;
+  bool _isSearching = false; // Tracks if search bar is open
+  String _searchQuery = ""; // Tracks the keystrokes
+  final TextEditingController _searchController = TextEditingController();
 
-  // This is the variable name you defined
-  late final List<Widget> _screens = [
+  List<Widget> get _screens => [
     const HomeScreen(),   
     const GeneralScreen(), 
-    const LibraryScreen(), 
+    LibraryScreen(searchQuery: _searchQuery), // Pass the live query
     const Center(child: Text('AI Feature (TBC)')),
     const Center(child: Text('More (TBC)')),
   ];
-
-  // 1. Helper to get the title based on the selected index
-  String _getAppBarTitle() {
-    switch (_selectedIndex) {
-      case 0:
-        return '殺 - Stop Hesitating, Attack!';
-      case 1:
-        return 'Generals';
-      case 2:
-        return 'Library';
-      case 3:
-        return 'Scanner';
-      default:
-        return 'More';
-    }
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_getAppBarTitle()),
+        // Toggle between the Title and the Search Field
+        title: !_isSearching 
+          ? Text(_getAppBarTitle()) 
+          : TextField(
+              controller: _searchController,
+              autofocus: true,
+              decoration: const InputDecoration(
+                hintText: 'Search cards...',
+                border: InputBorder.none,
+              ),
+              onChanged: (value) {
+                setState(() {
+                  _searchQuery = value; // This filters the background live
+                });
+              },
+            ),
         actions: [
-          PopupMenuButton<ThemeMode>(
-            icon: const Icon(Icons.palette),
-            onSelected: widget.onThemeChanged,
-            itemBuilder: (context) => [
-              const PopupMenuItem(value: ThemeMode.system, child: Text('System')),
-              const PopupMenuItem(value: ThemeMode.light, child: Text('Light')),
-              const PopupMenuItem(value: ThemeMode.dark, child: Text('Dark')),
-            ],
-          ),
+          if (_selectedIndex == 2) // Library only
+            IconButton(
+              icon: Icon(_isSearching ? Icons.close : Icons.search),
+              onPressed: () {
+                setState(() {
+                  _isSearching = !_isSearching;
+                  if (!_isSearching) {
+                    _searchQuery = ""; // Reset filter on close
+                    _searchController.clear();
+                  }
+                });
+              },
+            ),
         ],
       ),
-      
-      // FIX: Changed _widgetOptions to _screens
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _screens, 
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Generals'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scanner'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
-        ],
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _screens),
+      // ... keep your BottomNavigationBar as is ...
     );
+  }
+
+  String _getAppBarTitle() {
+    switch (_selectedIndex) {
+      case 1: return 'Generals';
+      case 2: return 'Library';
+      case 3: return 'Scanner';
+      default: return '殺 - Stop Hesitating, Attack!';
+    }
   }
 }
