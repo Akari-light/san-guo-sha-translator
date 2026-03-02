@@ -3,6 +3,7 @@ class LibraryCard {
   final String nameCn;
   final String nameEn;
   final String categoryEn;
+  final String categoryCn; 
   final List<String> effectCn;
   final List<String> effectEn;
   final List<String>? aliasEn;
@@ -14,6 +15,7 @@ class LibraryCard {
     required this.nameCn,
     required this.nameEn,
     required this.categoryEn,
+    required this.categoryCn, 
     required this.effectCn,
     required this.effectEn,
     this.aliasEn,
@@ -27,6 +29,7 @@ class LibraryCard {
       nameCn: json['name_cn'],
       nameEn: json['name_en'],
       categoryEn: json['category_en'],
+      categoryCn: json['category_cn'],
       effectCn: List<String>.from(json['effect_cn'] ?? []),
       effectEn: List<String>.from(json['effect_en'] ?? []),
       aliasEn: json['alias_en'] != null ? List<String>.from(json['alias_en']) : null,
