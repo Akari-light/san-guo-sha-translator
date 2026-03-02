@@ -3,7 +3,9 @@ class LibraryCard {
   final String nameCn;
   final String nameEn;
   final String categoryEn;
-  final String effectEn;
+  // CHANGED: These are now Lists
+  final List<String> effectCn;
+  final List<String> effectEn;
   final List<String>? aliasEn;
   final int? range;
   final List<Map<String, String>> faq;
@@ -13,27 +15,27 @@ class LibraryCard {
     required this.nameCn,
     required this.nameEn,
     required this.categoryEn,
+    required this.effectCn,
     required this.effectEn,
     this.aliasEn,
     this.range,
     required this.faq,
   });
 
-  // Factory to create a Card object from JSON
   factory LibraryCard.fromJson(Map<String, dynamic> json) {
     return LibraryCard(
       id: json['id'],
       nameCn: json['name_cn'],
       nameEn: json['name_en'],
       categoryEn: json['category_en'],
-      effectEn: json['effect_en'],
+      // CHANGED: Map as List<String>
+      effectCn: List<String>.from(json['effect_cn'] ?? []),
+      effectEn: List<String>.from(json['effect_en'] ?? []),
       aliasEn: json['alias_en'] != null ? List<String>.from(json['alias_en']) : null,
       range: json['range'],
-      // Maps the list of FAQ objects from the JSON
       faq: (json['faq'] as List).map((item) => Map<String, String>.from(item)).toList(),
     );
   }
 
-  // Helper to get the image path. Professionally, we use the ID to find the file.
   String get imagePath => 'assets/images/cards/$id.webp';
 }
