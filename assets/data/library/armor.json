@@ -1,0 +1,32 @@
+[
+  {
+    "id": "armor_eight_trigrams",
+    "name_cn": "八卦阵",
+    "name_en": "Eight Trigrams Array",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "每当你需要使用或打出一张【闪】时，你可以进行一次判定。",
+      "若判定结果为红色，视为你使用或打出了一张【闪】。"
+    ],
+    "effect_en": [
+      "Whenever you need to use or play a [Dodge], you may perform a Judgment.",
+      "If the result is Red (Hearts or Diamonds), it is treated as if you used or played a [Dodge]."
+    ],
+    "faq": [
+      {
+        "q_cn": "如果判定结果是黑色，我还能从手牌打出【闪】吗？",
+        "a_cn": "可以。如果判定失败，你仍然可以正常从手牌使用【闪】。",
+        "q_en": "If the Judgment is Black, can I still play a [Dodge] from my hand?",
+        "a_en": "Yes. If the judgment fails, you are still permitted to play a [Dodge] from your hand as normal."
+      },
+      {
+        "q_cn": "张角可以使用“鬼道”修改这个判定吗？",
+        "a_cn": "可以。所有具备修改判定技能的武将都可以影响八卦阵的判定结果。",
+        "q_en": "Can Zhang Jiao use 'Guidao' to change this judgment?",
+        "a_en": "Yes. Any hero with a judgment-altering skill can change the result of Eight Trigrams."
+      }
+    ]
+  }
+]

@@ -1,0 +1,100 @@
+[
+{
+    "id": "mount_red_hare",
+    "name_cn": "赤兔",
+    "name_en": "Red Hare",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["你计算与其他角色的距离-1。"],
+    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "faq": [
+      {
+        "q_en": "Does this increase my weapon range?",
+        "a_en": "No. It modifies the distance to others, not the range of your weapon. It makes them appear 'closer' to you."
+      }
+    ]
+  },
+  {
+    "id": "mount_da_yuan",
+    "name_cn": "大宛",
+    "name_en": "Da Yuan",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["你计算与其他角色的距离-1。"],
+    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "faq": []
+  },
+  {
+    "id": "mount_zi_xing",
+    "name_cn": "紫骍",
+    "name_en": "Zi Xing",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["你计算与其他角色的距离-1。"],
+    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "faq": []
+  },
+  {
+    "id": "mount_jing_fan",
+    "name_cn": "惊帆",
+    "name_en": "Jing Fan",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["你计算与其他角色的距离-1。"],
+    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "faq": []
+  },
+{
+    "id": "mount_hex",
+    "name_cn": "的卢",
+    "name_en": "Hex",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["其他角色计算与你的距离+1。"],
+    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "faq": [
+      {
+        "q_en": "Does this work against tools like Snatch?",
+        "a_en": "Yes. Tools that require a specific distance (like Steal/Snatch) are affected by the distance modifier of a +1 horse."
+      }
+    ]
+  },
+  {
+    "id": "mount_shadow_runner",
+    "name_cn": "绝影",
+    "name_en": "Shadow Runner",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["其他角色计算与你的距离+1。"],
+    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "faq": []
+  },
+  {
+    "id": "mount_zhuahuang",
+    "name_cn": "爪黄飞电",
+    "name_en": "Zhuahuang Feidian",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["其他角色计算与你的距离+1。"],
+    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "faq": []
+  },
+  {
+    "id": "mount_hualiu",
+    "name_cn": "骅骝",
+    "name_en": "Hualiu",
+    "image_path": "assets/images/library_placeholder.webp",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["其他角色计算与你的距离+1。"],
+    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "faq": []
+  }
+]
