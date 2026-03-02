@@ -26,7 +26,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_isEnglish ? card.nameEn : card.nameCn),
+        title: Text(card.nameCn),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
