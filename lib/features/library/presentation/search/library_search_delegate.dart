@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../data/models/library_card.dart';
+import '../../data/models/library_dto.dart'; // Updated relative path (up two levels)
 
 class LibrarySearchDelegate extends SearchDelegate<String?> {
-  final List<LibraryCard> allCards;
+  final List<LibraryDTO> allCards; // Uses LibraryDTO
 
   LibrarySearchDelegate({required this.allCards});
 

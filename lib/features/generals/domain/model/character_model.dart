@@ -1,0 +1,1 @@
+// the smart entity object and UI goes here

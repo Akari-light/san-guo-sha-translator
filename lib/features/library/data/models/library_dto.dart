@@ -1,4 +1,4 @@
-class LibraryCard {
+class LibraryDTO { // Renamed from LibraryCard
   final String id;
   final String nameCn;
   final String nameEn;
@@ -10,7 +10,7 @@ class LibraryCard {
   final int? range;
   final List<Map<String, String>> faq;
 
-  LibraryCard({
+  LibraryDTO({
     required this.id,
     required this.nameCn,
     required this.nameEn,
@@ -23,8 +23,8 @@ class LibraryCard {
     required this.faq,
   });
 
-  factory LibraryCard.fromJson(Map<String, dynamic> json) {
-    return LibraryCard(
+  factory LibraryDTO.fromJson(Map<String, dynamic> json) {
+    return LibraryDTO(
       id: json['id'],
       nameCn: json['name_cn'],
       nameEn: json['name_en'],
@@ -38,5 +38,5 @@ class LibraryCard {
     );
   }
 
-  String get imagePath => 'assets/images/cards/$id.webp';
+  String get imagePath => 'assets/images/library/$id.webp'; // Updated path
 }

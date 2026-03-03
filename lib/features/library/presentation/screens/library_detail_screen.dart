@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/library_card.dart';
+import '../../data/models/library_dto.dart'; // Updated path
 
 class LibraryDetailScreen extends StatefulWidget {
-  final LibraryCard card;
+  final LibraryDTO card; // Changed from LibraryCard to LibraryDTO
 
   const LibraryDetailScreen({super.key, required this.card});
 
@@ -11,13 +11,13 @@ class LibraryDetailScreen extends StatefulWidget {
 }
 
 class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
-  bool _isEnglish = true; // State to track language toggle
+  bool _isEnglish = true;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final card = widget.card;
+    final card = widget.card; // Now refers to LibraryDTO
 
     // VS Code Syntax coloring
     final syntaxColor = isDark 

@@ -5,9 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme/app_theme.dart';
 
 // Features: Navigation and Screens
-import 'features/home/screens/home_screen.dart';
-import 'features/generals/screens/general_screen.dart';
-import 'features/library/screens/library_screen.dart';
+import 'features/home/presentation/screens/home_screen.dart';
+import 'features/generals/presentation/screens/general_screen.dart';
+import 'features/library/presentation/screens/library_screen.dart';
 
 void main() async {
   // Ensure Flutter is initialized before calling SharedPreferences
@@ -169,24 +169,27 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       body: IndexedStack(index: _selectedIndex, children: _screens),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-            _isSearching = false; 
-            _searchQuery = "";
-            _searchController.clear();
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Generals'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.document_scanner), label: 'Scanner'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
-        ],
+      bottomNavigationBar: SizedBox(
+        height: 90, // Increased height to give the bigger icons room
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          onTap: (index) {
+            setState(() {
+              _selectedIndex = index;
+              _isSearching = false; 
+              _searchQuery = "";
+              _searchController.clear();
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.info_outline),),label: 'Home',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.person),),label: 'Generals',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.menu_book),),label: 'Library',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.document_scanner),),label: 'Scanner',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.more_horiz),),label: 'More',),
+          ],
+        ),
       ),
     );
   }

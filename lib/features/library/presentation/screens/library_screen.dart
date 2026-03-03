@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/library_card.dart';
-import '../../../data/repositories/library_repository.dart';
+import '../../data/models/library_dto.dart';
+import '../../data/repositories/library_loader.dart';
 import 'library_detail_screen.dart';
 
 class LibraryScreen extends StatelessWidget {
   final String? searchQuery;
   const LibraryScreen({super.key, this.searchQuery});
 
-  Map<String, List<LibraryCard>> _groupCards(List<LibraryCard> cards) {
-    Map<String, List<LibraryCard>> grouped = {};
+  Map<String, List<LibraryDTO>> _groupCards(List<LibraryDTO> cards) {
+    Map<String, List<LibraryDTO>> grouped = {};
     for (var card in cards) {
       grouped.putIfAbsent(card.categoryEn, () => []).add(card);
     }
@@ -17,14 +17,17 @@ class LibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<LibraryCard>>(
-      future: LibraryRepository().getCards(),
+    // Accessing the theme's color scheme for responsive colors
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return FutureBuilder<List<LibraryDTO>>(
+      future: LibraryLoader().getCards(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         }
 
-        List<LibraryCard> cards = snapshot.data ?? [];
+        List<LibraryDTO> cards = snapshot.data ?? [];
         
         if (searchQuery != null && searchQuery!.isNotEmpty) {
           final query = searchQuery!.toLowerCase();
@@ -35,44 +38,40 @@ class LibraryScreen extends StatelessWidget {
         }
 
         if (cards.isEmpty) return const Center(child: Text('No cards match your search.'));
-        
-        final groupedMap = _groupCards(cards);
+
+        final groupedCards = _groupCards(cards);
 
         return CustomScrollView(
-          physics: const ClampingScrollPhysics(),
           slivers: [
-            for (var entry in groupedMap.entries) ...[
+            for (var entry in groupedCards.entries) ...[
               SliverToBoxAdapter(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
-                  child: Text(
-                    entry.key,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                child: Text(
+                  entry.key.toUpperCase(), // Uppercase adds a clean, "section" feel
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w800, // Extra bold for contrast
+                    letterSpacing: 1.2,
+                    // Uses the high-contrast primary color we defined in AppTheme
+                    color: Theme.of(context).colorScheme.primary, 
                   ),
                 ),
               ),
+              ),
               SliverPadding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 sliver: SliverGrid(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
+                    crossAxisCount: 3, // Updated to 3 cards per row
                     childAspectRatio: 0.7,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
                   ),
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
                       final card = entry.value[index];
                       return GestureDetector(
-                        onTap: () async {
-                          // 1. Kill keyboard focus to prevent ImeTracker deadlock
-                          FocusManager.instance.primaryFocus?.unfocus();
-
-                          // 2. Small delay to allow the keyboard to hide before the Hero animation starts
-                          await Future.delayed(const Duration(milliseconds: 50));
-                          
-                          if (!context.mounted) return;
-
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -81,7 +80,7 @@ class LibraryScreen extends StatelessWidget {
                           );
                         },
                         child: Hero(
-                          tag: card.id, // Ensure this ID is unique and matches the Detail Screen
+                          tag: card.id,
                           child: _buildCard(card),
                         ),
                       );
@@ -98,19 +97,31 @@ class LibraryScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(LibraryCard card) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        color: Colors.black12,
+  Widget _buildCard(LibraryDTO card) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
         child: Image.asset(
           card.imagePath,
-          fit: BoxFit.fill, // Ensures image fills the 0.7 grid cell perfectly
-          errorBuilder: (context, error, stackTrace) => Stack(
-            children: [
-              Center(child: Image.asset('assets/images/library_placeholder.webp', fit: BoxFit.contain)),
-              const Positioned(top: 4, right: 4, child: Icon(Icons.report_problem, color: Colors.amber, size: 18)),
-            ],
+          fit: BoxFit.fill,
+          errorBuilder: (context, error, stackTrace) => Container(
+            color: Colors.black12,
+            child: Center(
+              child: Image.asset(
+                'assets/images/library_placeholder.webp', 
+                fit: BoxFit.contain
+              ),
+            ),
           ),
         ),
       ),
