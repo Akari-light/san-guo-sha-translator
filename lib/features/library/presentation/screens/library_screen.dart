@@ -17,8 +17,7 @@ class LibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Accessing the theme's color scheme for responsive colors
-    final colorScheme = Theme.of(context).colorScheme;
+    final colorScheme = Theme.of(context).colorScheme; // Now used for contrast logic
 
     return FutureBuilder<List<LibraryDTO>>(
       future: LibraryLoader().getCards(),
@@ -45,24 +44,24 @@ class LibraryScreen extends StatelessWidget {
           slivers: [
             for (var entry in groupedCards.entries) ...[
               SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
-                child: Text(
-                  entry.key.toUpperCase(), // Uppercase adds a clean, "section" feel
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w800, // Extra bold for contrast
-                    letterSpacing: 1.2,
-                    // Uses the high-contrast primary color we defined in AppTheme
-                    color: Theme.of(context).colorScheme.primary, 
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                  child: Text(
+                    entry.key.toUpperCase(),
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.2,
+                      // Uses the primary color from your theme for perfect contrast
+                      color: colorScheme.primary, 
+                    ),
                   ),
                 ),
-              ),
               ),
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 sliver: SliverGrid(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, // Updated to 3 cards per row
+                    crossAxisCount: 3, // Changed from 4 to 3
                     childAspectRatio: 0.7,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import '../models/library_dto.dart';
 
 class LibraryLoader { // Renamed from LibraryRepository
@@ -31,7 +32,7 @@ class LibraryLoader { // Renamed from LibraryRepository
       }
       _cachedCards = allCards;
     } catch (e) {
-      print("Error loading JSON files: $e");
+      debugPrint("Error loading JSON files: $e");
     }
     
     return allCards;

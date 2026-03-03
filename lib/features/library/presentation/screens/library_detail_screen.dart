@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart'; // Updated path
 
 class LibraryDetailScreen extends StatefulWidget {
-  final LibraryDTO card; // Changed from LibraryCard to LibraryDTO
+  final LibraryDTO card; // Changed from LibraryCard
 
   const LibraryDetailScreen({super.key, required this.card});
-
+  
   @override
   State<LibraryDetailScreen> createState() => _LibraryDetailScreenState();
 }
