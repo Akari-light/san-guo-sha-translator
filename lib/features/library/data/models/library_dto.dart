@@ -38,5 +38,6 @@ class LibraryDTO { // Renamed from LibraryCard
     );
   }
 
-  String get imagePath => 'assets/images/library/$id.webp'; // Updated path
+  String get imagePath => 'assets/images/library/$id.webp'; 
+  static const String placeholderImagePath = 'assets/images/library_placeholder.webp';
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart';
-import '../../data/repositories/library_loader.dart';
+import '../../data/repository/library_loader.dart';
 import 'library_detail_screen.dart';
 
 class LibraryScreen extends StatelessWidget {
@@ -116,10 +116,7 @@ class LibraryScreen extends StatelessWidget {
           errorBuilder: (context, error, stackTrace) => Container(
             color: Colors.black12,
             child: Center(
-              child: Image.asset(
-                'assets/images/library_placeholder.webp', 
-                fit: BoxFit.contain
-              ),
+              child: Image.asset(LibraryDTO.placeholderImagePath,fit: BoxFit.contain)
             ),
           ),
         ),
@@ -127,3 +124,4 @@ class LibraryScreen extends StatelessWidget {
     );
   }
 }
+

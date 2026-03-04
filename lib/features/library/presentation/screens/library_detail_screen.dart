@@ -43,10 +43,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                     card.imagePath,
                     height: 300,
                     fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) => Image.asset(
-                      'assets/images/library_placeholder.webp',
-                      height: 300,
-                    ),
+                    errorBuilder: (context, error, stackTrace) => Image.asset(LibraryDTO.placeholderImagePath,height: 300),
                   ),
                 ),
               ),
