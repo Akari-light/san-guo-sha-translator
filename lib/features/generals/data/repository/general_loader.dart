@@ -5,16 +5,17 @@ import '../models/general_card.dart';
 import '../../../../core/models/skill_dto.dart';
 
 class GeneralLoader {
-  // ── Setup Code ─────────────────────────────────────────────────────────────
+  // ── Setup 
   static final GeneralLoader _instance = GeneralLoader._internal();
   factory GeneralLoader() => _instance;
   GeneralLoader._internal();
 
-  // ── Cache Data ─────────────────────────────────────────────────────────────
+  // ── Cache Data 
   List<GeneralCard>? _cachedGenerals;
   Map<String, SkillDTO>? _cachedSkillMap;
 
-  // ── Config ─ add new expansion paths here ──────────────────────────────────
+  // ── Config 
+  /// To add a new general expansion, add its file path here
   static const List<String> _expansionFiles = [
     'assets/data/generals/limit_break.json',
     // 'assets/data/generals/standard.json',  // Uncomment when ready
@@ -22,7 +23,7 @@ class GeneralLoader {
 
   static const String _skillsFile = 'assets/data/skills.json';
 
-  // ── Public API ─────────────────────────────────────────────────────────────
+  // ── Public API 
 
   Future<List<GeneralCard>> getGenerals() async {
     if (_cachedGenerals != null) return _cachedGenerals!;
@@ -59,13 +60,12 @@ class GeneralLoader {
     }
   }
 
-  /// Clears the cache. Useful during development when JSON data changes.
   void clearCache() {
     _cachedGenerals = null;
     _cachedSkillMap = null;
   }
 
-  // ── Private ────────────────────────────────────────────────────────────────
+  // ── Private 
 
   Future<Map<String, SkillDTO>> _loadSkillMap() async {
     if (_cachedSkillMap != null) return _cachedSkillMap!;

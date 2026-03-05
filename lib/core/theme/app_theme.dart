@@ -35,9 +35,14 @@ class AppTheme {
   static const Color _qunColor  = Color(0xFF9E9E9E); // Grey
   static const Color _godColor  = Color(0xFFFFC107); // Gold
 
-  // ── Character Details Description Text 
+  // ── Description Text Colors 
   static const Color descriptionEnDark = Color(0xFF9CDCFE); // VS Code blue
   static const Color descriptionCnDark = Color(0xFFCE9178); // VS Code orange
+
+  // ── UI Component Colors 
+  static const Color statBadgeColor  = Color(0xFFFF6B6B); // Stat badge (e.g. Range)
+  static const Color searchTextColor = Color(0xFFD4D4D4); // AppBar search input text
+  static const Color searchHintColor = Color(0xFF858585); // AppBar search hint text
 
   // ── Theme Data 
   static ThemeData get darkTheme {
@@ -90,8 +95,7 @@ class AppTheme {
     );
   }
 
-  // ── Color Helpers ──────────────────────────────────────────────────────────
-
+  // ── Color Helpers 
   /// Returns the theme-aware color for a library card category.
   /// Used by LibraryDetailScreen and LibraryCardTile.
   /// Add new categories here when new library types are added.

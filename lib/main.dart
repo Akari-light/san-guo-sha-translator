@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-// Core & Theme
 import 'core/theme/app_theme.dart';
 
 // Features: Navigation and Screens
@@ -10,12 +8,9 @@ import 'features/generals/presentation/screens/general_screen.dart';
 import 'features/library/presentation/screens/library_screen.dart';
 
 void main() async {
-  // Ensure Flutter is initialized before calling SharedPreferences
   WidgetsFlutterBinding.ensureInitialized();
   
   final prefs = await SharedPreferences.getInstance();
-  
-  // Load the saved string, default to 'system' if nothing is saved
   final savedTheme = prefs.getString('theme_mode') ?? 'system';
   
   runApp(MainApp(initialTheme: _parseTheme(savedTheme)));
@@ -61,7 +56,6 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       title: '殺',
       debugShowCheckedModeBanner: false,
-      // Using your VS Code Dark+ Theme from the core folder
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: _themeMode,
@@ -110,11 +104,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             : TextField(
                 controller: _searchController,
                 autofocus: true,
-                style: const TextStyle(color: Color(0xFFD4D4D4)), // VS Code Text Color
+                style: const TextStyle(color: AppTheme.searchTextColor),
                 decoration: const InputDecoration(
                   hintText: 'Search cards...',
                   border: InputBorder.none,
-                  hintStyle: TextStyle(color: Color(0xFF858585)),
+                  hintStyle: TextStyle(color: AppTheme.searchHintColor),
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -170,7 +164,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       ),
       body: IndexedStack(index: _selectedIndex, children: _screens),
       bottomNavigationBar: SizedBox(
-        height: 90, // Increased height to give the bigger icons room
+        height: 90,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,

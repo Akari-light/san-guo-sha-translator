@@ -68,7 +68,6 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                       Text(
                         _isEnglish ? card.categoryEn : card.categoryCn,
                         style: TextStyle(
-                          // Category color from AppTheme — single source of truth
                           color: AppTheme.categoryColor(card.categoryEn, isDark),
                           fontWeight: FontWeight.w600,
                         ),
@@ -140,7 +139,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
   }
 
   Widget _buildStatBadge(BuildContext context, String label, String value) {
-    const color = Colors.redAccent;
+    const color = AppTheme.statBadgeColor;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
@@ -189,7 +188,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: isDark
-                  ? const Color(0xFF9CDCFE)
+                  ? AppTheme.descriptionEnDark
                   : colorScheme.primary,
             ),
           ),
@@ -200,7 +199,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                 : "答: ${faq['a_cn'] ?? faq['a_en']}",
             style: TextStyle(
               color: isDark
-                  ? const Color(0xFFCE9178)
+                  ? AppTheme.descriptionCnDark
                   : colorScheme.secondary,
             ),
           ),

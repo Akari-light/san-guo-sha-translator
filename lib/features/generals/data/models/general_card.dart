@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import '../../../../core/models/skill_dto.dart';
 
 /// Example JSON entry (from limit_break.json):
@@ -74,7 +73,7 @@ class GeneralCard {
   // ── Expansion 
   String get expansionBadge => expansion.badge;
 
-  // ── Faction ────────────────────────────────────────────────────────────────
+  // ── Faction 
   String get factionCn {
     switch (faction) {
       case 'Shu':  return '蜀';
@@ -86,8 +85,7 @@ class GeneralCard {
     }
   }
 
-  // ── Power Index ────────────────────────────────────────────────────────────
-
+  // ── Power Index 
   /// Power index as a display string, e.g. "3.0" → "★★★"
   /// Returns half-star increments up to 5 stars.
   String get powerStars {

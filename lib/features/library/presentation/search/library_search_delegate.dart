@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../data/models/library_dto.dart'; // Updated relative path (up two levels)
+import '../../data/models/library_dto.dart'; 
 
 class LibrarySearchDelegate extends SearchDelegate<String?> {
-  final List<LibraryDTO> allCards; // Uses LibraryDTO
+  final List<LibraryDTO> allCards; 
 
   LibrarySearchDelegate({required this.allCards});
 
@@ -22,7 +22,7 @@ class LibrarySearchDelegate extends SearchDelegate<String?> {
 
   @override
   Widget buildResults(BuildContext context) {
-    close(context, query); // Returns the typed text to the main screen
+    close(context, query); 
     return const SizedBox.shrink();
   }
 
@@ -35,10 +35,7 @@ class LibrarySearchDelegate extends SearchDelegate<String?> {
   }
 
   Widget _buildList(BuildContext context) {
-    final results = allCards.where((card) {
-      final input = query.toLowerCase();
-      return card.nameEn.toLowerCase().contains(input) || card.nameCn.contains(input);
-    }).toList();
+    final results = allCards.where((card) => card.matchesQuery(query)).toList();
 
     return ListView.builder(
       itemCount: results.length,
@@ -47,7 +44,7 @@ class LibrarySearchDelegate extends SearchDelegate<String?> {
         return ListTile(
           title: Text(card.nameEn),
           subtitle: Text(card.nameCn),
-          onTap: () => close(context, card.nameEn), // Return card name to filter grid
+          onTap: () => close(context, card.nameEn),
         );
       },
     );
