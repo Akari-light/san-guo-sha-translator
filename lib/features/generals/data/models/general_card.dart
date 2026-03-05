@@ -26,7 +26,8 @@ class GeneralCard {
   final double powerIndex;
   final List<String> traits;
   final Expansion expansion;
-  final List<SkillDTO> skills; 
+  final List<SkillDTO> skills;
+  final List<Map<String, String>> faq;
 
   const GeneralCard({
     required this.id,
@@ -40,6 +41,7 @@ class GeneralCard {
     required this.traits,
     required this.expansion,
     required this.skills,
+    this.faq = const [],
   });
   
   factory GeneralCard.fromJson(
@@ -62,6 +64,9 @@ class GeneralCard {
       skills: rawSkillIds
           .map((id) => skillMap[id])
           .whereType<SkillDTO>()
+          .toList(),
+      faq: (json['faq'] as List? ?? [])
+          .map((item) => Map<String, String>.from(item as Map))
           .toList(),
     );
   }

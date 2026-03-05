@@ -29,7 +29,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,7 +43,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                     card.imagePath,
                     height: 300,
                     fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) =>
+                    errorBuilder: (context, error, _) =>
                         Image.asset(LibraryDTO.placeholderImagePath, height: 300),
                   ),
                 ),
@@ -75,19 +75,25 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                     ],
                   ),
                 ),
-                TextButton(
-                  onPressed: () => setState(() => _isEnglish = !_isEnglish),
-                  style: TextButton.styleFrom(
-                    backgroundColor:
-                        theme.colorScheme.primary.withValues(alpha: 0.1),
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                  ),
-                  child: Text(
-                    _isEnglish ? "EN ➔ 中" : "中 ➔ EN",
-                    style: TextStyle(
-                      color: theme.colorScheme.primary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
+                GestureDetector(
+                  onTap: () => setState(() => _isEnglish = !_isEnglish),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.primary.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: theme.colorScheme.primary.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Text(
+                      _isEnglish ? 'EN ➔ 中' : '中 ➔ EN',
+                      style: TextStyle(
+                        color: theme.colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 11,
+                      ),
                     ),
                   ),
                 ),
@@ -106,10 +112,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
             const Divider(height: 32),
 
             // Effect section
-            Text(
-              _isEnglish ? "EFFECT" : "技能描述",
-              style: theme.textTheme.labelLarge?.copyWith(color: theme.hintColor),
-            ),
+            _buildSectionHeader(context, _isEnglish ? 'EFFECT' : '技能描述'),
             const SizedBox(height: 12),
             Text(
               _isEnglish
@@ -124,17 +127,23 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
             // FAQ section
             if (card.faq.isNotEmpty) ...[
               const SizedBox(height: 24),
-              Text(
-                _isEnglish ? "RULES & FAQ" : "常见问题",
-                style:
-                    theme.textTheme.labelLarge?.copyWith(color: theme.hintColor),
-              ),
+              _buildSectionHeader(context, _isEnglish ? 'RULES & FAQ' : '常见问题'),
               const SizedBox(height: 12),
               ...card.faq.map((f) => _buildFaqTile(context, f, _isEnglish)),
             ],
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildSectionHeader(BuildContext context, String label) {
+    return Text(
+      label,
+      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+            letterSpacing: 1.2,
+            color: Theme.of(context).hintColor,
+          ),
     );
   }
 
