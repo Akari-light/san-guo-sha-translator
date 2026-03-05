@@ -4,7 +4,6 @@ import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/services/resolver_service.dart';
-import '../../../library/data/models/library_dto.dart';
 import '../../../library/presentation/screens/library_detail_screen.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
@@ -126,7 +125,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                       card.imagePath,
                       height: 280,
                       fit: BoxFit.contain,
-                      errorBuilder: (_, __, ___) => Image.asset(
+                      errorBuilder: (context, error, _) => Image.asset(
                         GeneralCard.placeholderImagePath,
                         height: 280,
                         fit: BoxFit.contain,
