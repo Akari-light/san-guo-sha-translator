@@ -29,9 +29,9 @@ class AppTheme {
   static const Color _treasureLight = Color(0xFF6A1B9A);
 
   // ── Faction Colors 
-  static const Color _shuColor  = Color(0xFF4CAF50); // Green
+  static const Color _shuColor  = Color(0xFFFF5722); // Red-Orange
   static const Color _weiColor  = Color(0xFF2196F3); // Blue
-  static const Color _wuColor   = Color(0xFFFF5722); // Red-Orange
+  static const Color _wuColor   = Color(0xFF4CAF50); // Green
   static const Color _qunColor  = Color(0xFF9E9E9E); // Grey
   static const Color _godColor  = Color(0xFFFFC107); // Gold
 
