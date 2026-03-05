@@ -96,12 +96,12 @@ class GeneralCard {
   }
 
   // ── Power Index 
-  /// Power index as a display string, e.g. "3.0" → "★★★"
+  /// Power index as a display string, e.g. "3.0" → "★★★" 
   /// Returns half-star increments up to 5 stars.
   String get powerStars {
     final full = powerIndex.floor();
     final half = (powerIndex - full) >= 0.5;
-    return '★' * full + (half ? '½' : '');
+    return '★' * full + (half ? '☆' : '');
   }
 }
 
