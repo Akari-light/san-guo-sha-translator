@@ -16,7 +16,6 @@ void main() async {
   runApp(MainApp(initialTheme: _parseTheme(savedTheme)));
 }
 
-// Helper to convert saved String back into a ThemeMode object
 ThemeMode _parseTheme(String theme) {
   switch (theme) {
     case 'light': return ThemeMode.light;
@@ -42,7 +41,6 @@ class _MainAppState extends State<MainApp> {
     _themeMode = widget.initialTheme;
   }
 
-  // Updates the UI and saves the preference to disk
   Future<void> _updateTheme(ThemeMode mode) async {
     setState(() {
       _themeMode = mode;
@@ -96,8 +94,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   bool _generalsFilterActive = false;
   VoidCallback? _openGeneralsFilter;
 
-  // Library filter — wire up when LibraryFilterSheet is built (Phase 3)
-  final bool _libraryFilterActive = false;
+  // Library filter
+  bool _libraryFilterActive = false;
   VoidCallback? _openLibraryFilter;
 
   List<Widget> get _screens => [
@@ -108,7 +106,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               setState(() => _generalsFilterActive = isActive),
           onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
         ),
-        LibraryScreen(searchQuery: _searchQuery),
+        LibraryScreen(
+          searchQuery: _searchQuery,
+          onFilterStateChanged: (isActive) =>
+              setState(() => _libraryFilterActive = isActive),
+          onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
+        ),
         const Center(child: Text('AI Feature (TBC)')),
         const Center(child: Text('More (TBC)')),
       ];
@@ -143,7 +146,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               )
             : Text(_getAppBarTitle()),
         actions: [
-          // ── Search (Generals tab) ─────────────────────────────────────────
+          // ── Search (Generals tab) 
           if (_selectedIndex == 1)
             IconButton(
               icon: Icon(_isSearchingGenerals ? Icons.close : Icons.search),
@@ -158,7 +161,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               },
             ),
 
-          // ── Search (Library tab) ──────────────────────────────────────────
+          // ── Search (Library tab) 
           if (_selectedIndex == 2)
             IconButton(
               icon: Icon(_isSearching ? Icons.close : Icons.search),
@@ -173,7 +176,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               },
             ),
 
-          // ── Filter (Generals tab) ─────────────────────────────────────────
+          // ── Filter (Generals tab) 
           if (_selectedIndex == 1)
             IconButton(
               icon: Icon(
@@ -183,7 +186,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               onPressed: () => _openGeneralsFilter?.call(),
             ),
 
-          // ── Filter (Library tab) — wired up in Phase 3 ───────────────────
+          // ── Filter (Library tab) 
           if (_selectedIndex == 2)
             IconButton(
               icon: Icon(
@@ -193,7 +196,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               onPressed: () => _openLibraryFilter?.call(),
             ),
 
-          // ── Theme menu ────────────────────────────────────────────────────
+          // ── Theme menu 
           PopupMenuButton<ThemeMode>(
             icon: Icon(_getThemeIcon(widget.currentMode)),
             onSelected: (ThemeMode mode) => widget.onThemeChanged(mode),

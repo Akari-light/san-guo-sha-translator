@@ -87,7 +87,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         title: Text(card.nameCn),
         centerTitle: true,
         actions: [
-          // ── Pin button ──────────────────────────────────────────────────
+          // ── Pin button 
           IconButton(
             icon: Icon(
               _isPinned ? Icons.push_pin : Icons.push_pin_outlined,
@@ -103,7 +103,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Card image ────────────────────────────────────────────────
+            // ── Card image 
             Center(
               child: Hero(
                 tag: card.id,
@@ -138,7 +138,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 24),
 
-            // ── Name + lang toggle ────────────────────────────────────────
+            // ── Name + lang toggle 
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -176,7 +176,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
             ),
             const SizedBox(height: 8),
 
-            // ── Faction + expansion badges ────────────────────────────────
+            // ── Faction + expansion badges 
             Row(
               children: [
                 _Badge(
@@ -193,7 +193,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 16),
 
-            // ── Stat row ──────────────────────────────────────────────────
+            // ── Stat row 
             Row(
               children: [
                 _StatChip(
@@ -223,7 +223,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
               ],
             ),
 
-            // ── Traits ────────────────────────────────────────────────────
+            // ── Traits 
             if (card.traitsCn.isNotEmpty) ...[
               const SizedBox(height: 16),
               _buildSectionHeader(context, _isEnglish ? 'TRAITS' : '特征'),
@@ -239,7 +239,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const Divider(height: 32),
 
-            // ── Skills ────────────────────────────────────────────────────
+            // ── Skills 
             _buildSectionHeader(context, _isEnglish ? 'SKILLS' : '技能'),
             const SizedBox(height: 12),
             ...card.skills.map(
@@ -253,7 +253,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const Divider(height: 32),
 
-            // ── Related Cards ─────────────────────────────────────────────
+            // ── Related Cards 
             _buildSectionHeader(
                 context, _isEnglish ? 'RELATED CARDS' : '相关牌'),
             const SizedBox(height: 12),
@@ -292,7 +292,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                 children: refs.map((ref) {
                   if (ref.type == ReferenceType.libraryCard &&
                       ref.libraryCard != null) {
-                    // ── Tappable library card chip ────────────────────
+                    // ── Tappable library card chip 
                     return _RelatedCardChip(
                       label: _isEnglish
                           ? ref.libraryCard!.nameEn
@@ -308,7 +308,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                       ),
                     );
                   } else {
-                    // ── Non-tappable skill reference chip ─────────────
+                    // ── Non-tappable skill reference chip 
                     return _RelatedSkillChip(
                       label: _isEnglish ? ref.nameEn : ref.nameCn,
                       isDark: isDark,
@@ -335,7 +335,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   }
 }
 
-// ── Related library card chip (tappable) ─────────────────────────────────────
+// ── Related library card chip (tappable) 
 
 class _RelatedCardChip extends StatelessWidget {
   final String label;
@@ -382,7 +382,7 @@ class _RelatedCardChip extends StatelessWidget {
   }
 }
 
-// ── Related skill reference chip (non-tappable) ───────────────────────────────
+// ── Related skill reference chip (non-tappable) 
 
 class _RelatedSkillChip extends StatelessWidget {
   final String label;
@@ -419,7 +419,7 @@ class _RelatedSkillChip extends StatelessWidget {
   }
 }
 
-// ── Skill card ────────────────────────────────────────────────────────────────
+// ── Skill card 
 
 class _SkillCard extends StatelessWidget {
   final SkillDTO skill;
@@ -488,7 +488,7 @@ class _SkillCard extends StatelessWidget {
   }
 }
 
-// ── Skill type badge ──────────────────────────────────────────────────────────
+// ── Skill type badge 
 
 class _SkillTypeBadge extends StatelessWidget {
   final String label;
@@ -527,7 +527,7 @@ class _SkillTypeBadge extends StatelessWidget {
   }
 }
 
-// ── Faction / expansion badge ─────────────────────────────────────────────────
+// ── Faction / expansion badge 
 
 class _Badge extends StatelessWidget {
   final String label;
@@ -556,7 +556,7 @@ class _Badge extends StatelessWidget {
   }
 }
 
-// ── Stat chip ─────────────────────────────────────────────────────────────────
+// ── Stat chip 
 
 class _StatChip extends StatelessWidget {
   final IconData icon;
@@ -602,7 +602,7 @@ class _StatChip extends StatelessWidget {
   }
 }
 
-// ── Trait chip ────────────────────────────────────────────────────────────────
+// ── Trait chip 
 
 class _TraitChip extends StatelessWidget {
   final String label;
