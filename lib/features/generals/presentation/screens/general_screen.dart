@@ -3,6 +3,7 @@ import '../../data/models/general_card.dart';
 import '../../data/repository/general_loader.dart';
 import '../widgets/general_card_tile.dart';
 import '../screens/general_filter_sheet.dart';
+import '../screens/general_detail_screen.dart';
 import '../../../../core/theme/app_theme.dart';
 
 class GeneralScreen extends StatefulWidget {
@@ -156,9 +157,13 @@ class _GeneralScreenState extends State<GeneralScreen> {
                         final card = entry.value[index];
                         return GeneralCardTile(
                           card: card,
-                          onTap: () {
-                            // TODO: Navigate to GeneralDetailScreen
-                          },
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) =>
+                                  GeneralDetailScreen(card: card),
+                            ),
+                          ),
                         );
                       },
                       childCount: entry.value.length,
