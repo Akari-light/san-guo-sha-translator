@@ -10,7 +10,8 @@ import '../../../../core/models/skill_dto.dart';
 ///   "faction": "Shu",
 ///   "health": 4,
 ///   "power_index": 3.0,
-///   "traits": ["进攻", "辅助", "回复"],
+///   "traits_cn": ["进攻", "辅助", "回复"],
+///   "traits_en": ["Aggressive", "Support", "Recovery"],
 ///   "expansion": "Limit Break",
 ///   "skills": ["skill_rende", "skill_jijiang"]
 /// }
@@ -24,7 +25,8 @@ class GeneralCard {
   final String faction;
   final int health;
   final double powerIndex;
-  final List<String> traits;
+  final List<String> traitsCn;
+  final List<String> traitsEn;
   final Expansion expansion;
   final List<SkillDTO> skills;
   final List<Map<String, String>> faq;
@@ -38,7 +40,8 @@ class GeneralCard {
     required this.faction,
     required this.health,
     required this.powerIndex,
-    required this.traits,
+    required this.traitsCn,
+    required this.traitsEn,
     required this.expansion,
     required this.skills,
     this.faq = const [],
@@ -59,7 +62,8 @@ class GeneralCard {
       faction: json['faction'] as String,
       health: json['health'] as int,
       powerIndex: (json['power_index'] as num).toDouble(),
-      traits: List<String>.from(json['traits'] ?? []),
+      traitsCn: List<String>.from(json['traits_cn'] ?? []),
+      traitsEn: List<String>.from(json['traits_en'] ?? []),
       expansion: Expansion.fromString(json['expansion'] as String),
       skills: rawSkillIds
           .map((id) => skillMap[id])

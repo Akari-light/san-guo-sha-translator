@@ -224,14 +224,16 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
             ),
 
             // ── Traits ────────────────────────────────────────────────────
-            if (card.traits.isNotEmpty) ...[
+            if (card.traitsCn.isNotEmpty) ...[
               const SizedBox(height: 16),
               _buildSectionHeader(context, _isEnglish ? 'TRAITS' : '特征'),
               const SizedBox(height: 8),
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: card.traits.map((t) => _TraitChip(label: t)).toList(),
+                children: (_isEnglish ? card.traitsEn : card.traitsCn)
+                    .map((t) => _TraitChip(label: t))
+                    .toList(),
               ),
             ],
 
@@ -315,15 +317,6 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                 }).toList(),
               ),
 
-            // ── FAQ ───────────────────────────────────────────────────────
-            if (card.faq.isNotEmpty) ...[
-              const Divider(height: 32),
-              _buildSectionHeader(
-                  context, _isEnglish ? 'RULES & FAQ' : '常见问题'),
-              const SizedBox(height: 12),
-              ...card.faq.map((f) => _buildFaqTile(context, f, _isEnglish)),
-            ],
-
             const SizedBox(height: 32),
           ],
         ),
@@ -338,49 +331,6 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
             letterSpacing: 1.2,
             color: Theme.of(context).hintColor,
           ),
-    );
-  }
-
-  Widget _buildFaqTile(
-      BuildContext context, Map<String, String> faq, bool isEnglish) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final isDark = theme.brightness == Brightness.dark;
-
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: colorScheme.outlineVariant),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            isEnglish
-                ? 'Q: ${faq['q_en']}'
-                : '问: ${faq['q_cn'] ?? faq['q_en']}',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: isDark ? AppTheme.descriptionEnDark : colorScheme.primary,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            isEnglish
-                ? 'A: ${faq['a_en']}'
-                : '答: ${faq['a_cn'] ?? faq['a_en']}',
-            style: TextStyle(
-              color: isDark
-                  ? AppTheme.descriptionCnDark
-                  : colorScheme.secondary,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

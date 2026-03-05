@@ -8,7 +8,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "简单", "强命"],
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_liegong"]
   },
@@ -21,7 +22,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "辅助", "回复"],
+    "traits_cn": ["进攻", "辅助", "回复"],
+    "traits_en": ["Aggressive", "Support", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_rende", "skill_jijiang"]
   },
@@ -34,7 +36,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["进攻", "控制", "回复"],
+    "traits_cn": ["进攻", "控制", "回复"],
+    "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_yijue", "skill_wusheng"]
   },
@@ -47,7 +50,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "过牌", "回复"],
+    "traits_cn": ["进攻", "过牌", "回复"],
+    "traits_en": ["Aggressive", "Card Flow", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_tishen", "skill_paoxiao"]
   },
@@ -60,7 +64,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["防御", "辅助", "回复"],
+    "traits_cn": ["防御", "辅助", "回复"],
+    "traits_en": ["Defensive", "Support", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_yajiao", "skill_longdan"]
   },
@@ -73,7 +78,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["进攻", "控制", "简单"],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_mashu", "skill_tieqi"]
   },
@@ -86,7 +92,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits": ["进攻", "辅助", "定点输出"],
+    "traits_cn": ["进攻", "辅助", "定点输出"],
+    "traits_en": ["Aggressive", "Support", "Targeted Damage"],
     "expansion": "Limit Break",
     "skills": ["skill_zhuhai", "skill_qianxin", "skill_jianyan"]
   },
@@ -99,7 +106,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["控制", "转化大师", "颜色爱好者"],
+    "traits_cn": ["控制", "转化大师", "颜色爱好者"],
+    "traits_en": ["Control", "Converter", "Color Specialist"],
     "expansion": "Limit Break",
     "skills": ["skill_qixi", "skill_fenwei"]
   },
@@ -112,7 +120,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["防御", "控制", "发育"],
+    "traits_cn": ["防御", "控制", "发育"],
+    "traits_en": ["Defensive", "Control", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_keji", "skill_qinxue", "skill_botu"]
   },
@@ -125,7 +134,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "过牌", "简单"],
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_kurou", "skill_zhaxiang"]
   },
@@ -138,7 +148,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits": ["进攻", "控制", "强命"],
+    "traits_cn": ["进攻", "控制", "强命"],
+    "traits_en": ["Aggressive", "Control", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_yingzi", "skill_fanjian"]
   },
@@ -151,7 +162,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits": ["控制", "辅助", "判定"],
+    "traits_cn": ["控制", "辅助", "判定"],
+    "traits_en": ["Control", "Support", "Judgment"],
     "expansion": "Limit Break",
     "skills": ["skill_liuli", "skill_guose"]
   },
@@ -164,7 +176,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits": ["过牌", "辅助", "困难"],
+    "traits_cn": ["过牌", "辅助", "困难"],
+    "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Limit Break",
     "skills": ["skill_qianxun", "skill_lianying"]
   },
@@ -177,7 +190,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["防御", "简单", "主公技"],
+    "traits_cn": ["防御", "简单", "主公技"],
+    "traits_en": ["Defensive", "Simple", "Lord Skill"],
     "expansion": "Limit Break",
     "skills": ["skill_jianxiong", "skill_hujia"]
   },
@@ -190,7 +204,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["防御", "控制", "判定"],
+    "traits_cn": ["防御", "控制", "判定"],
+    "traits_en": ["Defensive", "Control", "Judgment"],
     "expansion": "Limit Break",
     "skills": ["skill_fankui", "skill_guicai"]
   },
@@ -203,7 +218,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["防御", "辅助", "配合神将"],
+    "traits_cn": ["防御", "辅助", "配合神将"],
+    "traits_en": ["Defensive", "Support", "God General Synergy"],
     "expansion": "Limit Break",
     "skills": ["skill_ganglie", "skill_qingjian"]
   },
@@ -216,7 +232,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["控制", "简单", "持久"],
+    "traits_cn": ["控制", "简单", "持久"],
+    "traits_en": ["Control", "Simple", "Ramping"],
     "expansion": "Limit Break",
     "skills": ["skill_tuxi"]
   },
@@ -229,7 +246,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "过牌", "简单"],
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_luoyi"]
   },
@@ -242,7 +260,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["防御", "辅助", "卖血"],
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_tiandu", "skill_yiji"]
   },
@@ -255,7 +274,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["过牌", "辅助", "卖血"],
+    "traits_cn": ["过牌", "辅助", "卖血"],
+    "traits_en": ["Card Flow", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_xunxun", "skill_wangxi"]
   },
@@ -268,7 +288,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["控制", "辅助", "保核能力"],
+    "traits_cn": ["控制", "辅助", "保核能力"],
+    "traits_en": ["Control", "Support", "Protector"],
     "expansion": "Limit Break",
     "skills": ["skill_jijiu", "skill_chuli"]
   },
@@ -281,7 +302,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["进攻", "强命", "飘零半生"],
+    "traits_cn": ["进攻", "强命", "飘零半生"],
+    "traits_en": ["Aggressive", "Sturdy", "Drifter"],
     "expansion": "Limit Break",
     "skills": ["skill_wushuang", "skill_liyu"]
   },
@@ -294,7 +316,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["防御", "控制", "卖血"],
+    "traits_cn": ["防御", "控制", "卖血"],
+    "traits_en": ["Defensive", "Control", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_yicong", "skill_qiaomeng"]
   },
@@ -307,7 +330,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits": ["防御", "控制", "困难"],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Limit Break",
     "skills": ["skill_kongcheng", "skill_guanxing"]
   },
@@ -320,7 +344,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["过牌", "锦囊大师", "定点输出"],
+    "traits_cn": ["过牌", "锦囊大师", "定点输出"],
+    "traits_en": ["Card Flow", "Tool Master", "Targeted Damage"],
     "expansion": "Limit Break",
     "skills": ["skill_jizhi", "skill_qicai"]
   },
@@ -333,7 +358,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["过牌", "困难", "主公技"],
+    "traits_cn": ["过牌", "困难", "主公技"],
+    "traits_en": ["Card Flow", "High Difficulty", "Lord Skill"],
     "expansion": "Limit Break",
     "skills": ["skill_zhiheng", "skill_jiuyuan"]
   },
@@ -346,7 +372,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["防御", "辅助", "发育"],
+    "traits_cn": ["防御", "辅助", "发育"],
+    "traits_en": ["Defensive", "Support", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_xiaoji", "skill_jieyin"]
   },
@@ -359,7 +386,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "过牌", "简单"],
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_qingguo", "skill_luoshen"]
   },
@@ -372,7 +400,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["进攻", "过牌", "强命"],
+    "traits_cn": ["进攻", "过牌", "强命"],
+    "traits_en": ["Aggressive", "Card Flow", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_lijian", "skill_biyue"]
   },
@@ -385,7 +414,8 @@
     "faction": "Qun",
     "health": 6,
     "power_index": 3.0,
-    "traits": ["防御", "简单", "转化大师"],
+    "traits_cn": ["防御", "简单", "转化大师"],
+    "traits_en": ["Defensive", "Simple", "Converter"],
     "expansion": "Limit Break",
     "skills": ["skill_yaowu", "skill_shizhan"]
   },
@@ -398,7 +428,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 4.5,
-    "traits": ["发育", "回复", "困难"],
+    "traits_cn": ["发育", "回复", "困难"],
+    "traits_en": ["Scaling", "Recovery", "High Difficulty"],
     "expansion": "Limit Break",
     "skills": ["skill_huashen", "skill_xinsheng"]
   },
@@ -411,7 +442,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "控制", "强命"],
+    "traits_cn": ["防御", "控制", "强命"],
+    "traits_en": ["Defensive", "Control", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_leiji", "skill_guidao", "skill_huangtian"]
   },
@@ -424,7 +456,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits": ["回复", "困难", "转化大师"],
+    "traits_cn": ["回复", "困难", "转化大师"],
+    "traits_en": ["Recovery", "High Difficulty", "Converter"],
     "expansion": "Limit Break",
     "skills": ["skill_guhuo"]
   },
@@ -437,7 +470,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "过牌", "爆发"],
+    "traits_cn": ["进攻", "过牌", "爆发"],
+    "traits_en": ["Aggressive", "Card Flow", "Burst"],
     "expansion": "Limit Break",
     "skills": ["skill_luanji", "skill_xueyi"]
   },
@@ -450,7 +484,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["辅助", "发育", "回复"],
+    "traits_cn": ["辅助", "发育", "回复"],
+    "traits_en": ["Support", "Scaling", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_xiangle", "skill_fangquan", "skill_ruoyu"]
   },
@@ -463,7 +498,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["控制", "过牌", "辅助"],
+    "traits_cn": ["控制", "过牌", "辅助"],
+    "traits_en": ["Control", "Card Flow", "Support"],
     "expansion": "Limit Break",
     "skills": ["skill_zhiba", "skill_jiang", "skill_hunzi"]
   },
@@ -476,7 +512,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "控制", "过牌"],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_shensu", "skill_shebian"]
   },
@@ -489,7 +526,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 5.0,
-    "traits": ["防御", "辅助", "保核能力"],
+    "traits_cn": ["防御", "辅助", "保核能力"],
+    "traits_en": ["Defensive", "Support", "Protector"],
     "expansion": "Limit Break",
     "skills": ["skill_bazhen", "skill_cangzhuo", "skill_huoji", "skill_kanpo"]
   },
@@ -502,7 +540,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["进攻", "控制", "回复"],
+    "traits_cn": ["进攻", "控制", "回复"],
+    "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_lianhuan", "skill_niepan"]
   },
@@ -515,7 +554,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "控制", "回复"],
+    "traits_cn": ["进攻", "控制", "回复"],
+    "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_kuanggu", "skill_qimou"]
   },
@@ -528,7 +568,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["防御", "辅助", "卖血"],
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_hongyan", "skill_tianxiang", "skill_piaoling"]
   },
@@ -541,7 +582,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["控制", "辅助", "简单"],
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_yinghun", "skill_wulie"]
   },
@@ -554,7 +596,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "控制", "简单"],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_mashu", "skill_jianchu"]
   },
@@ -567,7 +610,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "控制", "多刀"],
+    "traits_cn": ["进攻", "控制", "多刀"],
+    "traits_en": ["Aggressive", "Control", "Multi-Strike"],
     "expansion": "Limit Break",
     "skills": ["skill_tianyi", "skill_hanzhan"]
   },
@@ -580,7 +624,8 @@
     "faction": "Qun",
     "health": 8,
     "power_index": 3.5,
-    "traits": ["进攻", "控制", "过牌"],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_roulin", "skill_benhuai", "skill_jiuchi", "skill_baonue"]
   },
@@ -593,7 +638,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["防御", "控制", "发育"],
+    "traits_cn": ["防御", "控制", "发育"],
+    "traits_en": ["Defensive", "Control", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_tuntian", "skill_zaoxian"]
   },
@@ -606,7 +652,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["控制", "过牌", "拼点"],
+    "traits_cn": ["控制", "过牌", "拼点"],
+    "traits_en": ["Control", "Card Flow", "Point Fight"],
     "expansion": "Limit Break",
     "skills": ["skill_juxiang", "skill_lieren"]
   },
@@ -619,7 +666,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "防御", "控制"],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
     "skills": ["skill_tiaoxin", "skill_zhiji"]
   },
@@ -632,7 +680,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["进攻", "防御", "控制"],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
     "skills": ["skill_weimu", "skill_luanwu", "skill_wansha"]
   },
@@ -645,7 +694,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["控制", "过牌", "困难"],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Limit Break",
     "skills": ["skill_haoshi", "skill_dimeng"]
   },
@@ -658,7 +708,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["控制", "过牌", "困难"],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Limit Break",
     "skills": ["skill_qiaobian"]
   },
@@ -671,7 +722,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["防御", "辅助", "回复"],
+    "traits_cn": ["防御", "辅助", "回复"],
+    "traits_en": ["Defensive", "Support", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_huoshou", "skill_zaiqi"]
   },
@@ -684,7 +736,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["控制", "辅助", "发育"],
+    "traits_cn": ["控制", "辅助", "发育"],
+    "traits_en": ["Control", "Support", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_duanliang", "skill_jiezi"]
   },
@@ -697,7 +750,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "辅助", "卖血"],
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_duanchang", "skill_beige"]
   },
@@ -710,7 +764,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["进攻", "辅助", "卖血"],
+    "traits_cn": ["进攻", "辅助", "卖血"],
+    "traits_en": ["Aggressive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_quhu", "skill_jieming"]
   },
@@ -723,7 +778,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "简单", "强命"],
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_qiangxi", "skill_ninge"]
   },
@@ -736,7 +792,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "简单", "爆发"],
+    "traits_cn": ["进攻", "简单", "爆发"],
+    "traits_en": ["Aggressive", "Simple", "Burst"],
     "expansion": "Limit Break",
     "skills": ["skill_shuangxiong"]
   },
@@ -749,7 +806,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["辅助", "发育", "简单"],
+    "traits_cn": ["辅助", "发育", "简单"],
+    "traits_en": ["Support", "Scaling", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_zhijian", "skill_guzheng"]
   },
@@ -762,7 +820,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 4.5,
-    "traits": ["进攻", "强命", "加伤"],
+    "traits_cn": ["进攻", "强命", "加伤"],
+    "traits_en": ["Aggressive", "Sturdy", "Damage Boost"],
     "expansion": "Limit Break",
     "skills": ["skill_pojun"]
   },
@@ -775,7 +834,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["控制", "困难", "配合神将"],
+    "traits_cn": ["控制", "困难", "配合神将"],
+    "traits_en": ["Control", "High Difficulty", "God General Synergy"],
     "expansion": "Limit Break",
     "skills": ["skill_xuanfeng"]
   },
@@ -788,7 +848,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["过牌", "辅助", "多刀"],
+    "traits_cn": ["过牌", "辅助", "多刀"],
+    "traits_en": ["Card Flow", "Support", "Multi-Strike"],
     "expansion": "Limit Break",
     "skills": ["skill_zhichi", "skill_mingce"]
   },
@@ -801,7 +862,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["过牌", "多刀", "爆发"],
+    "traits_cn": ["过牌", "多刀", "爆发"],
+    "traits_en": ["Card Flow", "Multi-Strike", "Burst"],
     "expansion": "Limit Break",
     "skills": ["skill_jiangchi"]
   },
@@ -814,7 +876,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["控制", "过牌", "拼点"],
+    "traits_cn": ["控制", "过牌", "拼点"],
+    "traits_en": ["Control", "Card Flow", "Point Fight"],
     "expansion": "Limit Break",
     "skills": ["skill_zongshi", "skill_qiaoshuo"]
   },
@@ -827,7 +890,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["控制", "过牌", "回复"],
+    "traits_cn": ["控制", "过牌", "回复"],
+    "traits_en": ["Control", "Card Flow", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_zongxuan", "skill_zhiyan"]
   },
@@ -840,7 +904,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "过牌", "多刀"],
+    "traits_cn": ["进攻", "过牌", "多刀"],
+    "traits_en": ["Aggressive", "Card Flow", "Multi-Strike"],
     "expansion": "Limit Break",
     "skills": ["skill_xianzhen", "skill_jinjiu"]
   },
@@ -853,7 +918,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "辅助", "简单"],
+    "traits_cn": ["防御", "辅助", "简单"],
+    "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_xuanhuo", "skill_enyuan"]
   },
@@ -866,7 +932,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits": ["进攻", "辅助", "发育"],
+    "traits_cn": ["进攻", "辅助", "发育"],
+    "traits_en": ["Aggressive", "Support", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_lihuo", "skill_chunlao"]
   },
@@ -879,7 +946,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["进攻", "过牌", "转化大师"],
+    "traits_cn": ["进攻", "过牌", "转化大师"],
+    "traits_en": ["Aggressive", "Card Flow", "Converter"],
     "expansion": "Limit Break",
     "skills": ["skill_jueqing", "skill_shangshi"]
   },
@@ -892,7 +960,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 4.0,
-    "traits": ["进攻", "控制", "过牌"],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_xianzhou", "skill_qieting"]
   },
@@ -905,7 +974,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["防御", "辅助", "卖血"],
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
     "skills": ["skill_chengxiang", "skill_renxin"]
   },
@@ -918,7 +988,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["控制", "辅助", "回复"],
+    "traits_cn": ["控制", "辅助", "回复"],
+    "traits_en": ["Control", "Support", "Recovery"],
     "expansion": "Limit Break",
     "skills": ["skill_ganlu", "skill_buyi"]
   },
@@ -931,7 +1002,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["控制", "过牌", "爆发"],
+    "traits_cn": ["控制", "过牌", "爆发"],
+    "traits_en": ["Control", "Card Flow", "Burst"],
     "expansion": "Limit Break",
     "skills": ["skill_mieji", "skill_fencheng", "skill_juece"]
   },
@@ -944,7 +1016,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "控制", "简单"],
+    "traits_cn": ["防御", "控制", "简单"],
+    "traits_en": ["Defensive", "Control", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_zhuikong", "skill_qiuyuan"]
   },
@@ -957,7 +1030,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "控制", "过牌"],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_gongqi", "skill_jiefan"]
   },
@@ -970,7 +1044,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["防御", "过牌", "发育"],
+    "traits_cn": ["防御", "过牌", "发育"],
+    "traits_en": ["Defensive", "Card Flow", "Scaling"],
     "expansion": "Limit Break",
     "skills": ["skill_zishou", "skill_zongshi_jie"]
   },
@@ -983,7 +1058,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["进攻", "防御", "过牌"],
+    "traits_cn": ["进攻", "防御", "过牌"],
+    "traits_en": ["Aggressive", "Defensive", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_luoying", "skill_jiushi"]
   },
@@ -996,7 +1072,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 4.0,
-    "traits": ["进攻", "回复", "简单"],
+    "traits_cn": ["进攻", "回复", "简单"],
+    "traits_en": ["Aggressive", "Recovery", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_dangxian", "skill_fuli"]
   },
@@ -1009,7 +1086,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits": ["防御", "控制", "辅助"],
+    "traits_cn": ["防御", "控制", "辅助"],
+    "traits_en": ["Defensive", "Control", "Support"],
     "expansion": "Limit Break",
     "skills": ["skill_zhenlie", "skill_miji"]
   },
@@ -1022,7 +1100,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["防御", "过牌", "简单"],
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
     "skills": ["skill_jingce"]
   },
@@ -1035,7 +1114,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits": ["进攻", "过牌", "强命"],
+    "traits_cn": ["进攻", "过牌", "强命"],
+    "traits_en": ["Aggressive", "Card Flow", "Sturdy"],
     "expansion": "Limit Break",
     "skills": ["skill_fuhun"]
   },
@@ -1048,7 +1128,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits": ["进攻", "强命", "加伤"],
+    "traits_cn": ["进攻", "强命", "加伤"],
+    "traits_en": ["Aggressive", "Sturdy", "Damage Boost"],
     "expansion": "Limit Break",
     "skills": ["skill_mashu", "skill_qianxi"]
   },
@@ -1061,7 +1142,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits": ["进攻", "防御", "过牌"],
+    "traits_cn": ["进攻", "防御", "过牌"],
+    "traits_en": ["Aggressive", "Defensive", "Card Flow"],
     "expansion": "Limit Break",
     "skills": ["skill_shibei", "skill_jianying"]
   },
@@ -1074,7 +1156,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits": ["进攻", "防御", "控制"],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
     "skills": ["skill_zhenjun", "skill_yizhong"]
   }
