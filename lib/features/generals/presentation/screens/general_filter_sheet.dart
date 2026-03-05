@@ -1,30 +1,31 @@
 import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
+import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 
-// ── Filter State ─────────────────────────────────────────────────────────────
+// ── Sort Order 
 
 enum GeneralSortOrder {
-  defaultOrder, // JSON order as entered
-  nameAZ,
-  nameZA,
-  powerHighest,
-  powerLowest,
-  healthHighest,
-  healthLowest;
+  none,         // JSON order — no sort applied
+  serialNumber, // By card ID: SHU001, SHU002...
+  nameAZ,       // Alphabetical A → Z
+  nameZA,       // Alphabetical Z → A
+  powerHighest, // Power Index high → low
+  powerLowest;  // Power Index low → high
 
   String get label {
     switch (this) {
-      case GeneralSortOrder.defaultOrder:  return 'Default';
-      case GeneralSortOrder.nameAZ:        return 'Name A→Z';
-      case GeneralSortOrder.nameZA:        return 'Name Z→A';
-      case GeneralSortOrder.powerHighest:  return 'Power ↓';
-      case GeneralSortOrder.powerLowest:   return 'Power ↑';
-      case GeneralSortOrder.healthHighest: return 'Health ↓';
-      case GeneralSortOrder.healthLowest:  return 'Health ↑';
+      case GeneralSortOrder.none:         return 'None (Default)';
+      case GeneralSortOrder.serialNumber: return 'Serial Number';
+      case GeneralSortOrder.nameAZ:       return 'Name A → Z';
+      case GeneralSortOrder.nameZA:       return 'Name Z → A';
+      case GeneralSortOrder.powerHighest: return 'Power ↓ High to Low';
+      case GeneralSortOrder.powerLowest:  return 'Power ↑ Low to High';
     }
   }
 }
+
+// ── Filter State 
 
 class GeneralFilterState {
   final Set<String> factions;
@@ -36,14 +37,14 @@ class GeneralFilterState {
     this.factions = const {},
     this.expansions = const {},
     this.lordOnly = false,
-    this.sortOrder = GeneralSortOrder.defaultOrder,
+    this.sortOrder = GeneralSortOrder.none,
   });
 
   bool get isActive =>
       factions.isNotEmpty ||
       expansions.isNotEmpty ||
       lordOnly ||
-      sortOrder != GeneralSortOrder.defaultOrder;
+      sortOrder != GeneralSortOrder.none;
 
   GeneralFilterState copyWith({
     Set<String>? factions,
@@ -59,7 +60,7 @@ class GeneralFilterState {
     );
   }
 
-  /// Applies this filter state to a list of generals.
+  /// Applies filters then sort to a list of generals.
   List<GeneralCard> apply(List<GeneralCard> all) {
     List<GeneralCard> result = all;
 
@@ -71,13 +72,15 @@ class GeneralFilterState {
     }
     if (lordOnly) {
       result = result
-          .where((g) => g.skills.any((s) => s.skillType.name == 'lord'))
+          .where((g) => g.skills.any((s) => s.skillType == SkillType.lord))
           .toList();
     }
 
     switch (sortOrder) {
-      case GeneralSortOrder.defaultOrder:
+      case GeneralSortOrder.none:
         break; // preserve JSON order
+      case GeneralSortOrder.serialNumber:
+        result.sort((a, b) => a.id.compareTo(b.id));
       case GeneralSortOrder.nameAZ:
         result.sort((a, b) => a.nameEn.compareTo(b.nameEn));
       case GeneralSortOrder.nameZA:
@@ -86,32 +89,28 @@ class GeneralFilterState {
         result.sort((a, b) => b.powerIndex.compareTo(a.powerIndex));
       case GeneralSortOrder.powerLowest:
         result.sort((a, b) => a.powerIndex.compareTo(b.powerIndex));
-      case GeneralSortOrder.healthHighest:
-        result.sort((a, b) => b.health.compareTo(a.health));
-      case GeneralSortOrder.healthLowest:
-        result.sort((a, b) => a.health.compareTo(b.health));
     }
 
     return result;
   }
 }
 
-// ── Bottom Sheet ─────────────────────────────────────────────────────────────
+// ── Bottom Sheet 
 
 class GeneralFilterSheet extends StatefulWidget {
   final GeneralFilterState initialState;
-  final void Function(GeneralFilterState) onApply;
+  final void Function(GeneralFilterState) onChanged;
 
   const GeneralFilterSheet({
     super.key,
     required this.initialState,
-    required this.onApply,
+    required this.onChanged,
   });
 
   static Future<void> show(
     BuildContext context, {
     required GeneralFilterState initialState,
-    required void Function(GeneralFilterState) onApply,
+    required void Function(GeneralFilterState) onChanged,
   }) {
     return showModalBottomSheet(
       context: context,
@@ -119,7 +118,7 @@ class GeneralFilterSheet extends StatefulWidget {
       backgroundColor: Colors.transparent,
       builder: (_) => GeneralFilterSheet(
         initialState: initialState,
-        onApply: onApply,
+        onChanged: onChanged,
       ),
     );
   }
@@ -148,10 +147,15 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     super.dispose();
   }
 
+  void _update(GeneralFilterState newState) {
+    setState(() => _state = newState);
+    widget.onChanged(newState);
+  }
+
   void _toggleFaction(String faction) {
     final updated = Set<String>.from(_state.factions);
     updated.contains(faction) ? updated.remove(faction) : updated.add(faction);
-    setState(() => _state = _state.copyWith(factions: updated));
+    _update(_state.copyWith(factions: updated));
   }
 
   void _toggleExpansion(Expansion expansion) {
@@ -159,7 +163,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     updated.contains(expansion)
         ? updated.remove(expansion)
         : updated.add(expansion);
-    setState(() => _state = _state.copyWith(expansions: updated));
+    _update(_state.copyWith(expansions: updated));
   }
 
   @override
@@ -168,8 +172,8 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     final isDark = theme.brightness == Brightness.dark;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.6,
-      minChildSize: 0.4,
+      initialChildSize: 0.55,
+      minChildSize: 0.35,
       maxChildSize: 0.85,
       builder: (context, scrollController) {
         return Container(
@@ -180,7 +184,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
           ),
           child: Column(
             children: [
-              // ── Handle ───────────────────────────────────────────────────
+              // ── Handle 
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 12, bottom: 4),
@@ -193,60 +197,48 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                 ),
               ),
 
-              // ── Header ───────────────────────────────────────────────────
+              // ── Header 
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 child: Row(
                   children: [
                     const Text(
-                      'Filter & Sort',
+                      'Filter',
                       style: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),
-                    // Reset button
                     if (_state.isActive)
                       TextButton(
-                        onPressed: () => setState(
-                          () => _state = const GeneralFilterState(),
-                        ),
+                        onPressed: () => _update(const GeneralFilterState()),
                         child: Text(
-                          'Reset',
-                          style: TextStyle(
-                              color: theme.colorScheme.error),
+                          'Reset All',
+                          style: TextStyle(color: theme.colorScheme.error),
                         ),
                       ),
-                    // Apply button
-                    FilledButton(
-                      onPressed: () {
-                        widget.onApply(_state);
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Apply'),
-                    ),
                   ],
                 ),
               ),
 
-              // ── Tab bar ──────────────────────────────────────────────────
+              // ── Tab bar 
               TabBar(
                 controller: _tabController,
                 tabs: const [
-                  Tab(text: 'Faction'),
+                  Tab(text: 'Characters'),
                   Tab(text: 'Expansion'),
                   Tab(text: 'Sort'),
                 ],
               ),
 
-              // ── Tab content ──────────────────────────────────────────────
+              // ── Tab content 
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    _buildFactionTab(),
+                    _buildCharactersTab(theme),
                     _buildExpansionTab(theme),
-                    _buildSortTab(theme),
+                    _buildSortTab(),
                   ],
                 ),
               ),
@@ -257,26 +249,12 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     );
   }
 
-  // ── Faction tab ────────────────────────────────────────────────────────────
-
-  Widget _buildFactionTab() {
+  // ── Characters tab 
+  Widget _buildCharactersTab(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(20),
       children: [
-        // Lord only toggle — lives here since it's character-related
-        _buildToggleTile(
-          label: 'Lord Cards Only',
-          sublabel: 'Show generals with a Lord skill',
-          value: _state.lordOnly,
-          onChanged: (v) =>
-              setState(() => _state = _state.copyWith(lordOnly: v)),
-        ),
-        const SizedBox(height: 20),
-        const Text('FACTION',
-            style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.2)),
+        _buildSectionHeader('FACTION'),
         const SizedBox(height: 12),
         Wrap(
           spacing: 10,
@@ -289,27 +267,34 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                   ))
               .toList(),
         ),
+
+        const SizedBox(height: 24),
+
+        // Add more character-type toggles below as needed
+        _buildSectionHeader('CHARACTER TYPE'),
+        const SizedBox(height: 8),
+        _buildToggleTile(
+          label: 'Lord Cards Only',
+          sublabel: 'Generals with a Lord skill',
+          value: _state.lordOnly,
+          onChanged: (v) => _update(_state.copyWith(lordOnly: v)),
+        ),
       ],
     );
   }
 
-  // ── Expansion tab ──────────────────────────────────────────────────────────
+  // ── Expansion tab 
 
   Widget _buildExpansionTab(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(20),
       children: [
-        const Text('EXPANSION',
-            style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.2)),
+        _buildSectionHeader('EXPANSION'),
         const SizedBox(height: 12),
-        // One tile per expansion — add more as expansions are added
         for (final expansion in Expansion.values)
           _buildCheckTile(
-            label: expansion.badge,
-            sublabel: _expansionLabel(expansion),
+            badge: expansion.badge,
+            label: _expansionLabel(expansion),
             isSelected: _state.expansions.contains(expansion),
             onTap: () => _toggleExpansion(expansion),
             theme: theme,
@@ -324,31 +309,50 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     }
   }
 
-  // ── Sort tab ───────────────────────────────────────────────────────────────
+  // ── Sort tab 
 
-  Widget _buildSortTab(ThemeData theme) {
+  Widget _buildSortTab() {
     return ListView(
       padding: const EdgeInsets.all(20),
       children: [
-        const Text('SORT BY',
-            style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.2)),
-        const SizedBox(height: 12),
+        _buildSectionHeader('SORT BY'),
+        const SizedBox(height: 8),
         for (final order in GeneralSortOrder.values)
-          _buildRadioTile(
-            label: order.label,
-            isSelected: _state.sortOrder == order,
-            onTap: () =>
-                setState(() => _state = _state.copyWith(sortOrder: order)),
-            theme: theme,
-          ),
+          _buildRadioTile(order),
       ],
     );
   }
 
-  // ── Shared tile builders ───────────────────────────────────────────────────
+  Widget _buildRadioTile(GeneralSortOrder order) {
+    final isSelected = _state.sortOrder == order;
+    final theme = Theme.of(context);
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+        order.label,
+        style: TextStyle(
+          fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+        ),
+      ),
+      trailing: isSelected
+          ? Icon(Icons.radio_button_checked, color: theme.colorScheme.primary)
+          : const Icon(Icons.radio_button_unchecked),
+      onTap: () => _update(_state.copyWith(sortOrder: order)),
+    );
+  }
+
+  // ── Shared builders 
+
+  Widget _buildSectionHeader(String label) {
+    return Text(
+      label,
+      style: const TextStyle(
+        fontSize: 11,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 1.2,
+      ),
+    );
+  }
 
   Widget _buildToggleTile({
     required String label,
@@ -358,8 +362,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   }) {
     return SwitchListTile(
       title: Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
-      subtitle: Text(sublabel,
-          style: const TextStyle(fontSize: 12)),
+      subtitle: Text(sublabel, style: const TextStyle(fontSize: 12)),
       value: value,
       onChanged: onChanged,
       contentPadding: EdgeInsets.zero,
@@ -367,8 +370,8 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   }
 
   Widget _buildCheckTile({
+    required String badge,
     required String label,
-    required String sublabel,
     required bool isSelected,
     required VoidCallback onTap,
     required ThemeData theme,
@@ -383,41 +386,24 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
           color: theme.colorScheme.primary.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(8),
         ),
-        child: Text(label,
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.primary)),
+        child: Text(
+          badge,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: theme.colorScheme.primary,
+          ),
+        ),
       ),
-      title: Text(sublabel),
+      title: Text(label),
       trailing: isSelected
           ? Icon(Icons.check_circle, color: theme.colorScheme.primary)
           : const Icon(Icons.circle_outlined),
       onTap: onTap,
     );
   }
-
-  Widget _buildRadioTile({
-    required String label,
-    required bool isSelected,
-    required VoidCallback onTap,
-    required ThemeData theme,
-  }) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: Text(label,
-          style: TextStyle(
-              fontWeight:
-                  isSelected ? FontWeight.w600 : FontWeight.normal)),
-      trailing: isSelected
-          ? Icon(Icons.radio_button_checked,
-              color: theme.colorScheme.primary)
-          : const Icon(Icons.radio_button_unchecked),
-      onTap: onTap,
-    );
-  }
 }
 
-// ── Faction chip widget ───────────────────────────────────────────────────────
+// ── Faction chip widget 
 
 class _FactionFilterChip extends StatelessWidget {
   final String faction;
@@ -437,8 +423,7 @@ class _FactionFilterChip extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 180),
-        padding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected ? color : color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),

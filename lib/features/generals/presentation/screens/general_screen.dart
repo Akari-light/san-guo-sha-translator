@@ -6,6 +6,8 @@ import '../screens/general_filter_sheet.dart';
 import '../../../../core/theme/app_theme.dart';
 
 class GeneralScreen extends StatefulWidget {
+  final String? searchQuery;
+
   /// Called when filter active state changes so main.dart
   /// can update the AppBar filter icon badge.
   final void Function(bool isActive)? onFilterStateChanged;
@@ -15,6 +17,7 @@ class GeneralScreen extends StatefulWidget {
 
   const GeneralScreen({
     super.key,
+    this.searchQuery,
     this.onFilterStateChanged,
     this.onRegisterSheetOpener,
   });
@@ -35,7 +38,6 @@ class _GeneralScreenState extends State<GeneralScreen> {
   void initState() {
     super.initState();
     _generalsFuture = GeneralLoader().getGenerals();
-    // Register the sheet opener so main.dart can trigger it
     widget.onRegisterSheetOpener?.call(_openFilterSheet);
   }
 
@@ -43,7 +45,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
     GeneralFilterSheet.show(
       context,
       initialState: _filterState,
-      onApply: (newState) {
+      onChanged: (newState) {
         setState(() => _filterState = newState);
         widget.onFilterStateChanged?.call(newState.isActive);
       },
@@ -72,12 +74,16 @@ class _GeneralScreenState extends State<GeneralScreen> {
         }
 
         final raw = snapshot.data ?? [];
-        final generals = _filterState.apply(raw);
+        final query = widget.searchQuery ?? '';
+        final searched = query.isEmpty
+            ? raw
+            : raw.where((g) => g.matchesQuery(query)).toList();
+        final generals = _filterState.apply(searched);
         final groupedGenerals = _groupByFaction(generals);
 
         return CustomScrollView(
           slivers: [
-            // ── Active filter summary bar ──────────────────────────────────
+            // ── Active filter summary bar 
             if (_filterState.isActive)
               SliverToBoxAdapter(
                 child: _ActiveFilterBar(
@@ -89,10 +95,10 @@ class _GeneralScreenState extends State<GeneralScreen> {
                 ),
               ),
 
-            // ── Empty state ────────────────────────────────────────────────
+            // ── Empty state 
             if (generals.isEmpty)
               const SliverFillRemaining(
-                child: Center(child: Text('No generals match your filters.')),
+                child: Center(child: Text('No generals match your search.')),
               )
             else
               for (final entry in groupedGenerals.entries) ...[
@@ -169,7 +175,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
   }
 }
 
-// ── Active filter summary bar ────────────────────────────────────────────────
+// ── Active filter summary bar 
 
 class _ActiveFilterBar extends StatelessWidget {
   final GeneralFilterState filterState;
@@ -192,7 +198,7 @@ class _ActiveFilterBar extends StatelessWidget {
       parts.add(filterState.expansions.map((e) => e.badge).join(', '));
     }
     if (filterState.lordOnly) parts.add('Lord Only');
-    if (filterState.sortOrder != GeneralSortOrder.defaultOrder) {
+    if (filterState.sortOrder != GeneralSortOrder.none) {
       parts.add(filterState.sortOrder.label);
     }
 
@@ -201,8 +207,7 @@ class _ActiveFilterBar extends StatelessWidget {
       color: theme.colorScheme.primary.withValues(alpha: 0.08),
       child: Row(
         children: [
-          Icon(Icons.filter_list,
-              size: 16, color: theme.colorScheme.primary),
+          Icon(Icons.filter_list, size: 16, color: theme.colorScheme.primary),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -217,8 +222,7 @@ class _ActiveFilterBar extends StatelessWidget {
           ),
           GestureDetector(
             onTap: onClear,
-            child: Icon(Icons.close,
-                size: 16, color: theme.colorScheme.primary),
+            child: Icon(Icons.close, size: 16, color: theme.colorScheme.primary),
           ),
         ],
       ),

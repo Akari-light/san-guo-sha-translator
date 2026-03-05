@@ -87,13 +87,23 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   String _searchQuery = "";
   final TextEditingController _searchController = TextEditingController();
 
+  // Generals search
+  bool _isSearchingGenerals = false;
+  String _generalsSearchQuery = "";
+  final TextEditingController _generalsSearchController = TextEditingController();
+
   // Generals filter
   bool _generalsFilterActive = false;
   VoidCallback? _openGeneralsFilter;
 
+  // Library filter — wire up when LibraryFilterSheet is built (Phase 3)
+  final bool _libraryFilterActive = false;
+  VoidCallback? _openLibraryFilter;
+
   List<Widget> get _screens => [
         const HomeScreen(),
         GeneralScreen(
+          searchQuery: _generalsSearchQuery,
           onFilterStateChanged: (isActive) =>
               setState(() => _generalsFilterActive = isActive),
           onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
@@ -107,25 +117,83 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: !_isSearching
-            ? Text(_getAppBarTitle())
-            : TextField(
-                controller: _searchController,
+        title: (_isSearching || _isSearchingGenerals)
+            ? TextField(
+                controller: _isSearchingGenerals
+                    ? _generalsSearchController
+                    : _searchController,
                 autofocus: true,
                 style: const TextStyle(color: AppTheme.searchTextColor),
-                decoration: const InputDecoration(
-                  hintText: 'Search cards...',
+                decoration: InputDecoration(
+                  hintText: _isSearchingGenerals
+                      ? 'Search generals...'
+                      : 'Search cards...',
                   border: InputBorder.none,
-                  hintStyle: TextStyle(color: AppTheme.searchHintColor),
+                  hintStyle: const TextStyle(color: AppTheme.searchHintColor),
                 ),
                 onChanged: (value) {
                   setState(() {
-                    _searchQuery = value;
+                    if (_isSearchingGenerals) {
+                      _generalsSearchQuery = value;
+                    } else {
+                      _searchQuery = value;
+                    }
                   });
                 },
-              ),
+              )
+            : Text(_getAppBarTitle()),
         actions: [
-          // Theme Selection Menu
+          // ── Search (Generals tab) ─────────────────────────────────────────
+          if (_selectedIndex == 1)
+            IconButton(
+              icon: Icon(_isSearchingGenerals ? Icons.close : Icons.search),
+              onPressed: () {
+                setState(() {
+                  _isSearchingGenerals = !_isSearchingGenerals;
+                  if (!_isSearchingGenerals) {
+                    _generalsSearchQuery = "";
+                    _generalsSearchController.clear();
+                  }
+                });
+              },
+            ),
+
+          // ── Search (Library tab) ──────────────────────────────────────────
+          if (_selectedIndex == 2)
+            IconButton(
+              icon: Icon(_isSearching ? Icons.close : Icons.search),
+              onPressed: () {
+                setState(() {
+                  _isSearching = !_isSearching;
+                  if (!_isSearching) {
+                    _searchQuery = "";
+                    _searchController.clear();
+                  }
+                });
+              },
+            ),
+
+          // ── Filter (Generals tab) ─────────────────────────────────────────
+          if (_selectedIndex == 1)
+            IconButton(
+              icon: Icon(
+                Icons.filter_list,
+                color: _generalsFilterActive ? Colors.orange : null,
+              ),
+              onPressed: () => _openGeneralsFilter?.call(),
+            ),
+
+          // ── Filter (Library tab) — wired up in Phase 3 ───────────────────
+          if (_selectedIndex == 2)
+            IconButton(
+              icon: Icon(
+                Icons.filter_list,
+                color: _libraryFilterActive ? Colors.orange : null,
+              ),
+              onPressed: () => _openLibraryFilter?.call(),
+            ),
+
+          // ── Theme menu ────────────────────────────────────────────────────
           PopupMenuButton<ThemeMode>(
             icon: Icon(_getThemeIcon(widget.currentMode)),
             onSelected: (ThemeMode mode) => widget.onThemeChanged(mode),
@@ -153,46 +221,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               ),
             ],
           ),
-
-          // Generals Filter Icon (tab index 1)
-          if (_selectedIndex == 1)
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.filter_list),
-                  onPressed: () => _openGeneralsFilter?.call(),
-                ),
-                if (_generalsFilterActive)
-                  Positioned(
-                    top: 8,
-                    right: 8,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const BoxDecoration(
-                        color: Colors.orange,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-
-          // Library Search Toggle (tab index 2)
-          if (_selectedIndex == 2)
-            IconButton(
-              icon: Icon(_isSearching ? Icons.close : Icons.search),
-              onPressed: () {
-                setState(() {
-                  _isSearching = !_isSearching;
-                  if (!_isSearching) {
-                    _searchQuery = "";
-                    _searchController.clear();
-                  }
-                });
-              },
-            ),
         ],
       ),
       body: IndexedStack(index: _selectedIndex, children: _screens),
@@ -202,11 +230,19 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
           onTap: (index) {
+            if (index == _selectedIndex) {
+              if (index == 1) _openGeneralsFilter?.call();
+              if (index == 2) _openLibraryFilter?.call();
+              return;
+            }
             setState(() {
               _selectedIndex = index;
-              _isSearching = false; 
+              _isSearching = false;
+              _isSearchingGenerals = false;
               _searchQuery = "";
+              _generalsSearchQuery = "";
               _searchController.clear();
+              _generalsSearchController.clear();
             });
           },
           items: const [

@@ -66,6 +66,16 @@ class GeneralCard {
     );
   }
 
+  // ── Search 
+  /// Matches against English name, Chinese name, and serial ID.
+  bool matchesQuery(String query) {
+    if (query.isEmpty) return true;
+    final q = query.toLowerCase();
+    return nameEn.toLowerCase().contains(q) ||
+        nameCn.contains(query) ||
+        id.toLowerCase().contains(q);
+  }
+
   // ── Image 
   String get imagePath => 'assets/images/generals/$id.webp';
   static const String placeholderImagePath = 'assets/images/generals_placeholder.webp';

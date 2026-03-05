@@ -40,7 +40,7 @@ class GeneralCardTile extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                // ── Card image ───────────────────────────────────────────────
+                // ── Card image 
                 Image.asset(
                   card.imagePath,
                   fit: BoxFit.cover,
@@ -55,79 +55,25 @@ class GeneralCardTile extends StatelessWidget {
                   ),
                 ),
 
-                // ── Bottom info bar ──────────────────────────────────────────
+                // ── Expansion badge (top-right) 
                 Positioned(
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
+                  top: 6,
+                  right: 6,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 6,
+                      horizontal: 7,
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                        colors: [
-                          Colors.black.withValues(alpha: 0.85),
-                          Colors.transparent,
-                        ],
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        // Name
-                        Expanded(
-                          child: Text(
-                            card.nameEn,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
-                              fontWeight: FontWeight.w600,
-                              shadows: [
-                                Shadow(
-                                  color: Colors.black,
-                                  blurRadius: 4,
-                                ),
-                              ],
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        // Health
-                        Text(
-                          '♥${card.health}',
-                          style: const TextStyle(
-                            color: Colors.redAccent,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
-                // ── Expansion badge (top-right) ──────────────────────────────
-                Positioned(
-                  top: 4,
-                  right: 4,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 4,
-                      vertical: 2,
-                    ),
-                    decoration: BoxDecoration(
-                      color: factionColor.withValues(alpha: 0.85),
-                      borderRadius: BorderRadius.circular(4),
+                      color: Colors.black.withValues(alpha: 0.75),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: Colors.white54, width: 0.5),
                     ),
                     child: Text(
                       card.expansionBadge,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 9,
+                      style: TextStyle(
+                        color: factionColor,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
