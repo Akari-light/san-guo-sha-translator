@@ -1,5 +1,85 @@
 [
   {
+    "id": "tool_dismantle",
+    "name_cn": "过河拆桥",
+    "name_en": "Dismantle",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一名区域里有牌的其他角色使用。弃置该角色区域内的一张牌。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on another character who has at least one card in any zone. Discard one card from that character's zone."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_incendiary",
+    "name_cn": "火攻",
+    "name_en": "Incendiary",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一名有手牌的其他角色使用。该角色展示一张手牌，然后你可以弃置一张与展示牌颜色相同的手牌，令该角色受到1点火焰伤害。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on another character who has hand cards. That character reveals one hand card. You may discard a hand card of the same suit to deal 1 fire damage to them."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_proxy_attack",
+    "name_cn": "借刀杀人",
+    "name_en": "Proxy Attack",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一名装备区里有武器牌的其他角色使用，并指定另一名在其攻击范围内的角色。除非该角色对另一名角色使用一张【杀】，否则将该角色的武器牌交给你。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on another character with a weapon equipped, and designate a second character within their attack range. Unless the first character uses a [Kill] on the second, their weapon is given to you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_duel",
+    "name_cn": "决斗",
+    "name_en": "Duel",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一名其他角色使用。由该角色先出，然后你们依次轮流打出一张【杀】，直到其中一名角色无法打出【杀】时，该角色受到1点伤害（来源为另一名角色）。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on another character. That character plays a [Kill] first, then you alternate. The first player unable to play a [Kill] takes 1 damage from the other."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_barbarians",
+    "name_cn": "南蛮入侵",
+    "name_en": "Barbarians",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对所有其他角色使用。这些角色须依次各打出一张【杀】，否则受到1点伤害。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on all other characters. Each character must play a [Kill] or take 1 damage."
+    ],
+    "faq": []
+  },
+  {
     "id": "tool_steal",
     "name_cn": "顺手牵羊",
     "name_en": "Steal",
@@ -11,7 +91,219 @@
       "出牌阶段，对距离为1的一名区域里有牌的其他角色使用。你获得该角色区域内的一张牌。"
     ],
     "effect_en": [
-      "During your action phase, use this on another character who has a card in their zone at a distance of 1. You gain one card from that character's zone."
+      "Action Phase: Use on another character at distance 1 who has at least one card in any zone. You gain one card from that character's zone."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_peach_garden",
+    "name_cn": "桃园结义",
+    "name_en": "Peach Garden",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on all characters. Each character recovers 1 health in turn."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_iron_shackles",
+    "name_cn": "铁索连环",
+    "name_en": "Iron Shackles",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一至两名角色使用。目标角色横置或重置。(被横置的角色处于“连环状态”）",
+      "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on one or two characters. Each target is either turned sideways (chained) or reset to upright (unchained). Chained characters who take elemental damage pass that same damage to all other chained characters. Chain status is cleared immediately after elemental damage transmits.",
+      "Recast: During your action phase, you may discard this card to draw 1 card instead. Recasting is not considered using this tool card."
+    ],
+    "faq": [
+      {
+        "q_cn": "连环状态是按‘配对’记录的吗？（例如：A 与 B 连环，C 与 D 连环，若甲受火传导，C 和 D 会受波及吗？）",
+        "a_cn": "不，连环状态并非按配对记录。它是一个全局共享的状态：所有处于连环状态的角色都视为同一组。因此，即使甲与丙是通过不同的卡牌进入连环的，只要甲受到属性伤害，乙、丙、丁均会受到等量的伤害。",
+        "q_en": "Is the 'Chained' status tracked in specific pairs? For example, if A is linked to B, and C is linked to D; does fire damage to A affect C and D?",
+        "a_en": "No, the 'Chained' status is not tracked in pairs. It is a single, global state: all players in the \"Chained\" state belong to the same group. Therefore, if A takes fire damage, everyone currently in the chain (B, C, and D) will also be affected, regardless of when or how they were originally linked."
+      },
+      {
+        "q_cn": "可以只选择1名角色使用此牌吗？",
+        "a_cn": "可以。你可以选择横置或重置1名或2名角色，并非必须选择2名。",
+        "q_en": "Can I target just 1 character?",
+        "a_en": "Yes. You may choose to chain or unchain 1 or 2 characters — targeting 2 is not mandatory."
+      },
+      {
+        "q_cn": "可以用一张【铁索连环】同时让一名角色处于‘横置’状态，而另一名角色‘重置’（解除连环）吗？",
+        "a_cn": "可以。‘铁索连环’的效果是‘切换’目标的当前状态。如果你选择的两名目标中，一个处于重置状态，另一个处于横置状态，则结算后两者的状态都会反转：原本没连环的会变为连环，原本连环的会解除连环。",
+        "q_en": "Can I use one 'Iron Shackles' to chain one character and unchain another at the same time?",
+        "a_en": "Yes. The card effect 'toggles' the current status of the selected targets. Since you can choose up to two targets, their states are switched independently. If one target is currently unchained and the other is chained, the card will flip both—chaining the first and unchaining the second."
+      },
+      {
+        "q_cn": "【无懈可击】可以抵消【铁索连环】吗？",
+        "a_cn": "可以，但仅限于横置/重置时生效前。【无懈可击】只能保护其中一名目标不受影响，另一名目标的状态仍正常改变。重铸时不能使用【无懈可击】。",
+        "q_en": "Can Nullification block Iron Shackles?",
+        "a_en": "Yes, but only at the moment it is applied. Nullification protects one of the targets only (the state of the other target will still change) . Nullification cannot be used against a recast."
+      },
+      {
+        "q_cn": "连环角色受到的攻击被【闪】躲避后，其他连环角色也需要响应吗？",
+        "a_cn": "不需要。连环只传递伤害，若攻击被闪避未造成伤害，连环不触发，所有角色的连环状态保持不变。",
+        "q_en": "If a fire or lightning attack on a chained character is dodged, do other chained characters need to respond?",
+        "a_en": "No. Chains only transmit damage. If the attack is dodged and no damage is dealt, the chain does not trigger and all chain statuses remain unchanged."
+      },
+      {
+        "q_cn": "装备了藤甲的连环角色受到火焰伤害时，其他连环角色受到多少伤害？",
+        "a_cn": "取决于谁是最初受击者。若最初受击者装备了藤甲，受到2点火焰伤害，则所有其他连环角色也受到2点火焰伤害。若最初受击者未装备藤甲，则传递1点火焰伤害，但装备藤甲的连环角色在接收该伤害时，再额外+1，共受到2点伤害。",
+        "q_en": "How does Rattan Armour interact with chain damage?",
+        "a_en": "The transmitted damage is determined by what the original victim actually receives. If the original victim has Rattan Armour and takes 2 fire damage, all other chained characters receive 2. If the original victim takes 1, transmitted damage is 1 — but a chained recipient with Rattan Armour then takes an additional +1 on top, for 2 total."
+      },
+      {
+        "q_cn": "【过河拆桥】或【顺手牵羊】能解除连环状态吗？",
+        "a_cn": "不能。连环状态只能通过再次使用【铁索连环】或（在横置时）使用【无懈可击】来解除。",
+        "q_en": "Can Dismantle or Steal remove a character's chain status?",
+        "a_en": "No. Chain status can only be removed by playing another Iron Shackles card, or by Nullification at the moment of chaining."
+      },
+      {
+        "q_cn": "重铸时，黄月英能额外摸一张牌吗？",
+        "a_cn": "不能。重铸不被视为\"使用\"锦囊牌，因此黄月英的技能不会触发。",
+        "q_en": "Can Huang Yue Ying draw an extra card when Iron Shackles is recast?",
+        "a_en": "No. Recasting is not considered using a tool card, so Huang Yue Ying's ability does not trigger."
+      },
+      {
+        "q_cn": "使用【铁索连环】横置角色有距离限制吗？",
+        "a_cn": "没有。【铁索连环】没有距离限制，可以对任意角色使用。",
+        "q_en": "Is there a range restriction when using Iron Shackles?",
+        "a_en": "No. Iron Shackles has no range restriction and can target any character regardless of distance."
+      },
+      {
+        "q_cn": "若多名连环角色同时死亡，死亡结算顺序是什么？",
+        "a_cn": "按照从使用者开始逆时针方向的顺序依次结算。",
+        "q_en": "If multiple chained characters die simultaneously from transmitted damage, what is the elimination order?",
+        "a_en": "Characters are eliminated in anti-clockwise order starting from the attacker, following standard elimination rules."
+      },
+      {
+        "q_cn": "主公因连环伤害传导间接杀死了忠臣，主公需要弃置所有手牌和装备牌吗？",
+        "a_cn": "需要。主公仍是伤害来源，无论伤害是直接造成还是通过连环传导。",
+        "q_en": "If the Ruler indirectly kills a Loyalist through chain damage transmission, does the Ruler still lose all hand and equipment cards?",
+        "a_en": "Yes. The Ruler is still the damage source regardless of whether the kill was direct or through chain transmission."
+      }
+    ]
+  },
+  {
+    "id": "tool_raining_arrows",
+    "name_cn": "万箭齐发",
+    "name_en": "Raining Arrows",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对所有其他角色使用。这些角色须依次各打出一张【闪】，否则受到1点伤害。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on all other characters. Each character must play a [Dodge] in turn or take 1 damage."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_harvest",
+    "name_cn": "五谷丰登",
+    "name_en": "Bountiful Harvest",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对所有角色使用。从牌堆顶亮出等同于现存角色数量的牌，所有角色依次各选择并获得其中一张牌，多余的牌置入弃牌堆。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on all characters. Reveal a number of cards from the deck equal to the number of players. Each character in turn selects and gains one card; leftover cards are discarded."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_nullification",
+    "name_cn": "无懈可击",
+    "name_en": "Nullification",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "当一张锦囊牌生效前，抵消该锦囊牌的效果；或抵消一张【无懈可击】的效果。"
+    ],
+    "effect_en": [
+      "When a tool card is about to take effect, negate its effect; or negate another [Nullification]."
+    ],
+    "faq": [
+      {
+        "q_cn": "针对【南蛮入侵】或【万箭齐发】等群体锦囊，一张【无懈可击】可以抵消所有人的效果吗？",
+        "a_cn": "不可以。针对群体锦囊，一张【无懈可击】只能抵消其对‘其中一名’目标角色的效果。结算顺序按出牌者的逆时针方向依次触发。若你想保护多人，则需要对每一名目标分别使用对应的【无懈可击】。",
+        "q_en": "Does playing one [Nullification] cancel an AOE strategy (like Southern Invasion or Volley of Arrows) for everyone?",
+        "a_en": "No. For AOE strategies, a single [Nullification] only protects one targeted player. The card resolves for each player individually in clockwise order. To protect multiple players, a separate [Nullification] must be played for each specific person during their resolution window."
+      },
+      {
+        "q_cn": "我可以在同一次群体锦囊结算中，使用多张【无懈可击】吗？",
+        "a_cn": "可以。由于群体锦囊是按顺序逐一结算每个目标的，每一个目标的结算都是一个独立的时机。只要你手牌充足，你可以在轮到不同角色结算时，分别打出【无懈可击】（例如一张保自己，一张保队友）。",
+        "q_en": "Can I use multiple [Nullification] cards during a single AOE resolution?",
+        "a_en": "Yes. Because AOE strategies resolve for each target one by one, each player's resolution creates an independent timing window. As long as you have the cards, you can play multiple [Nullification] cards to protect different people (e.g., one for yourself and another for an ally)."
+      },
+      {
+        "q_cn": "如果我对【五谷丰登】使用【无懈可击】会发生什么？",
+        "a_cn": "被抵消的目标角色将直接跳过该次‘摸牌’机会，无法从展示的牌堆中挑选卡牌。该角色原本可以拿走的那张牌会留在牌堆中，供下一名未被抵消的角色挑选。",
+        "q_en": "What happens if I use [Nullification] against a target during 'Bountiful Harvest'?",
+        "a_en": "The targeted player is skipped and cannot choose a card from the display. The card they would have taken remains in the pool, potentially allowing players later in the sequence to have better options."
+      },
+      {
+          "q_cn": "【桃园结义】被【无懈可击】抵消后，其他角色还能照常回血吗？",
+          "a_cn": "可以。针对群体锦囊（AOE），一张【无懈可击】只能抵消其对‘其中一名’目标角色的效果。如果你对 A 使用【无懈可击】，A 将无法回复体力，但由于锦囊对B、C、D的结算窗口是独立的，他们依然会按顺序正常回血。",
+          "q_en": "If 'Peach Garden Pledge' is nullified for one person, do the other characters still recover health?",
+          "a_en": "Yes. Since [Nullification] only targets a single person during an AOE resolution, it only prevents that specific individual from healing. The card continues its clockwise sequence, and all other eligible players (B, C, and D) will still recover 1 unit of health as normal."
+      },
+      {
+        "q_cn": "如果有人对我的【无懈可击】再使用【无懈可击】（无懈之无懈），会影响其他人的结算吗？",
+        "a_cn": "不会。‘无懈之无懈’仅针对当前的‘抵消行为’进行二次抵消。它只决定当前这名特定目标是否受锦囊影响，不会‘打断’锦囊对圆桌上其他后续玩家的正常结算。",
+        "q_en": "If someone plays a [Nullification] to counter my [Nullification], does it affect other players in the AOE circle?",
+        "a_en": "No. A 'Counter-Nullification' only resolves the specific interaction for the current target. It determines whether that one person is hit or safe; it does not stop the strategy card from continuing its clockwise resolution for everyone else."
+      }
+    ]
+  },
+  {
+    "id": "tool_resupply",
+    "name_cn": "无中生有",
+    "name_en": "Resupply",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对自己使用。你摸两张牌。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on yourself. Draw 2 cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_starvation",
+    "name_cn": "兵粮寸断",
+    "name_en": "Starvation",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "延时锦囊牌",
+    "sub_category_en": "Time-delay",
+    "effect_cn": [
+      "出牌阶段，对距离为1的一名其他角色使用。将【兵粮寸断】置入该角色的判定区。该角色判定阶段，若判定结果不为梅花，其跳过本回合的摸牌阶段。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's judgment area. During their judgment phase, if the result is not a club, that character skips their draw phase this turn."
     ],
     "faq": []
   },
@@ -24,10 +316,26 @@
     "sub_category_cn": "延时锦囊牌",
     "sub_category_en": "Time-delay",
     "effect_cn": [
-      "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区，若判定结果不为红桃，其跳过本回合的出牌阶段。"
+      "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区。该角色判定阶段，若判定结果不为红桃，其跳过本回合的出牌阶段。"
     ],
     "effect_en": [
-      "During your action phase, use this on another character. Place [Enjoying Life Without Thinking of Home] into that character's judgment area. If the judgment result is not a heart, that character skips their action phase."
+      "Action Phase: Use on another character. Place [Acedia] into that character's judgment area. During their judgment phase, if the result is not a heart, that character skips their action phase this turn."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_lightning",
+    "name_cn": "闪电",
+    "name_en": "Lightning",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "延时锦囊牌",
+    "sub_category_en": "Time-delay",
+    "effect_cn": [
+      "出牌阶段，对自己使用。将【闪电】置入你的判定区。你的判定阶段，若判定结果为黑桃2至9，你受到3点雷电伤害；否则将【闪电】移至下家的判定区。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on yourself. Place [Lightning] into your judgment area. During your judgment phase, if the result is a spade between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's judgment area."
     ],
     "faq": []
   }
