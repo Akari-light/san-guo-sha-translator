@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart';
+import '../../../../core/theme/app_theme.dart';
 
 class LibraryDetailScreen extends StatefulWidget {
   final LibraryDTO card;
@@ -18,9 +19,9 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
     final isDark = theme.brightness == Brightness.dark;
     final card = widget.card;
 
-    final syntaxColor = isDark
-        ? (_isEnglish ? const Color(0xFF9CDCFE) : const Color(0xFFCE9178))
-        : theme.textTheme.bodyLarge?.color;
+  final syntaxColor = isDark
+      ? (_isEnglish ? AppTheme.descriptionEnDark : AppTheme.descriptionCnDark)
+      : theme.textTheme.bodyLarge?.color;
 
     return Scaffold(
       appBar: AppBar(
@@ -67,7 +68,8 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen> {
                       Text(
                         _isEnglish ? card.categoryEn : card.categoryCn,
                         style: TextStyle(
-                          color: card.categoryColor(isDark),
+                          // Category color from AppTheme — single source of truth
+                          color: AppTheme.categoryColor(card.categoryEn, isDark),
                           fontWeight: FontWeight.w600,
                         ),
                       ),

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class LibraryDTO {
   final String id;
   final String nameCn;
@@ -40,7 +38,7 @@ class LibraryDTO {
     );
   }
 
-  // ── Image
+  // ── Image 
   String get imagePath => 'assets/images/library/$id.webp';
   static const String placeholderImagePath = 'assets/images/library_placeholder.webp';
 
@@ -53,21 +51,13 @@ class LibraryDTO {
   }
 
   // ── Category 
-  /// Defines the display order of categories in the library grid.
-  static const List<String> categoryOrder = ['Basic','Weapon','Armor','Mount','Tool','Treasure',];
+  static const List<String> categoryOrder = [
+    'Basic',
+    'Weapon',
+    'Armor',
+    'Mount',
+    'Tool',
+    'Treasure',
+  ];
 
-  // ── Misc
-  /// Returns the theme-aware color for this card's category.
-  /// Used by both the grid tile and the detail screen.
-  Color categoryColor(bool isDark) {
-    switch (categoryEn) {
-      case 'Basic':   return isDark ? Colors.greenAccent : Colors.green.shade700;
-      case 'Weapon':  return isDark ? Colors.redAccent : Colors.red.shade700;
-      case 'Armor':   return isDark ? Colors.blueAccent : Colors.blue.shade700;
-      case 'Mount':   return isDark ? const Color(0xFFD2B48C) : Colors.brown;
-      case 'Tool':    return isDark ? Colors.orangeAccent : Colors.orange.shade800;
-      case 'Treasure': return isDark ? Colors.purpleAccent : Colors.purple.shade700;
-      default:        return Colors.grey;
-    }
-  }
 }

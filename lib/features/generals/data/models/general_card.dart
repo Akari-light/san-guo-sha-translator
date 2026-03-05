@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import '../../../../core/models/skill_dto.dart';
 
-// Example JSON entry (from limit_break.json):
-// {
-//   "id": "jx.SHU001",
-//   "standard_id": "char_liubei",
-//   "name_cn": "界刘备",
-//   "name_en": "Liu Bei",
-//   "gender": "Male",
-//   "faction": "Shu",
-//   "health": 4,
-//   "power_index": 3.0,
-//   "traits": ["进攻", "辅助", "回复"],
-//   "expansion": "Limit Break",
-//   "skills": ["skill_rende", "skill_jijiang"]
-// }
+/// Example JSON entry (from limit_break.json):
+/// {
+///   "id": "jx.SHU001",
+///   "standard_id": "char_liubei",
+///   "name_cn": "界刘备",
+///   "name_en": "Liu Bei",
+///   "gender": "Male",
+///   "faction": "Shu",
+///   "health": 4,
+///   "power_index": 3.0,
+///   "traits": ["进攻", "辅助", "回复"],
+///   "expansion": "Limit Break",
+///   "skills": ["skill_rende", "skill_jijiang"]
+/// }
 
 class GeneralCard {
   final String id;           
@@ -42,11 +42,7 @@ class GeneralCard {
     required this.expansion,
     required this.skills,
   });
-
-  /// Parses a JSON object and resolves skill IDs using [skillMap].
-  /// [skillMap] is the full map loaded from skills.json, keyed by skill_id.
-  /// Any skill ID not found in the map is silently dropped — protects
-  /// against data gaps during development.
+  
   factory GeneralCard.fromJson(
     Map<String, dynamic> json,
     Map<String, SkillDTO> skillMap,
@@ -71,24 +67,14 @@ class GeneralCard {
     );
   }
 
+  // ── Image 
   String get imagePath => 'assets/images/generals/$id.webp';
   static const String placeholderImagePath = 'assets/images/generals_placeholder.webp';
 
-  // expansion
+  // ── Expansion 
   String get expansionBadge => expansion.badge;
-  
-  // faction
-  Color get factionColor {
-    switch (faction) {
-      case 'Shu':  return const Color(0xFF4CAF50); // Green
-      case 'Wei':  return const Color(0xFF2196F3); // Blue
-      case 'Wu':   return const Color(0xFFFF5722); // Red-Orange
-      case 'Qun':  return const Color(0xFF9E9E9E); // Grey
-      case 'God':  return const Color(0xFFFFc107); // Gold
-      default:     return const Color(0xFF757575);
-    }
-  }
 
+  // ── Faction ────────────────────────────────────────────────────────────────
   String get factionCn {
     switch (faction) {
       case 'Shu':  return '蜀';
@@ -100,7 +86,10 @@ class GeneralCard {
     }
   }
 
-  // power index
+  // ── Power Index ────────────────────────────────────────────────────────────
+
+  /// Power index as a display string, e.g. "3.0" → "★★★"
+  /// Returns half-star increments up to 5 stars.
   String get powerStars {
     final full = powerIndex.floor();
     final half = (powerIndex - full) >= 0.5;
