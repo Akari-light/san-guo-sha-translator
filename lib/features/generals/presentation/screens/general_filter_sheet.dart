@@ -171,20 +171,28 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    return DraggableScrollableSheet(
-      initialChildSize: 0.55,
-      minChildSize: 0.35,
-      maxChildSize: 0.85,
-      builder: (context, scrollController) {
-        return Container(
+    return Column(
+      children: [
+        // ── Transparent tap zone — dismisses the sheet ────────────────────
+        Expanded(
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            behavior: HitTestBehavior.opaque,
+            child: const SizedBox.expand(),
+          ),
+        ),
+
+        // ── Sheet content ─────────────────────────────────────────────────
+        Container(
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF252526) : Colors.white,
             borderRadius:
                 const BorderRadius.vertical(top: Radius.circular(20)),
           ),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              // ── Handle 
+              // ── Handle
               Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 12, bottom: 4),
@@ -197,7 +205,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                 ),
               ),
 
-              // ── Header 
+              // ── Header
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -221,7 +229,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                 ),
               ),
 
-              // ── Tab bar 
+              // ── Tab bar
               TabBar(
                 controller: _tabController,
                 tabs: const [
@@ -231,8 +239,9 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                 ],
               ),
 
-              // ── Tab content 
-              Expanded(
+              // ── Tab content (fixed height)
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.45,
                 child: TabBarView(
                   controller: _tabController,
                   children: [
@@ -242,10 +251,13 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                   ],
                 ),
               ),
+
+              // ── Bottom safe area padding
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 8),
             ],
           ),
-        );
-      },
+        ),
+      ],
     );
   }
 
