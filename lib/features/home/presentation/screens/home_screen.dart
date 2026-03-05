@@ -1,82 +1,91 @@
 import 'package:flutter/material.dart';
+import '../../../../core/services/pin_service.dart';
+import '../../../generals/data/models/general_card.dart';
+import '../../../generals/data/repository/general_loader.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<GeneralCard> _pinned = [];
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    setState(() => _loading = true);
+    final ids = await PinService.instance.getPinnedIds();
+    if (ids.isEmpty) {
+      if (mounted) setState(() { _pinned = []; _loading = false; });
+      return;
+    }
+    final all = await GeneralLoader().getGenerals();
+    final pinned = ids
+        .map((id) => all.where((g) => g.id == id).firstOrNull)
+        .whereType<GeneralCard>()
+        .toList();
+    if (mounted) setState(() { _pinned = pinned; _loading = false; });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // make the page scrollable if the pinned list gets long
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          _buildWelcomeHeader(),
-          const SizedBox(height: 24),
-          _buildPinnedSection(),
-        ],
-      ),
-    );
-  }
-
-  // Welcome Section: Gives the app a friendly entry point
-  Widget _buildWelcomeHeader() {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Welcome, Warrior',
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-        ),
-        Text(
-          'Quickly access your current game cards below.',
-          style: TextStyle(fontSize: 16, color: Colors.grey),
-        ),
-      ],
-    );
-  }
-
-  // Pinned Section: This is the placeholder for your "Quick Access" idea
-  Widget _buildPinnedSection() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Row(
+      body: RefreshIndicator(
+        onRefresh: _load,
+        child: ListView(
+          padding: const EdgeInsets.all(24),
           children: [
-            Icon(Icons.push_pin, size: 20, color: Colors.red),
-            SizedBox(width: 8),
-            Text(
-              'Pinned Generals',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
+            const Text('Pin Debug', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            const Text('Pull to refresh. Pin generals from the Generals tab.',
+                style: TextStyle(color: Colors.grey)),
+            const SizedBox(height: 24),
+            if (_loading)
+              const Center(child: CircularProgressIndicator())
+            else if (_pinned.isEmpty)
+              Container(
+                padding: const EdgeInsets.all(32),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
+                ),
+                child: const Column(
+                  children: [
+                    Icon(Icons.push_pin_outlined, size: 40, color: Colors.grey),
+                    SizedBox(height: 8),
+                    Text('Nothing pinned yet.', style: TextStyle(color: Colors.grey)),
+                  ],
+                ),
+              )
+            else
+              ...List.generate(_pinned.length, (i) {
+                final card = _pinned[i];
+                return ListTile(
+                  leading: const Icon(Icons.push_pin, color: Colors.orange, size: 20),
+                  title: Text(card.nameEn, style: const TextStyle(fontWeight: FontWeight.w600)),
+                  subtitle: Text('${card.nameCn}  ·  ${card.faction}  ·  ID: ${card.id}',
+                      style: const TextStyle(fontSize: 12)),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.close, size: 18),
+                    onPressed: () async {
+                      await PinService.instance.unpin(card.id);
+                      _load();
+                    },
+                  ),
+                );
+              }),
           ],
         ),
-        const SizedBox(height: 16),
-        
-        // This container acts as the placeholder for your future pinned logic
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(40),
-          decoration: BoxDecoration(
-            color: Colors.grey.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
-          ),
-          child: const Column(
-            children: [
-              Icon(Icons.person_add_outlined, size: 48, color: Colors.grey),
-              SizedBox(height: 12),
-              Text(
-                'No generals pinned yet.',
-                style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
-              ),
-              Text(
-                'Go to the Generals tab to pin a card.',
-                style: TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

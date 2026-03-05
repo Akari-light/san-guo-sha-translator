@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/services/pin_service.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
@@ -14,6 +15,36 @@ class GeneralDetailScreen extends StatefulWidget {
 
 class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   bool _isEnglish = true;
+  bool _isPinned = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPinState();
+  }
+
+  Future<void> _loadPinState() async {
+    final pinned = await PinService.instance.isPinned(widget.card.id);
+    if (mounted) setState(() => _isPinned = pinned);
+  }
+
+  Future<void> _togglePin() async {
+    final nowPinned = await PinService.instance.toggle(widget.card.id);
+    if (mounted) {
+      setState(() => _isPinned = nowPinned);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            nowPinned
+                ? '${widget.card.nameEn} pinned to Home'
+                : '${widget.card.nameEn} unpinned',
+          ),
+          duration: const Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,24 +58,15 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         title: Text(card.nameCn),
         centerTitle: true,
         actions: [
-          // ── Language toggle ───────────────────────────────────────────────
-          TextButton(
-            onPressed: () => setState(() => _isEnglish = !_isEnglish),
-            style: TextButton.styleFrom(
-              backgroundColor:
-                  theme.colorScheme.primary.withValues(alpha: 0.1),
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+          // ── Pin button ────────────────────────────────────────────────────
+          IconButton(
+            icon: Icon(
+              _isPinned ? Icons.push_pin : Icons.push_pin_outlined,
+              color: _isPinned ? Colors.orange : null,
             ),
-            child: Text(
-              _isEnglish ? 'EN ➔ 中' : '中 ➔ EN',
-              style: TextStyle(
-                color: theme.colorScheme.primary,
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-              ),
-            ),
+            tooltip: _isPinned ? 'Unpin from Home' : 'Pin to Home',
+            onPressed: _togglePin,
           ),
-          const SizedBox(width: 8),
         ],
       ),
       body: SingleChildScrollView(
@@ -87,37 +109,54 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 24),
 
-            // ── Name + badges row ───────────────────────────────────────────
+            // ── Name + lang toggle + badges row ─────────────────────────
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _isEnglish ? card.nameEn : card.nameCn,
-                        style: theme.textTheme.headlineMedium
-                            ?.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          // Faction badge
-                          _Badge(
-                            label: _isEnglish ? card.faction : card.factionCn,
-                            color: factionColor,
-                          ),
-                          const SizedBox(width: 8),
-                          // Expansion badge
-                          _Badge(
-                            label: card.expansionBadge,
-                            color: theme.colorScheme.primary,
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Text(
+                    _isEnglish ? card.nameEn : card.nameCn,
+                    style: theme.textTheme.headlineMedium
+                        ?.copyWith(fontWeight: FontWeight.bold),
                   ),
+                ),
+                // ── Language toggle ───────────────────────────────────────
+                GestureDetector(
+                  onTap: () => setState(() => _isEnglish = !_isEnglish),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.primary.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: theme.colorScheme.primary.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Text(
+                      _isEnglish ? 'EN ➔ 中' : '中 ➔ EN',
+                      style: TextStyle(
+                        color: theme.colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 11,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            // ── Badges row ────────────────────────────────────────────────
+            Row(
+              children: [
+                _Badge(
+                  label: _isEnglish ? card.faction : card.factionCn,
+                  color: factionColor,
+                ),
+                const SizedBox(width: 8),
+                _Badge(
+                  label: card.expansionBadge,
+                  color: theme.colorScheme.primary,
                 ),
               ],
             ),
