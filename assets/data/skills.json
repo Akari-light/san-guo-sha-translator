@@ -4,7 +4,7 @@
         "name_cn": "烈弓",
         "name_en": "Liegong",
         "description_cn": "你【杀】的攻击范围为此【杀】点数。当你使用【杀】指定目标后，你可以执行以下效果：1.若其手牌数不大于你，其不能抵消此【杀】；2.若其体力值不小于你，此【杀】伤害值+1。",
-        "description_en": "The range of your [Slash] is equal to its point value. When you use a [Slash], you may: 1. If the target's hand cards are not more than yours, the [Slash] cannot be dodged; 2. If the target's health is not less than yours, the [Slash] deals +1 damage."
+        "description_en": "The range of your [Kill] is equal to its point value. When you use a [Kill], you may: 1. If the target's hand cards are not more than yours, the [Kill] cannot be dodged; 2. If the target's health is not less than yours, the [Kill] deals +1 damage."
     },
     "skill_rende": {
         "skill_type": "active",
@@ -18,21 +18,21 @@
         "name_cn": "激将",
         "name_en": "Jijiang",
         "description_cn": "主公技，其他蜀势力角色可以在你需要时代替你使用或打出【杀】（视为由你使用或打出）；每回合限一次，其他蜀势力角色于其回合外使用、打出或替你使用或打出【杀】时，其可以令你摸一张牌。",
-        "description_en": "Lord Skill: Other Shu characters can play or use a [Slash] for you when required. Once per turn, when another Shu character plays a [Slash] outside their turn for you, they can let you draw 1 card."
+        "description_en": "Lord Skill: Other Shu characters can play or use a [Kill] for you when required. Once per turn, when another Shu character plays a [Kill] outside their turn for you, they can let you draw 1 card."
     },
     "skill_yijue": {
         "skill_type": "active",
         "name_cn": "义绝",
         "name_en": "Yijue",
         "description_cn": "出牌阶段限一次，你可以弃置一张牌，然后令一名其他角色展示一张手牌。若此牌为：黑色，其本回合非锁定技失效且不能使用或打出手牌，你本回合对其使用的红桃【杀】伤害+1；红色，你获得之，然后你可以令其回复1点体力。",
-        "description_en": "Once per Action Phase: Discard 1 card and make another character reveal 1 hand card. If Black: Their non-locked skills fail and they cannot use/play cards; your Heart [Slash] deals +1 damage to them. If Red: You gain the card and may let them recover 1 health."
+        "description_en": "Once per Action Phase: Discard 1 card and make another character reveal 1 hand card. If Black: Their non-locked skills fail and they cannot use/play cards; your Heart [Kill] deals +1 damage to them. If Red: You gain the card and may let them recover 1 health."
     },
     "skill_wusheng": {
         "skill_type": "active",
         "name_cn": "武圣",
         "name_en": "Wusheng",
         "description_cn": "你可以将一张红色牌当【杀】使用或打出。你使用的方片【杀】无距离限制。",
-        "description_en": "You may use or play any red card as a [Slash]. Your Diamond [Slash] has no distance limit."
+        "description_en": "You may use or play any red card as a [Kill]. Your Diamond [Kill] has no distance limit."
     },
     "skill_tishen": {
         "skill_type": "limited",
@@ -46,7 +46,7 @@
         "name_cn": "咆哮",
         "name_en": "Paoxiao",
         "description_cn": "锁定技，你使用【杀】无次数限制。当你使用的【杀】被抵消后，你本回合下一次【杀】造成的伤害+1。",
-        "description_en": "Locked Skill: No limit on [Slash] count. When your [Slash] is dodged, your next [Slash] this turn deals +1 damage."
+        "description_en": "Locked Skill: No limit on [Kill] count. When your [Kill] is dodged, your next [Kill] this turn deals +1 damage."
     },
     "skill_yajiao": {
         "skill_type": "active",
@@ -60,7 +60,7 @@
         "name_cn": "龙胆",
         "name_en": "Longdan",
         "description_cn": "你可以将一张【杀】当【闪】、【闪】当【杀】、【酒】当【桃】、【桃】当【酒】使用或打出。",
-        "description_en": "You may play [Slash] as [Dodge], [Dodge] as [Slash], [Wine] as [Peach], and [Peach] as [Wine]."
+        "description_en": "You may play [Kill] as [Dodge], [Dodge] as [Kill], [Wine] as [Peach], and [Peach] as [Wine]."
     },
     "skill_mashu": {
         "skill_type": "locked",
@@ -74,14 +74,14 @@
         "name_cn": "铁骑",
         "name_en": "Tieqi",
         "description_cn": "当你使用【杀】指定目标后，你可以令其本回合非锁定技失效，然后你判定，除非其弃置一张与判定结果花色相同的牌，否则其不能抵消此【杀】。",
-        "description_en": "When using [Slash], you can disable the target's non-locked skills for the turn. Perform a judgment; they cannot dodge unless they discard a card of the same suit as the judgment."
+        "description_en": "When using [Kill], you can disable the target's non-locked skills for the turn. Perform a judgment; they cannot dodge unless they discard a card of the same suit as the judgment."
     },
     "skill_zhuhai": {
         "skill_type": "active",
         "name_cn": "诛害",
         "name_en": "Zhuhai",
         "description_cn": "其他角色的结束阶段，若其本回合造成过伤害，你可以对其使用一张【杀】。",
-        "description_en": "End Phase of another character: If they dealt damage this turn, you may use a [Slash] against them."
+        "description_en": "End Phase of another character: If they dealt damage this turn, you may use a [Kill] against them."
     },
     "skill_qianxin": {
         "skill_type": "awakening",
@@ -116,7 +116,7 @@
         "name_cn": "克己",
         "name_en": "Keji",
         "description_cn": "若你未于本回合出牌阶段使用或打出过【杀】，你可以跳过弃牌阶段。",
-        "description_en": "If you did not use or play [Slash] during your Action Phase, you may skip your Discard Phase."
+        "description_en": "If you did not use or play [Kill] during your Action Phase, you may skip your Discard Phase."
     },
     "skill_qinxue": {
         "skill_type": "awakening",
@@ -144,7 +144,7 @@
         "name_cn": "诈降",
         "name_en": "Zhaxiang",
         "description_cn": "锁定技，当你失去1点体力后，你摸三张牌，若在你的出牌阶段，你本回合使用【杀】的限制次数+1、使用红色【杀】无距离限制且不能被抵消。",
-        "description_en": "Locked Skill: After losing 1 health, draw 3 cards. If in your Action Phase, [Slash] limit +1; red [Slash] has no range limit and cannot be dodged."
+        "description_en": "Locked Skill: After losing 1 health, draw 3 cards. If in your Action Phase, [Kill] limit +1; red [Kill] has no range limit and cannot be dodged."
     },
     "skill_yingzi": {
         "skill_type": "locked",
@@ -165,7 +165,7 @@
         "name_cn": "流离",
         "name_en": "Liuli",
         "description_cn": "当你成为【杀】的目标时，你可以弃置一张牌并将此【杀】转移给你攻击范围内的一名其他角色。",
-        "description_en": "When targeted by [Slash], discard 1 card to redirect it to another character in your attack range."
+        "description_en": "When targeted by [Kill], discard 1 card to redirect it to another character in your attack range."
     },
     "skill_guose": {
         "skill_type": "active",
@@ -242,7 +242,7 @@
         "name_cn": "裸衣",
         "name_en": "Luoyi",
         "description_cn": "摸牌阶段开始前，你可以亮出牌堆顶的三张牌，然后你可以跳过摸牌阶段并获得其中所有基本牌、武器牌和【决斗】，且直到你的下回合开始，你为伤害来源的【杀】和【决斗】对目标角色造成的伤害+1。",
-        "description_en": "Before Draw Phase: Reveal top 3 cards. You can skip drawing to gain all basic, weapon, and [Duel] cards from them; your [Slash] and [Duel] deal +1 damage until your next turn."
+        "description_en": "Before Draw Phase: Reveal top 3 cards. You can skip drawing to gain all basic, weapon, and [Duel] cards from them; your [Kill] and [Duel] deal +1 damage until your next turn."
     },
     "skill_tiandu": {
         "skill_type": "active",
@@ -291,14 +291,14 @@
         "name_cn": "无双",
         "name_en": "Wushuang",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked Skill: Your [Slash] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Slash] at a time."
+        "description_en": "Locked Skill: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
     },
     "skill_liyu": {
         "skill_type": "active",
         "name_cn": "利驭",
         "name_en": "Liyu",
         "description_cn": "当你使用【杀】对其他角色造成伤害后，你可以获得其区域里的一张牌，若获得的牌：不为装备牌，其摸一张牌；为装备牌，你视为对由其指定的另一名角色使用一张【决斗】。",
-        "description_en": "After damaging a character with [Slash], gain 1 card from their area. If not equipment: they draw 1. If equipment: you use [Duel] on a target they choose."
+        "description_en": "After damaging a character with [Kill], gain 1 card from their area. If not equipment: they draw 1. If equipment: you use [Duel] on a target they choose."
     },
     "skill_yicong": {
         "skill_type": "locked",
@@ -312,14 +312,14 @@
         "name_cn": "趫猛",
         "name_en": "Qiaomeng",
         "description_cn": "当你使用【杀】对一名角色造成伤害后，你可以弃置其区域里的一张牌。若此牌为坐骑牌，你获得之。",
-        "description_en": "After damaging a character with [Slash], you may discard 1 card from their area. If it is a mount, you gain it."
+        "description_en": "After damaging a character with [Kill], you may discard 1 card from their area. If it is a mount, you gain it."
     },
     "skill_kongcheng": {
         "skill_type": "locked",
         "name_cn": "空城",
         "name_en": "Kongcheng",
         "description_cn": "锁定技，若你没有手牌，你不能成为【杀】或【决斗】的目标。",
-        "description_en": "Locked Skill: If you have no hand cards, you cannot be targeted by [Slash] or [Duel]."
+        "description_en": "Locked Skill: If you have no hand cards, you cannot be targeted by [Kill] or [Duel]."
     },
     "skill_guanxing": {
         "skill_type": "active",
@@ -473,7 +473,7 @@
         "name_cn": "享乐",
         "name_en": "Xiangle",
         "description_cn": "锁定技，当你成为一名角色使用【杀】的目标后，除非其弃置一张基本牌，否则令此【杀】对你无效。",
-        "description_en": "Locked Skill: When targeted by [Slash], the attacker must discard a basic card or the [Slash] is negated."
+        "description_en": "Locked Skill: When targeted by [Kill], the attacker must discard a basic card or the [Kill] is negated."
     },
     "skill_fangquan": {
         "skill_type": "active",
@@ -501,7 +501,7 @@
         "name_cn": "激昂",
         "name_en": "Jiang",
         "description_cn": "当你使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】的目标后，你可以摸一张牌。每回合首次【决斗】或红色【杀】因弃置进入弃牌堆后，你可以失去1点体力获得之。",
-        "description_en": "Draw 1 card when using or being targeted by [Duel] or red [Slash]. If such a card is discarded, lose 1 health to gain it (once per turn)."
+        "description_en": "Draw 1 card when using or being targeted by [Duel] or red [Kill]. If such a card is discarded, lose 1 health to gain it (once per turn)."
     },
     "skill_hunzi": {
         "skill_type": "awakening",
@@ -515,7 +515,7 @@
         "name_cn": "神速",
         "name_en": "Shensu",
         "description_cn": "你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，你视为使用一张无距离限制的【杀】。",
-        "description_en": "Choose up to 3: 1. Skip Judgment/Draw Phase; 2. Skip Action Phase and discard equipment; 3. Skip Discard Phase and flip. Each choice counts as a rangeless [Slash]."
+        "description_en": "Choose up to 3: 1. Skip Judgment/Draw Phase; 2. Skip Action Phase and discard equipment; 3. Skip Discard Phase and flip. Each choice counts as a rangeless [Kill]."
     },
     "skill_shebian": {
         "skill_type": "active",
@@ -578,7 +578,7 @@
         "name_cn": "奇谋",
         "name_en": "Qimou",
         "description_cn": "限定技，出牌阶段，你可以失去任意点体力并摸X张牌（X为你以此法失去的体力值），然后你本回合计算与其他角色的距离-X且使用【杀】的限制次数+X。",
-        "description_en": "Limited Skill: Lose any health to draw X cards (X is health lost). Distance to others -X and [Slash] limit +X for the turn."
+        "description_en": "Limited Skill: Lose any health to draw X cards (X is health lost). Distance to others -X and [Kill] limit +X for the turn."
     },
     "skill_hongyan": {
         "skill_type": "locked",
@@ -620,28 +620,28 @@
         "name_cn": "鞬出",
         "name_en": "Jianchu",
         "description_cn": "当你使用【杀】指定目标后，你可以弃置其一张牌，若弃置的牌是：基本牌，其获得此【杀】；非基本牌，其不能抵消此【杀】，你本回合使用【杀】的限制次数+1。",
-        "description_en": "When using [Slash], discard 1 of their cards. If basic: they gain the [Slash]. If non-basic: it's unavoidable and [Slash] limit +1."
+        "description_en": "When using [Kill], discard 1 of their cards. If basic: they gain the [Kill]. If non-basic: it's unavoidable and [Kill] limit +1."
     },
     "skill_tianyi": {
         "skill_type": "active",
         "name_cn": "天义",
         "name_en": "Tianyi",
         "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合使用【杀】的次数+1、无距离限制且可以多指定一个目标；若你没赢，你本回合不能使用【杀】。",
-        "description_en": "Once per Action Phase: Pindian. If win: [Slash] count +1, no range limit, target 1 extra character. If lose: cannot use [Slash] this turn."
+        "description_en": "Once per Action Phase: Pindian. If win: [Kill] count +1, no range limit, target 1 extra character. If lose: cannot use [Kill] this turn."
     },
     "skill_hanzhan": {
         "skill_type": "active",
         "name_cn": "酣战",
         "name_en": "Hanzhan",
         "description_cn": "当你拼点前，你可以令对方用随机手牌拼点。当你拼点后，你可以获得拼点牌中点数最大的【杀】。",
-        "description_en": "Before Pindian, make opponent use a random card. After, you can gain the highest-point [Slash] from the Pindian cards."
+        "description_en": "Before Pindian, make opponent use a random card. After, you can gain the highest-point [Kill] from the Pindian cards."
     },
     "skill_roulin": {
         "skill_type": "locked",
         "name_cn": "肉林",
         "name_en": "Roulin",
         "description_cn": "锁定技，你对女性角色使用的【杀】和女性角色对你使用的【杀】均需使用两张【闪】才能抵消。",
-        "description_en": "Locked Skill: [Slash] between you and female characters requires 2 [Dodge] to evade."
+        "description_en": "Locked Skill: [Kill] between you and female characters requires 2 [Dodge] to evade."
     },
     "skill_benhuai": {
         "skill_type": "locked",
@@ -655,7 +655,7 @@
         "name_cn": "酒池",
         "name_en": "Jiuchi",
         "description_cn": "你可以将一张黑桃手牌当【酒】使用。你使用【酒】无次数限制。当你使用【酒】【杀】造成伤害后，本回合“崩坏”失效。",
-        "description_en": "Play Spade cards as [Wine]. Unlimited [Wine] use. Damaging with [Wine][Slash] negates 'Benhuai' for the turn."
+        "description_en": "Play Spade cards as [Wine]. Unlimited [Wine] use. Damaging with [Wine][Kill] negates 'Benhuai' for the turn."
     },
     "skill_baonue": {
         "skill_type": "lord",
@@ -669,7 +669,7 @@
         "name_cn": "屯田",
         "name_en": "Tuntian",
         "description_cn": "当你于回合外失去牌后，或你于回合内弃置【杀】后，你可以判定，若结果不为红桃，将判定牌置于你的武将牌上，称为“田”。你计算与其他角色的距离-X（X为“田”的数量）。",
-        "description_en": "After losing cards outside turn or discarding [Slash] in turn, judge. If not Heart, place on character card as 'Field'. Distance to others -X (X is number of Fields)."
+        "description_en": "After losing cards outside turn or discarding [Kill] in turn, judge. If not Heart, place on character card as 'Field'. Distance to others -X (X is number of Fields)."
     },
     "skill_zaoxian": {
         "skill_type": "awakening",
@@ -690,14 +690,14 @@
         "name_cn": "烈刃",
         "name_en": "Lieren",
         "description_cn": "当你使用【杀】对目标角色造成伤害后，你可以与其拼点：若你赢，你获得其一张牌。",
-        "description_en": "After damaging with [Slash], you may Pindian; if win, gain 1 of their cards."
+        "description_en": "After damaging with [Kill], you may Pindian; if win, gain 1 of their cards."
     },
     "skill_tiaoxin": {
         "skill_type": "active",
         "name_cn": "挑衅",
         "name_en": "Tiaoxin",
         "description_cn": "出牌阶段限一次，你可以选择一名攻击范围内包含你的角色，然后除非其对你使用一张【杀】且此【杀】对你造成伤害，否则你弃置其一张牌，然后本阶段本技能限两次。",
-        "description_en": "Once per Action Phase: Choose someone who can attack you; unless they [Slash] and damage you, discard 1 of their cards. Limit 2 uses."
+        "description_en": "Once per Action Phase: Choose someone who can attack you; unless they [Kill] and damage you, discard 1 of their cards. Limit 2 uses."
     },
     "skill_zhiji": {
         "skill_type": "awakening",
@@ -718,14 +718,14 @@
         "name_cn": "乱武",
         "name_en": "Luanwu",
         "description_cn": "限定技,出牌阶段,你可以令所有其他角色须对各自距 离最近的角色使用一张【杀】,否则失去点体力。",
-        "description_en": "Limited Skill: Force all others to [Slash] their nearest neighbor or lose 1 health."
+        "description_en": "Limited Skill: Force all others to [Kill] their nearest neighbor or lose 1 health."
     },
     "skill_wansha": {
         "skill_type": "locked",
         "name_cn": "完杀",
         "name_en": "Wansha",
         "description_cn": "锁定技，你的回合内：除处于濒死状态的角色外的其他角色的红色基本牌均视为【杀】，此【杀】被使用时你摸两张牌。",
-        "description_en": "Locked Skill (Your Turn): Others' red basic cards are [Slash] (except for near-death characters). Draw 2 when such a [Slash] is used."
+        "description_en": "Locked Skill (Your Turn): Others' red basic cards are [Kill] (except for near-death characters). Draw 2 when such a [Kill] is used."
     },
     "skill_haoshi": {
         "skill_type": "active",
@@ -788,7 +788,7 @@
         "name_cn": "悲歌",
         "name_en": "Beige",
         "description_cn": "当一名角色受到【杀】的伤害后，若你有牌，你可以令其判定，然后你可以弃置一张牌，根据判定结果执行：红桃，其回复1点体力；方片，其摸两张牌；梅花，伤害来源弃置两张牌；黑桃，伤害来源翻面。若判定牌与你弃置的牌：花色相同，你获得判定牌；点数相同，你获得你弃置的牌。",
-        "description_en": "After [Slash] damage, target judges; you discard 1 card. Result - Heart: recover 1; Diamond: draw 2; Club: source discards 2; Spade: source flips. Gain card if suit/point matches."
+        "description_en": "After [Kill] damage, target judges; you discard 1 card. Result - Heart: recover 1; Diamond: draw 2; Club: source discards 2; Spade: source flips. Gain card if suit/point matches."
     },
     "skill_quhu": {
         "skill_type": "active",
@@ -844,7 +844,7 @@
         "name_cn": "破军",
         "name_en": "Pojun",
         "description_cn": "当你使用【杀】指定目标后，你可以将其至多X张牌移出游戏直到回合结束（X为其体力值）。你使用的【杀】对手牌区与装备区内牌数皆不大于你的角色造成的伤害+1。",
-        "description_en": "When using [Slash], remove up to X of their cards until turn end (X = health). [Slash] deals +1 damage if their cards <= yours."
+        "description_en": "When using [Kill], remove up to X of their cards until turn end (X = health). [Kill] deals +1 damage if their cards <= yours."
     },
     "skill_xuanfeng": {
         "skill_type": "active",
@@ -858,21 +858,21 @@
         "name_cn": "智迟",
         "name_en": "Zhichi",
         "description_cn": "锁定技，当你于回合外受到伤害后，直到当前回合结束，【杀】和普通锦囊牌对你无效。",
-        "description_en": "Locked Skill: After taking damage outside your turn, [Slash] and tactics are ineffective against you until the turn ends."
+        "description_en": "Locked Skill: After taking damage outside your turn, [Kill] and tactics are ineffective against you until the turn ends."
     },
     "skill_mingce": {
         "skill_type": "active",
         "name_cn": "明策",
         "name_en": "Mingce",
         "description_cn": "出牌阶段限一次，你可以将一张装备牌或【杀】交给一名其他角色，然后其选择一项：1.视为对其攻击范围内你选择的另一名角色使用【杀】；2.摸一张牌。",
-        "description_en": "Once per Action Phase: Give equipment or [Slash] to another. They either: 1. Use [Slash] on a target you choose; 2. Draw 1 card."
+        "description_en": "Once per Action Phase: Give equipment or [Kill] to another. They either: 1. Use [Kill] on a target you choose; 2. Draw 1 card."
     },
     "skill_jiangchi": {
         "skill_type": "active",
         "name_cn": "将驰",
         "name_en": "Jiangchi",
         "description_cn": "摸牌阶段结束时，你可以选择一项：1.摸一张牌，你本回合使用【杀】的次数-1，且【杀】不计入手牌上限；2.重铸一张牌，且本回合使用【杀】的次数+1，【杀】无距离限制。",
-        "description_en": "End of Draw Phase: 1. Draw 1, [Slash] limit -1, [Slash] ignores hand limit; 2. Recast 1, [Slash] limit +1, no range limit."
+        "description_en": "End of Draw Phase: 1. Draw 1, [Kill] limit -1, [Kill] ignores hand limit; 2. Recast 1, [Kill] limit +1, no range limit."
     },
     "skill_zongshi": {
         "skill_type": "active",
@@ -907,21 +907,21 @@
         "name_cn": "陷阵",
         "name_en": "Xianzhen",
         "description_cn": "出牌阶段限一次，你可以与一名角色拼点。若你赢，直到回合结束，你无视该角色的防具，且对该角色使用牌没有距离和次数限制；若你没赢，本回合你不能使用【杀】。",
-        "description_en": "Once per Action Phase: Pindian. If win: Ignore target's armor and use cards on them without range/count limits. If lose: cannot use [Slash] this turn."
+        "description_en": "Once per Action Phase: Pindian. If win: Ignore target's armor and use cards on them without range/count limits. If lose: cannot use [Kill] this turn."
     },
     "skill_jinjiu": {
         "skill_type": "locked",
         "name_cn": "禁酒",
         "name_en": "Jinjiu",
         "description_cn": "锁定技，你的【酒】只能当做【杀】。",
-        "description_en": "Locked Skill: Your [Wine] can only be played as [Slash]."
+        "description_en": "Locked Skill: Your [Wine] can only be played as [Kill]."
     },
     "skill_xuanhuo": {
         "skill_type": "active",
         "name_cn": "眩惑",
         "name_en": "Xuanhuo",
         "description_cn": "摸牌阶段结束时，你可以交给一名其他角色两张牌，令其选择一项：1.对你指定的另一名角色使用一张【杀】；2.你观看其手牌并获得其两张牌。",
-        "description_en": "End of Draw Phase: Give 2 cards to another. They choose: 1. [Slash] a target you choose; 2. You view their hand and take 2 cards."
+        "description_en": "End of Draw Phase: Give 2 cards to another. They choose: 1. [Kill] a target you choose; 2. You view their hand and take 2 cards."
     },
     "skill_enyuan": {
         "skill_type": "active",
@@ -935,14 +935,14 @@
         "name_cn": "疠火",
         "name_en": "Lihuo",
         "description_cn": "你使用的非火【杀】可以改为火【杀】使用，此牌结算后，若其造成伤害，你弃置一张牌或失去1体力。你使用的火【杀】可以多指定一个目标。",
-        "description_en": "Play normal [Slash] as Fire [Slash]; if damage dealt, discard 1 or lose 1 health. Fire [Slash] can target 1 extra character."
+        "description_en": "Play normal [Kill] as Fire [Kill]; if damage dealt, discard 1 or lose 1 health. Fire [Kill] can target 1 extra character."
     },
     "skill_chunlao": {
         "skill_type": "active",
         "name_cn": "醇醪",
         "name_en": "Chunlao",
         "description_cn": "你或你相邻角色的【杀】因弃置置入弃牌堆后，将之置于你的武将牌上，称为“醇”。当一名角色处于濒死状态时，你可以移去X张“醇”视为其使用一张【酒】(X为本轮以此法使用【酒】的次数)。",
-        "description_en": "Discarded [Slash] from you/neighbors become 'Chun' tokens. Move X tokens to save a dying character as if using [Wine] (X = use count this round)."
+        "description_en": "Discarded [Kill] from you/neighbors become 'Chun' tokens. Move X tokens to save a dying character as if using [Wine] (X = use count this round)."
     },
     "skill_jueqing": {
         "skill_type": "locked",
@@ -1026,21 +1026,21 @@
         "name_cn": "惴恐",
         "name_en": "Zhuikong",
         "description_cn": "其他角色的回合开始时，若你已受伤，你可以与其拼点：若你赢，其本回合不能对除其以外的角色使用牌；若你没赢，你获得其拼点牌，然后其视为对你使用一张【杀】。",
-        "description_en": "Start of another's turn (if injured): Pindian. Win: they can't play cards on others. Lose: you gain their card but they [Slash] you."
+        "description_en": "Start of another's turn (if injured): Pindian. Win: they can't play cards on others. Lose: you gain their card but they [Kill] you."
     },
     "skill_qiuyuan": {
         "skill_type": "active",
         "name_cn": "求援",
         "name_en": "Qiuyuan",
         "description_cn": "当你成为【杀】或伤害锦囊的目标时，你可以令另一名其他角色选择一项：1.交给你一张与此牌同类型不同牌名的牌；2.成为此牌的额外目标。",
-        "description_en": "When targeted by [Slash] or damage tactic: Another character either gives you a same-type card or becomes an extra target."
+        "description_en": "When targeted by [Kill] or damage tactic: Another character either gives you a same-type card or becomes an extra target."
     },
     "skill_gongqi": {
         "skill_type": "active",
         "name_cn": "弓骑",
         "name_en": "Gongqi",
         "description_cn": "出牌阶段限一次，你可以弃置一张牌使你本回合攻击范围无限，且你使用与弃置的牌花色相同的【杀】无次数限制。若弃置的牌为装备牌，你可以弃置一名其他角色一张牌。",
-        "description_en": "Once per Action Phase: Discard 1 to have infinite range and unlimited same-suit [Slash]. If equipment, discard 1 card from another character."
+        "description_en": "Once per Action Phase: Discard 1 to have infinite range and unlimited same-suit [Kill]. If equipment, discard 1 card from another character."
     },
     "skill_jiefan": {
         "skill_type": "limited",
@@ -1082,7 +1082,7 @@
         "name_cn": "当先",
         "name_en": "Dangxian",
         "description_cn": "回合开始时，你执行一个额外的出牌阶段。此阶段开始时，你可以从牌堆或弃牌堆中获得一张无距离限制的【杀】，然后若你未于此阶段造成过伤害，阶段结束时你对自己造成1点伤害。",
-        "description_en": "Start of turn: Take an extra Action Phase. Gain a rangeless [Slash]; if no damage dealt, take 1 damage at phase end."
+        "description_en": "Start of turn: Take an extra Action Phase. Gain a rangeless [Kill]; if no damage dealt, take 1 damage at phase end."
     },
     "skill_fuli": {
         "skill_type": "limited",
@@ -1096,7 +1096,7 @@
         "name_cn": "贞烈",
         "name_en": "Zhenlie",
         "description_cn": "当你成为其他角色【杀】或普通锦囊牌的目标后，你可以失去1点体力令此牌对你无效，然后你可以选择一项：1.获得使用者一张牌；2.本回合结束阶段，发动一次“秘计”。",
-        "description_en": "When targeted by [Slash] or tactic, lose 1 health to negate it. Either take 1 of their cards or trigger 'Miji' at End Phase."
+        "description_en": "When targeted by [Kill] or tactic, lose 1 health to negate it. Either take 1 of their cards or trigger 'Miji' at End Phase."
     },
     "skill_miji": {
         "skill_type": "active",
@@ -1117,7 +1117,7 @@
         "name_cn": "父魂",
         "name_en": "Fuhun",
         "description_cn": "你可将两张牌当【杀】使用或打出。你使用的转化【杀】目标角色只能使用颜色相同的手牌响应；你于出牌阶段使用【杀】造成伤害后，你本回合获得“武圣”“咆哮”。",
-        "description_en": "Use 2 cards as [Slash]. Target must respond with same-colored cards. Damaging with [Slash] grants 'Wusheng' and 'Paoxiao' for the turn."
+        "description_en": "Use 2 cards as [Kill]. Target must respond with same-colored cards. Damaging with [Kill] grants 'Wusheng' and 'Paoxiao' for the turn."
     },
     "skill_qianxi": {
         "skill_type": "active",
@@ -1152,6 +1152,6 @@
         "name_cn": "毅重",
         "name_en": "Yizhong",
         "description_cn": "锁定技，体力值大于等于你的角色的黑色【杀】对你无效；手牌数小于等于你的角色无法响应你的黑色【杀】。",
-        "description_en": "Locked Skill: Black [Slash] from those with health >= yours is null; those with hand cards <= yours can't dodge your black [Slash]."
+        "description_en": "Locked Skill: Black [Kill] from those with health >= yours is null; those with hand cards <= yours can't dodge your black [Kill]."
     }
 }

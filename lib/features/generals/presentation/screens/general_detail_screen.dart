@@ -3,6 +3,9 @@ import '../../data/models/general_card.dart';
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
+import '../../../../core/services/resolver_service.dart';
+import '../../../library/data/models/library_dto.dart';
+import '../../../library/presentation/screens/library_detail_screen.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
@@ -17,15 +20,39 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   bool _isEnglish = true;
   bool _isPinned = false;
 
+  // Resolved references — loaded once, displayed in both languages
+  List<ResolvedReference> _refsEn = [];
+  List<ResolvedReference> _refsCn = [];
+  bool _refsLoading = true;
+
   @override
   void initState() {
     super.initState();
     _loadPinState();
+    _resolveSkillRefs();
   }
 
   Future<void> _loadPinState() async {
     final pinned = await PinService.instance.isPinned(widget.card.id);
     if (mounted) setState(() => _isPinned = pinned);
+  }
+
+  /// Resolves bracket references from all skills on this general.
+  /// Both CN 【】 and EN [] are resolved upfront so toggling language
+  /// is instant with no extra async calls.
+  Future<void> _resolveSkillRefs() async {
+    final resolver = ResolverService();
+    final results = await Future.wait([
+      resolver.resolveGeneralSkills(widget.card.skills, isChinese: true),
+      resolver.resolveGeneralSkills(widget.card.skills, isChinese: false),
+    ]);
+    if (mounted) {
+      setState(() {
+        _refsCn = results[0];
+        _refsEn = results[1];
+        _refsLoading = false;
+      });
+    }
   }
 
   Future<void> _togglePin() async {
@@ -53,12 +80,15 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
     final card = widget.card;
     final factionColor = AppTheme.factionColor(card.faction);
 
+    // Pick the resolved refs for the current language
+    final refs = _isEnglish ? _refsEn : _refsCn;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(card.nameCn),
         centerTitle: true,
         actions: [
-          // ── Pin button ────────────────────────────────────────────────────
+          // ── Pin button ──────────────────────────────────────────────────
           IconButton(
             icon: Icon(
               _isPinned ? Icons.push_pin : Icons.push_pin_outlined,
@@ -74,7 +104,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Card image ──────────────────────────────────────────────────
+            // ── Card image ────────────────────────────────────────────────
             Center(
               child: Hero(
                 tag: card.id,
@@ -109,7 +139,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 24),
 
-            // ── Name + lang toggle + badges row ─────────────────────────
+            // ── Name + lang toggle ────────────────────────────────────────
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -120,7 +150,6 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
-                // ── Language toggle ───────────────────────────────────────
                 GestureDetector(
                   onTap: () => setState(() => _isEnglish = !_isEnglish),
                   child: Container(
@@ -130,7 +159,8 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                       color: theme.colorScheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: theme.colorScheme.primary.withValues(alpha: 0.3),
+                        color:
+                            theme.colorScheme.primary.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Text(
@@ -146,7 +176,8 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
               ],
             ),
             const SizedBox(height: 8),
-            // ── Badges row ────────────────────────────────────────────────
+
+            // ── Faction + expansion badges ────────────────────────────────
             Row(
               children: [
                 _Badge(
@@ -163,7 +194,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 16),
 
-            // ── Stat row: health, power, gender ────────────────────────────
+            // ── Stat row ──────────────────────────────────────────────────
             Row(
               children: [
                 _StatChip(
@@ -181,9 +212,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                 ),
                 const SizedBox(width: 10),
                 _StatChip(
-                  icon: card.gender == 'Female'
-                      ? Icons.female
-                      : Icons.male,
+                  icon: card.gender == 'Female' ? Icons.female : Icons.male,
                   iconColor: card.gender == 'Female'
                       ? Colors.pinkAccent
                       : Colors.blueAccent,
@@ -195,26 +224,22 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
               ],
             ),
 
-            // ── Traits ─────────────────────────────────────────────────────
+            // ── Traits ────────────────────────────────────────────────────
             if (card.traits.isNotEmpty) ...[
               const SizedBox(height: 16),
-              _buildSectionHeader(
-                  context, _isEnglish ? 'TRAITS' : '特征'),
+              _buildSectionHeader(context, _isEnglish ? 'TRAITS' : '特征'),
               const SizedBox(height: 8),
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: card.traits
-                    .map((t) => _TraitChip(label: t))
-                    .toList(),
+                children: card.traits.map((t) => _TraitChip(label: t)).toList(),
               ),
             ],
 
             const Divider(height: 32),
 
-            // ── Skills ─────────────────────────────────────────────────────
-            _buildSectionHeader(
-                context, _isEnglish ? 'SKILLS' : '技能'),
+            // ── Skills ────────────────────────────────────────────────────
+            _buildSectionHeader(context, _isEnglish ? 'SKILLS' : '技能'),
             const SizedBox(height: 12),
             ...card.skills.map(
               (skill) => _SkillCard(
@@ -224,6 +249,72 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                 theme: theme,
               ),
             ),
+
+            const Divider(height: 32),
+
+            // ── Related Cards ─────────────────────────────────────────────
+            _buildSectionHeader(
+                context, _isEnglish ? 'RELATED CARDS' : '相关牌'),
+            const SizedBox(height: 12),
+
+            if (_refsLoading)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                    SizedBox(width: 10),
+                    Text('Loading references…',
+                        style: TextStyle(fontSize: 12)),
+                  ],
+                ),
+              )
+            else if (refs.isEmpty)
+              Text(
+                _isEnglish
+                    ? 'No card references found in skill descriptions.'
+                    : '技能描述中未找到相关牌。',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: theme.hintColor,
+                  fontStyle: FontStyle.italic,
+                ),
+              )
+            else
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: refs.map((ref) {
+                  if (ref.type == ReferenceType.libraryCard &&
+                      ref.libraryCard != null) {
+                    // ── Tappable library card chip ────────────────────
+                    return _RelatedCardChip(
+                      label: _isEnglish
+                          ? ref.libraryCard!.nameEn
+                          : ref.libraryCard!.nameCn,
+                      category: ref.libraryCard!.categoryEn,
+                      isDark: isDark,
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              LibraryDetailScreen(card: ref.libraryCard!),
+                        ),
+                      ),
+                    );
+                  } else {
+                    // ── Non-tappable skill reference chip ─────────────
+                    return _RelatedSkillChip(
+                      label: _isEnglish ? ref.nameEn : ref.nameCn,
+                      isDark: isDark,
+                    );
+                  }
+                }).toList(),
+              ),
 
             const SizedBox(height: 32),
           ],
@@ -239,6 +330,90 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
             letterSpacing: 1.2,
             color: Theme.of(context).hintColor,
           ),
+    );
+  }
+}
+
+// ── Related library card chip (tappable) ─────────────────────────────────────
+
+class _RelatedCardChip extends StatelessWidget {
+  final String label;
+  final String category;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _RelatedCardChip({
+    required this.label,
+    required this.category,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = AppTheme.categoryColor(category, isDark);
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withValues(alpha: 0.6)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                color: color,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(Icons.arrow_forward_ios_rounded, size: 10, color: color),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ── Related skill reference chip (non-tappable) ───────────────────────────────
+
+class _RelatedSkillChip extends StatelessWidget {
+  final String label;
+  final bool isDark;
+
+  const _RelatedSkillChip({required this.label, required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    final color = isDark ? Colors.purpleAccent : Colors.purple;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.auto_awesome, size: 12, color: color),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 13,
+              color: color,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -278,7 +453,6 @@ class _SkillCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Skill name + type badge
           Row(
             children: [
               Text(
@@ -300,7 +474,6 @@ class _SkillCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          // Description
           Text(
             isEnglish ? skill.descriptionEn : skill.descriptionCn,
             style: theme.textTheme.bodyMedium?.copyWith(

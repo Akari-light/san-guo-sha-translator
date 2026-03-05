@@ -63,7 +63,7 @@ class ResolverService {
   // ── Regex ───────────────────────────────────────────────────────────────────
   // Matches 【杀】【闪】【桃】etc. — CN descriptions
   static final RegExp _cnBrackets = RegExp(r'【([^】]+)】');
-  // Matches [Slash] [Dodge] [Peach] etc. — EN descriptions
+  // Matches [Kill] [Dodge] [Peach] etc. — EN descriptions
   static final RegExp _enBrackets = RegExp(r'\[([^\]]+)\]');
 
   // ── Public API ──────────────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ class ResolverService {
     final Map<String, LibraryDTO> libByEn = {
       for (final c in libraryCards) c.nameEn.toLowerCase(): c,
     };
-    // Also index by aliasEn entries (e.g. "Kill" → Slash card)
+    // Also index by aliasEn entries (e.g. "Kill" → Kill card)
     for (final c in libraryCards) {
       for (final alias in (c.aliasEn ?? [])) {
         libByEn.putIfAbsent(alias.toLowerCase(), () => c);
