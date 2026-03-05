@@ -72,8 +72,8 @@ class GeneralCard {
   }
 
   String get imagePath => 'assets/images/generals/$id.webp';
-
   static const String placeholderImagePath = 'assets/images/generals_placeholder.webp';
+
   // expansion
   String get expansionBadge => expansion.badge;
   
