@@ -87,9 +87,17 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   String _searchQuery = "";
   final TextEditingController _searchController = TextEditingController();
 
+  // Generals filter
+  bool _generalsFilterActive = false;
+  VoidCallback? _openGeneralsFilter;
+
   List<Widget> get _screens => [
         const HomeScreen(),
-        const GeneralScreen(),
+        GeneralScreen(
+          onFilterStateChanged: (isActive) =>
+              setState(() => _generalsFilterActive = isActive),
+          onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
+        ),
         LibraryScreen(searchQuery: _searchQuery),
         const Center(child: Text('AI Feature (TBC)')),
         const Center(child: Text('More (TBC)')),
@@ -146,7 +154,32 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             ],
           ),
 
-          // Library Search Toggle
+          // Generals Filter Icon (tab index 1)
+          if (_selectedIndex == 1)
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.filter_list),
+                  onPressed: () => _openGeneralsFilter?.call(),
+                ),
+                if (_generalsFilterActive)
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: Container(
+                      width: 8,
+                      height: 8,
+                      decoration: const BoxDecoration(
+                        color: Colors.orange,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+
+          // Library Search Toggle (tab index 2)
           if (_selectedIndex == 2)
             IconButton(
               icon: Icon(_isSearching ? Icons.close : Icons.search),
