@@ -318,6 +318,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   String _expansionLabel(Expansion expansion) {
     switch (expansion) {
       case Expansion.limitBreak: return '界限突破 — Limit Break';
+      case Expansion.standard: return '标准 — Standard';
     }
   }
 

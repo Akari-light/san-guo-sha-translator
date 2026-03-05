@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
+import '../../data/repository/general_loader.dart';
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
@@ -19,7 +20,12 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   bool _isEnglish = true;
   bool _isPinned = false;
 
-  // Resolved references — loaded once, displayed in both languages
+  // ── Evolution switcher
+  late GeneralCard _activeCard;
+  List<GeneralCard> _variants = [];
+  bool _variantsLoading = true;
+
+  // Resolved references — reloaded whenever _activeCard changes
   List<ResolvedReference> _refsEn = [];
   List<ResolvedReference> _refsCn = [];
   bool _refsLoading = true;
@@ -27,23 +33,48 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   @override
   void initState() {
     super.initState();
+    _activeCard = widget.card;
+    _loadVariants();
+    _loadPinState();
+    _resolveSkillRefs();
+  }
+
+  Future<void> _loadVariants() async {
+    final variants = await GeneralLoader().getVariants(_activeCard.standardId);
+    if (mounted) {
+      setState(() {
+        _variants = variants..sort((a, b) =>
+            a.expansion.index.compareTo(b.expansion.index));
+        _variantsLoading = false;
+      });
+    }
+  }
+
+  /// Switch to a different variant — reloads refs and pin state for the new card.
+  void _switchVariant(GeneralCard variant) {
+    if (variant.id == _activeCard.id) return;
+    setState(() {
+      _activeCard = variant;
+      _refsLoading = true;
+      _refsEn = [];
+      _refsCn = [];
+    });
     _loadPinState();
     _resolveSkillRefs();
   }
 
   Future<void> _loadPinState() async {
-    final pinned = await PinService.instance.isPinned(widget.card.id);
+    final pinned = await PinService.instance.isPinned(_activeCard.id);
     if (mounted) setState(() => _isPinned = pinned);
   }
 
-  /// Resolves bracket references from all skills on this general.
-  /// Both CN 【】 and EN [] are resolved upfront so toggling language
-  /// is instant with no extra async calls.
+  /// Resolves bracket references from all skills on the active card.
+  /// Both CN and EN are resolved upfront so toggling language is instant.
   Future<void> _resolveSkillRefs() async {
     final resolver = ResolverService();
     final results = await Future.wait([
-      resolver.resolveGeneralSkills(widget.card.skills, isChinese: true),
-      resolver.resolveGeneralSkills(widget.card.skills, isChinese: false),
+      resolver.resolveGeneralSkills(_activeCard.skills, isChinese: true),
+      resolver.resolveGeneralSkills(_activeCard.skills, isChinese: false),
     ]);
     if (mounted) {
       setState(() {
@@ -55,15 +86,15 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   }
 
   Future<void> _togglePin() async {
-    final nowPinned = await PinService.instance.toggle(widget.card.id);
+    final nowPinned = await PinService.instance.toggle(_activeCard.id);
     if (mounted) {
       setState(() => _isPinned = nowPinned);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
             nowPinned
-                ? '${widget.card.nameEn} pinned to Home'
-                : '${widget.card.nameEn} unpinned',
+                ? '${_activeCard.nameEn} pinned to Home'
+                : '${_activeCard.nameEn} unpinned',
           ),
           duration: const Duration(seconds: 2),
           behavior: SnackBarBehavior.floating,
@@ -76,10 +107,8 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final card = widget.card;
+    final card = _activeCard;
     final factionColor = AppTheme.factionColor(card.faction);
-
-    // Pick the resolved refs for the current language
     final refs = _isEnglish ? _refsEn : _refsCn;
 
     return Scaffold(
@@ -87,7 +116,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         title: Text(card.nameCn),
         centerTitle: true,
         actions: [
-          // ── Pin button 
+          // ── Pin button
           IconButton(
             icon: Icon(
               _isPinned ? Icons.push_pin : Icons.push_pin_outlined,
@@ -103,7 +132,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Card image 
+            // ── Card image
             Center(
               child: Hero(
                 tag: card.id,
@@ -138,7 +167,18 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 24),
 
-            // ── Name + lang toggle 
+            // ── Evolution switcher (hidden when only one variant)
+            if (!_variantsLoading && _variants.length > 1) ...[
+              _EvolutionSwitcher(
+                variants: _variants,
+                activeCard: _activeCard,
+                onSwitch: _switchVariant,
+                factionColor: factionColor,
+              ),
+              const SizedBox(height: 16),
+            ],
+
+            // ── Name + lang toggle
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -158,8 +198,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                       color: theme.colorScheme.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color:
-                            theme.colorScheme.primary.withValues(alpha: 0.3),
+                        color: theme.colorScheme.primary.withValues(alpha: 0.3),
                       ),
                     ),
                     child: Text(
@@ -176,7 +215,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
             ),
             const SizedBox(height: 8),
 
-            // ── Faction + expansion badges 
+            // ── Faction + expansion badges
             Row(
               children: [
                 _Badge(
@@ -193,7 +232,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 16),
 
-            // ── Stat row 
+            // ── Stat row
             Row(
               children: [
                 _StatChip(
@@ -223,7 +262,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
               ],
             ),
 
-            // ── Traits 
+            // ── Traits
             if (card.traitsCn.isNotEmpty) ...[
               const SizedBox(height: 16),
               _buildSectionHeader(context, _isEnglish ? 'TRAITS' : '特征'),
@@ -239,7 +278,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const Divider(height: 32),
 
-            // ── Skills 
+            // ── Skills
             _buildSectionHeader(context, _isEnglish ? 'SKILLS' : '技能'),
             const SizedBox(height: 12),
             ...card.skills.map(
@@ -253,7 +292,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const Divider(height: 32),
 
-            // ── Related Cards 
+            // ── Related Cards
             _buildSectionHeader(
                 context, _isEnglish ? 'RELATED CARDS' : '相关牌'),
             const SizedBox(height: 12),
@@ -292,7 +331,6 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                 children: refs.map((ref) {
                   if (ref.type == ReferenceType.libraryCard &&
                       ref.libraryCard != null) {
-                    // ── Tappable library card chip 
                     return _RelatedCardChip(
                       label: _isEnglish
                           ? ref.libraryCard!.nameEn
@@ -308,7 +346,6 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
                       ),
                     );
                   } else {
-                    // ── Non-tappable skill reference chip 
                     return _RelatedSkillChip(
                       label: _isEnglish ? ref.nameEn : ref.nameCn,
                       isDark: isDark,
@@ -335,7 +372,93 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   }
 }
 
-// ── Related library card chip (tappable) 
+// ── Evolution Switcher ────────────────────────────────────────────────────────
+
+class _EvolutionSwitcher extends StatelessWidget {
+  final List<GeneralCard> variants;
+  final GeneralCard activeCard;
+  final void Function(GeneralCard) onSwitch;
+  final Color factionColor;
+
+  const _EvolutionSwitcher({
+    required this.variants,
+    required this.activeCard,
+    required this.onSwitch,
+    required this.factionColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'VERSION',
+          style: theme.textTheme.labelLarge?.copyWith(
+            letterSpacing: 1.2,
+            color: theme.hintColor,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: variants.map((variant) {
+            final isActive = variant.id == activeCard.id;
+            return Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: GestureDetector(
+                onTap: () => onSwitch(variant),
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 14, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: isActive
+                        ? factionColor
+                        : factionColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: isActive
+                          ? factionColor
+                          : factionColor.withValues(alpha: 0.4),
+                      width: 1.5,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        variant.expansionBadge,
+                        style: TextStyle(
+                          color: isActive ? Colors.white : factionColor,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        variant.expansion.labelEn,
+                        style: TextStyle(
+                          color: isActive
+                              ? Colors.white.withValues(alpha: 0.9)
+                              : factionColor.withValues(alpha: 0.8),
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+}
+
+// ── Related library card chip (tappable) ──────────────────────────────────────
 
 class _RelatedCardChip extends StatelessWidget {
   final String label;
@@ -382,7 +505,7 @@ class _RelatedCardChip extends StatelessWidget {
   }
 }
 
-// ── Related skill reference chip (non-tappable) 
+// ── Related skill reference chip (non-tappable) ───────────────────────────────
 
 class _RelatedSkillChip extends StatelessWidget {
   final String label;
@@ -419,7 +542,7 @@ class _RelatedSkillChip extends StatelessWidget {
   }
 }
 
-// ── Skill card 
+// ── Skill card ────────────────────────────────────────────────────────────────
 
 class _SkillCard extends StatelessWidget {
   final SkillDTO skill;
@@ -488,7 +611,7 @@ class _SkillCard extends StatelessWidget {
   }
 }
 
-// ── Skill type badge 
+// ── Skill type badge ──────────────────────────────────────────────────────────
 
 class _SkillTypeBadge extends StatelessWidget {
   final String label;
@@ -527,7 +650,7 @@ class _SkillTypeBadge extends StatelessWidget {
   }
 }
 
-// ── Faction / expansion badge 
+// ── Faction / expansion badge ─────────────────────────────────────────────────
 
 class _Badge extends StatelessWidget {
   final String label;
@@ -556,7 +679,7 @@ class _Badge extends StatelessWidget {
   }
 }
 
-// ── Stat chip 
+// ── Stat chip ─────────────────────────────────────────────────────────────────
 
 class _StatChip extends StatelessWidget {
   final IconData icon;
@@ -602,7 +725,7 @@ class _StatChip extends StatelessWidget {
   }
 }
 
-// ── Trait chip 
+// ── Trait chip ────────────────────────────────────────────────────────────────
 
 class _TraitChip extends StatelessWidget {
   final String label;

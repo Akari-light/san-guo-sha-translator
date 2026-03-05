@@ -115,18 +115,35 @@ class GeneralCard {
 }
 
 enum Expansion {
-  limitBreak;  // 界限突破 — prefix: jx
+  standard,   // 标准版 — prefix: std
+  limitBreak; // 界限突破 — prefix: jx
 
   static Expansion fromString(String value) {
     switch (value) {
+      case 'Standard':    return Expansion.standard;
       case 'Limit Break': return Expansion.limitBreak;
-      default:            return Expansion.limitBreak; // only one for now
+      default:            return Expansion.standard;
     }
   }
 
   String get badge {
     switch (this) {
+      case Expansion.standard:   return '标';
       case Expansion.limitBreak: return '界';
+    }
+  }
+
+  String get labelEn {
+    switch (this) {
+      case Expansion.standard:   return 'Standard';
+      case Expansion.limitBreak: return 'Limit Break';
+    }
+  }
+
+  String get labelCn {
+    switch (this) {
+      case Expansion.standard:   return '标准版';
+      case Expansion.limitBreak: return '界限突破';
     }
   }
 }
