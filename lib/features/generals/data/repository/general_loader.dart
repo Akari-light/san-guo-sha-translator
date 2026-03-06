@@ -18,6 +18,7 @@ class GeneralLoader {
   /// To add a new general expansion, add its file path here
   static const List<String> _expansionFiles = [
     'assets/data/generals/limit_break.json',
+    'assets/data/generals/devil.json',
     // 'assets/data/generals/standard.json',  // Uncomment when ready
   ];
 

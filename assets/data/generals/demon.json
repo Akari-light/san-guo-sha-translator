@@ -1,0 +1,268 @@
+[
+  {
+    "id": "mo.WEI001",
+    "standard_id": "char_caocao",
+    "name_cn": "魔曹操",
+    "name_en": "Demon Cao Cao",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 4.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Control"
+    ],
+    "expansion": "Devil",
+    "skills": [
+      "skill_mo_fuzai",
+      "skill_mo_bachao"
+    ],
+    "faq": [
+      {
+        "q_cn": "什么是入魔？",
+        "a_cn": "入魔是每局游戏限一次的动作。当你入魔后，每轮结束时，若你本轮未造成过伤害，你失去1点体力。",
+        "q_en": "What is Demonization?",
+        "a_en": "Demonization is a once-per-game action. Once you Demonize, at the end of each round, if you dealt no damage that round, you lose 1 HP."
+      },
+      {
+        "q_cn": "【霸朝】入魔后，无次数和距离限制是否适用于入魔后摸到的牌？",
+        "a_cn": "不适用。【霸朝】入魔的效果只针对你入魔时当前持有的手牌。入魔后通过【覆载】等方式新摸的牌仍然受次数和距离限制。",
+        "q_en": "After Demonization via [Subjugation], does the no-frequency/distance restriction apply to cards drawn afterwards?",
+        "a_en": "No. The restriction removal only applies to cards already in your hand at the moment you Demonize. Cards drawn afterwards (e.g. via [Dominion]) still have normal frequency and distance restrictions."
+      },
+      {
+        "q_cn": "【覆载】视为装备的武器和防具会跟随体力值动态变化吗？",
+        "a_cn": "会。每当你的体力值变化，你视为装备的武器攻击范围和防具名字数会同步更新为当前体力值对应的装备。",
+        "q_en": "Do the virtual weapon and armor from [Dominion] update dynamically as HP changes?",
+        "a_en": "Yes. Whenever your HP changes, the virtual weapon's attack range and the armor's name-length both immediately update to match your new HP value."
+      },
+      {
+        "q_cn": "【覆载】的装备牌可以当什么牌使用？",
+        "a_cn": "只能当【借刀杀人】或【无中生有】使用。不能正常装备，也不能作为其他牌使用（除非有其他技能转化）。",
+        "q_en": "What can equipment cards be used as under [Dominion]?",
+        "a_en": "Only as [Proxy Attack] or [Resupply]. They cannot be equipped normally or used as any other card (unless another skill provides a conversion)."
+      },
+      {
+        "q_cn": "若其他角色强制将装备置入魔曹操装备区（如界孙尚香、吴国太），【覆载】的效果会失效吗？",
+        "a_cn": "会失效。一旦装备区有牌，【覆载】不再提供视为装备的效果，但手牌中的装备牌仍只能当【借刀杀人】或【无中生有】使用。",
+        "q_en": "If another character forces an equipment into Demon Cao Cao's equipment zone (e.g. via Jie Sun Shangxiang or Lady Wu), does [Dominion] deactivate?",
+        "a_en": "Yes. Once the equipment zone is occupied, [Dominion] no longer provides the virtual equipment effect. However, any equipment cards in hand still can only be used as [Proxy Attack] or [Resupply]."
+      }
+    ]
+  },
+  {
+    "id": "mo.WEI002",
+    "standard_id": "char_simayi",
+    "name_cn": "魔司马懿",
+    "name_en": "Demon Sima Yi",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Control"
+    ],
+    "expansion": "Devil",
+    "skills": [
+      "skill_mo_guifu",
+      "skill_mo_moubian",
+      "skill_mo_zhouxi"
+    ],
+    "faq": [
+      {
+        "q_cn": "什么是入魔？",
+        "a_cn": "入魔是每局游戏限一次的动作。当你入魔后，每轮结束时，若你本轮未造成过伤害，你失去1点体力。",
+        "q_en": "What is Demonization?",
+        "a_en": "Demonization is a once-per-game action. Once you Demonize, at the end of each round, if you dealt no damage that round, you lose 1 HP."
+      },
+      {
+        "q_cn": "【诡伏】获得的【闪】有特殊标记吗？",
+        "a_cn": "有。【诡伏】获得的【闪】会带有「诡伏」标记，与普通【闪】区分。只有带此标记的【闪】才能当记录的牌使用。",
+        "q_en": "Are [Dodge] cards gained from [Ambuscade] marked differently?",
+        "a_en": "Yes. [Dodge] cards gained via [Ambuscade] carry a special marker. Only these marked cards can be used as recorded card names — ordinary [Dodge] cards cannot."
+      },
+      {
+        "q_cn": "体力增加（如吃桃复血）也能触发【诡伏】摸闪吗？",
+        "a_cn": "可以。体力值增加或减少都能触发【诡伏】。例如濒死吃桃时，体力先减少后增加，可触发两次获得两张【闪】。",
+        "q_en": "Does gaining HP (e.g. from a [Peach]) also trigger [Ambuscade]?",
+        "a_en": "Yes. Any HP change — increase or decrease — triggers [Ambuscade]. For example, when revived from near-death by a [Peach], HP first decreases then increases, triggering it twice and granting 2 [Dodge] cards."
+      },
+      {
+        "q_cn": "【诡伏】可以记录技能伤害吗？记录后能获得该技能吗？",
+        "a_cn": "可以记录直伤型技能（如神典韦【摧决】、族钟会【迂志】等）。入魔后通过【谋变】可永久获得这些技能。注意印卡型技能（如族钟繇【承启】）无法被记录，但印卡的牌名可以被记录。",
+        "q_en": "Can [Ambuscade] record skill-based damage? Can those skills be permanently gained?",
+        "a_en": "Yes, direct-damage skills can be recorded. Upon Demonization via [Conspiracy], these skills are permanently gained. Note: stamp-card skills cannot be recorded directly, but the card names on their stamps can be."
+      },
+      {
+        "q_cn": "【谋变】入魔后，【诡伏】还能继续记录牌名和技能吗？",
+        "a_cn": "可以继续记录，但入魔后你无法再通过【谋变】获得新记录的技能（每局只能发动一次）。通过【骤袭】临时获得的技能与通过【谋变】永久获得的技能是不同的。",
+        "q_en": "After Demonization via [Conspiracy], can [Ambuscade] still record new entries?",
+        "a_en": "Yes, recording continues. However, since [Conspiracy] can only trigger once per game, newly recorded skills after Demonization cannot be permanently gained. Skills temporarily gained via [Onslaught] are separate from skills permanently gained via [Conspiracy]."
+      },
+      {
+        "q_cn": "【骤袭】迫使其他角色对你使用的【杀】有什么特性？",
+        "a_cn": "该【杀】是无色的虚拟杀，可以无视距离和仁王盾，但会被藤甲克制。结算顺序以魔司马懿为起点，按逆时针顺序结算。",
+        "q_en": "What are the properties of the [Kill] that [Onslaught] forces other characters to use against you?",
+        "a_en": "It is a colorless virtual [Kill] that ignores distance and [Eight Trigrams Array], but is countered by Vine Armor. Resolution order starts from Demon Sima Yi and proceeds counter-clockwise."
+      },
+      {
+        "q_cn": "【谋变】入魔后每轮扣血时，是否触发【诡伏】？",
+        "a_cn": "会触发。任何体力值变化都会触发【诡伏】，包括入魔后每轮结束时未造成伤害扣的体力。",
+        "q_en": "Does the HP loss from [Conspiracy]'s Demonization penalty trigger [Ambuscade]?",
+        "a_en": "Yes. Any HP change triggers [Ambuscade], including HP lost from the Demonization end-of-round penalty."
+      }
+    ]
+  },
+  {
+    "id": "mo.QUN002",
+    "standard_id": "char_lubu",
+    "name_cn": "魔吕布",
+    "name_en": "Demon Lu Bu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 4.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Draw"
+    ],
+    "expansion": "Devil",
+    "skills": [
+      "skill_mo_duoqi",
+      "skill_mo_kuangmo",
+      "skill_mo_gangquan"
+    ],
+    "faq": [
+      {
+        "q_cn": "什么是入魔？",
+        "a_cn": "入魔是每局游戏限一次的动作。当你入魔后，每轮结束时，若你本轮未造成过伤害，你失去1点体力。",
+        "q_en": "What is Demonization?",
+        "a_en": "Demonization is a once-per-game action. Once you Demonize, at the end of each round, if you dealt no damage that round, you lose 1 HP."
+      },
+      {
+        "q_cn": "【夺炁】的额外出牌阶段算独立的新回合吗？",
+        "a_cn": "算。【夺炁】的额外出牌阶段是独立的新回合，没有弃牌阶段，手牌可以超出上限。不能在此阶段使用延时锦囊，但【罡拳】可以将延时锦囊当【决斗】使用。",
+        "q_en": "Does [Plunder]'s extra Play Phase count as a new turn?",
+        "a_en": "Yes. It is treated as an independent new turn with no discard phase, so hand cards can exceed the limit. Delayed tool cards cannot be used directly, but [Overwhelm] can convert them into a [Duel]."
+      },
+      {
+        "q_cn": "炁会因为进入弃牌堆或其他区域而失效吗？",
+        "a_cn": "不会。炁的标记优先级很高，不会因为进入弃牌堆、判定区或其他角色的手牌区而失效，直到被移出游戏为止。",
+        "q_en": "Does [Qi] lose its marker when it enters the discard pile or another zone?",
+        "a_en": "No. The [Qi] marker persists regardless of which zone the card enters — discard pile, judgment area, or another character's hand. It only disappears if the card is removed from the game."
+      },
+      {
+        "q_cn": "【狂魔】的加伤效果是双向的吗？",
+        "a_cn": "是的。【狂魔】的加伤是相互的，每回合对彼此首次造成的伤害都+1。例如使用【决斗】对狂角色，若决斗砸脚会受到2点伤害。",
+        "q_en": "Is the damage bonus from [Frenzy] mutual?",
+        "a_en": "Yes. The +1 damage applies to the first instance of damage between both parties each turn. For example, if you use a [Duel] on the Frenzied character and fail, you also take 2 damage."
+      },
+      {
+        "q_cn": "【狂魔】指定的狂角色死亡后，必须重新指定吗？",
+        "a_cn": "必须。狂角色死亡后，你必须立即重新指定一名其他角色，这是强制效果，不可跳过。",
+        "q_en": "Is it mandatory to designate a new Frenzied character when the current one dies?",
+        "a_en": "Yes, it is mandatory. You must immediately designate another character — this cannot be skipped."
+      },
+      {
+        "q_cn": "【罡拳】的初始状态是什么？",
+        "a_cn": "初始状态为【决斗】模式。当你使用一张炁后切换为火【杀】模式。两种模式根据你上一张使用的牌是否为炁来交替切换。",
+        "q_en": "What is the initial state of [Overwhelm]?",
+        "a_en": "The initial state is [Duel] mode. It switches to [Fire Kill] mode after you use a [Qi] card. The two modes alternate based on whether the last card played was a [Qi] card."
+      },
+      {
+        "q_cn": "【罡拳】印出的火【杀】会计入出杀次数吗？目标是什么？",
+        "a_cn": "会计入出杀次数，且强制指定所有相邻角色为目标。相邻指魔吕布左右两侧的角色，与加一马、减一马等距离修正无关。",
+        "q_en": "Does the [Fire Kill] from [Overwhelm] count toward Kill frequency? Who are the targets?",
+        "a_en": "Yes, it counts toward your Kill frequency for the turn. It forcibly targets all adjacent characters (directly to your left and right), regardless of any distance modifiers such as +1 Horse or -1 Horse."
+      }
+    ]
+  },
+  {
+    "id": "mo.QUN003",
+    "standard_id": "char_diaochan",
+    "name_cn": "魔貂蝉",
+    "name_en": "Demon Diao Chan",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Control"
+    ],
+    "expansion": "Devil",
+    "skills": [
+      "skill_mo_huanhuo",
+      "skill_mo_qingshi"
+    ],
+    "faq": [
+      {
+        "q_cn": "什么是入魔？",
+        "a_cn": "入魔是每局游戏限一次的动作。当你入魔后，每轮结束时，若你本轮未造成过伤害，你失去1点体力。",
+        "q_en": "What is Demonization?",
+        "a_en": "Demonization is a once-per-game action. Once you Demonize, at the end of each round, if you dealt no damage that round, you lose 1 HP."
+      },
+      {
+        "q_cn": "【幻惑】每轮最多能影响几名角色？",
+        "a_cn": "最多2名。每轮开始时最多弃置2张牌，选择等量其他角色，因此一轮最多幻惑2名角色。",
+        "q_en": "How many characters can [Bewitch] affect per round?",
+        "a_en": "A maximum of 2. You may discard up to 2 cards each round and choose an equal number of characters, so at most 2 characters can be Bewitched per round."
+      },
+      {
+        "q_cn": "被【幻惑】的角色随机弃置的牌可以是装备区的牌吗？",
+        "a_cn": "可以。每使用一张牌后随机弃置的牌可以是手牌或装备区的牌，但弃手牌的概率高于装备牌。",
+        "q_en": "Can the random discard triggered by [Bewitch] come from the equipment zone?",
+        "a_en": "Yes. The random discard after each played card can come from hand or the equipment zone, though hand cards are discarded at a higher rate than equipment cards."
+      },
+      {
+        "q_cn": "【幻惑】对额外出牌阶段（如族吴苋【贵相】）有效吗？",
+        "a_cn": "无效。【幻惑】只对目标角色下个正常的出牌阶段有效，对其他技能触发的额外出牌阶段无效。",
+        "q_en": "Does [Bewitch] apply to extra Play Phases triggered by other skills?",
+        "a_en": "No. [Bewitch] only applies to the target's next normal Play Phase. Extra Play Phases triggered by other skills are not affected."
+      },
+      {
+        "q_cn": "被幻惑的角色出牌阶段若没有可用手牌会怎样？",
+        "a_cn": "若出牌阶段开始时没有可用手牌，该角色可正常发动出牌阶段技能。但如果后续通过技能摸到了可用手牌，【幻惑】效果仍会触发。",
+        "q_en": "What happens if a Bewitched character has no playable cards at the start of their Play Phase?",
+        "a_en": "They may use Play Phase skills normally. However, if they subsequently draw a playable card via a skill during that phase, [Bewitch] will still trigger at that point."
+      },
+      {
+        "q_cn": "倾世牌被弃置或从【决斗】中打出后，魔貂蝉能获得吗？",
+        "a_cn": "可以。只要倾世牌未因使用进入弃牌堆，魔貂蝉就可以获得之。包括被弃置、重铸、或在【决斗】中打出的倾世牌，魔貂蝉都可以获得。",
+        "q_en": "Can Demon Diao Chan gain [Ruination] cards that are discarded or played during a [Duel]?",
+        "a_en": "Yes. Any [Ruination] card that leaves play without being directly used (i.e. not entering the discard pile through normal use) is gained by Demon Diao Chan — including cards discarded, reforged, or played as a response in a [Duel]."
+      },
+      {
+        "q_cn": "【倾世】能重新指定使用了多目标的倾世牌的目标吗？",
+        "a_cn": "不能。只有当其他角色使用倾世牌指定唯一目标时，你才可以弃置一张牌重新指定目标。若该牌指定了多个目标，你无法介入，但若伤害成立仍可摸牌。",
+        "q_en": "Can [Ruination] redirect a Ruination card that targets multiple characters?",
+        "a_en": "No. Redirection is only possible when the card has exactly one designated target. If the card targets multiple characters, you cannot redirect, but you still draw 1 card if damage is dealt."
+      }
+    ]
+  }
+]

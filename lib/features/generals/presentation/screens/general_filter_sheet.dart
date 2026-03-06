@@ -319,6 +319,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     switch (expansion) {
       case Expansion.limitBreak: return '界限突破 — Limit Break';
       case Expansion.standard: return '标准 — Standard';
+      case Expansion.demon: return '魔 — Demon';
     }
   }
 

@@ -1153,5 +1153,75 @@
         "name_en": "Yizhong",
         "description_cn": "锁定技，体力值大于等于你的角色的黑色【杀】对你无效；手牌数小于等于你的角色无法响应你的黑色【杀】。",
         "description_en": "Locked Skill: Black [Kill] from those with health >= yours is null; those with hand cards <= yours can't dodge your black [Kill]."
+    },
+    "skill_mo_fuzai": {
+        "skill_type": "locked",
+        "name_cn": "覆载",
+        "name_en": "Sovereign Realm",
+        "description_cn": "锁定技，你的装备牌只能当【借刀杀人】或【无中生有】使用。若你的装备区里没有牌，你视为装备着攻击范围为X的武器牌和牌名字数为X的防具牌各随机一张（X为你的体力值；若无对应则完全随机一张）。",
+        "description_en": "Locked: Your equipment cards can only be used as [Proxy Attack] or [Resupply]. If your equipment zone is empty, you are treated as having equipped a random weapon with attack range X and a random armor whose name has X characters (X = your current HP; if no matching equipment exists, a completely random one is used)."
+    },
+    "skill_mo_bachao": {
+        "skill_type": "active",
+        "name_cn": "霸朝",
+        "name_en": "Tyrant’s Decree",
+        "description_cn": "出牌阶段开始时，你可以令所有其他角色同时选择是否交给你一张牌，然后你可以对未以此法交给你非基本牌的一名角色造成1点伤害。若你选择自己，本阶段你使用当前手牌无次数和距离限制，并入魔。",
+        "description_en": "At the start of your Play Phase: you may have all other characters simultaneously choose whether to give you a card. You may then deal 1 damage to one character who did not give you a non-basic card this way. If you choose yourself, during this phase your current hand cards have no frequency or distance restrictions, and you Demonize."
+    },
+    "skill_mo_guifu": {
+        "skill_type": "active",
+        "name_cn": "诡伏",
+        "name_en": "Ambuscade",
+        "description_cn": "每轮开始时或你体力值变化后，你获得一张不计入手牌上限的【闪】。技能或牌造成伤害后，你记录此技能或牌名。你可将因此技能获得的【闪】当做记录的牌名使用（不计入次数限制，每回合每种牌名限一次）。",
+        "description_en": "At the start of each round or when your HP changes, gain one [Dodge] that does not count toward your hand limit. When a skill or card deals damage, record that skill or card name. You may use [Dodge] cards gained from this skill as any recorded card name (does not count toward frequency limits; once per card name per turn)."
+    },
+    "skill_mo_moubian": {
+        "skill_type": "awakening",
+        "name_cn": "谋变",
+        "name_en": "Final Gambit",
+        "description_cn": "准备阶段，若你【诡伏】记录数至少为3，你可入魔，获得你【诡伏】记录的技能，并获得【骤袭】。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
+        "description_en": "Preparation Phase: If the total number of entries recorded by [Ambuscade] is at least 3, you may Demonize — gain all skills recorded by [Ambuscade] and gain [Onslaught]. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+    },
+    "skill_mo_zhouxi": {
+        "skill_type": "active",
+        "name_cn": "骤袭",
+        "name_en": "Reprisal",
+        "description_cn": "准备阶段，你从三个可造成伤害的技能中选择一个获得至你的下回合开始。受到你伤害的角色于本轮结束时视为对你使用一张【杀】。",
+        "description_en": "Preparation Phase: Choose one of three damage-dealing skills to gain until the start of your next turn. At the end of this round, each character who took damage from you this round is treated as using a [Kill] against you."
+    },
+    "skill_mo_duoqi": {
+        "skill_type": "locked",
+        "name_cn": "夺炁",
+        "name_en": "Seize Q",
+        "description_cn": "锁定技，一号位首个回合开始前，你执行一个不能使用延时锦囊牌的额外出牌阶段。所有角色的初始手牌称为炁。你每回合对一名角色首次造成伤害后，你获得其一张炁。",
+        "description_en": "Locked: Before the first player's first turn begins, you take an extra Play Phase in which delayed tool cards cannot be used. All characters' starting hand cards are called [Qi]. The first time you deal damage to a character each turn, gain one of their [Qi]."
+    },
+    "skill_mo_kuangmo": {
+        "skill_type": "active",
+        "name_cn": "狂魔",
+        "name_en": "Demonic Frenzy",
+        "description_cn": "出牌阶段，你可以入魔并选择一名其他角色，你与其成为狂角色，每回合对彼此首次造成的伤害+1；击败对方后，获得对方所有炁。狂角色死亡后，你重新指定。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
+        "description_en": "Play Phase: You may Demonize and choose another character. You and that character become Frenzied: the first damage dealt between you each turn is increased by 1; upon defeating them, gain all their [Qi]. When the Frenzied character dies, you must designate a new one. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+    },
+    "skill_mo_gangquan": {
+        "skill_type": "active",
+        "name_cn": "罡拳",
+        "name_en": "Astral Strike",
+        "description_cn": "若你使用的上一张牌为炁，你可以将一张装备牌当指定相邻角色为目标的火【杀】使用；否则，你可以将一张锦囊牌当【决斗】使用。",
+        "description_en": "If the last card you played was a [Qi] card, you may use an equipment card as a [Fire Kill] targeting an adjacent character; otherwise, you may use a tool card as a [Duel]."
+    },
+    "skill_mo_huanhuo": {
+        "skill_type": "active",
+        "name_cn": "幻惑",
+        "name_en": "Bewitch",
+        "description_cn": "每轮开始时，你摸两张牌，然后弃置至多两张牌并选择等量其他角色。其下回合出牌阶段强制选中一张可用的手牌，且每使用一张牌后随机弃一张牌，直到其使用了两张牌后。",
+        "description_en": "At the start of each round, draw 2 cards, then discard up to 2 cards and choose an equal number of other characters. During their next Play Phase, one usable hand card is forcibly selected; after each card they play, they randomly discard one card, until they have played 2 cards total."
+    },
+    "skill_mo_qingshi": {
+        "skill_type": "awakening",
+        "name_cn": "倾世",
+        "name_en": "Alluring",
+        "description_cn": "准备阶段，你可入魔，令所有角色获得一张单目标伤害牌。其他角色使用此牌指定唯一目标时，你可弃置一张牌，重新指定牌的目标（无距离限制）。这些牌：造成伤害后，你摸一张牌；未因使用进入弃牌堆后，你获得之。（准备阶段，若这些牌均离开其手牌区，你再令所有角色获得牌。）入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
+        "description_en": "Preparation Phase: You may Demonize — give all characters one single-target damage card. When another character uses this card with only one target, you may discard a card to redirect it (no distance restriction). These cards: when one deals damage, you draw 1 card; if one leaves play without being used, you gain it. (Preparation Phase: if all these cards have left their holders' hands, give all characters another one.) While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
     }
 }

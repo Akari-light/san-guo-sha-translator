@@ -116,12 +116,14 @@ class GeneralCard {
 
 enum Expansion {
   standard,   // 标准版 — prefix: std
-  limitBreak; // 界限突破 — prefix: jx
+  limitBreak, // 界限突破 — prefix: jx
+  demon;      // 魔  — prefix: mo
 
   static Expansion fromString(String value) {
     switch (value) {
       case 'Standard':    return Expansion.standard;
       case 'Limit Break': return Expansion.limitBreak;
+      case 'demon':       return Expansion.demon;
       default:            return Expansion.standard;
     }
   }
@@ -130,6 +132,7 @@ enum Expansion {
     switch (this) {
       case Expansion.standard:   return '标';
       case Expansion.limitBreak: return '界';
+      case Expansion.demon:      return '魔';
     }
   }
 
@@ -137,6 +140,7 @@ enum Expansion {
     switch (this) {
       case Expansion.standard:   return 'Standard';
       case Expansion.limitBreak: return 'Limit Break';
+      case Expansion.demon:      return 'Demon';
     }
   }
 
@@ -144,6 +148,7 @@ enum Expansion {
     switch (this) {
       case Expansion.standard:   return '标准版';
       case Expansion.limitBreak: return '界限突破';
+      case Expansion.demon:      return '魔';
     }
   }
 }
