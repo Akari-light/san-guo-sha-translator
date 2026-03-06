@@ -316,7 +316,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
       case Expansion.limitBreak: return '界限突破 — Limit Break';
       case Expansion.standard: return '标准 — Standard';
       case Expansion.demon: return '魔 — Demon';
-      case Expansion.god: return '神 — Demon';
+      case Expansion.god: return '神 — God';
     }
   }
 

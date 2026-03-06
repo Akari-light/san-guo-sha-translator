@@ -1,34 +1,142 @@
 [
   {
-    "id": "wooden_ox",
+    "id": "treasure_wooden_ox",
     "name_cn": "木牛流马",
     "name_en": "Wooden Ox",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
     "effect_cn": [
-      "出牌阶段限一次，你可以将一张手牌扣置于你装备区里的【木牛流马】下，然后可以将此牌移动至一名装备区里没有宝物牌的其他角色的装备区；你可以将此牌下的牌如手牌般使用或打出。"
+      "出牌阶段限一次，若此牌下的牌少于五张，你可以将一张手牌扣置于此牌下；若如此做，你可以将此牌移动至一名装备区里没有宝物牌的其他角色的装备区里；你可以将此牌下的牌如手牌般使用或打出。"
     ],
     "effect_en": [
-      "Once per turn during your action phase, you may place one card face down under [Wooden Ox and Flowing Horse] in your equipment zone, and then choose to move this card to the equipment zone of another character who does not have any treasure cards in their equipment zone; you may use or play the cards under this card as if they were in your hand."
+      "Once per play phase, if fewer than five cards are stored under this card, you may place one hand card face-down beneath it. If you do, you may move this card to the equipment zone of another character who has no treasure card there. You may use or play any card stored beneath this card as though it were a hand card."
     ],
     "faq": [
       {
-        "q_cn": "木牛流马里的牌算手牌吗？",
-        "a_cn": "不算。储备牌不在手牌区，不受针对手牌的技能影响，只有当木牛流马本身被弃置或夺走时才会失去。",
-        "q_en": "Do cards stored in the Wooden Ox count as hand cards?",
-        "a_en": "No. Stored cards are not in your hand and are unaffected by skills targeting hand cards. They are only lost if the Wooden Ox itself is discarded or stolen."
+        "q_cn": "【木牛流马】下的牌算手牌吗？",
+        "a_cn": "不算。储备牌不在手牌区，不受针对手牌的技能影响（如弃置、拼点等），只有在可以「使用或打出」手牌的时机才能动用储备牌。",
+        "q_en": "Do cards stored under [Wooden Ox] count as hand cards?",
+        "a_en": "No. Stored cards are not hand cards and are unaffected by effects that target hand cards (such as discarding or competing). They can only be used or played at moments that allow you to use or play a hand card."
       },
       {
-        "q_cn": "把木牛流马传给别人时，储备牌也一起转移吗？",
-        "a_cn": "是的，所有储备牌随木牛流马一并移交。",
-        "q_en": "When I pass the Wooden Ox, do the stored cards transfer too?",
-        "a_en": "Yes. All stored cards transfer along with the Wooden Ox."
+        "q_cn": "一张牌最多可以储存几张牌？",
+        "a_cn": "至多5张。每个出牌阶段只能放入1张。",
+        "q_en": "How many cards can be stored under [Wooden Ox] at once?",
+        "a_en": "Up to 5 cards. Only 1 card may be placed under it per play phase."
       },
       {
-        "q_cn": "没有放入储备牌时可以移动木牛流马吗？",
-        "a_cn": "不可以，必须先放入一张牌才能选择移动。",
-        "q_en": "Can I move the Wooden Ox without storing a card first?",
-        "a_en": "No. You must store a card before you can choose to move it."
+        "q_cn": "把【木牛流马】传给别人时，储备牌也一起转移吗？",
+        "a_cn": "视情况而定。若【木牛流马】是从装备区移动到另一个装备区（如通过本身效果、甘露、巧变等），储备牌随之一并转移。若【木牛流马】进入装备区以外的区域（如被顺手牵羊牵走后进入手牌区，或被过河拆桥弃置），储备牌全部置入弃牌堆。",
+        "q_en": "When [Wooden Ox] moves to another character, do stored cards transfer too?",
+        "a_en": "It depends. If [Wooden Ox] moves from one equipment zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the equipment zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the discard pile."
+      },
+      {
+        "q_cn": "没有放入储备牌的情况下，可以移动【木牛流马】吗？",
+        "a_cn": "不可以。必须先放入一张牌，才能选择是否移动。",
+        "q_en": "Can [Wooden Ox] be moved without storing a card first?",
+        "a_en": "No. You must store a card before you may choose to move it."
+      },
+      {
+        "q_cn": "可以使用储备牌发动武将的转化技能（如武圣、龙胆）吗？",
+        "a_cn": "可以。任何允许「将手牌当作其他牌使用或打出」的转化技能，均可以选择储备牌发动，例如武圣、龙胆等。",
+        "q_en": "Can stored cards be used to activate a general's conversion skill (such as [Valor] or [Dragon Soul])?",
+        "a_en": "Yes. Any conversion skill that allows you to use or play a hand card as another card can be activated using a stored card."
+      },
+      {
+        "q_cn": "大乔的【流离】或小乔的【天香】可以使用储备牌发动吗？",
+        "a_cn": "不可以。这类技能需要「弃置」牌，而储备牌只能被「使用或打出」，无法被弃置。",
+        "q_en": "Can Da Qiao's [Fleeting] or Xiao Qiao's [Heavenly Fragrance] be activated using stored cards?",
+        "a_en": "No. Those skills require discarding a card, and stored cards can only be used or played — they cannot be discarded."
+      }
+    ]
+  },
+  {
+    "id": "treasure_imperial_seal",
+    "name_cn": "玉玺",
+    "name_en": "Imperial Seal",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "锁定技，若你有已明置的武将牌，你获得以下效果：你的势力成为场上唯一的大势力，其他势力均为小势力；摸牌阶段，你多摸一张牌；出牌阶段开始时，你视为使用一张【知己知彼】。"
+    ],
+    "effect_en": [
+      "Locked: If you have a face-up general card, you gain the following effects: your faction becomes the sole major faction on the field and all other factions become minor factions; during your draw phase, draw one additional card; at the start of your play phase, you are treated as having used one [Know Thyself]."
+    ],
+    "faq": [
+      {
+        "q_cn": "【玉玺】的效果需要什么前提条件才能触发？",
+        "a_cn": "你必须已经明置至少一张武将牌。若你的武将牌全部处于暗置状态，【玉玺】的所有效果均不生效。",
+        "q_en": "What condition must be met for [Imperial Seal]'s effects to activate?",
+        "a_en": "You must have at least one face-up general card. If all your general cards are face-down, none of [Imperial Seal]'s effects apply."
+      },
+      {
+        "q_cn": "拥有【玉玺】后，其他势力的「挟天子以令诸侯」效果还能生效吗？",
+        "a_cn": "不能。【玉玺】持有者的势力成为唯一大势力，其他所有势力均降为小势力，「挟天子」类效果依赖大势力身份，因此持有【玉玺】一方独享该特权。",
+        "q_en": "Can other factions still use the 'coerce the emperor' (挟天子) mechanic once someone holds [Imperial Seal]?",
+        "a_en": "No. The [Imperial Seal] holder's faction becomes the sole major faction. All others become minor factions, so only the holder's faction retains access to major-faction privileges such as the coerce mechanic."
+      },
+      {
+        "q_cn": "【玉玺】出牌阶段开始时视为使用的【知己知彼】，目标如何选择？",
+        "a_cn": "同正常使用【知己知彼】，你选择一名有手牌或有暗置武将牌的其他角色，观看其手牌或一张暗置武将牌。此效果为锁定技，每回合自动触发，无法跳过。",
+        "q_en": "For the [Know Thyself] effect triggered at the start of your play phase, how is the target chosen?",
+        "a_en": "The same as using [Know Thyself] normally: you choose another character who has hand cards or a face-down general card, then view their hand or one face-down general. This is a Locked effect that triggers automatically each turn and cannot be skipped."
+      },
+      {
+        "q_cn": "【玉玺】是标准牌堆中的牌吗？",
+        "a_cn": "不是。【玉玺】是国战模式「君临天下·势备篇」扩展包中的宝物牌，不存在于标准牌堆中。",
+        "q_en": "Is [Imperial Seal] a standard deck card?",
+        "a_en": "No. [Imperial Seal] is a treasure card from the Warring States expansion set and is not part of the standard draw pile."
+      },
+      {
+        "q_cn": "一名角色可以同时装备两张宝物牌吗？",
+        "a_cn": "不可以。每名角色的装备区只有一个宝物槽，新宝物牌进入时会替换旧宝物牌。因此【木牛流马】和【玉玺】不能同时装备在同一名角色上。",
+        "q_en": "Can a character equip two treasure cards at the same time?",
+        "a_en": "No. Each character's equipment zone has only one treasure slot. Equipping a new treasure replaces the existing one. [Wooden Ox] and [Imperial Seal] cannot be on the same character simultaneously."
+      }
+    ]
+  },
+  {
+    "id": "treasure_serenity_pearl",
+    "name_cn": "定澜夜明珠",
+    "name_en": "Serenity Pearl",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "锁定技，你视为拥有「制衡」。若你已拥有「制衡」，则改为取消弃置牌数的限制。"
+    ],
+    "effect_en": [
+      "Locked: You are treated as possessing the skill [Balance]. If you already possess [Balance], the card limit on [Balance] is removed instead."
+    ],
+    "faq": [
+      {
+        "q_cn": "「制衡」技能的效果是什么？",
+        "a_cn": "出牌阶段限一次，你可以弃置至多X张牌（X为你的体力上限），然后摸等量的牌。",
+        "q_en": "What does the [Balance] skill do?",
+        "a_en": "Once per play phase, you may discard up to X cards (where X equals your HP limit), then draw that many cards."
+      },
+      {
+        "q_cn": "装备【定澜夜明珠】后，「制衡」的弃牌上限被取消，这意味着什么？",
+        "a_cn": "若你本就拥有「制衡」（如孙权），取消弃牌上限后你可以弃置任意数量的牌，然后摸等量的牌，不再受体力上限的张数限制。",
+        "q_en": "When [Serenity Pearl] removes the discard limit on [Balance], what does that mean in practice?",
+        "a_en": "If you already have [Balance] (e.g. Sun Quan), the cap of X cards is lifted and you may discard any number of cards, then draw that many, with no upper limit."
+      },
+      {
+        "q_cn": "若你本身没有「制衡」，装备【定澜夜明珠】后「制衡」的弃牌上限是多少？",
+        "a_cn": "视为拥有的「制衡」仍适用正常上限，即至多弃置X张牌（X为体力上限）。只有本身已有「制衡」的角色才能解除上限。",
+        "q_en": "If you don't naturally have [Balance] and equip [Serenity Pearl], is there a discard limit?",
+        "a_en": "Yes. The granted [Balance] still applies its standard limit: discard up to X cards (X equals your HP limit). The limit-removal only applies when you already have [Balance] from another source."
+      },
+      {
+        "q_cn": "通过【定澜夜明珠】获得的「制衡」可以弃置装备区的牌吗？",
+        "a_cn": "可以。「制衡」允许弃置任意类型的牌，包括手牌和装备区的牌。",
+        "q_en": "Can [Balance] granted by [Serenity Pearl] be used to discard equipment cards?",
+        "a_en": "Yes. [Balance] allows discarding cards of any type, including equipment cards from your equipment zone."
+      },
+      {
+        "q_cn": "【定澜夜明珠】是标准牌堆中的牌吗？",
+        "a_cn": "不是。【定澜夜明珠】是国战模式「君临天下·变」扩展包中的宝物牌，加入游戏时替换【吴六剑】。",
+        "q_en": "Is [Serenity Pearl] a standard deck card?",
+        "a_en": "No. [Serenity Pearl] is a treasure card from the Warring States expansion set, and replaces [Six Swords of Wu] when added to the game."
       }
     ]
   }

@@ -1,28 +1,307 @@
 [
   {
-    "id": "armor_eight_trigrams",
+    "id": "armor_eight_trigrams_formation",
     "name_cn": "八卦阵",
-    "name_en": "Eight Trigrams Array",
+    "name_en": "Eight Trigrams Formation",
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
       "每当你需要使用或打出一张【闪】时，你可以进行一次判定。若判定结果为红色，视为你使用或打出了一张【闪】。"
     ],
     "effect_en": [
-      "Whenever you need to use or play a [Dodge], you may perform a Judgment. If the result is Red (Hearts or Diamonds), it is treated as if you used or played a [Dodge]."
+      "Whenever you need to use or play a [Dodge], you may perform a Judgment. If the result is red (Hearts or Diamonds), it is treated as if you used or played a [Dodge]."
     ],
     "faq": [
       {
-        "q_cn": "如果判定结果是黑色，我还能从手牌打出【闪】吗？",
-        "a_cn": "可以。判定失败不影响你正常出【闪】。",
-        "q_en": "If the Judgment fails, can I still play a [Dodge] from my hand?",
-        "a_en": "Yes. A failed judgment does not prevent you from playing a [Dodge] normally."
+        "q_cn": "若判定结果为黑色，我还能从手牌打出【闪】吗？",
+        "a_cn": "可以。判定失败不影响你正常打出【闪】。",
+        "q_en": "If the Judgment fails (black result), can I still play a [Dodge] from my hand?",
+        "a_en": "Yes. A failed Judgment does not prevent you from playing a [Dodge] from your hand normally."
       },
       {
-        "q_cn": "张角可以用技能修改八卦阵的判定吗？",
-        "a_cn": "可以。所有具备修改判定技能的武将都可以影响八卦阵的判定结果。",
-        "q_en": "Can judgment-altering skills affect Eight Trigrams?",
-        "a_en": "Yes. Any skill that modifies judgment results can affect Eight Trigrams Array."
+        "q_cn": "具有修改判定能力的武将技能可以影响【八卦阵】的判定吗？",
+        "a_cn": "可以。所有具备修改判定技能的武将都可以影响【八卦阵】的判定结果。",
+        "q_en": "Can judgment-altering general skills affect [Eight Trigrams Formation]'s Judgment?",
+        "a_en": "Yes. Any skill that modifies Judgment results can affect [Eight Trigrams Formation]."
+      },
+      {
+        "q_cn": "装备了【青釭剑】的攻击者使用【杀】时，【八卦阵】的判定是否还能生效？",
+        "a_cn": "不能。【青釭剑】令目标防具无效，因此【八卦阵】在此次【杀】中无法触发判定。",
+        "q_en": "If the attacker is equipped with [Qing Gang Sword], can [Eight Trigrams Formation]'s Judgment still activate?",
+        "a_en": "No. [Qing Gang Sword] negates the target's armor, so [Eight Trigrams Formation] cannot trigger its Judgment for that [Kill]."
+      },
+      {
+        "q_cn": "【八卦阵】可以响应【南蛮入侵】或【万箭齐发】需要的【闪】吗？",
+        "a_cn": "可以。只要有效果要求你使用或打出【闪】，【八卦阵】均可触发判定。",
+        "q_en": "Can [Eight Trigrams Formation] respond to [Barbarian Invasion] or [Arrow Volley] when a [Dodge] is required?",
+        "a_en": "Yes. Whenever any effect requires you to use or play a [Dodge], [Eight Trigrams Formation] may trigger its Judgment."
+      }
+    ]
+  },
+  {
+    "id": "armor_silver_lion_helmet",
+    "name_cn": "白银狮子",
+    "name_en": "Silver Lion Helmet",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，当你受到伤害时，若伤害值大于1，则你将伤害值改为1；当你失去装备区里的【白银狮子】后，你回复1点体力。"
+    ],
+    "effect_en": [
+      "Locked: When you receive damage, if the damage value exceeds 1, reduce it to 1. When [Silver Lion Helmet] leaves your equipment zone, you recover 1 HP."
+    ],
+    "faq": [
+      {
+        "q_cn": "【青釭剑】可以无效【白银狮子】的减伤效果吗？",
+        "a_cn": "可以。【青釭剑】令目标防具无效，装备【青釭剑】的攻击者使用【杀】时，【白银狮子】的减伤锁定技在该次【杀】中无效，攻击者可以造成超过1点的伤害。",
+        "q_en": "Can [Qing Gang Sword] bypass [Silver Lion Helmet]'s damage reduction?",
+        "a_en": "Yes. [Qing Gang Sword] negates the target's armor. When an attacker equipped with [Qing Gang Sword] uses [Kill], [Silver Lion Helmet]'s damage reduction is negated for that attack, allowing damage exceeding 1 to be dealt."
+      },
+      {
+        "q_cn": "使用【酒】强化的【杀】造成2点伤害时，【白银狮子】能将伤害减为1吗？",
+        "a_cn": "可以。只要最终伤害值大于1，【白银狮子】将其改为1，无论伤害来源如何。",
+        "q_en": "If a [Wine]-boosted [Kill] would deal 2 damage, does [Silver Lion Helmet] reduce it to 1?",
+        "a_en": "Yes. As long as the final damage value exceeds 1, [Silver Lion Helmet] reduces it to 1 regardless of the source."
+      },
+      {
+        "q_cn": "将新防具装入装备区替换【白银狮子】时，是否触发回复体力的效果？",
+        "a_cn": "是的。【白银狮子】因被替换而离开装备区，触发回复1点体力的效果。",
+        "q_en": "If [Silver Lion Helmet] is replaced by equipping a new armor, does the HP recovery trigger?",
+        "a_en": "Yes. [Silver Lion Helmet] leaving the equipment zone via replacement triggers the 1 HP recovery."
+      },
+      {
+        "q_cn": "【白银狮子】对武将技能造成的伤害也有效吗？",
+        "a_cn": "有效。【白银狮子】对所有来源的伤害生效，只要伤害值大于1均减为1，不限于【杀】造成的伤害。",
+        "q_en": "Does [Silver Lion Helmet] apply to damage from general skills (not from [Kill])?",
+        "a_en": "Yes. [Silver Lion Helmet] applies to all sources of damage. Any damage exceeding 1, regardless of source, is reduced to 1."
+      }
+    ]
+  },
+  {
+    "id": "armor_heart_guard_mirror",
+    "name_cn": "护心镜",
+    "name_en": "Heart Guard Mirror",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "当你受到伤害时，若伤害值大于或等于你当前的体力值，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
+    ],
+    "effect_en": [
+      "When you receive damage, if the damage value is greater than or equal to your current HP, you may place [Heart Guard Mirror] from your equipment zone into the discard pile to prevent that damage."
+    ],
+    "faq": [
+      {
+        "q_cn": "【护心镜】是锁定技吗？",
+        "a_cn": "不是。【护心镜】是可选效果，你可以选择不发动。",
+        "q_en": "Is [Heart Guard Mirror] a Locked skill?",
+        "a_en": "No. It is optional; you may choose not to activate it."
+      },
+      {
+        "q_cn": "体力值为1时受到1点伤害，是否可以发动【护心镜】？",
+        "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
+        "q_en": "If my current HP is 1 and I receive 1 damage, can [Heart Guard Mirror] activate?",
+        "a_en": "Yes. 1 damage equals your current HP of 1, which satisfies the trigger condition."
+      },
+      {
+        "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
+        "a_cn": "不算。【护心镜】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
+        "q_en": "When [Heart Guard Mirror] is placed into the discard pile upon activation, does it count as being 'discarded'?",
+        "a_en": "No. It is placed into the discard pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
+      },
+      {
+        "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
+        "a_cn": "可以。只要伤害值大于或等于当前体力值，无论伤害来源均可发动。",
+        "q_en": "Can [Heart Guard Mirror] prevent damage from general skills?",
+        "a_en": "Yes. As long as the damage meets the condition (greater than or equal to current HP), it can be activated regardless of the damage source."
+      }
+    ]
+  },
+  {
+    "id": "armor_radiant_plate",
+    "name_cn": "明光铠",
+    "name_en": "Radiant Plate",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，当你成为【火烧连营】、【火攻】或火【杀】的目标时，取消之；若你是小势力角色，你不会被横置。"
+    ],
+    "effect_en": [
+      "Locked: When you become the target of [Blaze Assault], [Fire Attack], or a fire [Kill], cancel that targeting. If you are a minor-faction character, your general card cannot be tapped (horizontally rotated)."
+    ],
+    "faq": [
+      {
+        "q_cn": "【朱雀羽扇】将普通【杀】转化为火【杀】后，【明光铠】能取消此目标吗？",
+        "a_cn": "可以。只要【杀】的属性在结算时为火属性，【明光铠】均可取消目标。",
+        "q_en": "If [Vermilion Bird Fan] converts a normal [Kill] into a fire [Kill], can [Radiant Plate] cancel the targeting?",
+        "a_en": "Yes. As long as the [Kill] has the fire property at the time of resolution, [Radiant Plate] can cancel the targeting."
+      },
+      {
+        "q_cn": "装备【青釭剑】的攻击者使用火【杀】时，【明光铠】还能生效吗？",
+        "a_cn": "可以。【明光铠】的取消效果发生在成为目标时，早于【青釭剑】令防具无效的结算时机，因此【明光铠】仍然有效。",
+        "q_en": "If the attacker is equipped with [Qing Gang Sword] and uses a fire [Kill], can [Radiant Plate] still activate?",
+        "a_en": "Yes. [Radiant Plate]'s cancellation occurs at the moment of becoming a target, which is earlier in the resolution order than [Qing Gang Sword]'s armor-negation effect. Therefore [Radiant Plate] still applies."
+      },
+      {
+        "q_cn": "【明光铠】能防止武将技能造成的火焰伤害吗？",
+        "a_cn": "不能。【明光铠】只取消特定卡牌（【火烧连营】、【火攻】、火【杀】）的目标，不防止武将技能直接造成的火焰伤害。",
+        "q_en": "Does [Radiant Plate] protect against fire damage dealt directly by general skills?",
+        "a_en": "No. [Radiant Plate] only cancels targeting from specific cards ([Blaze Assault], [Fire Attack], fire [Kill]). It does not prevent fire damage dealt directly by general skills."
+      },
+      {
+        "q_cn": "小势力角色的「不被横置」效果在任何时候都生效吗？",
+        "a_cn": "是的。只要装备了【明光铠】且为小势力角色，一切令其横置的效果均无效。",
+        "q_en": "Does the 'cannot be tapped' effect for minor-faction characters apply at all times while equipped?",
+        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would tap their general card are negated."
+      }
+    ]
+  },
+  {
+    "id": "armor_vajra_shield",
+    "name_cn": "仁王盾",
+    "name_en": "Vajra Shield",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，黑色的【杀】对你无效。"
+    ],
+    "effect_en": [
+      "Locked: Black [Kill] cards have no effect on you."
+    ],
+    "faq": [
+      {
+        "q_cn": "【仁王盾】对黑色的雷【杀】是否有效？",
+        "a_cn": "有效。只要【杀】的花色为黑色（黑桃或梅花），无论其属性（普通、雷、火），【仁王盾】均令其无效。",
+        "q_en": "Does [Vajra Shield] negate a black thunder [Kill]?",
+        "a_en": "Yes. As long as the [Kill] card is black (Spades or Clubs), it is negated regardless of its elemental type (normal, thunder, or fire)."
+      },
+      {
+        "q_cn": "【青釭剑】能令【仁王盾】无效吗？",
+        "a_cn": "可以。【青釭剑】令目标防具无效，因此装备【青釭剑】的攻击者使用黑色【杀】时，【仁王盾】在该次攻击中无效。",
+        "q_en": "Can [Qing Gang Sword] negate [Vajra Shield]?",
+        "a_en": "Yes. [Qing Gang Sword] negates the target's armor, so a black [Kill] will land normally when the attacker is equipped with [Qing Gang Sword]."
+      },
+      {
+        "q_cn": "【仁王盾】对红色的【杀】是否有任何效果？",
+        "a_cn": "没有。【仁王盾】只对黑色【杀】生效，红色【杀】正常结算。",
+        "q_en": "Does [Vajra Shield] have any effect on red [Kill] cards?",
+        "a_en": "No. [Vajra Shield] only affects black [Kill] cards. Red [Kill] cards resolve normally."
+      }
+    ]
+  },
+  {
+    "id": "armor_taiping_tome",
+    "name_cn": "太平要术",
+    "name_en": "Taiping Tome",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，防止你受到的所有属性伤害；全场每有一名与你势力相同的角色存活，你的手牌上限便+1；当你失去装备区里的【太平要术】时，你摸两张牌，然后失去1点体力。"
+    ],
+    "effect_en": [
+      "Locked: Prevent all elemental damage you receive. For each character of the same faction as you who is alive, your hand card limit increases by 1. When [Taiping Tome] leaves your equipment zone, draw two cards, then lose 1 HP."
+    ],
+    "faq": [
+      {
+        "q_cn": "【太平要术】防止的「属性伤害」包含哪些？",
+        "a_cn": "属性伤害包括火焰伤害和雷电伤害，涵盖火【杀】、雷【杀】、【火烧连营】、【火攻】以及造成属性伤害的武将技能（如铁索连环传导伤害）。普通【杀】造成的物理伤害不在防止范围内。",
+        "q_en": "What types of damage does [Taiping Tome] classify as elemental?",
+        "a_en": "Elemental damage includes fire and thunder damage — from fire [Kill], thunder [Kill], [Blaze Assault], [Fire Attack], and general skills that deal elemental damage (such as chain-transmitted damage via [Iron Shackles]). Physical damage from a normal [Kill] is not prevented."
+      },
+      {
+        "q_cn": "主动将【太平要术】替换为其他防具，是否触发摸牌和失血效果？",
+        "a_cn": "是的。任何原因导致【太平要术】离开装备区，均触发摸两张牌然后失去1点体力的效果。",
+        "q_en": "If [Taiping Tome] is replaced by equipping a new armor, does the draw and HP loss trigger?",
+        "a_en": "Yes. Any time [Taiping Tome] leaves the equipment zone for any reason, the effect triggers: draw two cards, then lose 1 HP."
+      },
+      {
+        "q_cn": "【太平要术】增加的手牌上限是动态计算的吗？",
+        "a_cn": "是的。每当场上与你势力相同的角色数量发生变化（有人死亡），手牌上限随之实时更新。",
+        "q_en": "Is the hand card limit bonus from [Taiping Tome] calculated dynamically?",
+        "a_en": "Yes. The hand card limit updates in real time as the number of surviving same-faction characters changes (e.g. when one dies)."
+      },
+      {
+        "q_cn": "【太平要术】是牌堆中的标准牌吗？",
+        "a_cn": "不是。【太平要术】不存在于标准牌堆中，它是南华老仙的专属装备，由其技能生成并使用。",
+        "q_en": "Is [Taiping Tome] a standard card found in the draw pile?",
+        "a_en": "No. [Taiping Tome] is not in the standard draw pile. It is an exclusive equipment generated by the general Nan Hua the Immortal through his skill."
+      }
+    ]
+  },
+  {
+    "id": "armor_rattan_armour",
+    "name_cn": "藤甲",
+    "name_en": "Rattan Armour",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1。"
+    ],
+    "effect_en": [
+      "Locked: [Barbarian Invasion], [Arrow Volley], and normal [Kill] cards have no effect on you. When you receive fire damage, that damage is increased by 1."
+    ],
+    "faq": [
+      {
+        "q_cn": "【藤甲】对雷【杀】和火【杀】是否有效？",
+        "a_cn": "无效。【藤甲】只令普通【杀】无效，雷【杀】和火【杀】可以正常命中。此外，受到火焰伤害时伤害还会+1。",
+        "q_en": "Does [Rattan Armour] protect against thunder [Kill] or fire [Kill]?",
+        "a_en": "No. [Rattan Armour] only negates normal (non-elemental) [Kill]. Thunder [Kill] and fire [Kill] land normally, and fire damage additionally increases by 1."
+      },
+      {
+        "q_cn": "【青釭剑】可以无效【藤甲】吗？",
+        "a_cn": "可以。装备【青釭剑】的攻击者使用普通【杀】时，【藤甲】在该次攻击中无效，普通【杀】正常命中。",
+        "q_en": "Can [Qing Gang Sword] negate [Rattan Armour]?",
+        "a_en": "Yes. When an attacker equipped with [Qing Gang Sword] uses a normal [Kill], [Rattan Armour] is negated for that attack and the [Kill] lands normally."
+      },
+      {
+        "q_cn": "【藤甲】的火焰伤害+1是否叠加在原有伤害之上？",
+        "a_cn": "是的。例如，受到1点火焰伤害时实际受到2点伤害；受到2点火焰伤害时实际受到3点伤害。",
+        "q_en": "Is the fire damage +1 from [Rattan Armour] added on top of the original damage?",
+        "a_en": "Yes. For example, 1 point of fire damage becomes 2; 2 points of fire damage becomes 3."
+      },
+      {
+        "q_cn": "铁索连环传导的火焰伤害是否也会触发【藤甲】的+1效果？",
+        "a_cn": "是的。连环传导的伤害若为火焰属性，装备【藤甲】的角色受到的伤害+1。",
+        "q_en": "Does fire damage transmitted via [Iron Shackles] chain also trigger [Rattan Armour]'s +1 penalty?",
+        "a_en": "Yes. If chain-transmitted damage has the fire property, a character equipped with [Rattan Armour] takes +1 damage from it."
+      }
+    ]
+  },
+  {
+    "id": "armor_radiant_silver_armour",
+    "name_cn": "烂银甲",
+    "name_en": "Radiant Silver Armour",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "你可以将一张手牌当作【闪】使用或打出；锁定技，【烂银甲】不会被无效化；当你受到【杀】造成的伤害时，弃置【烂银甲】。"
+    ],
+    "effect_en": [
+      "You may treat any hand card as a [Dodge] to use or play. Locked: [Radiant Silver Armour] cannot be negated by any effect. When you receive damage from a [Kill], discard [Radiant Silver Armour]."
+    ],
+    "faq": [
+      {
+        "q_cn": "【烂银甲】「不会被无效化」是什么意思？",
+        "a_cn": "即使面对装备【青釭剑】的攻击者，【烂银甲】的效果仍然有效，不受任何无效防具效果的影响。",
+        "q_en": "What does it mean that [Radiant Silver Armour] 'cannot be negated'?",
+        "a_en": "Even when facing an attacker equipped with [Qing Gang Sword], [Radiant Silver Armour]'s effects remain active. No effect in the game can negate this armor."
+      },
+      {
+        "q_cn": "弃置【烂银甲】的触发条件是什么？是被【杀】指定为目标，还是实际受到伤害？",
+        "a_cn": "是实际受到【杀】造成的伤害时才弃置。若【杀】被【闪】或其他效果抵消而未造成伤害，则不弃置。",
+        "q_en": "What exactly triggers [Radiant Silver Armour]'s discard — being targeted by a [Kill] or actually receiving damage from it?",
+        "a_en": "The discard triggers only when damage from a [Kill] is actually received. If the [Kill] is negated by a [Dodge] or any other effect and no damage is dealt, [Radiant Silver Armour] is not discarded."
+      },
+      {
+        "q_cn": "用【烂银甲】将一张手牌当【闪】打出后，被弃置的是手牌还是【烂银甲】本身？",
+        "a_cn": "弃置的是用来替代【闪】的那张手牌，而非【烂银甲】本身。【烂银甲】只在实际受到【杀】伤害时才被弃置。",
+        "q_en": "When a hand card is used as a [Dodge] via [Radiant Silver Armour], which card is discarded — the hand card or the armor itself?",
+        "a_en": "The hand card used as the [Dodge] is discarded. [Radiant Silver Armour] itself is only discarded when you actually receive damage from a [Kill]."
+      },
+      {
+        "q_cn": "【烂银甲】是标准牌堆中的牌，还是专属装备？",
+        "a_cn": "【烂银甲】是忠胆英杰模式专属牌，加入游戏时替换标准版中的【八卦阵】。",
+        "q_en": "Is [Radiant Silver Armour] a standard deck card or a mode-exclusive card?",
+        "a_en": "It is exclusive to the Loyal Heroes (忠胆英杰) game mode and replaces [Eight Trigrams Formation] in the standard deck when used."
       }
     ]
   }

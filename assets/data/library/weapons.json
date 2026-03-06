@@ -1,5 +1,5 @@
 [
- {
+  {
     "id": "weapon_twin_swords",
     "name_cn": "雌雄双股剑",
     "name_en": "Twin Swords",
@@ -7,11 +7,658 @@
     "category_en": "Weapon",
     "range": 2,
     "effect_cn": [
-      "当你使用【杀】指定一名与你性别不同的角色为目标后，你可以令其选择一项：1.弃置一张手牌；2.令你摸一张牌。"
+      "当你使用【杀】指定一名与你性别不同的角色为目标后，你可以令其选择一项：1. 弃置一张手牌；2. 令你摸一张牌。"
     ],
     "effect_en": [
-      "When you use [Kill] to target a character of a different gender than you, you can make them choose one of the following: 1. Discard a card from their hand; 2. Make you draw a card."
+      "When you use [Kill] targeting a character of a different gender, you may force them to choose one: 1. Discard one hand card; 2. You draw one card."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "发动【雌雄双股剑】时，是看玩家的性别还是游戏角色的性别？",
+        "a_cn": "看游戏角色的性别。",
+        "q_en": "When activating [Twin Swords], do we use the player's gender or the general's gender?",
+        "a_en": "The general's (character's) gender."
+      },
+      {
+        "q_cn": "发动【雌雄双股剑】时，由谁决定是攻击者摸牌还是被攻击者弃牌？",
+        "a_cn": "由被攻击者决定。",
+        "q_en": "Who decides whether the attacker draws or the target discards?",
+        "a_en": "The target (defender) decides."
+      },
+      {
+        "q_cn": "发动【雌雄双股剑】时，被攻击者可以弃置装备区的牌或判定区的延时锦囊牌吗？",
+        "a_cn": "不能。只能弃置手牌。",
+        "q_en": "Can the target discard equipment or time-delay tool cards when resolving [Twin Swords]?",
+        "a_en": "No. Only hand cards can be discarded."
+      },
+      {
+        "q_cn": "发动【雌雄双股剑】时，如果被攻击者没有手牌，如何结算？",
+        "a_cn": "攻击者摸一张牌。",
+        "q_en": "If the target has no hand cards when [Twin Swords] activates, what happens?",
+        "a_en": "The attacker draws one card."
+      },
+      {
+        "q_cn": "装备【雌雄双股剑】并使用黑色【杀】攻击装备了【仁王盾】的目标时，是否可以发动武器技能？",
+        "a_cn": "可以使用黑色【杀】进行攻击并发动武器技能，但由于【仁王盾】的效果，此【杀】最终无效。",
+        "q_en": "If the attacker uses a black [Kill] against a target equipped with [Ren Wang Shield], can [Twin Swords] still activate?",
+        "a_en": "Yes, the weapon skill can activate, but the [Kill] itself is negated by [Ren Wang Shield]."
+      },
+      {
+        "q_cn": "装备【雌雄双股剑】攻击异性角色时，可以选择不发动武器技能吗？",
+        "a_cn": "可以，武器技能是可选的。",
+        "q_en": "Can the attacker choose not to activate [Twin Swords] when attacking a character of a different gender?",
+        "a_en": "Yes. The weapon skill is optional."
+      },
+      {
+        "q_cn": "装备【雌雄双股剑】攻击大乔，大乔发动【流离】将目标转移后，如何结算？",
+        "a_cn": "武器技能在【流离】结算后判断。若新目标满足发动条件（与攻击者性别不同），则由新目标承担武器效果。",
+        "q_en": "If the attacker targets Da Qiao with [Twin Swords] equipped and Da Qiao uses [Fleeting] to redirect the [Kill], how is the weapon resolved?",
+        "a_en": "The weapon skill is evaluated after [Fleeting] resolves. If the new target meets the condition (different gender), they bear the weapon's effect instead."
+      },
+      {
+        "q_cn": "马超或黄忠装备【雌雄双股剑】并使用【杀】指定异性目标后，武将技能和武器技能如何结算？",
+        "a_cn": "先发动武将技能，再发动武器技能。例如：马超对黄月英使用【杀】并发动【铁骑】，判定结果出来后，黄月英再选择弃手牌或令马超摸牌，然后结算伤害。",
+        "q_en": "If Ma Chao or Huang Zhong (equipped with [Twin Swords]) uses [Kill] on an opposite-gender target, in what order do the general skill and weapon skill resolve?",
+        "a_en": "The general's skill resolves first, then the weapon skill. For example: Ma Chao uses [Kill] on Huang Yueying and activates [Iron Cavalry]; after the judgment, Huang Yueying chooses to discard or let Ma Chao draw, then damage is dealt."
+      },
+      {
+        "q_cn": "女性角色装备【雌雄双股剑】对只有一张手牌的诸葛亮使用【杀】，若诸葛亮弃置该牌后进入空城状态，伤害如何结算？",
+        "a_cn": "诸葛亮弃牌后仍须承受此【杀】的伤害，受伤后再进入空城状态。一旦已成为【杀】的目标，空城状态无法阻止伤害结算。",
+        "q_en": "A female general equipped with [Twin Swords] uses [Kill] on Zhuge Liang who has only one hand card. If Zhuge Liang discards that card (entering Empty City), is the damage still dealt?",
+        "a_en": "Yes. Once Zhuge Liang is already the target of a [Kill], Empty City cannot prevent the damage. He discards the card, takes the damage, and then enters Empty City."
+      }
+    ]
+  },
+  {
+    "id": "weapon_sky_piercer",
+    "name_cn": "方天画戟",
+    "name_en": "Sky Piercer",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": [
+      "锁定技，若你使用的【杀】是你最后的手牌，则此【杀】可以多选择两个目标（至多三个目标）。若任意目标使用【闪】抵消了此【杀】，则此【杀】对其余目标均无效。"
+    ],
+    "effect_en": [
+      "Locked: If the [Kill] you use is your last hand card, it may target up to two additional characters (up to three targets total). If any target uses a [Dodge] to negate the [Kill], the [Kill] is also negated for all remaining targets."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【方天画戟】技能时，可以只选择一名或两名目标角色吗？",
+        "a_cn": "可以。最多三名，但并非强制选满。",
+        "q_en": "When activating [Sky Piercer], can the attacker choose fewer than three targets?",
+        "a_en": "Yes. Up to three targets may be chosen, but choosing the maximum is not required."
+      },
+      {
+        "q_cn": "发动【方天画戟】技能时，若攻击者在结算过程中死亡，是否继续结算剩余目标？",
+        "a_cn": "是的，除非游戏结束条件已满足。",
+        "q_en": "If the attacker dies during [Sky Piercer]'s resolution, do the remaining targets still resolve?",
+        "a_en": "Yes, unless the game-ending condition has been met."
+      },
+      {
+        "q_cn": "发动【方天画戟】技能时，若诸葛亮是目标之一，轮到其结算时进入空城状态，如何处理？",
+        "a_cn": "空城状态无法阻止已成为目标的结算。诸葛亮正常受到此【杀】的伤害。",
+        "q_en": "If Zhuge Liang is one of the [Sky Piercer]'s targets and enters Empty City by the time his resolution is reached, what happens?",
+        "a_en": "Empty City cannot prevent resolution once he is already a target. Zhuge Liang takes the damage normally."
+      },
+      {
+        "q_cn": "无手牌的刘备装备【方天画戟】，通过【激将】借用他人的【杀】，能发动武器技能吗？",
+        "a_cn": "不能。【方天画戟】要求必须是使用者自己的最后一张手牌，通过【激将】使用的【杀】不满足此条件。",
+        "q_en": "Liu Bei has no hand cards and is equipped with [Sky Piercer]. He activates [Rally] to have an ally play a [Kill]. Can the weapon skill activate?",
+        "a_en": "No. [Sky Piercer] requires the [Kill] to be the attacker's own last hand card. A [Kill] played via [Rally] does not satisfy this condition."
+      },
+      {
+        "q_cn": "夏侯渊发动【神速】打出的最后一张装备牌（而非【杀】），能否触发【方天画戟】特效？",
+        "a_cn": "不可以。武器技能只由【杀】触发，且必须是手牌中的最后一张。",
+        "q_en": "Xiahou Yuan activates [Godspeed] and the last card played is an equipment card, not a [Kill]. Can [Sky Piercer]'s skill activate?",
+        "a_en": "No. The weapon skill only triggers when the last hand card played is a [Kill]."
+      },
+      {
+        "q_cn": "发动【方天画戟】技能时，大乔发动【流离】将自己身上的【杀】转移给另一个目标，如何结算？",
+        "a_cn": "被【流离】的角色须承受两次【杀】的结算。大乔必须在被指定为目标时立即发动【流离】，而非轮到她结算时才发动。",
+        "q_en": "During [Sky Piercer]'s resolution, Da Qiao uses [Fleeting] to redirect the [Kill] aimed at her onto another existing target. How is this resolved?",
+        "a_en": "The redirected character must resolve two separate [Kill] instances. Da Qiao must activate [Fleeting] immediately when she is designated as a target, not when the [Kill] resolves on her in turn order."
+      }
+    ]
+  },
+  {
+    "id": "weapon_soaring_dragon_blade",
+    "name_cn": "飞龙夺凤",
+    "name_en": "Soaring Dragon Blade",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "每回合出牌阶段开始时，你可以摸一张牌。当你使用【杀】对目标角色造成伤害时，你可以选择一张该角色的装备牌，将其转移至你的装备区。"
+    ],
+    "effect_en": [
+      "At the start of your action phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own equipment zone."
+    ],
+    "faq": [
+      {
+        "q_cn": "【飞龙夺凤】转移装备时，若目标装备区对应位置已有装备，如何处理？",
+        "a_cn": "被转移的装备替换你装备区内原有的同类装备，原有装备被弃置。",
+        "q_en": "If your equipment zone already has a card in the same slot as the one you are taking with [Soaring Dragon Blade], what happens?",
+        "a_en": "The taken equipment replaces your existing card in that slot; your old equipment is discarded."
+      },
+      {
+        "q_cn": "使用此牌时，是否须先将【♠2 雌雄双股剑】从牌堆中移除？",
+        "a_cn": "是的。按照游戏规则，【飞龙夺凤】在加入游戏时须替换标准版中的【♠2 雌雄双股剑】。",
+        "q_en": "Does [Soaring Dragon Blade] replace another card in the deck?",
+        "a_en": "Yes. When including this card, it replaces the ♠2 [Twin Swords] from the standard deck."
+      }
+    ]
+  },
+  {
+    "id": "weapon_ancient_scimitar",
+    "name_cn": "古锭刀",
+    "name_en": "Ancient Scimitar",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "锁定技，当你使用【杀】对目标角色造成伤害时，若该角色没有手牌，则此伤害+1。"
+    ],
+    "effect_en": [
+      "Locked: When your [Kill] deals damage to a target, if that target has no hand cards, the damage dealt is increased by 1."
+    ],
+    "faq": [
+      {
+        "q_cn": "装备【古锭刀】使用火【杀】或雷【杀】触发连环伤害时，连环伤害传导到没有手牌的角色，伤害是否+1？",
+        "a_cn": "不会。【古锭刀】只对使用【杀】的直接目标生效，不影响连环传导的伤害。",
+        "q_en": "If a fire or thunder [Kill] triggers a chain reaction, does [Ancient Scimitar]'s bonus damage apply to chained characters who have no hand cards?",
+        "a_en": "No. [Ancient Scimitar] only applies to the direct target of the [Kill]; it does not affect chain-spread damage."
+      },
+      {
+        "q_cn": "装备【古锭刀】攻击没有手牌的大乔，大乔发动【流离】后，新目标若也没有手牌，伤害是否+1？",
+        "a_cn": "对大乔本人的伤害不+1（她不再是目标）。若【流离】的新目标没有手牌，则对新目标的伤害+1。",
+        "q_en": "The attacker equipped with [Ancient Scimitar] targets Da Qiao (no hand cards); Da Qiao uses [Fleeting] to redirect the [Kill]. If the new target also has no hand cards, does the bonus damage apply?",
+        "a_en": "The bonus does not apply to Da Qiao since she is no longer the target. If the new target has no hand cards, the +1 bonus applies to them."
+      },
+      {
+        "q_cn": "装备【古锭刀】攻击小乔，小乔发动【天香】将伤害转移给一名无手牌的角色，该角色是否受到+1伤害？",
+        "a_cn": "不会。【古锭刀】只针对【杀】的直接目标（小乔），【天香】转移的伤害不触发武器效果。",
+        "q_en": "The attacker uses [Kill] on Xiao Qiao (equipped with [Ancient Scimitar]); Xiao Qiao activates [Heavenly Fragrance] to redirect the damage to another character with no hand cards. Does the bonus apply?",
+        "a_en": "No. [Ancient Scimitar] only affects the direct target of the [Kill] (Xiao Qiao). Damage redirected by [Heavenly Fragrance] does not trigger the weapon bonus."
+      },
+      {
+        "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动【天妒】将判定牌收入手牌，此时是否受到+1伤害？",
+        "a_cn": "不受+1伤害。郭嘉通过【天妒】获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
+        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Array]. He fails the judgment and activates [Genius] to take the judgment card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
+        "a_en": "No. Guo Jia now has a hand card (from [Genius]), so the condition for the bonus is no longer met at the time damage is resolved."
+      }
+    ]
+  },
+  {
+    "id": "weapon_stonepiercer",
+    "name_cn": "贯石斧",
+    "name_en": "Stonepiercer",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "当你使用的【杀】被目标角色使用的【闪】抵消后，你可以弃置两张牌。若如此做，此【杀】依然造成伤害。"
+    ],
+    "effect_en": [
+      "When your [Kill] is negated by a target's [Dodge], you may discard two cards. If you do, the [Kill] still deals damage."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【贯石斧】技能时，可以弃置自己装备区里的牌吗？",
+        "a_cn": "可以，但不能弃置【贯石斧】本身。",
+        "q_en": "Can the attacker discard equipment cards from their own equipment zone to activate [Stonepiercer]?",
+        "a_en": "Yes, but [Stonepiercer] itself cannot be discarded."
+      },
+      {
+        "q_cn": "装备【贯石斧】命中曹操后，曹操发动【奸雄】可以收取什么牌？",
+        "a_cn": "曹操收取对其造成伤害的那张【杀】。",
+        "q_en": "If [Stonepiercer] forces damage through and hits Cao Cao, what card does [Mastermind] collect?",
+        "a_en": "Cao Cao collects the [Kill] card that dealt damage to him."
+      },
+      {
+        "q_cn": "陆逊装备【贯石斧】发动武器技能，是否可以先弃一张手牌触发【连营】，再弃第二张来凑够两张？",
+        "a_cn": "不能。弃置两张牌必须同时进行。",
+        "q_en": "Lu Xun is equipped with [Stonepiercer] and wants to activate the weapon skill. Can he discard one card first to trigger [Chain Barracks], then discard a second card?",
+        "a_en": "No. The two cards must be discarded simultaneously."
+      },
+      {
+        "q_cn": "装备【贯石斧】攻击距离为3的目标，是否可以弃置自己装备的-1马来发动技能（弃后目标不在攻击范围内）？",
+        "a_cn": "可以。弃牌在伤害结算之前进行，即便弃牌后目标超出攻击范围，伤害仍然有效。",
+        "q_en": "The attacker is equipped with [Stonepiercer] and targets a character at distance 3. Can they discard their equipped -1 Mount (making the target out of range) to power the weapon skill?",
+        "a_en": "Yes. The discard happens before damage is resolved. Even if the target is now out of range, the damage still applies."
+      },
+      {
+        "q_cn": "装备【贯石斧】攻击只有一张【闪】手牌的诸葛亮，诸葛亮打出【闪】后进入空城状态，是否可以发动武器技能并造成伤害？",
+        "a_cn": "可以。诸葛亮已成为【杀】的目标，发动武器技能后他须承受伤害，无论此时是否处于空城状态。",
+        "q_en": "The attacker uses [Kill] on Zhuge Liang (only hand card is a [Dodge]); Zhuge Liang plays [Dodge] and enters Empty City. Can [Stonepiercer] force the damage through?",
+        "a_en": "Yes. Zhuge Liang is already the target of the [Kill]. Once the weapon skill activates, he takes the damage regardless of his Empty City state."
+      },
+      {
+        "q_cn": "装备【贯石斧】攻击张角，若张角使用【闪】触发【雷击】，如何结算？",
+        "a_cn": "先结算【雷击】判定。判定完成后，若攻击者仍存活，可选择是否弃两张牌强制命中。",
+        "q_en": "The attacker equipped with [Stonepiercer] uses [Kill] on Zhang Jiao; Zhang Jiao plays [Dodge] and activates [Lightning Strike]. How does this resolve?",
+        "a_en": "Resolve [Lightning Strike]'s judgment first. After it resolves, if the attacker is still alive, they may choose to discard two cards to force the damage through."
+      },
+      {
+        "q_cn": "太史慈通过拼点赢得额外【杀】并使用多目标【杀】时，能对每个出【闪】的目标分别发动武器技能吗？",
+        "a_cn": "可以。每当一名目标出【闪】，太史慈可立即选择是否发动【贯石斧】技能强制命中该目标。",
+        "q_en": "Tai Shi Ci wins a duel and uses a multi-target [Kill]. Can he activate [Stonepiercer] separately for each target that plays a [Dodge]?",
+        "a_en": "Yes. Each time a target plays a [Dodge], Tai Shi Ci may immediately choose whether to activate [Stonepiercer] against that target."
+      }
+    ]
+  },
+  {
+    "id": "weapon_frost_blade",
+    "name_cn": "寒冰剑",
+    "name_en": "Frost Blade",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "当你使用【杀】对目标角色造成伤害时，若该角色有牌，你可以防止此伤害，然后依次弃置其两张牌（可从其手牌或装备区中选择）。"
+    ],
+    "effect_en": [
+      "When your [Kill] would deal damage to a target, if that target has any cards (hand or equipment), you may prevent the damage and instead discard two of their cards one at a time (choosing from their hand or equipment zone)."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【寒冰剑】时，是否可以选择对方装备区的牌？",
+        "a_cn": "可以，手牌和装备区的牌均可选择。",
+        "q_en": "When activating [Frost Blade], can the attacker choose equipment cards from the target's equipment zone?",
+        "a_en": "Yes. Cards from both the hand and the equipment zone may be chosen."
+      },
+      {
+        "q_cn": "发动【寒冰剑】后，目标在弃第一张牌后没有牌了，是否还要弃第二张？",
+        "a_cn": "不需要。若弃第一张牌后目标区域内已无牌，则跳过第二次弃牌。",
+        "q_en": "After [Frost Blade] discards the first card, if the target has no more cards, must a second card still be discarded?",
+        "a_en": "No. If no cards remain after the first discard, the second discard is skipped."
+      },
+      {
+        "q_cn": "发动【寒冰剑】是否强制？",
+        "a_cn": "不强制。此技能为可选效果，攻击者可以选择正常造成伤害而不发动。",
+        "q_en": "Is activating [Frost Blade]'s effect mandatory?",
+        "a_en": "No. It is optional; the attacker may choose to deal normal damage instead."
+      }
+    ]
+  },
+  {
+    "id": "weapon_kirin_bow",
+    "name_cn": "麒麟弓",
+    "name_en": "Kirin Bow",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 5,
+    "effect_cn": [
+      "当你使用【杀】对目标角色造成伤害时，你可以弃置其装备区里的一张坐骑牌。"
+    ],
+    "effect_en": [
+      "When your [Kill] deals damage to a target, you may discard one of their equipped mount cards."
+    ],
+    "faq": [
+      {
+        "q_cn": "使用【麒麟弓】可以同时弃置目标的+1马和-1马吗？",
+        "a_cn": "不行，每次只能弃置一张坐骑牌。",
+        "q_en": "Can [Kirin Bow] discard both a +1 Mount and a -1 Mount in one activation?",
+        "a_en": "No. Only one mount card may be discarded per activation."
+      },
+      {
+        "q_cn": "若目标没有坐骑牌，是否可以发动【麒麟弓】？",
+        "a_cn": "不可以，目标必须装备有坐骑牌才能发动此技能。",
+        "q_en": "Can [Kirin Bow] activate if the target has no mount cards equipped?",
+        "a_en": "No. The target must have at least one mount equipped for the skill to activate."
+      }
+    ]
+  },
+  {
+    "id": "weapon_qing_gang_sword",
+    "name_cn": "青釭剑",
+    "name_en": "Qing Gang Sword",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "锁定技，当你使用【杀】指定一个目标后，令该目标的防具本次无效。"
+    ],
+    "effect_en": [
+      "Locked: When you use [Kill] targeting a character, their equipped armor is rendered ineffective for that [Kill]."
+    ],
+    "faq": [
+      {
+        "q_cn": "【青釭剑】能使【仁王盾】无效吗？",
+        "a_cn": "可以。【仁王盾】视为防具，【青釭剑】可令其在本次【杀】中无效。",
+        "q_en": "Can [Qing Gang Sword] negate [Ren Wang Shield]?",
+        "a_en": "Yes. [Ren Wang Shield] is treated as armor, so [Qing Gang Sword] negates it for that [Kill]."
+      },
+      {
+        "q_cn": "【青釭剑】是否影响【八卦阵】的判定？",
+        "a_cn": "是的。【八卦阵】也是防具，被【青釭剑】无效后，目标无法用【八卦阵】进行判定来当【闪】使用。",
+        "q_en": "Does [Qing Gang Sword] affect [Eight Trigrams Array]?",
+        "a_en": "Yes. [Eight Trigrams Array] is armor. While negated by [Qing Gang Sword], the target cannot use its judgment to produce a [Dodge]."
+      }
+    ]
+  },
+  {
+    "id": "weapon_crescent_blade",
+    "name_cn": "青龙偃月刀",
+    "name_en": "Green Dragon Crescent Blade",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "当你使用的【杀】被目标角色使用的【闪】抵消后，你可以对该角色再使用一张【杀】。",
+      "锁定技，当你使用【杀】时，所有目标角色不能明置武将牌，直到此【杀】结算完毕为止。"
+    ],
+    "effect_en": [
+      "When your [Kill] is negated by a target's [Dodge], you may immediately use another [Kill] against that same target.",
+      "Locked: When you use [Kill], all target characters cannot reveal (flip face-up) their general cards until the [Kill] finishes resolving."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【青龙偃月刀】追加的【杀】是否也可以触发武器技能？",
+        "a_cn": "可以，若追加的【杀】也被【闪】抵消，可再次发动武器技能。",
+        "q_en": "If the follow-up [Kill] from [Green Dragon Crescent Blade] is also negated by a [Dodge], can the weapon skill activate again?",
+        "a_en": "Yes. If the follow-up [Kill] is also negated, the weapon skill can trigger again."
+      },
+      {
+        "q_cn": "锁定技（禁止明置）是否影响无武将牌明置需求的技能？",
+        "a_cn": "只影响需要明置武将牌的技能，不涉及明置的技能均不受影响。",
+        "q_en": "Does the Locked effect (preventing general card reveal) affect skills that do not require revealing a general card?",
+        "a_en": "No. It only prevents skills that specifically require flipping or revealing the general card. Skills with no such requirement are unaffected."
+      }
+    ]
+  },
+  {
+    "id": "weapon_three_point_glaive",
+    "name_cn": "三尖两刃刀",
+    "name_en": "Three-Point Glaive",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "当你使用【杀】对目标角色造成伤害后，你可以弃置一张手牌，然后对该目标距离为1的一名其他角色造成1点伤害。"
+    ],
+    "effect_en": [
+      "After your [Kill] deals damage to a target, you may discard one hand card to deal 1 damage to another character who is at distance 1 from that target."
+    ],
+    "faq": [
+      {
+        "q_cn": "【三尖两刃刀】的附加伤害是否属于【杀】的伤害？",
+        "a_cn": "不是。附加伤害是武器技能造成的独立伤害，与【杀】无关。",
+        "q_en": "Is the bonus damage from [Three-Point Glaive] considered damage from a [Kill]?",
+        "a_en": "No. The bonus damage is independent weapon skill damage and is not treated as [Kill] damage."
+      },
+      {
+        "q_cn": "计算距离为1时，是否计入坐骑和技能的距离修正？",
+        "a_cn": "是的，距离计算包含所有修正（坐骑、技能等）。",
+        "q_en": "When determining which characters are at distance 1 from the target, do mount cards and skill-based distance modifiers apply?",
+        "a_en": "Yes. All distance modifiers (mounts, skills, etc.) are applied when calculating distance."
+      }
+    ]
+  },
+  {
+    "id": "weapon_six_swords_of_wu",
+    "name_cn": "吴六剑",
+    "name_en": "Six Swords of Wu",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "锁定技，与你势力相同的其他角色攻击范围+1。"
+    ],
+    "effect_en": [
+      "Locked: All other characters of the same faction as you gain +1 attack range."
+    ],
+    "faq": [
+      {
+        "q_cn": "【吴六剑】是否对自己生效？",
+        "a_cn": "不对，只对与你势力相同的其他角色生效。",
+        "q_en": "Does [Six Swords of Wu] increase the attacker's own attack range?",
+        "a_en": "No. The effect only applies to other characters of the same faction."
+      },
+      {
+        "q_cn": "若一名角色势力未确定，是否受【吴六剑】影响？",
+        "a_cn": "不受影响。势力未确定的角色不属于任何势力，无法从【吴六剑】获益。",
+        "q_en": "Does [Six Swords of Wu] affect characters whose faction has not yet been determined?",
+        "a_en": "No. Characters with an undetermined faction do not belong to any faction and cannot benefit from [Six Swords of Wu]."
+      }
+    ]
+  },
+  {
+    "id": "weapon_moon_spear",
+    "name_cn": "银月枪",
+    "name_en": "Moon Spear",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "你的回合外，当你使用或打出一张黑色手牌时，你可以令你攻击范围内的另一名角色打出一张【闪】，否则你对其造成1点伤害。"
+    ],
+    "effect_en": [
+      "Outside of your turn, whenever you use or play a black hand card, you may force another character within your attack range to play a [Dodge]; if they cannot or choose not to, you deal 1 damage to them."
+    ],
+    "faq": [
+      {
+        "q_cn": "【银月枪】在自己的回合内可以发动吗？",
+        "a_cn": "不能，只能在自己回合外发动。",
+        "q_en": "Can [Moon Spear] be activated during your own turn?",
+        "a_en": "No. It can only activate outside of your own turn."
+      },
+      {
+        "q_cn": "被迫打出【闪】的角色，此【闪】是否消耗其出牌次数？",
+        "a_cn": "不消耗。被【银月枪】强制打出的【闪】是响应效果，不占用出牌阶段的使用次数。",
+        "q_en": "Does the [Dodge] forced by [Moon Spear] count toward the target's card usage limit?",
+        "a_en": "No. A [Dodge] played in response to [Moon Spear] is a reactive response and does not count toward any card usage limit."
+      }
+    ]
+  },
+  {
+    "id": "weapon_serpent_spear",
+    "name_cn": "丈八蛇矛",
+    "name_en": "Serpent Spear",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "你可以将两张手牌当【杀】使用或打出。"
+    ],
+    "effect_en": [
+      "You may treat any two hand cards as a [Kill] to use or play."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【丈八蛇矛】技能时，可以使用装备区的牌替代手牌吗？",
+        "a_cn": "不可以，必须使用手牌。",
+        "q_en": "Can equipment cards from your equipment zone be used in place of hand cards for [Serpent Spear]?",
+        "a_en": "No. Only hand cards may be used."
+      },
+      {
+        "q_cn": "使用【丈八蛇矛】时，必须同时打出两张手牌吗？",
+        "a_cn": "是的，必须同时打出两张手牌。",
+        "q_en": "Must both hand cards be played simultaneously when activating [Serpent Spear]?",
+        "a_en": "Yes. Both cards must be played at the same time."
+      },
+      {
+        "q_cn": "用【丈八蛇矛】打出的【杀】，其属性（普通/火/雷）如何判定？",
+        "a_cn": "无论两张牌的花色如何，通过【丈八蛇矛】打出的【杀】均视为普通【杀】（无属性）。",
+        "q_en": "What type of [Kill] (normal / fire / thunder) is produced by [Serpent Spear]?",
+        "a_en": "Regardless of the suits of the two cards used, the resulting [Kill] is always treated as a normal [Kill] with no elemental property."
+      },
+      {
+        "q_cn": "用【丈八蛇矛】打出的【杀】，其点数如何？",
+        "a_cn": "通过【丈八蛇矛】打出的【杀】没有点数属性。",
+        "q_en": "Does a [Kill] produced by [Serpent Spear] have a numerical value?",
+        "a_en": "No. A [Kill] produced via [Serpent Spear] has no numerical value."
+      },
+      {
+        "q_cn": "是否可以发动【丈八蛇矛】响应【南蛮入侵】或【决斗】？",
+        "a_cn": "可以。",
+        "q_en": "Can [Serpent Spear] be used to respond to [Barbarian Invasion] or [Duel]?",
+        "a_en": "Yes."
+      },
+      {
+        "q_cn": "蜀国武将装备【丈八蛇矛】时，可以用武器技能响应刘备的【激将】吗？",
+        "a_cn": "可以。",
+        "q_en": "If a Shu general is equipped with [Serpent Spear], can they use its skill to respond to Liu Bei's [Rally]?",
+        "a_en": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "weapon_repeating_crossbow",
+    "name_cn": "诸葛连弩",
+    "name_en": "Repeating Crossbow",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 1,
+    "effect_cn": [
+      "锁定技，你使用【杀】无次数限制。"
+    ],
+    "effect_en": [
+      "Locked: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
+    ],
+    "faq": [
+      {
+        "q_cn": "装备【诸葛连弩】后，若将其换掉，本回合还能继续无限使用【杀】吗？",
+        "a_cn": "不能。失去【诸葛连弩】后，【杀】的使用次数恢复正常限制。若本回合已超出正常次数，则不能再使用【杀】。",
+        "q_en": "If [Repeating Crossbow] is replaced during the turn, can [Kill] still be used freely for the rest of that turn?",
+        "a_en": "No. Once [Repeating Crossbow] is gone, the normal [Kill] limit is restored. If the normal limit has already been exceeded, no further [Kill] cards may be played that turn."
+      },
+      {
+        "q_cn": "【诸葛连弩】是否解除每回合只能使用一张【杀】的限制？",
+        "a_cn": "是的，装备【诸葛连弩】期间，使用【杀】不受次数限制。",
+        "q_en": "Does [Repeating Crossbow] completely remove the once-per-turn [Kill] limit?",
+        "a_en": "Yes. While equipped, there is no limit to how many [Kill] cards can be used per turn."
+      }
+    ]
+  },
+  {
+    "id": "weapon_vermilion_bird_fan",
+    "name_cn": "朱雀羽扇",
+    "name_en": "Vermilion Bird Fan",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": [
+      "当你使用普通【杀】时，你可以将此【杀】改为火【杀】。"
+    ],
+    "effect_en": [
+      "When you use a normal [Kill], you may convert it into a fire [Kill]."
+    ],
+    "faq": [
+      {
+        "q_cn": "【朱雀羽扇】可以将雷【杀】或火【杀】改为火【杀】吗？",
+        "a_cn": "不可以，只能将普通【杀】改为火【杀】。",
+        "q_en": "Can [Vermilion Bird Fan] convert a thunder [Kill] or another fire [Kill] into a fire [Kill]?",
+        "a_en": "No. It can only convert a normal (non-elemental) [Kill] into a fire [Kill]."
+      },
+      {
+        "q_cn": "是否可以选择不发动【朱雀羽扇】的效果？",
+        "a_cn": "可以，此技能为可选效果。",
+        "q_en": "Is the conversion effect of [Vermilion Bird Fan] optional?",
+        "a_en": "Yes. The conversion is optional."
+      }
+    ]
+  },
+  {
+    "id": "weapon_seven_treasures_sword",
+    "name_cn": "七宝刀",
+    "name_en": "Seven Treasures Sword",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "锁定技，此牌进入你的装备区时，弃置你装备区内的其他所有牌。",
+      "锁定技，当你使用【杀】指定目标后，令其防具无效；若该目标当前未受伤（体力值等于体力上限），此【杀】的伤害+1。",
+      "赠予：出牌阶段，你可以将此牌以正面向上的方式交给另一名角色；若其装备区已有同类装备，则替换原有装备。"
+    ],
+    "effect_en": [
+      "Locked: When this card enters your equipment zone, discard all other cards currently in your equipment zone.",
+      "Locked: When you use [Kill] targeting a character, their armor is negated; if that character is currently at full health (HP equal to max HP), the [Kill] deals +1 damage.",
+      "Gift: During your action phase, you may give this card face-up to another character; if they already have an equipment card in the same slot, it replaces the existing one."
+    ],
+    "faq": [
+      {
+        "q_cn": "装备【七宝刀】时会弃置自己所有其他装备，包括坐骑和防具吗？",
+        "a_cn": "是的，装备区内的所有其他牌均被弃置。",
+        "q_en": "When equipping [Seven Treasures Sword], are all other equipped cards (mounts, armor, etc.) discarded?",
+        "a_en": "Yes. All other cards currently in the equipment zone are discarded."
+      },
+      {
+        "q_cn": "【七宝刀】须替换【青釭剑】才能使用吗？",
+        "a_cn": "是的，标准规则要求在加入【七宝刀】时，须将牌堆中的【青釭剑】替换为【七宝刀】。",
+        "q_en": "Does [Seven Treasures Sword] replace another card in the deck?",
+        "a_en": "Yes. According to standard rules, [Seven Treasures Sword] replaces [Qing Gang Sword] in the deck when included."
+      },
+      {
+        "q_cn": "若目标装备了防具且当前未受伤，是否同时触发防具无效和伤害+1两个效果？",
+        "a_cn": "是的，两个锁定技效果同时生效：防具无效且伤害+1。",
+        "q_en": "If the target has armor equipped and is currently at full health, do both effects (armor negation and +1 damage) apply simultaneously?",
+        "a_en": "Yes. Both Locked effects apply at the same time."
+      }
+    ]
+  },
+  {
+    "id": "weapon_tempered_steel_lance",
+    "name_cn": "衠钢槊",
+    "name_en": "Tempered Steel Lance",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": [
+      "当你使用【杀】指定一名角色为目标后，你可以令该角色弃置你的一张手牌，然后你弃置其一张手牌。",
+      "注：此牌为忠胆英杰模式专属游戏牌，使用时须将标准版中的【青龙偃月刀】替换为【衠钢槊】。"
+    ],
+    "effect_en": [
+      "When you use [Kill] targeting a character, you may have that character discard one of your hand cards; then you discard one of their hand cards.",
+      "Note: This card is exclusive to the Loyal Heroes (忠胆英杰) game mode and replaces [Green Dragon Crescent Blade] in the standard deck when used."
+    ],
+    "faq": [
+      {
+        "q_cn": "发动【衠钢槊】技能时，若攻击者没有手牌，是否可以发动？",
+        "a_cn": "可以。攻击者令目标弃置其一张手牌；若攻击者无手牌，第一步（目标弃置攻击者手牌）跳过，直接由攻击者弃置目标的一张手牌。",
+        "q_en": "Can [Tempered Steel Lance] activate if the attacker has no hand cards?",
+        "a_en": "Yes. If the attacker has no hand cards, the first step (target discards attacker's card) is skipped, and the attacker directly discards one of the target's hand cards."
+      },
+      {
+        "q_cn": "目标弃置攻击者手牌后，攻击者是否必须弃置目标手牌？",
+        "a_cn": "是的，技能发动后两步均须执行（在条件允许的情况下）。",
+        "q_en": "After the target discards one of the attacker's hand cards, must the attacker then discard one of the target's hand cards?",
+        "a_en": "Yes. Once activated, both steps must be carried out where possible."
+      }
+    ]
+  },
+  {
+    "id": "weapon_catapult",
+    "name_cn": "霹雳车",
+    "name_en": "Catapult",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 9,
+    "effect_cn": [
+      "当你对其他角色造成伤害后，你可以弃置其装备区内的防具牌与+1坐骑牌；当【霹雳车】离开你的装备区后，将此牌从游戏中移除（销毁）。"
+    ],
+    "effect_en": [
+      "After dealing damage to another character, you may discard their equipped armor card and their equipped +1 Mount card. When [Catapult] leaves your equipment zone for any reason, it is removed from the game (destroyed) rather than discarded."
+    ],
+    "faq": [
+      {
+        "q_cn": "【霹雳车】离开装备区后为何被销毁而不是进入弃牌堆？",
+        "a_cn": "这是该牌的特殊规则。一旦离开装备区（无论是被弃置、被夺取还是其他原因），牌直接从游戏中移除，不进入弃牌堆。",
+        "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the equipment zone?",
+        "a_en": "This is a special rule on the card. Regardless of how it leaves the equipment zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
+      },
+      {
+        "q_cn": "【霹雳车】的攻击范围为9，是否意味着可以攻击所有角色？",
+        "a_cn": "在大多数对局中，9点攻击范围已覆盖全场所有角色，但具体取决于场上人数和坐骑情况。",
+        "q_en": "With an attack range of 9, can [Catapult] always reach every character on the table?",
+        "a_en": "In most games, a range of 9 covers all characters on the table, but the exact reach depends on the player count and any mount-based distance modifiers in play."
+      },
+      {
+        "q_cn": "发动【霹雳车】效果时，目标须同时有防具和+1马才能触发吗？",
+        "a_cn": "不需要。防具和+1马是分别可选的，只要目标装备了其中一种，即可弃置对应的牌。",
+        "q_en": "Must the target have both armor and a +1 Mount equipped for [Catapult]'s effect to activate?",
+        "a_en": "No. The armor and the +1 Mount are each discarded independently. As long as the target has at least one, you may discard whichever are present."
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "id": "LE001",
-    "standard_id": "char_guan_yu",
+    "standard_id": "char_guanyu",
     "name_cn": "神关羽",
     "name_en": "God Guan Yu",
     "gender": "Male",
@@ -37,7 +37,7 @@
   },
   {
     "id": "LE002",
-    "standard_id": "char_lu_meng",
+    "standard_id": "char_lumeng",
     "name_cn": "神吕蒙",
     "name_en": "God Lu Meng",
     "gender": "Male",
@@ -73,7 +73,7 @@
   },
   {
     "id": "LE003",
-    "standard_id": "char_zhou_yu",
+    "standard_id": "char_zhouyu",
     "name_cn": "神周瑜",
     "name_en": "God Zhou Yu",
     "gender": "Male",
@@ -109,7 +109,7 @@
   },
   {
     "id": "LE004",
-    "standard_id": "char_zhuge_liang",
+    "standard_id": "char_zhugeliang",
     "name_cn": "神诸葛亮",
     "name_en": "God Zhuge Liang",
     "gender": "Male",
@@ -151,7 +151,7 @@
   },
   {
     "id": "LE005",
-    "standard_id": "char_cao_cao",
+    "standard_id": "char_caocao",
     "name_cn": "神曹操",
     "name_en": "God Cao Cao",
     "gender": "Male",
@@ -187,7 +187,7 @@
   },
   {
     "id": "LE006",
-    "standard_id": "char_lv_bu",
+    "standard_id": "char_lvbu",
     "name_cn": "神吕布",
     "name_en": "God Lu Bu",
     "gender": "Male",
@@ -235,7 +235,7 @@
   },
   {
     "id": "LE007",
-    "standard_id": "char_zhao_yun",
+    "standard_id": "char_zhaoyun",
     "name_cn": "神赵云",
     "name_en": "God Zhao Yun",
     "gender": "Male",
@@ -313,7 +313,7 @@
   },
   {
     "id": "LE009",
-    "standard_id": "char_liu_bei",
+    "standard_id": "char_liubei",
     "name_cn": "神刘备",
     "name_en": "God Liu Bei",
     "gender": "Male",
