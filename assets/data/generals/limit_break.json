@@ -295,9 +295,9 @@
   },
   {
     "id": "jx.QUN002",
-    "standard_id": "char_lubu",
+    "standard_id": "char_lvbu",
     "name_cn": "界吕布",
-    "name_en": "Lu Bu",
+    "name_en": "Lv Bu",
     "gender": "Male",
     "faction": "Qun",
     "health": 4,
