@@ -18,7 +18,7 @@
       "Defensive",
       "Control"
     ],
-    "expansion": "demon",
+    "expansion": "Demon",
     "skills": [
       "skill_mo_fuzai",
       "skill_mo_bachao"
@@ -75,7 +75,7 @@
       "Defensive",
       "Control"
     ],
-    "expansion": "demon",
+    "expansion": "Demon",
     "skills": [
       "skill_mo_guifu",
       "skill_mo_moubian",
@@ -145,7 +145,7 @@
       "Control",
       "Draw"
     ],
-    "expansion": "demon",
+    "expansion": "Demon",
     "skills": [
       "skill_mo_duoqi",
       "skill_mo_kuangmo",
@@ -215,7 +215,7 @@
       "Defensive",
       "Control"
     ],
-    "expansion": "demon",
+    "expansion": "Demon",
     "skills": [
       "skill_mo_huanhuo",
       "skill_mo_qingshi"

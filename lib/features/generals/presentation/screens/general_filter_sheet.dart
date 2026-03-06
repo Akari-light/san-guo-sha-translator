@@ -293,7 +293,6 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   }
 
   // ── Expansion tab 
-
   Widget _buildExpansionTab(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -317,11 +316,11 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
       case Expansion.limitBreak: return '界限突破 — Limit Break';
       case Expansion.standard: return '标准 — Standard';
       case Expansion.demon: return '魔 — Demon';
+      case Expansion.god: return '神 — Demon';
     }
   }
 
   // ── Sort tab 
-
   Widget _buildSortTab() {
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -352,8 +351,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     );
   }
 
-  // ── Shared builders 
-
+  // ── Shared builders
   Widget _buildSectionHeader(String label) {
     return Text(
       label,
@@ -415,7 +413,6 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 }
 
 // ── Faction chip widget 
-
 class _FactionFilterChip extends StatelessWidget {
   final String faction;
   final bool isSelected;

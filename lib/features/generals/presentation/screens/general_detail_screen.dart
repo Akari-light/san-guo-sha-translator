@@ -50,11 +50,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
     }
   }
 
-  /// Switch to a different variant — reloads refs and pin state for the new card.
-  void _switchVariant(GeneralCard variant) {
-    if (variant.id == _activeCard.id) return;
+  /// Cycle to the next variant in order, wrapping around.
+  void _cycleVariant() {
+    if (_variants.length <= 1) return;
+    final currentIndex = _variants.indexWhere((v) => v.id == _activeCard.id);
+    final nextIndex = (currentIndex + 1) % _variants.length;
+    final next = _variants[nextIndex];
     setState(() {
-      _activeCard = variant;
+      _activeCard = next;
       _refsLoading = true;
       _refsEn = [];
       _refsCn = [];
@@ -167,12 +170,12 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
 
             const SizedBox(height: 24),
 
-            // ── Evolution switcher (hidden when only one variant)
+            // ── Version cycle button (hidden when only one variant)
             if (!_variantsLoading && _variants.length > 1) ...[
-              _EvolutionSwitcher(
+              _VersionCycleButton(
                 variants: _variants,
                 activeCard: _activeCard,
-                onSwitch: _switchVariant,
+                onCycle: _cycleVariant,
                 factionColor: factionColor,
               ),
               const SizedBox(height: 16),
@@ -372,23 +375,27 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   }
 }
 
-// ── Evolution Switcher 
-class _EvolutionSwitcher extends StatelessWidget {
+// ── Version Cycle Button 
+class _VersionCycleButton extends StatelessWidget {
   final List<GeneralCard> variants;
   final GeneralCard activeCard;
-  final void Function(GeneralCard) onSwitch;
+  final VoidCallback onCycle;
   final Color factionColor;
 
-  const _EvolutionSwitcher({
+  const _VersionCycleButton({
     required this.variants,
     required this.activeCard,
-    required this.onSwitch,
+    required this.onCycle,
     required this.factionColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final currentIndex = variants.indexWhere((v) => v.id == activeCard.id);
+    final nextIndex = (currentIndex + 1) % variants.length;
+    final nextVariant = variants[nextIndex];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -400,105 +407,83 @@ class _EvolutionSwitcher extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Row(
-          children: variants.map((variant) {
-            final isActive = variant.id == activeCard.id;
-            return Padding(
-              padding: const EdgeInsets.only(right: 8),
-              child: GestureDetector(
-                onTap: () => onSwitch(variant),
-                child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 200),
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: isActive
-                        ? factionColor
-                        : factionColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: isActive
-                          ? factionColor
-                          : factionColor.withValues(alpha: 0.4),
-                      width: 1.5,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        variant.expansionBadge,
-                        style: TextStyle(
-                          color: isActive ? Colors.white : factionColor,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 13,
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Text(
-                        variant.expansion.labelEn,
-                        style: TextStyle(
-                          color: isActive
-                              ? Colors.white.withValues(alpha: 0.9)
-                              : factionColor.withValues(alpha: 0.8),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+        GestureDetector(
+          onTap: onCycle,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              color: factionColor,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: factionColor, width: 1.5),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ── Active version label
+                Text(
+                  activeCard.expansionBadge,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 13,
                   ),
                 ),
+                const SizedBox(width: 6),
+                Text(
+                  activeCard.expansion.labelEn,
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                  ),
+                ),
+
+                // ── Divider + next indicator
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  width: 1,
+                  height: 14,
+                  color: Colors.white.withValues(alpha: 0.4),
+                ),
+                Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  size: 10,
+                  color: Colors.white.withValues(alpha: 0.6),
+                ),
+                const SizedBox(width: 4),
+                Text(
+                  '${nextVariant.expansionBadge} ${nextVariant.expansion.labelEn}',
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.6),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 11,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        // ── Dot indicators
+        const SizedBox(height: 8),
+        Row(
+          children: List.generate(variants.length, (i) {
+            final isActive = variants[i].id == activeCard.id;
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              margin: const EdgeInsets.only(right: 5),
+              width: isActive ? 16 : 6,
+              height: 6,
+              decoration: BoxDecoration(
+                color: isActive
+                    ? factionColor
+                    : factionColor.withValues(alpha: 0.3),
+                borderRadius: BorderRadius.circular(3),
               ),
             );
-          }).toList(),
+          }),
         ),
       ],
-    );
-  }
-}
-
-// ── Related library card chip (tappable) 
-class _RelatedCardChip extends StatelessWidget {
-  final String label;
-  final String category;
-  final bool isDark;
-  final VoidCallback onTap;
-
-  const _RelatedCardChip({
-    required this.label,
-    required this.category,
-    required this.isDark,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final color = AppTheme.categoryColor(category, isDark);
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.12),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: color.withValues(alpha: 0.6)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 13,
-                color: color,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(width: 4),
-            Icon(Icons.arrow_forward_ios_rounded, size: 10, color: color),
-          ],
-        ),
-      ),
     );
   }
 }
@@ -645,7 +630,7 @@ class _SkillTypeBadge extends StatelessWidget {
   }
 }
 
-// ── Faction / expansion badge
+// ── Faction / expansion badge 
 class _Badge extends StatelessWidget {
   final String label;
   final Color color;
@@ -741,6 +726,52 @@ class _TraitChip extends StatelessWidget {
           fontSize: 12,
           color: theme.colorScheme.primary,
           fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
+}
+
+// ── Related library card chip (tappable) 
+class _RelatedCardChip extends StatelessWidget {
+  final String label;
+  final String category;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _RelatedCardChip({
+    required this.label,
+    required this.category,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = AppTheme.categoryColor(category, isDark);
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withValues(alpha: 0.6)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                color: color,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(Icons.arrow_forward_ios_rounded, size: 10, color: color),
+          ],
         ),
       ),
     );

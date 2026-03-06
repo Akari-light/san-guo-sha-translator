@@ -181,7 +181,6 @@ class _GeneralScreenState extends State<GeneralScreen> {
 }
 
 // ── Active filter summary bar 
-
 class _ActiveFilterBar extends StatelessWidget {
   final GeneralFilterState filterState;
   final VoidCallback onClear;
