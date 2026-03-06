@@ -13,22 +13,22 @@
     ],
     "faq": [
       {
-        "q_cn": "“木牛流马”里的牌算手牌吗？",
-        "a_cn": "不算。它们不在你的手牌中，因此不受顺手牵羊（对标手牌时）或过河拆桥的影响，除非对方选择弃掉你的装备。",
-        "q_en": "Do the cards in 'Reserve' count as hand cards?",
-        "a_en": "No. They are not in your hand and are unaffected by skills targeting hand cards. They are lost only if the Wooden Ox itself is discarded or stolen."
+        "q_cn": "木牛流马里的牌算手牌吗？",
+        "a_cn": "不算。储备牌不在手牌区，不受针对手牌的技能影响，只有当木牛流马本身被弃置或夺走时才会失去。",
+        "q_en": "Do cards stored in the Wooden Ox count as hand cards?",
+        "a_en": "No. Stored cards are not in your hand and are unaffected by skills targeting hand cards. They are only lost if the Wooden Ox itself is discarded or stolen."
       },
       {
-        "q_cn": "我可以一次性把所有“储备”牌都传给下一个人吗？",
-        "a_cn": "是的。当你把木牛流马传给别人时，所有的“储备”牌都会一并移交给那个人。",
-        "q_en": "Can I transfer all 'Reserve' cards at once?",
-        "a_en": "Yes. When you pass the Wooden Ox to another player, all cards currently in the 'Reserve' are transferred to them."
+        "q_cn": "把木牛流马传给别人时，储备牌也一起转移吗？",
+        "a_cn": "是的，所有储备牌随木牛流马一并移交。",
+        "q_en": "When I pass the Wooden Ox, do the stored cards transfer too?",
+        "a_en": "Yes. All stored cards transfer along with the Wooden Ox."
       },
       {
-        "q_cn": "如果我没有仿牌，可以移动给别人吗？",
-        "a_cn": "不可以",
-        "q_en": "Can i move the granary without putting any card",
-        "a_en": "No. you can only choose to move the granary after putting a card."
+        "q_cn": "没有放入储备牌时可以移动木牛流马吗？",
+        "a_cn": "不可以，必须先放入一张牌才能选择移动。",
+        "q_en": "Can I move the Wooden Ox without storing a card first?",
+        "a_en": "No. You must store a card before you can choose to move it."
       }
     ]
   }

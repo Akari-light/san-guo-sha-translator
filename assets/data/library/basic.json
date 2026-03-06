@@ -14,9 +14,9 @@
     "faq": [
       {
         "q_cn": "普杀、雷杀、火杀的区别？",
-        "a_cn": "普通杀造成物理伤害；雷杀和火杀造成对应的属性伤害，可触发如【藤甲】或【连环】的特殊效果。",
-        "q_en": "Difference between Normal, Thunder, and Fire Kill?",
-        "a_en": "Normal Kill deal physical damage; Thunder and Fire Kill deal elemental damage which can trigger specific effects like [Vine Armor] or [Chained] states."
+        "a_cn": "普通杀造成物理伤害；雷杀和火杀造成属性伤害，可触发藤甲或连环等特殊效果。",
+        "q_en": "What is the difference between Normal, Thunder, and Fire Kill?",
+        "a_en": "Normal Kill deals physical damage. Thunder and Fire Kill deal elemental damage, which can trigger special effects like Vine Armor or chain transmission."
       }
     ]
   },
@@ -62,9 +62,9 @@
       },
       {
         "q_cn": "在自己的回合可以给另一名角色用桃吗？",
-        "a_cn": "不可以。",
-        "q_en": "Can I use a Peach on another character in my action phase?",
-        "a_en": "No."
+        "a_cn": "不可以。只有在其他角色濒死时才能对其使用桃。",
+        "q_en": "Can I use a Peach on another character during my turn?",
+        "a_en": "No. Peach can only be used on another character when they are on the brink of death."
       }
     ]
   },
@@ -133,16 +133,16 @@
     ],
     "faq": [
       {
-        "q_cn": "如果【毒】是因为被其他角色【顺手牵羊】或【过河拆桥】而离开手牌，谁会扣血？",
-        "a_cn": "原本拥有【毒】的手牌持有者扣血，因为它离开了该玩家的手牌。",
-        "q_en": "If [Poison] leaves my hand due to another player's [Snatch] or [Dismantle], who loses health?",
-        "a_en": "The player who originally held the card in their hand loses 1 health point because it left their hand."
+        "q_cn": "如果【毒】被【顺手牵羊】或【过河拆桥】离开手牌，谁扣血？",
+        "a_cn": "原持有者扣1点体力，因为【毒】离开了该玩家的手牌。",
+        "q_en": "If [Poison] leaves my hand via [Steal] or [Dismantle], who loses HP?",
+        "a_en": "The original holder loses 1 HP, because [Poison] left their hand."
       },
       {
         "q_cn": "我可以在出牌阶段主动使用【毒】吗？",
-        "a_cn": "可以。使用它也属于“离开手牌”，因此你会失去1点体力，并将其置于牌堆顶供下一名角色摸取。",
+        "a_cn": "可以，使用它属于离开手牌，你失去1点体力，然后将其置于牌堆顶。",
         "q_en": "Can I actively play [Poison] during my action phase?",
-        "a_en": "Yes. Playing it counts as 'leaving the hand,' so you will lose 1 health point and place the card on top of the draw pile for the next player to draw."
+        "a_en": "Yes. Playing it counts as leaving your hand — you lose 1 HP and it is placed on top of the draw pile."
       }
     ]
   }

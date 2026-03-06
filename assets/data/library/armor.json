@@ -14,15 +14,15 @@
     "faq": [
       {
         "q_cn": "如果判定结果是黑色，我还能从手牌打出【闪】吗？",
-        "a_cn": "可以。如果判定失败，你仍然可以正常从手牌使用【闪】。",
-        "q_en": "If the Judgment is Black, can I still play a [Dodge] from my hand?",
-        "a_en": "Yes. If the judgment fails, you are still permitted to play a [Dodge] from your hand as normal."
+        "a_cn": "可以。判定失败不影响你正常出【闪】。",
+        "q_en": "If the Judgment fails, can I still play a [Dodge] from my hand?",
+        "a_en": "Yes. A failed judgment does not prevent you from playing a [Dodge] normally."
       },
       {
-        "q_cn": "张角可以使用“鬼道”修改这个判定吗？",
+        "q_cn": "张角可以用技能修改八卦阵的判定吗？",
         "a_cn": "可以。所有具备修改判定技能的武将都可以影响八卦阵的判定结果。",
-        "q_en": "Can Zhang Jiao use 'Guidao' to change this judgment?",
-        "a_en": "Yes. Any hero with a judgment-altering skill can change the result of Eight Trigrams."
+        "q_en": "Can judgment-altering skills affect Eight Trigrams?",
+        "a_en": "Yes. Any skill that modifies judgment results can affect Eight Trigrams Array."
       }
     ]
   }

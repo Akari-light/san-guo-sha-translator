@@ -129,70 +129,70 @@
     ],
     "faq": [
       {
-        "q_cn": "连环状态是按‘配对’记录的吗？（例如：A 与 B 连环，C 与 D 连环，若甲受火传导，C 和 D 会受波及吗？）",
-        "a_cn": "不，连环状态并非按配对记录。它是一个全局共享的状态：所有处于连环状态的角色都视为同一组。因此，即使甲与丙是通过不同的卡牌进入连环的，只要甲受到属性伤害，乙、丙、丁均会受到等量的伤害。",
-        "q_en": "Is the 'Chained' status tracked in specific pairs? For example, if A is linked to B, and C is linked to D; does fire damage to A affect C and D?",
-        "a_en": "No, the 'Chained' status is not tracked in pairs. It is a single, global state: all players in the \"Chained\" state belong to the same group. Therefore, if A takes fire damage, everyone currently in the chain (B, C, and D) will also be affected, regardless of when or how they were originally linked."
+        "q_cn": "连环状态是按配对记录的吗？",
+        "a_cn": "不是。连环状态是全局的，所有连环角色视为同一组。任意连环角色受到属性伤害时，所有其他连环角色都受到等量伤害。",
+        "q_en": "Is chain status tracked in specific pairs?",
+        "a_en": "No. Chain status is global — all chained characters form one group. Elemental damage to any one of them transmits to all others regardless of how they were linked."
       },
       {
         "q_cn": "可以只选择1名角色使用此牌吗？",
-        "a_cn": "可以。你可以选择横置或重置1名或2名角色，并非必须选择2名。",
+        "a_cn": "可以，不必须选2名。",
         "q_en": "Can I target just 1 character?",
-        "a_en": "Yes. You may choose to chain or unchain 1 or 2 characters — targeting 2 is not mandatory."
+        "a_en": "Yes. Targeting 2 is not mandatory."
       },
       {
-        "q_cn": "可以用一张【铁索连环】同时让一名角色处于‘横置’状态，而另一名角色‘重置’（解除连环）吗？",
-        "a_cn": "可以。‘铁索连环’的效果是‘切换’目标的当前状态。如果你选择的两名目标中，一个处于重置状态，另一个处于横置状态，则结算后两者的状态都会反转：原本没连环的会变为连环，原本连环的会解除连环。",
-        "q_en": "Can I use one 'Iron Shackles' to chain one character and unchain another at the same time?",
-        "a_en": "Yes. The card effect 'toggles' the current status of the selected targets. Since you can choose up to two targets, their states are switched independently. If one target is currently unchained and the other is chained, the card will flip both—chaining the first and unchaining the second."
+        "q_cn": "可以同时横置一名角色并重置另一名角色吗？",
+        "a_cn": "可以。此牌切换每名目标各自的当前状态，两名目标独立结算。",
+        "q_en": "Can I chain one character and unchain another with the same card?",
+        "a_en": "Yes. The card toggles each target's state independently — an unchained target becomes chained and vice versa."
       },
       {
         "q_cn": "【无懈可击】可以抵消【铁索连环】吗？",
-        "a_cn": "可以，但仅限于横置/重置时生效前。【无懈可击】只能保护其中一名目标不受影响，另一名目标的状态仍正常改变。重铸时不能使用【无懈可击】。",
-        "q_en": "Can Nullification block Iron Shackles?",
-        "a_en": "Yes, but only at the moment it is applied. Nullification protects one of the targets only (the state of the other target will still change) . Nullification cannot be used against a recast."
+        "a_cn": "可以，但每次只能保护一名目标，另一名目标状态仍会改变。重铸时不能使用【无懈可击】。",
+        "q_en": "Can [Nullification] block [Iron Shackles]?",
+        "a_en": "Yes, but only against one target — the other target's state still changes. [Nullification] cannot be used against a recast."
       },
       {
-        "q_cn": "连环角色受到的攻击被【闪】躲避后，其他连环角色也需要响应吗？",
-        "a_cn": "不需要。连环只传递伤害，若攻击被闪避未造成伤害，连环不触发，所有角色的连环状态保持不变。",
-        "q_en": "If a fire or lightning attack on a chained character is dodged, do other chained characters need to respond?",
-        "a_en": "No. Chains only transmit damage. If the attack is dodged and no damage is dealt, the chain does not trigger and all chain statuses remain unchanged."
+        "q_cn": "连环角色的攻击被【闪】躲避后，其他连环角色需要响应吗？",
+        "a_cn": "不需要。连环只传递伤害，未造成伤害则不触发。",
+        "q_en": "If an attack on a chained character is dodged, do other chained characters need to respond?",
+        "a_en": "No. Chains only transmit damage — if no damage is dealt, the chain does not trigger."
       },
       {
-        "q_cn": "装备了藤甲的连环角色受到火焰伤害时，其他连环角色受到多少伤害？",
-        "a_cn": "取决于谁是最初受击者。若最初受击者装备了藤甲，受到2点火焰伤害，则所有其他连环角色也受到2点火焰伤害。若最初受击者未装备藤甲，则传递1点火焰伤害，但装备藤甲的连环角色在接收该伤害时，再额外+1，共受到2点伤害。",
-        "q_en": "How does Rattan Armour interact with chain damage?",
-        "a_en": "The transmitted damage is determined by what the original victim actually receives. If the original victim has Rattan Armour and takes 2 fire damage, all other chained characters receive 2. If the original victim takes 1, transmitted damage is 1 — but a chained recipient with Rattan Armour then takes an additional +1 on top, for 2 total."
+        "q_cn": "藤甲与连环伤害如何互动？",
+        "a_cn": "传递的伤害等于原始受击者实际受到的伤害。若藤甲使其受到2点伤害，其他连环角色也受到2点伤害。",
+        "q_en": "How does Vine Armor interact with chain damage?",
+        "a_en": "Transmitted damage matches what the original target actually receives. If Vine Armor raises their damage to 2, all other chained characters also receive 2."
       },
       {
         "q_cn": "【过河拆桥】或【顺手牵羊】能解除连环状态吗？",
-        "a_cn": "不能。连环状态只能通过再次使用【铁索连环】或（在横置时）使用【无懈可击】来解除。",
-        "q_en": "Can Dismantle or Steal remove a character's chain status?",
-        "a_en": "No. Chain status can only be removed by playing another Iron Shackles card, or by Nullification at the moment of chaining."
+        "a_cn": "不能。连环状态只能通过再次使用【铁索连环】或【无懈可击】解除。",
+        "q_en": "Can [Dismantle] or [Steal] remove chain status?",
+        "a_en": "No. Chain status can only be removed by another [Iron Shackles] or [Nullification] at the moment of chaining."
       },
       {
         "q_cn": "重铸时，黄月英能额外摸一张牌吗？",
-        "a_cn": "不能。重铸不被视为\"使用\"锦囊牌，因此黄月英的技能不会触发。",
-        "q_en": "Can Huang Yue Ying draw an extra card when Iron Shackles is recast?",
-        "a_en": "No. Recasting is not considered using a tool card, so Huang Yue Ying's ability does not trigger."
+        "a_cn": "不能。重铸不被视为使用锦囊牌，黄月英的技能不会触发。",
+        "q_en": "Can Huang Yue Ying draw an extra card when [Iron Shackles] is recast?",
+        "a_en": "No. Recasting is not considered using a tool card, so Huang Yue Ying's skill does not trigger."
       },
       {
-        "q_cn": "使用【铁索连环】横置角色有距离限制吗？",
-        "a_cn": "没有。【铁索连环】没有距离限制，可以对任意角色使用。",
-        "q_en": "Is there a range restriction when using Iron Shackles?",
-        "a_en": "No. Iron Shackles has no range restriction and can target any character regardless of distance."
+        "q_cn": "使用【铁索连环】有距离限制吗？",
+        "a_cn": "没有，可以对任意角色使用。",
+        "q_en": "Is there a range restriction when using [Iron Shackles]?",
+        "a_en": "No. [Iron Shackles] can target any character regardless of distance."
       },
       {
-        "q_cn": "若多名连环角色同时死亡，死亡结算顺序是什么？",
-        "a_cn": "按照从使用者开始逆时针方向的顺序依次结算。",
-        "q_en": "If multiple chained characters die simultaneously from transmitted damage, what is the elimination order?",
-        "a_en": "Characters are eliminated in anti-clockwise order starting from the attacker, following standard elimination rules."
+        "q_cn": "若多名连环角色同时死亡，结算顺序是什么？",
+        "a_cn": "按从使用者开始逆时针方向的顺序依次结算。",
+        "q_en": "If multiple chained characters die simultaneously, what is the elimination order?",
+        "a_en": "Counter-clockwise from the attacker."
       },
       {
-        "q_cn": "主公因连环伤害传导间接杀死了忠臣，主公需要弃置所有手牌和装备牌吗？",
-        "a_cn": "需要。主公仍是伤害来源，无论伤害是直接造成还是通过连环传导。",
-        "q_en": "If the Ruler indirectly kills a Loyalist through chain damage transmission, does the Ruler still lose all hand and equipment cards?",
-        "a_en": "Yes. The Ruler is still the damage source regardless of whether the kill was direct or through chain transmission."
+        "q_cn": "主公通过连环伤害间接杀死忠臣，需要弃置所有手牌和装备牌吗？",
+        "a_cn": "需要。主公仍是伤害来源，无论是否通过连环传导。",
+        "q_en": "If the Ruler kills a Loyalist through chain damage, do they still discard all cards?",
+        "a_en": "Yes. The Ruler is still the damage source regardless of whether it was direct or transmitted."
       }
     ]
   },
@@ -244,34 +244,34 @@
     ],
     "faq": [
       {
-        "q_cn": "针对【南蛮入侵】或【万箭齐发】等群体锦囊，一张【无懈可击】可以抵消所有人的效果吗？",
-        "a_cn": "不可以。针对群体锦囊，一张【无懈可击】只能抵消其对‘其中一名’目标角色的效果。结算顺序按出牌者的逆时针方向依次触发。若你想保护多人，则需要对每一名目标分别使用对应的【无懈可击】。",
-        "q_en": "Does playing one [Nullification] cancel an AOE strategy (like Southern Invasion or Volley of Arrows) for everyone?",
-        "a_en": "No. For AOE strategies, a single [Nullification] only protects one targeted player. The card resolves for each player individually in clockwise order. To protect multiple players, a separate [Nullification] must be played for each specific person during their resolution window."
+        "q_cn": "一张【无懈可击】可以抵消群体锦囊对所有人的效果吗？",
+        "a_cn": "不可以。针对群体锦囊，一张【无懈可击】只能保护一名目标，保护多人需对每人分别使用。",
+        "q_en": "Does one [Nullification] cancel an AOE card for everyone?",
+        "a_en": "No. One [Nullification] only protects one target. A separate [Nullification] is needed for each person you want to protect."
       },
       {
-        "q_cn": "我可以在同一次群体锦囊结算中，使用多张【无懈可击】吗？",
-        "a_cn": "可以。由于群体锦囊是按顺序逐一结算每个目标的，每一个目标的结算都是一个独立的时机。只要你手牌充足，你可以在轮到不同角色结算时，分别打出【无懈可击】（例如一张保自己，一张保队友）。",
-        "q_en": "Can I use multiple [Nullification] cards during a single AOE resolution?",
-        "a_en": "Yes. Because AOE strategies resolve for each target one by one, each player's resolution creates an independent timing window. As long as you have the cards, you can play multiple [Nullification] cards to protect different people (e.g., one for yourself and another for an ally)."
+        "q_cn": "我可以在同一次群体锦囊中使用多张【无懈可击】吗？",
+        "a_cn": "可以。每名目标的结算是独立时机，手牌充足时可分别打出多张保护不同角色。",
+        "q_en": "Can I use multiple [Nullification] cards during one AOE resolution?",
+        "a_en": "Yes. Each target resolves independently — you can play separate [Nullification] cards for different people as long as you have them."
       },
       {
-        "q_cn": "如果我对【五谷丰登】使用【无懈可击】会发生什么？",
-        "a_cn": "被抵消的目标角色将直接跳过该次‘摸牌’机会，无法从展示的牌堆中挑选卡牌。该角色原本可以拿走的那张牌会留在牌堆中，供下一名未被抵消的角色挑选。",
-        "q_en": "What happens if I use [Nullification] against a target during 'Bountiful Harvest'?",
-        "a_en": "The targeted player is skipped and cannot choose a card from the display. The card they would have taken remains in the pool, potentially allowing players later in the sequence to have better options."
+        "q_cn": "对【五谷丰登】使用【无懈可击】会发生什么？",
+        "a_cn": "被抵消的目标跳过摸牌，其原本可拿的牌留在牌堆供后续角色选取。",
+        "q_en": "What happens if [Nullification] is used during [Bountiful Harvest]?",
+        "a_en": "The target is skipped and cannot choose a card. The card they would have taken remains in the pool for later players."
       },
       {
-          "q_cn": "【桃园结义】被【无懈可击】抵消后，其他角色还能照常回血吗？",
-          "a_cn": "可以。针对群体锦囊（AOE），一张【无懈可击】只能抵消其对‘其中一名’目标角色的效果。如果你对 A 使用【无懈可击】，A 将无法回复体力，但由于锦囊对B、C、D的结算窗口是独立的，他们依然会按顺序正常回血。",
-          "q_en": "If 'Peach Garden Pledge' is nullified for one person, do the other characters still recover health?",
-          "a_en": "Yes. Since [Nullification] only targets a single person during an AOE resolution, it only prevents that specific individual from healing. The card continues its clockwise sequence, and all other eligible players (B, C, and D) will still recover 1 unit of health as normal."
+        "q_cn": "【桃园结义】被【无懈可击】抵消后，其他角色还能回血吗？",
+        "a_cn": "可以。【无懈可击】只影响被指定的那一名目标，其他角色仍正常回血。",
+        "q_en": "If [Peach Garden] is nullified for one person, do the others still recover health?",
+        "a_en": "Yes. [Nullification] only affects the one target it is played against — all other players still recover health normally."
       },
       {
-        "q_cn": "如果有人对我的【无懈可击】再使用【无懈可击】（无懈之无懈），会影响其他人的结算吗？",
-        "a_cn": "不会。‘无懈之无懈’仅针对当前的‘抵消行为’进行二次抵消。它只决定当前这名特定目标是否受锦囊影响，不会‘打断’锦囊对圆桌上其他后续玩家的正常结算。",
-        "q_en": "If someone plays a [Nullification] to counter my [Nullification], does it affect other players in the AOE circle?",
-        "a_en": "No. A 'Counter-Nullification' only resolves the specific interaction for the current target. It determines whether that one person is hit or safe; it does not stop the strategy card from continuing its clockwise resolution for everyone else."
+        "q_cn": "对方用【无懈可击】抵消我的【无懈可击】，会影响其他人的结算吗？",
+        "a_cn": "不会。反制只决定当前目标是否受影响，不影响群体锦囊对其他角色的后续结算。",
+        "q_en": "If my [Nullification] is countered, does it affect other players in the AOE?",
+        "a_en": "No. The counter only resolves the interaction for the current target — it does not affect the AOE card's resolution for anyone else."
       }
     ]
   },

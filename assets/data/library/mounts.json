@@ -1,16 +1,20 @@
 [
-{
+  {
     "id": "mount_red_hare",
     "name_cn": "赤兔",
     "name_en": "Red Hare",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["你计算与其他角色的距离-1。"],
-    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "effect_cn": [
+      "你计算与其他角色的距离-1。"
+    ],
+    "effect_en": [
+      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+    ],
     "faq": [
       {
-        "q_en": "Does this increase my weapon range?",
-        "a_en": "No. It modifies the distance to others, not the range of your weapon. It makes them appear 'closer' to you."
+        "q_en": "Does Red Hare increase my weapon attack range?",
+        "a_en": "No. It reduces the distance others appear to be from you, making more targets reachable — but it does not change your weapon range value."
       }
     ]
   },
@@ -20,8 +24,12 @@
     "name_en": "Da Yuan",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["你计算与其他角色的距离-1。"],
-    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "effect_cn": [
+      "你计算与其他角色的距离-1。"
+    ],
+    "effect_en": [
+      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+    ],
     "faq": []
   },
   {
@@ -30,8 +38,12 @@
     "name_en": "Zi Xing",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["你计算与其他角色的距离-1。"],
-    "effect_en": ["When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."],
+    "effect_cn": [
+      "你计算与其他角色的距离-1。"
+    ],
+    "effect_en": [
+      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+    ],
     "faq": []
   },
   {
@@ -40,12 +52,16 @@
     "name_en": "Di Lu",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+1。"],
-    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "effect_cn": [
+      "其他角色计算与你的距离+1。"
+    ],
+    "effect_en": [
+      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+    ],
     "faq": [
       {
-        "q_en": "Does this work against tools like Snatch?",
-        "a_en": "Yes. Tools that require a specific distance (like Steal/Snatch) are affected by the distance modifier of a +1 horse."
+        "q_en": "Does Di Lu affect tool cards like [Steal] that require distance?",
+        "a_en": "Yes. Any effect that checks distance to you is affected by the +1 modifier."
       }
     ]
   },
@@ -55,8 +71,12 @@
     "name_en": "Jue Ying",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+1。"],
-    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "effect_cn": [
+      "其他角色计算与你的距离+1。"
+    ],
+    "effect_en": [
+      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+    ],
     "faq": []
   },
   {
@@ -65,8 +85,12 @@
     "name_en": "Zhao Huang Fei Dian",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+1。"],
-    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "effect_cn": [
+      "其他角色计算与你的距离+1。"
+    ],
+    "effect_en": [
+      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+    ],
     "faq": []
   },
   {
@@ -75,8 +99,12 @@
     "name_en": "Hua Liu",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+1。"],
-    "effect_en": ["When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."],
+    "effect_cn": [
+      "其他角色计算与你的距离+1。"
+    ],
+    "effect_en": [
+      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+    ],
     "faq": []
   }
 ]
