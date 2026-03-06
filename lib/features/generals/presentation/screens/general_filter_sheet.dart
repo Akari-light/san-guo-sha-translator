@@ -4,7 +4,6 @@ import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 
 // ── Sort Order 
-
 enum GeneralSortOrder {
   none,         // JSON order — no sort applied
   serialNumber, // By card ID: SHU001, SHU002...
@@ -26,7 +25,6 @@ enum GeneralSortOrder {
 }
 
 // ── Filter State 
-
 class GeneralFilterState {
   final Set<String> factions;
   final Set<Expansion> expansions;
@@ -96,7 +94,6 @@ class GeneralFilterState {
 }
 
 // ── Bottom Sheet 
-
 class GeneralFilterSheet extends StatefulWidget {
   final GeneralFilterState initialState;
   final void Function(GeneralFilterState) onChanged;
@@ -173,7 +170,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 
     return Column(
       children: [
-        // ── Transparent tap zone — dismisses the sheet ────────────────────
+        // ── Transparent tap zone
         Expanded(
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
@@ -182,7 +179,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
           ),
         ),
 
-        // ── Sheet content ─────────────────────────────────────────────────
+        // ── Sheet content
         Container(
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF252526) : Colors.white,

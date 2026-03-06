@@ -1192,7 +1192,7 @@
     "skill_mo_duoqi": {
         "skill_type": "locked",
         "name_cn": "夺炁",
-        "name_en": "Seize Q",
+        "name_en": "Seize Qi",
         "description_cn": "锁定技，一号位首个回合开始前，你执行一个不能使用延时锦囊牌的额外出牌阶段。所有角色的初始手牌称为炁。你每回合对一名角色首次造成伤害后，你获得其一张炁。",
         "description_en": "Locked: Before the first player's first turn begins, you take an extra Play Phase in which delayed tool cards cannot be used. All characters' starting hand cards are called [Qi]. The first time you deal damage to a character each turn, gain one of their [Qi]."
     },

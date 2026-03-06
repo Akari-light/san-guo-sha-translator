@@ -372,8 +372,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen> {
   }
 }
 
-// ── Evolution Switcher ────────────────────────────────────────────────────────
-
+// ── Evolution Switcher 
 class _EvolutionSwitcher extends StatelessWidget {
   final List<GeneralCard> variants;
   final GeneralCard activeCard;
@@ -458,8 +457,7 @@ class _EvolutionSwitcher extends StatelessWidget {
   }
 }
 
-// ── Related library card chip (tappable) ──────────────────────────────────────
-
+// ── Related library card chip (tappable) 
 class _RelatedCardChip extends StatelessWidget {
   final String label;
   final String category;
@@ -505,8 +503,7 @@ class _RelatedCardChip extends StatelessWidget {
   }
 }
 
-// ── Related skill reference chip (non-tappable) ───────────────────────────────
-
+// ── Related skill reference chip (non-tappable) 
 class _RelatedSkillChip extends StatelessWidget {
   final String label;
   final bool isDark;
@@ -542,8 +539,7 @@ class _RelatedSkillChip extends StatelessWidget {
   }
 }
 
-// ── Skill card ────────────────────────────────────────────────────────────────
-
+// ── Skill card 
 class _SkillCard extends StatelessWidget {
   final SkillDTO skill;
   final bool isEnglish;
@@ -611,8 +607,7 @@ class _SkillCard extends StatelessWidget {
   }
 }
 
-// ── Skill type badge ──────────────────────────────────────────────────────────
-
+// ── Skill type badge 
 class _SkillTypeBadge extends StatelessWidget {
   final String label;
   final SkillType type;
@@ -650,8 +645,7 @@ class _SkillTypeBadge extends StatelessWidget {
   }
 }
 
-// ── Faction / expansion badge ─────────────────────────────────────────────────
-
+// ── Faction / expansion badge
 class _Badge extends StatelessWidget {
   final String label;
   final Color color;
@@ -679,8 +673,7 @@ class _Badge extends StatelessWidget {
   }
 }
 
-// ── Stat chip ─────────────────────────────────────────────────────────────────
-
+// ── Stat chip 
 class _StatChip extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
@@ -725,8 +718,7 @@ class _StatChip extends StatelessWidget {
   }
 }
 
-// ── Trait chip ────────────────────────────────────────────────────────────────
-
+// ── Trait chip 
 class _TraitChip extends StatelessWidget {
   final String label;
 
