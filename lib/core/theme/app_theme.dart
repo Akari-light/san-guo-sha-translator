@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../models/skill_dto.dart';
+import '../../features/generals/data/models/general_card.dart';
 
 class AppTheme {
   AppTheme._();
@@ -122,6 +124,43 @@ class AppTheme {
       case 'Qun':  return _qunColor;
       case 'God':  return _godColor;
       default:     return Colors.grey;
+    }
+  }
+
+  // ── Skill type accent colors 
+  // Used by GeneralDetailScreen skill cards (left accent stripe + badge).
+  static const Color skillLord      = Color(0xFFF0A820); // gold
+  static const Color skillLimited   = Color(0xFFF25C5C); // red
+  static const Color skillAwakening = Color(0xFFB47FEC); // purple
+  static const Color skillLocked    = Color(0xFF5BA4F5); // blue
+  static const Color skillActive    = Color(0x2EFFFFFF); // subtle white
+
+  /// Returns the accent color for a skill type.
+  /// Used for the left border stripe and badge on skill cards.
+  static Color skillTypeColor(SkillType type) {
+    switch (type) {
+      case SkillType.lord:      return skillLord;
+      case SkillType.limited:   return skillLimited;
+      case SkillType.awakening: return skillAwakening;
+      case SkillType.locked:    return skillLocked;
+      case SkillType.active:    return skillActive;
+    }
+  }
+
+  // ── Expansion badge colors 
+  // Used by GeneralDetailScreen version segment control.
+  static const Color expansionStandard   = Color(0xFFA0A0A0); // grey  — 标
+  static const Color expansionLimitBreak = Color(0xFF4B9FDE); // blue  — 界
+  static const Color expansionDemon      = Color(0xFFE06868); // red   — 魔
+  static const Color expansionGod        = Color(0xFFF0A820); // gold  — 神
+
+  /// Returns the accent color for an expansion badge.
+  static Color expansionColor(Expansion expansion) {
+    switch (expansion) {
+      case Expansion.standard:   return expansionStandard;
+      case Expansion.limitBreak: return expansionLimitBreak;
+      case Expansion.demon:      return expansionDemon;
+      case Expansion.god:        return expansionGod;
     }
   }
 }
