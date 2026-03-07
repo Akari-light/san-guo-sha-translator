@@ -19,13 +19,13 @@ class GeneralLoader {
   static const List<String> _expansionFiles = [
     'assets/data/generals/limit_break.json',
     'assets/data/generals/demon.json',
+    'assets/data/generals/god.json',
     // 'assets/data/generals/standard.json',  // Uncomment when ready
   ];
 
   static const String _skillsFile = 'assets/data/skills.json';
 
   // ── Public API 
-
   Future<List<GeneralCard>> getGenerals() async {
     if (_cachedGenerals != null) return _cachedGenerals!;
 
