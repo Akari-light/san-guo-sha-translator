@@ -67,7 +67,6 @@ class GeneralLoader {
   }
 
   // ── Private 
-
   Future<Map<String, SkillDTO>> _loadSkillMap() async {
     if (_cachedSkillMap != null) return _cachedSkillMap!;
 
