@@ -105,7 +105,7 @@ class GeneralCard {
   }
 
   // ── Power Index 
-  /// Power index as a display string, e.g. "3.0" → "★★★" 
+  /// Power index as a display string, e.g. "3.5" → "★★★☆" 
   /// Returns half-star increments up to 5 stars.
   String get powerStars {
     final full = powerIndex.floor();
