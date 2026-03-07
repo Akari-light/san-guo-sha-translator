@@ -523,6 +523,7 @@ class _GlowLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(
       alignment: Alignment.center,
       children: [
@@ -544,7 +545,8 @@ class _GlowLabel extends StatelessWidget {
             ),
           ),
         ),
-        // Label text
+        // Label text — inactive colour uses hintColor so it stays
+        // visible in both dark and light mode.
         AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
@@ -554,7 +556,7 @@ class _GlowLabel extends StatelessWidget {
             letterSpacing: letterSpacing,
             color: active
                 ? factionColor
-                : Colors.white.withValues(alpha: 0.22),
+                : theme.hintColor.withValues(alpha: 0.4),
           ),
           child: Text(text),
         ),
@@ -602,7 +604,9 @@ class _PowerStars extends StatelessWidget {
   const _PowerStars({required this.value});
 
   static const Color _goldColor = AppTheme.skillLord; // reuse gold from theme
-  static const Color _dimColor  = Color(0x1AFFFFFF);
+  // 0x22 alpha on a neutral grey reads in both dark and light mode;
+  // hardcoded white (0x1AFFFFFF) becomes invisible on a light scaffold.
+  static const Color _dimColor  = Color(0x22888888);
 
   @override
   Widget build(BuildContext context) {
@@ -843,13 +847,13 @@ class _TabBar extends StatelessWidget {
         dividerColor: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
       labelStyle: const TextStyle(
         fontWeight: FontWeight.w700,
-        fontSize: 10,
-        letterSpacing: 2,
+        fontSize: 13,
+        letterSpacing: 1.5,
       ),
       unselectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.w400,
-        fontSize: 10,
-        letterSpacing: 2,
+        fontSize: 13,
+        letterSpacing: 1.5,
       ),
       tabs: [
         Tab(text: isEnglish ? 'SKILLS' : '技能'),
@@ -861,8 +865,8 @@ class _TabBar extends StatelessWidget {
                 isEnglish ? 'FAQ' : '问答',
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 10,
-                  letterSpacing: 2,
+                  fontSize: 13,
+                  letterSpacing: 1.5,
                 ),
               ),
               if (faqCount > 0) ...[
@@ -954,7 +958,7 @@ class _SkillCardState extends State<_SkillCard> {
                           : widget.skill.nameCn,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 15,
+                        fontSize: 17,
                       ),
                     ),
                     if (widget.skill.skillType.hasBadge) ...[
@@ -1202,12 +1206,17 @@ class _SectionLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // Use a larger, more readable size. toUpperCase() is fine for English
+    // but looks fine for Chinese too since case is irrelevant there.
     return Text(
       label.toUpperCase(),
-      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            letterSpacing: 2.8,
-            color: Theme.of(context).hintColor.withValues(alpha: 0.55),
-          ),
+      style: theme.textTheme.labelLarge?.copyWith(
+        fontSize:      13,
+        fontWeight:    FontWeight.w700,
+        letterSpacing: 2.0,
+        color: theme.colorScheme.onSurface.withValues(alpha: 0.55),
+      ),
     );
   }
 }
@@ -1317,9 +1326,9 @@ class _TraitChip extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          fontSize: 11,
-          color: theme.colorScheme.onSurface.withValues(alpha: 0.52),
-          letterSpacing: 0.4,
+          fontSize: 13,
+          color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
+          letterSpacing: 0.3,
         ),
       ),
     );
