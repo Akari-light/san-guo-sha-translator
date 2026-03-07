@@ -8,10 +8,21 @@
     "faction": "God",
     "health": 5,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_war_god", "skill_god_war_soul"],
+    "skills": [
+      "skill_god_war_god",
+      "skill_god_war_soul"
+    ],
     "faq": []
   },
   {
@@ -23,10 +34,21 @@
     "faction": "God",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["控制", "过牌", "困难"],
-    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_wide_reading", "skill_god_mental_attack"],
+    "skills": [
+      "skill_god_wide_reading",
+      "skill_god_mental_attack"
+    ],
     "faq": []
   },
   {
@@ -38,10 +60,21 @@
     "faction": "God",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "辅助", "回复"],
-    "traits_en": ["Aggressive", "Support", "Recovery"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_zither_melody", "skill_god_raging_flames"],
+    "skills": [
+      "skill_god_zither_melody",
+      "skill_god_raging_flames"
+    ],
     "faq": []
   },
   {
@@ -53,8 +86,16 @@
     "faction": "God",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["过牌", "辅助", "保核能力"],
-    "traits_en": ["Card Flow", "Support", "Protector"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "保核能力"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "Protector"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_seven_stars",
@@ -72,10 +113,21 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_rallying_hearts", "skill_god_shadow_flight"],
+    "skills": [
+      "skill_god_rallying_hearts",
+      "skill_god_shadow_flight"
+    ],
     "faq": []
   },
   {
@@ -87,8 +139,16 @@
     "faction": "God",
     "health": 5,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "防御", "强命"],
-    "traits_en": ["Aggressive", "Defensive", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Sturdy"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_berserk_rage",
@@ -107,10 +167,21 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": ["防御", "过牌", "发育"],
-    "traits_en": ["Defensive", "Card Flow", "Scaling"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Scaling"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_desperate_stand", "skill_god_dragon_soul"],
+    "skills": [
+      "skill_god_desperate_stand",
+      "skill_god_dragon_soul"
+    ],
     "faq": []
   },
   {
@@ -122,8 +193,16 @@
     "faction": "God",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["发育", "控制", "困难"],
-    "traits_en": ["Scaling", "Control", "High Difficulty"],
+    "traits_cn": [
+      "发育",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_endurance_vow",
@@ -141,10 +220,21 @@
     "faction": "God",
     "health": 6,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "辅助", "困难"],
-    "traits_en": ["Aggressive", "Support", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "High Difficulty"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_dragon_fury", "skill_god_entrenched_camp"],
+    "skills": [
+      "skill_god_dragon_fury",
+      "skill_god_entrenched_camp"
+    ],
     "faq": []
   },
   {
@@ -156,8 +246,16 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "辅助", "困难"],
-    "traits_en": ["Aggressive", "Support", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "High Difficulty"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_military_stratagem",
@@ -175,10 +273,21 @@
     "faction": "God",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "控制", "发育"],
-    "traits_en": ["Aggressive", "Control", "Scaling"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "发育"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Scaling"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_skill_seizure", "skill_god_intimidation"],
+    "skills": [
+      "skill_god_skill_seizure",
+      "skill_god_intimidation"
+    ],
     "faq": []
   },
   {
@@ -190,10 +299,21 @@
     "faction": "God",
     "health": 6,
     "power_index": 4.5,
-    "traits_cn": ["进攻", "控制", "辅助"],
-    "traits_en": ["Aggressive", "Control", "Support"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "辅助"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Support"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_soul_raid", "skill_god_camp_raid"],
+    "skills": [
+      "skill_god_soul_raid",
+      "skill_god_camp_raid"
+    ],
     "faq": []
   },
   {
@@ -205,10 +325,21 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": ["控制", "进攻", "困难"],
-    "traits_en": ["Control", "Aggressive", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "进攻",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Aggressive",
+      "High Difficulty"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_soul_lure", "skill_god_bewitching_heart"],
+    "skills": [
+      "skill_god_soul_lure",
+      "skill_god_bewitching_heart"
+    ],
     "faq": [
       {
         "q_cn": "神貂蝉发动技能「魅魂」并声明花色，若其没有，是谁判断？可能对方有但不愿交给你算不算没有？",
@@ -250,17 +381,28 @@
   },
   {
     "id": "LE014",
-    "standard_id": "char_hua_tuo",
+    "standard_id": "char_huatuo",
     "name_cn": "神华佗",
     "name_en": "God Hua Tuo",
     "gender": "Male",
     "faction": "God",
     "health": 1,
     "power_index": 4.0,
-    "traits_cn": ["辅助", "回复", "控制"],
-    "traits_en": ["Support", "Recovery", "Control"],
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "控制"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "Control"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_five_spirits", "skill_god_traveling_physician"],
+    "skills": [
+      "skill_god_five_spirits",
+      "skill_god_traveling_physician"
+    ],
     "faq": []
   },
   {
@@ -272,23 +414,42 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": ["控制", "辅助", "困难"],
-    "traits_en": ["Control", "Support", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "High Difficulty"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_soul_refinement", "skill_god_omen_of_chaos"],
+    "skills": [
+      "skill_god_soul_refinement",
+      "skill_god_omen_of_chaos"
+    ],
     "faq": []
   },
   {
     "id": "LE016",
-    "standard_id": "char_dian_wei",
+    "standard_id": "char_dianwei",
     "name_cn": "神典韦",
     "name_en": "God Dian Wei",
     "gender": "Male",
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "回复", "加伤"],
-    "traits_en": ["Aggressive", "Recovery", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "回复",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Recovery",
+      "Damage Boost"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_sacrifice_armor",
@@ -306,8 +467,16 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": ["控制", "辅助", "过牌"],
-    "traits_en": ["Control", "Support", "Card Flow"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "过牌"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Card Flow"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_longbed_strategy",
@@ -325,23 +494,42 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["发育", "回复", "困难"],
-    "traits_en": ["Scaling", "Recovery", "High Difficulty"],
+    "traits_cn": [
+      "发育",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Recovery",
+      "High Difficulty"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_balance_of_power", "skill_god_imperial_will"],
+    "skills": [
+      "skill_god_balance_of_power",
+      "skill_god_imperial_will"
+    ],
     "faq": []
   },
   {
     "id": "LE019",
-    "standard_id": "char_xun_yu",
+    "standard_id": "char_xunyu",
     "name_cn": "神荀彧",
     "name_en": "God Xun Yu",
     "gender": "Male",
     "faction": "God",
     "health": 3,
     "power_index": 5.0,
-    "traits_cn": ["控制", "过牌", "辅助"],
-    "traits_en": ["Control", "Card Flow", "Support"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "辅助"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Support"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_heavens_aid",
@@ -352,15 +540,23 @@
   },
   {
     "id": "LE020",
-    "standard_id": "char_guo_jia",
+    "standard_id": "char_guojia",
     "name_cn": "神郭嘉",
     "name_en": "God Guo Jia",
     "gender": "Male",
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": ["发育", "辅助", "过牌"],
-    "traits_en": ["Scaling", "Support", "Card Flow"],
+    "traits_cn": [
+      "发育",
+      "辅助",
+      "过牌"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Support",
+      "Card Flow"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_astute_insight",
@@ -378,8 +574,16 @@
     "faction": "God",
     "health": 6,
     "power_index": 4.5,
-    "traits_cn": ["进攻", "控制", "防御"],
-    "traits_en": ["Aggressive", "Control", "Defensive"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "防御"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Defensive"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_heroic_dominance",
@@ -397,10 +601,21 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "使命", "强命"],
-    "traits_en": ["Aggressive", "Mission", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "使命",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Mission",
+      "Sturdy"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_steadfast_valor", "skill_god_break_the_siege"],
+    "skills": [
+      "skill_god_steadfast_valor",
+      "skill_god_break_the_siege"
+    ],
     "faq": []
   },
   {
@@ -412,74 +627,48 @@
     "faction": "God",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "控制", "过牌"],
-    "traits_en": ["Aggressive", "Control", "Card Flow"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Card Flow"
+    ],
     "expansion": "God",
-    "skills": ["skill_god_mount_hunt", "skill_god_unbridled_surge"],
-    "faq": []
-  },
-  {
-    "id": "LE024",
-    "standard_id": "char_TODO_许褚",
-    "name_cn": "神许褚",
-    "name_en": "God Xu Zhu",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
-    "faq": []
-  },
-  {
-    "id": "LE025",
-    "standard_id": "char_TODO_张飞",
-    "name_cn": "神张飞",
-    "name_en": "God Zhang Fei",
-    "gender": "",
-    "faction": "God",
-    "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
+    "skills": [
+      "skill_god_mount_hunt",
+      "skill_god_unbridled_surge"
+    ],
     "faq": []
   },
   {
     "id": "LE027",
-    "standard_id": "char_zhang_jue",
+    "standard_id": "char_zhangjiao",
     "name_cn": "神张角",
     "name_en": "God Zhang Jue",
     "gender": "Male",
     "faction": "God",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["困难", "强命", "爆发"],
-    "traits_en": ["High Difficulty", "Sturdy", "Burst"],
+    "traits_cn": [
+      "困难",
+      "强命",
+      "爆发"
+    ],
+    "traits_en": [
+      "High Difficulty",
+      "Sturdy",
+      "Burst"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_ominous_signs",
       "skill_god_army_rampage",
       "skill_god_heavenly_calamity"
     ],
-    "faq": []
-  },
-  {
-    "id": "LE028",
-    "standard_id": "char_TODO_左慈",
-    "name_cn": "神左慈",
-    "name_en": "God Zuo Ci",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
     "faq": []
   },
   {
@@ -491,8 +680,16 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": ["发育", "进攻", "困难"],
-    "traits_en": ["Scaling", "Aggressive", "High Difficulty"],
+    "traits_cn": [
+      "发育",
+      "进攻",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Aggressive",
+      "High Difficulty"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_expand_territory",
@@ -504,15 +701,23 @@
   },
   {
     "id": "LE030",
-    "standard_id": "char_jiang_wei",
+    "standard_id": "char_jiangwei",
     "name_cn": "神姜维",
     "name_en": "God Jiang Wei",
     "gender": "Male",
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": ["进攻", "控制", "爆发"],
-    "traits_en": ["Aggressive", "Control", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Burst"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_star_soul",
@@ -520,66 +725,6 @@
       "skill_god_divine_revival",
       "skill_god_return_of_heaven"
     ],
-    "faq": []
-  },
-  {
-    "id": "LE031",
-    "standard_id": "char_TODO_黄忠",
-    "name_cn": "神黄忠",
-    "name_en": "God Huang Zhong",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
-    "faq": []
-  },
-  {
-    "id": "LE034",
-    "standard_id": "char_TODO_甄姬",
-    "name_cn": "神甄姬",
-    "name_en": "God Zhen Ji",
-    "gender": "",
-    "faction": "God",
-    "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
-    "faq": []
-  },
-  {
-    "id": "LE035",
-    "standard_id": "char_TODO_庞统",
-    "name_cn": "神庞统",
-    "name_en": "God Pang Tong",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
-    "faq": []
-  },
-  {
-    "id": "LE037",
-    "standard_id": "char_daqiao_xiaoqiao",
-    "name_cn": "神大乔&小乔",
-    "name_en": "God Da Qiao & Xiao Qiao",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
     "faq": []
   },
   {
@@ -591,29 +736,22 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": ["辅助", "控制", "发育"],
-    "traits_en": ["Support", "Control", "Scaling"],
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "发育"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "Scaling"
+    ],
     "expansion": "God",
     "skills": [
       "skill_god_hidden_ingenuity",
       "skill_god_divine_mechanism",
       "skill_god_transmute"
     ],
-    "faq": []
-  },
-  {
-    "id": "LE039",
-    "standard_id": "char_TODO_钟会",
-    "name_cn": "神钟会",
-    "name_en": "God Zhong Hui",
-    "gender": "",
-    "faction": "God",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "God",
-    "skills": [],
     "faq": []
   },
   {
@@ -625,8 +763,16 @@
     "faction": "God",
     "health": 8,
     "power_index": 4.5,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "God",
     "skills": [
       "skill_mashu",
@@ -646,8 +792,16 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "God",
     "skills": [
       "skill_mashu",

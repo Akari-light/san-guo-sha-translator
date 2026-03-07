@@ -1,4 +1,5 @@
 import '../../../../core/models/skill_dto.dart';
+import '../../../../core/models/expansion.dart';
 
 /// Example JSON entry (from limit_break.json):
 /// {
@@ -17,8 +18,8 @@ import '../../../../core/models/skill_dto.dart';
 /// }
 
 class GeneralCard {
-  final String id;           
-  final String standardId;   
+  final String id;
+  final String standardId;
   final String nameCn;
   final String nameEn;
   final String gender;
@@ -46,7 +47,7 @@ class GeneralCard {
     required this.skills,
     this.faq = const [],
   });
-  
+
   factory GeneralCard.fromJson(
     Map<String, dynamic> json,
     Map<String, SkillDTO> skillMap,
@@ -75,7 +76,7 @@ class GeneralCard {
     );
   }
 
-  // ── Search 
+  // ── Search
   /// Matches against English name, Chinese name, and serial ID.
   bool matchesQuery(String query) {
     if (query.isEmpty) return true;
@@ -85,14 +86,15 @@ class GeneralCard {
         id.toLowerCase().contains(q);
   }
 
-  // ── Image 
+  // ── Image
   String get imagePath => 'assets/images/generals/$id.webp';
-  static const String placeholderImagePath = 'assets/images/generals_placeholder.webp';
+  static const String placeholderImagePath =
+      'assets/images/generals_placeholder.webp';
 
-  // ── Expansion 
+  // ── Expansion
   String get expansionBadge => expansion.badge;
 
-  // ── Faction 
+  // ── Faction
   String get factionCn {
     switch (faction) {
       case 'Shu':  return '蜀';
@@ -104,56 +106,11 @@ class GeneralCard {
     }
   }
 
-  // ── Power Index 
-  /// Power index as a display string, e.g. "3.5" → "★★★☆" 
+  // ── Power Index
   /// Returns half-star increments up to 5 stars.
   String get powerStars {
     final full = powerIndex.floor();
     final half = (powerIndex - full) >= 0.5;
     return '★' * full + (half ? '☆' : '');
-  }
-}
-
-enum Expansion {
-  standard,   // 标准版 — no prefix
-  limitBreak, // 界限突破 — prefix: jx
-  demon,      // 魔  — prefix: mo
-  god;        // 神  — prefix: le
-
-  static Expansion fromString(String value) {
-    switch (value) {
-      case 'Standard':    return Expansion.standard;
-      case 'Limit Break': return Expansion.limitBreak;
-      case 'Demon':       return Expansion.demon;
-      case 'God':         return Expansion.god;
-      default:            return Expansion.standard;
-    }
-  }
-
-  String get badge {
-    switch (this) {
-      case Expansion.standard:   return '标';
-      case Expansion.limitBreak: return '界';
-      case Expansion.demon:      return '魔';
-      case Expansion.god:      return '神';
-    }
-  }
-
-  String get labelEn {
-    switch (this) {
-      case Expansion.standard:   return 'Standard';
-      case Expansion.limitBreak: return 'Limit Break';
-      case Expansion.demon:      return 'Demon';
-      case Expansion.god:      return 'God';
-    }
-  }
-
-  String get labelCn {
-    switch (this) {
-      case Expansion.standard:   return '标准版';
-      case Expansion.limitBreak: return '界限突破';
-      case Expansion.demon:      return '魔';
-      case Expansion.god:      return '神';
-    }
   }
 }

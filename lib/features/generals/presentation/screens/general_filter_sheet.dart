@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
 import '../../../../core/models/skill_dto.dart';
+import '../../../../core/models/expansion.dart';
 import '../../../../core/theme/app_theme.dart';
 
-// ── Sort Order 
+// ── Sort Order
 enum GeneralSortOrder {
   none,         // JSON order — no sort applied
   serialNumber, // By card ID: SHU001, SHU002...
@@ -24,7 +25,7 @@ enum GeneralSortOrder {
   }
 }
 
-// ── Filter State 
+// ── Filter State
 class GeneralFilterState {
   final Set<String> factions;
   final Set<Expansion> expansions;
@@ -93,7 +94,7 @@ class GeneralFilterState {
   }
 }
 
-// ── Bottom Sheet 
+// ── Bottom Sheet
 class GeneralFilterSheet extends StatefulWidget {
   final GeneralFilterState initialState;
   final void Function(GeneralFilterState) onChanged;
@@ -258,7 +259,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     );
   }
 
-  // ── Characters tab 
+  // ── Characters tab
   Widget _buildCharactersTab(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -279,7 +280,6 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 
         const SizedBox(height: 24),
 
-        // Add more character-type toggles below as needed
         _buildSectionHeader('CHARACTER TYPE'),
         const SizedBox(height: 8),
         _buildToggleTile(
@@ -292,7 +292,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
     );
   }
 
-  // ── Expansion tab 
+  // ── Expansion tab
   Widget _buildExpansionTab(ThemeData theme) {
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -313,14 +313,18 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 
   String _expansionLabel(Expansion expansion) {
     switch (expansion) {
+      case Expansion.standard:   return '标准版 — Standard';
       case Expansion.limitBreak: return '界限突破 — Limit Break';
-      case Expansion.standard: return '标准 — Standard';
-      case Expansion.demon: return '魔 — Demon';
-      case Expansion.god: return '神 — God';
+      case Expansion.shenHua:    return '神话再临 — Shen Hua';
+      case Expansion.demon:      return '魔武将 — Demon';
+      case Expansion.god:        return '神将 — God';
+      case Expansion.shiji:      return '始计篇 — Shiji';
+      case Expansion.doudizhu:   return '斗地主 — Doudizhu';
+      case Expansion.other:      return '其他 — Other';
     }
   }
 
-  // ── Sort tab 
+  // ── Sort tab
   Widget _buildSortTab() {
     return ListView(
       padding: const EdgeInsets.all(20),
@@ -412,7 +416,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   }
 }
 
-// ── Faction chip widget 
+// ── Faction chip widget
 class _FactionFilterChip extends StatelessWidget {
   final String faction;
   final bool isSelected;
