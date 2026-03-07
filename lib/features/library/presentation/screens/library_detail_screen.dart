@@ -278,9 +278,9 @@ class _IdentityColumn extends StatelessWidget {
             // Range badge — lives in the tag row, Option C style
             if (card.range != null)
               _RangeBadge(
-                range:    card.range!,
-                color:    AppTheme.statBadgeColor,
-                isDark:   isDark,
+                range:     card.range!,
+                color:     AppTheme.statBadgeColor,
+                isDark:    isDark,
                 isEnglish: isEnglish,
               ),
           ],
@@ -433,23 +433,23 @@ class _LibTabBar extends StatelessWidget {
         splashFactory:  NoSplash.splashFactory,
       ),
       child: TabBar(
-        controller:          controller,
-        indicatorColor:      categoryColor,
-        indicatorSize:       TabBarIndicatorSize.label,
-        labelColor:          categoryColor,
+        controller:           controller,
+        indicatorColor:       categoryColor,
+        indicatorSize:        TabBarIndicatorSize.label,
+        labelColor:           categoryColor,
         unselectedLabelColor: theme.hintColor,
-        overlayColor:        WidgetStateProperty.all(Colors.transparent),
-        splashFactory:       NoSplash.splashFactory,
+        overlayColor:         WidgetStateProperty.all(Colors.transparent),
+        splashFactory:        NoSplash.splashFactory,
         dividerColor:
             theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
         labelStyle: const TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize:   10,
+          fontWeight:    FontWeight.w700,
+          fontSize:      13,
           letterSpacing: 2,
         ),
         unselectedLabelStyle: const TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize:   10,
+          fontWeight:    FontWeight.w400,
+          fontSize:      13,
           letterSpacing: 2,
         ),
         tabs: [
@@ -461,8 +461,8 @@ class _LibTabBar extends StatelessWidget {
                 Text(
                   isEnglish ? 'FAQ' : '问答',
                   style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize:   10,
+                    fontWeight:    FontWeight.w700,
+                    fontSize:      13,
                     letterSpacing: 2,
                   ),
                 ),
@@ -480,9 +480,9 @@ class _LibTabBar extends StatelessWidget {
                     child: Text(
                       '$faqCount',
                       style: TextStyle(
-                        fontSize: 9,
+                        fontSize:   9,
                         fontWeight: FontWeight.w700,
-                        color: categoryColor,
+                        color:      categoryColor,
                       ),
                     ),
                   ),
@@ -523,7 +523,7 @@ class _EffectBody extends StatelessWidget {
     return Text(
       text,
       style: theme.textTheme.bodyLarge?.copyWith(
-        height: 1.72,
+        height: 1.7,
         color: textColor,
         fontStyle: isEnglish ? FontStyle.italic : FontStyle.normal,
       ),
@@ -546,12 +546,15 @@ class _FaqList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (faq.isEmpty) {
-      return Text(
-        isEnglish ? 'No FAQ entries.' : '暂无问答。',
-        style: TextStyle(
-          fontSize:  13,
-          fontStyle: FontStyle.italic,
-          color:     theme.hintColor,
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+          isEnglish ? 'No FAQ entries.' : '暂无问答。',
+          style: TextStyle(
+            fontSize:  13,
+            fontStyle: FontStyle.italic,
+            color:     theme.hintColor,
+          ),
         ),
       );
     }
@@ -592,9 +595,9 @@ class _FaqRowState extends State<_FaqRow> {
 
     return Column(
       children: [
-        InkWell(
+        GestureDetector(
           onTap: () => setState(() => _open = !_open),
-          borderRadius: BorderRadius.circular(8),
+          behavior: HitTestBehavior.opaque,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Row(
@@ -604,10 +607,10 @@ class _FaqRowState extends State<_FaqRow> {
                 Text(
                   'Q',
                   style: TextStyle(
-                    fontSize:      10,
-                    fontWeight:    FontWeight.w700,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
                     letterSpacing: 0.5,
-                    color: const Color(0xFFF0A820).withValues(alpha: 0.8),
+                    color: AppTheme.skillLord.withValues(alpha: 0.75),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -615,10 +618,10 @@ class _FaqRowState extends State<_FaqRow> {
                   child: Text(
                     q,
                     style: TextStyle(
-                      fontSize: 13.5,
-                      height:   1.55,
+                      fontSize: 14,
+                      height:   1.6,
                       color: widget.theme.colorScheme.onSurface
-                          .withValues(alpha: 0.75),
+                          .withValues(alpha: 0.65),
                     ),
                   ),
                 ),
@@ -641,10 +644,9 @@ class _FaqRowState extends State<_FaqRow> {
             child: Text(
               a,
               style: TextStyle(
-                fontSize:  13,
-                height:    1.65,
+                fontSize:  14,
+                height:    1.6,
                 fontStyle: FontStyle.italic,
-                // Same green as GeneralDetailScreen FAQ answers
                 color: const Color(0xFF86EFAC).withValues(alpha: 0.85),
               ),
             ),
@@ -692,7 +694,7 @@ class _Badge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color:        color.withValues(alpha: 0.14),
         borderRadius: BorderRadius.circular(6),
@@ -702,7 +704,7 @@ class _Badge extends StatelessWidget {
         label,
         style: TextStyle(
           color:      color,
-          fontSize:   11,
+          fontSize:   13,
           fontWeight: FontWeight.w700,
         ),
       ),
@@ -718,7 +720,7 @@ class _NeutralBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: theme.colorScheme.surface.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(6),
@@ -728,8 +730,8 @@ class _NeutralBadge extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          fontSize:  11,
-          fontWeight: FontWeight.w600,
+          fontSize:   13,
+          fontWeight: FontWeight.w700,
           color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
         ),
       ),
@@ -754,7 +756,7 @@ class _RangeBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(6),
@@ -763,12 +765,12 @@ class _RangeBadge extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.straighten_rounded, size: 11, color: color.withValues(alpha: 0.7)),
+          Icon(Icons.straighten_rounded, size: 17.5, color: color.withValues(alpha: 0.7)),
           const SizedBox(width: 4),
           Text(
             isEnglish ? 'Range' : '距离',
             style: TextStyle(
-              fontSize:      9,
+              fontSize:      12.5,
               letterSpacing: 1.5,
               fontWeight:    FontWeight.w600,
               color: color.withValues(alpha: 0.6),

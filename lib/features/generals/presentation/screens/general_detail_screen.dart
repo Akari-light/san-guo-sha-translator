@@ -54,7 +54,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     super.dispose();
   }
 
-  // ── Data loaders 
+  // ── Data loaders
   Future<void> _loadVariants() async {
     final variants = await GeneralLoader().getVariants(_activeCard.standardId);
     if (!mounted) return;
@@ -85,7 +85,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     });
   }
 
-  // ── Actions 
+  // ── Actions
   void _switchVersion(GeneralCard next) {
     if (next.id == _activeCard.id) return;
     setState(() {
@@ -112,7 +112,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     ));
   }
 
-  // ── Build 
+  // ── Build
   @override
   Widget build(BuildContext context) {
     final theme    = Theme.of(context);
@@ -149,7 +149,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            // ── Hero row: image | identity | lang toggle 
+            // ── Hero row: image | identity | lang toggle
             IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -185,7 +185,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
             const SizedBox(height: 20),
 
-            // ── Traits 
+            // ── Traits
             if (card.traitsEn.isNotEmpty) ...[
               _SectionLabel(label: _isEnglish ? 'Traits' : '特征'),
               const SizedBox(height: 9),
@@ -198,9 +198,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
               ),
             ],
 
-            _Divider(),
+            const _Divider(),
 
-            // ── Version segment 
+            // ── Version segment
             if (!_variantsLoading && _variants.length > 1) ...[
               _SectionLabel(label: _isEnglish ? 'Version' : '版本'),
               const SizedBox(height: 10),
@@ -210,10 +210,10 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 isEnglish: _isEnglish,
                 onSelect: _switchVersion,
               ),
-              _Divider(),
+              const _Divider(),
             ],
 
-            // ── Skills / FAQ tabs 
+            // ── Skills / FAQ tabs
             _TabBar(
               controller: _tabController,
               faqCount: card.faq.length,
@@ -248,9 +248,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
               },
             ),
 
-            _Divider(),
+            const _Divider(),
 
-            // ── Related Cards 
+            // ── Related Cards
             _SectionLabel(label: _isEnglish ? 'Related Cards' : '相关牌'),
             const SizedBox(height: 10),
             if (_refsLoading)
@@ -311,7 +311,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 }
 
-// ── Card image 
+// ── Card image
 class _CardImage extends StatelessWidget {
   final GeneralCard card;
   final Color factionColor;
@@ -369,7 +369,7 @@ class _CardImage extends StatelessWidget {
   }
 }
 
-// ── Identity column (name, faction, health, power, gender) 
+// ── Identity column (name, faction, health, power, gender)
 class _IdentityColumn extends StatelessWidget {
   final GeneralCard card;
   final bool isEnglish;
@@ -444,7 +444,7 @@ class _IdentityColumn extends StatelessWidget {
   }
 }
 
-// ── Lang toggle (vertical EN/中 with animated arrow + radial glow )
+// ── Lang toggle (vertical EN/中 with animated arrow + radial glow)
 class _LangToggle extends StatelessWidget {
   final bool isEnglish;
   final Color factionColor;
@@ -470,7 +470,7 @@ class _LangToggle extends StatelessWidget {
             _GlowLabel(
               text: 'EN',
               active: isEnglish,
-              factionColor: factionColor,
+              accentColor: factionColor,
               fontSize: 11,
               letterSpacing: 1.0,
             ),
@@ -495,7 +495,7 @@ class _LangToggle extends StatelessWidget {
             _GlowLabel(
               text: '中',
               active: !isEnglish,
-              factionColor: factionColor,
+              accentColor: factionColor,
               fontSize: 13,
               letterSpacing: 0,
             ),
@@ -509,14 +509,14 @@ class _LangToggle extends StatelessWidget {
 class _GlowLabel extends StatelessWidget {
   final String text;
   final bool active;
-  final Color factionColor;
+  final Color accentColor;
   final double fontSize;
   final double letterSpacing;
 
   const _GlowLabel({
     required this.text,
     required this.active,
-    required this.factionColor,
+    required this.accentColor,
     required this.fontSize,
     required this.letterSpacing,
   });
@@ -538,8 +538,8 @@ class _GlowLabel extends StatelessWidget {
               shape: BoxShape.circle,
               gradient: RadialGradient(
                 colors: [
-                  factionColor.withValues(alpha: 0.32),
-                  factionColor.withValues(alpha: 0.0),
+                  accentColor.withValues(alpha: 0.32),
+                  accentColor.withValues(alpha: 0.0),
                 ],
               ),
             ),
@@ -555,7 +555,7 @@ class _GlowLabel extends StatelessWidget {
             fontWeight: FontWeight.w700,
             letterSpacing: letterSpacing,
             color: active
-                ? factionColor
+                ? accentColor
                 : theme.hintColor.withValues(alpha: 0.4),
           ),
           child: Text(text),
@@ -565,7 +565,7 @@ class _GlowLabel extends StatelessWidget {
   }
 }
 
-// ── Health pips 
+// ── Health pips
 class _HealthPips extends StatelessWidget {
   final int health;
   const _HealthPips({required this.health});
@@ -598,13 +598,13 @@ class _HealthPips extends StatelessWidget {
   }
 }
 
-// ── Power stars (split-half per star, 0.5 increments clearly distinct )
+// ── Power stars (split-half per star, 0.5 increments clearly distinct)
 class _PowerStars extends StatelessWidget {
   final double value;
   const _PowerStars({required this.value});
 
   static const Color _goldColor = AppTheme.skillLord; // reuse gold from theme
-  // 0x22 alpha on a neutral grey reads in both dark and light mode;
+  // 0x22 alpha on neutral grey reads in both dark and light mode;
   // hardcoded white (0x1AFFFFFF) becomes invisible on a light scaffold.
   static const Color _dimColor  = Color(0x22888888);
 
@@ -675,7 +675,7 @@ class _HalfClipper extends CustomClipper<Rect> {
   bool shouldReclip(_HalfClipper old) => old.left != left;
 }
 
-// ── Version segment control 
+// ── Version segment control
 class _VersionSegment extends StatelessWidget {
   final List<GeneralCard> variants;
   final String activeId;
@@ -714,6 +714,7 @@ class _VersionSegment extends StatelessWidget {
               return Expanded(
                 child: GestureDetector(
                   onTap: () => onSelect(v),
+                  behavior: HitTestBehavior.opaque,
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 220),
                     curve: Curves.easeInOut,
@@ -784,7 +785,7 @@ class _VersionSegment extends StatelessWidget {
                   ? active.expansion.labelEn
                   : active.expansion.labelCn,
               style: TextStyle(
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 0.5,
                 color: AppTheme.expansionColor(active.expansion),
@@ -793,7 +794,7 @@ class _VersionSegment extends StatelessWidget {
             Text(
               '  ·  ',
               style: TextStyle(
-                fontSize: 11,
+                fontSize: 13,
                 color: theme.hintColor.withValues(alpha: 0.3),
               ),
             ),
@@ -801,7 +802,7 @@ class _VersionSegment extends StatelessWidget {
               '${active.skills.length} ${isEnglish ? "skill" : "技能"}'
               '${isEnglish && active.skills.length != 1 ? "s" : ""}',
               style: TextStyle(
-                fontSize: 11,
+                fontSize: 13,
                 color: theme.hintColor.withValues(alpha: 0.5),
               ),
             ),
@@ -812,7 +813,7 @@ class _VersionSegment extends StatelessWidget {
   }
 }
 
-// ── Skills/FAQ tab bar 
+// ── Skills/FAQ tab bar
 class _TabBar extends StatelessWidget {
   final TabController controller;
   final int faqCount;
@@ -845,61 +846,61 @@ class _TabBar extends StatelessWidget {
         overlayColor: WidgetStateProperty.all(Colors.transparent),
         splashFactory: NoSplash.splashFactory,
         dividerColor: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
-      labelStyle: const TextStyle(
-        fontWeight: FontWeight.w700,
-        fontSize: 13,
-        letterSpacing: 1.5,
-      ),
-      unselectedLabelStyle: const TextStyle(
-        fontWeight: FontWeight.w400,
-        fontSize: 13,
-        letterSpacing: 1.5,
-      ),
-      tabs: [
-        Tab(text: isEnglish ? 'SKILLS' : '技能'),
-        Tab(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                isEnglish ? 'FAQ' : '问答',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 13,
-                  letterSpacing: 1.5,
-                ),
-              ),
-              if (faqCount > 0) ...[
-                const SizedBox(width: 5),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 5, vertical: 1),
-                  decoration: BoxDecoration(
-                    color: factionColor.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                        color: factionColor.withValues(alpha: 0.45)),
+        labelStyle: const TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 13,
+          letterSpacing: 2,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 13,
+          letterSpacing: 2,
+        ),
+        tabs: [
+          Tab(text: isEnglish ? 'SKILLS' : '技能'),
+          Tab(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  isEnglish ? 'FAQ' : '问答',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 13,
+                    letterSpacing: 2,
                   ),
-                  child: Text(
-                    '$faqCount',
-                    style: TextStyle(
-                      fontSize: 9,
-                      fontWeight: FontWeight.w700,
-                      color: factionColor,
+                ),
+                if (faqCount > 0) ...[
+                  const SizedBox(width: 5),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 5, vertical: 1),
+                    decoration: BoxDecoration(
+                      color: factionColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                          color: factionColor.withValues(alpha: 0.45)),
+                    ),
+                    child: Text(
+                      '$faqCount',
+                      style: TextStyle(
+                        fontSize: 9,
+                        fontWeight: FontWeight.w700,
+                        color: factionColor,
+                      ),
                     ),
                   ),
-                ),
+                ],
               ],
-            ],
+            ),
           ),
-        ),
-      ],
-      )
+        ],
+      ),
     );
   }
 }
 
-// ── Skill card (collapsible, gradient border fading left→right )
+// ── Skill card (collapsible, gradient border fading left→right)
 class _SkillCard extends StatefulWidget {
   final SkillDTO skill;
   final bool isEnglish;
@@ -934,6 +935,7 @@ class _SkillCardState extends State<_SkillCard> {
 
     return GestureDetector(
       onTap: () => setState(() => _expanded = !_expanded),
+      behavior: HitTestBehavior.opaque,
       child: Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: CustomPaint(
@@ -958,7 +960,7 @@ class _SkillCardState extends State<_SkillCard> {
                           : widget.skill.nameCn,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 17,
+                        fontSize: 16,
                       ),
                     ),
                     if (widget.skill.skillType.hasBadge) ...[
@@ -992,7 +994,7 @@ class _SkillCardState extends State<_SkillCard> {
                           : widget.skill.descriptionCn,
                       style: widget.theme.textTheme.bodyMedium?.copyWith(
                         color: descColor,
-                        height: 1.72,
+                        height: 1.7,
                         fontStyle: widget.isEnglish
                             ? FontStyle.italic
                             : FontStyle.normal,
@@ -1062,7 +1064,7 @@ class _SkillCardBorderPainter extends CustomPainter {
       old.bgColor != bgColor;
 }
 
-// ── FAQ list 
+// ── FAQ list
 class _FaqList extends StatelessWidget {
   final List<Map<String, String>> faq;
   final bool isEnglish;
@@ -1136,13 +1138,14 @@ class _FaqRowState extends State<_FaqRow> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Q badge
                 Text(
                   'Q',
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 14,
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFFFFC847).withValues(alpha: 0.75),
                     letterSpacing: 0.5,
+                    color: AppTheme.skillLord.withValues(alpha: 0.75),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -1150,10 +1153,10 @@ class _FaqRowState extends State<_FaqRow> {
                   child: Text(
                     q,
                     style: TextStyle(
-                      fontSize: 13.5,
+                      fontSize: 14,
+                      height: 1.6,
                       color: widget.theme.colorScheme.onSurface
                           .withValues(alpha: 0.65),
-                      height: 1.55,
                     ),
                   ),
                 ),
@@ -1176,8 +1179,8 @@ class _FaqRowState extends State<_FaqRow> {
             child: Text(
               a,
               style: TextStyle(
-                fontSize: 13,
-                height: 1.65,
+                fontSize: 14,
+                height: 1.6,
                 fontStyle: FontStyle.italic,
                 color: const Color(0xFF86EFAC).withValues(alpha: 0.85),
               ),
@@ -1207,8 +1210,6 @@ class _SectionLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    // Use a larger, more readable size. toUpperCase() is fine for English
-    // but looks fine for Chinese too since case is irrelevant there.
     return Text(
       label.toUpperCase(),
       style: theme.textTheme.labelLarge?.copyWith(
@@ -1222,6 +1223,8 @@ class _SectionLabel extends StatelessWidget {
 }
 
 class _Divider extends StatelessWidget {
+  const _Divider();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -1290,7 +1293,7 @@ class _SkillTypeBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
+        color: color.withValues(alpha: 0.14),
         borderRadius: BorderRadius.circular(5),
         border: Border.all(color: color.withValues(alpha: 0.45)),
       ),
@@ -1353,10 +1356,11 @@ class _RelatedCardChip extends StatelessWidget {
     final color = AppTheme.categoryColor(category, isDark);
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.0),
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: color.withValues(alpha: 0.6), width: 1.5),
         ),
@@ -1408,7 +1412,7 @@ class _RelatedSkillChip extends StatelessWidget {
             ),
           ),
         ],
-      ), // TabBar
-    ); // Theme
+      ),
+    );
   }
 }
