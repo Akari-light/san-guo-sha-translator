@@ -48,11 +48,9 @@ class _MainAppState extends State<MainApp> {
   }
 
   Future<void> _updateTheme(ThemeMode mode) async {
-    setState(() {
-      _themeMode = mode;
-    });
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('theme_mode', mode.name); 
+    await prefs.setString('theme_mode', mode.name);
+    if (mounted) setState(() => _themeMode = mode);
   }
 
   @override
@@ -110,27 +108,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     super.initState();
     _screens = [
       HomeScreen(
-        onGeneralTap: (id) async {
-          final card = await HomeService.instance.findGeneralById(id);
-          if (card != null && mounted) {
-            Navigator.push(
-              context,
-              detailRoute(GeneralDetailScreen(
-                card: card,
-                onLibraryCardTap: _pushLibraryDetail,
-              )),
-            );
-          }
-        },
-        onLibraryTap: (id) async {
-          final card = await HomeService.instance.findLibraryById(id);
-          if (card != null && mounted) {
-            Navigator.push(
-              context,
-              detailRoute(LibraryDetailScreen(card: card)),
-            );
-          }
-        },
+        onGeneralTap: _pushGeneralDetail,
+        onLibraryTap: _pushLibraryDetail,
       ),
       GeneralScreen(
         searchNotifier: _generalsSearchNotifier,
@@ -138,12 +117,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             setState(() => _generalsFilterActive = isActive),
         onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
         onLibraryCardTap: _pushLibraryDetail,
+        onCardTap: _pushGeneralDetail,
       ),
       LibraryScreen(
         searchNotifier: _librarySearchNotifier,
         onFilterStateChanged: (isActive) =>
             setState(() => _libraryFilterActive = isActive),
         onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
+        onCardTap: _pushLibraryDetail,
       ),
       const Center(child: Text('AI Feature (TBC)')),
       const Center(child: Text('More (TBC)')),
@@ -159,13 +140,27 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     super.dispose();
   }
 
+  /// Push GeneralDetailScreen. Records the view before pushing.
+  Future<void> _pushGeneralDetail(String id) async {
+    final card = await HomeService.instance.findGeneralById(id);
+    if (card == null || !mounted) return;
+    final nav = Navigator.of(context);
+    await HomeService.instance.recordGeneralView(id);
+    nav.push(detailRoute(GeneralDetailScreen(
+      card: card,
+      onLibraryCardTap: _pushLibraryDetail,
+    )));
+  }
+
   /// Shared handler: push LibraryDetailScreen from any context (home tap,
-  /// general detail related-card chip, etc.).
+  /// general detail related-card chip, library grid tap via onCardTap, etc.).
+  /// Named method so the linter accepts mounted + context after await.
   Future<void> _pushLibraryDetail(String id) async {
     final card = await HomeService.instance.findLibraryById(id);
-    if (card != null && mounted) {
-      Navigator.push(context, detailRoute(LibraryDetailScreen(card: card)));
-    }
+    if (card == null || !mounted) return;
+    final nav = Navigator.of(context);
+    await HomeService.instance.recordLibraryView(id);
+    nav.push(detailRoute(LibraryDetailScreen(card: card)));
   }
 
   @override

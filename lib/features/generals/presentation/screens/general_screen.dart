@@ -23,12 +23,18 @@ class GeneralScreen extends StatefulWidget {
   /// main.dart resolves the id and pushes LibraryDetailScreen.
   final void Function(String libraryCardId)? onLibraryCardTap;
 
+  /// Called by main.dart when a general card tile is tapped, before the
+  /// detail push. main.dart uses this hook to record the view in HomeService.
+  /// When null the screen pushes the detail screen directly without recording.
+  final void Function(String generalId)? onCardTap;
+
   const GeneralScreen({
     super.key,
     required this.searchNotifier,
     this.onFilterStateChanged,
     this.onRegisterSheetOpener,
     this.onLibraryCardTap,
+    this.onCardTap,
   });
 
   @override
@@ -178,13 +184,20 @@ class _GeneralScreenState extends State<GeneralScreen> {
                         final card = entry.value[index];
                         return GeneralCardTile(
                           card: card,
-                          onTap: () => Navigator.push(
-                            context,
-                            detailRoute(GeneralDetailScreen(
-                              card: card,
-                              onLibraryCardTap: widget.onLibraryCardTap,
-                            )),
-                          ),
+                          onTap: () {
+                            if (widget.onCardTap != null) {
+                              // main.dart records the view then pushes the detail.
+                              widget.onCardTap!(card.id);
+                            } else {
+                              Navigator.push(
+                                context,
+                                detailRoute(GeneralDetailScreen(
+                                  card: card,
+                                  onLibraryCardTap: widget.onLibraryCardTap,
+                                )),
+                              );
+                            }
+                          },
                         );
                       },
                       childCount: entry.value.length,

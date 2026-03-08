@@ -15,11 +15,17 @@ class LibraryScreen extends StatefulWidget {
   final void Function(bool isActive)? onFilterStateChanged;
   final void Function(VoidCallback openSheet)? onRegisterSheetOpener;
 
+  /// Called by main.dart when a library card tile is tapped, before the
+  /// detail push. main.dart uses this hook to record the view in HomeService.
+  /// When null the screen pushes the detail screen directly without recording.
+  final void Function(String libraryCardId)? onCardTap;
+
   const LibraryScreen({
     super.key,
     required this.searchNotifier,
     this.onFilterStateChanged,
     this.onRegisterSheetOpener,
+    this.onCardTap,
   });
 
   @override
@@ -166,10 +172,17 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         final card = entry.value[index];
                         return LibraryCardTile(
                           card: card,
-                          onTap: () => Navigator.push(
-                            context,
-                            detailRoute(LibraryDetailScreen(card: card)),
-                          ),
+                          onTap: () {
+                            if (widget.onCardTap != null) {
+                              // main.dart records the view then pushes the detail.
+                              widget.onCardTap!(card.id);
+                            } else {
+                              Navigator.push(
+                                context,
+                                detailRoute(LibraryDetailScreen(card: card)),
+                              );
+                            }
+                          },
                         );
                       },
                       childCount: entry.value.length,

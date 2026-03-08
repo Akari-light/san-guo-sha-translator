@@ -25,29 +25,59 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  PinnedCards _pins = const PinnedCards(generals: [], library: []);
+  PinnedCards    _pins   = const PinnedCards(generals: [], library: []);
+  RecentlyViewed _recent = const RecentlyViewed(cards: []);
   bool _loading = true;
 
   StreamSubscription<PinType>? _pinSub;
+  StreamSubscription<void>?    _recentSub;
 
   @override
   void initState() {
     super.initState();
     _load(initial: true);
-    _pinSub = HomeService.instance.changes.listen((_) => _load());
+    _pinSub    = HomeService.instance.changes.listen((_) => _loadPins());
+    _recentSub = HomeService.instance.recentChanges.listen((_) => _loadRecent());
   }
 
   @override
   void dispose() {
     _pinSub?.cancel();
+    _recentSub?.cancel();
     super.dispose();
   }
 
+  // ── Loaders ───────────────────────────────────────────────────────────────
+
+  /// Initial full load — fetches pins and recently viewed in parallel.
   Future<void> _load({bool initial = false}) async {
     if (initial && mounted) setState(() => _loading = true);
-    final pins = await HomeService.instance.getPinnedCards();
-    if (mounted) setState(() { _pins = pins; _loading = false; });
+    final results = await Future.wait([
+      HomeService.instance.getPinnedCards(),
+      HomeService.instance.getRecentlyViewed(),
+    ]);
+    if (mounted) {
+      setState(() {
+        _pins   = results[0] as PinnedCards;
+        _recent = results[1] as RecentlyViewed;
+        _loading = false;
+      });
+    }
   }
+
+  /// Called when pin state changes — reloads only the pins bucket.
+  Future<void> _loadPins() async {
+    final pins = await HomeService.instance.getPinnedCards();
+    if (mounted) setState(() => _pins = pins);
+  }
+
+  /// Called when recently-viewed state changes — reloads only that bucket.
+  Future<void> _loadRecent() async {
+    final recent = await HomeService.instance.getRecentlyViewed();
+    if (mounted) setState(() => _recent = recent);
+  }
+
+  // ── Actions ───────────────────────────────────────────────────────────────
 
   Future<void> _clearAll() async {
     final confirmed = await showDialog<bool>(
@@ -72,8 +102,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
     if (confirmed == true) await HomeService.instance.clearAll();
-    // Stream fires → _load() runs automatically.
+    // Pin stream fires → _loadPins() runs automatically.
   }
+
+  // ── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
               )
 
             // ── Empty state
-            else if (_pins.isEmpty)
+            else if (_pins.isEmpty && _recent.isEmpty)
               SliverFillRemaining(
                 child: Center(
                   child: Column(
@@ -162,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             else ...[
 
-              // ── Generals section
+              // ── Pinned generals section
               if (_pins.generals.isNotEmpty) ...[
                 SliverToBoxAdapter(
                   child: _SectionHeader(
@@ -201,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SliverToBoxAdapter(child: SizedBox(height: 28)),
               ],
 
-              // ── Library section
+              // ── Pinned library section
               if (_pins.library.isNotEmpty) ...[
                 SliverToBoxAdapter(
                   child: _SectionHeader(
@@ -235,6 +267,137 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+                const SliverToBoxAdapter(child: SizedBox(height: 28)),
+              ],
+
+              // ── Recently viewed section
+              if (_recent.isNotEmpty) ...[
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 12),
+                    child: Row(
+                      children: [
+                        Icon(Icons.history, size: 15, color: theme.hintColor),
+                        const SizedBox(width: 6),
+                        Text(
+                          'RECENTLY VIEWED',
+                          style: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          '(${_recent.cards.length})',
+                          style: TextStyle(fontSize: 11, color: theme.hintColor),
+                        ),
+                        const Spacer(),
+                        GestureDetector(
+                          behavior: HitTestBehavior.opaque,
+                          onTap: () async {
+                            await HomeService.instance.clearRecentlyViewed();
+                            // recentChanges stream fires → _loadRecent() auto-runs.
+                          },
+                          child: Text(
+                            'Clear',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: theme.colorScheme.error,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, i) {
+                        final card = _recent.cards[i];
+                        final isGeneral = card.isGeneral;
+                        return GestureDetector(
+                          behavior: HitTestBehavior.opaque,
+                          onTap: () => isGeneral
+                              ? widget.onGeneralTap(card.id)
+                              : widget.onLibraryTap(card.id),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: Row(
+                              children: [
+                                // Type badge
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 7, vertical: 3),
+                                  decoration: BoxDecoration(
+                                    color: (isGeneral
+                                            ? Colors.orange
+                                            : Colors.blueAccent)
+                                        .withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(5),
+                                    border: Border.all(
+                                      color: (isGeneral
+                                              ? Colors.orange
+                                              : Colors.blueAccent)
+                                          .withValues(alpha: 0.45),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    isGeneral ? 'G' : 'L',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: isGeneral
+                                          ? Colors.orange
+                                          : Colors.blueAccent,
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                // Names
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        card.nameCn,
+                                        style: const TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      Text(
+                                        card.nameEn,
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          color: theme.hintColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                // ID — useful for debugging
+                                Text(
+                                  card.id,
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: theme.hintColor,
+                                    fontFamily: 'monospace',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                      childCount: _recent.cards.length,
+                    ),
+                  ),
+                ),
               ],
 
               const SliverToBoxAdapter(child: SizedBox(height: 100)),
@@ -246,7 +409,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// ── Pinned general tile ───────────────────────────────────────────────────────
+// ── Pinned general tile ────────────────────────────────────────────────────
 // Mirrors GeneralCardTile visually but takes primitive fields only —
 // no GeneralCard import required.
 
@@ -348,7 +511,7 @@ class _PinnedGeneralTile extends StatelessWidget {
   }
 }
 
-// ── Pinned library tile ───────────────────────────────────────────────────────
+// ── Pinned library tile ────────────────────────────────────────────────────
 // Mirrors LibraryCardTile visually but takes primitive fields only —
 // no LibraryDTO import required.
 
@@ -406,7 +569,7 @@ class _PinnedLibraryTile extends StatelessWidget {
   }
 }
 
-// ── Section header
+// ── Section header ─────────────────────────────────────────────────────────
 class _SectionHeader extends StatelessWidget {
   final String label;
   final IconData icon;
