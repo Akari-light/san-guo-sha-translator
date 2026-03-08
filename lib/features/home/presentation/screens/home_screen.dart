@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _load() async {
     setState(() => _loading = true);
-    final ids = await PinService.instance.getPinnedIds();
+    final ids = await PinService.instance.getPinnedIds(PinType.general);
     if (ids.isEmpty) {
       if (mounted) setState(() { _pinned = []; _loading = false; });
       return;
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   trailing: IconButton(
                     icon: const Icon(Icons.close, size: 18),
                     onPressed: () async {
-                      await PinService.instance.unpin(card.id);
+                      await PinService.instance.unpin(card.id, PinType.general);
                       _load();
                     },
                   ),

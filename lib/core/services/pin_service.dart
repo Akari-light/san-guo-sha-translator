@@ -1,36 +1,51 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Use [PinService.instance] everywhere
+/// The two pin buckets. Add more here if needed.
+enum PinType { general, library }
+
+/// Use [PinService.instance] everywhere.
+///
+/// Storage keys:
+///   generals → 'pinned_generals'   (unchanged — no migration needed)
+///   library  → 'pinned_library'    (new)
 class PinService {
   PinService._();
   static final PinService instance = PinService._();
 
-  static const _key = 'pinned_generals';
+  static const _keyGenerals = 'pinned_generals';
+  static const _keyLibrary  = 'pinned_library';
 
-  Future<List<String>> getPinnedIds() async {
+  String _key(PinType type) =>
+      type == PinType.general ? _keyGenerals : _keyLibrary;
+
+  // ── Read ──────────────────────────────────────────────────────────────────
+
+  Future<List<String>> getPinnedIds(PinType type) async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getStringList(_key) ?? [];
+    return prefs.getStringList(_key(type)) ?? [];
   }
 
-  Future<bool> isPinned(String id) async {
-    final ids = await getPinnedIds();
+  Future<bool> isPinned(String id, PinType type) async {
+    final ids = await getPinnedIds(type);
     return ids.contains(id);
   }
 
-  /// Returns the new pinned state (true = now pinned).
-  Future<bool> toggle(String id) async {
-    final prefs = await SharedPreferences.getInstance();
-    final ids = List<String>.from(prefs.getStringList(_key) ?? []);
+  // ── Write ─────────────────────────────────────────────────────────────────
+
+  /// Toggles pin state. Returns the new pinned state (true = now pinned).
+  Future<bool> toggle(String id, PinType type) async {
+    final prefs     = await SharedPreferences.getInstance();
+    final ids       = List<String>.from(prefs.getStringList(_key(type)) ?? []);
     final wasPinned = ids.contains(id);
     wasPinned ? ids.remove(id) : ids.add(id);
-    await prefs.setStringList(_key, ids);
+    await prefs.setStringList(_key(type), ids);
     return !wasPinned;
   }
 
-  Future<void> unpin(String id) async {
+  Future<void> unpin(String id, PinType type) async {
     final prefs = await SharedPreferences.getInstance();
-    final ids = List<String>.from(prefs.getStringList(_key) ?? []);
+    final ids   = List<String>.from(prefs.getStringList(_key(type)) ?? []);
     ids.remove(id);
-    await prefs.setStringList(_key, ids);
+    await prefs.setStringList(_key(type), ids);
   }
 }

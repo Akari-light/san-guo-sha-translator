@@ -31,14 +31,14 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
   }
 
   Future<void> _loadPinState() async {
-    final pinned = await PinService.instance.isPinned(widget.card.id);
+    final pinned = await PinService.instance.isPinned(widget.card.id, PinType.library);
     if (!mounted) return;
     setState(() => _isPinned = pinned);
   }
 
   Future<void> _togglePin() async {
     final nowPinned =
-        await PinService.instance.toggle(widget.card.id);
+        await PinService.instance.toggle(widget.card.id, PinType.library);
     if (!mounted) return;
     setState(() => _isPinned = nowPinned);
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(

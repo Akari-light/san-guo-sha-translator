@@ -66,7 +66,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 
   Future<void> _loadPinState() async {
-    final pinned = await PinService.instance.isPinned(_activeCard.id);
+    final pinned = await PinService.instance.isPinned(_activeCard.id, PinType.general);
     if (!mounted) return;
     setState(() => _isPinned = pinned);
   }
@@ -100,7 +100,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 
   Future<void> _togglePin() async {
-    final nowPinned = await PinService.instance.toggle(_activeCard.id);
+    final nowPinned = await PinService.instance.toggle(_activeCard.id, PinType.general);
     if (!mounted) return;
     setState(() => _isPinned = nowPinned);
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
