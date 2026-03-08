@@ -6,10 +6,7 @@ import '../../features/generals/data/repository/general_loader.dart';
 import '../../features/library/data/models/library_dto.dart';
 import '../../features/library/data/repository/library_loader.dart';
 
-// ── Result type ───────────────────────────────────────────────────────────────
-
-/// The resolved contents of both pin buckets.
-/// Passed to HomeScreen so it never touches feature data layers directly.
+// ── Result type
 class PinnedCards {
   final List<GeneralCard> generals;
   final List<LibraryDTO>  library;
@@ -22,32 +19,14 @@ class PinnedCards {
   bool get isEmpty => generals.isEmpty && library.isEmpty;
 }
 
-// ── Service ───────────────────────────────────────────────────────────────────
-
-/// Resolves pinned IDs from [PinService] into typed card objects.
-///
-/// Lives in core/services/ because it is the only place allowed to
-/// cross feature data-layer boundaries. Both [GeneralLoader] and
-/// [LibraryLoader] are cached singletons so repeated calls are cheap.
-///
-/// Usage:
-///   final service = HomeService.instance;
-///   final cards   = await service.getPinnedCards();
-///   service.changes.listen((_) => reload());
+// ── Service
 class HomeService {
-  // ── Singleton
   static final HomeService instance = HomeService._();
   HomeService._();
 
-  // ── Change stream ─────────────────────────────────────────────────────────
-  /// Forwards PinService change events. Listen here instead of on
-  /// PinService directly so HomeScreen has a single service dependency.
   Stream<PinType> get changes => PinService.instance.changes;
 
-  // ── Public API ────────────────────────────────────────────────────────────
-
-  /// Resolves both pin buckets and returns a [PinnedCards] result.
-  /// Fetches both in parallel; resolves each pinned ID in order.
+  // ── Public API
   Future<PinnedCards> getPinnedCards() async {
     final results = await Future.wait([
       PinService.instance.getPinnedIds(PinType.general),
@@ -60,29 +39,28 @@ class HomeService {
     return PinnedCards(generals: generals, library: library);
   }
 
-  /// Unpins a single general.
+  // Unpins a single general.
   Future<void> unpinGeneral(String id) =>
       PinService.instance.unpin(id, PinType.general);
 
-  /// Unpins a single library card.
+  // Unpins a single library card.
   Future<void> unpinLibrary(String id) =>
       PinService.instance.unpin(id, PinType.library);
 
-  /// Clears all pins in both buckets.
+  // Clears all pins in both buckets.
   Future<void> clearAll() => PinService.instance.clearAll();
 
-  /// Looks up a single general by ID. Used by main.dart to resolve
-  /// a tapped general ID into a card object before pushing the detail screen.
+  // Looks up a single general by ID. Used by main.dart to resolve
+  // a tapped general ID into a card object before pushing the detail screen.
   Future<GeneralCard?> findGeneralById(String id) =>
       GeneralLoader().findById(id);
 
-  /// Looks up a single library card by ID. Used by main.dart to resolve
-  /// a tapped library ID into a card object before pushing the detail screen.
+  // Looks up a single library card by ID. Used by main.dart to resolve
+  // a tapped library ID into a card object before pushing the detail screen.
   Future<LibraryDTO?> findLibraryById(String id) =>
       LibraryLoader().findById(id);
 
-  // ── Private ───────────────────────────────────────────────────────────────
-
+  // ── Private
   Future<List<GeneralCard>> _resolveGenerals(List<String> ids) async {
     if (ids.isEmpty) return [];
     final all = await GeneralLoader().getGenerals();
