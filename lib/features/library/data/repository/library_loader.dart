@@ -16,11 +16,11 @@ class LibraryLoader {
   /// To add a new library type, add its file path here
   static const List<String> _libraryFiles = [
     'assets/data/library/basic.json',
+    'assets/data/library/tools.json',
     'assets/data/library/weapons.json',
     'assets/data/library/armor.json',
-    'assets/data/library/mounts.json',
-    'assets/data/library/tools.json',
     'assets/data/library/treasure.json',
+    'assets/data/library/mounts.json',
   ];
 
   // ── Public API 

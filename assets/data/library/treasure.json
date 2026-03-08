@@ -6,7 +6,7 @@
     "category_cn": "宝物牌",
     "category_en": "Treasure",
     "effect_cn": [
-      "出牌阶段限一次，若此牌下的牌少于五张，你可以将一张手牌扣置于此牌下；若如此做，你可以将此牌移动至一名装备区里没有宝物牌的其他角色的装备区里；你可以将此牌下的牌如手牌般使用或打出。"
+      "出牌阶段限一次, 你可以将一张手牌扣置于你装备区里的【木牛流马】下, 然后你可以将此装备移动到一名其他角色的装备区里; 你可以如手牌般使用或打出【木牛流马】下的牌。"
     ],
     "effect_en": [
       "Once per play phase, if fewer than five cards are stored under this card, you may place one hand card face-down beneath it. If you do, you may move this card to the equipment zone of another character who has no treasure card there. You may use or play any card stored beneath this card as though it were a hand card."
