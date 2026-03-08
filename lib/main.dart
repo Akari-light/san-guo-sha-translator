@@ -4,6 +4,7 @@ import 'core/theme/app_theme.dart';
 
 // Core
 import 'core/services/home_service.dart';
+import 'core/navigation/app_router.dart';
 
 // Features: Navigation and Screens
 import 'features/home/presentation/screens/home_screen.dart';
@@ -86,63 +87,86 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
-  bool _isSearching = false;
-  String _searchQuery = "";
-  final TextEditingController _searchController = TextEditingController();
 
-  // Generals search
+  // ── Search state — ValueNotifiers so screens update without being rebuilt
+  bool _isSearching = false;
   bool _isSearchingGenerals = false;
-  String _generalsSearchQuery = "";
+  final ValueNotifier<String> _librarySearchNotifier = ValueNotifier('');
+  final ValueNotifier<String> _generalsSearchNotifier = ValueNotifier('');
+  final TextEditingController _searchController = TextEditingController();
   final TextEditingController _generalsSearchController = TextEditingController();
 
-  // Generals filter
+  // ── Filter state
   bool _generalsFilterActive = false;
   VoidCallback? _openGeneralsFilter;
-
-  // Library filter
   bool _libraryFilterActive = false;
   VoidCallback? _openLibraryFilter;
 
-  List<Widget> get _screens => [
-        HomeScreen(
-          onGeneralTap: (id) async {
-            final card = await HomeService.instance.findGeneralById(id);
-            if (card != null && mounted) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => GeneralDetailScreen(card: card),
-                ),
-              );
-            }
-          },
-          onLibraryTap: (id) async {
-            final card = await HomeService.instance.findLibraryById(id);
-            if (card != null && mounted) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => LibraryDetailScreen(card: card),
-                ),
-              );
-            }
-          },
-        ),
-        GeneralScreen(
-          searchQuery: _generalsSearchQuery,
-          onFilterStateChanged: (isActive) =>
-              setState(() => _generalsFilterActive = isActive),
-          onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
-        ),
-        LibraryScreen(
-          searchQuery: _searchQuery,
-          onFilterStateChanged: (isActive) =>
-              setState(() => _libraryFilterActive = isActive),
-          onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
-        ),
-        const Center(child: Text('AI Feature (TBC)')),
-        const Center(child: Text('More (TBC)')),
-      ];
+  // ── Screen list — built once in initState, never recreated
+  late final List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      HomeScreen(
+        onGeneralTap: (id) async {
+          final card = await HomeService.instance.findGeneralById(id);
+          if (card != null && mounted) {
+            Navigator.push(
+              context,
+              detailRoute(GeneralDetailScreen(
+                card: card,
+                onLibraryCardTap: _pushLibraryDetail,
+              )),
+            );
+          }
+        },
+        onLibraryTap: (id) async {
+          final card = await HomeService.instance.findLibraryById(id);
+          if (card != null && mounted) {
+            Navigator.push(
+              context,
+              detailRoute(LibraryDetailScreen(card: card)),
+            );
+          }
+        },
+      ),
+      GeneralScreen(
+        searchNotifier: _generalsSearchNotifier,
+        onFilterStateChanged: (isActive) =>
+            setState(() => _generalsFilterActive = isActive),
+        onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
+        onLibraryCardTap: _pushLibraryDetail,
+      ),
+      LibraryScreen(
+        searchNotifier: _librarySearchNotifier,
+        onFilterStateChanged: (isActive) =>
+            setState(() => _libraryFilterActive = isActive),
+        onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
+      ),
+      const Center(child: Text('AI Feature (TBC)')),
+      const Center(child: Text('More (TBC)')),
+    ];
+  }
+
+  @override
+  void dispose() {
+    _librarySearchNotifier.dispose();
+    _generalsSearchNotifier.dispose();
+    _searchController.dispose();
+    _generalsSearchController.dispose();
+    super.dispose();
+  }
+
+  /// Shared handler: push LibraryDetailScreen from any context (home tap,
+  /// general detail related-card chip, etc.).
+  Future<void> _pushLibraryDetail(String id) async {
+    final card = await HomeService.instance.findLibraryById(id);
+    if (card != null && mounted) {
+      Navigator.push(context, detailRoute(LibraryDetailScreen(card: card)));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -163,13 +187,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                   hintStyle: const TextStyle(color: AppTheme.searchHintColor),
                 ),
                 onChanged: (value) {
-                  setState(() {
-                    if (_isSearchingGenerals) {
-                      _generalsSearchQuery = value;
-                    } else {
-                      _searchQuery = value;
-                    }
-                  });
+                  if (_isSearchingGenerals) {
+                    _generalsSearchNotifier.value = value;
+                  } else {
+                    _librarySearchNotifier.value = value;
+                  }
                 },
               )
             : Text(_getAppBarTitle()),
@@ -182,7 +204,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 setState(() {
                   _isSearchingGenerals = !_isSearchingGenerals;
                   if (!_isSearchingGenerals) {
-                    _generalsSearchQuery = "";
+                    _generalsSearchNotifier.value = '';
                     _generalsSearchController.clear();
                   }
                 });
@@ -197,7 +219,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 setState(() {
                   _isSearching = !_isSearching;
                   if (!_isSearching) {
-                    _searchQuery = "";
+                    _librarySearchNotifier.value = '';
                     _searchController.clear();
                   }
                 });
@@ -270,8 +292,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               _selectedIndex = index;
               _isSearching = false;
               _isSearchingGenerals = false;
-              _searchQuery = "";
-              _generalsSearchQuery = "";
+              _librarySearchNotifier.value = '';
+              _generalsSearchNotifier.value = '';
               _searchController.clear();
               _generalsSearchController.clear();
             });

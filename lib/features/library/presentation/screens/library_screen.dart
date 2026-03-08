@@ -5,16 +5,19 @@ import '../widgets/library_card_tile.dart';
 import '../screens/library_filter_sheet.dart';
 import 'library_detail_screen.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/navigation/app_router.dart';
 
 class LibraryScreen extends StatefulWidget {
-  final String? searchQuery;
+  /// Live search notifier. main.dart updates this without rebuilding
+  /// the screen widget, so the FutureBuilder cache is never discarded.
+  final ValueNotifier<String> searchNotifier;
 
   final void Function(bool isActive)? onFilterStateChanged;
   final void Function(VoidCallback openSheet)? onRegisterSheetOpener;
 
   const LibraryScreen({
     super.key,
-    this.searchQuery,
+    required this.searchNotifier,
     this.onFilterStateChanged,
     this.onRegisterSheetOpener,
   });
@@ -32,6 +35,15 @@ class _LibraryScreenState extends State<LibraryScreen> {
     super.initState();
     _cardsFuture = LibraryLoader().getCards();
     widget.onRegisterSheetOpener?.call(_openFilterSheet);
+  }
+
+  @override
+  void didUpdateWidget(LibraryScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Re-register if the parent passes a new callback reference.
+    if (widget.onRegisterSheetOpener != oldWidget.onRegisterSheetOpener) {
+      widget.onRegisterSheetOpener?.call(_openFilterSheet);
+    }
   }
 
   void _openFilterSheet() {
@@ -62,25 +74,27 @@ class _LibraryScreenState extends State<LibraryScreen> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    return FutureBuilder<List<LibraryDTO>>(
-      future: _cardsFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        }
+    return ValueListenableBuilder<String>(
+      valueListenable: widget.searchNotifier,
+      builder: (context, query, _) {
+        return FutureBuilder<List<LibraryDTO>>(
+          future: _cardsFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-        List<LibraryDTO> cards = snapshot.data ?? [];
+            List<LibraryDTO> cards = snapshot.data ?? [];
 
-        // Search
-        final query = widget.searchQuery ?? '';
-        if (query.isNotEmpty) {
-          cards = cards.where((c) => c.matchesQuery(query)).toList();
-        }
+            // Search
+            if (query.isNotEmpty) {
+              cards = cards.where((c) => c.matchesQuery(query)).toList();
+            }
 
-        // Filter + sort
-        cards = _filterState.apply(cards);
+            // Filter + sort
+            cards = _filterState.apply(cards);
 
-        final groupedCards = _groupCards(cards);
+            final groupedCards = _groupCards(cards);
 
         return CustomScrollView(
           slivers: [
@@ -154,9 +168,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                           card: card,
                           onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) => LibraryDetailScreen(card: card),
-                            ),
+                            detailRoute(LibraryDetailScreen(card: card)),
                           ),
                         );
                       },
@@ -169,6 +181,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
             const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],
         );
+      },
+    );
       },
     );
   }

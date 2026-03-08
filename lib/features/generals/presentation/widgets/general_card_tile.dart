@@ -22,66 +22,63 @@ class GeneralCardTile extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
-      child: Hero(
-        tag: card.id,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: factionColor, width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: factionColor.withValues(alpha: 0.3),
-                blurRadius: 6,
-                offset: const Offset(0, 2),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: factionColor, width: 2),
+          boxShadow: [
+            BoxShadow(
+              color: factionColor.withValues(alpha: 0.3),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              // ── Card image
+              Image.asset(
+                card.imagePath,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(
+                  color: factionColor.withValues(alpha: 0.1),
+                  child: Center(
+                    child: Image.asset(
+                      AppAssets.generalPlaceholder,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+
+              // ── Expansion badge (top-right)
+              Positioned(
+                top: 6,
+                right: 6,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 7,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.75),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: Colors.white54, width: 0.5),
+                  ),
+                  child: Text(
+                    card.expansionBadge,
+                    style: TextStyle(
+                      color: factionColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                // ── Card image 
-                Image.asset(
-                  card.imagePath,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => Container(
-                    color: factionColor.withValues(alpha: 0.1),
-                    child: Center(
-                      child: Image.asset(
-                        AppAssets.generalPlaceholder,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ),
-
-                // ── Expansion badge (top-right) 
-                Positioned(
-                  top: 6,
-                  right: 6,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 7,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.75),
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(color: Colors.white54, width: 0.5),
-                    ),
-                    child: Text(
-                      card.expansionBadge,
-                      style: TextStyle(
-                        color: factionColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
           ),
         ),
       ),

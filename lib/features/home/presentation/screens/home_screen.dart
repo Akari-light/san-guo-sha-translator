@@ -286,7 +286,7 @@ class _PinnedGeneralTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Hero(
-        tag: id,
+        tag: 'home_general_$id',
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -372,7 +372,7 @@ class _PinnedLibraryTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Hero(
-        tag: id,
+        tag: 'home_library_$id',
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),

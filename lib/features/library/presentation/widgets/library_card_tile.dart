@@ -17,31 +17,28 @@ class LibraryCardTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Hero(
-        tag: card.id,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 4,
-                offset: const Offset(0, 2),
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              card.imagePath,
-              fit: BoxFit.fill,
-              errorBuilder: (context, error, stackTrace) => Container(
-                color: Colors.black12,
-                child: Center(
-                  child: Image.asset(
-                    AppAssets.libraryPlaceholder,
-                    fit: BoxFit.contain,
-                  ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 4,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Image.asset(
+            card.imagePath,
+            fit: BoxFit.fill,
+            errorBuilder: (context, error, stackTrace) => Container(
+              color: Colors.black12,
+              child: Center(
+                child: Image.asset(
+                  AppAssets.libraryPlaceholder,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),

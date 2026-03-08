@@ -5,9 +5,12 @@ import '../widgets/general_card_tile.dart';
 import '../screens/general_filter_sheet.dart';
 import '../screens/general_detail_screen.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/navigation/app_router.dart';
 
 class GeneralScreen extends StatefulWidget {
-  final String? searchQuery;
+  /// Live search notifier. main.dart updates this without rebuilding
+  /// the screen widget, so the FutureBuilder cache is never discarded.
+  final ValueNotifier<String> searchNotifier;
 
   /// Called when filter active state changes so main.dart
   /// can update the AppBar filter icon badge.
@@ -16,11 +19,16 @@ class GeneralScreen extends StatefulWidget {
   /// Called by main.dart when the filter icon is tapped.
   final void Function(VoidCallback openSheet)? onRegisterSheetOpener;
 
+  /// Forwarded to GeneralDetailScreen for Related Card chip navigation.
+  /// main.dart resolves the id and pushes LibraryDetailScreen.
+  final void Function(String libraryCardId)? onLibraryCardTap;
+
   const GeneralScreen({
     super.key,
-    this.searchQuery,
+    required this.searchNotifier,
     this.onFilterStateChanged,
     this.onRegisterSheetOpener,
+    this.onLibraryCardTap,
   });
 
   @override
@@ -40,6 +48,17 @@ class _GeneralScreenState extends State<GeneralScreen> {
     super.initState();
     _generalsFuture = GeneralLoader().getGenerals();
     widget.onRegisterSheetOpener?.call(_openFilterSheet);
+  }
+
+  @override
+  void didUpdateWidget(GeneralScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Re-register if the parent passes a new callback reference.
+    // Necessary because onRegisterSheetOpener fires a side effect —
+    // it must be re-invoked whenever the prop changes, not only at mount.
+    if (widget.onRegisterSheetOpener != oldWidget.onRegisterSheetOpener) {
+      widget.onRegisterSheetOpener?.call(_openFilterSheet);
+    }
   }
 
   void _openFilterSheet() {
@@ -67,20 +86,22 @@ class _GeneralScreenState extends State<GeneralScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<GeneralCard>>(
-      future: _generalsFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        }
+    return ValueListenableBuilder<String>(
+      valueListenable: widget.searchNotifier,
+      builder: (context, query, _) {
+        return FutureBuilder<List<GeneralCard>>(
+          future: _generalsFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-        final raw = snapshot.data ?? [];
-        final query = widget.searchQuery ?? '';
-        final searched = query.isEmpty
-            ? raw
-            : raw.where((g) => g.matchesQuery(query)).toList();
-        final generals = _filterState.apply(searched);
-        final groupedGenerals = _groupByFaction(generals);
+            final raw      = snapshot.data ?? [];
+            final searched = query.isEmpty
+                ? raw
+                : raw.where((g) => g.matchesQuery(query)).toList();
+            final generals       = _filterState.apply(searched);
+            final groupedGenerals = _groupByFaction(generals);
 
         return CustomScrollView(
           slivers: [
@@ -159,10 +180,10 @@ class _GeneralScreenState extends State<GeneralScreen> {
                           card: card,
                           onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) =>
-                                  GeneralDetailScreen(card: card),
-                            ),
+                            detailRoute(GeneralDetailScreen(
+                              card: card,
+                              onLibraryCardTap: widget.onLibraryCardTap,
+                            )),
                           ),
                         );
                       },
@@ -175,6 +196,8 @@ class _GeneralScreenState extends State<GeneralScreen> {
             const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],
         );
+      },
+    );
       },
     );
   }

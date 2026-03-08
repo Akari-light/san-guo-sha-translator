@@ -6,13 +6,20 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/services/resolver_service.dart';
 import '../../../../core/constants/app_assets.dart';
-import '../../../library/presentation/screens/library_detail_screen.dart';
-
-
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
-  const GeneralDetailScreen({super.key, required this.card});
+
+  /// Called when the user taps a Related Card chip that links to a library
+  /// card. main.dart resolves the id and pushes LibraryDetailScreen.
+  /// This screen never imports or instantiates library presentation classes.
+  final void Function(String libraryCardId)? onLibraryCardTap;
+
+  const GeneralDetailScreen({
+    super.key,
+    required this.card,
+    this.onLibraryCardTap,
+  });
 
   @override
   State<GeneralDetailScreen> createState() => _GeneralDetailScreenState();
@@ -44,9 +51,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     super.initState();
     _activeCard = widget.card;
     _tabController = TabController(length: 2, vsync: this);
-    _loadVariants();
-    _loadPinState();
-    _resolveRefs();
+    _loadAll();
   }
 
   @override
@@ -55,17 +60,30 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     super.dispose();
   }
 
-  // ── Data loaders
-  Future<void> _loadVariants() async {
-    final variants = await GeneralLoader().getVariants(_activeCard.standardId);
+  // ── Initial load — all three sources run in parallel, one setState at the end.
+  // This avoids 3 rapid successive rebuilds (flicker) on screen open.
+  Future<void> _loadAll() async {
+    final results = await Future.wait([
+      GeneralLoader().getVariants(_activeCard.standardId),
+      PinService.instance.isPinned(_activeCard.id, PinType.general),
+      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: true),
+      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: false),
+    ]);
     if (!mounted) return;
+    final variants = results[0] as List<GeneralCard>;
     setState(() {
       _variants = variants
         ..sort((a, b) => a.expansion.index.compareTo(b.expansion.index));
       _variantsLoading = false;
+      _isPinned      = results[1] as bool;
+      _refsCn        = results[2] as List<ResolvedReference>;
+      _refsEn        = results[3] as List<ResolvedReference>;
+      _refsLoading   = false;
     });
   }
 
+  // ── Version switch — refs must reload for the new card; pin state too.
+  // Two parallel loads, one setState each (pin is fast, refs may be slower).
   Future<void> _loadPinState() async {
     final pinned = await PinService.instance.isPinned(_activeCard.id, PinType.general);
     if (!mounted) return;
@@ -73,15 +91,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 
   Future<void> _resolveRefs() async {
-    setState(() => _refsLoading = true);
     final results = await Future.wait([
       ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: true),
       ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: false),
     ]);
     if (!mounted) return;
     setState(() {
-      _refsCn = results[0];
-      _refsEn = results[1];
+      _refsCn      = results[0];
+      _refsEn      = results[1];
       _refsLoading = false;
     });
   }
@@ -290,13 +307,8 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                           : ref.libraryCard!.nameCn,
                       category: ref.libraryCard!.categoryEn,
                       isDark: isDark,
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              LibraryDetailScreen(card: ref.libraryCard!),
-                        ),
-                      ),
+                      onTap: () =>
+                          widget.onLibraryCardTap?.call(ref.libraryCard!.id),
                     );
                   } else {
                     return _RelatedSkillChip(
@@ -321,48 +333,45 @@ class _CardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: card.id,
-      child: Container(
-        width: 160,
-        height: 240,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: factionColor, width: 2.5),
-          boxShadow: [
-            // tight inner glow
-            BoxShadow(
-              color: factionColor.withValues(alpha: 0.55),
-              blurRadius: 12,
-              spreadRadius: 1,
-            ),
-            // wide ambient bloom
-            BoxShadow(
-              color: factionColor.withValues(alpha: 0.2),
-              blurRadius: 32,
-              spreadRadius: 4,
-            ),
-            // depth shadow
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.7),
-              blurRadius: 24,
-              offset: const Offset(0, 12),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(11.5),
-          child: Image.asset(
-            card.imagePath,
+    return Container(
+      width: 160,
+      height: 240,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: factionColor, width: 2.5),
+        boxShadow: [
+          // tight inner glow
+          BoxShadow(
+            color: factionColor.withValues(alpha: 0.55),
+            blurRadius: 12,
+            spreadRadius: 1,
+          ),
+          // wide ambient bloom
+          BoxShadow(
+            color: factionColor.withValues(alpha: 0.2),
+            blurRadius: 32,
+            spreadRadius: 4,
+          ),
+          // depth shadow
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.7),
+            blurRadius: 24,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(11.5),
+        child: Image.asset(
+          card.imagePath,
+          width: 160,
+          height: 240,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, _) => Image.asset(
+            AppAssets.generalPlaceholder,
             width: 160,
             height: 240,
             fit: BoxFit.cover,
-            errorBuilder: (context, error, _) => Image.asset(
-              AppAssets.generalPlaceholder,
-              width: 160,
-              height: 240,
-              fit: BoxFit.cover,
-            ),
           ),
         ),
       ),

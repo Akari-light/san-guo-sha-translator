@@ -170,45 +170,42 @@ class _CardImage extends StatelessWidget {
     final double h = isHoriz ? 160 : 240;
 
     return Center(
-      child: Hero(
-        tag: card.id,
-        child: Container(
-          width: w,
-          height: h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: categoryColor, width: 2.5),
-            boxShadow: [
-              BoxShadow(
-                color: categoryColor.withValues(alpha: 0.45),
-                blurRadius: 16,
-                spreadRadius: 1,
-              ),
-              BoxShadow(
-                color: categoryColor.withValues(alpha: 0.18),
-                blurRadius: 36,
-                spreadRadius: 4,
-              ),
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.6),
-                blurRadius: 24,
-                offset: const Offset(0, 12),
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(11.5),
-            child: Image.asset(
-              card.imagePath,
+      child: Container(
+        width: w,
+        height: h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: categoryColor, width: 2.5),
+          boxShadow: [
+            BoxShadow(
+              color: categoryColor.withValues(alpha: 0.45),
+              blurRadius: 16,
+              spreadRadius: 1,
+            ),
+            BoxShadow(
+              color: categoryColor.withValues(alpha: 0.18),
+              blurRadius: 36,
+              spreadRadius: 4,
+            ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.6),
+              blurRadius: 24,
+              offset: const Offset(0, 12),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(11.5),
+          child: Image.asset(
+            card.imagePath,
+            width: w,
+            height: h,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, _) => Image.asset(
+              AppAssets.libraryPlaceholder,
               width: w,
               height: h,
               fit: BoxFit.cover,
-              errorBuilder: (context, error, _) => Image.asset(
-                AppAssets.libraryPlaceholder,
-                width: w,
-                height: h,
-                fit: BoxFit.cover,
-              ),
             ),
           ),
         ),
