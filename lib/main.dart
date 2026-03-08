@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme/app_theme.dart';
 
+// Core
+import 'core/services/home_service.dart';
+
 // Features: Navigation and Screens
 import 'features/home/presentation/screens/home_screen.dart';
 import 'features/generals/presentation/screens/general_screen.dart';
+import 'features/generals/presentation/screens/general_detail_screen.dart';
 import 'features/library/presentation/screens/library_screen.dart';
+import 'features/library/presentation/screens/library_detail_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -99,7 +104,30 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   VoidCallback? _openLibraryFilter;
 
   List<Widget> get _screens => [
-        const HomeScreen(),
+        HomeScreen(
+          onGeneralTap: (id) async {
+            final card = await HomeService.instance.findGeneralById(id);
+            if (card != null && mounted) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => GeneralDetailScreen(card: card),
+                ),
+              );
+            }
+          },
+          onLibraryTap: (id) async {
+            final card = await HomeService.instance.findLibraryById(id);
+            if (card != null && mounted) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => LibraryDetailScreen(card: card),
+                ),
+              );
+            }
+          },
+        ),
         GeneralScreen(
           searchQuery: _generalsSearchQuery,
           onFilterStateChanged: (isActive) =>

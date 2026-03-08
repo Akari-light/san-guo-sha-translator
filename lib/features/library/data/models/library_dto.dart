@@ -51,7 +51,6 @@ class LibraryDTO {
 
   // ── Image
   String get imagePath => 'assets/images/library/$id.webp';
-  static const String placeholderImagePath = 'assets/images/library_placeholder.webp';
 
   // ── Search
   bool matchesQuery(String query) {

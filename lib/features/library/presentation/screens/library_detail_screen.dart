@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
+import '../../../../core/constants/app_assets.dart';
 
 class LibraryDetailScreen extends StatefulWidget {
   final LibraryDTO card;
@@ -203,7 +204,7 @@ class _CardImage extends StatelessWidget {
               height: h,
               fit: BoxFit.cover,
               errorBuilder: (context, error, _) => Image.asset(
-                LibraryDTO.placeholderImagePath,
+                AppAssets.libraryPlaceholder,
                 width: w,
                 height: h,
                 fit: BoxFit.cover,

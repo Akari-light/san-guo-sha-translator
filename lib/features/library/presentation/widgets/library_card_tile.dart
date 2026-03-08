@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart';
+import '../../../../core/constants/app_assets.dart';
 
 /// Reusable grid tile for a single library card.
 class LibraryCardTile extends StatelessWidget {
@@ -38,7 +39,7 @@ class LibraryCardTile extends StatelessWidget {
                 color: Colors.black12,
                 child: Center(
                   child: Image.asset(
-                    LibraryDTO.placeholderImagePath,
+                    AppAssets.libraryPlaceholder,
                     fit: BoxFit.contain,
                   ),
                 ),

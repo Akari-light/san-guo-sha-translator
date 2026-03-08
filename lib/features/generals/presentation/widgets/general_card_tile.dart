@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/constants/app_assets.dart';
 
 /// Reusable grid tile for a single general card.
 /// Shows the card image with a faction colour accent bar,
@@ -48,7 +49,7 @@ class GeneralCardTile extends StatelessWidget {
                     color: factionColor.withValues(alpha: 0.1),
                     child: Center(
                       child: Image.asset(
-                        GeneralCard.placeholderImagePath,
+                        AppAssets.generalPlaceholder,
                         fit: BoxFit.contain,
                       ),
                     ),

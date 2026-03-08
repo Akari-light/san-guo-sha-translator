@@ -5,6 +5,7 @@ import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/services/resolver_service.dart';
+import '../../../../core/constants/app_assets.dart';
 import '../../../library/presentation/screens/library_detail_screen.dart';
 
 
@@ -357,7 +358,7 @@ class _CardImage extends StatelessWidget {
             height: 240,
             fit: BoxFit.cover,
             errorBuilder: (context, error, _) => Image.asset(
-              GeneralCard.placeholderImagePath,
+              AppAssets.generalPlaceholder,
               width: 160,
               height: 240,
               fit: BoxFit.cover,
