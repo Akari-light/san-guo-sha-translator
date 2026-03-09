@@ -157,58 +157,83 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
 }
 
 // ── Card image ────────────────────────────────────────────────────────────────
+//
+// Portrait cards  → displayed upright at 160×240.
+// Time-delay cards → asset is portrait 630×885 on disk; rendered at 160×240
+//                    then rotated 90° CW so the visual result is 240×160
+//                    (landscape). The outer SizedBox(240×160) reserves the
+//                    correct layout space after rotation.
 class _CardImage extends StatelessWidget {
   final LibraryDTO card;
   final Color categoryColor;
 
   const _CardImage({required this.card, required this.categoryColor});
 
+  // Intrinsic card dimensions (portrait).
+  static const double _cardW = 160;
+  static const double _cardH = 240;
+
   @override
   Widget build(BuildContext context) {
     final isHoriz = card.isHorizontal;
-    final double w = isHoriz ? 240 : 160;
-    final double h = isHoriz ? 160 : 240;
 
-    return Center(
-      child: Container(
-        width: w,
-        height: h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: categoryColor, width: 2.5),
-          boxShadow: [
-            BoxShadow(
-              color: categoryColor.withValues(alpha: 0.45),
-              blurRadius: 16,
-              spreadRadius: 1,
-            ),
-            BoxShadow(
-              color: categoryColor.withValues(alpha: 0.18),
-              blurRadius: 36,
-              spreadRadius: 4,
-            ),
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.6),
-              blurRadius: 24,
-              offset: const Offset(0, 12),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(11.5),
-          child: Image.asset(
-            card.imagePath,
-            width: w,
-            height: h,
+    // The decorated container is always portrait (_cardW × _cardH).
+    // For time-delay cards we rotate the whole thing 90° CW afterwards,
+    // so the layout slot becomes _cardH × _cardW (landscape).
+    final decoratedCard = Container(
+      width:  _cardW,
+      height: _cardH,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: categoryColor, width: 2.5),
+        boxShadow: [
+          BoxShadow(
+            color: categoryColor.withValues(alpha: 0.45),
+            blurRadius: 16,
+            spreadRadius: 1,
+          ),
+          BoxShadow(
+            color: categoryColor.withValues(alpha: 0.18),
+            blurRadius: 36,
+            spreadRadius: 4,
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.6),
+            blurRadius: 24,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(11.5),
+        child: Image.asset(
+          card.imagePath,
+          width:  _cardW,
+          height: _cardH,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, _) => Image.asset(
+            AppAssets.libraryPlaceholder,
+            width:  _cardW,
+            height: _cardH,
             fit: BoxFit.cover,
-            errorBuilder: (context, error, _) => Image.asset(
-              AppAssets.libraryPlaceholder,
-              width: w,
-              height: h,
-              fit: BoxFit.cover,
-            ),
           ),
         ),
+      ),
+    );
+
+    if (!isHoriz) {
+      // Portrait — no rotation, no size change.
+      return Center(child: decoratedCard);
+    }
+
+    // Time-delay: rotate 90° CW using RotatedBox(quarterTurns: 1).
+    // Unlike Transform.rotate, RotatedBox participates in layout — it
+    // correctly swaps width↔height so the Column sees a landscape
+    // footprint (240 wide × 160 tall) with no constraint violations.
+    return Center(
+      child: RotatedBox(
+        quarterTurns: 1,
+        child: decoratedCard,
       ),
     );
   }

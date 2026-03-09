@@ -388,8 +388,8 @@ class _SpotlightCard extends StatelessWidget {
           children: [
             // Art thumbnail
             Container(
-              width: 60,
-              height: 84,
+              width: 84,
+              height: 118,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -399,11 +399,11 @@ class _SpotlightCard extends StatelessWidget {
                     fAcc.withValues(alpha: 0.10),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(9),
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: fAcc.withValues(alpha: 0.55), width: 2),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(10),
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
@@ -416,7 +416,7 @@ class _SpotlightCard extends StatelessWidget {
                               ? (focused.general?.faction ?? '?')[0]
                               : (focused.libraryCard?.categoryEn ?? '?')[0],
                           style: TextStyle(
-                            fontSize: 26,
+                            fontSize: 36,
                             fontWeight: FontWeight.w900,
                             color: fAcc.withValues(alpha: 0.82),
                           ),
@@ -546,8 +546,8 @@ class _ThumbnailChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 48,
-              height: 67,
+              width: 72,
+              height: 101,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -557,7 +557,7 @@ class _ThumbnailChip extends StatelessWidget {
                     acc.withValues(alpha: 0.06),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: isActive ? acc : acc.withValues(alpha: 0.32),
                   width: 1.5,
@@ -572,7 +572,7 @@ class _ThumbnailChip extends StatelessWidget {
                     : null,
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(10),
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
@@ -585,7 +585,7 @@ class _ThumbnailChip extends StatelessWidget {
                               ? (card.general?.faction ?? '?')[0]
                               : (card.libraryCard?.categoryEn ?? '?')[0],
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 26,
                             fontWeight: FontWeight.w900,
                             color: acc.withValues(
                                 alpha: isActive ? 0.88 : 0.52),
@@ -625,7 +625,7 @@ class _ThumbnailChip extends StatelessWidget {
             const SizedBox(height: 4),
             AnimatedContainer(
               duration: const Duration(milliseconds: 150),
-              width: isActive ? 14 : 4,
+              width: isActive ? 21 : 6,
               height: 3,
               decoration: BoxDecoration(
                 color: isActive
@@ -680,6 +680,10 @@ class _PinnedSectionState extends State<_PinnedSection> {
 
   final _generalsKey = GlobalKey();
   final _libraryKey  = GlobalKey();
+  // Key on the Stack so we can convert global pointer coords → local Stack
+  // coords for the drag ghost.  Without this the ghost is offset by the
+  // height of _RecentSection above the Stack's local origin.
+  final _stackKey    = GlobalKey();
 
   String? _toastMsg;
   Timer?  _toastTimer;
@@ -780,6 +784,7 @@ class _PinnedSectionState extends State<_PinnedSection> {
       onPointerMove: (e) => _onDragMove(e.position),
       onPointerUp:   (e) => _onDragEnd(e.position),
       child: Stack(
+      key: _stackKey,
       children: [
         Column(
           children: [
@@ -1063,12 +1068,20 @@ class _PinnedSectionState extends State<_PinnedSection> {
             ),
           ),
 
-        // Drag ghost
+        // Drag ghost — position is stored as global coords; convert to local
+        // Stack coords so the ghost tracks the pointer correctly regardless of
+        // how far down the screen the Stack starts.
         if (_dragging)
-          Positioned(
-            left: _dragPos.dx - 44,
-            top:  _dragPos.dy - 16,
-            child: IgnorePointer(
+          Builder(
+            builder: (context) {
+              final box = _stackKey.currentContext?.findRenderObject() as RenderBox?;
+              final local = box != null
+                  ? box.globalToLocal(_dragPos)
+                  : _dragPos;
+              return Positioned(
+                left: local.dx - 44,
+                top:  local.dy - 16,
+                child: IgnorePointer(
               child: Transform.rotate(
                 angle: -0.052,
                 child: Container(
@@ -1101,6 +1114,8 @@ class _PinnedSectionState extends State<_PinnedSection> {
                 ),
               ),
             ),
+              );
+            },
           ),
       ],
     ), // Stack
@@ -1122,7 +1137,6 @@ class _PinnedSectionState extends State<_PinnedSection> {
 }
 
 // ── Drag zone wrapper ─────────────────────────────────────────────────────────
-
 class _DragZoneWrapper extends StatelessWidget {
   final GlobalKey zoneKey;
   final bool dragging;
@@ -1175,7 +1189,7 @@ class _DragZoneWrapper extends StatelessWidget {
                       Text(
                         columnLabel,
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: (T ? Colors.white : Colors.black)
                               .withValues(alpha: 0.32),
@@ -1186,7 +1200,7 @@ class _DragZoneWrapper extends StatelessWidget {
                       Text(
                         '$count',
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 14,
                           color: (T ? Colors.white : Colors.black)
                               .withValues(alpha: 0.20),
                         ),
@@ -1224,7 +1238,6 @@ class _DragZoneWrapper extends StatelessWidget {
 }
 
 // ── Pinned general tile ────────────────────────────────────────────────────────
-
 class _PinnedGeneralTile extends StatelessWidget {
   final String id;
   final String nameCn;
@@ -1378,7 +1391,6 @@ class _PinnedGeneralTile extends StatelessWidget {
 }
 
 // ── Pinned library tile ────────────────────────────────────────────────────────
-
 class _PinnedLibraryTile extends StatelessWidget {
   final String id;
   final String nameCn;
