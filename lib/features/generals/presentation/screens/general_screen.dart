@@ -175,7 +175,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
-                      childAspectRatio: 0.72,
+                      childAspectRatio: 0.755,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),

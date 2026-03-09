@@ -151,7 +151,7 @@ class _ShaWatermark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/logo.webp', fit: BoxFit.cover, color: Colors.white.withValues(alpha: isDark ? 0.072 : 0.055), colorBlendMode: BlendMode.modulate);
+    return Image.asset('assets/images/logo.png', fit: BoxFit.cover, color: Colors.white.withValues(alpha: isDark ? 0.072 : 0.055), colorBlendMode: BlendMode.modulate);
   }
 }
 

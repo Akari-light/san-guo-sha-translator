@@ -63,10 +63,10 @@ class LibraryDTO {
   // ── Category
   static const List<String> categoryOrder = [
     'Basic',
+    'Tool',
     'Weapon',
     'Armor',
-    'Mount',
-    'Tool',
     'Treasure',
+    'Mount',
   ];
 }

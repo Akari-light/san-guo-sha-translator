@@ -635,10 +635,10 @@
     "category_en": "Weapon",
     "range": 9,
     "effect_cn": [
-      "当你对其他角色造成伤害后，你可以弃置其装备区内的防具牌与+1坐骑牌；当【霹雳车】离开你的装备区后，将此牌从游戏中移除（销毁）。"
+      "锁定技，你回合内使用基本牌的伤害和回复数值+1且无距离限制；你回合外使用或打出基本牌时摸一张牌；此牌离开装备区时销毁。"
     ],
     "effect_en": [
-      "After dealing damage to another character, you may discard their equipped armor card and their equipped +1 Mount card. When [Catapult] leaves your equipment zone for any reason, it is removed from the game (destroyed) rather than discarded."
+      "Locked Skill: During your turn, the damage and recovery value of basic cards you use are increased by 1 and there is no distance restriction; when you use or play a basic card outside your turn, you draw a card; this card is destroyed when it leaves the equipment zone."
     ],
     "faq": [
       {
@@ -652,12 +652,6 @@
         "a_cn": "在大多数对局中，9点攻击范围已覆盖全场所有角色，但具体取决于场上人数和坐骑情况。",
         "q_en": "With an attack range of 9, can [Catapult] always reach every character on the table?",
         "a_en": "In most games, a range of 9 covers all characters on the table, but the exact reach depends on the player count and any mount-based distance modifiers in play."
-      },
-      {
-        "q_cn": "发动【霹雳车】效果时，目标须同时有防具和+1马才能触发吗？",
-        "a_cn": "不需要。防具和+1马是分别可选的，只要目标装备了其中一种，即可弃置对应的牌。",
-        "q_en": "Must the target have both armor and a +1 Mount equipped for [Catapult]'s effect to activate?",
-        "a_en": "No. The armor and the +1 Mount are each discarded independently. As long as the target has at least one, you may discard whichever are present."
       }
     ]
   }
