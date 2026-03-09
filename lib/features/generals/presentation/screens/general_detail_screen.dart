@@ -132,23 +132,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     _loadSkins();
   }
 
-  // Slot 0 = base image; slots 1..n = skins[0..n-1].
-  void _cycleSkin() {
-    setState(() {
-      _skinIndex = (_skinIndex + 1) % (1 + _skins.length);
-    });
-  }
-
   String get _activeImagePath {
     if (_skinIndex == 0 || _skins.isEmpty) return _activeCard.imagePath;
     return _skins[_skinIndex - 1].imagePath;
-  }
-
-  String get _activeSkinLabel {
-    if (_skinIndex == 0) return '';
-    return _isEnglish
-        ? _skins[_skinIndex - 1].nameEn
-        : _skins[_skinIndex - 1].nameCn;
   }
 
   Future<void> _togglePin() async {
