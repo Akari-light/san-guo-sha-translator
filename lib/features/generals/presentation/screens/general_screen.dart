@@ -6,6 +6,7 @@ import '../screens/general_filter_sheet.dart';
 import '../screens/general_detail_screen.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/navigation/app_router.dart';
+import '../../../../core/services/recently_viewed_service.dart';
 
 class GeneralScreen extends StatefulWidget {
   /// Live search notifier. main.dart updates this without rebuilding
@@ -26,7 +27,7 @@ class GeneralScreen extends StatefulWidget {
   /// Called by main.dart when a general card tile is tapped, before the
   /// detail push. main.dart uses this hook to record the view in HomeService.
   /// When null the screen pushes the detail screen directly without recording.
-  final void Function(String generalId)? onCardTap;
+  final void Function(String id, RecordType type)? onCardTap;
 
   const GeneralScreen({
     super.key,
@@ -186,8 +187,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
                           card: card,
                           onTap: () {
                             if (widget.onCardTap != null) {
-                              // main.dart records the view then pushes the detail.
-                              widget.onCardTap!(card.id);
+                              widget.onCardTap!(card.id, RecordType.general);
                             } else {
                               Navigator.push(
                                 context,

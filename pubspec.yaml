@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   lpinyin: ^2.0.3
   shared_preferences: ^2.2.2
+  camera: ^0.10.5+9
 
 dev_dependencies:
   flutter_test:

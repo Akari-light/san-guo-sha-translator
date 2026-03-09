@@ -4,6 +4,7 @@ import 'core/theme/app_theme.dart';
 
 // Core
 import 'core/services/home_service.dart';
+import 'core/services/recently_viewed_service.dart';
 import 'core/navigation/app_router.dart';
 
 // Features: Navigation and Screens
@@ -12,6 +13,7 @@ import 'features/generals/presentation/screens/general_screen.dart';
 import 'features/generals/presentation/screens/general_detail_screen.dart';
 import 'features/library/presentation/screens/library_screen.dart';
 import 'features/library/presentation/screens/library_detail_screen.dart';
+import 'features/ai/presentation/screens/ai_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -84,7 +86,7 @@ class MainNavigationScreen extends StatefulWidget {
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 4;
 
   // ── Search state — ValueNotifiers so screens update without being rebuilt
   bool _isSearching = false;
@@ -107,27 +109,27 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   void initState() {
     super.initState();
     _screens = [
-      HomeScreen(
-        onGeneralTap: _pushGeneralDetail,
-        onLibraryTap: _pushLibraryDetail,
-      ),
+      const Center(child: Text('More (TBC)')),
       GeneralScreen(
         searchNotifier: _generalsSearchNotifier,
         onFilterStateChanged: (isActive) =>
             setState(() => _generalsFilterActive = isActive),
         onRegisterSheetOpener: (opener) => _openGeneralsFilter = opener,
-        onLibraryCardTap: _pushLibraryDetail,
-        onCardTap: _pushGeneralDetail,
+        onLibraryCardTap: (id) => _pushCard(id, RecordType.library),
+        onCardTap: _pushCard,
       ),
       LibraryScreen(
         searchNotifier: _librarySearchNotifier,
         onFilterStateChanged: (isActive) =>
             setState(() => _libraryFilterActive = isActive),
         onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
-        onCardTap: _pushLibraryDetail,
+        onCardTap: _pushCard,
       ),
-      const Center(child: Text('AI Feature (TBC)')),
-      const Center(child: Text('More (TBC)')),
+      AiScreen(onCardTap: _pushCard),
+      HomeScreen(
+        onGeneralTap: (id) => _pushCard(id, RecordType.general),
+        onLibraryTap: (id) => _pushCard(id, RecordType.library),
+      ),
     ];
   }
 
@@ -140,27 +142,25 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     super.dispose();
   }
 
-  /// Push GeneralDetailScreen. Records the view before pushing.
-  Future<void> _pushGeneralDetail(String id) async {
-    final card = await HomeService.instance.findGeneralById(id);
-    if (card == null || !mounted) return;
-    final nav = Navigator.of(context);
-    await HomeService.instance.recordGeneralView(id);
-    nav.push(detailRoute(GeneralDetailScreen(
-      card: card,
-      onLibraryCardTap: _pushLibraryDetail,
-    )));
-  }
-
-  /// Shared handler: push LibraryDetailScreen from any context (home tap,
-  /// general detail related-card chip, library grid tap via onCardTap, etc.).
-  /// Named method so the linter accepts mounted + context after await.
-  Future<void> _pushLibraryDetail(String id) async {
-    final card = await HomeService.instance.findLibraryById(id);
-    if (card == null || !mounted) return;
-    final nav = Navigator.of(context);
-    await HomeService.instance.recordLibraryView(id);
-    nav.push(detailRoute(LibraryDetailScreen(card: card)));
+  /// Unified handler — resolves id+type to the correct detail screen,
+  /// records the view, then pushes. Used by all five screens and AiScreen.
+  Future<void> _pushCard(String id, RecordType type) async {
+    if (type == RecordType.general) {
+      final card = await HomeService.instance.findGeneralById(id);
+      if (card == null || !mounted) return;
+      final nav = Navigator.of(context);
+      await HomeService.instance.recordGeneralView(id);
+      nav.push(detailRoute(GeneralDetailScreen(
+        card: card,
+        onLibraryCardTap: (libId) => _pushCard(libId, RecordType.library),
+      )));
+    } else {
+      final card = await HomeService.instance.findLibraryById(id);
+      if (card == null || !mounted) return;
+      final nav = Navigator.of(context);
+      await HomeService.instance.recordLibraryView(id);
+      nav.push(detailRoute(LibraryDetailScreen(card: card)));
+    }
   }
 
   @override
@@ -294,11 +294,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.info_outline),),label: 'Home',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.more_horiz),),label: 'Codex',),
             BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.person),),label: 'Generals',),
             BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.menu_book),),label: 'Library',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.document_scanner),),label: 'Scanner',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.more_horiz),),label: 'More',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.travel_explore),),label: 'Discover',),
+            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.info_outline),),label: 'Home',),
           ],
         ),
       ),
@@ -315,11 +315,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   String _getAppBarTitle() {
     switch (_selectedIndex) {
+      case 0: return 'Codex';
       case 1: return 'Generals';
       case 2: return 'Library';
-      case 3: return 'Scanner';
-      case 4: return 'More';
-      default: return '殺 - Stop Hesitating, Attack!';
+      case 3: return 'Discover';
+      case 4: return '殺 - Stop Hesitating, Attack!';
+      default: return '殺';
     }
   }
 }
