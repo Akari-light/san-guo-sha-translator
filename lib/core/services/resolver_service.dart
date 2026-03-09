@@ -5,8 +5,7 @@ import '../../features/generals/data/repository/general_loader.dart';
 import '../../features/library/data/models/library_dto.dart';
 import '../../features/library/data/repository/library_loader.dart';
 
-// ── Result types ──────────────────────────────────────────────────────────────
-
+// ── Result types 
 enum ReferenceType { libraryCard, skill }
 
 /// A single resolved bracket reference from a skill or card description.
@@ -43,34 +42,26 @@ class ResolvedReference {
   String get nameEn => libraryCard?.nameEn ?? skill?.nameEn ?? bracketText;
 }
 
-// ── Service ───────────────────────────────────────────────────────────────────
-
-/// Scans skill/card description text for 【bracket】 references and resolves
-/// them to known LibraryDTO cards or SkillDTOs.
+// ── Service 
+/// Scans skill/card description text for 【bracket】 references and resolves them to known LibraryDTO cards or SkillDTOs.
 ///
 /// Resolution priority:
 ///   1. Library card name (CN or EN)
 ///   2. Skill name (CN or EN)
 ///   3. Logged as unresolved (data gap — check your JSON)
-///
-/// Lives in core/services/ because it cross-references both features.
 class ResolverService {
-  // ── Singleton ───────────────────────────────────────────────────────────────
+  // ── Singleton 
   static final ResolverService _instance = ResolverService._internal();
   factory ResolverService() => _instance;
   ResolverService._internal();
 
-  // ── Regex ───────────────────────────────────────────────────────────────────
+  // ── Regex 
   // Matches 【杀】【闪】【桃】etc. — CN descriptions
   static final RegExp _cnBrackets = RegExp(r'【([^】]+)】');
   // Matches [Kill] [Dodge] [Peach] etc. — EN descriptions
   static final RegExp _enBrackets = RegExp(r'\[([^\]]+)\]');
 
-  // ── Public API ──────────────────────────────────────────────────────────────
-
-  /// Resolve all bracket references in [text].
-  /// Set [isChinese: false] for EN descriptions.
-  /// Returns deduplicated results in order of first appearance.
+  // ── Public API 
   Future<List<ResolvedReference>> resolve(
     String text, {
     bool isChinese = true,
@@ -89,12 +80,6 @@ class ResolverService {
     final Map<String, LibraryDTO> libByEn = {
       for (final c in libraryCards) c.nameEn.toLowerCase(): c,
     };
-    // Also index by aliasEn entries (e.g. "Kill" → Kill card)
-    for (final c in libraryCards) {
-      for (final alias in (c.aliasEn ?? [])) {
-        libByEn.putIfAbsent(alias.toLowerCase(), () => c);
-      }
-    }
 
     final Map<String, SkillDTO> skillByCn = {
       for (final s in skillMap.values) s.nameCn: s,
@@ -161,8 +146,7 @@ class ResolverService {
     return results;
   }
 
-  // ── Private ─────────────────────────────────────────────────────────────────
-
+  // ── Private 
   List<String> _extractTokens(String text, {required bool isChinese}) {
     final pattern = isChinese ? _cnBrackets : _enBrackets;
     return pattern

@@ -1,5 +1,6 @@
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/models/expansion.dart';
+import '../../../../core/services/search_service.dart';
 
 /// Example JSON entry (from limit_break.json):
 /// {
@@ -77,13 +78,24 @@ class GeneralCard {
   }
 
   // ── Search
-  /// Matches against English name, Chinese name, and serial ID.
+  /// Fuzzy matches against:
+  ///   - English name, Chinese name, serial ID
+  ///   - English and Chinese skill names
+  ///
+  /// Short queries (< 3 chars) use exact contains only.
+  /// Longer queries additionally use trigram similarity so typos
+  /// and partial matches ("liu bei", "luu bei", "benev") all resolve.
   bool matchesQuery(String query) {
-    if (query.isEmpty) return true;
-    final q = query.toLowerCase();
-    return nameEn.toLowerCase().contains(q) ||
-        nameCn.contains(query) ||
-        id.toLowerCase().contains(q);
+    if (query.isEmpty) { return true; }
+    // Name + ID
+    if (SearchService.fuzzyMatch(query, nameEn)) { return true; }
+    if (SearchService.fuzzyMatch(query, nameCn)) { return true; }
+    if (SearchService.fuzzyMatch(query, id))     { return true; }
+    // Skill names (EN + CN) — "benevolence" finds 界刘备
+    if (skills.any((s) =>
+        SearchService.fuzzyMatch(query, s.nameEn) ||
+        SearchService.fuzzyMatch(query, s.nameCn))) { return true; }
+    return false;
   }
 
   // ── Image

@@ -1,3 +1,5 @@
+import '../../../../core/services/search_service.dart';
+
 class LibraryDTO {
   final String id;
   final String nameCn;
@@ -8,7 +10,6 @@ class LibraryDTO {
   final String? subCategoryCn;
   final List<String> effectCn;
   final List<String> effectEn;
-  final List<String>? aliasEn;
   final int? range;
   final List<Map<String, String>> faq;
 
@@ -22,7 +23,6 @@ class LibraryDTO {
     this.subCategoryCn,
     required this.effectCn,
     required this.effectEn,
-    this.aliasEn,
     this.range,
     required this.faq,
   });
@@ -38,7 +38,6 @@ class LibraryDTO {
       subCategoryCn:  json['sub_category_cn'],
       effectCn:       List<String>.from(json['effect_cn'] ?? []),
       effectEn:       List<String>.from(json['effect_en'] ?? []),
-      aliasEn:        json['alias_en'] != null ? List<String>.from(json['alias_en']) : null,
       range:          json['range'],
       faq:            (json['faq'] as List).map((item) => Map<String, String>.from(item)).toList(),
     );
@@ -53,11 +52,15 @@ class LibraryDTO {
   String get imagePath => 'assets/images/library/$id.webp';
 
   // ── Search
+  /// Fuzzy matches against English name, Chinese name, and category.
+  /// Pinyin conversion in SearchService means Chinese targets are also
+  /// searchable by pinyin — "nan man" finds 南蛮入侵, "sha" finds 杀.
   bool matchesQuery(String query) {
-    final q = query.toLowerCase();
-    final matchesName  = nameEn.toLowerCase().contains(q) || nameCn.contains(query);
-    final matchesAlias = aliasEn?.any((a) => a.toLowerCase().contains(q)) ?? false;
-    return matchesName || matchesAlias;
+    if (query.isEmpty) { return true; }
+    if (SearchService.fuzzyMatch(query, nameEn))     { return true; }
+    if (SearchService.fuzzyMatch(query, nameCn))     { return true; }
+    if (SearchService.fuzzyMatch(query, categoryEn)) { return true; }
+    return false;
   }
 
   // ── Category
