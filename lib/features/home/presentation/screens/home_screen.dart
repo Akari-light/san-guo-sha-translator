@@ -1,13 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import '../../../../core/services/home_service.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/theme/app_theme.dart';
 
-// ── HomeScreen ──────────────────────────────────────────────────────────────
-
+// ── HomeScreen 
 class HomeScreen extends StatefulWidget {
   final void Function(String generalId) onGeneralTap;
   final void Function(String libraryId) onLibraryTap;
@@ -132,19 +129,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// ── 杀 Watermark ──────────────────────────────────────────────────────────────
-// Pure presentation widget — no data or service dependencies.
-// Painted with CustomPainter so no new image asset is required.
-//
-// If you prefer a pre-rendered image asset:
-//   Save to: assets/images/sha_watermark.webp
-//   Register in pubspec.yaml under flutter > assets.
-//   Then replace CustomPaint with:
-//     Image.asset('assets/images/sha_watermark.webp',
-//       fit: BoxFit.cover,
-//       color: Colors.white.withValues(alpha: isDark ? 0.072 : 0.055),
-//       colorBlendMode: BlendMode.modulate)
-
 class _ShaWatermark extends StatelessWidget {
   final bool isDark;
   const _ShaWatermark({required this.isDark});
@@ -205,7 +189,7 @@ class _RecentSectionState extends State<_RecentSection> {
     final RecentlyViewedCard? focusedOrNull = hasAny ? cards[safeIdx] : null;
     final fAcc = focusedOrNull != null ? _accentFor(focusedOrNull) : Colors.grey;
 
-    // ── Recently Viewed: solid header bar + gradient body below ─────────────
+    // ── Recently Viewed: solid header bar + gradient body below 
     final headerBg = T ? const Color(0xFF1E1E1E) : const Color(0xFFF0F0F0);
     final borderCol = (T ? Colors.white : Colors.black).withValues(alpha: 0.07);
 
@@ -341,10 +325,7 @@ class _RecentSectionState extends State<_RecentSection> {
   }
 }
 
-// ── Spotlight card ────────────────────────────────────────────────────────────
-// Extracted from _RecentSectionState.build so that [focused] is guaranteed
-// non-null — avoids nullable promotion issues in the parent build method.
-
+// ── Spotlight card 
 class _SpotlightCard extends StatelessWidget {
   final RecentlyViewedCard focused;
   final Color fAcc;
@@ -509,8 +490,7 @@ class _SpotlightCard extends StatelessWidget {
   }
 }
 
-// ── Thumbnail chip ────────────────────────────────────────────────────────────
-
+// ── Thumbnail chip 
 class _ThumbnailChip extends StatelessWidget {
   final RecentlyViewedCard card;
   final bool isActive;
@@ -642,8 +622,7 @@ class _ThumbnailChip extends StatelessWidget {
   }
 }
 
-// ── Pinned Section ────────────────────────────────────────────────────────────
-
+// ── Pinned Section 
 class _PinnedSection extends StatefulWidget {
   final PinnedCards pins;
   final bool isDark;
@@ -680,9 +659,7 @@ class _PinnedSectionState extends State<_PinnedSection> {
 
   final _generalsKey = GlobalKey();
   final _libraryKey  = GlobalKey();
-  // Key on the Stack so we can convert global pointer coords → local Stack
-  // coords for the drag ghost.  Without this the ghost is offset by the
-  // height of _RecentSection above the Stack's local origin.
+  // Key on the Stack so we can convert global pointer coords → local Stack coords for the drag ghost. Without this the ghost is offset by the height of _RecentSection above the Stack's local origin.
   final _stackKey    = GlobalKey();
 
   String? _toastMsg;
@@ -776,10 +753,6 @@ class _PinnedSectionState extends State<_PinnedSection> {
     final T       = widget.isDark;
     final divider = (T ? Colors.white : Colors.black).withValues(alpha: 0.07);
 
-    // ④ Listener wraps the full section so onPointerMove/onPointerUp fire
-    // globally, even when the pointer has moved far from the 🗑 button.
-    // The GestureDetector on the button only starts the drag; from there the
-    // Listener takes over and _zoneAt() correctly resolves which column was hit.
     return Listener(
       onPointerMove: (e) => _onDragMove(e.position),
       onPointerUp:   (e) => _onDragEnd(e.position),
@@ -879,8 +852,7 @@ class _PinnedSectionState extends State<_PinnedSection> {
                           _dragPos          = details.globalPosition;
                         });
                       },
-                      // Move + end are handled by the Listener above, which fires
-                      // globally regardless of where the pointer travels.
+                      // Move + end are handled by the Listener above, which fires globally regardless of where the pointer travels.
                       child: AnimatedOpacity(
                         opacity: _dragging ? 0.0 : 1.0,
                         duration: const Duration(milliseconds: 150),
@@ -1068,9 +1040,7 @@ class _PinnedSectionState extends State<_PinnedSection> {
             ),
           ),
 
-        // Drag ghost — position is stored as global coords; convert to local
-        // Stack coords so the ghost tracks the pointer correctly regardless of
-        // how far down the screen the Stack starts.
+        // Drag ghost
         if (_dragging)
           Builder(
             builder: (context) {
@@ -1136,7 +1106,7 @@ class _PinnedSectionState extends State<_PinnedSection> {
       );
 }
 
-// ── Drag zone wrapper ─────────────────────────────────────────────────────────
+// ── Drag zone wrapper 
 class _DragZoneWrapper extends StatelessWidget {
   final GlobalKey zoneKey;
   final bool dragging;
@@ -1237,7 +1207,7 @@ class _DragZoneWrapper extends StatelessWidget {
   }
 }
 
-// ── Pinned general tile ────────────────────────────────────────────────────────
+// ── Pinned general tile 
 class _PinnedGeneralTile extends StatelessWidget {
   final String id;
   final String nameCn;
@@ -1262,12 +1232,10 @@ class _PinnedGeneralTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fc = AppTheme.factionColor(faction);
-    // ③ Compact fixed-height tile: character image fills the background,
-    //   gradient overlay ensures the name text is readable on the right side.
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
-        height: 56,
+        height: 62,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -1289,7 +1257,7 @@ class _PinnedGeneralTile extends StatelessWidget {
                 Image.asset(
                   imagePath,
                   fit: BoxFit.cover,
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment(0, -0.6),
                   errorBuilder: (_, _, _) => Container(
                     color: fc.withValues(alpha: 0.12),
                     child: Center(
@@ -1390,7 +1358,7 @@ class _PinnedGeneralTile extends StatelessWidget {
   }
 }
 
-// ── Pinned library tile ────────────────────────────────────────────────────────
+// ── Pinned library tile 
 class _PinnedLibraryTile extends StatelessWidget {
   final String id;
   final String nameCn;

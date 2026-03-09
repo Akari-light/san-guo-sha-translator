@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
+import '../../data/models/skin_dto.dart';
 import '../../data/repository/general_loader.dart';
+import '../../data/repository/skin_loader.dart';
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
@@ -9,10 +11,6 @@ import '../../../../core/constants/app_assets.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
-
-  /// Called when the user taps a Related Card chip that links to a library
-  /// card. main.dart resolves the id and pushes LibraryDetailScreen.
-  /// This screen never imports or instantiates library presentation classes.
   final void Function(String libraryCardId)? onLibraryCardTap;
 
   const GeneralDetailScreen({
@@ -38,6 +36,10 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   List<GeneralCard> _variants = [];
   bool _variantsLoading = true;
 
+  // ── Skins (alt-art for active variant)
+  List<SkinDTO> _skins = [];
+  int _skinIndex = 0; // 0 = base card image; 1..n = skins[0..n-1]
+
   // ── Resolved related-card references
   List<ResolvedReference> _refsEn = [];
   List<ResolvedReference> _refsCn = [];
@@ -60,14 +62,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     super.dispose();
   }
 
-  // ── Initial load — all three sources run in parallel, one setState at the end.
-  // This avoids 3 rapid successive rebuilds (flicker) on screen open.
+  // ── Initial load — all sources run in parallel, one setState at the end.
   Future<void> _loadAll() async {
     final results = await Future.wait([
       GeneralLoader().getVariants(_activeCard.standardId),
       PinService.instance.isPinned(_activeCard.id, PinType.general),
       ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: true),
       ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: false),
+      SkinLoader().getSkinsForBase(_activeCard.id),
     ]);
     if (!mounted) return;
     final variants = results[0] as List<GeneralCard>;
@@ -75,15 +77,16 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
       _variants = variants
         ..sort((a, b) => a.expansion.index.compareTo(b.expansion.index));
       _variantsLoading = false;
-      _isPinned      = results[1] as bool;
-      _refsCn        = results[2] as List<ResolvedReference>;
-      _refsEn        = results[3] as List<ResolvedReference>;
-      _refsLoading   = false;
+      _isPinned        = results[1] as bool;
+      _refsCn          = results[2] as List<ResolvedReference>;
+      _refsEn          = results[3] as List<ResolvedReference>;
+      _refsLoading     = false;
+      _skins           = results[4] as List<SkinDTO>;
+      _skinIndex       = 0;
     });
   }
 
-  // ── Version switch — refs must reload for the new card; pin state too.
-  // Two parallel loads, one setState each (pin is fast, refs may be slower).
+  // ── Version switch — reload refs, pin state, and skins for the new variant.
   Future<void> _loadPinState() async {
     final pinned = await PinService.instance.isPinned(_activeCard.id, PinType.general);
     if (!mounted) return;
@@ -103,18 +106,49 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     });
   }
 
+  Future<void> _loadSkins() async {
+    final skins = await SkinLoader().getSkinsForBase(_activeCard.id);
+    if (!mounted) return;
+    setState(() {
+      _skins     = skins;
+      _skinIndex = 0;
+    });
+  }
+
   // ── Actions
   void _switchVersion(GeneralCard next) {
     if (next.id == _activeCard.id) return;
     setState(() {
-      _activeCard = next;
-      _refsEn = [];
-      _refsCn = [];
+      _activeCard  = next;
+      _refsEn      = [];
+      _refsCn      = [];
       _refsLoading = true;
-      _tabController.index = 0; // reset to Skills tab on version switch
+      _skins       = [];
+      _skinIndex   = 0;
+      _tabController.index = 0;
     });
     _loadPinState();
     _resolveRefs();
+    _loadSkins();
+  }
+
+  // Slot 0 = base image; slots 1..n = skins[0..n-1].
+  void _cycleSkin() {
+    setState(() {
+      _skinIndex = (_skinIndex + 1) % (1 + _skins.length);
+    });
+  }
+
+  String get _activeImagePath {
+    if (_skinIndex == 0 || _skins.isEmpty) return _activeCard.imagePath;
+    return _skins[_skinIndex - 1].imagePath;
+  }
+
+  String get _activeSkinLabel {
+    if (_skinIndex == 0) return '';
+    return _isEnglish
+        ? _skins[_skinIndex - 1].nameEn
+        : _skins[_skinIndex - 1].nameCn;
   }
 
   Future<void> _togglePin() async {
@@ -133,11 +167,11 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   // ── Build
   @override
   Widget build(BuildContext context) {
-    final theme    = Theme.of(context);
-    final isDark   = theme.brightness == Brightness.dark;
-    final card     = _activeCard;
-    final fc       = AppTheme.factionColor(card.faction);
-    final refs     = _isEnglish ? _refsEn : _refsCn;
+    final theme  = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final card   = _activeCard;
+    final fc     = AppTheme.factionColor(card.faction);
+    final refs   = _isEnglish ? _refsEn : _refsCn;
 
     return Scaffold(
       appBar: AppBar(
@@ -173,25 +207,32 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
 
-                  // ── Card image 160×240 — BoxFit.cover never upscales the
-                  //    630×836 source; it scales down and centre-crops only.
-                  _CardImage(card: card, factionColor: fc),
+                  // Card image — receives the resolved path so it displays either the base art or a skin without knowing about SkinDTO.
+                  _CardImage(
+                    imagePath: _activeImagePath,
+                    factionColor: fc,
+                  ),
 
                   const SizedBox(width: 18),
 
-                  // ── Identity column
+                  // Identity column — skin button lives inside here, below gender
                   Expanded(
                     child: _IdentityColumn(
                       card: card,
                       isEnglish: _isEnglish,
                       factionColor: fc,
                       isDark: isDark,
+                      hasSkins: _skins.isNotEmpty,
+                      skinIndex: _skinIndex,
+                      skinTotal: _skins.length,
+                      activeSkinLabel: _activeSkinLabel,
+                      onCycleSkin: _skins.isNotEmpty ? _cycleSkin : null,
                     ),
                   ),
 
                   const SizedBox(width: 6),
 
-                  // ── Lang toggle — bottom-aligned with card image
+                  // Lang toggle — bottom-aligned with card image
                   _LangToggle(
                     isEnglish: _isEnglish,
                     factionColor: fc,
@@ -241,7 +282,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
             ),
             const SizedBox(height: 16),
 
-            // Skills tab body
+            // Tab body
             ListenableBuilder(
               listenable: _tabController,
               builder: (context, _) {
@@ -324,12 +365,12 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 }
 
-// ── Card image
+// Card image (Receives a pre-resolved [imagePath] — stateless, no knowledge of SkinDTO.)
 class _CardImage extends StatelessWidget {
-  final GeneralCard card;
+  final String imagePath;
   final Color factionColor;
 
-  const _CardImage({required this.card, required this.factionColor});
+  const _CardImage({required this.imagePath, required this.factionColor});
 
   @override
   Widget build(BuildContext context) {
@@ -340,19 +381,16 @@ class _CardImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: factionColor, width: 2.5),
         boxShadow: [
-          // tight inner glow
           BoxShadow(
             color: factionColor.withValues(alpha: 0.55),
             blurRadius: 12,
             spreadRadius: 1,
           ),
-          // wide ambient bloom
           BoxShadow(
             color: factionColor.withValues(alpha: 0.2),
             blurRadius: 32,
             spreadRadius: 4,
           ),
-          // depth shadow
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.7),
             blurRadius: 24,
@@ -363,11 +401,11 @@ class _CardImage extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(11.5),
         child: Image.asset(
-          card.imagePath,
+          imagePath,
           width: 160,
           height: 240,
           fit: BoxFit.cover,
-          errorBuilder: (context, error, _) => Image.asset(
+          errorBuilder: (context, _, _) => Image.asset(
             AppAssets.generalPlaceholder,
             width: 160,
             height: 240,
@@ -379,18 +417,30 @@ class _CardImage extends StatelessWidget {
   }
 }
 
-// ── Identity column (name, faction, health, power, gender)
+// Identity column — name, faction, health, power, gender, skin button
 class _IdentityColumn extends StatelessWidget {
   final GeneralCard card;
   final bool isEnglish;
   final Color factionColor;
   final bool isDark;
 
+  // Skin button props — only rendered when [hasSkins] is true
+  final bool hasSkins;
+  final int skinIndex;
+  final int skinTotal;
+  final String activeSkinLabel;
+  final VoidCallback? onCycleSkin;
+
   const _IdentityColumn({
     required this.card,
     required this.isEnglish,
     required this.factionColor,
     required this.isDark,
+    required this.hasSkins,
+    required this.skinIndex,
+    required this.skinTotal,
+    required this.activeSkinLabel,
+    required this.onCycleSkin,
   });
 
   @override
@@ -421,14 +471,14 @@ class _IdentityColumn extends StatelessWidget {
 
         const SizedBox(height: 14),
 
-        // Health label
+        // Health
         _MicroLabel(label: isEnglish ? 'Health' : '体力'),
         const SizedBox(height: 6),
         _HealthPips(health: card.health),
 
         const SizedBox(height: 12),
 
-        // Power label
+        // Power
         _MicroLabel(label: isEnglish ? 'Power' : '战力'),
         const SizedBox(height: 6),
         _PowerStars(value: card.powerIndex),
@@ -439,22 +489,116 @@ class _IdentityColumn extends StatelessWidget {
         Text(
           card.gender == 'Female'
               ? (isEnglish ? '♀  Female' : '♀  女')
-              : (isEnglish ? '♂  Male'   : '♂  男'),
+              : (isEnglish ? '♂  Male' : '♂  男'),
           style: TextStyle(
             fontSize: 12,
             letterSpacing: 1,
             color: card.gender == 'Female'
-                ? const Color(0xFFF9A8D4) // pink — same for dark/light
-                : const Color(0xFF93C5FD), // sky blue
+                ? const Color(0xFFF9A8D4)
+                : const Color(0xFF93C5FD),
             fontWeight: FontWeight.w600,
           ),
         ),
+
+        // Skin cycle button — hidden when no skins exist
+        if (hasSkins) ...[
+          const SizedBox(height: 10),
+          _SkinButton(
+            skinIndex: skinIndex,
+            skinTotal: skinTotal,
+            label: activeSkinLabel,
+            factionColor: factionColor,
+            isEnglish: isEnglish,
+            onTap: onCycleSkin,
+          ),
+        ],
       ],
     );
   }
 }
 
-// ── Lang toggle (vertical EN/中 with animated arrow + radial glow)
+// Skin cycle button
+class _SkinButton extends StatelessWidget {
+  final int skinIndex;
+  final int skinTotal;
+  final String label;
+  final Color factionColor;
+  final bool isEnglish;
+  final VoidCallback? onTap;
+
+  const _SkinButton({
+    required this.skinIndex,
+    required this.skinTotal,
+    required this.label,
+    required this.factionColor,
+    required this.isEnglish,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme      = Theme.of(context);
+    final totalSlots = 1 + skinTotal;
+    final slotLabel  = skinIndex == 0
+        ? (isEnglish ? 'Original' : '原版')
+        : label;
+
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: factionColor.withValues(alpha: 0.07),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: factionColor.withValues(alpha: 0.30),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.palette_outlined,
+              size: 13,
+              color: factionColor.withValues(alpha: 0.8),
+            ),
+            const SizedBox(width: 6),
+            Flexible(
+              child: Text(
+                slotLabel,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: factionColor.withValues(alpha: 0.9),
+                  letterSpacing: 0.3,
+                ),
+              ),
+            ),
+            const SizedBox(width: 6),
+            Text(
+              '${skinIndex + 1}/$totalSlots',
+              style: TextStyle(
+                fontSize: 10,
+                color: theme.hintColor.withValues(alpha: 0.5),
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(
+              Icons.chevron_right_rounded,
+              size: 13,
+              color: theme.hintColor.withValues(alpha: 0.4),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Lang toggle (vertical EN/中 with animated arrow + radial glow)
 class _LangToggle extends StatelessWidget {
   final bool isEnglish;
   final Color factionColor;
@@ -476,7 +620,6 @@ class _LangToggle extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // EN label
             _GlowLabel(
               text: 'EN',
               active: isEnglish,
@@ -484,10 +627,7 @@ class _LangToggle extends StatelessWidget {
               fontSize: 11,
               letterSpacing: 1.0,
             ),
-
             const SizedBox(height: 6),
-
-            // Arrow — rotates to point at active language
             AnimatedRotation(
               turns: isEnglish ? 0.5 : 0.0,
               duration: const Duration(milliseconds: 320),
@@ -498,10 +638,7 @@ class _LangToggle extends StatelessWidget {
                 color: factionColor.withValues(alpha: 0.5),
               ),
             ),
-
             const SizedBox(height: 6),
-
-            // 中 label
             _GlowLabel(
               text: '中',
               active: !isEnglish,
@@ -555,8 +692,6 @@ class _GlowLabel extends StatelessWidget {
             ),
           ),
         ),
-        // Label text — inactive colour uses hintColor so it stays
-        // visible in both dark and light mode.
         AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
@@ -575,7 +710,7 @@ class _GlowLabel extends StatelessWidget {
   }
 }
 
-// ── Health pips
+// Health pips
 class _HealthPips extends StatelessWidget {
   final int health;
   const _HealthPips({required this.health});
@@ -608,14 +743,12 @@ class _HealthPips extends StatelessWidget {
   }
 }
 
-// ── Power stars (split-half per star, 0.5 increments clearly distinct)
+// Power stars (split-half per star, 0.5 increments clearly distinct)
 class _PowerStars extends StatelessWidget {
   final double value;
   const _PowerStars({required this.value});
 
-  static const Color _goldColor = AppTheme.skillLord; // reuse gold from theme
-  // 0x22 alpha on neutral grey reads in both dark and light mode;
-  // hardcoded white (0x1AFFFFFF) becomes invisible on a light scaffold.
+  static const Color _goldColor = AppTheme.skillLord;
   static const Color _dimColor  = Color(0x22888888);
 
   @override
@@ -629,14 +762,12 @@ class _PowerStars extends StatelessWidget {
           height: 18,
           child: Stack(
             children: [
-              // dim base star
               const Center(
                 child: Text(
                   '★',
                   style: TextStyle(fontSize: 18, color: _dimColor, height: 1),
                 ),
               ),
-              // left half
               ClipRect(
                 clipper: _HalfClipper(left: true),
                 child: Center(
@@ -650,7 +781,6 @@ class _PowerStars extends StatelessWidget {
                   ),
                 ),
               ),
-              // right half
               ClipRect(
                 clipper: _HalfClipper(left: false),
                 child: Center(
@@ -685,7 +815,7 @@ class _HalfClipper extends CustomClipper<Rect> {
   bool shouldReclip(_HalfClipper old) => old.left != left;
 }
 
-// ── Version segment control
+// Version segment control
 class _VersionSegment extends StatelessWidget {
   final List<GeneralCard> variants;
   final String activeId;
@@ -701,13 +831,12 @@ class _VersionSegment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme  = Theme.of(context);
     final active = variants.firstWhere((v) => v.id == activeId);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Segment bar
         Container(
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
@@ -742,7 +871,6 @@ class _VersionSegment extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        // Badge glyph
                         AnimatedDefaultTextStyle(
                           duration: const Duration(milliseconds: 220),
                           style: TextStyle(
@@ -758,7 +886,6 @@ class _VersionSegment extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        // Health pips (mini)
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(v.health, (i) {
@@ -787,13 +914,10 @@ class _VersionSegment extends StatelessWidget {
 
         const SizedBox(height: 8),
 
-        // Active version label row
         Row(
           children: [
             Text(
-              isEnglish
-                  ? active.expansion.labelEn
-                  : active.expansion.labelCn,
+              isEnglish ? active.expansion.labelEn : active.expansion.labelCn,
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
@@ -823,7 +947,7 @@ class _VersionSegment extends StatelessWidget {
   }
 }
 
-// ── Skills/FAQ tab bar
+// Skills/FAQ tab bar
 class _TabBar extends StatelessWidget {
   final TabController controller;
   final int faqCount;
@@ -910,7 +1034,7 @@ class _TabBar extends StatelessWidget {
   }
 }
 
-// ── Skill card (collapsible, gradient border fading left→right)
+// Skill card (collapsible, gradient border fading left→right)
 class _SkillCard extends StatefulWidget {
   final SkillDTO skill;
   final bool isEnglish;
@@ -956,12 +1080,10 @@ class _SkillCardState extends State<_SkillCard> {
             radius: 12,
           ),
           child: Padding(
-            // Inset content so it sits inside the painted border (1.5px stroke)
             padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header row
                 Row(
                   children: [
                     Text(
@@ -992,8 +1114,6 @@ class _SkillCardState extends State<_SkillCard> {
                     ),
                   ],
                 ),
-
-                // Description — collapses
                 AnimatedCrossFade(
                   firstChild: const SizedBox.shrink(),
                   secondChild: Padding(
@@ -1045,19 +1165,11 @@ class _SkillCardBorderPainter extends CustomPainter {
       Rect.fromLTWH(0, 0, size.width, size.height),
       Radius.circular(radius),
     );
-
     canvas.drawRRect(rRect, Paint()..color = bgColor);
-
     final gradientShader = LinearGradient(
       stops: const [0.0, 0.35, 0.65, 1.0],
-      colors: [
-        accentColor,
-        accentColor,
-        dimColor,
-        dimColor,
-      ],
+      colors: [accentColor, accentColor, dimColor, dimColor],
     ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
-
     canvas.drawRRect(
       rRect,
       Paint()
@@ -1074,7 +1186,7 @@ class _SkillCardBorderPainter extends CustomPainter {
       old.bgColor != bgColor;
 }
 
-// ── FAQ list
+// FAQ list
 class _FaqList extends StatelessWidget {
   final List<Map<String, String>> faq;
   final bool isEnglish;
@@ -1102,11 +1214,9 @@ class _FaqList extends StatelessWidget {
       );
     }
     return Column(
-      children: faq.map((item) => _FaqRow(
-            item: item,
-            isEnglish: isEnglish,
-            theme: theme,
-          )).toList(),
+      children: faq
+          .map((item) => _FaqRow(item: item, isEnglish: isEnglish, theme: theme))
+          .toList(),
     );
   }
 }
@@ -1148,7 +1258,6 @@ class _FaqRowState extends State<_FaqRow> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Q badge
                 Text(
                   'Q',
                   style: TextStyle(
@@ -1203,16 +1312,13 @@ class _FaqRowState extends State<_FaqRow> {
         ),
         Divider(
           height: 1,
-          color: widget.theme.colorScheme.outlineVariant
-              .withValues(alpha: 0.25),
+          color: widget.theme.colorScheme.outlineVariant.withValues(alpha: 0.25),
         ),
       ],
     );
   }
 }
 
-
-// ── Small shared widgets
 class _SectionLabel extends StatelessWidget {
   final String label;
   const _SectionLabel({required this.label});
@@ -1223,8 +1329,8 @@ class _SectionLabel extends StatelessWidget {
     return Text(
       label.toUpperCase(),
       style: theme.textTheme.labelLarge?.copyWith(
-        fontSize:      13,
-        fontWeight:    FontWeight.w700,
+        fontSize: 13,
+        fontWeight: FontWeight.w700,
         letterSpacing: 2.0,
         color: theme.colorScheme.onSurface.withValues(alpha: 0.55),
       ),
