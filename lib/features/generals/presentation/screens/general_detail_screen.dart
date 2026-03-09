@@ -224,9 +224,11 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                       isDark: isDark,
                       hasSkins: _skins.isNotEmpty,
                       skinIndex: _skinIndex,
-                      skinTotal: _skins.length,
-                      activeSkinLabel: _activeSkinLabel,
-                      onCycleSkin: _skins.isNotEmpty ? _cycleSkin : null,
+                      skins: _skins,
+                      baseImagePath: card.imagePath,
+                      onSelectSkin: _skins.isNotEmpty
+                          ? (i) => setState(() => _skinIndex = i)
+                          : null,
                     ),
                   ),
 
@@ -424,12 +426,12 @@ class _IdentityColumn extends StatelessWidget {
   final Color factionColor;
   final bool isDark;
 
-  // Skin button props — only rendered when [hasSkins] is true
+  // Skin strip props — only rendered when [hasSkins] is true
   final bool hasSkins;
   final int skinIndex;
-  final int skinTotal;
-  final String activeSkinLabel;
-  final VoidCallback? onCycleSkin;
+  final List<SkinDTO> skins;
+  final String baseImagePath;
+  final void Function(int)? onSelectSkin;
 
   const _IdentityColumn({
     required this.card,
@@ -438,9 +440,9 @@ class _IdentityColumn extends StatelessWidget {
     required this.isDark,
     required this.hasSkins,
     required this.skinIndex,
-    required this.skinTotal,
-    required this.activeSkinLabel,
-    required this.onCycleSkin,
+    required this.skins,
+    required this.baseImagePath,
+    required this.onSelectSkin,
   });
 
   @override
@@ -500,16 +502,16 @@ class _IdentityColumn extends StatelessWidget {
           ),
         ),
 
-        // Skin cycle button — hidden when no skins exist
+        // Skin thumbnail strip — hidden when no skins exist
         if (hasSkins) ...[
           const SizedBox(height: 10),
-          _SkinButton(
+          _SkinThumbnailStrip(
             skinIndex: skinIndex,
-            skinTotal: skinTotal,
-            label: activeSkinLabel,
+            skins: skins,
+            baseImagePath: baseImagePath,
             factionColor: factionColor,
             isEnglish: isEnglish,
-            onTap: onCycleSkin,
+            onSelect: onSelectSkin,
           ),
         ],
       ],
@@ -517,61 +519,119 @@ class _IdentityColumn extends StatelessWidget {
   }
 }
 
-// Skin cycle button
-class _SkinButton extends StatelessWidget {
+// Skin thumbnail strip.
+// Shows every slot EXCEPT the one currently displayed on the main card.
+// Slot 0 = base art (_activeCard.imagePath), slots 1..n = skins[0..n-1].
+// Tapping a thumbnail swaps it onto the main card and the previously active
+// slot takes the vacated thumbnail position.
+class _SkinThumbnailStrip extends StatelessWidget {
   final int skinIndex;
-  final int skinTotal;
-  final String label;
+  final List<SkinDTO> skins;
+  final String baseImagePath;
   final Color factionColor;
   final bool isEnglish;
-  final VoidCallback? onTap;
+  final void Function(int)? onSelect;
 
-  const _SkinButton({
+  const _SkinThumbnailStrip({
     required this.skinIndex,
-    required this.skinTotal,
-    required this.label,
+    required this.skins,
+    required this.baseImagePath,
     required this.factionColor,
     required this.isEnglish,
-    required this.onTap,
+    required this.onSelect,
   });
+
+  // Resolve the image path for any slot index.
+  // Slot 0 → base card art; slot k → skins[k-1].imagePath.
+  String _pathForSlot(int i) =>
+      i == 0 ? baseImagePath : skins[i - 1].imagePath;
+
+  // Human-readable label for any slot index.
+  String _labelForSlot(int i) => i == 0
+      ? (isEnglish ? 'Original' : '原版')
+      : (isEnglish ? skins[i - 1].nameEn : skins[i - 1].nameCn);
 
   @override
   Widget build(BuildContext context) {
     final theme      = Theme.of(context);
-    final totalSlots = 1 + skinTotal;
-    final slotLabel  = skinIndex == 0
-        ? (isEnglish ? 'Original' : '原版')
-        : label;
+    final totalSlots = 1 + skins.length;
 
-    return GestureDetector(
-      onTap: onTap,
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-        decoration: BoxDecoration(
-          color: factionColor.withValues(alpha: 0.07),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: factionColor.withValues(alpha: 0.30),
-          ),
+    // Build the list of slot indices that are NOT currently active.
+    final others = [
+      for (int i = 0; i < totalSlots; i++)
+        if (i != skinIndex) i,
+    ];
+
+    // Label shown below the strip — name of the currently active slot.
+    final activeLabel = _labelForSlot(skinIndex);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // ── Thumbnail row — one tile per non-active slot ───────────────────
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: others.asMap().entries.map((entry) {
+            final pos      = entry.key;   // position in the rendered row
+            final slotIdx  = entry.value; // actual slot index (0 = base, 1..n = skins)
+            final isLast   = pos == others.length - 1;
+
+            return GestureDetector(
+              onTap: onSelect != null ? () => onSelect!(slotIdx) : null,
+              behavior: HitTestBehavior.opaque,
+              child: Container(
+                width: 36,
+                height: 50,
+                margin: EdgeInsets.only(right: isLast ? 0 : 6),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    color: factionColor.withValues(alpha: 0.30),
+                    width: 1,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.35),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: Image.asset(
+                    _pathForSlot(slotIdx),
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, _, _) => Container(
+                      color: factionColor.withValues(alpha: 0.08),
+                      child: Icon(
+                        slotIdx == 0
+                            ? Icons.star_rounded
+                            : Icons.auto_awesome_rounded,
+                        size: 14,
+                        color: factionColor.withValues(alpha: 0.35),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
         ),
-        child: Row(
+
+        // ── Active slot label ──────────────────────────────────────────────
+        const SizedBox(height: 7),
+        Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.palette_outlined,
-              size: 13,
-              color: factionColor.withValues(alpha: 0.8),
-            ),
-            const SizedBox(width: 6),
             Flexible(
               child: Text(
-                slotLabel,
+                activeLabel,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontSize: 11,
+                  fontSize: 10,
                   fontWeight: FontWeight.w600,
-                  color: factionColor.withValues(alpha: 0.9),
+                  color: factionColor.withValues(alpha: 0.8),
                   letterSpacing: 0.3,
                 ),
               ),
@@ -581,19 +641,13 @@ class _SkinButton extends StatelessWidget {
               '${skinIndex + 1}/$totalSlots',
               style: TextStyle(
                 fontSize: 10,
-                color: theme.hintColor.withValues(alpha: 0.5),
+                color: theme.hintColor.withValues(alpha: 0.4),
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.chevron_right_rounded,
-              size: 13,
-              color: theme.hintColor.withValues(alpha: 0.4),
-            ),
           ],
         ),
-      ),
+      ],
     );
   }
 }
