@@ -11,7 +11,7 @@
     "traits_cn": ["进攻", "简单", "强命"],
     "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_liegong"]
+    "skills": ["skill_fierce_archery"]
   },
   {
     "id": "jx.SHU001",
@@ -25,7 +25,7 @@
     "traits_cn": ["进攻", "辅助", "回复"],
     "traits_en": ["Aggressive", "Support", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_rende", "skill_jijiang"]
+    "skills": ["skill_benevolence", "skill_rally_the_vanguard"]
   },
   {
     "id": "jx.SHU002",
@@ -39,7 +39,7 @@
     "traits_cn": ["进攻", "控制", "回复"],
     "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_yijue", "skill_wusheng"]
+    "skills": ["skill_severing_bonds", "skill_saint_of_war"]
   },
   {
     "id": "jx.SHU003",
@@ -53,7 +53,7 @@
     "traits_cn": ["进攻", "过牌", "回复"],
     "traits_en": ["Aggressive", "Card Flow", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_tishen", "skill_paoxiao"]
+    "skills": ["skill_body_double", "skill_roar"]
   },
   {
     "id": "jx.SHU005",
@@ -67,7 +67,7 @@
     "traits_cn": ["防御", "辅助", "回复"],
     "traits_en": ["Defensive", "Support", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_yajiao", "skill_longdan"]
+    "skills": ["skill_edge_of_the_horizon", "skill_dragons_courage"]
   },
   {
     "id": "jx.SHU006",
@@ -81,7 +81,7 @@
     "traits_cn": ["进攻", "控制", "简单"],
     "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_mashu", "skill_tieqi"]
+    "skills": ["skill_horsemanship", "skill_iron_cavalry"]
   },
   {
     "id": "jx.SHU013",
@@ -95,7 +95,11 @@
     "traits_cn": ["进攻", "辅助", "定点输出"],
     "traits_en": ["Aggressive", "Support", "Targeted Damage"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhuhai", "skill_qianxin", "skill_jianyan"]
+    "skills": [
+      "skill_punish_the_wicked",
+      "skill_deep_focus",
+      "skill_recommendation"
+    ]
   },
   {
     "id": "jx.WU003",
@@ -109,7 +113,7 @@
     "traits_cn": ["控制", "转化大师", "颜色爱好者"],
     "traits_en": ["Control", "Converter", "Color Specialist"],
     "expansion": "Limit Break",
-    "skills": ["skill_qixi", "skill_fenwei"]
+    "skills": ["skill_surprise_raid", "skill_show_of_force"]
   },
   {
     "id": "jx.WU004",
@@ -123,7 +127,11 @@
     "traits_cn": ["防御", "控制", "发育"],
     "traits_en": ["Defensive", "Control", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_keji", "skill_qinxue", "skill_botu"]
+    "skills": [
+      "skill_self_discipline",
+      "skill_diligent_study",
+      "skill_grand_ambition"
+    ]
   },
   {
     "id": "jx.WU005",
@@ -137,7 +145,7 @@
     "traits_cn": ["进攻", "过牌", "简单"],
     "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_kurou", "skill_zhaxiang"]
+    "skills": ["skill_self_harm", "skill_feigned_surrender"]
   },
   {
     "id": "jx.WU006",
@@ -151,7 +159,7 @@
     "traits_cn": ["进攻", "控制", "强命"],
     "traits_en": ["Aggressive", "Control", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_yingzi", "skill_fanjian"]
+    "skills": ["skill_heroic_bearing", "skill_double_agent"]
   },
   {
     "id": "jx.WU007",
@@ -165,7 +173,7 @@
     "traits_cn": ["控制", "辅助", "判定"],
     "traits_en": ["Control", "Support", "Judgment"],
     "expansion": "Limit Break",
-    "skills": ["skill_liuli", "skill_guose"]
+    "skills": ["skill_drift_and_scatter", "skill_peerless_beauty"]
   },
   {
     "id": "jx.WU008",
@@ -179,7 +187,7 @@
     "traits_cn": ["过牌", "辅助", "困难"],
     "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Limit Break",
-    "skills": ["skill_qianxun", "skill_lianying"]
+    "skills": ["skill_humility", "skill_linked_camps"]
   },
   {
     "id": "jx.WEI001",
@@ -193,7 +201,7 @@
     "traits_cn": ["防御", "简单", "主公技"],
     "traits_en": ["Defensive", "Simple", "Lord Skill"],
     "expansion": "Limit Break",
-    "skills": ["skill_jianxiong", "skill_hujia"]
+    "skills": ["skill_treacherous_hero", "skill_imperial_guard"]
   },
   {
     "id": "jx.WEI002",
@@ -207,7 +215,7 @@
     "traits_cn": ["防御", "控制", "判定"],
     "traits_en": ["Defensive", "Control", "Judgment"],
     "expansion": "Limit Break",
-    "skills": ["skill_fankui", "skill_guicai"]
+    "skills": ["skill_retribution", "skill_demonic_wit"]
   },
   {
     "id": "jx.WEI003",
@@ -221,7 +229,7 @@
     "traits_cn": ["防御", "辅助", "配合神将"],
     "traits_en": ["Defensive", "Support", "God General Synergy"],
     "expansion": "Limit Break",
-    "skills": ["skill_ganglie", "skill_qingjian"]
+    "skills": ["skill_unyielding", "skill_frugal_ways"]
   },
   {
     "id": "jx.WEI004",
@@ -235,7 +243,7 @@
     "traits_cn": ["控制", "简单", "持久"],
     "traits_en": ["Control", "Simple", "Ramping"],
     "expansion": "Limit Break",
-    "skills": ["skill_tuxi"]
+    "skills": ["skill_blitz"]
   },
   {
     "id": "jx.WEI005",
@@ -249,7 +257,7 @@
     "traits_cn": ["进攻", "过牌", "简单"],
     "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_luoyi"]
+    "skills": ["skill_bare_chested"]
   },
   {
     "id": "jx.WEI006",
@@ -263,7 +271,7 @@
     "traits_cn": ["防御", "辅助", "卖血"],
     "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_tiandu", "skill_yiji"]
+    "skills": ["skill_heavens_envy", "skill_dying_stratagem"]
   },
   {
     "id": "jx.WEI017",
@@ -277,7 +285,7 @@
     "traits_cn": ["过牌", "辅助", "卖血"],
     "traits_en": ["Card Flow", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_xunxun", "skill_wangxi"]
+    "skills": ["skill_careful_survey", "skill_set_aside_grudges"]
   },
   {
     "id": "jx.QUN001",
@@ -291,7 +299,7 @@
     "traits_cn": ["控制", "辅助", "保核能力"],
     "traits_en": ["Control", "Support", "Protector"],
     "expansion": "Limit Break",
-    "skills": ["skill_jijiu", "skill_chuli"]
+    "skills": ["skill_field_medicine", "skill_cure_the_plague"]
   },
   {
     "id": "jx.QUN002",
@@ -305,7 +313,7 @@
     "traits_cn": ["进攻", "强命", "飘零半生"],
     "traits_en": ["Aggressive", "Sturdy", "Drifter"],
     "expansion": "Limit Break",
-    "skills": ["skill_wushuang", "skill_liyu"]
+    "skills": ["skill_peerless", "skill_plunder"]
   },
   {
     "id": "jx.QUN007",
@@ -319,7 +327,7 @@
     "traits_cn": ["防御", "控制", "卖血"],
     "traits_en": ["Defensive", "Control", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_yicong", "skill_qiaomeng"]
+    "skills": ["skill_white_horse_fellowship", "skill_nimble_ferocity"]
   },
   {
     "id": "jx.SHU004",
@@ -333,7 +341,7 @@
     "traits_cn": ["防御", "控制", "困难"],
     "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Limit Break",
-    "skills": ["skill_kongcheng", "skill_guanxing"]
+    "skills": ["skill_empty_fort", "skill_read_the_stars"]
   },
   {
     "id": "jx.SHU007",
@@ -347,7 +355,7 @@
     "traits_cn": ["过牌", "锦囊大师", "定点输出"],
     "traits_en": ["Card Flow", "Tool Master", "Targeted Damage"],
     "expansion": "Limit Break",
-    "skills": ["skill_jizhi", "skill_qicai"]
+    "skills": ["skill_gathered_wisdom", "skill_extraordinary_talent"]
   },
   {
     "id": "jx.WU001",
@@ -361,7 +369,7 @@
     "traits_cn": ["过牌", "困难", "主公技"],
     "traits_en": ["Card Flow", "High Difficulty", "Lord Skill"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhiheng", "skill_jiuyuan"]
+    "skills": ["skill_balance_of_power", "skill_rescue"]
   },
   {
     "id": "jx.WU009",
@@ -375,7 +383,7 @@
     "traits_cn": ["防御", "辅助", "发育"],
     "traits_en": ["Defensive", "Support", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_xiaoji", "skill_jieyin"]
+    "skills": ["skill_fierce_lady", "skill_political_marriage"]
   },
   {
     "id": "jx.WEI007",
@@ -389,7 +397,7 @@
     "traits_cn": ["防御", "过牌", "简单"],
     "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_qingguo", "skill_luoshen"]
+    "skills": ["skill_fell_a_kingdom", "skill_goddess_of_the_luo"]
   },
   {
     "id": "jx.QUN003",
@@ -403,7 +411,7 @@
     "traits_cn": ["进攻", "过牌", "强命"],
     "traits_en": ["Aggressive", "Card Flow", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_lijian", "skill_biyue"]
+    "skills": ["skill_sow_discord", "skill_eclipse_the_moon"]
   },
   {
     "id": "jx.QUN006",
@@ -431,7 +439,7 @@
     "traits_cn": ["发育", "回复", "困难"],
     "traits_en": ["Scaling", "Recovery", "High Difficulty"],
     "expansion": "Limit Break",
-    "skills": ["skill_huashen", "skill_xinsheng"]
+    "skills": ["skill_shapeshifter", "skill_rebirth"]
   },
   {
     "id": "jx.QUN011",
@@ -445,7 +453,11 @@
     "traits_cn": ["防御", "控制", "强命"],
     "traits_en": ["Defensive", "Control", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_leiji", "skill_guidao", "skill_huangtian"]
+    "skills": [
+      "skill_lightning_strike",
+      "skill_ghost_path",
+      "skill_yellow_heaven"
+    ]
   },
   {
     "id": "jx.QUN012",
@@ -459,7 +471,7 @@
     "traits_cn": ["回复", "困难", "转化大师"],
     "traits_en": ["Recovery", "High Difficulty", "Converter"],
     "expansion": "Limit Break",
-    "skills": ["skill_guhuo"]
+    "skills": ["skill_hex"]
   },
   {
     "id": "jx.QUN004",
@@ -473,7 +485,7 @@
     "traits_cn": ["进攻", "过牌", "爆发"],
     "traits_en": ["Aggressive", "Card Flow", "Burst"],
     "expansion": "Limit Break",
-    "skills": ["skill_luanji", "skill_xueyi"]
+    "skills": ["skill_volley", "skill_bloodline"]
   },
   {
     "id": "jx.SHU012",
@@ -487,7 +499,11 @@
     "traits_cn": ["辅助", "发育", "回复"],
     "traits_en": ["Support", "Scaling", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_xiangle", "skill_fangquan", "skill_ruoyu"]
+    "skills": [
+      "skill_idle_pleasures",
+      "skill_abdicate",
+      "skill_feign_foolishness"
+    ]
   },
   {
     "id": "jx.WU010",
@@ -501,7 +517,7 @@
     "traits_cn": ["控制", "过牌", "辅助"],
     "traits_en": ["Control", "Card Flow", "Support"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhiba", "skill_jiang", "skill_hunzi"]
+    "skills": ["skill_dominate", "skill_ardor", "skill_spirit_awakening"]
   },
   {
     "id": "jx.WEI010",
@@ -515,7 +531,7 @@
     "traits_cn": ["进攻", "控制", "过牌"],
     "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_shensu", "skill_shebian"]
+    "skills": ["skill_lightning_speed", "skill_tactical_reposition"]
   },
   {
     "id": "jx.SHU004_臥龍",
@@ -529,7 +545,12 @@
     "traits_cn": ["防御", "辅助", "保核能力"],
     "traits_en": ["Defensive", "Support", "Protector"],
     "expansion": "Limit Break",
-    "skills": ["skill_bazhen", "skill_cangzhuo", "skill_huoji", "skill_kanpo"]
+    "skills": [
+      "skill_eight_trigram_array",
+      "skill_feign_weakness",
+      "skill_fire_stratagem",
+      "skill_see_through"
+    ]
   },
   {
     "id": "jx.SHU010",
@@ -543,7 +564,7 @@
     "traits_cn": ["进攻", "控制", "回复"],
     "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_lianhuan", "skill_niepan"]
+    "skills": ["skill_chain_links", "skill_nirvana"]
   },
   {
     "id": "jx.SHU009",
@@ -557,7 +578,7 @@
     "traits_cn": ["进攻", "控制", "回复"],
     "traits_en": ["Aggressive", "Control", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_kuanggu", "skill_qimou"]
+    "skills": ["skill_bloodthirst", "skill_desperate_gambit"]
   },
   {
     "id": "jx.WU011",
@@ -571,7 +592,11 @@
     "traits_cn": ["防御", "辅助", "卖血"],
     "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_hongyan", "skill_tianxiang", "skill_piaoling"]
+    "skills": [
+      "skill_blushing_beauty",
+      "skill_celestial_fragrance",
+      "skill_adrift"
+    ]
   },
   {
     "id": "jx.WU002",
@@ -585,7 +610,7 @@
     "traits_cn": ["控制", "辅助", "简单"],
     "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_yinghun", "skill_wulie"]
+    "skills": ["skill_heroic_spirit", "skill_martial_fury"]
   },
   {
     "id": "jx.QUN005",
@@ -599,7 +624,7 @@
     "traits_cn": ["进攻", "控制", "简单"],
     "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_mashu", "skill_jianchu"]
+    "skills": ["skill_horsemanship", "skill_jianchu"]
   },
   {
     "id": "jx.WU0012",
@@ -613,7 +638,7 @@
     "traits_cn": ["进攻", "控制", "多刀"],
     "traits_en": ["Aggressive", "Control", "Multi-Strike"],
     "expansion": "Limit Break",
-    "skills": ["skill_tianyi", "skill_hanzhan"]
+    "skills": ["skill_heavens_justice", "skill_fierce_duel"]
   },
   {
     "id": "jx.QUN008",
@@ -627,7 +652,12 @@
     "traits_cn": ["进攻", "控制", "过牌"],
     "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_roulin", "skill_benhuai", "skill_jiuchi", "skill_baonue"]
+    "skills": [
+      "skill_lustful_tyranny",
+      "skill_collapse",
+      "skill_wine_pool",
+      "skill_tyranny"
+    ]
   },
   {
     "id": "jx.WEI015",
@@ -641,7 +671,7 @@
     "traits_cn": ["防御", "控制", "发育"],
     "traits_en": ["Defensive", "Control", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_tuntian", "skill_zaoxian"]
+    "skills": ["skill_garrison_farming", "skill_carve_the_pass"]
   },
   {
     "id": "jx.QUN009",
@@ -655,7 +685,7 @@
     "traits_cn": ["控制", "过牌", "拼点"],
     "traits_en": ["Control", "Card Flow", "Point Fight"],
     "expansion": "Limit Break",
-    "skills": ["skill_juxiang", "skill_lieren"]
+    "skills": ["skill_war_elephants", "skill_blazing_blade"]
   },
   {
     "id": "jx.SHU014",
@@ -669,7 +699,7 @@
     "traits_cn": ["进攻", "防御", "控制"],
     "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
-    "skills": ["skill_tiaoxin", "skill_zhiji"]
+    "skills": ["skill_provoke", "skill_inherit_the_will"]
   },
   {
     "id": "jx.QUN013",
@@ -683,7 +713,11 @@
     "traits_cn": ["进攻", "防御", "控制"],
     "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
-    "skills": ["skill_weimu", "skill_luanwu", "skill_wansha"]
+    "skills": [
+      "skill_veil_of_intrigue",
+      "skill_reign_of_chaos",
+      "skill_total_annihilation"
+    ]
   },
   {
     "id": "jx.WU015",
@@ -697,7 +731,7 @@
     "traits_cn": ["控制", "过牌", "困难"],
     "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Limit Break",
-    "skills": ["skill_haoshi", "skill_dimeng"]
+    "skills": ["skill_generous", "skill_forge_alliance"]
   },
   {
     "id": "jx.WEI009",
@@ -711,7 +745,7 @@
     "traits_cn": ["控制", "过牌", "困难"],
     "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Limit Break",
-    "skills": ["skill_qiaobian"]
+    "skills": ["skill_agile_maneuver"]
   },
   {
     "id": "jx.SHU011",
@@ -739,7 +773,7 @@
     "traits_cn": ["控制", "辅助", "发育"],
     "traits_en": ["Control", "Support", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_duanliang", "skill_jiezi"]
+    "skills": ["skill_cut_supply_lines", "skill_intercept_provisions"]
   },
   {
     "id": "jx.QUN015",
@@ -753,7 +787,7 @@
     "traits_cn": ["防御", "辅助", "卖血"],
     "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_duanchang", "skill_beige"]
+    "skills": ["skill_heartbreak", "skill_lament"]
   },
   {
     "id": "jx.WEI013",
@@ -767,7 +801,7 @@
     "traits_cn": ["进攻", "辅助", "卖血"],
     "traits_en": ["Aggressive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_quhu", "skill_jieming"]
+    "skills": ["skill_drive_the_tiger", "skill_preserve_lives"]
   },
   {
     "id": "jx.WEI008",
@@ -781,7 +815,7 @@
     "traits_cn": ["进攻", "简单", "强命"],
     "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_qiangxi", "skill_ninge"]
+    "skills": ["skill_violent_assault", "skill_ferocious"]
   },
   {
     "id": "jx.QUN016",
@@ -795,7 +829,7 @@
     "traits_cn": ["进攻", "简单", "爆发"],
     "traits_en": ["Aggressive", "Simple", "Burst"],
     "expansion": "Limit Break",
-    "skills": ["skill_shuangxiong"]
+    "skills": ["skill_twin_warriors"]
   },
   {
     "id": "jx.WU013",
@@ -809,7 +843,7 @@
     "traits_cn": ["辅助", "发育", "简单"],
     "traits_en": ["Support", "Scaling", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhijian", "skill_guzheng"]
+    "skills": ["skill_direct_remonstrance", "skill_consolidate_authority"]
   },
   {
     "id": "jx.WU018",
@@ -823,7 +857,7 @@
     "traits_cn": ["进攻", "强命", "加伤"],
     "traits_en": ["Aggressive", "Sturdy", "Damage Boost"],
     "expansion": "Limit Break",
-    "skills": ["skill_pojun"]
+    "skills": ["skill_shatter_the_army"]
   },
   {
     "id": "jx.WU014",
@@ -837,7 +871,7 @@
     "traits_cn": ["控制", "困难", "配合神将"],
     "traits_en": ["Control", "High Difficulty", "God General Synergy"],
     "expansion": "Limit Break",
-    "skills": ["skill_xuanfeng"]
+    "skills": ["skill_whirlwind"]
   },
   {
     "id": "jx.QUN014",
@@ -851,7 +885,7 @@
     "traits_cn": ["过牌", "辅助", "多刀"],
     "traits_en": ["Card Flow", "Support", "Multi-Strike"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhichi", "skill_mingce"]
+    "skills": ["skill_delayed_wisdom", "skill_wise_counsel"]
   },
   {
     "id": "jx.WEI011",
@@ -865,7 +899,7 @@
     "traits_cn": ["过牌", "多刀", "爆发"],
     "traits_en": ["Card Flow", "Multi-Strike", "Burst"],
     "expansion": "Limit Break",
-    "skills": ["skill_jiangchi"]
+    "skills": ["skill_cavalry_charge"]
   },
   {
     "id": "jx.SHU015",
@@ -879,7 +913,7 @@
     "traits_cn": ["控制", "过牌", "拼点"],
     "traits_en": ["Control", "Card Flow", "Point Fight"],
     "expansion": "Limit Break",
-    "skills": ["skill_zongshi", "skill_qiaoshuo"]
+    "skills": ["skill_indulge_and_adapt", "skill_clever_words"]
   },
   {
     "id": "jx.WU016",
@@ -893,7 +927,7 @@
     "traits_cn": ["控制", "过牌", "回复"],
     "traits_en": ["Control", "Card Flow", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_zongxuan", "skill_zhiyan"]
+    "skills": ["skill_arcane_mastery", "skill_blunt_counsel"]
   },
   {
     "id": "jx.QUN017",
@@ -907,7 +941,7 @@
     "traits_cn": ["进攻", "过牌", "多刀"],
     "traits_en": ["Aggressive", "Card Flow", "Multi-Strike"],
     "expansion": "Limit Break",
-    "skills": ["skill_xianzhen", "skill_jinjiu"]
+    "skills": ["skill_breach_the_lines", "skill_temperance"]
   },
   {
     "id": "jx.SHU016",
@@ -921,7 +955,7 @@
     "traits_cn": ["防御", "辅助", "简单"],
     "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_xuanhuo", "skill_enyuan"]
+    "skills": ["skill_confound", "skill_gratitude_and_grudges"]
   },
   {
     "id": "jx.WU017",
@@ -935,7 +969,7 @@
     "traits_cn": ["进攻", "辅助", "发育"],
     "traits_en": ["Aggressive", "Support", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_lihuo", "skill_chunlao"]
+    "skills": ["skill_plague_fire", "skill_aged_wine"]
   },
   {
     "id": "jx.WEI016",
@@ -949,7 +983,7 @@
     "traits_cn": ["进攻", "过牌", "转化大师"],
     "traits_en": ["Aggressive", "Card Flow", "Converter"],
     "expansion": "Limit Break",
-    "skills": ["skill_jueqing", "skill_shangshi"]
+    "skills": ["skill_heartless", "skill_mourn_the_fallen"]
   },
   {
     "id": "jx.QUN018",
@@ -963,7 +997,7 @@
     "traits_cn": ["进攻", "控制", "过牌"],
     "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_xianzhou", "skill_qieting"]
+    "skills": ["skill_cede_the_province", "skill_eavesdrop"]
   },
   {
     "id": "jx.WEI014",
@@ -977,7 +1011,7 @@
     "traits_cn": ["防御", "辅助", "卖血"],
     "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Limit Break",
-    "skills": ["skill_chengxiang", "skill_renxin"]
+    "skills": ["skill_weigh_the_elephant", "skill_benevolent_heart"]
   },
   {
     "id": "jx.WU019",
@@ -991,7 +1025,7 @@
     "traits_cn": ["控制", "辅助", "回复"],
     "traits_en": ["Control", "Support", "Recovery"],
     "expansion": "Limit Break",
-    "skills": ["skill_ganlu", "skill_buyi"]
+    "skills": ["skill_sweet_dew", "skill_nurture"]
   },
   {
     "id": "jx.QUN019",
@@ -1005,7 +1039,11 @@
     "traits_cn": ["控制", "过牌", "爆发"],
     "traits_en": ["Control", "Card Flow", "Burst"],
     "expansion": "Limit Break",
-    "skills": ["skill_mieji", "skill_fencheng", "skill_juece"]
+    "skills": [
+      "skill_suppress_the_plot",
+      "skill_burn_the_city",
+      "skill_ruthless_counsel"
+    ]
   },
   {
     "id": "jx.QUN020",
@@ -1019,7 +1057,7 @@
     "traits_cn": ["防御", "控制", "简单"],
     "traits_en": ["Defensive", "Control", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhuikong", "skill_qiuyuan"]
+    "skills": ["skill_intimidate", "skill_plea_for_aid"]
   },
   {
     "id": "jx.WU020",
@@ -1033,7 +1071,7 @@
     "traits_cn": ["进攻", "控制", "过牌"],
     "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_gongqi", "skill_jiefan"]
+    "skills": ["skill_mounted_archery", "skill_quell_the_trouble"]
   },
   {
     "id": "jx.QUN021",
@@ -1047,7 +1085,7 @@
     "traits_cn": ["防御", "过牌", "发育"],
     "traits_en": ["Defensive", "Card Flow", "Scaling"],
     "expansion": "Limit Break",
-    "skills": ["skill_zishou", "skill_zongshi_jie"]
+    "skills": ["skill_self_preservation", "skill_royal_clan"]
   },
   {
     "id": "jx.WEI018",
@@ -1061,7 +1099,7 @@
     "traits_cn": ["进攻", "防御", "过牌"],
     "traits_en": ["Aggressive", "Defensive", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_luoying", "skill_jiushi"]
+    "skills": ["skill_fallen_blossoms", "skill_wine_and_verse"]
   },
   {
     "id": "jx.SHU017",
@@ -1075,7 +1113,7 @@
     "traits_cn": ["进攻", "回复", "简单"],
     "traits_en": ["Aggressive", "Recovery", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_dangxian", "skill_fuli"]
+    "skills": ["skill_lead_the_charge", "skill_veterans_resolve"]
   },
   {
     "id": "jx.WEI019",
@@ -1103,7 +1141,7 @@
     "traits_cn": ["防御", "过牌", "简单"],
     "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "Limit Break",
-    "skills": ["skill_jingce"]
+    "skills": ["skill_master_strategy"]
   },
   {
     "id": "jx.SHU018",
@@ -1117,7 +1155,7 @@
     "traits_cn": ["进攻", "过牌", "强命"],
     "traits_en": ["Aggressive", "Card Flow", "Sturdy"],
     "expansion": "Limit Break",
-    "skills": ["skill_fuhun"]
+    "skills": ["skill_fathers_legacy"]
   },
   {
     "id": "jx.SHU019",
@@ -1131,7 +1169,7 @@
     "traits_cn": ["进攻", "强命", "加伤"],
     "traits_en": ["Aggressive", "Sturdy", "Damage Boost"],
     "expansion": "Limit Break",
-    "skills": ["skill_mashu", "skill_qianxi"]
+    "skills": ["skill_horsemanship", "skill_qianxi"]
   },
   {
     "id": "jx.QUN022",
@@ -1145,7 +1183,7 @@
     "traits_cn": ["进攻", "防御", "过牌"],
     "traits_en": ["Aggressive", "Defensive", "Card Flow"],
     "expansion": "Limit Break",
-    "skills": ["skill_shibei", "skill_jianying"]
+    "skills": ["skill_loyal_to_a_fault", "skill_steady_camp"]
   },
   {
     "id": "jx.WEI021",
@@ -1159,6 +1197,6 @@
     "traits_cn": ["进攻", "防御", "控制"],
     "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Limit Break",
-    "skills": ["skill_zhenjun", "skill_yizhong"]
+    "skills": ["skill_suppress_the_army", "skill_steadfast_resolve"]
   }
 ]

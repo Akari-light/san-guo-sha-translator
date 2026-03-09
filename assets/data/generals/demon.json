@@ -8,21 +8,10 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Demon",
-    "skills": [
-      "skill_mo_fuzai",
-      "skill_mo_bachao"
-    ],
+    "skills": ["skill_sovereign_realm", "skill_tyrants_decree"],
     "faq": [
       {
         "q_cn": "什么是入魔？",
@@ -65,22 +54,10 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Demon",
-    "skills": [
-      "skill_mo_guifu",
-      "skill_mo_moubian",
-      "skill_mo_zhouxi"
-    ],
+    "skills": ["skill_ambuscade", "skill_final_gambit", "skill_reprisal"],
     "faq": [
       {
         "q_cn": "什么是入魔？",
@@ -135,22 +112,10 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "过牌"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Draw"
-    ],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Draw"],
     "expansion": "Demon",
-    "skills": [
-      "skill_mo_duoqi",
-      "skill_mo_kuangmo",
-      "skill_mo_gangquan"
-    ],
+    "skills": ["skill_seize_qi", "skill_demonic_frenzy", "skill_astral_strike"],
     "faq": [
       {
         "q_cn": "什么是入魔？",
@@ -205,21 +170,10 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Demon",
-    "skills": [
-      "skill_mo_huanhuo",
-      "skill_mo_qingshi"
-    ],
+    "skills": ["skill_bewitch", "skill_alluring"],
     "faq": [
       {
         "q_cn": "什么是入魔？",
