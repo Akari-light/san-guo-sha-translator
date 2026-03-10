@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹植",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "过牌", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "落英",
+        "name_en": "",
+        "description_cn": "当其他角色的梅花牌因弃置或判定而置入弃牌堆后，你可以获得其中任意张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "酒诗",
+        "name_en": "",
+        "description_cn": "你可以将武将牌翻至背面，视为使用一张【酒】。当你受到伤害时，若你的武将牌背面朝上，你可以于受到此伤害后翻至正面。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "高顺",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "陷阵",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合对被拼点者使用牌无距离和次数限制且无视其防具，你使用仅指定唯一目标的【杀】或普通锦囊牌可以多指定其为目标；若你没赢，你本回合不能使用【杀】且你的【杀】不计入手牌上限。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "禁酒",
+        "name_en": "",
+        "description_cn": "锁定技，你的【酒】视为【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陈宫",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "辅助", "多刀"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "明策",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名其他角色一张【杀】或装备牌，然后其选择一项：1.视为对其攻击范围内你选择的另一名角色使用一张【杀】；2.摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "智迟",
+        "name_en": "",
+        "description_cn": "锁定技，当你于回合外受到伤害后，本回合【杀】和普通锦囊牌对你无效。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "凌统",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "拆迁办", "定点输出"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "旋风",
+        "name_en": "",
+        "description_cn": "当你于弃牌阶段弃置过至少两张牌，或失去装备区里的牌后，你可以弃置至多两名其他角色共计至多两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马谡",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "控制", "马参军"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "散谣",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，你可以弃置一张牌对一名体力值/手牌数最大的角色造成1点伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "制蛮",
+        "name_en": "",
+        "description_cn": "当你对其他角色造成伤害时，你可以防止此伤害，然后获得其区域里的一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吴国太",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["控制", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "甘露",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交换两名角色装备区里的牌（两者装备区里牌数之差不大于你已损失体力值，且牌数之和不小于1）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "补益",
+        "name_en": "",
+        "description_cn": "当一名角色进入濒死状态时，你可以展示其一张手牌，若为非基本牌，其弃置之并回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "徐盛",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "破军",
+        "name_en": "",
+        "description_cn": "当你于出牌阶段使用【杀】指定目标后，你可以将其至多X张牌移出游戏直到回合结束（X为其体力值）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "于禁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["控制", "辅助", "于神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "镇军",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以弃置一名角色X张牌（X为其手牌数减体力值且至少为1），然后选择一项：1.你弃置与其中非装备牌数等量张牌；2.其摸与其中非装备牌数等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张春华",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "绝情",
+        "name_en": "",
+        "description_cn": "锁定技，你即将造成的伤害视为失去体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伤逝",
+        "name_en": "",
+        "description_cn": "当你的手牌数小于X后，你可以将手牌摸至X张。（X为你已损失体力值）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹彰",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "将驰",
+        "name_en": "",
+        "description_cn": "摸牌阶段结束时，你可以选择一项：1.摸一张牌，本回合不能使用或打出【杀】且【杀】不计入手牌上限；2.弃置一张牌，本回合使用【杀】的限制次数+1且无距离限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "荀攸",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["卖血", "困难", "转化大师"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "奇策",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将所有手牌当任意普通锦囊牌使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "智愚",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以摸一张牌，然后展示所有手牌，若颜色均相同，伤害来源弃置一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "廖化",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "防御", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "当先",
+        "name_en": "",
+        "description_cn": "锁定技，回合开始时，你执行一个额外的出牌阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伏枥",
+        "name_en": "",
+        "description_cn": "限定技，当你处于濒死状态时，你可以回复至X点体力（X为全场势力数）并翻面。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马岱",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "潜袭",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以摸一张牌并弃置一张牌，然后令距离为1的一名角色本回合不能使用或打出与你弃置牌颜色相同的手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "步练师",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "安恤",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色展示并获得另一名手牌数大于其的其他角色一张手牌，若不为黑桃，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "追忆",
+        "name_en": "",
+        "description_cn": "当你死亡时，你可以令一名其他角色（杀死你的角色除外）摸三张牌并回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "程普",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "辅助", "发育"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "疠火",
+        "name_en": "",
+        "description_cn": "你使用的普通【杀】可以视为火【杀】，若此牌造成伤害，你失去1点体力。你使用的火【杀】可以多指定一个目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "醇醪",
+        "name_en": "",
+        "description_cn": "结束阶段，若你没有“醇”，你可以将任意张【杀】置于你的武将牌上，称为“醇”。当一名角色处于濒死状态时，你可以移去一张“醇”，然后其视为使用一张【酒】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "韩当",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "爆发"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "弓骑",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张牌令你本回合攻击范围无限，若弃置牌为装备牌，你可以弃置一名其他角色一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "解烦",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以选择一名角色，令所有攻击范围内包含其的角色各选择一项：1.弃置一张武器牌；2.令其摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "将华雄",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "简单", "上限超高"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "恃勇",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到红色【杀】或【酒】【杀】造成的伤害后，你减少1点体力上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘表",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "过牌", "发育"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "自守",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以多摸X张牌（X为全场势力数），然后防止你本回合对其他角色造成的伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "宗室",
+        "name_en": "",
+        "description_cn": "锁定技，你的手牌上限+X（X为全场势力数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "钟会",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "过牌", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "权计",
+        "name_en": "",
+        "description_cn": "当你受到1点伤害后，你可以摸一张牌，然后将一张手牌置于你的武将牌上，称为“权”。你的手牌上限+X（X为“权”的数量）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "自立",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你“权”的数量不小于3，你回复1点体力或摸两张牌，然后减少1点体力上限，获得“排异”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹冲",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "称象",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以亮出牌堆顶四张牌，获得其中任意张点数和不大于13的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "仁心",
+        "name_en": "",
+        "description_cn": "当体力值为1的其他角色受到伤害时，你可以弃置一张装备牌并翻面，然后防止此伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭淮",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["过牌", "简单", "精策神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "精策",
+        "name_en": "",
+        "description_cn": "你每于回合内使用一种花色的手牌，本回合手牌上限便+1。出牌阶段结束时，你可以摸X张牌（X为你本回合使用过牌的类型数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "满宠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "峻刑",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置任意张手牌并令一名其他角色选择一项：1.弃置一张与你弃置牌类型皆不同的手牌；2.翻面，然后摸与你弃置牌数等量张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "御策",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以展示一张手牌令伤害来源选择一项：1.弃置一张与你展示牌类型不同的手牌；2.你回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "关平",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "辅助", "多刀"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "龙吟",
+        "name_en": "",
+        "description_cn": "当一名角色于其出牌阶段内使用【杀】时，你可以弃置一张牌，令此【杀】不计入此阶段使用次数，若此【杀】为红色，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "简雍",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["控制", "简单", "拼点"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "巧说",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以拼点：若你赢，你本回合使用的下一张牌可以多指定或少指定一个目标（至少指定一个目标）；若你没赢，你本回合不能使用锦囊牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "纵适",
+        "name_en": "",
+        "description_cn": "当你拼点赢时，你可以获得点数较小的拼点牌；当你拼点没赢时，你可以获得你的拼点牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘封",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "简单", "拆迁办"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "陷嗣",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以将至多两名角色的各一张牌置于你的武将牌上，称为“逆”。其他角色可以移去两张“逆”视为对你使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "潘璋马忠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "夺刀",
+        "name_en": "",
+        "description_cn": "当其他角色使用【杀】对你造成伤害后，你可以弃置一张牌获得其装备区里的武器牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "暗箭",
+        "name_en": "",
+        "description_cn": "锁定技，当你使用【杀】对目标角色造成伤害时，若你不在其攻击范围内，此伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "虞翻",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "纵玄",
+        "name_en": "",
+        "description_cn": "当你的牌因弃置而置入弃牌堆后，你可以将其中任意张牌置于牌堆顶。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "直言",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令一名角色摸一张牌并展示之，若为装备牌，其使用之并回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "朱然",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "辅助", "到此为止了"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "胆守",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置X张牌并选择你攻击范围内的一名其他角色（X为你本阶段发动本技能的次数），若X为：1，你弃置其一张牌；2，其交给你一张牌；3，你对其造成1点伤害；不小于4，你与其各摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "伏皇后",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["防御", "控制", "配合神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "惴恐",
+        "name_en": "",
+        "description_cn": "其他角色的回合开始时，若你已受伤，你可以与其拼点：若你赢，其本回合不能对除其以外的角色使用牌；若你没赢，其本回合与你的距离视为1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "求援",
+        "name_en": "",
+        "description_cn": "当你成为【杀】的目标时，你可以令另一名其他角色选择一项：1.交给你一张【闪】；2.成为此【杀】的额外目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李儒",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "灭计",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将一张黑色锦囊牌置于牌堆顶并令一名有手牌的其他角色选择一项：1.弃置一张锦囊牌；2.依次弃置两张非锦囊牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "绝策",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以对一名没有手牌的其他角色造成1点伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "焚城",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以令所有其他角色依次选择一项：1.弃置任意张牌（须比上家弃置的牌多）；2.受到你造成的2点火焰伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "法正",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "辅助", "配合神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "恩怨",
+        "name_en": "",
+        "description_cn": "当你获得一名其他角色至少两张牌后，你可以令其摸一张牌。当你受到1点伤害后，你可以令伤害来源选择一项：1.交给你一张手牌；2.失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "眩惑",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以改为令一名其他角色摸两张牌，令其选择一项：1.对其攻击范围内你指定的另一名角色使用一张【杀】；2.你获得其两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "徐庶",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": ["防御", "辅助", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "无言",
+        "name_en": "",
+        "description_cn": "锁定技，防止你使用和受到的锦囊牌造成的伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "举荐",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以弃置一张非基本牌并令一名其他角色选择一项：1.摸两张牌；2.回复1点体力；3.复原其武将牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王异",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "贞烈",
+        "name_en": "",
+        "description_cn": "当你成为【杀】或普通锦囊牌的目标后，你可以失去1点体力令此牌对你无效，然后你弃置使用者一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "秘计",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以摸X张牌（X为你已损失体力值），然后你可以交给其他角色X张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "关兴张苞",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "简单", "加伤"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "父魂",
+        "name_en": "",
+        "description_cn": "你可以将两张手牌当【杀】使用或打出。当你于出牌阶段以此法造成伤害后，你本回合获得“武圣”“咆哮”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹真",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "控制", "山河图专属"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "司敌",
+        "name_en": "",
+        "description_cn": "其他角色出牌阶段开始时，你可以弃置一张与你装备区里任意牌颜色相同的非基本牌，令其本阶段不能使用和打出与此牌颜色相同的牌，然后此阶段结束时，若其本阶段未使用过【杀】，你视为对其使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "韩浩史涣",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "控制", "判定"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "慎断",
+        "name_en": "",
+        "description_cn": "当你的一张黑色基本牌被弃置后，你可以将此牌当无距离限制的【兵粮寸断】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "勇略",
+        "name_en": "",
+        "description_cn": "其他角色判定阶段开始时，若其在你的攻击范围内，你可以弃置其判定区里的一张牌视为对其使用一张【杀】，若此【杀】未造成伤害，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陈群",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["控制", "辅助", "连环状态"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "品第",
+        "name_en": "",
+        "description_cn": "出牌阶段，每名角色限一次，你可以弃置一张本阶段未以此法弃置过的类型的牌，令一名其他角色摸X张牌或弃置X张牌（X为本回合本技能发动次数），若其已受伤，你进入连环状态。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "法恩",
+        "name_en": "",
+        "description_cn": "当一名角色翻至正面或进入连环状态后，你可以令其摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吴懿",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "奔袭",
+        "name_en": "",
+        "description_cn": "锁定技，当你于回合内使用牌时，你本回合计算与其他角色的距离-1。当你于回合内使用仅指定单一目标的【杀】或普通锦囊牌时，若你与所有其他角色的距离均为1，你依次选择至多两项，令此牌：1.目标数+1；2.无视防具；3.不能被抵消；4.造成伤害后，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "周仓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "辅助", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "忠勇",
+        "name_en": "",
+        "description_cn": "当你使用【杀】后，你可以将此【杀】或目标角色响应的【闪】交给一名其他角色，若此牌为红色，其可以对你攻击范围内一名角色使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张松",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["过牌", "辅助", "光头强"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "强识",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以展示一名其他角色一张手牌，然后当你本阶段使用与展示牌类型相同的牌时，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "献图",
+        "name_en": "",
+        "description_cn": "其他角色出牌阶段开始时，你可以摸两张牌，然后交给其两张牌，此阶段结束时，若其此阶段未杀死过角色，你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙鲁班",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["进攻", "防御", "减目标"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "谮毁",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你使用【杀】或黑色普通锦囊牌指定唯一目标时，你可以令另一名能成为此牌目标的角色选择一项：1.交给你一张牌并代替你成为此牌的使用者；2.成为此牌的额外目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骄矜",
+        "name_en": "",
+        "description_cn": "当男性角色对你造成伤害时，你可以弃置一张装备牌，然后此伤害-1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "朱桓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "定点输出", "不怕控制"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "奋励",
+        "name_en": "",
+        "description_cn": "若你的手牌数为全场最多，你可以跳过摸牌阶段；若你的体力值为全场最多，你可以跳过出牌阶段；若你的装备区里有牌且数量为全场最多，你可以跳过弃牌阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "平寇",
+        "name_en": "",
+        "description_cn": "回合结束后，你可以对至多X名其他角色各造成1点伤害（X为你本回合跳过的阶段数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "顾雍",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["过牌", "辅助", "配合神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "慎行",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置两张牌，然后摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "秉壹",
+        "name_en": "",
+        "description_cn": "每阶段限一次，当你的牌因弃置置入弃牌堆后，你可以展示所有手牌：若颜色均相同，你可以与至多X名其他角色各摸一张牌（X为你的手牌数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "沮授",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": ["防御", "过牌", "巨兽"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "渐营",
+        "name_en": "",
+        "description_cn": "当你于出牌阶段使用牌时，若此牌的点数或花色与你本阶段使用的上一张牌相同，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "矢北",
+        "name_en": "",
+        "description_cn": "锁定技，当你每回合首次受到伤害后，你回复1点体力，然后当你本回合再受到伤害后，你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蔡夫人",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "过牌", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "窃听",
+        "name_en": "",
+        "description_cn": "其他角色的回合结束后，若其本回合未对其他角色使用过牌，你可以选择一项：1.将其装备区里的一张牌置入你的装备区；2.摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "献州",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以将你装备区里的所有牌交给一名其他角色，然后其选择一项：1.令你回复X点体力；2.对其攻击范围内至多X名角色各造成1点伤害。（X为你给出的牌数）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹叡",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "恢拓",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以令一名角色判定，若结果为：红色，其回复1点体力；黑色，其摸与此伤害值等量张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "明鉴",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名其他角色所有手牌，然后其下回合手牌上限+1且使用【杀】的限制次数+1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "兴衰",
+        "name_en": "",
+        "description_cn": "主公技，限定技，当你进入濒死状态时，你可以令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹休",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "简单", "加伤"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "千驹",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-X（X为你已损失体力值）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "倾袭",
+        "name_en": "",
+        "description_cn": "当你使用【杀】对目标角色造成伤害时，若你的装备区里有武器牌，你可以令其选择一项：1.弃置与此牌攻击范围等量张数的手牌，然后弃置此牌；2.令此【杀】伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "钟繇",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "辅助", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "活墨",
+        "name_en": "",
+        "description_cn": "你可以将一张黑色非基本牌置于牌堆顶，视为使用一张与你本回合使用过的牌牌名不同的基本牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "佐定",
+        "name_en": "",
+        "description_cn": "当其他角色在其出牌阶段使用黑桃牌指定目标后，若本阶段没有角色受到过伤害，你可以令其中一个目标摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘谌",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "过牌", "爆发"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "战绝",
+        "name_en": "",
+        "description_cn": "你可以将所有手牌当【决斗】使用，然后你与因此受伤的角色各摸一张牌，若你本阶段以此法摸过至少两张牌，本技能失效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "勤王",
+        "name_en": "",
+        "description_cn": "主公技，你可以弃置一张牌发动“激将”，响应此“激将”使用或打出【杀】的角色摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "夏侯氏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["过牌", "辅助", "断杀"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "樵拾",
+        "name_en": "",
+        "description_cn": "其他角色的结束阶段，若你与其手牌数相等，你可以与其各摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "燕语",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以重铸【杀】。出牌阶段结束时，若你于本阶段重铸过至少两张【杀】，你可以令一名男性角色摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张嶷",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "转化大师"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "怃戎",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以和一名其他角色同时展示一张手牌：若你的展示牌为【杀】且其展示牌不为【闪】，你弃置此【杀】并对其造成1点伤害；若你的展示牌不为【杀】且其展示牌为【闪】，你弃置此牌并获得其一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "矢志",
+        "name_en": "",
+        "description_cn": "锁定技，若你的体力值为1，你的【闪】视为【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙休",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "辅助", "发育"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "宴诛",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1.你获得其装备区里的所有牌，失去本技能并修改“兴学”；2.弃置一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "兴学",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令至多X名角色依次摸一张牌并将一张牌置于牌堆顶（X为你的体力值）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "诏缚",
+        "name_en": "",
+        "description_cn": "主公技，限定技，出牌阶段，你可以选择至多两名角色，本局以此法选择的角色视为在所有其他吴势力角色的攻击范围内。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "朱治",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "辅助", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "安国",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以选择一名其他角色，若其：手牌数全场最少，其摸一张牌；体力值全场最低，其回复1点体力；装备区里牌数全场最少，其随机使用一张装备牌。然后你执行其未满足但你满足条件的效果。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "全琮",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "邀名",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你造成或受到伤害后，你可以选择一项：1.弃置手牌数大于你的一名角色一张手牌；2.令手牌数小于你的一名角色摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "公孙渊",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "多刀", "全场打击"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "怀异",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示所有手牌，弃置其中一种颜色的牌，然后获得至多X名角色的各一张牌（X为弃置的手牌数）。若你以此法获得了至少两张牌，你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭图逢纪",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "过牌", "配合神将"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "急攻",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以摸两张牌，然后你本回合手牌上限等于你本阶段造成的伤害值。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "饰非",
+        "name_en": "",
+        "description_cn": "当你需要使用或打出【闪】时，你可以令当前回合角色摸一张牌，若其不是手牌数全场唯一最多的角色，你弃置最多的角色一张牌，视为你使用或打出一张【闪】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭皇后",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "防御", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "矫诏",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示一张手牌，然后令你距离最近的角色声明一种基本牌，你本回合可以将展示牌当声明的牌使用（不能对自己使用）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "殚心",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以摸一张牌或修改“矫诏”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李严",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "控制", "持久"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "督粮",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以获得一名其他角色一张手牌并选择一项：1.令其观看牌堆顶的两张牌，获得其中的基本牌；2.令其下回合摸牌阶段多摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "腹鳞",
+        "name_en": "",
+        "description_cn": "锁定技，弃牌阶段，你于本回合获得的牌不计入手牌上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙登",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "匡弼",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色将至多三张牌置于你的武将牌上，若如此做，你的下个回合开始时获得所有“匡弼”牌，然后其摸等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘虞",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "简单"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "止戈",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，若你的手牌数大于体力值，你可以令攻击范围内包含你的一名角色选择一项：1.使用一张【杀】；2.交给你一张装备区里的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "宗祚",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你增加X点体力上限和体力值（X为全场势力数）。当某势力最后一名角色死亡后，你减少1点体力上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "岑昏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "过牌", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "极奢",
+        "name_en": "",
+        "description_cn": "出牌阶段，若你的手牌上限大于0，你可以摸一张牌，令你本回合手牌上限-1。结束阶段，若你没有手牌，你可以令至多X名角色进入连环状态（X为你的体力值）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "链祸",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到火焰伤害时，若你处于连环状态且是传导伤害的起点，此伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙资刘放",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["防御", "控制", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "瑰藻",
+        "name_en": "",
+        "description_cn": "若你于弃牌阶段弃置过至少两张牌且这些牌花色均不相同，你可以回复1点体力或摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "讥谀",
+        "name_en": "",
+        "description_cn": "出牌阶段，每名角色限一次，若你有可以使用的手牌，你可以令一名角色弃置一张手牌，然后你本回合不能使用与之相同花色的牌，若此牌为黑桃，其失去1点体力，你翻面。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄皓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "卖血"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "寝情",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以选择任意名攻击范围内包含主公的角色，依次弃置其一张牌，然后令其各摸一张牌，若如此做，你摸X张牌（X为其中手牌比主公多的角色数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "贿生",
+        "name_en": "",
+        "description_cn": "当你受到其他角色造成的伤害时，你可以令其观看你任意张牌并令其选择一项：1.获得其中一张，防止此伤害，然后你本局不能对其发动本技能；2.弃置等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张让",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": ["过牌", "困难", "爆发"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "滔乱",
+        "name_en": "",
+        "description_cn": "你可以将一张牌当任意基本牌或普通锦囊牌使用（每种牌名限一次，且场上无人处于濒死状态），然后令一名其他角色选择一项：1.交给你一张与“滔乱”牌类型不同的牌；2.你失去1点体力，本回合本技能失效。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "辛宪英",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "过牌", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "忠鉴",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示一张手牌，然后展示一名其他角色与其体力值等量张手牌，若其展示牌包含：与你展示牌颜色相同的牌，你摸一张牌或弃置一名其他角色一张牌；与你展示牌点数相同的牌，本回合本技能改为限两次。若皆不包含，你的手牌上限-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "才识",
+        "name_en": "",
+        "description_cn": "摸牌阶段开始时，你可以选择一项：1.手牌上限+1；2.回复1点体力，本回合不能对自己使用牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吴苋",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "过牌"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "福绵",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以选择一项：1.摸牌阶段，你多摸1张牌；2.本回合限一次，你使用红色基本牌和红色普通锦囊牌可以多指定1个目标（无距离限制）。下次选择另一项时数值+1并复原本技能。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "怠宴",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令一名其他角色获得牌堆中一张红桃基本牌，然后若你上回合对其发动过本技能，其失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "徐氏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "过牌", "爆发"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "问卦",
+        "name_en": "",
+        "description_cn": "每名角色出牌阶段限一次，其可以选择一张牌，将之交给你，然后你可以将此牌置于牌堆顶或牌堆底，你与其各从另一端摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伏诛",
+        "name_en": "",
+        "description_cn": "每名男性角色的结束阶段，若牌堆剩余牌数不大于你体力值的十倍，你可以依次对其使用牌堆中所有【杀】（不能超过游戏人数），然后洗牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹节",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "辅助", "连环状态"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "守玺",
+        "name_en": "",
+        "description_cn": "当你成为【杀】的目标后，你可以声明一种非装备牌的牌名（每种牌名限一次），令使用者选择一项：1.弃置一张你声明的牌，并获得你一张牌；2.令此【杀】无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "惠民",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以摸X张牌（X为手牌数小于体力值的角色数），然后展示等量手牌，从你选择的一名角色开始依次获得其中一张。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "嵇康",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": ["辅助", "卖血", "回复"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "清弦",
+        "name_en": "",
+        "description_cn": "当你受到伤害/回复体力后，若没有角色处于濒死状态，你可以令伤害来源/一名其他角色执行一项：1.失去1点体力，随机使用一张装备牌；2.回复1点体力，弃置一张装备牌。若其使用或弃置的牌为梅花牌，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "绝响",
+        "name_en": "",
+        "description_cn": "当你死亡时，你可以令一名角色随机获得以下一个技能：“和弦”“柔弦”“烈弦”“激弦”。然后直到其下回合开始，其不能成为其他角色使用梅花牌的目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "秦宓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "谏征",
+        "name_en": "",
+        "description_cn": "当其他角色使用【杀】指定其他角色为目标时，若你在使用者的攻击范围内，你可以将一张手牌置于牌堆顶，取消所有目标，然后若此【杀】不为黑色，你成为目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "专对",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后，你可以与其拼点，若你赢，其不能响应此【杀】；当你成为【杀】的目标后，你可以与使用者拼点，若你赢，此【杀】对你无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "天辩",
+        "name_en": "",
+        "description_cn": "当你拼点时，你可以用牌堆顶的牌拼点。你的红桃拼点牌的点数视为K。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "薛综",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["控制", "过牌", "发育"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "复难",
+        "name_en": "",
+        "description_cn": "当其他角色响应你使用的牌时，你可以令其获得此牌，其本回合不能使用或打出此牌，然后你获得其响应时使用或打出的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "诫训",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令一名其他角色：摸与场上方片牌数等量张牌，然后弃置X张牌（X为此前本技能发动次数），若其因此弃置了所有牌，你失去本技能并修改“复难”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蔡邕",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["防御", "过牌", "花色爱好者"],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "辟撰",
+        "name_en": "",
+        "description_cn": "当你使用黑桃牌或成为其他角色黑桃牌的目标后，你可以将牌堆顶的一张牌置于你的武将牌上，称为“书”（至多四张）。你的手牌上限+X（X为你“书”的数量）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "通博",
+        "name_en": "",
+        "description_cn": "摸牌阶段结束后，你可以用任意张牌替换等量张“书”，然后若你的“书”包含四种花色，你将所有“书”交给任意名其他角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  }
+]

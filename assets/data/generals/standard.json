@@ -1,3 +1,692 @@
 [
-    
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘备",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["辅助", "回复", "配合神将"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "仁德",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以将任意张手牌交给其他角色，然后你本阶段以此法给出第二张牌或更多时，你回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "激将",
+        "name_en": "",
+        "description_cn": "主公技，其他蜀势力角色可以在你需要时代替你使用或打出【杀】（视为由你使用或打出）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "关羽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "简单", "转化大师"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "武圣",
+        "name_en": "",
+        "description_cn": "你可以将一张红色牌当【杀】使用或打出。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张飞",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "简单", "多刀"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "咆哮",
+        "name_en": "",
+        "description_cn": "锁定技，你使用【杀】无次数限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "诸葛亮",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "观星",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以观看牌堆顶的X张牌（X为存活角色数且至多为5），然后以任意顺序置于牌堆顶或牌堆底。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "空城",
+        "name_en": "",
+        "description_cn": "锁定技，若你没有手牌，你不能成为【杀】或【决斗】的目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "赵云",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "龙胆",
+        "name_en": "",
+        "description_cn": "你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马超",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "铁骑",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后，你可以判定，若为红色，其不能使用【闪】响应此【杀】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄月英",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["过牌", "简单", "爆发"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "集智",
+        "name_en": "",
+        "description_cn": "当你使用普通锦囊牌时，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "奇才",
+        "name_en": "",
+        "description_cn": "锁定技，你使用锦囊牌无距离限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙权",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["过牌", "发育", "主公技"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "制衡",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置任意张牌，然后摸等量张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "救援",
+        "name_en": "",
+        "description_cn": "主公技，锁定技，其他吴势力角色对你使用【桃】的回复值+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "甘宁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["控制", "简单", "转化大师"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "奇袭",
+        "name_en": "",
+        "description_cn": "你可以将一张黑色牌当【过河拆桥】使用。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕蒙",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "发育", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "克己",
+        "name_en": "",
+        "description_cn": "若你未于本回合出牌阶段使用或打出过【杀】，你可以跳过弃牌阶段。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄盖",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": ["过牌", "简单", "多刀"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "苦肉",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以失去1点体力，然后摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "周瑜",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "过牌", "惟贤惟德"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "英姿",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以多摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "反间",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一种花色，令其获得并展示你的一张手牌，若此牌花色与其选择的花色不同，你对其造成1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "大乔",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "持久"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "国色",
+        "name_en": "",
+        "description_cn": "你可以将一张方片牌当【乐不思蜀】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "流离",
+        "name_en": "",
+        "description_cn": "当你成为【杀】的目标时，你可以弃置一张牌并将此【杀】转移给你攻击范围内的一名其他角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陆逊",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "谦逊",
+        "name_en": "",
+        "description_cn": "锁定技，你不能成为【顺手牵羊】和【乐不思蜀】的目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "连营",
+        "name_en": "",
+        "description_cn": "当你失去最后的手牌后，你可以摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹操",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "卖血", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "奸雄",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以获得造成此伤害的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "护驾",
+        "name_en": "",
+        "description_cn": "主公技，其他魏势力角色可以在你需要时代替你使用或打出【闪】（视为由你使用或打出）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "司马懿",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "卖血"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "反馈",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以获得伤害来源的一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鬼才",
+        "name_en": "",
+        "description_cn": "当一张判定牌生效前，你可以用一张手牌代替之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "夏侯惇",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "卖血", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "刚烈",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以判定，若结果不为红桃，伤害来源选择弃置两张手牌或受到1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张辽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "简单", "持久"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "突袭",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以改为获得至多两名角色的各一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "许褚",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "简单", "加伤"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "裸衣",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以少摸一张牌，然后你本回合使用【杀】或【决斗】造成的伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭嘉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": ["防御", "辅助", "卖血"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "天妒",
+        "name_en": "",
+        "description_cn": "当你的判定牌生效后，你可以获得此牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "遗计",
+        "name_en": "",
+        "description_cn": "当你受到1点伤害后，你可以观看牌堆顶的两张牌，然后将这些牌交给任意角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "甄姬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "洛神",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以判定，若结果为黑色，你获得此牌，然后你可以重复此流程。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "倾国",
+        "name_en": "",
+        "description_cn": "你可以将一张黑色手牌当【闪】使用或打出。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "华佗",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["辅助", "回复", "简单"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "急救",
+        "name_en": "",
+        "description_cn": "在你的回合外，你可以将一张红色牌当【桃】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "青囊",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张手牌令一名角色回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕布",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "无双",
+        "name_en": "",
+        "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "貂蝉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "过牌", "锦囊大师"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "闭月",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "离间",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张牌令一名男性角色视为对另一名男性角色使用一张【决斗】（不能被【无懈可击】抵消）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙尚香",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["过牌", "辅助", "回复"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "枭姬",
+        "name_en": "",
+        "description_cn": "当你失去装备区里的一张牌后，你可以摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "结姻",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置两张手牌，令你与一名已受伤的男性角色各回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "华雄",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "简单", "颜色爱好者"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "耀武",
+        "name_en": "",
+        "description_cn": "锁定技，当一名角色使用红色【杀】对你造成伤害时，其选择回复1点体力或摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "标袁术",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": [],
+    "expansion": "Standard",
+    "skills": [
+      {
+        "name_cn": "妄尊",
+        "name_en": "",
+        "description_cn": "主公的准备阶段，你可以摸一张牌，然后令其本回合手牌上限-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "同疾",
+        "name_en": "",
+        "description_cn": "锁定技，若你的手牌数大于体力值，攻击范围内包含你的其他角色使用【杀】不能指定除你外的角色为目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  }
 ]
