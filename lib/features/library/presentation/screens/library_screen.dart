@@ -175,6 +175,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                           card: card,
                           onTap: () {
                             if (widget.onCardTap != null) {
+                              // main.dart records the view then pushes the detail.
                               widget.onCardTap!(card.id, RecordType.library);
                             } else {
                               Navigator.push(
