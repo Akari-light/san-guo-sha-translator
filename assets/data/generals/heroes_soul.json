@@ -1,1932 +1,1932 @@
 [
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI026",
+    "standard_id": "char_caozhi",
     "name_cn": "曹植",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Zhi",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "落英",
-        "name_en": "",
+        "name_en": "Falling Blossoms",
         "description_cn": "当其他角色的梅花牌因弃置或判定而置入弃牌堆后，你可以获得其中任意张牌。",
-        "description_en": ""
+        "description_en": "When you use [Kill], you may discard 1 card. If you do, this [Kill] deals fire damage."
       },
       {
         "name_cn": "酒诗",
-        "name_en": "",
+        "name_en": "Wine Verses",
         "description_cn": "你可以将武将牌翻至背面，视为使用一张【酒】。当你受到伤害时，若你的武将牌背面朝上，你可以于受到此伤害后翻至正面。",
-        "description_en": ""
+        "description_en": "End Phase: You may reveal the top card of the deck. If its suit matches a card in your hand, gain it and repeat. Otherwise, keep the revealed card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN029",
+    "standard_id": "char_gaoshun",
     "name_cn": "高顺",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Gao Shun",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "陷阵",
-        "name_en": "",
+        "name_en": "Breach the Lines",
         "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合对被拼点者使用牌无距离和次数限制且无视其防具，你使用仅指定唯一目标的【杀】或普通锦囊牌可以多指定其为目标；若你没赢，你本回合不能使用【杀】且你的【杀】不计入手牌上限。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Use 1 [Kill] with no distance limit that cannot be cancelled by [Dodge] (the target may take damage instead of dodging)."
       },
       {
         "name_cn": "禁酒",
-        "name_en": "",
+        "name_en": "Temperance",
         "description_cn": "锁定技，你的【酒】视为【杀】。",
-        "description_en": ""
+        "description_en": "Locked Skill: You cannot use [Wine]. When you would be required to use [Wine], gain 1 [Wine] instead."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN028",
+    "standard_id": "char_chen_gong",
     "name_cn": "陈宫",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Chen Gong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "辅助", "多刀"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Multi-Strike"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "明策",
-        "name_en": "",
+        "name_en": "Wise Counsel",
         "description_cn": "出牌阶段限一次，你可以交给一名其他角色一张【杀】或装备牌，然后其选择一项：1.视为对其攻击范围内你选择的另一名角色使用一张【杀】；2.摸一张牌。",
-        "description_en": ""
+        "description_en": "Action Phase: Choose a character. They either play a non-[Kill] card for you or give you 1 hand card. If they play a [Kill], draw 2 cards."
       },
       {
         "name_cn": "智迟",
-        "name_en": "",
+        "name_en": "Delayed Wisdom",
         "description_cn": "锁定技，当你于回合外受到伤害后，本回合【杀】和普通锦囊牌对你无效。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your Action Phase begins 1 turn later than normal."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU021",
+    "standard_id": "char_lingtong",
     "name_cn": "凌统",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Ling Tong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["控制", "拆迁办", "定点输出"],
-    "traits_en": [],
+    "traits_en": ["Control", "Disruptor", "Targeted Damage"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "旋风",
-        "name_en": "",
+        "name_en": "Whirlwind",
         "description_cn": "当你于弃牌阶段弃置过至少两张牌，或失去装备区里的牌后，你可以弃置至多两名其他角色共计至多两张牌。",
-        "description_en": ""
+        "description_en": "Action Phase: Use 1 [Kill] targeting up to 2 characters simultaneously."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU022",
+    "standard_id": "char_masu",
     "name_cn": "马谡",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Ma Su",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["进攻", "控制", "马参军"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "马参军"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "散谣",
-        "name_en": "",
+        "name_en": "Scatter Rumors",
         "description_cn": "出牌阶段各限一次，你可以弃置一张牌对一名体力值/手牌数最大的角色造成1点伤害。",
-        "description_en": ""
+        "description_en": "When another character uses a non-delay tool card, you may discard 1 card to place 1 of their cards on top of the deck."
       },
       {
         "name_cn": "制蛮",
-        "name_en": "",
+        "name_en": "Tame the Barbarians",
         "description_cn": "当你对其他角色造成伤害时，你可以防止此伤害，然后获得其区域里的一张牌。",
-        "description_en": ""
+        "description_en": "When you deal damage to a character, you may give them 1 hand card and have them skip their next turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU024",
+    "standard_id": "char_wuguotai",
     "name_cn": "吴国太",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Lady Wu",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["控制", "辅助", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "甘露",
-        "name_en": "",
+        "name_en": "Sweet Dew",
         "description_cn": "出牌阶段限一次，你可以交换两名角色装备区里的牌（两者装备区里牌数之差不大于你已损失体力值，且牌数之和不小于1）。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Move an equipment card from one character's equipment area to another's."
       },
       {
         "name_cn": "补益",
-        "name_en": "",
+        "name_en": "Nurture",
         "description_cn": "当一名角色进入濒死状态时，你可以展示其一张手牌，若为非基本牌，其弃置之并回复1点体力。",
-        "description_en": ""
+        "description_en": "When you use [Peach] or [Wine], the recovery target may draw 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU020",
+    "standard_id": "char_xusheng",
     "name_cn": "徐盛",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Xu Sheng",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "破军",
-        "name_en": "",
+        "name_en": "Shatter the Army",
         "description_cn": "当你于出牌阶段使用【杀】指定目标后，你可以将其至多X张牌移出游戏直到回合结束（X为其体力值）。",
-        "description_en": ""
+        "description_en": "Action Phase: Use 1 [Kill] targeting all other characters."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI024",
+    "standard_id": "char_yujin",
     "name_cn": "于禁",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Yu Jin",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 1.5,
     "traits_cn": ["控制", "辅助", "于神将"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "于神将"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "镇军",
-        "name_en": "",
+        "name_en": "Suppress the Army",
         "description_cn": "准备阶段，你可以弃置一名角色X张牌（X为其手牌数减体力值且至少为1），然后选择一项：1.你弃置与其中非装备牌数等量张牌；2.其摸与其中非装备牌数等量张牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose a character. Until the end of this round, their [Kill] limit is 1 and may only target you."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI027",
+    "standard_id": "char_zhangchunhua",
     "name_cn": "张春华",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhang Chunhua",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "绝情",
-        "name_en": "",
+        "name_en": "Heartless",
         "description_cn": "锁定技，你即将造成的伤害视为失去体力。",
-        "description_en": ""
+        "description_en": "When another character's hand card is discarded to the pile, you may place it on your character card as a \"Keepsake.\" Your hand limit equals your Keepsake count. When you take damage, remove all Keepsakes."
       },
       {
         "name_cn": "伤逝",
-        "name_en": "",
+        "name_en": "Mourn the Departed",
         "description_cn": "当你的手牌数小于X后，你可以将手牌摸至X张。（X为你已损失体力值）",
-        "description_en": ""
+        "description_en": "Action Phase: Discard all Keepsakes and deal 1 damage to a character for each one discarded."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI029",
+    "standard_id": "char_caozhang",
     "name_cn": "曹彰",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Zhang",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 1.5,
     "traits_cn": ["进攻", "过牌", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "将驰",
-        "name_en": "",
+        "name_en": "Cavalry Charge",
         "description_cn": "摸牌阶段结束时，你可以选择一项：1.摸一张牌，本回合不能使用或打出【杀】且【杀】不计入手牌上限；2.弃置一张牌，本回合使用【杀】的限制次数+1且无距离限制。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Compete in points. If you win, use 1 [Kill] targeting all characters within your attack range."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI020",
+    "standard_id": "char_xunyou",
     "name_cn": "荀攸",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Xun You",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["卖血", "困难", "转化大师"],
-    "traits_en": [],
+    "traits_en": ["Glass Cannon", "High Difficulty", "Converter"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "奇策",
-        "name_en": "",
+        "name_en": "Arcane Stratagem",
         "description_cn": "出牌阶段限一次，你可以将所有手牌当任意普通锦囊牌使用。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Reveal your hand. Each suit present counts as one card type; treat your hand as containing each of those types this phase."
       },
       {
         "name_cn": "智愚",
-        "name_en": "",
+        "name_en": "Blunt Counsel",
         "description_cn": "当你受到伤害后，你可以摸一张牌，然后展示所有手牌，若颜色均相同，伤害来源弃置一张手牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your hand limit equals the number of unique suits among your hand cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU027",
+    "standard_id": "char_liaohua",
     "name_cn": "廖化",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Liao Hua",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "防御", "回复"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Defensive", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "当先",
-        "name_en": "",
+        "name_en": "Lead the Charge",
         "description_cn": "锁定技，回合开始时，你执行一个额外的出牌阶段。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Use [Kill] without count or distance restrictions."
       },
       {
         "name_cn": "伏枥",
-        "name_en": "",
+        "name_en": "Veteran's Resolve",
         "description_cn": "限定技，当你处于濒死状态时，你可以回复至X点体力（X为全场势力数）并翻面。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you skip your Draw Phase, draw 3 cards at the start of your next turn instead."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU019",
+    "standard_id": "char_madai",
     "name_cn": "马岱",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Ma Dai",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 1.5,
     "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "马术",
-        "name_en": "",
+        "name_en": "Horsemanship",
         "description_cn": "锁定技，你计算与其他角色的距离-1。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your distance to other characters is calculated as -1."
       },
       {
         "name_cn": "潜袭",
-        "name_en": "",
+        "name_en": "Ambush",
         "description_cn": "准备阶段，你可以摸一张牌并弃置一张牌，然后令距离为1的一名角色本回合不能使用或打出与你弃置牌颜色相同的手牌。",
-        "description_en": ""
+        "description_en": "When you use [Kill] targeting a character who is within their own attack range of you, if they have equipment, you may discard 1 of their equipment cards; this [Kill] then cannot be cancelled."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU026",
+    "standard_id": "char_buliangshi",
     "name_cn": "步练师",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Bu Lianshi",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["控制", "辅助", "简单"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "安恤",
-        "name_en": "",
+        "name_en": "Comfort",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色展示并获得另一名手牌数大于其的其他角色一张手牌，若不为黑桃，你摸一张牌。",
-        "description_en": ""
+        "description_en": "When another character takes damage, you may discard 1 card. If you do, they draw 1 card."
       },
       {
         "name_cn": "追忆",
-        "name_en": "",
+        "name_en": "Reminisce",
         "description_cn": "当你死亡时，你可以令一名其他角色（杀死你的角色除外）摸三张牌并回复1点体力。",
-        "description_en": ""
+        "description_en": "End Phase: You may reveal 1 hand card. If another character has a card with the same name in their area, you gain both."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU027",
+    "standard_id": "char_chengpu",
     "name_cn": "程普",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cheng Pu",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "辅助", "发育"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Support", "Scaling"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "疠火",
-        "name_en": "",
+        "name_en": "Plague Fire",
         "description_cn": "你使用的普通【杀】可以视为火【杀】，若此牌造成伤害，你失去1点体力。你使用的火【杀】可以多指定一个目标。",
-        "description_en": ""
+        "description_en": "When you use [Peach], it is treated as fire damage to all other characters instead of recovering health."
       },
       {
         "name_cn": "醇醪",
-        "name_en": "",
+        "name_en": "Aged Wine",
         "description_cn": "结束阶段，若你没有“醇”，你可以将任意张【杀】置于你的武将牌上，称为“醇”。当一名角色处于濒死状态时，你可以移去一张“醇”，然后其视为使用一张【酒】。",
-        "description_en": ""
+        "description_en": "When you give a card to another character, that card is treated as a [Peach] for them."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU028",
+    "standard_id": "char_handang",
     "name_cn": "韩当",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Han Dang",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "控制", "爆发"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Burst"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "弓骑",
-        "name_en": "",
+        "name_en": "Mounted Archery",
         "description_cn": "出牌阶段限一次，你可以弃置一张牌令你本回合攻击范围无限，若弃置牌为装备牌，你可以弃置一名其他角色一张牌。",
-        "description_en": ""
+        "description_en": "Action Phase: You may discard 1 hand card to deal 1 damage to a character not within range of your attack."
       },
       {
         "name_cn": "解烦",
-        "name_en": "",
+        "name_en": "Quell Trouble",
         "description_cn": "限定技，出牌阶段，你可以选择一名角色，令所有攻击范围内包含其的角色各选择一项：1.弃置一张武器牌；2.令其摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: Characters whose attack range includes you must discard 1 extra card during their Discard Phase."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN019",
+    "standard_id": "char_huaxiong",
     "name_cn": "将华雄",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Hua Xiong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 6,
     "power_index": 3.0,
     "traits_cn": ["防御", "简单", "上限超高"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Simple", "上限超高"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "恃勇",
-        "name_en": "",
+        "name_en": "Show of Might",
         "description_cn": "锁定技，当你受到红色【杀】或【酒】【杀】造成的伤害后，你减少1点体力上限。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you take damage from a red [Kill] or a [Wine]-enhanced [Kill], reduce your max health by 1."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN030",
+    "standard_id": "char_liubiao",
     "name_cn": "刘表",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Liu Biao",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["防御", "过牌", "发育"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "Scaling"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "自守",
-        "name_en": "",
+        "name_en": "Self-Preservation",
         "description_cn": "摸牌阶段，你可以多摸X张牌（X为全场势力数），然后防止你本回合对其他角色造成的伤害。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card and name a suit. Until the start of your next turn, you are immune to cards of that suit."
       },
       {
         "name_cn": "宗室",
-        "name_en": "",
+        "name_en": "Royal Clan",
         "description_cn": "锁定技，你的手牌上限+X（X为全场势力数）。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your hand limit +X (X = number of Qun characters in play with fewer hand cards than you)."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI028",
+    "standard_id": "char_zhonghui",
     "name_cn": "钟会",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhong Hui",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "权计",
-        "name_en": "",
+        "name_en": "Power Scheme",
         "description_cn": "当你受到1点伤害后，你可以摸一张牌，然后将一张手牌置于你的武将牌上，称为“权”。你的手牌上限+X（X为“权”的数量）。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 hand card. Name a card type — a character of your choice must discard 1 card of that type or take 1 damage."
       },
       {
         "name_cn": "自立",
-        "name_en": "",
+        "name_en": "Self-Proclamation",
         "description_cn": "觉醒技，准备阶段，若你“权”的数量不小于3，你回复1点体力或摸两张牌，然后减少1点体力上限，获得“排异”。",
-        "description_en": ""
+        "description_en": "Awakening Skill — Preparation Phase: If you are at full health and have ≥4 hand cards, reduce your max health by 1 and gain \"Gather Forces.\""
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI031",
+    "standard_id": "char_caochong",
     "name_cn": "曹冲",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Chong",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "称象",
-        "name_en": "",
+        "name_en": "Weigh the Elephant",
         "description_cn": "当你受到伤害后，你可以亮出牌堆顶四张牌，获得其中任意张点数和不大于13的牌。",
-        "description_en": ""
+        "description_en": "When you take damage, you may make a judgment. If the result's point value ≤ your current health, you gain that card."
       },
       {
         "name_cn": "仁心",
-        "name_en": "",
+        "name_en": "Benevolent Heart",
         "description_cn": "当体力值为1的其他角色受到伤害时，你可以弃置一张装备牌并翻面，然后防止此伤害。",
-        "description_en": ""
+        "description_en": "When you use [Peach] or a [Peach] effect recovers health, the recovery value +1."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI032",
+    "standard_id": "char_guohuai",
     "name_cn": "郭淮",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Guo Huai",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["过牌", "简单", "精策神将"],
-    "traits_en": [],
+    "traits_en": ["Card Flow", "Simple", "精策神将"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "精策",
-        "name_en": "",
+        "name_en": "Master Stratagem",
         "description_cn": "你每于回合内使用一种花色的手牌，本回合手牌上限便+1。出牌阶段结束时，你可以摸X张牌（X为你本回合使用过牌的类型数）。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Reveal any number of hand cards. Draw 1 card for each unique suit revealed."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI033",
+    "standard_id": "char_manchong",
     "name_cn": "满宠",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Man Chong",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "峻刑",
-        "name_en": "",
+        "name_en": "Harsh Punishment",
         "description_cn": "出牌阶段限一次，你可以弃置任意张手牌并令一名其他角色选择一项：1.弃置一张与你弃置牌类型皆不同的手牌；2.翻面，然后摸与你弃置牌数等量张牌。",
-        "description_en": ""
+        "description_en": "When you deal damage, you may have the target skip their Draw Phase next turn."
       },
       {
         "name_cn": "御策",
-        "name_en": "",
+        "name_en": "Defensive Stratagem",
         "description_cn": "当你受到伤害后，你可以展示一张手牌令伤害来源选择一项：1.弃置一张与你展示牌类型不同的手牌；2.你回复1点体力。",
-        "description_en": ""
+        "description_en": "Preparation Phase: You may exchange any number of hand cards with face-down cards you have set aside, then set aside the same number of hand cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU028",
+    "standard_id": "char_guanping",
     "name_cn": "关平",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Guan Ping",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "辅助", "多刀"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Support", "Multi-Strike"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "龙吟",
-        "name_en": "",
+        "name_en": "Dragon's Roar",
         "description_cn": "当一名角色于其出牌阶段内使用【杀】时，你可以弃置一张牌，令此【杀】不计入此阶段使用次数，若此【杀】为红色，你摸一张牌。",
-        "description_en": ""
+        "description_en": "When you use [Kill], it may target all characters within your attack range simultaneously."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU029",
+    "standard_id": "char_jianyong",
     "name_cn": "简雍",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Jian Yong",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["控制", "简单", "拼点"],
-    "traits_en": [],
+    "traits_en": ["Control", "Simple", "Point Fight"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "巧说",
-        "name_en": "",
+        "name_en": "Clever Words",
         "description_cn": "出牌阶段开始时，你可以拼点：若你赢，你本回合使用的下一张牌可以多指定或少指定一个目标（至少指定一个目标）；若你没赢，你本回合不能使用锦囊牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Name a card. Another character reveals their hand — if it contains that card, you gain it; otherwise they draw 1 card."
       },
       {
         "name_cn": "纵适",
-        "name_en": "",
+        "name_en": "Indulge",
         "description_cn": "当你拼点赢时，你可以获得点数较小的拼点牌；当你拼点没赢时，你可以获得你的拼点牌。",
-        "description_en": ""
+        "description_en": "When you give a card to another character, draw 1 card. If the given card is a basic card, that character also draws 1."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU030",
+    "standard_id": "char_liufeng",
     "name_cn": "刘封",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Liu Feng",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["控制", "简单", "拆迁办"],
-    "traits_en": [],
+    "traits_en": ["Control", "Simple", "Disruptor"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "陷嗣",
-        "name_en": "",
+        "name_en": "Trap the Heir",
         "description_cn": "准备阶段，你可以将至多两名角色的各一张牌置于你的武将牌上，称为“逆”。其他角色可以移去两张“逆”视为对你使用一张【杀】。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose another character. They cannot gain cards until the start of your next turn unless they use [Kill] on a character of your choice."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU029",
+    "standard_id": "char_panzhangjiazhong",
     "name_cn": "潘璋马忠",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Pan Zhang & Ma Zhong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Defensive", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "夺刀",
-        "name_en": "",
+        "name_en": "Seize the Blade",
         "description_cn": "当其他角色使用【杀】对你造成伤害后，你可以弃置一张牌获得其装备区里的武器牌。",
-        "description_en": ""
+        "description_en": "When you would be dealt damage by [Kill], you may prevent the damage and gain that [Kill]."
       },
       {
         "name_cn": "暗箭",
-        "name_en": "",
+        "name_en": "Hidden Arrow",
         "description_cn": "锁定技，当你使用【杀】对目标角色造成伤害时，若你不在其攻击范围内，此伤害+1。",
-        "description_en": ""
+        "description_en": "Once per round: When you use [Kill] during your turn, you may make it a hidden [Kill] that cannot be cancelled."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU030",
+    "standard_id": "char_yufan",
     "name_cn": "虞翻",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Yu Fan",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["控制", "辅助", "困难"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "纵玄",
-        "name_en": "",
+        "name_en": "Arcane Mastery",
         "description_cn": "当你的牌因弃置而置入弃牌堆后，你可以将其中任意张牌置于牌堆顶。",
-        "description_en": ""
+        "description_en": "When your or previous player's card is discarded, you may put it on top of the deck."
       },
       {
         "name_cn": "直言",
-        "name_en": "",
+        "name_en": "Blunt Counsel",
         "description_cn": "结束阶段，你可以令一名角色摸一张牌并展示之，若为装备牌，其使用之并回复1点体力。",
-        "description_en": ""
+        "description_en": "End Phase: Target draws and shows 1 card. If equipment: use and recover 1 health. If not equipment and health != yours: they lose 1 health."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU031",
+    "standard_id": "char_zhuran",
     "name_cn": "朱然",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhu Ran",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["控制", "辅助", "到此为止了"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "到此为止了"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "胆守",
-        "name_en": "",
+        "name_en": "Gallant Defense",
         "description_cn": "出牌阶段，你可以弃置X张牌并选择你攻击范围内的一名其他角色（X为你本阶段发动本技能的次数），若X为：1，你弃置其一张牌；2，其交给你一张牌；3，你对其造成1点伤害；不小于4，你与其各摸两张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you would be the target of a non-[Kill] card, if you have fewer hand cards than the user, that card has no effect on you."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN031",
+    "standard_id": "char_fuhuanghou",
     "name_cn": "伏皇后",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Empress Fu",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["防御", "控制", "配合神将"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "God General Synergy"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "惴恐",
-        "name_en": "",
+        "name_en": "Intimidate",
         "description_cn": "其他角色的回合开始时，若你已受伤，你可以与其拼点：若你赢，其本回合不能对除其以外的角色使用牌；若你没赢，其本回合与你的距离视为1。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Name a suit. A character of your choice cannot play hand cards of that suit until your next turn."
       },
       {
         "name_cn": "求援",
-        "name_en": "",
+        "name_en": "Plea for Aid",
         "description_cn": "当你成为【杀】的目标时，你可以令另一名其他角色选择一项：1.交给你一张【闪】；2.成为此【杀】的额外目标。",
-        "description_en": ""
+        "description_en": "When you take damage, you may give any number of hand cards to another character; they must then use [Kill] on the damage source or lose 1 health."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN032",
+    "standard_id": "char_liru",
     "name_cn": "李儒",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Li Ru",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["进攻", "控制", "困难"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "灭计",
-        "name_en": "",
+        "name_en": "Suppress",
         "description_cn": "出牌阶段限一次，你可以将一张黑色锦囊牌置于牌堆顶并令一名有手牌的其他角色选择一项：1.弃置一张锦囊牌；2.依次弃置两张非锦囊牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card. A character of your choice cannot use non-[Kill] cards until the end of this turn."
       },
       {
         "name_cn": "绝策",
-        "name_en": "",
+        "name_en": "Ruthless Counsel",
         "description_cn": "结束阶段，你可以对一名没有手牌的其他角色造成1点伤害。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose a character and name a card. They must discard 1 copy of that card or you deal them 1 damage."
       },
       {
         "name_cn": "焚城",
-        "name_en": "",
+        "name_en": "Burn the City",
         "description_cn": "限定技，出牌阶段，你可以令所有其他角色依次选择一项：1.弃置任意张牌（须比上家弃置的牌多）；2.受到你造成的2点火焰伤害。",
-        "description_en": ""
+        "description_en": "Lord Skill: When another Qun character deals fire damage, you may make a judgment. If the result is Spade, deal 1 extra fire damage."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU024",
+    "standard_id": "char_fazheng",
     "name_cn": "法正",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Fa Zheng",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["防御", "辅助", "配合神将"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "God General Synergy"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "恩怨",
-        "name_en": "",
+        "name_en": "Gratitude and Grudges",
         "description_cn": "当你获得一名其他角色至少两张牌后，你可以令其摸一张牌。当你受到1点伤害后，你可以令伤害来源选择一项：1.交给你一张手牌；2.失去1点体力。",
-        "description_en": ""
+        "description_en": "When you are healed, you may draw 1 card. When you take damage, you may place 1 hand card on a character within your attack range and deal them 1 damage."
       },
       {
         "name_cn": "眩惑",
-        "name_en": "",
+        "name_en": "Confound",
         "description_cn": "摸牌阶段，你可以改为令一名其他角色摸两张牌，令其选择一项：1.对其攻击范围内你指定的另一名角色使用一张【杀】；2.你获得其两张牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose a character — they cannot use cards of a suit you name until your next turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU017",
+    "standard_id": "char_xushu",
     "name_cn": "徐庶",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Xu Shu",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 4.0,
     "traits_cn": ["防御", "辅助", "回复"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "无言",
-        "name_en": "",
+        "name_en": "Silence",
         "description_cn": "锁定技，防止你使用和受到的锦囊牌造成的伤害。",
-        "description_en": ""
+        "description_en": "Locked Skill: If you have no equipment, you cannot be targeted by tool cards."
       },
       {
         "name_cn": "举荐",
-        "name_en": "",
+        "name_en": "Recommend",
         "description_cn": "结束阶段，你可以弃置一张非基本牌并令一名其他角色选择一项：1.摸两张牌；2.回复1点体力；3.复原其武将牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Name a suit and reveal the top card of the deck. If it does not match, repeat. Give a male character the last matching card revealed, then remove 1 of a female character's skills until your next turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI030",
+    "standard_id": "char_wangyi",
     "name_cn": "王异",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Wang Yi",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "贞烈",
-        "name_en": "",
+        "name_en": "Unwavering Virtue",
         "description_cn": "当你成为【杀】或普通锦囊牌的目标后，你可以失去1点体力令此牌对你无效，然后你弃置使用者一张牌。",
-        "description_en": ""
+        "description_en": "When another character deals damage to you, you may flip your character card; if so, that character gains \"Grudge\" against you."
       },
       {
         "name_cn": "秘计",
-        "name_en": "",
+        "name_en": "Secret Plan",
         "description_cn": "结束阶段，你可以摸X张牌（X为你已损失体力值），然后你可以交给其他角色X张手牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Place 1 hand card face-down as a \"Secret.\" When another character uses a card, they may look at your Secret; if they correctly guess its type, they gain it; otherwise you draw 2 cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU026",
+    "standard_id": "char_guanxing_zhangbao",
     "name_cn": "关兴张苞",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Guan Xing & Zhang Bao",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "父魂",
-        "name_en": "",
+        "name_en": "Father's Legacy",
         "description_cn": "你可以将两张手牌当【杀】使用或打出。当你于出牌阶段以此法造成伤害后，你本回合获得“武圣”“咆哮”。",
-        "description_en": ""
+        "description_en": "Action Phase: Use [Kill] once. It is treated as used by both parent characters, triggering both of their relevant skills."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI034",
+    "standard_id": "char_caozhen",
     "name_cn": "曹真",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Zhen",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "控制", "山河图专属"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "山河图专属"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "司敌",
-        "name_en": "",
+        "name_en": "Assess the Enemy",
         "description_cn": "其他角色出牌阶段开始时，你可以弃置一张与你装备区里任意牌颜色相同的非基本牌，令其本阶段不能使用和打出与此牌颜色相同的牌，然后此阶段结束时，若其本阶段未使用过【杀】，你视为对其使用一张【杀】。",
-        "description_en": ""
+        "description_en": "Preparation Phase: Look at the top 3 cards of the deck, place 1 on top, 1 on the bottom, and keep 1."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI036",
+    "standard_id": "char_hanhao_shihuan",
     "name_cn": "韩浩史涣",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Han Hao & Shi Huan",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["进攻", "控制", "判定"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Judgment"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "慎断",
-        "name_en": "",
+        "name_en": "Careful Judgment",
         "description_cn": "当你的一张黑色基本牌被弃置后，你可以将此牌当无距离限制的【兵粮寸断】使用。",
-        "description_en": ""
+        "description_en": "Once per round: When a character flips a judgment card, you may replace it with a hand card."
       },
       {
         "name_cn": "勇略",
-        "name_en": "",
+        "name_en": "Bold Strategy",
         "description_cn": "其他角色判定阶段开始时，若其在你的攻击范围内，你可以弃置其判定区里的一张牌视为对其使用一张【杀】，若此【杀】未造成伤害，你摸一张牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card and compete in points with a character. If you win, deal 1 damage to them."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI035",
+    "standard_id": "char_chenqun",
     "name_cn": "陈群",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Chen Qun",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 1.5,
     "traits_cn": ["控制", "辅助", "连环状态"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "连环状态"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "品第",
-        "name_en": "",
+        "name_en": "Grade and Rank",
         "description_cn": "出牌阶段，每名角色限一次，你可以弃置一张本阶段未以此法弃置过的类型的牌，令一名其他角色摸X张牌或弃置X张牌（X为本回合本技能发动次数），若其已受伤，你进入连环状态。",
-        "description_en": ""
+        "description_en": "Preparation Phase: Reveal your hand cards. Gain 1 card from the deck for each suit not represented in your hand."
       },
       {
         "name_cn": "法恩",
-        "name_en": "",
+        "name_en": "Legal Favor",
         "description_cn": "当一名角色翻至正面或进入连环状态后，你可以令其摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you gain hand cards outside your turn, draw 1 extra card for each card gained."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU031",
+    "standard_id": "char_wuyi",
     "name_cn": "吴懿",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Wu Yi",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "奔袭",
-        "name_en": "",
+        "name_en": "Blitz Charge",
         "description_cn": "锁定技，当你于回合内使用牌时，你本回合计算与其他角色的距离-1。当你于回合内使用仅指定单一目标的【杀】或普通锦囊牌时，若你与所有其他角色的距离均为1，你依次选择至多两项，令此牌：1.目标数+1；2.无视防具；3.不能被抵消；4.造成伤害后，你摸一张牌。",
-        "description_en": ""
+        "description_en": "Action Phase: You may use [Kill] without distance restrictions."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU033",
+    "standard_id": "char_zhoucang",
     "name_cn": "周仓",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhou Cang",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "辅助", "简单"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Support", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "忠勇",
-        "name_en": "",
+        "name_en": "Loyal Valor",
         "description_cn": "当你使用【杀】后，你可以将此【杀】或目标角色响应的【闪】交给一名其他角色，若此牌为红色，其可以对你攻击范围内一名角色使用一张【杀】。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Declare a character. Until the end of your Action Phase, all your [Kill] can only target that character, but you may use [Kill] without limit."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU032",
+    "standard_id": "char_zhangsong",
     "name_cn": "张松",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhang Song",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["过牌", "辅助", "光头强"],
-    "traits_en": [],
+    "traits_en": ["Card Flow", "Support", "光头强"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "强识",
-        "name_en": "",
+        "name_en": "Eidetic Memory",
         "description_cn": "出牌阶段开始时，你可以展示一名其他角色一张手牌，然后当你本阶段使用与展示牌类型相同的牌时，你可以摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When another character uses a card, you may look at their hand; their hand count is then public for the rest of the turn."
       },
       {
         "name_cn": "献图",
-        "name_en": "",
+        "name_en": "Present the Map",
         "description_cn": "其他角色出牌阶段开始时，你可以摸两张牌，然后交给其两张牌，此阶段结束时，若其此阶段未杀死过角色，你失去1点体力。",
-        "description_en": ""
+        "description_en": "Limited Skill — Action Phase: Choose a character. Reveal 3 cards from the top of the deck and split them into 2 groups; they choose one group to gain, you gain the other."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU033",
+    "standard_id": "char_sunluban",
     "name_cn": "孙鲁班",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Sun Luban",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 1.5,
     "traits_cn": ["进攻", "防御", "减目标"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Defensive", "Target Reduction"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "谮毁",
-        "name_en": "",
+        "name_en": "Slander",
         "description_cn": "出牌阶段限一次，当你使用【杀】或黑色普通锦囊牌指定唯一目标时，你可以令另一名能成为此牌目标的角色选择一项：1.交给你一张牌并代替你成为此牌的使用者；2.成为此牌的额外目标。",
-        "description_en": ""
+        "description_en": "Once per turn: When another character gains a card, you may discard 1 card to prevent them gaining 1 of those cards; you gain it instead."
       },
       {
         "name_cn": "骄矜",
-        "name_en": "",
+        "name_en": "Arrogance",
         "description_cn": "当男性角色对你造成伤害时，你可以弃置一张装备牌，然后此伤害-1。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you use a card, if you have the most hand cards among all characters, that card's effect is enhanced."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU034",
+    "standard_id": "char_zhuhuan",
     "name_cn": "朱桓",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhu Huan",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["进攻", "定点输出", "不怕控制"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Targeted Damage", "不怕控制"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "奋励",
-        "name_en": "",
+        "name_en": "Inspire",
         "description_cn": "若你的手牌数为全场最多，你可以跳过摸牌阶段；若你的体力值为全场最多，你可以跳过出牌阶段；若你的装备区里有牌且数量为全场最多，你可以跳过弃牌阶段。",
-        "description_en": ""
+        "description_en": "When another character takes damage, you may discard 1 card to have them draw 2 cards."
       },
       {
         "name_cn": "平寇",
-        "name_en": "",
+        "name_en": "Pacify",
         "description_cn": "回合结束后，你可以对至多X名其他角色各造成1点伤害（X为你本回合跳过的阶段数）。",
-        "description_en": ""
+        "description_en": "When you deal damage to a character, if they have fewer hand cards than you, draw 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU032",
+    "standard_id": "char_guyong",
     "name_cn": "顾雍",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Gu Yong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 1.5,
     "traits_cn": ["过牌", "辅助", "配合神将"],
-    "traits_en": [],
+    "traits_en": ["Card Flow", "Support", "God General Synergy"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "慎行",
-        "name_en": "",
+        "name_en": "Cautious Conduct",
         "description_cn": "出牌阶段，你可以弃置两张牌，然后摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you use a non-[Kill] card, you may first reveal the top card of the deck. If its suit matches your card's suit, your card cannot be cancelled."
       },
       {
         "name_cn": "秉壹",
-        "name_en": "",
+        "name_en": "Steadfast Unity",
         "description_cn": "每阶段限一次，当你的牌因弃置置入弃牌堆后，你可以展示所有手牌：若颜色均相同，你可以与至多X名其他角色各摸一张牌（X为你的手牌数）。",
-        "description_en": ""
+        "description_en": "End Phase: Place any number of hand cards face-down on your character card. Draw Phase: Gain all stored cards and draw 2 extra cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN034",
+    "standard_id": "char_jushou",
     "name_cn": "沮授",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Ju Shou",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 3.5,
     "traits_cn": ["防御", "过牌", "巨兽"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "巨兽"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "渐营",
-        "name_en": "",
+        "name_en": "Gradual Encampment",
         "description_cn": "当你于出牌阶段使用牌时，若此牌的点数或花色与你本阶段使用的上一张牌相同，你可以摸一张牌。",
-        "description_en": ""
+        "description_en": "End Phase: Place 1 hand card on your character card as a \"Camp\" marker. When you use [Kill] or a damage tool card targeting a character with fewer Camp markers than you, deal +1 damage."
       },
       {
         "name_cn": "矢北",
-        "name_en": "",
+        "name_en": "Never Retreat",
         "description_cn": "锁定技，当你每回合首次受到伤害后，你回复1点体力，然后当你本回合再受到伤害后，你失去1点体力。",
-        "description_en": ""
+        "description_en": "Locked Skill: You cannot be flipped face-down. When you would be flipped, draw 1 card instead."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN033",
+    "standard_id": "char_caifuren",
     "name_cn": "蔡夫人",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Lady Cai",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["进攻", "过牌", "回复"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Card Flow", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "窃听",
-        "name_en": "",
+        "name_en": "Eavesdrop",
         "description_cn": "其他角色的回合结束后，若其本回合未对其他角色使用过牌，你可以选择一项：1.将其装备区里的一张牌置入你的装备区；2.摸一张牌。",
-        "description_en": ""
+        "description_en": "When another character uses a card targeting you, you may look at their hand and exchange 1 card with them."
       },
       {
         "name_cn": "献州",
-        "name_en": "",
+        "name_en": "Cede the Province",
         "description_cn": "限定技，出牌阶段，你可以将你装备区里的所有牌交给一名其他角色，然后其选择一项：1.令你回复X点体力；2.对其攻击范围内至多X名角色各造成1点伤害。（X为你给出的牌数）",
-        "description_en": ""
+        "description_en": "Limited Skill — Action Phase: Give all your hand cards to a character; they cannot use cards or be targeted by cards until the end of this turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI037",
+    "standard_id": "char_caorui",
     "name_cn": "曹叡",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Rui",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "恢拓",
-        "name_en": "",
+        "name_en": "Expand",
         "description_cn": "当你受到伤害后，你可以令一名角色判定，若结果为：红色，其回复1点体力；黑色，其摸与此伤害值等量张牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card and choose a character. Look at their hand; you may take 1 card from them or give them 1 card."
       },
       {
         "name_cn": "明鉴",
-        "name_en": "",
+        "name_en": "Clear Discernment",
         "description_cn": "出牌阶段限一次，你可以交给一名其他角色所有手牌，然后其下回合手牌上限+1且使用【杀】的限制次数+1。",
-        "description_en": ""
+        "description_en": "When you take damage, you may look at the top 3 cards of the deck and place them back in any order."
       },
       {
         "name_cn": "兴衰",
-        "name_en": "",
+        "name_en": "Rise and Fall",
         "description_cn": "主公技，限定技，当你进入濒死状态时，你可以令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害。",
-        "description_en": ""
+        "description_en": "Awakening Skill — Preparation Phase: If a character with fewer hand cards than you has taken damage this round, reduce your max health by 1 and gain \"Stratagem.\""
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI038",
+    "standard_id": "char_caoxiu",
     "name_cn": "曹休",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Xiu",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 2.0,
     "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "千驹",
-        "name_en": "",
+        "name_en": "Galloping Steed",
         "description_cn": "锁定技，你计算与其他角色的距离-X（X为你已损失体力值）。",
-        "description_en": ""
+        "description_en": "When you use [Kill], you may use it with no distance limit; if you have a mount equipped, this [Kill] deals +1 damage."
       },
       {
         "name_cn": "倾袭",
-        "name_en": "",
+        "name_en": "Overwhelming Strike",
         "description_cn": "当你使用【杀】对目标角色造成伤害时，若你的装备区里有武器牌，你可以令其选择一项：1.弃置与此牌攻击范围等量张数的手牌，然后弃置此牌；2.令此【杀】伤害+1。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card, then use 1 [Kill] targeting all characters within your attack range that cannot be cancelled."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI039",
+    "standard_id": "char_zhongyao",
     "name_cn": "钟繇",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhong Yao",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.5,
     "traits_cn": ["进攻", "辅助", "回复"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Support", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "活墨",
-        "name_en": "",
+        "name_en": "Living Ink",
         "description_cn": "你可以将一张黑色非基本牌置于牌堆顶，视为使用一张与你本回合使用过的牌牌名不同的基本牌。",
-        "description_en": ""
+        "description_en": "When you use a tool card, you may copy its effect once more on a different target."
       },
       {
         "name_cn": "佐定",
-        "name_en": "",
+        "name_en": "Aid in Pacification",
         "description_cn": "当其他角色在其出牌阶段使用黑桃牌指定目标后，若本阶段没有角色受到过伤害，你可以令其中一个目标摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you gain a card through another character's skill, draw 1 extra card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU034",
+    "standard_id": "char_liuchen",
     "name_cn": "刘谌",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Liu Chen",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["进攻", "过牌", "爆发"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Card Flow", "Burst"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "战绝",
-        "name_en": "",
+        "name_en": "Fight to the End",
         "description_cn": "你可以将所有手牌当【决斗】使用，然后你与因此受伤的角色各摸一张牌，若你本阶段以此法摸过至少两张牌，本技能失效。",
-        "description_en": ""
+        "description_en": "When you take damage, you may immediately use 1 [Kill] without it counting toward your limit."
       },
       {
         "name_cn": "勤王",
-        "name_en": "",
+        "name_en": "Loyal Service",
         "description_cn": "主公技，你可以弃置一张牌发动“激将”，响应此“激将”使用或打出【杀】的角色摸一张牌。",
-        "description_en": ""
+        "description_en": "Lord Skill: When another Shu character takes damage during their turn, they may give you 1 hand card. If the card is [Kill], you may use it immediately."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU035",
+    "standard_id": "char_xiahouzhi",
     "name_cn": "夏侯氏",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Lady Xiahou",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["过牌", "辅助", "断杀"],
-    "traits_en": [],
+    "traits_en": ["Card Flow", "Support", "断杀"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "樵拾",
-        "name_en": "",
+        "name_en": "Gather Firewood",
         "description_cn": "其他角色的结束阶段，若你与其手牌数相等，你可以与其各摸一张牌。",
-        "description_en": ""
+        "description_en": "When another character discards hand cards during their Discard Phase, you may gain 1 of those cards."
       },
       {
         "name_cn": "燕语",
-        "name_en": "",
+        "name_en": "Swallow's Song",
         "description_cn": "出牌阶段，你可以重铸【杀】。出牌阶段结束时，若你于本阶段重铸过至少两张【杀】，你可以令一名男性角色摸两张牌。",
-        "description_en": ""
+        "description_en": "End Phase: Give 1 hand card to each other character of a faction different from yours; each of them draws 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU036",
+    "standard_id": "char_zhangyi",
     "name_cn": "张嶷",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhang Yi",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["进攻", "控制", "转化大师"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Control", "Converter"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "怃戎",
-        "name_en": "",
+        "name_en": "Console the Tribes",
         "description_cn": "出牌阶段限一次，你可以和一名其他角色同时展示一张手牌：若你的展示牌为【杀】且其展示牌不为【闪】，你弃置此【杀】并对其造成1点伤害；若你的展示牌不为【杀】且其展示牌为【闪】，你弃置此牌并获得其一张牌。",
-        "description_en": ""
+        "description_en": "When you deal damage to a character, you may give them 1 hand card; they cannot use that card this turn."
       },
       {
         "name_cn": "矢志",
-        "name_en": "",
+        "name_en": "Sworn Resolve",
         "description_cn": "锁定技，若你的体力值为1，你的【闪】视为【杀】。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you skip a phase, the next [Kill] you use this turn deals +1 damage."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU036",
+    "standard_id": "char_sunxiu",
     "name_cn": "孙休",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Sun Xiu",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["控制", "辅助", "发育"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "Scaling"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "宴诛",
-        "name_en": "",
+        "name_en": "Banquet Execution",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1.你获得其装备区里的所有牌，失去本技能并修改“兴学”；2.弃置一张牌。",
-        "description_en": ""
+        "description_en": "Limited Skill — Action Phase: All other characters must either draw 1 card and use [Kill] on a character of your choice, or discard 1 hand card."
       },
       {
         "name_cn": "兴学",
-        "name_en": "",
+        "name_en": "Promote Learning",
         "description_cn": "结束阶段，你可以令至多X名角色依次摸一张牌并将一张牌置于牌堆顶（X为你的体力值）。",
-        "description_en": ""
+        "description_en": "End Phase: You may exchange hand cards with a character whose hand count differs from yours by exactly 1."
       },
       {
         "name_cn": "诏缚",
-        "name_en": "",
+        "name_en": "Imperial Binding",
         "description_cn": "主公技，限定技，出牌阶段，你可以选择至多两名角色，本局以此法选择的角色视为在所有其他吴势力角色的攻击范围内。",
-        "description_en": ""
+        "description_en": "Lord Skill: Once per round, you may flip a Qun character face-down; they cannot be flipped back until the start of your next turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU037",
+    "standard_id": "char_zhuzhi",
     "name_cn": "朱治",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhu Zhi",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["防御", "辅助", "回复"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "安国",
-        "name_en": "",
+        "name_en": "Pacify the State",
         "description_cn": "出牌阶段限一次，你可以选择一名其他角色，若其：手牌数全场最少，其摸一张牌；体力值全场最低，其回复1点体力；装备区里牌数全场最少，其随机使用一张装备牌。然后你执行其未满足但你满足条件的效果。",
-        "description_en": ""
+        "description_en": "Locked Skill: At the start of your turn, if another character is face-down, you may flip them face-up; that character draws 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU035",
+    "standard_id": "char_quancong",
     "name_cn": "全琮",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Quan Cong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["控制", "辅助", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "邀名",
-        "name_en": "",
+        "name_en": "Seek Renown",
         "description_cn": "每回合限一次，当你造成或受到伤害后，你可以选择一项：1.弃置手牌数大于你的一名角色一张手牌；2.令手牌数小于你的一名角色摸一张牌。",
-        "description_en": ""
+        "description_en": "When you use [Kill] or a tool card, you may draw 1 card. If you do, gain 1 \"Prestige.\" When Prestige reaches 5, lose all Prestige and gain 1 extra turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN035",
+    "standard_id": "char_gongsun_yuan",
     "name_cn": "公孙渊",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Gongsun Yuan",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["控制", "多刀", "全场打击"],
-    "traits_en": [],
+    "traits_en": ["Control", "Multi-Strike", "全场打击"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "怀异",
-        "name_en": "",
+        "name_en": "Harbor Ambitions",
         "description_cn": "出牌阶段限一次，你可以展示所有手牌，弃置其中一种颜色的牌，然后获得至多X名角色的各一张牌（X为弃置的手牌数）。若你以此法获得了至少两张牌，你失去1点体力。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Discard 1 card. A character of your choice cannot use cards until the end of this turn."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN036",
+    "standard_id": "char_guotu_fengji",
     "name_cn": "郭图逢纪",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Guo Tu & Feng Ji",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["防御", "过牌", "配合神将"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "God General Synergy"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "急攻",
-        "name_en": "",
+        "name_en": "Aggressive Assault",
         "description_cn": "出牌阶段开始时，你可以摸两张牌，然后你本回合手牌上限等于你本阶段造成的伤害值。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Force a character to use [Kill] on a character of your choice or take 1 damage."
       },
       {
         "name_cn": "饰非",
-        "name_en": "",
+        "name_en": "Cover Up",
         "description_cn": "当你需要使用或打出【闪】时，你可以令当前回合角色摸一张牌，若其不是手牌数全场唯一最多的角色，你弃置最多的角色一张牌，视为你使用或打出一张【闪】。",
-        "description_en": ""
+        "description_en": "When you take damage, you may take the damage-dealing card into your hand; if you do, prevent the damage."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI040",
+    "standard_id": "char_guohuanghou",
     "name_cn": "郭皇后",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Empress Guo",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["进攻", "防御", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Defensive", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "矫诏",
-        "name_en": "",
+        "name_en": "Forge the Edict",
         "description_cn": "出牌阶段限一次，你可以展示一张手牌，然后令你距离最近的角色声明一种基本牌，你本回合可以将展示牌当声明的牌使用（不能对自己使用）。",
-        "description_en": ""
+        "description_en": "Action Phase: Discard 1 hand card as a forged edict. Another character must use [Kill] on a character of your choice or lose 1 health."
       },
       {
         "name_cn": "殚心",
-        "name_en": "",
+        "name_en": "Devoted Heart",
         "description_cn": "当你受到伤害后，你可以摸一张牌或修改“矫诏”。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your hand limit equals your current health."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU038",
+    "standard_id": "char_liyan",
     "name_cn": "李严",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Li Yan",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": ["防御", "控制", "持久"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Ramping"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "督粮",
-        "name_en": "",
+        "name_en": "Supervise Provisions",
         "description_cn": "出牌阶段限一次，你可以获得一名其他角色一张手牌并选择一项：1.令其观看牌堆顶的两张牌，获得其中的基本牌；2.令其下回合摸牌阶段多摸一张牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When another character uses [Kill], you may give them 1 card; their [Kill] deals +1 damage for that use."
       },
       {
         "name_cn": "腹鳞",
-        "name_en": "",
+        "name_en": "Hidden Scales",
         "description_cn": "锁定技，弃牌阶段，你于本回合获得的牌不计入手牌上限。",
-        "description_en": ""
+        "description_en": "When you take damage from [Kill], you may flip; the damage is prevented and you gain that [Kill]."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU039",
+    "standard_id": "char_sundeng",
     "name_cn": "孙登",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Sun Deng",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["控制", "辅助", "简单"],
-    "traits_en": [],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "匡弼",
-        "name_en": "",
+        "name_en": "Upright Counsel",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色将至多三张牌置于你的武将牌上，若如此做，你的下个回合开始时获得所有“匡弼”牌，然后其摸等量张牌。",
-        "description_en": ""
+        "description_en": "When another character takes damage, you may give them 1 hand card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN037",
+    "standard_id": "char_liuyu",
     "name_cn": "刘虞",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Liu Yu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 2.5,
     "traits_cn": ["防御", "控制", "简单"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Simple"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "止戈",
-        "name_en": "",
+        "name_en": "Cease Fighting",
         "description_cn": "出牌阶段限一次，若你的手牌数大于体力值，你可以令攻击范围内包含你的一名角色选择一项：1.使用一张【杀】；2.交给你一张装备区里的牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: [Kill] targeting you or used by you deals 0 damage unless the user discards 1 card."
       },
       {
         "name_cn": "宗祚",
-        "name_en": "",
+        "name_en": "Dynastic Legacy",
         "description_cn": "锁定技，游戏开始时，你增加X点体力上限和体力值（X为全场势力数）。当某势力最后一名角色死亡后，你减少1点体力上限。",
-        "description_en": ""
+        "description_en": "Lord Skill: When another Qun character uses a lord skill, you may draw 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU038",
+    "standard_id": "char_cenhun",
     "name_cn": "岑昏",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cen Hun",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["进攻", "过牌", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Card Flow", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "极奢",
-        "name_en": "",
+        "name_en": "Extreme Extravagance",
         "description_cn": "出牌阶段，若你的手牌上限大于0，你可以摸一张牌，令你本回合手牌上限-1。结束阶段，若你没有手牌，你可以令至多X名角色进入连环状态（X为你的体力值）。",
-        "description_en": ""
+        "description_en": "Locked Skill: At the start of your turn, you must give 1 hand card to each other character or lose 1 health."
       },
       {
         "name_cn": "链祸",
-        "name_en": "",
+        "name_en": "Chain Disaster",
         "description_cn": "锁定技，当你受到火焰伤害时，若你处于连环状态且是传导伤害的起点，此伤害+1。",
-        "description_en": ""
+        "description_en": "When you take damage, all chained characters also take 1 damage."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI041",
+    "standard_id": "char_sunzi_liufang",
     "name_cn": "孙资刘放",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Sun Zi & Liu Fang",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["防御", "控制", "回复"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "瑰藻",
-        "name_en": "",
+        "name_en": "Flowery Words",
         "description_cn": "若你于弃牌阶段弃置过至少两张牌且这些牌花色均不相同，你可以回复1点体力或摸一张牌。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Reveal 1 hand card. Each character holding a card of the same suit must give you 1 card."
       },
       {
         "name_cn": "讥谀",
-        "name_en": "",
+        "name_en": "Flatter and Mock",
         "description_cn": "出牌阶段，每名角色限一次，若你有可以使用的手牌，你可以令一名角色弃置一张手牌，然后你本回合不能使用与之相同花色的牌，若此牌为黑桃，其失去1点体力，你翻面。",
-        "description_en": ""
+        "description_en": "When another character uses a skill, you may discard 1 card to copy that skill's effect."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU037",
+    "standard_id": "char_huanghao",
     "name_cn": "黄皓",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Huang Hao",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Glass Cannon"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "寝情",
-        "name_en": "",
+        "name_en": "Conceal Feelings",
         "description_cn": "结束阶段，你可以选择任意名攻击范围内包含主公的角色，依次弃置其一张牌，然后令其各摸一张牌，若如此做，你摸X张牌（X为其中手牌比主公多的角色数）。",
-        "description_en": ""
+        "description_en": "Locked Skill: During your turn, no characters may gain or lose cards through skill effects."
       },
       {
         "name_cn": "贿生",
-        "name_en": "",
+        "name_en": "Bribe to Survive",
         "description_cn": "当你受到其他角色造成的伤害时，你可以令其观看你任意张牌并令其选择一项：1.获得其中一张，防止此伤害，然后你本局不能对其发动本技能；2.弃置等量张牌。",
-        "description_en": ""
+        "description_en": "Once per turn: Give a character 1 card. If they use it during this turn, draw 2 cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN038",
+    "standard_id": "char_zhangrang",
     "name_cn": "张让",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Zhang Rang",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 4.0,
     "traits_cn": ["过牌", "困难", "爆发"],
-    "traits_en": [],
+    "traits_en": ["Card Flow", "High Difficulty", "Burst"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "滔乱",
-        "name_en": "",
+        "name_en": "Stir Up Chaos",
         "description_cn": "你可以将一张牌当任意基本牌或普通锦囊牌使用（每种牌名限一次，且场上无人处于濒死状态），然后令一名其他角色选择一项：1.交给你一张与“滔乱”牌类型不同的牌；2.你失去1点体力，本回合本技能失效。",
-        "description_en": ""
+        "description_en": "Action Phase: Discard any number of cards. For each card discarded, deal 1 damage to a different character."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI064",
+    "standard_id": "char_xinxianying",
     "name_cn": "辛宪英",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Xin Xianying",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["防御", "过牌", "回复"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "忠鉴",
-        "name_en": "",
+        "name_en": "Loyal Discernment",
         "description_cn": "出牌阶段限一次，你可以展示一张手牌，然后展示一名其他角色与其体力值等量张手牌，若其展示牌包含：与你展示牌颜色相同的牌，你摸一张牌或弃置一名其他角色一张牌；与你展示牌点数相同的牌，本回合本技能改为限两次。若皆不包含，你的手牌上限-1。",
-        "description_en": ""
+        "description_en": "When another character uses a card targeting you, if the effect would benefit you, you may redirect that effect to another character."
       },
       {
         "name_cn": "才识",
-        "name_en": "",
+        "name_en": "Talented Insight",
         "description_cn": "摸牌阶段开始时，你可以选择一项：1.手牌上限+1；2.回复1点体力，本回合不能对自己使用牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you gain a card, if its suit differs from all suits in your current hand, draw 1 extra card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU064",
+    "standard_id": "char_wuxian",
     "name_cn": "吴苋",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Wu Xian",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.5,
     "traits_cn": ["防御", "控制", "过牌"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Control", "Card Flow"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "福绵",
-        "name_en": "",
+        "name_en": "Enduring Fortune",
         "description_cn": "准备阶段，你可以选择一项：1.摸牌阶段，你多摸1张牌；2.本回合限一次，你使用红色基本牌和红色普通锦囊牌可以多指定1个目标（无距离限制）。下次选择另一项时数值+1并复原本技能。",
-        "description_en": ""
+        "description_en": "Locked Skill: Your health cannot be reduced below 1 by damage, but your max health decreases by 1 each time this prevents lethal damage."
       },
       {
         "name_cn": "怠宴",
-        "name_en": "",
+        "name_en": "Idle Feast",
         "description_cn": "结束阶段，你可以令一名其他角色获得牌堆中一张红桃基本牌，然后若你上回合对其发动过本技能，其失去1点体力。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose another character — they either give you 2 hand cards, or you deal them 1 damage."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU064",
+    "standard_id": "char_xushi",
     "name_cn": "徐氏",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Lady Xu",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 3.5,
     "traits_cn": ["进攻", "过牌", "爆发"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Card Flow", "Burst"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "问卦",
-        "name_en": "",
+        "name_en": "Divine the Hexagram",
         "description_cn": "每名角色出牌阶段限一次，其可以选择一张牌，将之交给你，然后你可以将此牌置于牌堆顶或牌堆底，你与其各从另一端摸一张牌。",
-        "description_en": ""
+        "description_en": "Preparation Phase: Make a judgment. Heart — recover 1 health; Diamond — draw 2 cards; Club — discard 1 card from an opponent; Spade — flip a character."
       },
       {
         "name_cn": "伏诛",
-        "name_en": "",
+        "name_en": "Await Execution",
         "description_cn": "每名男性角色的结束阶段，若牌堆剩余牌数不大于你体力值的十倍，你可以依次对其使用牌堆中所有【杀】（不能超过游戏人数），然后洗牌。",
-        "description_en": ""
+        "description_en": "Locked Skill: When you are in a dying state, you may give all your cards to any character. If the character who caused your death ends their next turn without dying themselves, they lose 1 health."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN064",
+    "standard_id": "char_caojie",
     "name_cn": "曹节",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cao Jie",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["防御", "辅助", "连环状态"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Support", "连环状态"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "守玺",
-        "name_en": "",
+        "name_en": "Guard the Seal",
         "description_cn": "当你成为【杀】的目标后，你可以声明一种非装备牌的牌名（每种牌名限一次），令使用者选择一项：1.弃置一张你声明的牌，并获得你一张牌；2.令此【杀】无效。",
-        "description_en": ""
+        "description_en": "Locked Skill: You cannot be targeted by [Steal] or [Dismantle]. When another character attempts to target your cards, prevent it."
       },
       {
         "name_cn": "惠民",
-        "name_en": "",
+        "name_en": "Benevolent Rule",
         "description_cn": "结束阶段，你可以摸X张牌（X为手牌数小于体力值的角色数），然后展示等量手牌，从你选择的一名角色开始依次获得其中一张。",
-        "description_en": ""
+        "description_en": "End Phase: Each character with fewer hand cards than you draws 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WEI065",
+    "standard_id": "char_jikang",
     "name_cn": "嵇康",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Ji Kang",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 3.5,
     "traits_cn": ["辅助", "卖血", "回复"],
-    "traits_en": [],
+    "traits_en": ["Support", "Glass Cannon", "Recovery"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "清弦",
-        "name_en": "",
+        "name_en": "Clear Strings",
         "description_cn": "当你受到伤害/回复体力后，若没有角色处于濒死状态，你可以令伤害来源/一名其他角色执行一项：1.失去1点体力，随机使用一张装备牌；2.回复1点体力，弃置一张装备牌。若其使用或弃置的牌为梅花牌，你摸一张牌。",
-        "description_en": ""
+        "description_en": "When you use a tool card, before it resolves you may immediately play another card of the same type for free."
       },
       {
         "name_cn": "绝响",
-        "name_en": "",
+        "name_en": "Final Note",
         "description_cn": "当你死亡时，你可以令一名角色随机获得以下一个技能：“和弦”“柔弦”“烈弦”“激弦”。然后直到其下回合开始，其不能成为其他角色使用梅花牌的目标。",
-        "description_en": ""
+        "description_en": "Limited Skill: When you die, all other characters lose 1 health and discard all their hand cards."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SHU065",
+    "standard_id": "char_qinmi",
     "name_cn": "秦宓",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Qin Mi",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 3.0,
     "traits_cn": ["进攻", "防御", "控制"],
-    "traits_en": [],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "谏征",
-        "name_en": "",
+        "name_en": "Remonstrate Against War",
         "description_cn": "当其他角色使用【杀】指定其他角色为目标时，若你在使用者的攻击范围内，你可以将一张手牌置于牌堆顶，取消所有目标，然后若此【杀】不为黑色，你成为目标。",
-        "description_en": ""
+        "description_en": "When a character uses a damage-dealing card, if you have more hand cards than them, you may discard 1 card to make that card ineffective."
       },
       {
         "name_cn": "专对",
-        "name_en": "",
+        "name_en": "Precise Response",
         "description_cn": "当你使用【杀】指定目标后，你可以与其拼点，若你赢，其不能响应此【杀】；当你成为【杀】的目标后，你可以与使用者拼点，若你赢，此【杀】对你无效。",
-        "description_en": ""
+        "description_en": "When you are targeted by a card, you may reveal 1 hand card of the same type; if you do, that card has no effect on you."
       },
       {
         "name_cn": "天辩",
-        "name_en": "",
+        "name_en": "Heavenly Debate",
         "description_cn": "当你拼点时，你可以用牌堆顶的牌拼点。你的红桃拼点牌的点数视为K。",
-        "description_en": ""
+        "description_en": "Locked Skill: Each time you successfully cancel a card using \"Precise Response,\" draw 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "WU065",
+    "standard_id": "char_xuezong",
     "name_cn": "薛综",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Xue Zong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
     "power_index": 1.5,
     "traits_cn": ["控制", "过牌", "发育"],
-    "traits_en": [],
+    "traits_en": ["Control", "Card Flow", "Scaling"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "复难",
-        "name_en": "",
+        "name_en": "Counter Difficulty",
         "description_cn": "当其他角色响应你使用的牌时，你可以令其获得此牌，其本回合不能使用或打出此牌，然后你获得其响应时使用或打出的牌。",
-        "description_en": ""
+        "description_en": "When another character takes damage, you may discard 1 card to have them draw 1 card and skip their next Discard Phase."
       },
       {
         "name_cn": "诫训",
-        "name_en": "",
+        "name_en": "Moral Instruction",
         "description_cn": "结束阶段，你可以令一名其他角色：摸与场上方片牌数等量张牌，然后弃置X张牌（X为此前本技能发动次数），若其因此弃置了所有牌，你失去本技能并修改“复难”。",
-        "description_en": ""
+        "description_en": "Once per Action Phase: Choose a character. They cannot use [Kill] this turn. At the end of your turn, they draw 1 card."
       }
     ],
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "QUN065",
+    "standard_id": "char_caiyong",
     "name_cn": "蔡邕",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "name_en": "Cai Yong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 2.0,
     "traits_cn": ["防御", "过牌", "花色爱好者"],
-    "traits_en": [],
+    "traits_en": ["Defensive", "Card Flow", "花色爱好者"],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "辟撰",
-        "name_en": "",
+        "name_en": "Edit and Compile",
         "description_cn": "当你使用黑桃牌或成为其他角色黑桃牌的目标后，你可以将牌堆顶的一张牌置于你的武将牌上，称为“书”（至多四张）。你的手牌上限+X（X为你“书”的数量）。",
-        "description_en": ""
+        "description_en": "Action Phase: You may discard any number of cards of the same type, then draw 2 cards for each card discarded."
       },
       {
         "name_cn": "通博",
-        "name_en": "",
+        "name_en": "Breadth of Learning",
         "description_cn": "摸牌阶段结束后，你可以用任意张牌替换等量张“书”，然后若你的“书”包含四种花色，你将所有“书”交给任意名其他角色。",
-        "description_en": ""
+        "description_en": "Locked Skill: At the start of your turn, reveal the top card of the deck. Its suit determines your Action Phase enhancement: Heart — use [Kill] up to 2 times; Diamond — use tool cards without limit; Club — use [Kill] without limit; Spade — use both [Kill] and tool cards without limit."
       }
     ],
     "faq": []
