@@ -234,7 +234,7 @@
         "name_cn": "洛神",
         "name_en": "Goddess of the Luo",
         "description_cn": "准备阶段，你可以判定，若结果为黑色，你获得此牌，然后你可以重复此流程。以此法获得的牌本回合不计入手牌上限。",
-        "description_en": "Preparation Phase: Perform judgment; if black, gain it and repeat. Cards gained this way don't count towards hand limit this turn."
+        "description_en": "Starting Phase: Perform judgment; if black, gain it and repeat. Cards gained this way don't count towards hand limit this turn."
       }
     ],
     "faq": []
@@ -330,7 +330,7 @@
         "name_cn": "神速",
         "name_en": "Lightning Speed",
         "description_cn": "你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，你视为使用一张无距离限制的【杀】。",
-        "description_en": "Choose up to 3: 1. Skip Judgment/Draw Phase; 2. Skip Action Phase and discard equipment; 3. Skip Discard Phase and flip. Each choice counts as a rangeless [Kill]."
+        "description_en": "Choose up to 3: 1. Skip Judgment/Draw Phase; 2. Skip Action Phase and discard equipment; 3. Skip Discard Phase and flip over. Each choice counts as a rangeless [Kill]."
       },
       {
         "name_cn": "设变",
@@ -366,7 +366,7 @@
         "name_cn": "将驰",
         "name_en": "Cavalry Charge",
         "description_cn": "摸牌阶段结束时，你可以选择一项：1.摸一张牌，你本回合使用【杀】的次数-1，且【杀】不计入手牌上限；2.重铸一张牌，且本回合使用【杀】的次数+1，【杀】无距离限制。",
-        "description_en": "End of Draw Phase: 1. Draw 1, [Kill] limit -1, [Kill] ignores hand limit; 2. Recast 1, [Kill] limit +1, no range limit."
+        "description_en": "End of Draw Phase: 1. Draw 1, [Kill] limit -1, [Kill] ignores hand limit; 2. Reforge 1, [Kill] limit +1, no range limit."
       }
     ],
     "faq": []
@@ -540,13 +540,13 @@
         "name_cn": "绝情",
         "name_en": "Heartless",
         "description_cn": "锁定技，你即将造成的伤害视为失去体力。",
-        "description_en": "Locked Skill: Your damage is treated as losing health."
+        "description_en": "Locked Skill: Damage you deal is treated as the target losing HP instead."
       },
       {
         "name_cn": "伤逝",
         "name_en": "Mourn the Fallen",
         "description_cn": "当你的手牌数小于X时，你可以将手牌摸至X张。（X为你已损失的体力值数）",
-        "description_en": "When hand cards < lost health (X), draw up to X cards."
+        "description_en": "When your hand cards fall below X (X = HP Lost), draw up to X cards."
       }
     ],
     "faq": []
@@ -714,7 +714,7 @@
         "name_cn": "镇军",
         "name_en": "Suppress the Army",
         "description_cn": "准备阶段，你可以弃置一名角色X张牌（X为其手牌数减体力值且至少为1)，然后选择一项：\n 1.你弃置与其中非装备牌数等量张牌；\n 2.结束阶段，其摸与其中非装备牌数等量张牌。",
-        "description_en": "Preparation Phase: Discard X cards from someone (X = hand - health). Either discard same amount of non-equipment or let them draw that amount at End Phase."
+        "description_en": "Starting Phase: Discard X cards from someone (X = hand - health). Either discard same amount of non-equipment or let them draw that amount at End Phase."
       },
       {
         "name_cn": "毅重",
@@ -822,7 +822,7 @@
         "name_cn": "替身",
         "name_en": "Body Double",
         "description_cn": "限定技，准备阶段，你可以回复所有体力，然后摸X张牌（X为你回复的体力值）。",
-        "description_en": "Limited Skill (Preparation Phase): You may recover all health and draw X cards, where X is the amount of health recovered."
+        "description_en": "Limited Skill (Starting Phase): You may recover all health and draw X cards, where X is the amount of health recovered."
       },
       {
         "name_cn": "咆哮",
@@ -864,7 +864,7 @@
         "name_cn": "观星",
         "name_en": "Read the Stars",
         "description_cn": "准备阶段，你可以观看牌堆顶的五张牌（存活角色数小于4时改为三张），然后将之以任意顺序置于牌堆顶或牌堆底。若皆置于牌堆底，结束阶段你可以再次发动本技能。",
-        "description_en": "Preparation Phase: View top 5 cards (3 if players < 4) and place them on top/bottom in any order. If all go to the bottom, activate again in End Phase."
+        "description_en": "Starting Phase: View top 5 cards (3 if players < 4) and place them on top/bottom in any order. If all go to the bottom, activate again in End Phase."
       }
     ],
     "faq": []
@@ -1050,7 +1050,7 @@
         "name_cn": "烈弓",
         "name_en": "Fierce Archery",
         "description_cn": "你【杀】的攻击范围为此【杀】点数。当你使用【杀】指定目标后，你可以执行以下效果：1.若其手牌数不大于你，其不能抵消此【杀】；2.若其体力值不小于你，此【杀】伤害值+1。",
-        "description_en": "The range of your [Kill] is equal to its point value. When you use a [Kill], you may: 1. If the target's hand cards are not more than yours, the [Kill] cannot be dodged; 2. If the target's health is not less than yours, the [Kill] deals +1 damage."
+        "description_en": "The range of your [Kill] is equal to its point value. When you use a [Kill], you may: 1. If the target's hand cards are not more than yours, the [Kill] cannot be negated; 2. If the target's health is not less than yours, the [Kill] deals +1 damage."
       }
     ],
     "faq": []
@@ -1116,13 +1116,13 @@
         "name_cn": "连环",
         "name_en": "Chain Links",
         "description_cn": "你可以将一张梅花牌当【铁索连环】使用或重铸。你使用【铁索连环】可以多指定一个目标。",
-        "description_en": "Play Club cards as [Iron Shackles] or recast them. Target 1 extra person with [Iron Shackles]."
+        "description_en": "Play Club cards as [Iron Shackles] or Reforge them. Target 1 extra person with [Iron Shackles]."
       },
       {
         "name_cn": "涅槃",
         "name_en": "Nirvana",
         "description_cn": "限定技，当你处于濒死状态时，你可以：弃置所有牌，复原你的武将牌，摸三张牌，回复至3点体力，然后获得“八阵”“火计”“看破”中的一个。",
-        "description_en": "Limited Skill (Near Death): Discard all cards, reset character card, draw 3, recover to 3 health, and gain one of: Bazhen, Huoji, or Kanpo."
+        "description_en": "Limited Skill: When in the Verge of Death State: discard all cards, reset character card, draw 3, recover to 3 health, and gain one of: Bazhen, Huoji, or Kanpo."
       }
     ],
     "faq": []
@@ -1386,7 +1386,7 @@
         "name_cn": "伏枥",
         "name_en": "Veteran's Resolve",
         "description_cn": "限定技，当你处于濒死状态时，你可以将体力回复至X点且手牌摸至X张（X为全场势力数）。然后若X大于你造成的伤害数，你翻面。",
-        "description_en": "Limited Skill (Near Death): Recover health and cards to X (factions count). Flip over if X > damage dealt."
+        "description_en": "Limited Skill: When in the Verge of Death State: recover health and cards to X (factions count). Flip over if X > damage dealt."
       }
     ],
     "faq": []
@@ -1452,7 +1452,7 @@
         "name_cn": "潜袭",
         "name_en": "Qianxi",
         "description_cn": "准备阶段，你可以摸一张牌并展示一张牌。若如此做，距离为1的其他角色本回合不能使用或打出与“潜袭”牌颜色相同的手牌，你本回合使用“潜袭”牌造成的伤害+1。",
-        "description_en": "Preparation Phase: Draw and show 1 card. Nearby characters can't use/play same-colored cards; your cards deal +1 damage to them."
+        "description_en": "Starting Phase: Draw and show 1 card. Nearby characters can't use/play same-colored cards; your cards deal +1 damage to them."
       }
     ],
     "faq": []
@@ -1518,7 +1518,7 @@
         "name_cn": "英魂",
         "name_en": "Heroic Spirit",
         "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
-        "description_en": "Preparation Phase (if injured): Target character either: 1. Draws X, discards 1; 2. Draws 1, discards X (X is lost health)."
+        "description_en": "Starting Phase (if injured): Target character either: 1. Draws X, discards 1; 2. Draws 1, discards X (X is lost health)."
       },
       {
         "name_cn": "武烈",
@@ -1638,7 +1638,7 @@
         "name_cn": "诈降",
         "name_en": "Feigned Surrender",
         "description_cn": "锁定技，当你失去1点体力后，你摸三张牌，若在你的出牌阶段，你本回合使用【杀】的限制次数+1、使用红色【杀】无距离限制且不能被抵消。",
-        "description_en": "Locked Skill: After losing 1 health, draw 3 cards. If in your Action Phase, [Kill] limit +1; red [Kill] has no range limit and cannot be dodged."
+        "description_en": "Locked Skill: After losing 1 health, draw 3 cards. If in your Action Phase, [Kill] limit +1; red [Kill] has no range limit and cannot be negated."
       }
     ],
     "faq": []
@@ -2664,7 +2664,7 @@
         "name_cn": "完杀",
         "name_en": "Total Annihilation",
         "description_cn": "锁定技，你的回合内：除处于濒死状态的角色外的其他角色的红色基本牌均视为【杀】，此【杀】被使用时你摸两张牌。",
-        "description_en": "Locked Skill (Your Turn): Others' red basic cards are [Kill] (except for near-death characters). Draw 2 when such a [Kill] is used."
+        "description_en": "Locked Skill (Your Turn): Others' red basic cards are [Kill] (except for characters in the Verge of Death State). Draw 2 when such a [Kill] is used."
       }
     ],
     "faq": []

@@ -8,8 +8,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "回复", "简单"],
-    "traits_en": ["Defensive", "Recovery", "Simple"],
+    "traits_cn": [
+      "防御",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Recovery",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -36,15 +44,23 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "爆发", "翻面"],
-    "traits_en": ["Aggressive", "Burst", "Flip"],
+    "traits_cn": [
+      "进攻",
+      "爆发",
+      "翻面"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Burst",
+      "Flip"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "神速",
         "name_en": "Lightning Speed",
         "description_cn": "你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，你视为使用一张无距离限制的【杀】。",
-        "description_en": "You may choose up to 3 options before your Preparation Phase: (1) skip Judgment and Draw phases; (2) skip Action Phase and discard 1 equipment; (3) skip Discard Phase and flip. For each option chosen, use 1 [Kill] with no distance limit."
+        "description_en": "You may choose up to 3 options before your Starting Phase: (1) skip Judgment and Draw phases; (2) skip Action Phase and discard 1 equipment; (3) skip Discard Phase and flip. For each option chosen, use 1 [Kill] with no distance limit."
       }
     ],
     "faq": []
@@ -58,8 +74,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "过牌", "持久"],
-    "traits_en": ["Defensive", "Card Flow", "Ramping"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Ramping"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -86,8 +110,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "配合神将", "持久"],
-    "traits_en": ["Defensive", "God General Synergy", "Ramping"],
+    "traits_cn": [
+      "防御",
+      "配合神将",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "God General Synergy",
+      "Ramping"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -114,8 +146,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "简单", "多刀"],
-    "traits_en": ["Aggressive", "Simple", "Multi-Strike"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Multi-Strike"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -136,8 +176,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "辅助", "卖血"],
-    "traits_en": ["Aggressive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -164,15 +212,23 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "控制", "回复"],
-    "traits_en": ["Defensive", "Control", "Recovery"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "回复"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Recovery"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "连环",
         "name_en": "Chain Links",
         "description_cn": "你可以将一张梅花手牌当【铁索连环】使用或重铸。",
-        "description_en": "You may play any Club hand card as [Iron Shackles] or use it to recast [Iron Shackles]."
+        "description_en": "You may play any Club hand card as [Iron Shackles] or use it to Reforge [Iron Shackles]."
       },
       {
         "name_cn": "涅槃",
@@ -192,8 +248,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 0.0,
-    "traits_cn": ["进攻", "防御", "转化大师"],
-    "traits_en": ["Aggressive", "Defensive", "Converter"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Converter"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -226,8 +290,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "拼点"],
-    "traits_en": ["Aggressive", "Control", "Point Fight"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "拼点"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Point Fight"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -248,8 +320,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": ["Aggressive", "Control", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -276,8 +356,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "简单", "爆发"],
-    "traits_en": ["Aggressive", "Simple", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Burst"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -298,8 +386,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "简单", "减目标"],
-    "traits_en": ["Aggressive", "Simple", "Target Reduction"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "减目标"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Target Reduction"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -326,8 +422,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "持久", "颜色爱好者"],
-    "traits_en": ["Control", "Ramping", "Color Specialist"],
+    "traits_cn": [
+      "控制",
+      "持久",
+      "颜色爱好者"
+    ],
+    "traits_en": [
+      "Control",
+      "Ramping",
+      "Color Specialist"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -354,8 +458,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": ["Defensive", "Control", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -388,15 +500,23 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "辅助", "简单"],
-    "traits_en": ["Control", "Support", "Simple"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "英魂",
         "name_en": "Heroic Spirit",
         "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
-        "description_en": "Preparation Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
+        "description_en": "Starting Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
       }
     ],
     "faq": []
@@ -410,8 +530,16 @@
     "faction": "Qun",
     "health": 8,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "防御", "加伤"],
-    "traits_en": ["Aggressive", "Defensive", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Damage Boost"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -450,8 +578,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["控制", "过牌", "拼点"],
-    "traits_en": ["Control", "Card Flow", "Point Fight"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "拼点"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Point Fight"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -478,8 +614,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -506,8 +650,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "防御", "困难"],
-    "traits_en": ["Aggressive", "Defensive", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -540,8 +692,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["控制", "过牌", "困难"],
-    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -568,8 +728,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "困难"],
-    "traits_en": ["Defensive", "Control", "High Difficulty"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -590,8 +758,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "控制", "发育"],
-    "traits_en": ["Defensive", "Control", "Scaling"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "发育"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Scaling"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -604,7 +780,7 @@
         "name_cn": "凿险",
         "name_en": "Breach the Pass",
         "description_cn": "觉醒技，准备阶段，若“田”的数量不小于3，你减少1点体力上限，然后获得“急袭”。",
-        "description_en": "Awakening Skill — Preparation Phase: If you have ≥3 Field cards, reduce your max health by 1 and gain \"Rapid Strike.\""
+        "description_en": "Awakening Skill — Starting Phase: If you have ≥3 Field cards, reduce your max health by 1 and gain \"Rapid Strike.\""
       }
     ],
     "faq": []
@@ -618,8 +794,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "困难", "拆迁办"],
-    "traits_en": ["Control", "High Difficulty", "Disruptor"],
+    "traits_cn": [
+      "控制",
+      "困难",
+      "拆迁办"
+    ],
+    "traits_en": [
+      "Control",
+      "High Difficulty",
+      "Disruptor"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -632,7 +816,7 @@
         "name_cn": "志继",
         "name_en": "Inherit the Will",
         "description_cn": "觉醒技，准备阶段，若你没有手牌，你回复1点体力或摸两张牌，然后减少1点体力上限并获得“观星”。",
-        "description_en": "Awakening Skill — Preparation Phase: If you have no hand cards, recover 1 health or draw 2 cards, reduce your max health by 1, and gain \"Read the Stars.\""
+        "description_en": "Awakening Skill — Starting Phase: If you have no hand cards, recover 1 health or draw 2 cards, reduce your max health by 1, and gain \"Read the Stars.\""
       }
     ],
     "faq": []
@@ -646,8 +830,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "辅助", "主公技"],
-    "traits_en": ["Defensive", "Support", "Lord Skill"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "主公技"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Lord Skill"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -666,7 +858,7 @@
         "name_cn": "若愚",
         "name_en": "Feign Foolishness",
         "description_cn": "主公技，觉醒技，准备阶段，若你是体力值最小的角色，你增加1点体力上限，回复1点体力，然后获得“激将”。",
-        "description_en": "Lord Skill — Awakening Skill — Preparation Phase: If you have the lowest health, increase your max health by 1, recover 1 health, and gain \"Rally the Vanguard.\""
+        "description_en": "Lord Skill — Awakening Skill — Starting Phase: If you have the lowest health, increase your max health by 1, recover 1 health, and gain \"Rally the Vanguard.\""
       }
     ],
     "faq": []
@@ -680,8 +872,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -694,7 +894,7 @@
         "name_cn": "魂姿",
         "name_en": "Spirit Awakening",
         "description_cn": "觉醒技，准备阶段，若你的体力值为1，你减少1点体力上限，然后获得“英姿”和“英魂”。",
-        "description_en": "Awakening Skill — Preparation Phase: If your health is 1, reduce your max health by 1, then gain \"Heroic Bearing\" and \"Heroic Spirit.\""
+        "description_en": "Awakening Skill — Starting Phase: If your health is 1, reduce your max health by 1, then gain \"Heroic Bearing\" and \"Heroic Spirit.\""
       },
       {
         "name_cn": "制霸",
@@ -714,8 +914,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "辅助", "配合神将"],
-    "traits_en": ["Card Flow", "Support", "God General Synergy"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "God General Synergy"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -742,8 +950,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["发育", "回复", "困难"],
-    "traits_en": ["Scaling", "Recovery", "High Difficulty"],
+    "traits_cn": [
+      "发育",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Recovery",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -770,8 +986,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -798,15 +1022,23 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "烈弓",
         "name_en": "Fierce Archery",
         "description_cn": "当你于出牌阶段使用【杀】指定目标后，若其手牌数不小于你的体力值或不大于你的攻击范围，你可以令其不能抵消此【杀】。",
-        "description_en": "When you use [Kill] and designate a target during your Action Phase, you may apply one or both conditions: (1) if their hand count ≤ yours, they cannot cancel this [Kill]; (2) if their health ≥ yours, this [Kill] deals +1 damage."
+        "description_en": "When you use [Kill] and designate a target during your Action Phase, you may apply one or both conditions: (1) if their hand count ≤ yours, they cannot negate this [Kill]; (2) if their health ≥ yours, this [Kill] deals +1 damage."
       }
     ],
     "faq": []
@@ -820,8 +1052,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "简单", "仲家帝"],
-    "traits_en": ["Card Flow", "Simple", "Self-Proclaimed Emperor"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "仲家帝"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Self-Proclaimed Emperor"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -848,8 +1088,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "辅助", "简单"],
-    "traits_en": ["Defensive", "Support", "Simple"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -876,15 +1124,23 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": ["困难", "转化大师", "锦囊大师"],
-    "traits_en": ["High Difficulty", "Converter", "Tool Master"],
+    "traits_cn": [
+      "困难",
+      "转化大师",
+      "锦囊大师"
+    ],
+    "traits_en": [
+      "High Difficulty",
+      "Converter",
+      "Tool Master"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "蛊惑",
         "name_en": "Hex",
         "description_cn": "每回合限一次，你可以扣置一张手牌当任意基本牌或普通锦囊牌使用或打出，其他角色可以质疑并展示此牌：若为假则此牌作废，若为真则质疑者获得“缠怨”。",
-        "description_en": "Once per turn: Place 1 hand card face-down and use it as any basic or non-delay tool card. Others may challenge it — if the card is not what you claimed, it is cancelled; if it is, the challenger gains \"Grudge.\""
+        "description_en": "Once per turn: Place 1 hand card face-down and use it as any basic or Non Time-Delay Tool card. Others may challenge it — if the card is not what you claimed, it is cancelled; if it is, the challenger gains \"Grudge.\""
       }
     ],
     "faq": []
@@ -898,8 +1154,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "判定"],
-    "traits_en": ["Defensive", "Control", "Judgment"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "判定"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Judgment"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -932,8 +1196,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "过牌", "困难"],
-    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -960,8 +1232,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "控制", "简单"],
-    "traits_en": ["Defensive", "Control", "Simple"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -982,8 +1262,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["控制", "过牌", "爆发"],
-    "traits_en": ["Control", "Card Flow", "Burst"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "爆发"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Burst"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1010,8 +1298,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["防御", "辅助", "简单"],
-    "traits_en": ["Defensive", "Support", "Simple"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1044,8 +1340,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "辅助", "主公技"],
-    "traits_en": ["Aggressive", "Support", "Lord Skill"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "主公技"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Lord Skill"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1078,8 +1382,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["过牌", "辅助", "困难"],
-    "traits_en": ["Card Flow", "Support", "High Difficulty"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1106,8 +1418,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": ["过牌", "困难", "多刀"],
-    "traits_en": ["Card Flow", "High Difficulty", "Multi-Strike"],
+    "traits_cn": [
+      "过牌",
+      "困难",
+      "多刀"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "High Difficulty",
+      "Multi-Strike"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1140,8 +1460,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "辅助", "简单"],
-    "traits_en": ["Aggressive", "Support", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1168,8 +1496,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["控制", "困难", "配合神将"],
-    "traits_en": ["Control", "High Difficulty", "God General Synergy"],
+    "traits_cn": [
+      "控制",
+      "困难",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Control",
+      "High Difficulty",
+      "God General Synergy"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1190,15 +1526,23 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "困难", "强命"],
-    "traits_en": ["Control", "High Difficulty", "Sturdy"],
+    "traits_cn": [
+      "控制",
+      "困难",
+      "强命"
+    ],
+    "traits_en": [
+      "Control",
+      "High Difficulty",
+      "Sturdy"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
         "name_cn": "往烈",
         "name_en": "Unwavering Zeal",
         "description_cn": "你出牌阶段使用的首张牌无距离限制。当你于出牌阶段使用基本牌或普通锦囊牌时，你可以令此牌不能被响应，然后你本阶段不能再使用牌。",
-        "description_en": "The first card you use each Action Phase ignores distance. When you use a basic or non-delay tool card, you may make it unresponsive; if you do, you cannot use any more cards this Action Phase."
+        "description_en": "The first card you use each Action Phase ignores distance. When you use a basic or Non Time-Delay Tool card, you may make it unresponsive; if you do, you cannot use any more cards this Action Phase."
       }
     ],
     "faq": []
@@ -1212,8 +1556,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "过牌", "困难"],
-    "traits_en": ["Aggressive", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1240,8 +1592,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["控制", "困难", "数学家"],
-    "traits_en": ["Control", "High Difficulty", "Mathematician"],
+    "traits_cn": [
+      "控制",
+      "困难",
+      "数学家"
+    ],
+    "traits_en": [
+      "Control",
+      "High Difficulty",
+      "Mathematician"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1254,7 +1614,7 @@
         "name_cn": "箜声",
         "name_en": "Konghou Melody",
         "description_cn": "准备阶段，你可以将任意张牌置于你的武将牌上。结束阶段，你获得“箜声”牌中的非装备牌，然后令一名角色使用剩余“箜声”牌并失去1点体力。",
-        "description_en": "Preparation Phase: Place any number of hand cards on your character card. End Phase: Gain the non-equipment cards among them back; let another character use the remaining equipment cards and lose 1 health."
+        "description_en": "Starting Phase: Place any number of hand cards on your character card. End Phase: Gain the non-equipment cards among them back; let another character use the remaining equipment cards and lose 1 health."
       }
     ],
     "faq": []
@@ -1268,8 +1628,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "简单", "母兵脸"],
-    "traits_en": ["Control", "Simple", "Imposing"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "母兵脸"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Imposing"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1282,7 +1650,7 @@
         "name_cn": "鸿举",
         "name_en": "Grand Rise",
         "description_cn": "觉醒技，准备阶段，若“荣”的数量不小于3，你用任意手牌替换等量的“荣”，减少1点体力上限并获得“清侧”。",
-        "description_en": "Awakening Skill — Preparation Phase: If you have ≥3 Glory markers, exchange any hand cards for equal Glory markers, reduce your max health by 1, and gain \"Clear the Court.\""
+        "description_en": "Awakening Skill — Starting Phase: If you have ≥3 Glory markers, exchange any hand cards for equal Glory markers, reduce your max health by 1, and gain \"Clear the Court.\""
       }
     ],
     "faq": []
@@ -1296,8 +1664,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "过牌", "困难"],
-    "traits_en": ["Aggressive", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {
@@ -1316,7 +1692,7 @@
         "name_cn": "破势",
         "name_en": "Break the Tide",
         "description_cn": "觉醒技，准备阶段，若你的装备栏均被废除或体力值为1，你减少1点体力上限，将手牌摸至体力上限，失去“决堰”并获得“怀柔”。",
-        "description_en": "Awakening Skill — Preparation Phase: If all your equipment slots are disabled or your health is 1, reduce your max health by 1, draw cards up to your max health, lose \"Breach the Dam,\" and gain \"Conciliate.\""
+        "description_en": "Awakening Skill — Starting Phase: If all your equipment slots are disabled or your health is 1, reduce your max health by 1, draw cards up to your max health, lose \"Breach the Dam,\" and gain \"Conciliate.\""
       }
     ],
     "faq": []
@@ -1330,8 +1706,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["进攻", "防御", "强命"],
-    "traits_en": ["Aggressive", "Defensive", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Sturdy"
+    ],
     "expansion": "Myth Returns",
     "skills": [
       {

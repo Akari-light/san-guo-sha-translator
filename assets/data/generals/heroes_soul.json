@@ -8,8 +8,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -36,15 +44,23 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": ["Aggressive", "Control", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "陷阵",
         "name_en": "Breach the Lines",
         "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合对被拼点者使用牌无距离和次数限制且无视其防具，你使用仅指定唯一目标的【杀】或普通锦囊牌可以多指定其为目标；若你没赢，你本回合不能使用【杀】且你的【杀】不计入手牌上限。",
-        "description_en": "Once per Action Phase: Use 1 [Kill] with no distance limit that cannot be cancelled by [Dodge] (the target may take damage instead of dodging)."
+        "description_en": "Once per Action Phase: Use 1 [Kill] with no distance limit that cannot be negated by [Dodge] (the target may take damage instead of dodging)."
       },
       {
         "name_cn": "禁酒",
@@ -64,8 +80,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "多刀"],
-    "traits_en": ["Defensive", "Support", "Multi-Strike"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "多刀"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Multi-Strike"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -92,8 +116,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "拆迁办", "定点输出"],
-    "traits_en": ["Control", "Disruptor", "Targeted Damage"],
+    "traits_cn": [
+      "控制",
+      "拆迁办",
+      "定点输出"
+    ],
+    "traits_en": [
+      "Control",
+      "Disruptor",
+      "Targeted Damage"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -114,15 +146,23 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "马参军"],
-    "traits_en": ["Aggressive", "Control", "马参军"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "马参军"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "马参军"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "散谣",
         "name_en": "Scatter Rumors",
         "description_cn": "出牌阶段各限一次，你可以弃置一张牌对一名体力值/手牌数最大的角色造成1点伤害。",
-        "description_en": "When another character uses a non-delay tool card, you may discard 1 card to place 1 of their cards on top of the deck."
+        "description_en": "When another character uses a Non Time-Delay Tool card, you may discard 1 card to place 1 of their cards on top of the deck."
       },
       {
         "name_cn": "制蛮",
@@ -142,8 +182,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["控制", "辅助", "卖血"],
-    "traits_en": ["Control", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -170,8 +218,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": ["Aggressive", "Control", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -192,8 +248,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["控制", "辅助", "于神将"],
-    "traits_en": ["Control", "Support", "于神将"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "于神将"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "于神将"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -214,8 +278,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -242,8 +314,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "过牌", "简单"],
-    "traits_en": ["Aggressive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -264,8 +344,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["卖血", "困难", "转化大师"],
-    "traits_en": ["Glass Cannon", "High Difficulty", "Converter"],
+    "traits_cn": [
+      "卖血",
+      "困难",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Glass Cannon",
+      "High Difficulty",
+      "Converter"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -292,8 +380,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "防御", "回复"],
-    "traits_en": ["Aggressive", "Defensive", "Recovery"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "回复"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -320,8 +416,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "控制", "简单"],
-    "traits_en": ["Aggressive", "Control", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -348,8 +452,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["控制", "辅助", "简单"],
-    "traits_en": ["Control", "Support", "Simple"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -376,8 +488,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "辅助", "发育"],
-    "traits_en": ["Aggressive", "Support", "Scaling"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Scaling"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -404,8 +524,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "控制", "爆发"],
-    "traits_en": ["Aggressive", "Control", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Burst"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -432,8 +560,16 @@
     "faction": "Qun",
     "health": 6,
     "power_index": 3.0,
-    "traits_cn": ["防御", "简单", "上限超高"],
-    "traits_en": ["Defensive", "Simple", "上限超高"],
+    "traits_cn": [
+      "防御",
+      "简单",
+      "上限超高"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Simple",
+      "上限超高"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -454,8 +590,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "发育"],
-    "traits_en": ["Defensive", "Card Flow", "Scaling"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Scaling"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -482,8 +626,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "卖血"],
-    "traits_en": ["Defensive", "Card Flow", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -496,7 +648,7 @@
         "name_cn": "自立",
         "name_en": "Self-Proclamation",
         "description_cn": "觉醒技，准备阶段，若你“权”的数量不小于3，你回复1点体力或摸两张牌，然后减少1点体力上限，获得“排异”。",
-        "description_en": "Awakening Skill — Preparation Phase: If you are at full health and have ≥4 hand cards, reduce your max health by 1 and gain \"Gather Forces.\""
+        "description_en": "Awakening Skill — Starting Phase: If you are at full health and have ≥4 hand cards, reduce your max health by 1 and gain \"Gather Forces.\""
       }
     ],
     "faq": []
@@ -510,8 +662,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -538,8 +698,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "简单", "精策神将"],
-    "traits_en": ["Card Flow", "Simple", "精策神将"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "精策神将"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "精策神将"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -560,8 +728,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": ["Defensive", "Control", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -574,7 +750,7 @@
         "name_cn": "御策",
         "name_en": "Defensive Stratagem",
         "description_cn": "当你受到伤害后，你可以展示一张手牌令伤害来源选择一项：1.弃置一张与你展示牌类型不同的手牌；2.你回复1点体力。",
-        "description_en": "Preparation Phase: You may exchange any number of hand cards with face-down cards you have set aside, then set aside the same number of hand cards."
+        "description_en": "Starting Phase: You may exchange any number of hand cards with face-down cards you have set aside, then set aside the same number of hand cards."
       }
     ],
     "faq": []
@@ -588,8 +764,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "辅助", "多刀"],
-    "traits_en": ["Aggressive", "Support", "Multi-Strike"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "多刀"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Multi-Strike"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -610,8 +794,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["控制", "简单", "拼点"],
-    "traits_en": ["Control", "Simple", "Point Fight"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "拼点"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Point Fight"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -638,8 +830,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "简单", "拆迁办"],
-    "traits_en": ["Control", "Simple", "Disruptor"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "拆迁办"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Disruptor"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -660,8 +860,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -688,8 +896,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["控制", "辅助", "困难"],
-    "traits_en": ["Control", "Support", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "High Difficulty"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -716,8 +932,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["控制", "辅助", "到此为止了"],
-    "traits_en": ["Control", "Support", "到此为止了"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "到此为止了"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "到此为止了"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -738,8 +962,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["防御", "控制", "配合神将"],
-    "traits_en": ["Defensive", "Control", "God General Synergy"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "God General Synergy"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -766,8 +998,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "控制", "困难"],
-    "traits_en": ["Aggressive", "Control", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -800,8 +1040,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "辅助", "配合神将"],
-    "traits_en": ["Defensive", "Support", "God General Synergy"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "God General Synergy"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -828,8 +1076,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": ["防御", "辅助", "回复"],
-    "traits_en": ["Defensive", "Support", "Recovery"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -856,8 +1112,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -884,8 +1148,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Damage Boost"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -906,15 +1178,23 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "山河图专属"],
-    "traits_en": ["Aggressive", "Control", "山河图专属"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "山河图专属"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "山河图专属"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "司敌",
         "name_en": "Assess the Enemy",
         "description_cn": "其他角色出牌阶段开始时，你可以弃置一张与你装备区里任意牌颜色相同的非基本牌，令其本阶段不能使用和打出与此牌颜色相同的牌，然后此阶段结束时，若其本阶段未使用过【杀】，你视为对其使用一张【杀】。",
-        "description_en": "Preparation Phase: Look at the top 3 cards of the deck, place 1 on top, 1 on the bottom, and keep 1."
+        "description_en": "Starting Phase: Look at the top 3 cards of the deck, place 1 on top, 1 on the bottom, and keep 1."
       }
     ],
     "faq": []
@@ -928,8 +1208,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "控制", "判定"],
-    "traits_en": ["Aggressive", "Control", "Judgment"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "判定"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Judgment"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -956,15 +1244,23 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": ["控制", "辅助", "连环状态"],
-    "traits_en": ["Control", "Support", "连环状态"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "连环状态"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "连环状态"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "品第",
         "name_en": "Grade and Rank",
         "description_cn": "出牌阶段，每名角色限一次，你可以弃置一张本阶段未以此法弃置过的类型的牌，令一名其他角色摸X张牌或弃置X张牌（X为本回合本技能发动次数），若其已受伤，你进入连环状态。",
-        "description_en": "Preparation Phase: Reveal your hand cards. Gain 1 card from the deck for each suit not represented in your hand."
+        "description_en": "Starting Phase: Reveal your hand cards. Gain 1 card from the deck for each suit not represented in your hand."
       },
       {
         "name_cn": "法恩",
@@ -984,8 +1280,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1006,8 +1310,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "辅助", "简单"],
-    "traits_en": ["Aggressive", "Support", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1028,8 +1340,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "辅助", "光头强"],
-    "traits_en": ["Card Flow", "Support", "光头强"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "光头强"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "光头强"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1056,8 +1376,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "防御", "减目标"],
-    "traits_en": ["Aggressive", "Defensive", "Target Reduction"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "减目标"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Target Reduction"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1084,8 +1412,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "定点输出", "不怕控制"],
-    "traits_en": ["Aggressive", "Targeted Damage", "不怕控制"],
+    "traits_cn": [
+      "进攻",
+      "定点输出",
+      "不怕控制"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Targeted Damage",
+      "不怕控制"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1112,8 +1448,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": ["过牌", "辅助", "配合神将"],
-    "traits_en": ["Card Flow", "Support", "God General Synergy"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "God General Synergy"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1140,8 +1484,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["防御", "过牌", "巨兽"],
-    "traits_en": ["Defensive", "Card Flow", "巨兽"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "巨兽"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "巨兽"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1168,8 +1520,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "过牌", "回复"],
-    "traits_en": ["Aggressive", "Card Flow", "Recovery"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1196,8 +1556,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1216,7 +1584,7 @@
         "name_cn": "兴衰",
         "name_en": "Rise and Fall",
         "description_cn": "主公技，限定技，当你进入濒死状态时，你可以令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害。",
-        "description_en": "Awakening Skill — Preparation Phase: If a character with fewer hand cards than you has taken damage this round, reduce your max health by 1 and gain \"Stratagem.\""
+        "description_en": "Awakening Skill — Starting Phase: If a character with fewer hand cards than you has taken damage this round, reduce your max health by 1 and gain \"Stratagem.\""
       }
     ],
     "faq": []
@@ -1230,8 +1598,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Damage Boost"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1258,8 +1634,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "辅助", "回复"],
-    "traits_en": ["Aggressive", "Support", "Recovery"],
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1286,8 +1670,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "过牌", "爆发"],
-    "traits_en": ["Aggressive", "Card Flow", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Burst"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1314,8 +1706,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "辅助", "断杀"],
-    "traits_en": ["Card Flow", "Support", "断杀"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "断杀"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "断杀"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1342,8 +1742,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "控制", "转化大师"],
-    "traits_en": ["Aggressive", "Control", "Converter"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Converter"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1370,8 +1778,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "辅助", "发育"],
-    "traits_en": ["Control", "Support", "Scaling"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Scaling"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1404,8 +1820,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "辅助", "回复"],
-    "traits_en": ["Defensive", "Support", "Recovery"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1426,8 +1850,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "辅助", "卖血"],
-    "traits_en": ["Control", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1448,8 +1880,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "多刀", "全场打击"],
-    "traits_en": ["Control", "Multi-Strike", "全场打击"],
+    "traits_cn": [
+      "控制",
+      "多刀",
+      "全场打击"
+    ],
+    "traits_en": [
+      "Control",
+      "Multi-Strike",
+      "全场打击"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1470,8 +1910,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "过牌", "配合神将"],
-    "traits_en": ["Defensive", "Card Flow", "God General Synergy"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "God General Synergy"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1498,8 +1946,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "防御", "卖血"],
-    "traits_en": ["Aggressive", "Defensive", "Glass Cannon"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "卖血"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1526,8 +1982,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "控制", "持久"],
-    "traits_en": ["Defensive", "Control", "Ramping"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Ramping"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1554,8 +2018,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["控制", "辅助", "简单"],
-    "traits_en": ["Control", "Support", "Simple"],
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1576,8 +2048,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "简单"],
-    "traits_en": ["Defensive", "Control", "Simple"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Simple"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1604,8 +2084,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "过牌", "卖血"],
-    "traits_en": ["Aggressive", "Card Flow", "Glass Cannon"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1632,8 +2120,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["防御", "控制", "回复"],
-    "traits_en": ["Defensive", "Control", "Recovery"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "回复"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1660,8 +2156,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": ["Defensive", "Control", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1688,8 +2192,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": ["过牌", "困难", "爆发"],
-    "traits_en": ["Card Flow", "High Difficulty", "Burst"],
+    "traits_cn": [
+      "过牌",
+      "困难",
+      "爆发"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "High Difficulty",
+      "Burst"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1710,8 +2222,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "过牌", "回复"],
-    "traits_en": ["Defensive", "Card Flow", "Recovery"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1738,8 +2258,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "过牌"],
-    "traits_en": ["Defensive", "Control", "Card Flow"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Card Flow"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1766,15 +2294,23 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "过牌", "爆发"],
-    "traits_en": ["Aggressive", "Card Flow", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Burst"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "问卦",
         "name_en": "Divine the Hexagram",
         "description_cn": "每名角色出牌阶段限一次，其可以选择一张牌，将之交给你，然后你可以将此牌置于牌堆顶或牌堆底，你与其各从另一端摸一张牌。",
-        "description_en": "Preparation Phase: Make a judgment. Heart — recover 1 health; Diamond — draw 2 cards; Club — discard 1 card from an opponent; Spade — flip a character."
+        "description_en": "Starting Phase: Make a judgment. Heart — recover 1 health; Diamond — draw 2 cards; Club — discard 1 card from an opponent; Spade — flip a character."
       },
       {
         "name_cn": "伏诛",
@@ -1794,8 +2330,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "辅助", "连环状态"],
-    "traits_en": ["Defensive", "Support", "连环状态"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "连环状态"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "连环状态"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1822,8 +2366,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["辅助", "卖血", "回复"],
-    "traits_en": ["Support", "Glass Cannon", "Recovery"],
+    "traits_cn": [
+      "辅助",
+      "卖血",
+      "回复"
+    ],
+    "traits_en": [
+      "Support",
+      "Glass Cannon",
+      "Recovery"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1850,8 +2402,16 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "防御", "控制"],
-    "traits_en": ["Aggressive", "Defensive", "Control"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Control"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1884,8 +2444,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": ["控制", "过牌", "发育"],
-    "traits_en": ["Control", "Card Flow", "Scaling"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Scaling"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {
@@ -1912,8 +2480,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["防御", "过牌", "花色爱好者"],
-    "traits_en": ["Defensive", "Card Flow", "花色爱好者"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "花色爱好者"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "花色爱好者"
+    ],
     "expansion": "Hero's Soul",
     "skills": [
       {

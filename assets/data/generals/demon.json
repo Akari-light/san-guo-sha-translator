@@ -97,13 +97,13 @@
         "name_cn": "谋变",
         "name_en": "Final Gambit",
         "description_cn": "准备阶段，若你【诡伏】记录数至少为3，你可入魔，获得你【诡伏】记录的技能，并获得【骤袭】。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
-        "description_en": "Preparation Phase: If the total number of entries recorded by [Ambuscade] is at least 3, you may Demonize — gain all skills recorded by [Ambuscade] and gain [Onslaught]. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+        "description_en": "Starting Phase: If the total number of entries recorded by [Ambuscade] is at least 3, you may Demonize — gain all skills recorded by [Ambuscade] and gain [Onslaught]. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
       },
       {
         "name_cn": "骤袭",
         "name_en": "Reprisal",
         "description_cn": "准备阶段，你从三个可造成伤害的技能中选择一个获得至你的下回合开始。受到你伤害的角色于本轮结束时视为对你使用一张【杀】。",
-        "description_en": "Preparation Phase: Choose one of three damage-dealing skills to gain until the start of your next turn. At the end of this round, each character who took damage from you this round is treated as using a [Kill] against you."
+        "description_en": "Starting Phase: Choose one of three damage-dealing skills to gain until the start of your next turn. At the end of this round, each character who took damage from you this round is treated as using a [Kill] against you."
       }
     ],
     "faq": [
@@ -123,7 +123,7 @@
         "q_cn": "体力增加（如吃桃）也能触发【诡伏】吗？",
         "a_cn": "可以。任何体力值变化都会触发【诡伏】。例如濒死吃桃时体力先减后增，可触发两次获得两张【闪】。",
         "q_en": "Does gaining HP (e.g. from a [Peach]) also trigger [Ambuscade]?",
-        "a_en": "Yes. Any HP change triggers [Ambuscade]. When revived from near-death by a [Peach], HP first drops then rises, triggering it twice and granting 2 [Dodge] cards."
+        "a_en": "Yes. Any HP change triggers [Ambuscade]. When revived from the Verge of Death State by a [Peach], HP first drops then rises, triggering it twice and granting 2 [Dodge] cards."
       },
       {
         "q_cn": "【诡伏】可以记录技能伤害吗？记录后能永久获得吗？",
@@ -141,7 +141,7 @@
         "q_cn": "【骤袭】迫使其他角色对你使用的【杀】有什么特性？",
         "a_cn": "无色虚拟杀，无视距离和八卦阵，但被藤甲克制。结算顺序以魔司马懿为起点逆时针进行。",
         "q_en": "What are the properties of the [Kill] that [Reprisal] forces others to use against you?",
-        "a_en": "A colorless virtual [Kill] that ignores distance and [Eight Trigrams Array], but is countered by Vine Armor. Resolves counter-clockwise starting from Demon Sima Yi."
+        "a_en": "A colorless virtual [Kill] that ignores distance and [Eight Trigrams Formation], but is countered by Rattan Armour. Resolves counter-clockwise starting from Demon Sima Yi."
       },
       {
         "q_cn": "入魔后每轮扣血时，是否触发【诡伏】？",
@@ -201,7 +201,7 @@
       {
         "q_cn": "【夺炁】的额外出牌阶段算独立的新回合吗？",
         "a_cn": "算。没有弃牌阶段，手牌可超出上限，延时锦囊不能直接使用，但【罡拳】可将其转化为【决斗】使用。",
-        "q_en": "Does [Seize Qi]'s extra Play Phase count as a new turn?",
+        "q_en": "Does [Seize Qi]'s extra Action Phase count as a new turn?",
         "a_en": "Yes — independent turn with no discard phase, so hand cards can exceed the limit. Delayed tool cards cannot be used directly, but [Astral Strike] can convert them into a [Duel]."
       },
       {
@@ -267,7 +267,7 @@
         "name_cn": "倾世",
         "name_en": "Alluring",
         "description_cn": "准备阶段，你可入魔，令所有角色获得一张单目标伤害牌。其他角色使用此牌指定唯一目标时，你可弃置一张牌，重新指定牌的目标（无距离限制）。这些牌：造成伤害后，你摸一张牌；未因使用进入弃牌堆后，你获得之。（准备阶段，若这些牌均离开其手牌区，你再令所有角色获得牌。）入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
-        "description_en": "Preparation Phase: You may Demonize — give all characters one single-target damage card. When another character uses this card with only one target, you may discard a card to redirect it (no distance restriction). These cards: when one deals damage, you draw 1 card; if one leaves play without being used, you gain it. (Preparation Phase: if all these cards have left their holders' hands, give all characters another one.) While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+        "description_en": "Starting Phase: You may Demonize — give all characters one single-target damage card. When another character uses this card with only one target, you may discard a card to redirect it (no distance restriction). These cards: when one deals damage, you draw 1 card; if one leaves play without being used, you gain it. (Starting Phase: if all these cards have left their holders' hands, give all characters another one.) While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
       }
     ],
     "faq": [
@@ -292,14 +292,14 @@
       {
         "q_cn": "【幻惑】对额外出牌阶段有效吗？",
         "a_cn": "无效。只对目标角色下个正常出牌阶段有效。",
-        "q_en": "Does [Bewitch] apply to extra Play Phases from other skills?",
-        "a_en": "No. [Bewitch] only applies to the target's next normal Play Phase."
+        "q_en": "Does [Bewitch] apply to extra Action Phases from other skills?",
+        "a_en": "No. [Bewitch] only applies to the target's next normal Action Phase."
       },
       {
         "q_cn": "被幻惑的角色出牌阶段若没有可用手牌会怎样？",
         "a_cn": "可正常发动出牌阶段技能。但若后续通过技能摸到可用手牌，【幻惑】仍会触发。",
-        "q_en": "What if a Bewitched character has no playable cards at the start of their Play Phase?",
-        "a_en": "They may use Play Phase skills normally. If they draw a playable card via a skill during that phase, [Bewitch] will still trigger."
+        "q_en": "What if a Bewitched character has no playable cards at the start of their Action Phase?",
+        "a_en": "They may use Action Phase skills normally. If they draw a playable card via a skill during that phase, [Bewitch] will still trigger."
       },
       {
         "q_cn": "倾世牌被弃置或从【决斗】中打出后，魔貂蝉能获得吗？",

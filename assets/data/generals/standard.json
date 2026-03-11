@@ -8,8 +8,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["辅助", "回复", "配合神将"],
-    "traits_en": ["Support", "Recovery", "God General Synergy"],
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "God General Synergy"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -36,8 +44,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "转化大师"],
-    "traits_en": ["Aggressive", "Simple", "Converter"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Converter"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -58,8 +74,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "多刀"],
-    "traits_en": ["Aggressive", "Simple", "Multi-Strike"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Multi-Strike"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -80,15 +104,23 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "困难"],
-    "traits_en": ["Defensive", "Control", "High Difficulty"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "Standard",
     "skills": [
       {
         "name_cn": "观星",
         "name_en": "Read the Stars",
         "description_cn": "准备阶段，你可以观看牌堆顶的X张牌（X为存活角色数且至多为5），然后以任意顺序置于牌堆顶或牌堆底。",
-        "description_en": "During your preparation phase, you can choose to look at the top X cards of the deck (X = surviving characters, max 5), then place them back in any order on top or bottom."
+        "description_en": "During your Starting Phase, you can choose to look at the top X cards of the deck (X = surviving characters, max 5), then place them back in any order on top or bottom."
       },
       {
         "name_cn": "空城",
@@ -108,8 +140,16 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -130,15 +170,23 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Standard",
     "skills": [
       {
         "name_cn": "铁骑",
         "name_en": "Iron Cavalry",
         "description_cn": "当你使用【杀】指定目标后，你可以判定，若为红色，其不能使用【闪】响应此【杀】。",
-        "description_en": "When you use [Kill] and designate a target, you may make a judgment. Unless they discard a card matching the judgment result's suit, they cannot cancel this [Kill]."
+        "description_en": "When you use [Kill] and designate a target, you may make a judgment. Unless they discard a card matching the judgment result's suit, they cannot negate this [Kill]."
       },
       {
         "name_cn": "马术",
@@ -158,15 +206,23 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["过牌", "简单", "爆发"],
-    "traits_en": ["Card Flow", "Simple", "Burst"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "爆发"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Burst"
+    ],
     "expansion": "Standard",
     "skills": [
       {
         "name_cn": "集智",
         "name_en": "Gathered Wisdom",
         "description_cn": "当你使用普通锦囊牌时，你可以摸一张牌。",
-        "description_en": "When you use a non-delay tool card, you may draw 1 card."
+        "description_en": "When you use a Non Time-Delay Tool card, you may draw 1 card."
       },
       {
         "name_cn": "奇才",
@@ -186,8 +242,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "发育", "主公技"],
-    "traits_en": ["Card Flow", "Scaling", "Lord Skill"],
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "主公技"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Scaling",
+      "Lord Skill"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -214,8 +278,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["控制", "简单", "转化大师"],
-    "traits_en": ["Control", "Simple", "Converter"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Converter"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -236,8 +308,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "发育", "简单"],
-    "traits_en": ["Defensive", "Scaling", "Simple"],
+    "traits_cn": [
+      "防御",
+      "发育",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Scaling",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -258,8 +338,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": ["过牌", "简单", "多刀"],
-    "traits_en": ["Card Flow", "Simple", "Multi-Strike"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Multi-Strike"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -280,8 +368,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "过牌", "惟贤惟德"],
-    "traits_en": ["Aggressive", "Card Flow", "Virtue"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "惟贤惟德"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Virtue"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -308,8 +404,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "持久"],
-    "traits_en": ["Defensive", "Control", "Ramping"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Ramping"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -336,8 +440,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -364,8 +476,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "卖血", "简单"],
-    "traits_en": ["Defensive", "Glass Cannon", "Simple"],
+    "traits_cn": [
+      "防御",
+      "卖血",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Glass Cannon",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -392,8 +512,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": ["Defensive", "Control", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -420,8 +548,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "卖血", "简单"],
-    "traits_en": ["Defensive", "Glass Cannon", "Simple"],
+    "traits_cn": [
+      "防御",
+      "卖血",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Glass Cannon",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -442,8 +578,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "简单", "持久"],
-    "traits_en": ["Control", "Simple", "Ramping"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "持久"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Ramping"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -464,8 +608,16 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Damage Boost"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -486,8 +638,16 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -514,15 +674,23 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
         "name_cn": "洛神",
         "name_en": "Goddess of the Luo",
         "description_cn": "准备阶段，你可以判定，若结果为黑色，你获得此牌，然后你可以重复此流程。",
-        "description_en": "Preparation Phase: Make a judgment. If it is black, gain that card and repeat this process."
+        "description_en": "Starting Phase: Make a judgment. If it is black, gain that card and repeat this process."
       },
       {
         "name_cn": "倾国",
@@ -542,8 +710,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["辅助", "回复", "简单"],
-    "traits_en": ["Support", "Recovery", "Simple"],
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "Simple"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -570,8 +746,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -592,8 +776,16 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "过牌", "锦囊大师"],
-    "traits_en": ["Aggressive", "Card Flow", "Tool Master"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "锦囊大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Tool Master"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -606,7 +798,7 @@
         "name_cn": "离间",
         "name_en": "Sow Discord",
         "description_cn": "出牌阶段限一次，你可以弃置一张牌令一名男性角色视为对另一名男性角色使用一张【决斗】（不能被【无懈可击】抵消）。",
-        "description_en": "Once per Action Phase: Discard 1 card to force a male character to [Duel] another male character (cannot be cancelled by [Nullification])."
+        "description_en": "Once per Action Phase: Discard 1 card to force a male character to [Duel] another male character (cannot be negated by [Nullification])."
       }
     ],
     "faq": []
@@ -620,8 +812,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "辅助", "回复"],
-    "traits_en": ["Card Flow", "Support", "Recovery"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -648,8 +848,16 @@
     "faction": "Qun",
     "health": 6,
     "power_index": 2.5,
-    "traits_cn": ["防御", "简单", "颜色爱好者"],
-    "traits_en": ["Defensive", "Simple", "Color Specialist"],
+    "traits_cn": [
+      "防御",
+      "简单",
+      "颜色爱好者"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Simple",
+      "Color Specialist"
+    ],
     "expansion": "Standard",
     "skills": [
       {
@@ -670,15 +878,23 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "过牌", "困难"],
-    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Standard",
     "skills": [
       {
         "name_cn": "妄尊",
         "name_en": "Vainglorious",
         "description_cn": "主公的准备阶段，你可以摸一张牌，然后令其本回合手牌上限-1。",
-        "description_en": "Your Preparation Phase: You may draw 1 card, then reduce another character's hand limit by 1 this turn."
+        "description_en": "Your Starting Phase: You may draw 1 card, then reduce another character's hand limit by 1 this turn."
       },
       {
         "name_cn": "同疾",
