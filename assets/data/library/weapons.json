@@ -40,8 +40,8 @@
       {
         "q_cn": "装备【雌雄双股剑】并使用黑色【杀】攻击装备了【仁王盾】的目标时，是否可以发动武器技能？",
         "a_cn": "可以使用黑色【杀】进行攻击并发动武器技能，但由于【仁王盾】的效果，此【杀】最终无效。",
-        "q_en": "If the attacker uses a black [Kill] against a target equipped with [Ren Wang Shield], can [Twin Swords] still activate?",
-        "a_en": "Yes, the weapon skill can activate, but the [Kill] itself is negated by [Ren Wang Shield]."
+        "q_en": "If the attacker uses a black [Kill] against a target equipped with [Vajra Shield], can [Twin Swords] still activate?",
+        "a_en": "Yes, the weapon skill can activate, but the [Kill] itself is negated by [Vajra Shield]."
       },
       {
         "q_cn": "装备【雌雄双股剑】攻击异性角色时，可以选择不发动武器技能吗？",
@@ -184,7 +184,7 @@
       {
         "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动【天妒】将判定牌收入手牌，此时是否受到+1伤害？",
         "a_cn": "不受+1伤害。郭嘉通过【天妒】获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
-        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Array]. He fails the judgment and activates [Genius] to take the judgment card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
+        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates [Genius] to take the judgment card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
         "a_en": "No. Guo Jia now has a hand card (from [Genius]), so the condition for the bonus is no longer met at the time damage is resolved."
       }
     ]
@@ -326,14 +326,14 @@
       {
         "q_cn": "【青釭剑】能使【仁王盾】无效吗？",
         "a_cn": "可以。【仁王盾】视为防具，【青釭剑】可令其在本次【杀】中无效。",
-        "q_en": "Can [Qing Gang Sword] negate [Ren Wang Shield]?",
-        "a_en": "Yes. [Ren Wang Shield] is treated as armor, so [Qing Gang Sword] negates it for that [Kill]."
+        "q_en": "Can [Qing Gang Sword] negate [Vajra Shield]?",
+        "a_en": "Yes. [Vajra Shield] is treated as armor, so [Qing Gang Sword] Nullifies it for that [Kill]."
       },
       {
         "q_cn": "【青釭剑】是否影响【八卦阵】的判定？",
         "a_cn": "是的。【八卦阵】也是防具，被【青釭剑】无效后，目标无法用【八卦阵】进行判定来当【闪】使用。",
-        "q_en": "Does [Qing Gang Sword] affect [Eight Trigrams Array]?",
-        "a_en": "Yes. [Eight Trigrams Array] is armor. While negated by [Qing Gang Sword], the target cannot use its judgment to produce a [Dodge]."
+        "q_en": "Does [Qing Gang Sword] affect [Eight Trigrams Formation]?",
+        "a_en": "Yes. [Eight Trigrams Formation] is armor. While Nullified by [Qing Gang Sword], the target cannot use its Judgment to produce a [Dodge]."
       }
     ]
   },
@@ -484,10 +484,10 @@
         "a_en": "Regardless of the suits of the two cards used, the resulting [Kill] is always treated as a normal [Kill] with no elemental property."
       },
       {
-        "q_cn": "用【丈八蛇矛】打出的【杀】，其点数如何？",
-        "a_cn": "通过【丈八蛇矛】打出的【杀】没有点数属性。",
-        "q_en": "Does a [Kill] produced by [Serpent Spear] have a numerical value?",
-        "a_en": "No. A [Kill] produced via [Serpent Spear] has no numerical value."
+        "q_cn": "用【丈八蛇矛】打出的【杀】，其点数、花色和颜色如何判定？",
+        "a_cn": "通过【丈八蛇矛】使用的【杀】是将两张实体牌当【杀】操作，依据「将…牌当A牌操作」规则：牌名变为【杀】，但花色、点数、颜色仍为原来两张牌各自的信息。由于是两张牌，具体使用哪张牌的属性（如拼点）以实际结算为准。",
+        "q_en": "What are the rank, suit, and color of a [Kill] produced by [Serpent Spear]?",
+        "a_en": "A [Kill] from [Serpent Spear] uses two physical cards treated as [Kill] under the 'treat card as' rule: the card name becomes [Kill], but each card's original suit, rank, and color are retained. Since two cards are involved, the specific attributes used in any subsequent check (e.g. a Point Duel) follow the normal resolution for whichever card applies."
       },
       {
         "q_cn": "是否可以发动【丈八蛇矛】响应【南蛮入侵】或【决斗】？",
@@ -591,9 +591,9 @@
       },
       {
         "q_cn": "若目标装备了防具且当前未受伤，是否同时触发防具无效和伤害+1两个效果？",
-        "a_cn": "是的，两个锁定技效果同时生效：防具无效且伤害+1。",
-        "q_en": "If the target has armor equipped and is currently at full health, do both effects (armor negation and +1 damage) apply simultaneously?",
-        "a_en": "Yes. Both Locked effects apply at the same time."
+        "a_cn": "是的，两个锁定技效果同时生效：防具无效且伤害+1。未受伤是指体力值等于体力上限。",
+        "q_en": "If the target has armor equipped and is currently Unwounded (HP equal to Max HP), do both effects (armor negation and +1 damage) apply simultaneously?",
+        "a_en": "Yes. Both Locked effects apply at the same time. Unwounded means the character's current HP equals their Max HP."
       }
     ]
   },

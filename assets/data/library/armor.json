@@ -28,7 +28,7 @@
         "q_cn": "装备了【青釭剑】的攻击者使用【杀】时，【八卦阵】的判定是否还能生效？",
         "a_cn": "不能。【青釭剑】令目标防具无效，因此【八卦阵】在此次【杀】中无法触发判定。",
         "q_en": "If the attacker is equipped with [Qing Gang Sword], can [Eight Trigrams Formation]'s Judgment still activate?",
-        "a_en": "No. [Qing Gang Sword] negates the target's armor, so [Eight Trigrams Formation] cannot trigger its Judgment for that [Kill]."
+        "a_en": "No. [Qing Gang Sword] Nullifies the target's armor, so [Eight Trigrams Formation] cannot trigger its Judgment for that [Kill]."
       },
       {
         "q_cn": "【八卦阵】可以响应【南蛮入侵】或【万箭齐发】需要的【闪】吗？",
@@ -55,7 +55,7 @@
         "q_cn": "【青釭剑】可以无效【白银狮子】的减伤效果吗？",
         "a_cn": "可以。【青釭剑】令目标防具无效，装备【青釭剑】的攻击者使用【杀】时，【白银狮子】的减伤锁定技在该次【杀】中无效，攻击者可以造成超过1点的伤害。",
         "q_en": "Can [Qing Gang Sword] bypass [Silver Lion Helmet]'s damage reduction?",
-        "a_en": "Yes. [Qing Gang Sword] negates the target's armor. When an attacker equipped with [Qing Gang Sword] uses [Kill], [Silver Lion Helmet]'s damage reduction is negated for that attack, allowing damage exceeding 1 to be dealt."
+        "a_en": "Yes. [Qing Gang Sword] Nullifies the target's armor. When an attacker equipped with [Qing Gang Sword] uses [Kill], [Silver Lion Helmet]'s damage reduction is Nullified for that attack, allowing damage exceeding 1 to be dealt."
       },
       {
         "q_cn": "使用【酒】强化的【杀】造成2点伤害时，【白银狮子】能将伤害减为1吗？",
@@ -145,13 +145,13 @@
         "q_cn": "【明光铠】能防止武将技能造成的火焰伤害吗？",
         "a_cn": "不能。【明光铠】只取消特定卡牌（【火攻】、火【杀】）的目标，不防止武将技能直接造成的火焰伤害。",
         "q_en": "Does [Radiant Plate] protect against fire damage dealt directly by general skills?",
-        "a_en": "No. [Radiant Plate] only cancels targeting from specific cards ([Blaze Assault], [Fire Attack], fire [Kill]). It does not prevent fire damage dealt directly by general skills."
+        "a_en": "No. [Radiant Plate] only cancels targeting from [Incendiary] and fire [Kill]. It does not prevent fire damage dealt directly by general skills."
       },
       {
         "q_cn": "小势力角色的「不被横置」效果在任何时候都生效吗？",
         "a_cn": "是的。只要装备了【明光铠】且为小势力角色，一切令其横置的效果均无效。",
         "q_en": "Does the 'cannot be tapped' effect for minor-faction characters apply at all times while equipped?",
-        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would tap their general card are negated."
+        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would tap their general card are Nullified."
       }
     ]
   },
@@ -172,13 +172,13 @@
         "q_cn": "【仁王盾】对黑色的雷【杀】是否有效？",
         "a_cn": "有效。只要【杀】的花色为黑色（黑桃或梅花），无论其属性（普通、雷、火），【仁王盾】均令其无效。",
         "q_en": "Does [Vajra Shield] negate a black thunder [Kill]?",
-        "a_en": "Yes. As long as the [Kill] card is black (Spades or Clubs), it is negated regardless of its elemental type (normal, thunder, or fire)."
+        "a_en": "Yes. As long as the [Kill] card is black (Spades or Clubs), it is Nullified regardless of its elemental type (normal, thunder, or fire)."
       },
       {
         "q_cn": "【青釭剑】能令【仁王盾】无效吗？",
         "a_cn": "可以。【青釭剑】令目标防具无效，因此装备【青釭剑】的攻击者使用黑色【杀】时，【仁王盾】在该次攻击中无效。",
         "q_en": "Can [Qing Gang Sword] negate [Vajra Shield]?",
-        "a_en": "Yes. [Qing Gang Sword] negates the target's armor, so a black [Kill] will land normally when the attacker is equipped with [Qing Gang Sword]."
+        "a_en": "Yes. [Qing Gang Sword] Nullifies the target's armor, so a black [Kill] will land normally when the attacker is equipped with [Qing Gang Sword]."
       },
       {
         "q_cn": "【仁王盾】对红色的【杀】是否有任何效果？",
@@ -205,13 +205,13 @@
         "q_cn": "【藤甲】对雷【杀】和火【杀】是否有效？",
         "a_cn": "无效。【藤甲】只令普通【杀】无效，雷【杀】和火【杀】可以正常命中。此外，受到火焰伤害时伤害还会+1。",
         "q_en": "Does [Rattan Armour] protect against thunder [Kill] or fire [Kill]?",
-        "a_en": "No. [Rattan Armour] only negates normal (non-elemental) [Kill]. Thunder [Kill] and fire [Kill] land normally, and fire damage additionally increases by 1."
+        "a_en": "No. [Rattan Armour] only Nullifies normal (non-elemental) [Kill]. Thunder [Kill] and fire [Kill] land normally, and fire damage additionally increases by 1."
       },
       {
         "q_cn": "【青釭剑】可以无效【藤甲】吗？",
         "a_cn": "可以。装备【青釭剑】的攻击者使用普通【杀】时，【藤甲】在该次攻击中无效，普通【杀】正常命中。",
         "q_en": "Can [Qing Gang Sword] negate [Rattan Armour]?",
-        "a_en": "Yes. When an attacker equipped with [Qing Gang Sword] uses a normal [Kill], [Rattan Armour] is negated for that attack and the [Kill] lands normally."
+        "a_en": "Yes. When an attacker equipped with [Qing Gang Sword] uses a normal [Kill], [Rattan Armour] is Nullified for that attack and the [Kill] lands normally."
       },
       {
         "q_cn": "【藤甲】的火焰伤害+1是否叠加在原有伤害之上？",

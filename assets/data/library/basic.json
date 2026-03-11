@@ -14,9 +14,9 @@
     "faq": [
       {
         "q_cn": "普杀、雷杀、火杀的区别？",
-        "a_cn": "普通杀造成物理伤害；雷杀和火杀造成属性伤害，可触发藤甲或连环等特殊效果。",
+        "a_cn": "普通杀造成普通伤害；雷杀和火杀造成属性伤害，可触发藤甲或连环传导等特殊效果。",
         "q_en": "What is the difference between Normal, Thunder, and Fire Kill?",
-        "a_en": "Normal Kill deals physical damage. Thunder and Fire Kill deal elemental damage, which can trigger special effects like Vine Armor or chain transmission."
+        "a_en": "Normal [Kill] deals normal damage (no elemental property). Thunder and Fire [Kill] deal elemental damage, which can trigger special effects such as [Rattan Armour]'s fire penalty or chain propagation."
       }
     ]
   },
@@ -56,15 +56,15 @@
     "faq": [
       {
         "q_cn": "可以给满血角色用桃吗？",
-        "a_cn": "不可以。",
+        "a_cn": "不可以。未受伤的角色（体力值等于体力上限）无法回复体力。",
         "q_en": "Can I use a Peach on a full-health character?",
-        "a_en": "No."
+        "a_en": "No. An Unwounded character (HP equal to Max HP) cannot recover HP."
       },
       {
         "q_cn": "在自己的回合可以给另一名角色用桃吗？",
-        "a_cn": "不可以。只有在其他角色濒死时才能对其使用桃。",
+        "a_cn": "不可以。只有在其他角色进入濒死状态时才能对其使用桃。",
         "q_en": "Can I use a Peach on another character during my turn?",
-        "a_en": "No. Peach can only be used on another character when they are on the brink of death."
+        "a_en": "No. [Peach] can only be used on another character when they are in the Verge of Death State."
       }
     ]
   },
@@ -85,7 +85,13 @@
         "q_cn": "酒可以对别人使用吗？",
         "a_cn": "不可以，酒只能对自己使用。",
         "q_en": "Can I use Wine on others?",
-        "a_en": "No, Wine can only be used on yourself."
+        "a_en": "No. [Wine] can only be used on yourself."
+      },
+      {
+        "q_cn": "在濒死状态下使用酒，回复的是体力还是体力值？",
+        "a_cn": "回复1点体力。使用酒进入濒死状态结算时，令角色回复1点体力，使其脱离濒死状态。",
+        "q_en": "When [Wine] is used during the Verge of Death State, does it recover HP?",
+        "a_en": "Yes. Using [Wine] during a Verge of Death Resolution recovers 1 HP, which can bring the character out of the Verge of Death State."
       }
     ]
   },
@@ -137,6 +143,12 @@
         "a_cn": "原持有者扣1点体力，因为【毒】离开了该玩家的手牌。",
         "q_en": "If [Poison] leaves my hand via [Steal] or [Dismantle], who loses HP?",
         "a_en": "The original holder loses 1 HP, because [Poison] left their hand."
+      },
+      {
+        "q_cn": "【毒】作为拼点牌亮出后，谁失去体力？",
+        "a_cn": "持有【毒】并将其作为拼点牌亮出的角色失去1点体力。拼点亮出属于以正面向上的形式离开手牌区。",
+        "q_en": "When [Poison] is revealed as a Point Duel card, who loses HP?",
+        "a_en": "The character who reveals [Poison] as their Point Duel card loses 1 HP. Revealing a card in a Point Duel counts as it leaving the hand face-up."
       },
       {
         "q_cn": "我可以在出牌阶段主动使用【毒】吗？",

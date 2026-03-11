@@ -14,9 +14,9 @@
     "faq": [
       {
         "q_cn": "赤兔会增加我的武器攻击距离吗？",
-        "a_cn": "不会。赤兔减少的是你到其他角色的距离，让更多目标变得可达——但不会改变你的武器射程数值。",
+        "a_cn": "不会。赤兔减少的是你到其他角色的距离，让更多目标变得可达——但不会改变你的武器射程数值。此修正适用于所有需要检测你到某角色距离的情形，例如【顺手牵羊】的距离判断。",
         "q_en": "Does Red Hare increase my weapon attack range?",
-        "a_en": "No. It reduces the distance others appear to be from you, making more targets reachable — but it does not change your weapon range value."
+        "a_en": "No. It reduces the distance from you to other characters, making more targets reachable — but it does not change your weapon range value. This modifier applies to all distance checks from you to another character, not only attacks (e.g. [Steal] also checks distance)."
       }
     ]
   },
@@ -63,9 +63,9 @@
     "faq": [
       {
         "q_cn": "的卢会影响需要判断距离的锦囊牌（如【顺手牵羊】）吗？",
-        "a_cn": "会。任何检查与你距离的效果都会受到+1修正的影响。",
-        "q_en": "Does Di Lu affect tool cards like [Steal] that require distance?",
-        "a_en": "Yes. Any effect that checks distance to you is affected by the +1 modifier."
+        "a_cn": "会。的卢令其他任意角色计算与你的距离+1，此修正适用于所有以你为目标时的距离检测，不限于攻击。",
+        "q_en": "Does Di Lu affect tool cards like [Steal] that require distance checks?",
+        "a_en": "Yes. Di Lu increases the distance any other character measures to you by 1. This modifier applies to all distance checks targeting you, not only attacks."
       }
     ]
   },
