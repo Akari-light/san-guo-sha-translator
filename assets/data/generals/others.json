@@ -1,0 +1,7497 @@
+[
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "伏完",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "谋溃",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后，你可以选择一项：1.摸一张牌；2.弃置其一张牌。然后若此【杀】被【闪】抵消，其弃置你一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘协",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "天命",
+        "name_en": "",
+        "description_cn": "当你成为【杀】的目标后，你可以：弃置两张牌（不足则全弃），摸两张牌。若全场体力值唯一最大的角色不为你，其可以如此做。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "密诏",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名其他角色所有手牌，然后令其与另一名其他角色拼点：拼点赢的角色视为对没赢的角色使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "灵雎",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "竭缘",
+        "name_en": "",
+        "description_cn": "当你对其他角色造成伤害时，若其体力值不小于你，你可以弃置一张黑色手牌令此伤害+1；当其他角色对你造成伤害时，若其体力值不小于你，你可以弃置一张红色手牌令此伤害-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "焚心",
+        "name_en": "",
+        "description_cn": "锁定技，若场上有已阵亡的：忠臣，“竭缘”减少伤害无体力值限制；反贼，“竭缘”增加伤害无体力值限制；内奸，“竭缘”弃置牌无颜色限制且可以弃置装备区里的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "公孙瓒",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "义从",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1；若你的体力值不大于2，其他角色计算与你的距离+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SHU040",
+    "standard_id": "",
+    "name_cn": "孙尚香",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Special",
+    "skills": [
+      {
+        "name_cn": "良助",
+        "name_en": "",
+        "description_cn": "当一名角色于其出牌阶段内回复体力后，你可以选择一项：1. 摸一张牌；2. 令其摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "返乡",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若有至少一名因你发动过“良助”而令其摸牌的角色已受伤，则你加1点体力上限，然后回复1点体力，失去“良助”并获得“枭姬”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "枭姬",
+        "name_en": "Fierce Lady",
+        "description_cn": "当你失去装备区里的一张牌后，你可以摸两张牌。",
+        "description_en": "When you lose a card from your equipment area, you may draw 2 cards."
+      }
+    ],
+    "faq": [
+        {
+        "q_cn": "SP孫尚香的【良助】技能描述中「當一名角色於其出牌階段內回復體力後」，如何理解？",
+        "a_cn": "若有角色於自己出牌階段內因為【桃】、【桃園結義】、【白銀獅子】與技能效果而使自己回復體力時可以發動，另外在出牌階段內因瀕死而使用【桃】、【酒】或技能回復體力也能發動【良助】。但僅限於當前回合角色回復體力時，例如：華陀的出牌階段對其他角色發動【青囊】而使其他角色回復體力時，【良助】不能發動，但華陀對自己發動【青囊】則可以發動【良助】。同時也限制出牌階段回復體力才能發動【良助】，例如：當前回合角色在判定階段受到【閃電】造成的傷害進入瀕死狀態使用【桃】、【酒】或技能回復體力時不能發動【良助】。另外當前回合角色在出牌階段內因為瀕死狀態而多次使用【桃】、【酒】多次回復體力時可以多次發動【良助】；但一次性回復多點體力的場合，例如：龐統的【涅槃】與SP姜維的【逢亮】等技能只能發動一次【良助】。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "SP孫尚香在自己的出牌階段內回復體力時能否對自己發動【良助】？",
+        "a_cn": "可以，此時SP孫尚香可以選擇摸一張牌或是令自己摸兩張牌。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "SP孫尚香的【返鄉】技能描述中「你發動過【良助】令其摸牌的角色」，如何理解？",
+        "a_cn": "是指所有SP孫尚香發動【良助】令其摸兩張牌的角色，若SP孫尚香的準備階段時這些角色中最少有一人已受傷，則觸發【返鄉】並執行覺醒技效果。另外SP孫尚香對自己發動【良助】時選擇摸一張牌效果的場合不會觸發【返鄉】的覺醒條件，但SP孫尚香對自己發動【良助】令自己摸兩張牌時，下個準備階段若已受傷則會觸發【返鄉】的覺醒條件。",
+        "q_en": "",
+        "a_en": ""
+        }
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杨修",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "啖酪",
+        "name_en": "",
+        "description_cn": "当你成为锦囊牌的目标后，若你不是此牌的唯一目标，你可以摸一张牌，然后此牌对你无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鸡肋",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以声明一种牌的类型，伤害来源本回合不能使用、打出或弃置你声明的此类手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP庞德",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "决死",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置一张【杀】并令攻击范围内一名其他角色弃置一张牌，若弃置牌不为【杀】且其体力值不小于你，你视为对其使用【决斗】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP关羽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "单骑",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你的手牌数大于体力值且主公不是刘备，你减少1点体力上限，然后获得“马术”和“怒斩”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "武圣",
+        "name_en": "",
+        "description_cn": "你可以将一张红色牌当【杀】使用或打出。你使用的方片【杀】无距离限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP马超",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "追击",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与体力值不大于你的角色的距离视为1。当你使用【杀】指定距离为1的角色为目标后，其弃置一张牌或重铸其装备区里的所有牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "誓仇",
+        "name_en": "",
+        "description_cn": "你使用的【杀】可以多指定X+1个目标（X为你已损失体力值）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP赵云",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "龙胆",
+        "name_en": "",
+        "description_cn": "你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "冲阵",
+        "name_en": "",
+        "description_cn": "当你发动“龙胆”时，你可以获得对方的一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP貂蝉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "离魂",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张牌、翻面并获得一名男性角色的所有手牌。出牌阶段结束时，你交给其与其体力值等量张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "闭月",
+        "name_en": "",
+        "description_cn": "结束阶段，若你没有手牌，你可以摸两张牌，否则你可以摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP贾诩",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缜略",
+        "name_en": "",
+        "description_cn": "锁定技，你的普通锦囊牌不能被抵消；你不能成为延时锦囊牌的目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "间书",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以交给一名其他角色一张黑色手牌，并选择另一名角色，然后令两者拼点：赢的角色弃置两张牌，没赢的角色失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "拥嫡",
+        "name_en": "",
+        "description_cn": "限定技，回合开始时，你可以令一名其他男性角色增加1点体力上限并回复1点体力，然后令其武将牌上的主公技生效。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP曹仁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "伪溃",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以失去1点体力并观看一名有手牌的其他角色的手牌，若其中没有【闪】，你弃置其中一张牌，否则你视为对其使用一张【杀】，且你本回合计算与其的距离视为1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "励战",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令任意名已受伤角色摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI046",
+    "standard_id": "",
+    "name_cn": "蔡文姬",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "Special",
+    "skills": [
+      {
+        "name_cn": "陈情",
+        "name_en": "",
+        "description_cn": "每轮限一次，当一名角色进入濒死状态时，你可以令另一名其他角色摸四张牌，然后弃置四张牌，若弃置牌包含四种花色，其视为对处于濒死状态的角色使用一张【桃】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "默识",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将一张手牌当你出牌阶段内使用过的第一张基本牌或普通锦囊牌使用，然后你可以将一张手牌当你出牌阶段使用过的第二张基本牌或普通锦囊牌使用。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+【Q】：SP蔡文姬的【陳情】技能描述中「每輪限一次」，如何理解？
+【A】：每次主公的回合開始時，視為新的一輪，例如遊戲開始時第一次主公的回合就是第一輪，因此若SP蔡文姬在第一輪的時候發動【陳情】後，必須等到第二次主公的回合開始時才能再次發動【陳情】。
+
+【Q】：SP蔡文姬的【陳情】技能描述中「你可以令另一名其他角色摸四張牌，然後棄置四張牌」，如果因為該角色發動技能(例如界夏侯惇的【清儉】)導致剩餘的牌數不足四張怎麼辦？
+【A】：不足則全棄。
+
+【Q】：SP蔡文姬的【陳情】能否在自己瀕死的時候發動？
+【A】：能。
+
+【Q】：SP蔡文姬發動【陳情】令一名角色摸四張牌棄置四張牌，該角色棄置四張牌時，周泰能否發動【奮激】？
+【A】：不行，因為【陳情】的棄牌屬於該角色主動棄置。
+
+【Q】：SP蔡文姬的【陳情】、周泰的【不屈】、吳國太的【補益】、SP姜維的【逢亮】和曹沖的【仁心】，這些技能之間的結算順序是如何？
+【A】：【陳情】、【補益】和【逢亮】的發動時機都是某角色「進入瀕死」；而【不屈】的發動時機是「處於瀕死」；【仁心】則是「受到傷害時」。因此【仁心】優先選擇發動，其次是【陳情】、【補益】和【逢亮】(這三個技能都同時機發動，因此會按當前回合角色開始逆時針結算)，最後才是【不屈】。
+
+【Q】：SP蔡文姬的【默識】技能描述中「你可以將一張手牌A當你本回合出牌階段使用的第一張B基本牌或B非延時錦囊牌使用」，那麼B有花色嗎？
+【A】：有，花色與A相同。
+
+【Q】：SP蔡文姬在回合內使用的第1張與第2張牌分別是【酒】和【殺】，在結束階段發動【默識】時，能不使用【酒】直接使用【殺】嗎？
+【A】：不能，必須按照順序使用。
+
+【Q】：SP蔡文姬發動【丈八舌矛】效果將兩張手牌當作【殺】使用，能否發動【默識】視為使用【殺】？
+【A】：可以
+
+【Q】：SP蔡文姬發動【默識】使用的【殺】能否被【朱雀羽扇】轉化為【火殺】？
+【A】：可以，如果你出牌階段使用的【殺】是普通的【殺】，那可以透過【朱雀羽扇】轉化。
+
+【Q】：SP蔡文姬在出牌階段內依次使用【殺】、【酒】，在回合結束階段發動【默識】視為使用【殺】的時候，有此【殺】是否還有【酒】的傷害+1的效果？
+【A】：有，因為【酒】的效果是「本回合下一張使用的【殺】造成的傷害+1」，結束階段還是SP蔡文姬的回合，因此【酒】的效果還在。
+
+【Q】：除了【閃】之外，有哪些基本牌或非延時錦囊牌不能通過【默識】使用？
+【A】：【酒】和【無懈可擊】，因為【酒】的使用時機是在出牌階段，而【無懈可擊】的目標必須是錦囊牌。此外，SP蔡文姬滿體力的時候不能透過【默識】使用【桃】；在沒有合法目標的情況下也不能透過【默識】使用【殺】和部分非延時錦囊牌。例如：場上SP蔡文姬之外的其他角色之手牌區、裝備區、判定區全部沒有牌，此時SP蔡文姬不能發動【默識】使用【順手牽羊】和【過河拆橋】。
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陈琳",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "笔伐",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将一张手牌暗置于一名其他角色的武将牌上，其下回合开始时观看之并选择一项：1.交给你一张类型相同的手牌并获得此牌；2.移去此牌并失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "颂词",
+        "name_en": "",
+        "description_cn": "每名角色限一次，出牌阶段，你可以选择一项：1.令一名手牌数小于体力值的角色摸两张牌；2.令一名手牌数大于体力值的角色弃置两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹洪",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "装备大师",
+      "奶爸"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "援护",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将一张装备牌置入一名角色的装备区，若为：武器牌，你弃置其距离为1的一名角色区域里的一张牌；防具牌，其摸一张牌；坐骑牌，其回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SHU039",
+    "standard_id": "",
+    "name_cn": "关银屏",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Special",
+    "skills": [
+      {
+        "name_cn": "血祭",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张红色牌，然后选择至多X名角色，横置这些角色并对其中一名角色造成1点火焰伤害（X为你已损失的体力值且至少为1）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "虎啸",
+        "name_en": "",
+        "description_cn": "锁定技，当你造成火焰伤害后，受到此伤害的角色各摸一张牌，本回合你对这些角色使用牌没有次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "武继",
+        "name_en": "",
+        "description_cn": "觉醒技，结束阶段，若你于此回合内造成过3点或更多伤害，你增加1点体力上限并回复1点体力，失去“虎啸”，然后从场上、牌堆或弃牌堆中获得【青龙偃月刀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+      {
+        "q_cn": "关银屏满血的时后能否发动【雪恨】？",
+        "a_cn": "能。因为既能有“X至少为1”的描述。",
+        "q_en": "",
+        "a_en": ""
+      },
+      {
+        "q_cn": "【雪恨】描述中的“横置这些角色”是否包括解除连环状态？如果关银屏指定一名已处于连环状态的角色为【雪恨】的目标，会发生什么？",
+        "a_cn": "不包括，只能横置，不能解除连环。如果关银屏指定一名已处于连环状态的角色，则什么也不会发生，相当于少指定一名目标。",
+        "q_en": "",
+        "a_en": ""
+      },
+      {
+        "q_cn": "【虎啸】令受伤的角色摸牌，是否受到【铁索连环】的影响？",
+        "a_cn": "是，所有在连环状态下并受到火焰伤害的角色都摸一张。",
+        "q_en": "",
+        "a_en": ""
+      },
+      {
+        "q_cn": "关银屏的【虎啸】与郭嘉的【遗计】、夏侯惇的【刚烈】、荀彧的【节命】等技能结算顺序是如何？",
+        "a_cn": "假如关银屏对郭嘉/夏侯惇/荀彧造成了火焰伤害，技能结算如下： 1.先进行濒死结算；2.若未进入濒死状态(未死亡)或脱离濒死状态(被救回)，则【虎啸】先触发，让对方摸一张牌；3.结算完【虎啸】的摸牌后，其他角色依照当前回合的角色依逆时针顺序依次发动技能；4.若有其他角色处于连环状态，则继续进行火焰伤害的传递，然后重复1.2.3.的流程。",
+        "q_en": "",
+        "a_en": ""
+      },
+      {
+        "q_cn": "关银屏的【虎啸】与防止伤害类的技能(如曹冲的【仁心】、黄皓的【贿生】)如何结算？转移伤害类呢(如大乔的【流离】、小乔的【天香】)？",
+        "a_cn": "【虎啸】是在“造成伤害后”触发，而防止伤害类技能是在“造成伤害时”发动，所以这些武将在防止关银屏的火焰伤害后，不会触发【虎啸】的摸牌效果。转移伤害类的则是由实际受到火焰伤害的角色摸一张牌。",
+        "q_en": "",
+        "a_en": ""
+      },
+      {
+        "q_cn": "发动【武继】觉醒并获得的【青龙偃月刀】能直接使用吗?",
+        "a_cn": "不能。",
+        "q_en": "",
+        "a_en": ""
+      }
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "夏侯霸",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "豹变",
+        "name_en": "",
+        "description_cn": "锁定技，若你的体力值：不大于3，你视为拥有“挑衅”；不大于2，你视为拥有“咆哮”；为1，你视为拥有“神速”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "大乔小乔",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "星舞",
+        "name_en": "",
+        "description_cn": "弃牌阶段开始时，你可以将一张牌置于你的武将牌上，然后你可以移去三张“星舞”牌或翻面并弃置两张手牌，弃置一名其他角色装备区里的所有牌，若其为男性/女性，你对其造成2/1点伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "落雁",
+        "name_en": "",
+        "description_cn": "锁定技，若你有“星舞”牌，你视为拥有“天香”和“流离”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU042",
+    "standard_id": "",
+    "name_cn": "诸葛恪",
+    "name_en": "",
+    "gender": "",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "上限超高"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "傲才",
+        "name_en": "",
+        "description_cn": "当你于回合外需要使用或打出基本牌时，若你有/没有手牌，你可以观看牌堆顶两/四张牌，然后可以使用或打出其中的基本牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "黩武",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置X张牌对你攻击范围内一名其他角色造成1点伤害（X为其体力值）。若其因此进入濒死状态且于濒死结算后存活，你失去1点体力且本回合本技能失效。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        【Q】：呂布對諸葛恪使用【殺】時，諸葛恪是否可以發動兩次【傲才】？
+        【A】：可以。
+
+        【Q】：其他角色瀕死求桃時，諸葛恪是否可以發動【傲才】來使用【桃】？
+        【A】：若觀看的兩張牌中有【桃】的話，諸葛恪可以使用那張【桃】，但觀看的兩張牌中只有【酒】的話則不能使用，除非是諸葛恪自己瀕死。
+
+        【Q】：發動【黷武】時，是否可以棄置裝備區裡的牌？
+        【A】：可以。
+
+        【Q】：諸葛恪對龐統發動【黷武】使其進入瀕死狀態，若此時龐統被其他角色使用【桃】救回或是發動【涅槃】復活，是否能執行失去體力且技能失效的效果？
+
+        【A】：無論是否復活，只要一名角色是因為【黷武】造成的傷害而進入瀕死狀態時，在結算瀕死狀態後諸葛恪都必須執行失去體力且【黷武】技能失效的效果。
+        【Q】：諸葛恪對沮授發動【黷武】造成1點傷害，若觸發【矢北】失去體力的效果而進入瀕死，瀕死狀態結算完後是否執行失去體力且【黷武】失效的效果？
+
+        【A】：不會，因為沮授是因為【矢北】失去體力的效果而進入瀕死狀態的，不是因為【黷武】造成的傷害而進入瀕死狀態，因此不會執行失去體力的效果。
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张宝",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "咒缚",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将一张牌置于一名其他角色的武将牌上，称为“咒”。当有“咒”的角色判定时，将“咒”作为判定牌。每回合结束时，你令本回合失去过“咒”的角色各失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "影兵",
+        "name_en": "",
+        "description_cn": "锁定技，有“咒”的角色使用与“咒”颜色相同的牌时，你摸一张牌；若这是你第二次因此“咒”摸牌，你获得此“咒”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI016",
+    "standard_id": "",
+    "name_cn": "乐进",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "骁果",
+        "name_en": "",
+        "description_cn": "其他角色的结束阶段，你可以弃置一张基本牌，令其选择一项：1.弃置一张装备牌，你摸一张牌；2.你对其造成1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        [Q]若一名角色在結束階段開始時有技能發動，例如閉月，那麼驍果和閉月哪個先發動?
+        [A]按當前回合角色開始逆時針的順序結算，當前回合角色先發動。
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹昂",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "慷忾",
+        "name_en": "",
+        "description_cn": "当一名角色成为【杀】的目标后，若你与其距离1以内，你可以摸一张牌，然后展示并交给其一张牌，若为装备牌且其不是你，其可以使用之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "诸葛瑾",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缓释",
+        "name_en": "",
+        "description_cn": "当一名角色的判定牌生效前，你可以令其观看你的手牌并选择你的一张牌，然后你用此牌代替判定牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "弘援",
+        "name_en": "",
+        "description_cn": "每阶段限一次，当你一次获得至少两张牌后，你可以交给至多两名其他角色各一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "明哲",
+        "name_en": "",
+        "description_cn": "锁定技，当你于出牌阶段外失去红色牌后，你展示之并摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张星彩",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "甚贤",
+        "name_en": "",
+        "description_cn": "每回合限一次，当其他角色在你的回合外因弃置而失去基本牌后，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "枪舞",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以判定，然后你本回合使用点数小于X的【杀】无距离限制、点数大于X的【杀】无次数限制（X为判定牌点数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "祖茂",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "引兵",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将任意张非基本牌置于你的武将牌上。当你受到【杀】或【决斗】造成的伤害后，你移去一张“引兵”牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "绝地",
+        "name_en": "",
+        "description_cn": "锁定技，准备阶段，你选择一项：1.移去所有“引兵”牌，将手牌摸至体力上限；2.令一名体力值不大于你的其他角色获得所有“引兵”牌，然后回复1点体力并摸等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU016",
+    "standard_id": "",
+    "name_cn": "丁奉",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 1.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "短兵",
+        "name_en": "",
+        "description_cn": "你使用【杀】可以多指定一名距离为1的角色为目标。你对距离为1的角色使用【杀】需两张【闪】才能抵消。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "奋迅",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以选择一名其他角色，然后你本回合计算与其的距离视为1，若如此做，若你直到结束阶段未对其造成过伤害，结束阶段，你弃置一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        【Q】：SP丁奉發動【方天畫戟】效果對3名目標使用【殺】時，還可以發動【短兵】再額外指定一個目標嗎？
+        【A】：可以，但【短兵】的額外目標必須符合「你與目標的距離為1」的條件。
+
+        【Q】：若有其他角色對SP丁奉使用【借刀殺人】，SP丁奉可以發動【短兵】額外指定距離為1的目標嗎？
+        【A】：可以，【短兵】可以在回合外使用【殺】時發動。
+
+        【Q】：SP丁奉發動【奮迅】時可以棄置自己裝備區的裝備牌嗎？
+        【A】：可以，但不能棄置判定區和【木牛流馬】下的牌。
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "潘凤",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": [
+      "控制",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "狂斧",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一名角色装备区里的一张牌，视为使用一张无距离限制的【杀】。若此装备牌：不属于你且未造成伤害，你弃置两张手牌；属于你且造成了伤害，你摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马良",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "自书",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色的回合结束后，你将此回合获得的手牌置入弃牌堆。当你于回合内不因本技能获得手牌后，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "应援",
+        "name_en": "",
+        "description_cn": "当你于回合内使用牌后，你可以令一名其他角色获得牌堆中一张类型相同的牌。每回合每种类型限一次。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "诸葛诞",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "功獒",
+        "name_en": "",
+        "description_cn": "锁定技，当其他角色死亡后，你增加1点体力上限并回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "举义",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你的体力上限大于存活角色数，你摸与你的体力上限等量张牌，并获得“崩坏”和“威重”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "程昱",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "设伏",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以记录一个非装备牌牌名并将一张手牌暗置于你的武将牌上，称为“伏兵”。当其他角色于你回合外使用以此法记录的手牌时，你可以移去一张“伏兵”令此牌无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "贲育",
+        "name_en": "",
+        "description_cn": "当一名角色对你造成伤害后，你可以选择一项：1.将手牌摸至X张（至多摸至五张）；2.弃置至少X+1张手牌对其造成1点伤害。（X为其手牌数）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "何太后",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "主公技"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "鸩毒",
+        "name_en": "",
+        "description_cn": "每名角色出牌阶段开始时，你可以弃置一张手牌，然后其视为使用一张【酒】，若其不是你，你对其造成1点伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "戚乱",
+        "name_en": "",
+        "description_cn": "每回合结束后，你可以摸与本回合死亡角色数等量张牌，每有一名角色被你杀死，你额外摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙鲁育",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "困难",
+      "小虎"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "魅步",
+        "name_en": "",
+        "description_cn": "其他角色出牌阶段开始时，若你在其攻击范围内，你可以弃置一张牌，令其本回合视为拥有“止息”。若你弃置的牌不是【杀】或黑色锦囊牌，本回合其与你的距离视为1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "穆穆",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以选择一项：1.弃置一名其他角色装备区里的一张牌；2.获得一名角色装备区里的一张防具牌，若如此做，你本回合不能使用或打出【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "文聘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "控制",
+      "保核能力",
+      "颜色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "镇卫",
+        "name_en": "",
+        "description_cn": "当其他角色成为【杀】或黑色锦囊牌的唯一目标时，若其体力值小于你且使用者不为你，你可以弃置一张牌并选择一项：1.摸一张牌，然后代替其成为此牌目标；2.令此牌无效并移出游戏直到回合结束。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙皓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "主公技",
+      "仇海翻波"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "残蚀",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以多摸X张牌（X为已受伤的角色数），然后当你本回合使用【杀】或普通锦囊牌时，弃置一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "仇海",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到伤害时，若你没有手牌，此伤害+1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "归命",
+        "name_en": "",
+        "description_cn": "主公技，锁定技，其他吴势力角色于你的回合内视为已受伤。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP姜维",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "困奋",
+        "name_en": "",
+        "description_cn": "锁定技，结束阶段，你失去1点体力，然后摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "逢亮",
+        "name_en": "",
+        "description_cn": "觉醒技，当你进入濒死状态时，你减少1点体力上限并回复至2点体力，获得“挑衅”并修改“困奋”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "兀突骨",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "燃殇",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到1点火焰伤害后，你获得1枚“燃”标记。结束阶段，你失去X点体力（X为“燃”的数量）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "悍勇",
+        "name_en": "",
+        "description_cn": "当你使用【南蛮入侵】或【万箭齐发】时，若你的体力值小于当前轮数，你可以令此牌伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张鲁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "义舍",
+        "name_en": "",
+        "description_cn": "结束阶段，若你没有“米”，你可以摸两张牌，然后将两张牌置于你的武将牌上，称为“米”。当你失去最后一张“米”时，你回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "布施",
+        "name_en": "",
+        "description_cn": "当你受到1点伤害后，你可以获得一张“米”。当你对其他角色造成1点伤害后，其可以获得一张“米”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "米道",
+        "name_en": "",
+        "description_cn": "当一张判定牌生效前，你可以用一张“米”代替之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王荣",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "多刀",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "丰姿",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你使用基本牌或普通锦囊牌时，你可以弃置一张类型相同的手牌令此牌的效果结算两次。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "吉占",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以改为展示牌堆顶的一张牌，猜测牌堆顶下一张牌点数大于或小于此牌，然后展示之，若猜对你继续猜测，最后你获得以此法展示的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "赋颂",
+        "name_en": "",
+        "description_cn": "当你死亡时，你可以令一名体力上限大于你的角色选择获得“丰姿”或“吉占”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "士燮",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "避乱",
+        "name_en": "",
+        "description_cn": "结束阶段，若有其他角色计算与你的距离为1，你可以弃置一张牌，令其他角色计算与你的距离+X（X为全场势力数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "礼下",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色的结束阶段，若你不在其攻击范围内，你选择一至两项：1.摸一张牌；2.令其摸两张牌；3.令其回复1点体力。每选择一项，你令其他角色计算与你的距离-1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马云騄",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "凤魄",
+        "name_en": "",
+        "description_cn": "当你在回合内首次使用【杀】或【决斗】指定一个目标后，你可以选择一项：1.摸X张牌；2.令此牌伤害+X。（X为目标角色方片手牌数）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蹋顿",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "持久",
+      "减目标"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "乱战",
+        "name_en": "",
+        "description_cn": "当你造成或受到伤害后，你获得1枚“乱战”标记。当你使用【杀】或黑色普通锦囊牌指定目标后，若目标角色数小于X，你移除一半“乱战”标记（向上取整）。你使用【杀】或黑色普通锦囊牌可以多指定X个目标（X为“乱战”标记数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "严白虎",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "雉盗",
+        "name_en": "",
+        "description_cn": "锁定技，每回合限一次，当你于出牌阶段对其他角色造成伤害后，你获得其每个区域各一张牌，然后你本回合使用牌不能指定其他角色为目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "寄篱",
+        "name_en": "",
+        "description_cn": "锁定技，当与你的距离为1的其他角色成为红色基本牌或红色普通锦囊牌的目标时，若你不是此牌的使用者或目标，你成为此牌的额外目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "关索",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "征南",
+        "name_en": "",
+        "description_cn": "当其他角色死亡后，你可以摸三张牌，然后获得“武圣”“当先”“制蛮”中的一个。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "撷芳",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-X（X为全场女性角色数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王朗",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "鼓舌",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以与至多三名角色同时拼点，没赢的角色弃置一张牌或令你摸一张牌。若你没赢，你获得1枚“饶舌”标记，若标记数为7，你死亡。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "激词",
+        "name_en": "",
+        "description_cn": "当你亮出拼点牌后，若点数不大于X，你可以令之点数+X并令“鼓舌”视为未发动（X为你的“饶舌”标记数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "鲍三娘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "武娘",
+        "name_en": "",
+        "description_cn": "你可将一张非基本牌当无距离限制且不可响应的【杀】使用。然后你获得一名目标角色的一张牌，若不为基本牌，你可失去1点体力然后令所有角色的“镇南”视为未发动过。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "镇南",
+        "name_en": "",
+        "description_cn": "限定技，准备阶段，你可弃置2张牌，视为使用一张由你指定任意目标的【南蛮入侵】。然后若你对指定目标：造成了伤害，其随机弃置一张牌；未造成伤害，你本回合对其使用牌无次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "许身",
+        "name_en": "",
+        "description_cn": "限定技，当你进入濒死状态时，你可令一名其他角色选择一项：1.其失去所有技能获得“征南”；2.其获得“镇南”。然后你回复体力至1点。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "邓芝",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "修好",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你对其他角色造成伤害，或其他角色对你造成伤害时，你可以防止此伤害，令伤害来源摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "素俭",
+        "name_en": "",
+        "description_cn": "锁定技，弃牌阶段，你改为以下一项：1.将所有非本回合获得的手牌分配给其他角色；2.弃置非本回合获得的手牌，并弃置一名其他角色至多等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹婴",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "凌人",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你使用【杀】或伤害锦囊牌时，你可以猜测其中一个目标的手牌中是否有基本牌、锦囊牌或装备牌，若至少猜对：1项，此牌对其伤害+1；2项，你摸两张牌；3项，你获得“奸雄”“行殇”直到你下回合开始。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伏间",
+        "name_en": "",
+        "description_cn": "锁定技，结束阶段，你随机观看一名其他角色的X张手牌（X为全场手牌数最少的角色的手牌数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "董昭",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "造反王"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "先略",
+        "name_en": "",
+        "description_cn": "主公的回合开始时，你可以记录一张普通锦囊牌。每回合限一次，当其他角色使用记录牌后，你摸两张牌并将之分配给任意角色，然后重新记录一张普通锦囊牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "造王",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以令一名角色增加1点体力上限、回复1点体力并摸三张牌，若其为：忠臣，当主公死亡时与主公交换身份牌；反贼，当其被主公或忠臣杀死时，主公方获胜。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吾彦",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "澜疆",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令所有手牌数不小于你的角色依次选择是否令你摸一张牌。选择完成后，你可以对手牌数等于你的其中一名角色造成1点伤害，然后令手牌数小于你的其中一名角色摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP张郃",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "爆发",
+      "牌王"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "周旋",
+        "name_en": "",
+        "description_cn": "弃牌阶段开始时，你可以将任意张手牌暗置于你的武将牌上，称为“旋”（至多五张），直到你下个出牌阶段结束。当你使用牌时，你移去一张“旋”并摸一张牌，若你的手牌不是唯一最多则额外摸X张牌（X为“旋”的数量）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI052",
+    "standard_id": "",
+    "name_cn": "司马朗",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "保核能力",
+      "奶爸"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "郡兵",
+        "name_en": "",
+        "description_cn": "每名角色的结束阶段，若其手牌数不大于1，其可以摸一张牌并交给你所有手牌，然后你交给其等量张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "去疾",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置X张牌令至多X名角色各回复1点体力（X为你已损失体力值），若弃置牌中有黑色牌，你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        【Q】【郡兵】發動的主動權是誰？
+        【A】當前回合角色，該角色可以自己選擇是否發動。
+
+        【Q】發動【郡兵】時，司馬朗是否可以將裝備區裡的裝備牌交給對方？
+        【A】可以。
+
+        【Q】發動【郡兵】時，司馬朗是否可以將【木牛流馬】下的牌交出去？
+        【A】不可以，【木牛流馬】下的牌只能使用或打出，沒有包含棄置、置於牌堆頂、給出等其他用途。
+
+        【Q】司馬朗在自己的回合結束階段發動【郡兵】，是否能將裝備區裡的裝備牌交給自己？
+        【A】不能，司馬朗在自己的回合結束階段發動【郡兵】只進行摸一張牌的效果。
+
+        【Q】【去疾】是否可以棄置裝備牌？
+        【A】可以。
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP黄月英",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "机巧",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以弃置任意张装备牌，然后亮出牌堆顶两倍数量的牌，获得其中所有非装备牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "玲珑",
+        "name_en": "",
+        "description_cn": "锁定技，若你的装备区里没有：武器牌，你本回合使用【杀】的限制次数+1；防具牌，你视为装备着【八卦阵】；坐骑牌，你的手牌上限+1；宝物牌，你视为拥有“奇才”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "步骘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "弘德",
+        "name_en": "",
+        "description_cn": "当你一次获得至少两张手牌或失去至少两张牌后，你可以令一名其他角色摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "定叛",
+        "name_en": "",
+        "description_cn": "出牌阶段限X次（X为存活反贼数），你可以令一名装备区里有牌的角色摸一张牌并选择一项：1.你弃置其装备区里一张牌；2.其获得其装备区里的所有牌并受到1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李通",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "推锋",
+        "name_en": "",
+        "description_cn": "当你受到1点伤害后，你可以将一张牌置于你的武将牌上，称为“锋”。准备阶段，你移去所有“锋”，摸两倍数量的牌，你本回合使用【杀】的限制次数+X（X为你本回合移去“锋”的数量）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "糜竺",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "资援",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名其他角色任意张点数和为13的手牌，然后令其回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "巨贾",
+        "name_en": "",
+        "description_cn": "锁定技，你的初始手牌和手牌上限+X（X为你的体力上限）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "董白",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "连诛",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示并交给一名其他角色一张牌，若此牌为黑色，其选择一项：1.你摸两张牌；2.弃置两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "黠慧",
+        "name_en": "",
+        "description_cn": "锁定技，你的黑色牌不计入手牌上限。当其他角色获得你的黑色牌时，其不能使用、打出、弃置这些牌直到其体力值减少。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "赵襄",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "发育",
+      "爆发",
+      "转化大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "芳魂",
+        "name_en": "",
+        "description_cn": "当你使用【杀】造成伤害或受到【杀】的伤害后，你获得与伤害值等量枚“梅影”标记。你可以移除1枚“梅影”发动“龙胆”并摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "扶汉",
+        "name_en": "",
+        "description_cn": "限定技，准备阶段，你可以移除所有“梅影”，从五张蜀势力武将牌中选择一张替换你的武将牌，并将体力上限调整为本局累计移除的“梅影”数（至少为2，至多为8），然后回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "贺齐",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "发育",
+      "困难",
+      "拆迁办"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "绮胄",
+        "name_en": "",
+        "description_cn": "锁定技，若你装备区里牌的花色数不小于以下值，你视为拥有：1,“短兵”；2,“英姿”；3,“奋威”；4,“澜疆”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "闪袭",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示你与一名攻击范围内不包含你的角色共计至多X张手牌（X为你的空装备栏数），然后弃置其中的【闪】，若如此做，你获得其一张未以此法展示的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SHU048",
+    "standard_id": "",
+    "name_cn": "董允",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Special",
+    "skills": [
+      {
+        "name_cn": "秉正",
+        "name_en": "",
+        "description_cn": "出牌階段結束時，你可以令手牌數不等於體力值的一名角色棄置一張手牌或摸一張牌。然後若其手牌數等於體力值，你摸一張牌，且可以交給該角色一張牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "捨宴",
+        "name_en": "",
+        "description_cn": "當你成為一張普通錦囊牌的目標時，你可以為此牌增加一個目標或減少一個目標（目標數至少為一）",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        {
+        "
+        【Q】【秉正】可以對董允自己發動嗎？
+        【A】若董允符合「手牌數不等於體力值」這個條件的話，可以對自己發動；若董允執行摸一張牌效果後手牌數等於體力值，則董允可以再摸一張牌，之後進入棄牌階段。
+
+        【Q】【秉正】技能描述中的「令手牌數不等於體力值的一名角色棄置一張手牌」，棄置的手牌是董允選擇的嗎？
+        【A】否，由被董允選擇的角色自行選擇。
+
+        【Q】董允選擇角色A發動【秉正】後，若A手牌數等於體力值，董允是否可以選擇摸一張牌後不交給A一張牌？
+        【A】可以，【秉正】的摸一張牌是根據目標A的手牌與體力值來判斷的；若符合，摸一張牌效果強制執行，但後續的給一張牌效果則是董允自行選擇的。
+
+        【Q】若第一位角色A對第二位的董允使用【順手牽羊】時，董允可以發動【舍宴】額外增加距離不為1的第四位角色D為目標嗎？
+        【A】可以，【舍宴】額外增加的目標可以不受距離限制選擇。
+        "
+        }
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马忠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "抚蛮",
+        "name_en": "",
+        "description_cn": "出牌阶段，每名角色限一次，你可以交给一名其他角色一张手牌令之视为【杀】。当其使用此【杀】后，你摸一张牌，若造成伤害，你改为摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "阚泽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "下书",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以交给一名其他角色所有手牌，然后其展示任意张手牌，你选择获得其：1.以此法展示的牌；2.未以此法展示的手牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "宽释",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以选择一名角色，当其于你下回合开始前受到大于1点的伤害时，你防止之并跳过下回合摸牌阶段。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王允",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "连计",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以弃置一张手牌令一名其他角色随机使用牌堆中一张武器牌，然后其选择一项：1.对你指定的一名角色使用【杀】；2.你将其装备区的武器交给一名角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谋逞",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你本局“连计”中使用的【杀】造成过伤害，你失去“连计”并获得“矜功”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "诸葛果",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "减目标"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "祈禳",
+        "name_en": "",
+        "description_cn": "当你使用装备牌时，你可以获得牌堆中一张锦囊牌，若此牌为：普通锦囊牌，你使用此牌指定唯一目标时可以多指定一个目标；延时锦囊牌，你下回合【羽化】观看的牌数+1（至多为5）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "羽化",
+        "name_en": "",
+        "description_cn": "锁定技，弃牌阶段，你的锦囊牌和装备牌不计入手牌上限。准备阶段和结束阶段，你观看牌堆顶的一张牌并将其置于牌堆顶或牌堆底。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "麹义",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "伏骑",
+        "name_en": "",
+        "description_cn": "锁定技，与你距离为1的其他角色不能使用或打出牌响应你使用的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骄恣",
+        "name_en": "",
+        "description_cn": "锁定技，若你的手牌数为全场唯一最多，你造成或受到的伤害值+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "戏志才",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "天妒",
+        "name_en": "",
+        "description_cn": "当你的判定牌生效后，你可以获得此牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "先辅",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你选择一名其他角色，在本局中：当其受到伤害后，你受到等量伤害；当其回复体力后，你回复等量体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "筹策",
+        "name_en": "",
+        "description_cn": "当你受到1点伤害后，你可以判定，若结果为：红色，你令一名角色摸一张牌，若其为“先辅”目标，改为摸两张牌；黑色，你弃置一名角色区域里的一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SHU050",
+    "standard_id": "",
+    "name_cn": "孙乾",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Special",
+    "skills": [
+      {
+        "name_cn": "謙雅",
+        "name_en": "",
+        "description_cn": "當你成為錦囊牌的目標後，你可以將任意張手牌交給一名其他角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "說盟",
+        "name_en": "",
+        "description_cn": "出牌階段結束時，你可以與一名角色拼點，若你贏，視為你使用【無中生有】；若你沒贏，視為其對你使用【過河拆橋】。",
+        "description_en": ""
+      }
+    ],
+    "faq": [
+        {
+        "q_cn": "孫乾裝備區沒有牌，判定區有【樂不思蜀】，若成為【過河拆橋】的目標後發動【謙雅】將所有手牌交給一名其他角色，此時如何結算【過河拆橋】的效果？",
+        "a_cn": "強制棄置判定區的【樂不思蜀】。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "孫乾成為錦囊牌的目標後，可以發動【謙雅】將裝備區裡的牌交給其他角色嗎？",
+        "a_cn": "不行，只能交出手牌。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "孫乾對簡雍發動【說盟】並進行拼點，若孫乾贏，如何結算？",
+        "a_cn": "簡雍先發動【縱適】獲得本次孫乾的拼點牌，之後執行【無中生有】的效果。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "當孫乾被其他角色指定為【樂不思蜀】或【兵糧寸斷】的目標時，孫乾可以發動【謙雅】嗎？",
+        "a_cn": "可以，同理當孫乾成為【閃電】的目標時一樣可以發動【謙雅】。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "孫乾發動【無中生有】時，可以摸兩張牌後再發動【謙雅】嗎？",
+        "a_cn": "不行，使用【無中生有】時發動【謙雅】的時機是孫乾執行摸兩張牌的效果之前，因此孫乾使用【無中生有】時必須在摸牌前發動【謙雅】。",
+        "q_en": "",
+        "a_en": ""
+        },
+        {
+        "q_cn": "孫乾使用【無中生有】時，若有其他角色使用【無懈可擊】抵銷此效果，此時孫乾還可以發動【謙雅】嗎？",
+        "a_cn": "無論本次【無中生有】是否有被【無懈可擊】的效果抵銷，孫乾依舊可以發動【謙雅】的效果。",
+        "q_en": "",
+        "a_en": ""
+        }
+    ]
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "卑弥呼",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "纵傀",
+        "name_en": "",
+        "description_cn": "回合开始前，你可以令一名没有“傀”标记的其他角色获得“傀”。每轮开始时，体力值最少且没有“傀”的一名其他角色获得“傀”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骨疽",
+        "name_en": "",
+        "description_cn": "锁定技，当有“傀”的角色受到伤害后，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "拜假",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你因“骨疽”获得的牌数不小于7，你增加1点体力上限并回复1点体力，然后令所有没有“傀”的其他角色获得“傀”，最后你失去“骨疽”，获得“蚕食”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘琦",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "问计",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以令一名其他角色交给你一张牌，然后你本回合使用的与此牌同名的牌不能被其他角色响应。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "屯江",
+        "name_en": "",
+        "description_cn": "结束阶段，若你未跳过本回合的出牌阶段且于此阶段未使用牌指定过其他角色为目标，你可以摸与全场势力数等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "鲁芝",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "转化大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "清忠",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以摸两张牌，若如此做，本阶段结束时，你与手牌数最少的角色交换手牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "卫境",
+        "name_en": "",
+        "description_cn": "每轮限一次，你可以视为使用一张【杀】或【闪】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "司马徽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "荐杰",
+        "name_en": "",
+        "description_cn": "首回合开始时，你依次令两名其他角色获得“龙印”“凤印”标记。出牌阶段限一次（你的第一回合外），或当有“龙印”或“凤印”的角色死亡时，你可以转移“龙印”“凤印”（“龙印”视为拥有“火计”；“凤印”视为拥有“连环”；皆有时，可以弃置“龙印”“凤印”发动“业炎”）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "称好",
+        "name_en": "",
+        "description_cn": "当一名角色受到属性伤害后，若其处于连环状态且是此伤害传导的起点，你可以观看牌堆顶X+1张牌并分配给任意角色（X为全场连环状态角色数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "隐士",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到属性伤害或锦囊牌造成的伤害时，若你没有“龙印”“凤印”且装备区里没有防具牌，你防止此伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "徐荣",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "凶镬",
+        "name_en": "",
+        "description_cn": "游戏开始时，你获得3枚“暴戾”标记(标记上限为3)。出牌阶段，你可以交给一名其他角色1枚“暴戾”标记，你对其造成的伤害+1，且其出牌阶段开始时移除“暴戾”标记并随机执行一项：1.受到1点火焰伤害且本回合不能使用【杀】指定你为目标；2.失去1点体力且本回合手牌上限-1；3.你随机获得其一张手牌和一张装备区里的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "杀绝",
+        "name_en": "",
+        "description_cn": "锁定技，当其他角色进入濒死状态时，你获得1枚“暴戾”标记，然后若其需要超过一张【桃】或【酒】救回，你获得使其进入此濒死状态的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李傕",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "袭羊羊"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "狼袭",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以对一名体力值不大于你的其他角色造成0~2点随机伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "亦算",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你使用的锦囊牌置入弃牌堆时，你可以减少1点体力上限获得之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张济",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "拆迁办"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "掠命",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你选择一名装备区里牌数少于你的其他角色，令其选择一个点数，然后你判定，若其选择的点数与判定牌点数：相同，你对其造成2点伤害；不同，你随机获得其区域里的一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "屯军",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以选择一名角色，令其随机使用牌堆中的X张不同副类型的装备牌（X为你发动“掠命”的次数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "苏飞",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "联翩",
+        "name_en": "",
+        "description_cn": "每回合限三次，当你于出牌阶段使用牌连续指定同一名角色为目标时，你可以摸一张牌，然后你可以将此牌交给该角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄权",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "捆绑"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "点虎",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你指定一名其他角色，在本局中，当你对其造成伤害或其回复体力后，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谏计",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色摸一张牌，然后其可以使用此牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "唐咨",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "牌堆控制者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "兴棹",
+        "name_en": "",
+        "description_cn": "锁定技，若全场已受伤角色数不小于：1，你视为拥有“恂恂”；2，当你使用装备牌时，你摸一张牌；3，你跳过弃牌阶段。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "樊稠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "讨饭"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "兴乱",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你使用牌后，你可以选择一项：1.获得场上一张点数为6的牌；2.从牌堆中两张点数为6的牌中选择一张获得（没有则摸一张牌）；3.令一名其他角色弃置一张点数为6的牌或交给你一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭汜",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "贪狈",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1.你随机获得其区域里一张牌，本回合不能对其使用牌；2.你本回合对其使用牌无距离和次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伺盗",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，当你对一名其他角色连续使用两张牌后，你可以将一张手牌当【顺手牵羊】对其使用（须合法）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张琪瑛",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "困难",
+      "加伤",
+      "判定"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "法箓",
+        "name_en": "",
+        "description_cn": "锁定技，当你的牌因弃置置入弃牌堆后，你根据花色获得1枚对应标记：黑桃“紫微”；梅花“后土”；红桃“玉清”；方片“勾陈”（每种至多1枚）。游戏开始时，你获得以上四种标记。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "真仪",
+        "name_en": "",
+        "description_cn": "你可以在以下时机移除相应标记并触发效果：“紫薇”当一张判定牌生效前，你将判定结果改为黑桃5或红桃5；“后土”当你处于濒死状态时，你将一张手牌当【桃】使用；“玉清”当你造成伤害时，你判定，若为黑色则此伤害+1；“勾陈”当你受到属性伤害后，你获得牌堆中三种类型的牌各一张。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "点化",
+        "name_en": "",
+        "description_cn": "准备阶段或结束阶段，你可以观看牌堆顶的X张牌（X为你“法箓”的标记数），然后将这些牌以任意顺序置于牌堆顶。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹纯",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缮甲",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以摸三张牌，然后弃置3-X张牌（X为你本局失去过的装备牌数），若你未弃置基本牌和锦囊牌，你可以视为使用一张无距离限制的【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "许靖",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.0,
+    "traits_cn": [
+      "辅助",
+      "配合神将",
+      "上限超高"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "誉虚",
+        "name_en": "",
+        "description_cn": "当你于出牌阶段使用牌后，你可以摸一张牌，若如此做，当你本阶段使用下一张牌后，你不能以此法摸牌且须弃置一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "实荐",
+        "name_en": "",
+        "description_cn": "当其他角色于其回合内使用第二张牌后，你可以弃置一张牌，令其于本回合获得“誉虚”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王粲",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "过牌",
+      "多刀",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "散文",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你获得牌后，若你有与这些牌同名的手牌，你可以展示之并弃置获得的同名牌，然后摸弃牌数两倍的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "七哀",
+        "name_en": "",
+        "description_cn": "限定技，当你进入濒死状态时，你可以令每名其他角色各交给你一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "登楼",
+        "name_en": "",
+        "description_cn": "限定技，结束阶段，若你没有手牌，你可以观看牌堆顶的四张牌，然后获得其中的非基本牌，并使用其中的基本牌（不能使用则弃置）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU051",
+    "standard_id": "",
+    "name_cn": "庞统",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "过论",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示一名其他角色一张手牌，然后你可以选择你的一张牌，你与其交换这两张牌，交换前的牌点数小的角色摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "送丧",
+        "name_en": "",
+        "description_cn": "限定技，当其他角色死亡时，若你已受伤，你可以回复1点体力；若你未受伤，你可以增加1点体力上限。若如此做，你获得“展骥”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "展驥",
+        "name_en": "",
+        "description_cn": "鎖定技，當你於出牌階段摸牌時，此次摸牌數+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "袁谭袁尚",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "内伐",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以摸两张牌或获得场上一张牌，然后弃置一张牌。若弃置的牌是基本牌，你本回合不能使用锦囊牌和装备牌且【杀】的使用次数+X且目标+1；若弃置的牌不是基本牌，你本回合不能使用基本牌，使用普通锦囊牌的目标+1或-1，前两次使用装备牌时摸X张牌。（X为手牌中因本技能不能使用的牌且至多为5）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "沙摩柯",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "过牌",
+      "23451",
+      "沙师弟"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蒺藜",
+        "name_en": "",
+        "description_cn": "当你每回合使用或打出第X张牌时，你可以摸X张牌。（X为你的攻击范围）",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕虔",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "威虏",
+        "name_en": "",
+        "description_cn": "锁定技，当其他角色对你造成伤害后，其在你下回合出牌阶段开始时失去至1点体力，然后此阶段结束时其回复以此法失去的体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "赠刀",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以将装备区里任意张牌置于一名其他角色的武将牌上。当其造成伤害时，其移除一张“赠刀”牌令此伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙邵",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "辅助",
+      "减目标",
+      "拆迁办"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "弼政",
+        "name_en": "",
+        "description_cn": "摸牌阶段结束时，你可以令一名其他角色摸两张牌，然后你与其之中手牌数大于体力上限的角色弃置两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "佚典",
+        "name_en": "",
+        "description_cn": "当你使用基本牌或普通锦囊牌指定目标时，若此牌在弃牌堆中没有同名牌，你可以为此牌多指定一个目标（无距离限制）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕旷吕翔",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "齐攻",
+        "name_en": "",
+        "description_cn": "当你使用的仅指定单一目标的【杀】被【闪】抵消后，你可以令一名角色对此目标再使用一张无距离限制的【杀】，此【杀】不可被响应。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "列侯",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令你攻击范围内一名有手牌的角色交给你一张手牌，若如此做，你将一张手牌交给你攻击范围内的另一名其他角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "辛毗",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "持节",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你受到其他角色的伤害后，你可以令伤害牌无效；当其他角色对你使用牌后，若此牌未造成伤害，你可以获得之。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "引裾",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段，你可以指定一名其他角色，你本回合防止对其造成的伤害并改为令其回复等量体力，且当你本回合使用牌指定其为目标后，你与其各摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "花鬘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蛮裔",
+        "name_en": "",
+        "description_cn": "锁定技，【南蛮入侵】对你无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "蛮嗣",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将所有手牌当【南蛮入侵】使用。当一名角色受到【南蛮入侵】的伤害后，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "薮影",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你对其他角色/其他角色对你使用牌指定唯一目标后，若此牌不是你本回合对其/其对你使用的第一张牌，你可以弃置一张牌获得此牌/令此牌对你无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "战缘",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你因“蛮嗣”累计获得的牌数大于7，你增加1点体力上限并回复1点体力，且可以选择一名男性角色，你与其获得技能“系力”，然后你失去“蛮嗣”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "丁原",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "慈孝",
+        "name_en": "",
+        "description_cn": "准备阶段，若没有角色有“义子”标记，你可以令一名其他角色获得1枚“义子”标记，否则你可以弃置一张牌移动“义子”标记。有“义子”标记的角色视为拥有“叛弑”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "先率",
+        "name_en": "",
+        "description_cn": "锁定技，当一名角色造成伤害后，若此伤害是本轮首次造成伤害，你摸一张牌，若其为你，你对受到伤害的角色造成1点伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹嵩",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "礼赂",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以改为将手牌摸至体力上限（至多摸至五张），然后交给一名其他角色至少一张手牌，若你首次以此法交出牌或交出的牌数大于上次以此法交出的牌数，你增加1点体力上限并回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "翊正",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以选择一名其他角色，然后直到你的下回合开始，当其造成伤害或回复体力时，若其体力上限小于你，你减少1点体力上限，然后此伤害值或回复值+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "卞夫人",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "捡垃圾的"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "挽危",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你的牌被其他角色弃置或获得后，你可以从牌堆获得一张同名牌（无同名牌则改为摸一张牌）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "约俭",
+        "name_en": "",
+        "description_cn": "每回合限两次，当其他角色对你使用的牌置入弃牌堆时，你可以展示所有手牌，若花色与此牌均不同，你获得此牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "审配",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "辅助",
+      "持久",
+      "卖血克星"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "刚直",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色对你造成的伤害，和你对其他角色造成的伤害均视为失去体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "备战",
+        "name_en": "",
+        "description_cn": "回合结束后，你可以令一名角色将手牌摸至X张（X为其体力上限且至多为5）。其下回合开始时，若其手牌数全场最多，其此回合使用牌不能指定其他角色为目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "荀谌",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "锋略",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以拼点：若你赢，被拼点者将其每个区域各一张牌交给你；若你没赢，你交给被拼点者一张牌。拼点结算后你可以令其获得你的拼点牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谋识",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名角色一张手牌，然后当其于其下回合出牌阶段对一名角色首次造成伤害后，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "高览",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "袭营",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以弃置手中一张非基本牌，令所有其他角色选择一项：1.弃置一张牌；2.本回合不能使用或打出牌。若如此做，结束阶段，若你于本回合出牌阶段造成过伤害，你获得牌堆中一张【杀】或伤害锦囊牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张陵",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "虎骑",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。当你于回合外受到伤害后，你判定，若结果为红色，你视为对伤害来源使用一张【杀】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "授符",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以摸一张牌，然后将一张手牌置于一名没有“箓”的其他角色的武将牌上，称为“箓”，其不能使用和打出与“箓”类型相同的牌。当其受到伤害或于弃牌阶段弃置至少两张与“箓”类型相同的牌后，将“箓”置入弃牌堆。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕凯",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "控制",
+      "断杀",
+      "拆迁办"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "图南",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色观看牌堆顶的一张牌，然后令其选择一项：1.使用此牌（无距离限制）；2.将此牌当普通【杀】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "闭境",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将一张手牌标记为“闭境”。若你于回合外失去“闭境”牌，当前回合角色弃牌阶段开始时，其须弃置两张牌。准备阶段，你弃置手中的“闭境”牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张昌蒲",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "辅助",
+      "卖血",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "严教",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色亮出牌堆顶4张牌并将之分成点数之和相等的两组，你与其各获得其中一组，若剩余牌数大于1，你本回合手牌上限-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "省身",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以摸随机1~2张牌且令下次“严教”亮出的牌数+X（X为你已损失体力值，至多亮出十张）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蒋干",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "伪诚",
+        "name_en": "",
+        "description_cn": "当其他角色获得你的手牌后，若你的手牌数小于体力值，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "盗书",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以选择一种花色并获得一名角色一张手牌，若此牌花色与你选择的花色：相同，你对其造成1点伤害且本技能视为未发动；不同，你交给其一张与此牌花色不同的手牌（若没有，你展示所有手牌）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "周鲂",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "诱敌",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令一名其他角色弃置你一张手牌，若不为：【杀】，你获得其一张牌；黑色牌，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "断发",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置任意张黑色牌，然后摸等量张牌。你本阶段以此法弃置的总牌数不能大于你的体力上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹爽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "托孤",
+        "name_en": "",
+        "description_cn": "当一名角色死亡时，你可以令其选择其武将牌上的一个技能（限定技、觉醒技、主公技和包含隐匿的技能除外），你失去上次以此法获得的技能，然后获得此技能。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "擅专",
+        "name_en": "",
+        "description_cn": "当你对一名其他角色造成伤害后，若其判定区没有牌，你可以将其一张牌置于其判定区，若此牌不是延时锦囊牌，则红色牌视为【乐不思蜀】，黑色牌视为【兵粮寸断】。结束阶段，若你本回合未造成伤害，你可以摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "潘濬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "观微",
+        "name_en": "",
+        "description_cn": "每回合限一次，每名角色出牌阶段结束时，若其本回合使用过至少两张牌且这些牌花色均相同，你可以弃置一张牌，令其摸两张牌并执行一个额外的出牌阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "公清",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到伤害时，若伤害来源攻击范围：小于3，你只受到1点伤害；大于3，此伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU052",
+    "standard_id": "",
+    "name_cn": "严畯",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "观潮",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以选择一项：1.严格递增；2.严格递减。当你本回合使用牌时，若你本阶段使用过的所有牌的点数满足此项，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "逊贤",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你于回合外使用或打出的牌置入弃牌堆时，你可以将之交给一名手牌比你多的角色。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP张辽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "数学家"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "募兵",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以亮出牌堆顶三张牌，然后你可以弃置任意张手牌，获得任意张亮出的牌（你弃置牌的点数之和不得小于你获得牌的点数之和）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "资取",
+        "name_en": "",
+        "description_cn": "每名角色限一次，当你对其他角色造成伤害时，你可以防止此伤害，令其交给你一张点数最大的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "调令",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你以“募兵”累计获得了至少六张【杀】、伤害锦囊牌和武器牌，你回复1点体力或摸两张牌，并修改“募兵”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "卧龙凤雏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "困难",
+      "保核能力",
+      "转化大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "游龙",
+        "name_en": "",
+        "description_cn": "转换技，每轮各限一次，你可以废除你装备区里的一个装备栏，视为使用一张未以此法使用过的：阳：普通锦囊牌；阴：基本牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鸾凤",
+        "name_en": "",
+        "description_cn": "限定技，当一名角色进入濒死状态时，若其体力上限不小于你，你可以令其回复至3点体力，复原其装备栏，令其将手牌摸至6-X张（X为以此法复原的装备栏数）。若其是你，你复原“游龙”使用过的牌名。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹性",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "流矢",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以将一张红桃牌置于牌堆顶，视为对一名角色使用一张无距离和次数限制的【杀】，若此【杀】造成伤害，其手牌上限-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "斩腕",
+        "name_en": "",
+        "description_cn": "锁定技，当受到“流矢”效果影响的角色于弃牌阶段弃牌后，你摸等量张牌并移除其“流矢”效果。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄祖",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "加伤",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "挽弓",
+        "name_en": "",
+        "description_cn": "锁定技，若你使用的上一张牌是基本牌，你使用【杀】无距离和次数限制且造成的伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "潘淑",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "威仪",
+        "name_en": "",
+        "description_cn": "每名角色限一次，当一名角色受到伤害后，若其体力值：1.不小于你，你可以令其失去1点体力；2.不大于你，你可以令其回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "锦织",
+        "name_en": "",
+        "description_cn": "当你需要使用或打出基本牌时，你可以：弃置X张颜色相同的牌（X为你本轮发动本技能的次数），然后摸一张牌，视为你使用或打出此基本牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "黄承彦",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "花色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "观虚",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以观看一名其他角色的手牌，并可以将其中一张手牌与牌堆顶五张牌中的一张交换，若如此做，你弃置其手牌中三张花色相同的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "雅士",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以选择一项：1.令伤害来源的非锁定技失效直到其下个回合开始；2.对一名其他角色执行“观虚”的效果。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "高干",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "转化大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "拒关",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可将一张手牌当【杀】或【决斗】使用。若受到此牌伤害的角色未在你的下回合开始前对你造成过伤害，你的下个摸牌阶段摸牌数+2。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杜袭",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "驱徙",
+        "name_en": "",
+        "description_cn": "限定技，出牌阶段结束时，你可以跳过弃牌阶段并翻至背面，选择两名手牌数不同的其他角色，其中手牌少的角色获得另一名角色一张牌并获得“丰”，另一名角色获得“歉”。有“丰”的角色摸牌阶段摸牌数+1，有“歉”的角色摸牌阶段摸牌数-1。当有“丰”或“歉”的角色死亡时，或每轮开始时，你可以转移“丰”“歉”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "避凶",
+        "name_en": "",
+        "description_cn": "锁定技，若你于弃牌阶段弃置了手牌，直到你的下回合开始，其他角色不能使用与这些牌花色相同的牌指定你为目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘辩",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "简单",
+      "亡语"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "诗怨",
+        "name_en": "",
+        "description_cn": "每回合每项限一次，当你成为其他角色使用牌的目标后：1.若其体力值比你多，你摸三张牌；2.若其体力值与你相同，你摸两张牌；3.若其体力值比你少，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "毒逝",
+        "name_en": "",
+        "description_cn": "锁定技，当你处于濒死状态时，其他角色不能对你使用【桃】。当你死亡时，你令一名其他角色获得“毒逝”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "余威",
+        "name_en": "",
+        "description_cn": "主公技，锁定技，其他群雄角色的回合内，你的“诗怨”改为每回合每项限两次。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杨仪",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "狷狭",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以视为对一名其他角色依次使用至多两张不同的仅指定单一目标且目标不为自己的普通锦囊牌，然后其下个结束阶段可以视为对你使用等量张【杀】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "定措",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你造成或受到伤害后，你可以摸两张牌，若这两张牌颜色不同，你弃置一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "朱灵",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "急陷",
+        "name_en": "",
+        "description_cn": "摸牌阶段结束时，你可以视为对满足以下任一条件的目标使用一张【杀】并摸X张牌（X为满足的条件数）：装备区有防具，技能数比你多，未受伤；若此【杀】没有对其造成伤害，你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王双",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "追猎",
+        "name_en": "",
+        "description_cn": "锁定技，你使用【杀】无距离限制。当你使用【杀】指定攻击范围外的角色为目标后，此【杀】无次数限制且你判定，若为武器牌或坐骑牌，此【杀】伤害值等于其体力值，否则你失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "冯方女",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "多刀",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "妆梳",
+        "name_en": "",
+        "description_cn": "游戏开始时，你可以将一张“宝梳”置于你的装备区。每回合开始时，你可以弃置一张牌，根据此牌类型将一张“宝梳”置于其宝物区（若场上已有则移动到其宝物区）：基本牌，琼梳；锦囊牌，犀梳；装备牌，金梳。“宝梳”进入非装备区时被销毁。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "垂涕",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你或装备区里有“宝梳”的角色的一张牌因弃置置入弃牌堆后，若你能使用此牌，你可以使用之（使用【杀】有次数限制）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "田豫",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "距离掌控者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "扫狄",
+        "name_en": "",
+        "description_cn": "当你使用【杀】或普通锦囊牌仅指定一名其他角色为目标时，你可以令你与其之间的角色均成为此牌的目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "追讨",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以令你与一名未以此法减少距离的其他角色的距离-1。当你对其造成伤害后，失去你以此法对其减少的距离。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "范疆张达",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "转化大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "怨仇",
+        "name_en": "",
+        "description_cn": "锁定技，你使用的黑色【杀】无视目标角色防具，其他角色对你使用的黑色【杀】无视你的防具。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "决生",
+        "name_en": "",
+        "description_cn": "限定技，你可以视为使用一张伤害为X的【决斗】（X为目标角色本局使用【杀】的数量且至少为1），然后其获得本技能直到其下回合结束。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陈登",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "丰积",
+        "name_en": "",
+        "description_cn": "每轮开始时，你可以令你本轮以下至多两项数值-1：1.摸牌阶段摸牌数；2.出牌阶段使用【杀】的限制次数。你每选择一项，令一名其他角色本轮的对应项数值+2。本轮选择完成后，你未选择选项的数值+1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "旋回",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以令本轮其他丰积角色与你交换对应丰积项效果，若如此做，本技能失效直到有角色死亡。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "清河公主",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "谮构",
+        "name_en": "",
+        "description_cn": "当你攻击范围内一名角色使用【闪】时，你可以弃置一张非基本牌或失去1点体力令此【闪】无效，然后你获得此【闪】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "长姬",
+        "name_en": "",
+        "description_cn": "每名角色的结束阶段，若你于此回合：造成过伤害，你可以令其摸两张牌；受到过伤害，你可以令其弃置两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杨婉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "诱言",
+        "name_en": "",
+        "description_cn": "出牌和弃牌阶段各限一次，当你的牌因弃置置入弃牌堆后，你可以从牌堆中获得与弃置牌花色不同的牌各一张。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "追还",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以秘密选择一名角色，直到其下个准备阶段，此期间内对其造成过伤害的角色：若体力值大于其，受到其造成的2点伤害；若体力值不大于其，随机弃置两张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "滕芳兰",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "卖血",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "落宠",
+        "name_en": "",
+        "description_cn": "准备阶段或当你每回合首次受到伤害后，你可以选择一项，令一名角色：1.回复1点体力；2.失去1点体力；3.弃置两张牌；4.摸两张牌。每轮每项每名角色限一次。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "哀尘",
+        "name_en": "",
+        "description_cn": "锁定技，当你进入濒死状态时，若“落宠”选项数大于1，你移除其中一项。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "卫兹",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "援资",
+        "name_en": "",
+        "description_cn": "每轮限一次，其他角色的准备阶段，你可以交给其所有手牌。若如此做，当其本回合造成伤害后，若其手牌数不小于你，你可以摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "烈节",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以弃置至多三张牌并摸等量张牌，然后你可以弃置伤害来源至多X张牌（X为你以此法弃置的红色牌数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "芮姬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "简单",
+      "强命",
+      "花色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "巧力",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，1.你可以将一张武器牌当【决斗】使用，此牌对目标角色造成伤害后，你摸与之攻击范围等量张牌，然后可以分配其中任意张牌；2.你可以将一张非武器装备牌当【决斗】使用且不能被响应，然后于结束阶段随机获得一张装备牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "清靓",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你成为其他角色使用的【杀】或伤害锦囊牌的唯一目标时，你可以展示所有手牌并选择一项：1.你与其各摸一张牌；2.弃置一种花色的所有手牌，取消此目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "伊籍",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "简单",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "机捷",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以观看牌堆底的一张牌，然后交给任意角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "急援",
+        "name_en": "",
+        "description_cn": "当一名角色进入濒死状态或你交给一名其他角色牌时，你可以令其摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "唐姬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "抗歌",
+        "name_en": "",
+        "description_cn": "你的第一个回合开始时，选择一名其他角色。在本局中：当其于其回合外获得手牌时，你摸等量张牌（每回合至多三张）；当其进入濒死状态时，你可以令其回复至1点体力（每轮限一次）；当其死亡时，你弃置所有牌并失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "节烈",
+        "name_en": "",
+        "description_cn": "当除“抗歌”角色外的其他角色对你造成伤害时，你可以防止之并选择一种花色，然后你失去X点体力（X为此伤害值），令“抗歌”角色从弃牌堆中随机获得X张此花色的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP孟获",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蛮王",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置任意张牌。;出牌阶段，你可以弃置任意张牌执行此项：1.获得“叛侵”。;出牌阶段，你可以弃置任意张牌依次执行前等量项：1.获得“叛侵”；2.摸一张牌。;出牌阶段，你可以弃置任意张牌依次执行前等量项：1.获得“叛侵”；2.摸一张牌；3.回复1点体力。;出牌阶段，你可以弃置任意张牌依次执行前等量项：1.获得“叛侵”；2.摸一张牌；3.回复1点体力；4.摸两张牌并失去“叛侵”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘宏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "鬻爵",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以废除一个装备栏，然后令一名有手牌的其他角色交给你一张手牌，其直到你的下回合开始获得“执笏”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "图兴",
+        "name_en": "",
+        "description_cn": "锁定技，当你废除一个装备栏时，你增加1点体力上限并回复1点体力。当你的所有装备栏首次被废除后，你减少4点体力上限，并令你本局造成的伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹宪曹华",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "化木",
+        "name_en": "",
+        "description_cn": "当你使用与本回合上一张使用的牌颜色不同的手牌后，你可以将之置于你的武将牌上，黑色/红色牌称为“灵杉”/“玉树”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "前盟",
+        "name_en": "",
+        "description_cn": "锁定技，当一名角色的“灵杉”“玉树”数量变化后，若两者相等或一项为0，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "良缘",
+        "name_en": "",
+        "description_cn": "每轮各限一次，你可以将全场所有“灵杉”当【酒】、“玉树”当【桃】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "羁肆",
+        "name_en": "",
+        "description_cn": "限定技，准备阶段，你可以令一名角色获得你武将牌上发动过的一个技能，然后你弃置所有手牌并视为对其使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蒲元",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "发育",
+      "强命",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "神工",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，你可以弃置一张武器/防具/坐骑或宝物牌，进行一次*锻造*，选择一张武器/防具/宝物牌置于一名角色的装备区（替换原装备）。当以此法获得的装备牌进入弃牌堆时，销毁之，然后此回合结束阶段，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "奇思",
+        "name_en": "",
+        "description_cn": "游戏开始时，你获得两张不同副类型的装备牌并置入你的装备区。摸牌阶段，你可以少摸一张牌，声明武器、防具、坐骑或宝物牌中的一种并从牌堆或弃牌堆中获得之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "赵俨",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "多刀",
+      "配合神将",
+      "保核能力"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "同协",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以令你与至多两名其他角色直到你的下回合开始称为“同协”角色，然后令其中手牌唯一最少的角色摸一张牌。当同协角色使用仅指定单一目标的【杀】结算后，其他同协角色可以依次对目标使用一张无距离限制的【杀】。当同协角色受到伤害时，本回合未失去过体力的其他同协角色可以防止此伤害并失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "邓忠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "勘破",
+        "name_en": "",
+        "description_cn": "当你使用【杀】对目标角色造成伤害后，你可以观看其手牌并获得其中一张与此【杀】花色相同的牌。每回合限一次，你可以将一张手牌当【杀】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "更战",
+        "name_en": "",
+        "description_cn": "其他角色出牌阶段限一次，当一张【杀】因弃置置入弃牌堆后，你可以获得之。其他角色的结束阶段，若其本回合未使用过【杀】，你下个出牌阶段使用【杀】的限制次数+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "霍峻",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "发育",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "穷守",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你废除所有装备栏并摸四张牌。你的手牌上限+4。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "奋锐",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以：弃置一张牌并复原一个装备栏，随机使用一张对应装备牌，然后你可以对一名装备区里牌数小于你的角色造成X点伤害（X为你与其装备区里牌数之差），若如此做，你不能再以此法造成伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "梁兴",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "加伤",
+      "讨饭"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "掳掠",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以令一名手牌数小于你且不为0的角色选择一项：1.交给你所有手牌，然后你翻面；2.翻面，然后视为对你使用一张【杀】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "追袭",
+        "name_en": "",
+        "description_cn": "锁定技，你对翻面状态与你不同的角色造成的伤害+1；翻面状态与你不同的角色对你造成的伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张芝",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "笔心",
+        "name_en": "",
+        "description_cn": "每名角色的准备阶段和结束阶段，你可以声明一种牌的类型并摸3张牌（每种类型限1次），将所有此类型手牌当你本轮未使用过的基本牌使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "洗墨",
+        "name_en": "",
+        "description_cn": "锁定技，当你发动“笔心”后，移除其描述的前五个字符，若为第三次发动，交换其描述中的两个数字，你失去本技能并获得“飞白”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "文鸯",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "膂力",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你造成伤害后，你可以将手牌摸至与体力值相同或将体力回复至与手牌数相同。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "仇决",
+        "name_en": "",
+        "description_cn": "觉醒技，每个回合结束时，若你手牌数与体力值之差不小于3，你减少1点体力上限并获得“背水”，将“膂力”改为“你的回合限两次”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "夏侯玄",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "拆迁办",
+      "定点输出",
+      "封印"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "宦浮",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标或成为【杀】的目标后，你可以弃置任意张牌（至多为你的体力上限），若此【杀】结算后对目标角色造成的伤害值为弃牌数，你摸弃牌数两倍的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "清议",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以与至多两名其他有牌的角色同时弃置一张牌，若类型相同，你可以重复此流程。结束阶段，你可以获得其中颜色不同的牌各一张。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "迮阅",
+        "name_en": "",
+        "description_cn": "限定技，准备阶段，你可以令一名你上个回合结束后(首轮为游戏开始后)对你造成过伤害的其他角色失去武将牌上一个技能（锁定技、觉醒技、限定技除外）。每轮开始时，其视为对你使用X张【杀】（X为其已失去此技能的轮数），若此【杀】造成伤害，其获得以此法失去的技能。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马日磾",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "秉节",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可以减少1点体力上限，然后当你本回合使用【杀】或普通锦囊牌指定目标后，除你以外的每名目标角色各弃置一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "正订",
+        "name_en": "",
+        "description_cn": "锁定技，当你于回合外使用或打出牌响应其他角色的牌时，若两者颜色相同，你增加1点体力上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "阎柔",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "仇讨",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后或成为【杀】的目标后，你可以弃置使用者一张牌令此【杀】不能被抵消，若你是使用者，此【杀】无次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "襄戍",
+        "name_en": "",
+        "description_cn": "限定技，结束阶段，你可以令一名已受伤角色回复X点体力并摸X张牌（X为你本回合造成的伤害值且至多为5）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "朱儁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "摧破",
+        "name_en": "",
+        "description_cn": "锁定技，当你每回合使用第X张牌时（X为此牌牌名字数），若为【杀】或伤害锦囊牌，此牌伤害+1，否则你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "阿会喃",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蟨蛮",
+        "name_en": "",
+        "description_cn": "锁定技，每回合结束时，若本回合前两张基本牌的使用者：均不为你，你视为使用本回合第三张使用的基本牌；仅其中之一为你，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马承",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "减目标"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骋烈",
+        "name_en": "",
+        "description_cn": "你使用的【杀】可以多指定至多两个目标，然后展示牌堆顶与目标数等量张牌，秘密将一张手牌与其中一张牌交换，将之分别暗置于目标角色武将牌上直到此【杀】结算结束，其中“骋烈”牌为红色的角色若响应了此【杀】则交给你一张牌，若未响应此【杀】则回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "傅肜",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "效死",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以与一名有手牌的其他角色各弃置一张基本牌（若其不能弃置则你摸一张牌），然后你可以使用其中任意张牌（无距离和次数限制）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "胡班",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "晖云",
+        "name_en": "",
+        "description_cn": "每轮每项限一次，你可以将一张牌当【火攻】使用，结算后选择一项，令目标可以：1.使用展示牌并重铸所有手牌；2.使用一张手牌并重铸展示牌；3.摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "屈晃",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "切谏",
+        "name_en": "",
+        "description_cn": "当一名角色失去最后的手牌后，你可以与其各摸一张牌，然后选择一项：1.弃置你或其场上一张牌；2.你本轮不能对其发动本技能。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "泥首",
+        "name_en": "",
+        "description_cn": "锁定技，当你装备区里的牌进入弃牌堆后，你将之当【闪电】使用或于本阶段结束时与手牌数最少的角色交换手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘巴",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "简单",
+      "讨饭"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "统度",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以令一名角色交给你一张手牌，然后出牌阶段结束时，你将此牌置于牌堆顶。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "铸币",
+        "name_en": "",
+        "description_cn": "出牌阶段限X次（X为你的体力上限），你可以令一名角色重铸一张牌，以此法摸的牌称为“币”。有“币”的角色结束阶段，其观看牌堆底五张牌，然后可以用任意“币”交换其中等量张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙弘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "随机性拉满",
+      "捡垃圾的"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "险诐",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将手牌调整至与一名角色装备区里的牌数相同，每因此弃置一张牌，便随机获得弃牌堆中另一张类型相同的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谮润",
+        "name_en": "",
+        "description_cn": "每阶段限一次，当你摸牌时，你可以改为获得一名其他角色等量张牌，然后其选择一项：1.摸等量张牌；2.你不能再对其发动武将牌上的技能。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马休马铁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "减目标"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "垦伤",
+        "name_en": "",
+        "description_cn": "你可以将至少两张牌当【杀】使用，然后可以将目标改为等量名角色。若这些牌数大于此牌造成的伤害，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "卢氏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "驻颜",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以将一名角色的体力值或手牌数（每名角色每项限一次）调整至与其上个准备阶段时（若无则改为游戏开始时）相同（至多摸至5张）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "雷劫",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以令一名角色判定，若结果为黑桃2~9，你对其造成2点雷电伤害，否则其摸两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "谯周",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "辅助",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "知命",
+        "name_en": "",
+        "description_cn": "准备阶段与弃牌阶段结束时，你摸一张牌，然后你可以将一张牌置于牌堆顶。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "星卜",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以亮出牌堆顶三张牌，然后你可以根据其中红色牌数令一名其他角色于其下回合获得以下效果：3，摸牌阶段额外摸两张牌、出牌阶段使用【杀】的限制次数+1；2，出牌阶段使用【杀】的限制次数-1、跳过弃牌阶段；不大于1，准备阶段弃置一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张翼",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "殿军",
+        "name_en": "",
+        "description_cn": "锁定技，回合结束时，你受到1点伤害并执行一个额外的出牌阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "亢锐",
+        "name_en": "",
+        "description_cn": "当一名角色于其回合内首次受到伤害后，你可以摸一张牌并选择一项：1.令其回复1点体力；2.令其此回合下次造成的伤害+1。然后当其此回合造成伤害时，其此回合手牌上限改为0。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "阎圃",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缓图",
+        "name_en": "",
+        "description_cn": "每轮限一次，你攻击范围内其他角色的摸牌阶段开始前，你可以交给其一张牌令其跳过摸牌阶段，若如此做，本回合结束阶段你选择一项：1. 令其回复1点体力并摸两张牌；2. 你摸三张牌并交给其两张手牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "避祸",
+        "name_en": "",
+        "description_cn": "限定技，当一名角色脱离濒死状态后，你可以令其摸三张牌，本轮其他角色计算与其的距离时+X（X为存活角色数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "周群",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "天候",
+        "name_en": "",
+        "description_cn": "锁定技，准备阶段，你观看牌堆顶的牌并选择是否用你的一张手牌交换之，然后展示牌堆顶的牌，令一名角色根据此牌花色获得技能直到你下一准备阶段：红桃“烈暑”；方片“凝雾”；黑桃“骤雨”；梅花“严霜”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谶说",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以展示一张手牌，然后展示牌堆顶的牌，若两张牌类型/花色/点数/牌名字数中任意项相同且展示牌堆顶牌数小于3，重复此流程，最后你获得以此法展示的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "罗宪",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "带砺",
+        "name_en": "",
+        "description_cn": "每回合结束时，若你有偶数张展示过的手牌，你可以翻面，摸三张牌并展示之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "成济成倅",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "透髓",
+        "name_en": "",
+        "description_cn": "你可以将任意张牌置于牌堆底，视为使用需等量张【闪】抵消的【杀】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "畜鸣",
+        "name_en": "",
+        "description_cn": "锁定技，当你对其他角色造成伤害或受到其他角色的伤害时，若没有造成伤害的实体牌，此伤害+1，否则其将造成伤害的牌于本回合结束时当【借刀】或【过河拆桥】对你使用。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹羲",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "刚述",
+        "name_en": "",
+        "description_cn": "当你使用非基本牌后，你可以令你以下一项数值+1直到你抵消牌（至多增加至5）：1.攻击范围；2.下个摸牌阶段摸牌数；3.出牌阶段使用【杀】的限制次数。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谏旋",
+        "name_en": "",
+        "description_cn": "当你受到伤害后，你可以令一名角色摸一张牌，若其手牌数等于你“刚述”中的任意项，其重复此流程。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王瓘",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "谬焰",
+        "name_en": "",
+        "description_cn": "转换技，阳：你可以将一张黑色牌当【火攻】使用，若此牌造成伤害，你获得本阶段展示过的所有手牌；阴：你可以将一张黑色牌当【火攻】使用，若此牌未造成伤害，本轮本技能失效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "失路",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到伤害后，你摸与你体力值等量张牌并展示攻击范围内一名其他角色一张手牌，令此牌视为【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杜夫人",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "异色",
+        "name_en": "",
+        "description_cn": "当其他角色获得你的牌后，若包含：红色牌，你可以令其回复1点体力；黑色牌，其下次受到【杀】的伤害+1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "顺世",
+        "name_en": "",
+        "description_cn": "准备阶段或当你于回合外受到伤害后，你可以交给除伤害来源之外的一名其他角色一张牌，令你下个摸牌阶段摸牌数、下个出牌阶段使用【杀】的限制次数、下个弃牌阶段的手牌上限+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郝普",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "镇荧",
+        "name_en": "",
+        "description_cn": "出牌阶段限两次，你可以与一名手牌数不大于你的其他角色同时将手牌数调整至至多两张，然后其中手牌数较少的角色视为对另一名角色使用一张【决斗】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孟达",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "多刀",
+      "配合神将",
+      "持久"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "苟得",
+        "name_en": "",
+        "description_cn": "每回合结束时，若与你势力相同的角色此回合执行过以下项，你可以执行另一项：1.摸一张牌；2.弃置一名角色一张手牌；3.视为使用一张【杀】；4.变更势力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张世平",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "配合神将",
+      "花色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "鸿济",
+        "name_en": "",
+        "description_cn": "每轮各限一次，每名角色的准备阶段，若其手牌数为全场最少/最多，你可以令其于本回合下个摸牌/出牌阶段结束后执行一个额外的摸牌/出牌阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "行贾",
+        "name_en": "",
+        "description_cn": "游戏开始时，你将随机三张坐骑牌置于你的武将牌上。结束阶段，你可以将其中一张牌置于一名其他角色的装备区，然后你获得牌堆中一张方片牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "段颎",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "扫谷",
+        "name_en": "",
+        "description_cn": "转换技，出牌阶段，阳：你可以弃置两张牌（不能包含你本阶段弃置过的花色），使用其中的【杀】；阴：你可以摸一张牌。结束阶段，你可以弃置一张牌令一名其他角色执行当前项。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马玩",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "浑疆",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令攻击范围内任意名其他角色同时选择一项：1.令你本阶段使用【杀】可以指定其为额外目标；2.令你摸一张牌。若这些角色皆选择了同一项，也须执行另一项。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陆郁生",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "藏心",
+        "name_en": "",
+        "description_cn": "锁定技，摸牌阶段开始时，你展示牌堆底三张牌并摸与其中红桃牌数量等量张牌。当你每回合首次受到伤害时，你展示牌堆底三张牌并弃置其中任意张牌，此伤害-X（X为以此法弃置的红桃牌数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "润微",
+        "name_en": "",
+        "description_cn": "已受伤角色的弃牌阶段开始时，你可以令其摸/弃置一张牌并于此阶段手牌上限-1/+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "费祎",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "晏如",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，若你的手牌数为：奇数，你可以摸三张牌并弃置至少半数手牌；偶数，你可以弃置至少半数手牌并摸三张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "和衷",
+        "name_en": "",
+        "description_cn": "每回合各限一次，当你的手牌数变为1后，你可以展示之并摸一张牌，然后令你本回合下次使用点数大于/小于此牌点数的锦囊牌各多结算一次。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "丁尚涴",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "配合神将",
+      "丁妈"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "抚悼",
+        "name_en": "",
+        "description_cn": "游戏开始时，你摸三张牌，交给一名其他角色至多三张手牌，弃置任意张手牌，然后记录你的手牌数。每回合结束时，若当前回合角色手牌数等于此数值，你可以与其各摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "讽言",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到其他角色的伤害，或响应其他角色的牌后，你选择一项:1.摸一张牌并交给其一张牌;2.其摸一张牌并弃置两张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "文钦",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "犷骜",
+        "name_en": "",
+        "description_cn": "你使用【杀】可以多指定一个目标，其他角色使用【杀】可以多指定你为目标。若你的手牌数为偶数，你摸一张牌令此【杀】对任意目标无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "彗企",
+        "name_en": "",
+        "description_cn": "觉醒技，每回合结束后，若此回合包括你恰好3名角色成为牌的目标，你回复1点体力并获得“偕举”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "彭羕",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "寸目",
+        "name_en": "",
+        "description_cn": "锁定技，当你摸牌时，你改为从牌堆底摸牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "嚣翻",
+        "name_en": "",
+        "description_cn": "当你需要使用牌时，你可以观看牌堆底X+1张牌，然后可以使用其中你需要的牌并弃置你前X个区域里的牌：1.判定区；2.装备区；3.手牌区。（X为本回合使用过牌的类型数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "侻失",
+        "name_en": "",
+        "description_cn": "锁定技，你不能使用【无懈可击】。你使用点数为字母的牌无效并摸一张牌，且下次对手牌数小于你的角色使用牌无距离和次数限制。任意回合你使用3次伤害牌未造成伤害后，“嚣翻”失效至回合结束。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蒋琬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蓄发",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，你可以：1.将至少半数手牌置于武将牌上，称为“蓄发”牌，然后你可以将一张牌当“蓄发”牌中任意普通锦囊牌使用；2.移去至少半数“蓄发”牌，然后你可以将一张牌当移去牌中的一张普通锦囊牌使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "自若",
+        "name_en": "",
+        "description_cn": "转换技，锁定技，当你使用，阳：最左侧的手牌时，你摸一张牌；阴：最右侧的手牌时，你摸一张牌。你以此法摸牌后本回合不能整理手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李婉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "联句",
+        "name_en": "",
+        "description_cn": "结束阶段，你可以令一名其他角色获得弃牌堆中本回合你使用的至多两张颜色相同的牌，然后其下个结束阶段，你可获得弃牌堆中该回合其使用的至多两张另一种颜色的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "思闾",
+        "name_en": "",
+        "description_cn": "锁定技，因“联句”获得的牌称为“闾”；当你受到伤害后，你摸一张牌并称为“闾”。“闾”因弃置进入弃牌堆后，失去此牌的角色获得之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕伯奢",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缚豕",
+        "name_en": "",
+        "description_cn": "当一名角色使用【杀】后，若你与其距离1以内，你将之置于你的武将牌上。你可以将任意张“缚豕”牌置入弃牌堆并摸等量的牌，视为使用一张具有等量项效果的【杀】：1.目标数+1；2.对一个目标造成的伤害-1；3.对一个目标造成的伤害+1。若目标和选项皆相邻，此【杀】无次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "东道",
+        "name_en": "",
+        "description_cn": "转换技，阳：农民回合结束后，你可以令地主执行一个额外回合；阴：农民回合结束后，其可以执行一个额外回合。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "雅丹",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "持久",
+      "距离掌控者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "倾轧",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定唯一目标后，你可以弃置你与其之间的角色各一张手牌，然后可以于本回合下个阶段结束时使用其中一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "铁轮",
+        "name_en": "",
+        "description_cn": "锁定技，你计算与其他角色的距离-X（X为你本轮使用的牌数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "牵招",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "威抚",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置一张牌并判定，你本回合下次使用与判定牌类型相同的牌无距离限制且可以多指定一个目标，若弃置牌与判定牌类型相同，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "款塞",
+        "name_en": "",
+        "description_cn": "每回合限一次，当一张牌指定目标后，若目标数大于等于你的体力值，你可以令其中一个目标选择一项：1.交给你一张牌；2.令你回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "张燕",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "强命",
+      "加伤"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "肃疾",
+        "name_en": "",
+        "description_cn": "已受伤角色的出牌阶段开始时，你可以将一张黑色牌当【杀】使用，若其受到此【杀】伤害，你获得其一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "狼蹈",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定唯一目标时，你可以与其同时选择一项，令此【杀】：伤害值+1/目标数+1/不能被响应。若未杀死角色，你移除此次被选择的项。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "何进",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "困难",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "谋诛",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色交给你一张手牌，若其手牌数小于你，其视为对你使用一张【杀】或【决斗】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "延祸",
+        "name_en": "",
+        "description_cn": "当你死亡时，你可以弃置杀死你的角色至多X张牌（X为你的牌数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "牛金",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "挫锐",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你将手牌数摸至X张（X为场上角色数）。当你成为延时锦囊牌的目标后，你跳过下个判定阶段。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "裂围",
+        "name_en": "",
+        "description_cn": "当你杀死一名角色时，你可以摸三张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "韩遂",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "多刀",
+      "爆发"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "逆乱",
+        "name_en": "",
+        "description_cn": "体力值大于你的角色的结束阶段，若其此回合使用过【杀】，你可以将一张黑色牌当【杀】对其使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骁袭",
+        "name_en": "",
+        "description_cn": "每轮首个回合开始时，你可以视为使用一张无距离限制的【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陆凯",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "回复",
+      "转化大师",
+      "阴阳转换"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "玄注",
+        "name_en": "",
+        "description_cn": "转换技，每回合限一次，阳：你可以将一张牌移出游戏，视为使用任意基本牌；阴：你可以将一张牌移出游戏，视为使用仅指定唯一角色为目标的普通锦囊牌。若移出游戏的牌：不为装备牌，你弃置一张牌；为装备牌，你重铸以此法移出游戏的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "謇谔",
+        "name_en": "",
+        "description_cn": "锁定技，当你对其他角色使用的牌生效后，其本回合不能抵消牌；当你抵消牌后，你本回合不能成为牌的目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "田畴",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "锦囊大师"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "善刀",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将任意角色各一张牌置于牌堆顶，视为对其使用一张【五谷丰登】，然后视为对除其外的其他角色使用一张【万箭齐发】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "胡金定",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "持久"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "轻缘",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你选择一名其他角色。当你首次受到伤害后，你再选择一名其他角色。每回合限一次，当以此法选择的角色获得牌后，你获得其中随机一名角色一张手牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "重身",
+        "name_en": "",
+        "description_cn": "你本轮获得的红色牌可当【闪】使用。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹宇",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "恭节",
+        "name_en": "",
+        "description_cn": "每轮首位角色回合开始时，你可以令任意名其他角色各获得你一张牌，然后你摸X张牌（X为被获得牌的花色数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "相胥",
+        "name_en": "",
+        "description_cn": "当你的手牌数变为全场最少时，你可以于本回合结束时将手牌调整至与当前回合角色相同（至多摸至五张）。你以此法弃置至少两张牌后，回复1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "襄胙",
+        "name_en": "",
+        "description_cn": "限定技，当你进入濒死状态时，你可以交给一名其他角色任意张牌，若你对其发动过“恭节”和“相胥”，你回复等量体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "凌操",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "过牌",
+      "装备大师",
+      "区域控制者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "独进",
+        "name_en": "",
+        "description_cn": "摸牌阶段，你可以多摸X+1张牌（X为装备区里的牌数的一半且向上取整）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李异",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "缠双",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以与一名其他角色同时选择一项执行：1.重铸一张牌；2.使用一张【杀】；3.弃置两张牌。结束阶段，你依次执行X项（X为你本回合以任意方式执行过的项数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "蘸金",
+        "name_en": "",
+        "description_cn": "锁定技，若你的装备区里没有武器牌，你视为装备着【贯石斧】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘磐",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "减目标"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "披荆",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你使用【杀】或普通锦囊牌指定目标后，你可以令至多X名其他角色成为或不成为此牌目标并随机交给你一张牌（X为你已损失体力值且至少为1），这些角色下次使用基本牌或普通锦囊牌指定唯一目标时，可指定你为额外目标或摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘辟",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "那是真的"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "易城",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示牌堆顶X张牌（X为你的体力上限），然后可以用任意张手牌交换其中等量张牌，若展示牌点数之和因此增加，你可以用所有手牌交换展示牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "曹腾",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "拥族",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以选择一名其他角色，你与其依次选择不同的一项：1.摸两张牌；2.回复1点体力；3.复原武将牌。若你选择的角色与你势力相同，则增加两个选项：4.手牌上限+1；5.根据势力获得“奸雄”或“天命”直到自己下个回合开始。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "清流",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你选择群或魏势力加入。你首次进入濒死状态被救回后，更换至另一个势力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭图",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "转化大师",
+      "拆迁办"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "趋势",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以摸一张牌，然后扣置一张手牌于一名其他角色的武将牌上，称为“趋”。其结束阶段移去“趋”，然后若其本回合使用过与“趋”同类型牌，你摸X张牌(X为其本回合使用牌指定过的目标数且至多为5)。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "诿解",
+        "name_en": "",
+        "description_cn": "其他角色的回合限一次，当你需要使用或打出基本牌时，你可弃置你距离为1的其他角色一张手牌，若此牌与你需要使用/打出的牌名相同，你视为使用/打出此牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "蔡瑁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "卖血",
+      "连环状态"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "佐练",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你选择至多X名有手牌的角色（X为你的体力值），随机展示其各一张手牌，然后你可将这些牌与牌堆或弃牌堆中的火【杀】或雷【杀】交换。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "精舟",
+        "name_en": "",
+        "description_cn": "当你受到伤害时，你可选择至多X名角色（X为你的体力值），令其中未连环的角色进入连环状态，已连环的角色解除连环状态。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孙茹",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "持室",
+        "name_en": "",
+        "description_cn": "每回合限一次，当前回合角色失去其一个区域内的最后一张牌后，你可以令其摸两张牌且本回合手牌上限+2。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "慰勉",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以废除至多三个装备栏，令一名角色选择等量项：1.恢复一个被废除的装备栏；2.回复1点体力；3.弃置所有手牌，摸四张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP孙策",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "颜色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "连讨",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可令一名其他角色选择一种颜色，然后你展示所有手牌，并依次将此颜色的手牌当【决斗】对其使用直到有一方进入濒死状态，然后你摸X张牌（X为你以此法对目标角色造成的伤害数）。若该角色没有因此受到伤害，你摸一张牌，本回合手牌上限+1且不能使用【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "刘焉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "图射",
+        "name_en": "",
+        "description_cn": "当你使用非装备牌指定目标后，若你没有基本牌，则你可以摸X张牌（X为此牌指定的目标数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "立牧",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以将一张方片牌当【乐不思蜀】对自己使用，然后回复1点体力；你的判定区有牌时，你对攻击范围内的其他角色使用牌没有距离和次数限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "王匡",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "过牌",
+      "困难",
+      "永不断杀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "任侠",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以执行一项，并于此阶段结束时执行另一项：1.弃置两张牌，重复至手牌中没有【杀】或伤害锦囊；2.摸两张牌，重复至手牌中有【杀】或伤害锦囊。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "成公英",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "匡襄",
+        "name_en": "",
+        "description_cn": "准备阶段，你令一名角色将手牌调整为4，其以此法获得的黑色牌造成的伤害+1，其以此法每获得一张红色牌，其下个摸牌阶段摸牌数-1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "轲比能",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "辅助",
+      "配合神将",
+      "讨饭"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "平端",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名角色依次执行：1.使用一张基本牌；2.重铸一张锦囊牌；3.可令你获得其装备区一张牌。其每执行一项便摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "秦朗",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "技能",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "陶谦",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "纵乱",
+        "name_en": "",
+        "description_cn": "准备阶段，你可选择一名角色，其视为使用一张可指定其攻击范围内任意名角色的【杀】，然后你弃置X张牌（X为以此法受到伤害的角色数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "招祸",
+        "name_en": "",
+        "description_cn": "锁定技，一名角色于你的回合内首次受到伤害后，其交给你一张手牌。你不能使用、打出这些牌，且这些牌不计入你的手牌上限直到回合结束。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "温仁",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以选择任意名角色，其每满足一项便摸一张牌：1.没有手牌；2.手牌数小于等于你。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "韩馥",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "束辎",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以交给一名角色两张牌，然后其交给你一张手牌。若此牌牌名与你交给其的牌中牌名相同，你可以选择一项：1.对其造成1点伤害；2.将场上一张牌移动至其对应的区域。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "恇守",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到伤害后，你摸三张牌，然后弃置X张牌（X为本回合受到过伤害的角色数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "袁姬",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "节言",
+        "name_en": "",
+        "description_cn": "一名角色一次性失去了恰好两张手牌后，你可以与其从牌堆两端各摸一张牌并展示，若花色不同，此技能本回合失效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "镜花",
+        "name_en": "",
+        "description_cn": "锁定技，每轮开始时，你摸两张牌。回合开始时，你将“镜花”牌置于牌堆底。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "水月",
+        "name_en": "",
+        "description_cn": "锁定技，回合结束时，你摸两张牌。每轮结束时，你将“水月”牌置于牌堆顶。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "薛灵芸",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "思泣",
+        "name_en": "",
+        "description_cn": "你的红色牌进入弃牌堆时，将之置于牌堆底。当你受到伤害后，你可以亮出牌堆底至多{0}张连续的红色牌，使用其中的【桃】、【无中生有】与装备牌（可指定其他角色为目标），然后摸等同于其中无法使用的牌数的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "巧织",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置一张牌并亮出牌堆顶的两张牌，然后获得其中一张，此技能失效直到你失去以此法获得的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "董翓",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "狡威",
+        "name_en": "",
+        "description_cn": "锁定技，你的黑色牌不计入手牌上限。若你的手牌数大于体力值，你对体力值小于等于你的角色使用黑色牌无距离限制，且其不能响应。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鞭御",
+        "name_en": "",
+        "description_cn": "锁定技，你使用【杀】造成伤害或受到【杀】的伤害后，你选择受伤角色至多X张手牌，这些牌视为无次数限制的【杀】，直到其使用非基本牌（X为其已损体力值）。然后若你或其手牌均为【杀】，你摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "凤瑶",
+        "name_en": "",
+        "description_cn": "锁定技，当黑桃牌离开一名角色装备区后，你回复1点体力。当你对其他角色造成伤害时，你弃置你或其场上一张黑桃牌，令此伤害+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "阮慧",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 1.5,
+    "traits_cn": [
+      "控制",
+      "简单",
+      "颜色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "明察",
+        "name_en": "",
+        "description_cn": "摸牌阶段开始时，你亮出牌堆顶三张牌，然后你可改为获得其中点数不大于8的牌，若如此做，你可获得一名其他角色随机一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "敬重",
+        "name_en": "",
+        "description_cn": "弃牌阶段结束时，若你于此阶段内弃置过至少两张黑色牌，你可以选择一名其他角色，其下个出牌阶段使用的牌进入弃牌堆后，你获得之（每阶段限获得三次）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP曹操",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "回复",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "西向",
+        "name_en": "",
+        "description_cn": "出牌阶段各限一次，你可以将至少X张牌当一张无距离和次数限制的【杀】或【决斗】使用（X为所有角色本回合已使用过基本牌的次数+1）。此牌结算后，若目标角色体力值：大于你的手牌数，你摸一张牌；大于你的体力值，你回复1点体力，然后获得其一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "哀歌",
+        "name_en": "",
+        "description_cn": "觉醒技，一回合内第二次有角色进入濒死状态后，你失去“西向”，获得“逐北”，然后将手牌摸至与其体力上限相同、回复体力至与其体力上限相同。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "SP刘备",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "虚待",
+        "name_en": "",
+        "description_cn": "限定技，当你响应牌后或受到伤害后，你可以令一名其他角色获得“煮酒”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "煮酒",
+        "name_en": "",
+        "description_cn": "你可以将至少X+1张牌当【酒】使用(X为你本回合已使用过【酒】的次数)，然后若这些牌不为梅花，此技能本回合失效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "惊雷",
+        "name_en": "",
+        "description_cn": "每回合限一次，一名角色使用【酒】结算结束后，若没有处于濒死的角色，你可以受到1点无来源的雷电伤害，令一名拥有“煮酒”角色将手牌调整至体力上限(至多摸至5)，然后若该角色不为你，其须将以此法弃置的牌交给你。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吴景",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "合击",
+        "name_en": "",
+        "description_cn": "一名角色使用仅指定唯一目标的【决斗】或红色【杀】后，你可对同目标使用一张【杀】或【决斗】，若你以此法使用的牌不为转化牌，你随机获得一张红色牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "流兵",
+        "name_en": "",
+        "description_cn": "锁定技，你每回合使用的第一张实体【杀】的花色视为方块。若其他角色于其出牌阶段内使用的非黑色【杀】未造成伤害，此牌进入弃牌堆后，你获得之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "马元义",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "集兵",
+        "name_en": "",
+        "description_cn": "摸牌阶段开始时，若你的“兵”数小于全场存活势力数，则你可以改为将牌堆顶的两张牌置于你的武将牌上，称为“兵”。你可以将“兵”当作【闪】或【杀】使用或打出。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "往京",
+        "name_en": "",
+        "description_cn": "锁定技，当你发动“集兵”使用或打出“兵”时，若对方是全场体力值最高的角色，你摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "谋篡",
+        "name_en": "",
+        "description_cn": "觉醒技，准备阶段，若你拥有至少X张“兵”（X为全场势力数），你减少1点体力上限，然后获得技能“兵祸”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "闪赵云",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "龙临",
+        "name_en": "",
+        "description_cn": "当其他角色于其出牌阶段首次使用【杀】指定目标后，你可以弃置一张牌令此【杀】无效，然后其可以视为对你使用一张【决斗】，你以此法造成伤害后，其本阶段使用的下一张牌不能指定其他角色为目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "镇胆",
+        "name_en": "",
+        "description_cn": "你可以将一张非基本手牌当本轮你未使用过的基本牌使用或打出；当你受到伤害后或每轮结束时，你摸X张牌，此技能本轮失效（X为本轮所有角色执行过的回合数且至多为5）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "南华老仙",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 4.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "青书",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你的准备阶段和结束阶段，你书写一册\"天书\"。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "授术",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将一册未翻开的\"天书\"交给一名其他角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "合道",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时，你可至多拥有两册\"天书\"。你的首次濒死结算后，你可至多拥有三册“天书”。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李肃",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "巧言",
+        "name_en": "",
+        "description_cn": "锁定技，在你的回合外，当其他角色对你造成伤害时，若你：没有“珠”，你防止此伤害并摸一张牌，然后将一张牌置于你的武将牌上，称为“珠”；有“珠”，其获得“珠”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "献珠",
+        "name_en": "",
+        "description_cn": "锁定技，出牌阶段开始时，你令一名角色获得“珠”，若其非你，其视为对你攻击范围内你指定的一名角色使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "彻里吉",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "判定",
+      "距离掌控者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "车悬",
+        "name_en": "",
+        "description_cn": "出牌阶段，若你的装备区里没有宝物牌，你可以弃置一张黑色牌，选择一张“舆”置入你的装备区。当你非因使用装备牌失去装备区里的宝物牌后，你可以判定，若结果为黑色，将一张随机的“舆”置入你的装备区。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "羌首",
+        "name_en": "",
+        "description_cn": "锁定技，若你的装备区里有宝物牌，你与其他角色的距离-1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "华歆",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "草诏",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以展示一张手牌并声明一种未以此法声明过的基本牌或普通锦囊牌，令一名体力值不大于你的其他角色选择一项：1.令此牌视为你声明的牌；2.其失去1点体力。然后若此牌声明成功，你可以将其交给一名其他角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "息兵",
+        "name_en": "",
+        "description_cn": "当其他角色对你造成伤害后，你可以弃置你或其两张牌，然后你与其手牌较少的角色摸两张牌并于此回合不能使用牌指定你为目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "向宠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "拆迁办",
+      "装备大师",
+      "随机性拉满"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "固营",
+        "name_en": "",
+        "description_cn": "锁定技，每回合限一次，当你于回合外失去一张牌后，当前回合角色选择一项：1.随机交给你一张牌；2.你获得此牌，若为装备牌则改为使用之。准备阶段，你弃置X张牌（X为此前此技能发动过的次数），并重置此技能发动次数。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "睦阵",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将两张牌交给一名有装备牌的其他角色，然后获得其装备区里的一张牌；出牌阶段限一次，你可以将一张装备牌置入其他角色的装备区，然后获得其一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "武安国",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "爆发",
+      "花色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "历勇",
+        "name_en": "",
+        "description_cn": "转换技，出牌阶段，阳：你可以将一张本回合你未使用过的花色的牌当【决斗】使用；阴：你可以从牌堆中获得一张你本回合使用过的花色的牌，令一名角色视为对你使用一张【决斗】。###转换技，出牌阶段，阳：你可以将一张本回合你未使用过的花色的牌当【决斗】使用。阴：你可以从牌堆中获得一张你本回合使用过的花色的牌，令一名角色视为对你使用一张【决斗】。###转换技，出牌阶段，阳：你可以将一张本回合你未使用过的花色的牌当【决斗】使用。阴：你可以从牌堆中获得一张你本回合使用过的花色的牌，令一名角色视为对你使用一张【决斗】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "郭照",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "判定"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "椒遇",
+        "name_en": "",
+        "description_cn": "锁定技，每轮开始时，你进行X次判定（X为你空置装备栏数），然后声明一种颜色并获得此颜色的判定牌。你的下回合结束时，你执行一个额外出牌阶段（你不能使用与声明颜色不同的牌），此阶段其他角色不能使用与你装备区牌颜色相同的牌直到有角色受到伤害时。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "内训",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色于回合内使用第一张非装备牌后，若此牌与你以\"椒遇\"声明的颜色相同/不同，你交给/获得其一张牌，然后失去牌的角色摸一张牌。你以此法获得的牌不计入手牌上限直到你回合结束。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "袁涣",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "德辱",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以猜测一名其他角色手牌中的基本牌牌名，若你：有猜对，你回复1点体力；有猜错，随机获得其一张基本牌；全部猜对，你将手牌摸至体力值。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "临节",
+        "name_en": "",
+        "description_cn": "锁定技，你受到伤害后，来源弃置一张手牌，若为【杀】，你摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "裴元绍",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "复掠",
+        "name_en": "",
+        "description_cn": "你使用【杀】或伤害锦囊牌仅指定唯一目标后，你可选择本回合未执行过的一项：此牌造成伤害+1；获得目标角色一张牌。然后若此牌结算完成后，未造成伤害，其可对你使用一张【杀】，并执行“复掠”的另一项。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "牛辅",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "永不断杀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "蓍算",
+        "name_en": "",
+        "description_cn": "锁定技，你受到伤害后，你弃置一张牌，来源选择一项：1.失去1点体力；2.交给你一张装备区里的牌；3.将武将牌翻面。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "纵掠",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以将一张牌当【杀】使用。你使用【杀】对目标角色造成伤害后，若实体牌不为【杀】或没有实体牌，你可以获得其区域各一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "杨阜",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "屏忠",
+        "name_en": "",
+        "description_cn": "锁定技，你每回合使用的前X张牌能多指定X个目标。你受到伤害后，你摸X张牌（X为没有手牌的角色数+1）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "肃衣",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色随机使用牌堆中一张装备牌，然后视为对其使用一张【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "祢衡",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "控制"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "狂狷",
+        "name_en": "",
+        "description_cn": "出牌阶段限X次（X为你的体力上限），你可将手牌调整至与一名其他角色相同，然后摸你弃置牌数的牌。你因此技能获得的牌本回合无次数限制。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "飞辩",
+        "name_en": "",
+        "description_cn": "锁定技，游戏开始时你令你的出牌时间改为15秒。你于回合内使用一张牌后，或其他角色对你使用一张牌后，使用牌的角色随机弃置一张手牌且本轮出牌时间减一秒（至多减至1秒）。每个回合结束时，本回合出牌超时的角色失去1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "孔淑",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "辅助"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "累卵",
+        "name_en": "",
+        "description_cn": "每回合限一次，你可以将X张牌当一张你本轮未使用过的基本牌使用。每轮结束时，若你此轮至少使用过X次基本牌，你可以摸X张牌并视为使用一张本轮进入弃牌堆的普通锦囊牌（X为你连续发动此技能的轮数且至少为1）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "覆巢",
+        "name_en": "",
+        "description_cn": "锁定技，你响应其他角色的牌后，你选择：1.弃置你与其各一张牌，然后其他角色不能响应此牌；2.令此牌对其他角色无效，然后对你额外结算一次。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "闪刘宏",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "颜色爱好者"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "朝争",
+        "name_en": "",
+        "description_cn": "出牌阶段开始时，你可与所有其他角色进行议事，若议事结果为：红色，意见为红色的角色各回复1点体力；黑色，意见为红色的其他角色各失去一点体力。议事完成后，你摸X张牌（X为“议事”意见与你相同的角色数且至多为2）。你参与议事的意见始终视为+1。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "甚宠",
+        "name_en": "",
+        "description_cn": "限定技，准备阶段，你可令一名其他角色获得“飞扬”、“跋扈”。若如此做，当你死亡时，杀死你的角色弃置所有牌，因此获得技能的角色失去所有技能。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "聚敛",
+        "name_en": "",
+        "description_cn": "主公技，其他群势力角色每回合限一次，当其于摸牌阶段外不因此技能摸牌后，其可摸一张牌；结束阶段，你可以获得所有其他群势力角色各一张手牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "管亥",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "多刀"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "卸尾",
+        "name_en": "",
+        "description_cn": "你可以将两张手牌置于武将牌上，称为“饵”，视为使用一张【杀】或【闪】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "诱阙",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以用点数最小的“饵”拼点。没赢的角色弃置点数大于其拼点牌的所有手牌，视为对赢的角色使用一张【杀】。此【杀】造成伤害后，你摸两张牌，若“饵”的花色均不为黑桃，此技能此阶段失效。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "赵忠",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "朋比",
+        "name_en": "",
+        "description_cn": "你首个回合开始时，你选择获得“隐天”“蔽日”中的一个技能，然后可令一名其他角色获得另一个技能。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "抵慈",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名角色交给你一张手牌，然后其回复1点体力并解除连环状态，其相邻角色进入连环状态。“抵慈”角色下次进入连环状态后，其选择：1.交给你一张手牌；2.你对其造成1点雷电伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "李丰",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "发育"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "集运",
+        "name_en": "",
+        "description_cn": "游戏开始时，将牌堆中3张类别不同的牌置于你的武将牌上，称为“粮”。准备阶段，你可令任意角色各摸一张牌，每名角色使用其因此获得的牌结算完成后，若“粮”的数量小于3，将此牌置于你的武将牌上，称为“粮”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "输粮",
+        "name_en": "",
+        "description_cn": "每回合限一次，你可使用或打出一张“粮”。结束阶段，你可将任意“粮”交给至多等量角色，然后你摸X张牌（X为获得“粮”的角色数）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "鲍信",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 3.5,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "募讨",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以选择一名角色，令其将手牌中所有的【杀】置于其武将牌上，然后其依次将这些【杀】随机交给由其下家开始的每一名角色，然后其对最后一名角色造成X点伤害（X为最后一名角色手牌中【杀】的数量且至多为2）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "毅谋",
+        "name_en": "",
+        "description_cn": "当与你距离1以内的角色受到伤害后，你可以选择一项：1.令其随机获得牌堆中的一张【杀】；2.令其将一张手牌交给另一名角色，然后其摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "闪张辽",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "整兵",
+        "name_en": "",
+        "description_cn": "群势力技，出牌阶段限三次，你可以重铸一张牌，若此牌为：【杀】，你的手牌上限+1；【闪】，你摸一张牌；【桃】或【酒】，此回合结束时，你执行一个额外的出牌阶段。然后若你以此法触发过所有选项，你变更势力至魏。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "突围",
+        "name_en": "",
+        "description_cn": "魏势力技，出牌阶段开始时，你可以获得攻击范围内任意角色各一张牌，然后回合结束时，其中本回合未受到伤害的角色各获得你一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "吕玲绮",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "绮武",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可弃置任意张牌，视为使用一张无距离和次数限制的【杀】，目标角色需弃置X张牌（X为你弃置牌的花色数）。若你们因此弃置了牌：且包含【闪】，你获得弃置牌中的【闪】，且本回合不计入手牌上限；且不包含【闪】，此【杀】不可响应。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "妆戎",
+        "name_en": "",
+        "description_cn": "锁定技，你的回合开始时，将【束发紫金冠】【玲珑狮蛮带】【红锦百花袍】【无双方天戟】中的随机一件置入你的空置装备栏。每回合结束时，若你发动这些装备的效果至少两次，你增加1点体力上限，回复1点体力（每局游戏限一次）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "闪孙坚",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "强命"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "平讨",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1.其交给你一张牌，然后你本回合使用的下一张【杀】可以多指定一个目标；2.你视为对其使用一张【杀】（有次数限制）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "绝烈",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后，你可以弃置至多X张牌（X为你的体力值），令目标角色共弃置等量的牌。然后若你的体力值或手牌数最小，此【杀】伤害+1。若你因此【杀】杀死一名角色，你将手牌摸至体力上限。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "环淑君",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "环佩",
+        "name_en": "",
+        "description_cn": "每轮限一次，当你需要使用基本牌时，你可将手牌数调整至与体力值相同，视为使用此牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "温宜",
+        "name_en": "",
+        "description_cn": "每局游戏限1次，一名角色于一个回合内体力值变为1后，你可对其使用一张【桃】，或交给其一张装备牌令其使用之，然后其复原武将牌",
+        "description_en": ""
+      },
+      {
+        "name_cn": "妙心",
+        "name_en": "",
+        "description_cn": "锁定技，当你受到1点伤害后，你摸两张牌；若“温宜”可发动次数为0，改为：摸一张牌，令“温宜”的可发动次数+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "闪朱儁",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "过牌"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "分敌",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定唯一目标后，你可以展示该角色的至多X张手牌（X为你的体力上限）。若如此做，直到此【杀】结算结束，其只能使用或打出这些牌，当此【杀】对其造成伤害后，你获得其手牌或弃牌堆中的这些牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "拒降",
+        "name_en": "",
+        "description_cn": "每回合限一次，当你于摸牌阶段外获得牌后，你可以弃置这些牌，你每以此法弃置一张牌，当前回合角色本回合使用【杀】的次数便+1。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "乔国老",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "媒言",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以与所有体力值大于等于你的角色议事，若议事结果为红色，你获得所有红色意见牌；若议事结果为黑色，你与意见为红色的角色各摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "妁语",
+        "name_en": "",
+        "description_cn": "每回合限一次，你攻击范围内的角色成为【杀】的目标时，你可以与所有体力值小于等于你的角色议事，若议事结果为红色，弃置所有意见牌，将此【杀】转移给一名未参与议事的角色。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "作保",
+        "name_en": "",
+        "description_cn": "限定技，你参与的议事展示意见时，你可以令此次议事中，所有黑桃意见牌视为红桃。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  }
+]
