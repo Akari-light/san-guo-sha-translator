@@ -129,6 +129,11 @@ class AppTheme {
   static const Color skillAwakening = Color(0xFFB47FEC); // purple
   static const Color skillLocked    = Color(0xFF5BA4F5); // blue
   static const Color skillActive    = Color(0x2EFFFFFF); // subtle white
+  /// Mission (使命技): teal-green — distinct from all existing types,
+  /// evokes the sense of a quest/objective. Warm enough to stand out
+  /// against locked (blue) and awakening (purple), cool enough not to
+  /// clash with lord (gold) or limited (red).
+  static const Color skillMission   = Color(0xFF26A99A); // teal
 
   /// Returns the accent color for a skill type.
   static Color skillTypeColor(SkillType type) {
@@ -137,6 +142,7 @@ class AppTheme {
       case SkillType.limited:   return skillLimited;
       case SkillType.awakening: return skillAwakening;
       case SkillType.locked:    return skillLocked;
+      case SkillType.mission:   return skillMission;
       case SkillType.active:    return skillActive;
     }
   }

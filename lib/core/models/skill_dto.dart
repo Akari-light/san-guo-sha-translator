@@ -1,8 +1,8 @@
 class SkillDTO {
-  final String id;          
-  final SkillType skillType;   
-  final String nameCn;         
-  final String nameEn;         
+  final String id;
+  final SkillType skillType;
+  final String nameCn;
+  final String nameEn;
   final String descriptionCn;
   final String descriptionEn;
 
@@ -32,7 +32,8 @@ enum SkillType {
   locked,    // 锁定技 — always in effect, cannot be declined
   limited,   // 限定技 — can only be used once per game
   awakening, // 觉醒技 — triggers automatically when conditions are met
-  lord;      // 主公技 — only usable when playing as the Lord role
+  lord,      // 主公技 — only usable when playing as the Lord role
+  mission;   // 使命技 — has named success/failure condition; success grants a new skill
 
   static SkillType fromString(String value) {
     switch (value) {
@@ -40,6 +41,7 @@ enum SkillType {
       case 'limited':   return SkillType.limited;
       case 'awakening': return SkillType.awakening;
       case 'lord':      return SkillType.lord;
+      case 'mission':   return SkillType.mission;
       default:          return SkillType.active;
     }
   }
@@ -50,7 +52,8 @@ enum SkillType {
       case SkillType.limited:   return 'Limited';
       case SkillType.awakening: return 'Awakening';
       case SkillType.lord:      return 'Lord';
-      case SkillType.active:    return '';  
+      case SkillType.mission:   return 'Mission';
+      case SkillType.active:    return '';
     }
   }
 
@@ -60,7 +63,8 @@ enum SkillType {
       case SkillType.limited:   return '限定技';
       case SkillType.awakening: return '觉醒技';
       case SkillType.lord:      return '主公技';
-      case SkillType.active:    return '';  
+      case SkillType.mission:   return '使命技';
+      case SkillType.active:    return '';
     }
   }
 

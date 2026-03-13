@@ -4,8 +4,12 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_assets.dart';
 
 /// Reusable grid tile for a single general card.
-/// Shows the card image with a faction colour accent bar,
-/// name, health, and expansion badge overlaid at the bottom.
+/// Shows the card image with a faction colour accent border,
+/// name badge and expansion badge overlaid on the image.
+///
+/// Dimensions are driven entirely by the parent grid's childAspectRatio.
+/// All three grids (GeneralScreen, LibraryScreen, HomeScreen thumbnails)
+/// use the canonical SGS card ratio: 63 / 88 ≈ 0.716.
 class GeneralCardTile extends StatelessWidget {
   final GeneralCard card;
   final VoidCallback onTap;
@@ -43,7 +47,7 @@ class GeneralCardTile extends StatelessWidget {
               Image.asset(
                 card.imagePath,
                 fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
+                errorBuilder: (_, _, _) => Container(
                   color: factionColor.withValues(alpha: 0.1),
                   child: Center(
                     child: Image.asset(
@@ -60,8 +64,8 @@ class GeneralCardTile extends StatelessWidget {
                 right: 6,
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 7,
-                    vertical: 4,
+                    horizontal: 6,
+                    vertical: 3,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.black.withValues(alpha: 0.75),
@@ -72,7 +76,9 @@ class GeneralCardTile extends StatelessWidget {
                     card.expansionBadge,
                     style: TextStyle(
                       color: factionColor,
-                      fontSize: 14,
+                      // 11pt fits both single-char badges (界, 神, 魔)
+                      // and two-char badges (神话) without overflow.
+                      fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

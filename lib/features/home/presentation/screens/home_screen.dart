@@ -369,8 +369,8 @@ class _SpotlightCard extends StatelessWidget {
           children: [
             // Art thumbnail
             Container(
-              width: 84,
-              height: 118,
+              width: 84, // SGS card ratio (63/88 = 0.716)
+              height: 117, // 84 / 0.716 ≈ 117
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -526,8 +526,8 @@ class _ThumbnailChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 72,
-              height: 101,
+              width: 72, // SGS card ratio (63/88 = 0.716)
+              height: 101, // 72 / 0.716 ≈ 101 — already correct
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,

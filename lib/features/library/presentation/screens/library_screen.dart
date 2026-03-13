@@ -164,7 +164,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
-                      childAspectRatio: 0.712,
+                      childAspectRatio: 0.716, // SGS card ratio: 63mm / 88mm = 0.716
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
                     ),
