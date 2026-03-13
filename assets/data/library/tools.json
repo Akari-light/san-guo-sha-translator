@@ -125,7 +125,7 @@
     ],
     "effect_en": [
       "Action Phase: Use on one or two characters. Each target is either turned sideways (chained) or reset to upright (unchained). Chained characters who take elemental damage pass that same damage to all other chained characters. Chain status is cleared immediately after elemental damage transmits.",
-      "Recast: During your action phase, you may discard this card to draw 1 card instead. Recasting is not considered using this tool card."
+      "Recast: During your Action Phase, you may discard this card to draw 1 card instead. Recasting is not considered using this tool card."
     ],
     "faq": [
       {
@@ -215,7 +215,7 @@
   {
     "id": "tool_harvest",
     "name_cn": "五谷丰登",
-    "name_en": "Bountiful Harvest",
+    "name_en": "Harvest",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
@@ -258,7 +258,7 @@
       {
         "q_cn": "对【五谷丰登】使用【无懈可击】会发生什么？",
         "a_cn": "被抵消的目标跳过摸牌，其原本可拿的牌留在牌堆供后续角色选取。",
-        "q_en": "What happens if [Nullification] is used during [Bountiful Harvest]?",
+        "q_en": "What happens if [Nullification] is used during [Harvest]?",
         "a_en": "The target is skipped and cannot choose a card. The card they would have taken remains in the pool for later players."
       },
       {
@@ -303,7 +303,7 @@
       "出牌阶段，对距离为1的一名其他角色使用。将【兵粮寸断】置入该角色的判定区。该角色判定阶段，若判定结果不为梅花，其跳过本回合的摸牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's judgment area. During their judgment phase, if the result is not a club, that character skips their draw phase this turn."
+      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's judgment area. During their Judgment Phase, if the result is not a club, that character skips their Draw Phase this turn."
     ],
     "faq": []
   },
@@ -319,7 +319,7 @@
       "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区。该角色判定阶段，若判定结果不为红桃，其跳过本回合的出牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. Place [Acedia] into that character's judgment area. During their judgment phase, if the result is not a heart, that character skips their action phase this turn."
+      "Action Phase: Use on another character. Place [Acedia] into that character's judgment area. During their Judgment Phase, if the result is not a heart, that character skips their Action Phase this turn."
     ],
     "faq": []
   },
@@ -335,7 +335,7 @@
       "出牌阶段，对自己使用。将【闪电】置入你的判定区。你的判定阶段，若判定结果为黑桃2至9，你受到3点雷电伤害；否则将【闪电】移至下家的判定区。"
     ],
     "effect_en": [
-      "Action Phase: Use on yourself. Place [Lightning] into your judgment area. During your judgment phase, if the result is a spade between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's judgment area."
+      "Action Phase: Use on yourself. Place [Lightning] into your judgment area. During your Judgment Phase, if the result is a spade between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's judgment area."
     ],
     "faq": []
   }

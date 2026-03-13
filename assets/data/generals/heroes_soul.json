@@ -1141,8 +1141,8 @@
   },
   {
     "id": "YJ.SHU026",
-    "standard_id": "char_guanxing_zhangbao",
-    "name_cn": "关兴张苞",
+    "standard_id": "char_guanxing&zhangbao",
+    "name_cn": "关兴&张苞",
     "name_en": "Guan Xing & Zhang Bao",
     "gender": "Male",
     "faction": "Shu",

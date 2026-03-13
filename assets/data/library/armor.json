@@ -33,7 +33,7 @@
       {
         "q_cn": "【八卦阵】可以响应【南蛮入侵】或【万箭齐发】需要的【闪】吗？",
         "a_cn": "可以。只要有效果要求你使用或打出【闪】，【八卦阵】均可触发判定。",
-        "q_en": "Can [Eight Trigrams Formation] respond to [Barbarian Invasion] or [Arrow Volley] when a [Dodge] is required?",
+        "q_en": "Can [Eight Trigrams Formation] respond to [Barbarians] or [Raining Arrows] when a [Dodge] is required?",
         "a_en": "Yes. Whenever any effect requires you to use or play a [Dodge], [Eight Trigrams Formation] may trigger its Judgment."
       }
     ]
@@ -126,7 +126,7 @@
       "锁定技，当你成为【火攻】或火【杀】的目标时，取消之；若你是小势力角色，你不会被横置。"
     ],
     "effect_en": [
-      "Locked: When you become the target of [Fire Attack], or a fire [Kill], cancel that targeting. If you are a minor-faction character, your general card cannot be tapped (horizontally rotated)."
+      "Locked: When you become the target of [Incendiary], or a fire [Kill], cancel that targeting. If you are a minor-faction character, your general card cannot be tapped (horizontally rotated)."
     ],
     "faq": [
       {
@@ -198,7 +198,7 @@
       "锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "Locked: [Barbarian Invasion], [Arrow Volley], and normal [Kill] cards have no effect on you. When you receive fire damage, that damage is increased by 1."
+      "Locked: [Barbarians], [Raining Arrows], and normal [Kill] cards have no effect on you. When you receive fire damage, that damage is increased by 1."
     ],
     "faq": [
       {

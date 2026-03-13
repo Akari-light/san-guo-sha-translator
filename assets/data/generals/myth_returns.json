@@ -161,8 +161,8 @@
       {
         "name_cn": "强袭",
         "name_en": "Violent Assault",
-        "description_cn": "出牌阶段限两次，你可以失去1点体力或弃置一张武器牌，对一名本回合内未以此法指定过的其他角色造成1点伤害。",
-        "description_en": "Twice per Action Phase: You may lose 1 health or discard 1 weapon card to deal 1 damage to a character not yet targeted this way this turn."
+        "description_cn": "出牌阶段限两次，你可以受到1点伤害或弃置一张武器牌，对一名本回合内未以此法指定过的其他角色造成1点伤害。",
+        "description_en": "Twice per Action Phase: Lose 1 health or discard a weapon to deal 1 damage to a new target."
       }
     ],
     "faq": []
@@ -1147,9 +1147,9 @@
   },
   {
     "id": "QUN010",
-    "standard_id": "char_zhangjiao",
+    "standard_id": "char_zhangjue",
     "name_cn": "张角",
-    "name_en": "Zhang Jiao",
+    "name_en": "Zhang Jue",
     "gender": "Male",
     "faction": "Qun",
     "health": 3,

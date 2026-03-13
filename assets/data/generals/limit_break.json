@@ -773,8 +773,8 @@
     "skills": [
       {
         "name_cn": "仁德",
-        "name_en": "Benevolence",
-        "description_cn": "",
+        "name_en": "Benevolence JX",
+        "description_cn": "出牌阶段，每名角色限一次，你可以交给一名其他角色任意张手牌。当你本阶段以此法给出第二张牌时，你可以视为使用一张基本牌（使用【杀】有次数限制）。",
         "description_en": ""
       },
       {
@@ -2582,9 +2582,9 @@
   },
   {
     "id": "jx.QUN011",
-    "standard_id": "char_zhangjiao",
+    "standard_id": "char_zhangjue",
     "name_cn": "界张角",
-    "name_en": "Zhang Jiao",
+    "name_en": "Zhang Jue",
     "gender": "Male",
     "faction": "Qun",
     "health": 3,
@@ -2688,8 +2688,8 @@
       {
         "name_cn": "完杀",
         "name_en": "Total Annihilation",
-        "description_cn": "锁定技，你的回合内：除处于濒死状态的角色外的其他角色的红色基本牌均视为【杀】，此【杀】被使用时你摸两张牌。",
-        "description_en": "Locked Skill (Your Turn): Others' red basic cards are [Kill] (except for characters in the Verge of Death State). Draw 2 when such a [Kill] is used."
+        "description_cn": "锁定技，在你的回合内：只有你和处于濒死状态的角色才能使用【桃】；任意角色的濒死结算中，除你和濒死角色外的其他角色的非锁定技失效。",
+        "description_en": ""
       }
     ],
     "faq": []

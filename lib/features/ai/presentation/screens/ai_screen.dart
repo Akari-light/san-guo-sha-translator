@@ -1,8 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/services/recently_viewed_service.dart';
-import '../../../../../core/services/scanner_service.dart';
-import '../../../../../core/constants/app_assets.dart';
+import '../../../../core/services/recently_viewed_service.dart';
+import '../../../../core/services/scanner_service.dart';
+import '../../../../core/constants/app_assets.dart';
 
 /// Discover tab — card image scanner + (future) vector search.
 ///

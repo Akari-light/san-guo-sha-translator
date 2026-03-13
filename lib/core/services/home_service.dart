@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import '../services/pin_service.dart';
-import '../services/recently_viewed_service.dart';
+import 'pin_service.dart';
+import 'recently_viewed_service.dart';
 import '../../features/generals/data/models/general_card.dart';
 import '../../features/generals/data/repository/general_loader.dart';
 import '../../features/library/data/models/library_dto.dart';

@@ -8,16 +8,8 @@
     "faction": "God",
     "health": 5,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": ["Aggressive", "Defensive", "Simple"],
     "expansion": "God",
     "skills": [
       {
@@ -30,7 +22,156 @@
         "name_cn": "武魂",
         "name_en": "War Soul",
         "description_cn": "锁定技，当你受到1点伤害后，你令伤害来源获得1枚「梦魇」标记。当你死亡时，你令「梦魇」数最多的一名其他角色判定，若结果不为【桃】或【桃园结义】，你令其死亡。",
-        "description_en": "Locked: When you take 1 damage, give the damage source 1 Nightmare token. When you die, the character with the most Nightmare tokens makes a judgment; if the result is not [Peach] or [Peach Garden Oath], that character dies."
+        "description_en": "Locked: When you take 1 damage, give the damage source 1 Nightmare token. When you die, the character with the most Nightmare tokens makes a judgment; if the result is not [Peach] or [Peach Garden], that character dies."
+      }
+    ],
+    "faq": [
+      {
+        "q_cn": "神关羽死亡时，如果场上有两个或两个以上角色拥有最多的梦魇标记，如何结算？",
+        "a_cn": "由神关羽指定其中一个角色进行【武魂】的判定。",
+        "q_en": "When God Guan Yu dies and two or more characters are tied for the most Nightmare tokens, how is this resolved?",
+        "a_en": "God Guan Yu chooses one of those characters to make the [War Soul] judgment."
+      },
+      {
+        "q_cn": "被【武魂】技能杀死的角色，能否用【桃】救？",
+        "a_cn": "立即死亡，不能救。",
+        "q_en": "Can a character killed by [War Soul] be saved with a [Peach]?",
+        "a_en": "No. They die immediately and cannot be saved."
+      },
+      {
+        "q_cn": "杀死反贼神关羽时，是先判定【武魂】还是先摸3张牌？",
+        "a_cn": "先判定【武魂】。",
+        "q_en": "When a Rebel kills God Guan Yu, does [War Soul] resolve before drawing 3 cards?",
+        "a_en": "Yes. [War Soul] resolves first."
+      },
+      {
+        "q_cn": "如果最后只剩下主公和反贼神关羽，主公杀死神关羽时如何结算？",
+        "a_cn": "一旦满足游戏结束条件的局面出现，游戏立即结束，所有结算均停止。这种局面下主公获胜。",
+        "q_en": "If only the Lord and Rebel God Guan Yu remain and the Lord kills him, how is this resolved?",
+        "a_en": "Once the win condition is met, the game ends immediately and all resolution stops. The Lord wins."
+      },
+      {
+        "q_cn": "如果持有最多梦魇标记的角色比神关羽早死去，那么神关羽死亡时如何结算？",
+        "a_cn": "剩下活着的角色里拥有最多梦魇标记的人成为【武魂】的对象。",
+        "q_en": "If the character with the most Nightmare tokens dies before God Guan Yu, how does [War Soul] resolve on his death?",
+        "a_en": "Among surviving characters, the one with the most Nightmare tokens becomes the target of [War Soul]."
+      },
+      {
+        "q_cn": "如果神关羽死亡时，场上没有任何一个角色拥有梦魇标记，能否发动【武魂】？",
+        "a_cn": "不能发动。",
+        "q_en": "If no character has any Nightmare tokens when God Guan Yu dies, can [War Soul] still activate?",
+        "a_en": "No. It cannot activate."
+      },
+      {
+        "q_cn": "神关羽算蜀势力角色吗？",
+        "a_cn": "神武将在游戏开始亮出武将前，选择一种势力。",
+        "q_en": "Is God Guan Yu considered a Shu faction character?",
+        "a_en": "God generals choose a faction before the game begins, when revealing their general card."
+      }
+    ]
+  },
+  {
+    "id": "QLE001",
+    "standard_id": "char_guanyu",
+    "name_cn": "神关羽",
+    "name_en": "God Guan Yu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "武神v1",
+        "name_en": "War God v1",
+        "description_cn": "你可以将一张红桃手牌当【杀】使用或打出。你使用红桃【杀】无距离限制且伤害+1。",
+        "description_en": "You may use or play a Heart hand card as [Kill]. Your Heart [Kill] has no distance restriction and deals +1 damage."
+      },
+      {
+        "name_cn": "武魂v1",
+        "name_en": "War Soul v1",
+        "description_cn": "锁定技，当你受到1点伤害后，你令伤害来源获得1枚“梦魇”；当你脱离濒死状态或死亡时，你令拥有最多“梦魇”的一名其他角色进行判定：若结果不为【桃】或【桃园结义】，其失去5点体力，然后弃所有“梦魇”。",
+        "description_en": "Locked: When you take 1 damage, give the damage source 1 Nightmare token. When you escape the Verge of Death State or die, the character with the most Nightmare tokens makes a judgment; if the result is not [Peach] or [Peach Garden], they lose 5 HP, then all Nightmare tokens are discarded."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE001_v1",
+    "standard_id": "char_guanyu",
+    "name_cn": "神关羽",
+    "name_en": "God Guan Yu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "武神v2",
+        "name_en": "War God v2",
+        "description_cn": "锁定技，你的红桃手牌均只能当【杀】使用或打出；你使用红桃【杀】无距离和次数限制、不计入次数限制且多选择所有有“梦魇”的角色为目标；你每阶段使用的第一张【杀】不能被响应。",
+        "description_en": "Locked: Your Heart hand cards can only be used or played as [Kill]; your Heart [Kill] has no distance or frequency restriction, does not count toward frequency limits, and additionally targets all characters with Nightmare tokens. The first [Kill] you use each phase cannot be responded to."
+      },
+      {
+        "name_cn": "武魂",
+        "name_en": "War Soul",
+        "description_cn": "锁定技，当你受到1点伤害后，你令伤害来源获得1枚「梦魇」标记。当你死亡时，你令「梦魇」数最多的一名其他角色判定，若结果不为【桃】或【桃园结义】，你令其死亡。",
+        "description_en": "Locked: When you take 1 damage, give the damage source 1 Nightmare token. When you die, the character with the most Nightmare tokens makes a judgment; if the result is not [Peach] or [Peach Garden], that character dies."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE001_v2",
+    "standard_id": "char_guanyu",
+    "name_cn": "神关羽",
+    "name_en": "God Guan Yu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "简单"],
+    "traits_en": ["Aggressive", "Simple"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "武神v3",
+        "name_en": "War God v3",
+        "description_cn": "你可以将红色牌当【杀】使用或打出。你使用方块【杀】无距离限制，红桃【杀】无次数限制。",
+        "description_en": "You may use or play a red card as [Kill]. Your Diamond [Kill] has no distance restriction; your Heart [Kill] has no frequency restriction."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE001_v3",
+    "standard_id": "char_guanyu",
+    "name_cn": "神关羽",
+    "name_en": "God Guan Yu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 4.0,
+    "traits_cn": ["进攻", "防御", "困难"],
+    "traits_en": ["Aggressive", "Defensive", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "武神v4",
+        "name_en": "War God v4",
+        "description_cn": "锁定技，你每阶段使用的第一张【杀】不可被响应。你的手牌视为【杀】且你使用【杀】无距离和次数限制、不计入次数且额外指定所有拥有“梦魇”标记的其他角色为目标。",
+        "description_en": "Locked: The first [Kill] you use each phase cannot be responded to. Your hand cards are treated as [Kill] and your [Kill] has no distance or frequency restriction, does not count toward the frequency limit, and additionally targets all other characters with Nightmare tokens."
+      },
+      {
+        "name_cn": "武魂v1",
+        "name_en": "War Soul v1",
+        "description_cn": "锁定技，当你受到1点伤害后/当你对“梦魔”标记 的角色造成伤害后,你令伤害来源/受到伤害的目标 获得1枚“梦魇”标记。当你死亡时,你选择是否判 定,若进行判定且结果不为【桃】或【桃园结义】,你选 择至少一名拥有“梦魇”标记的角色,令这些角色各 自依次失去点体力。(X为其拥有的“梦魇”标记数）",
+        "description_en": "Locked: When you take 1 damage, or when you deal damage to a character with Nightmare tokens, give the damage source or the damaged character 1 Nightmare token. When you die, you may choose whether to make a judgment. If you do and the result is not [Peach] or [Peach Garden], choose at least one character with Nightmare tokens; each loses HP equal to their Nightmare token count."
       }
     ],
     "faq": []
@@ -44,23 +185,15 @@
     "faction": "God",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
         "name_cn": "涉猎",
         "name_en": "Wide Reading",
         "description_cn": "摸牌阶段，你可以改为亮出牌堆顶的五张牌，然后获得每种花色的牌各一张。",
-        "description_en": "During your draw phase, you may instead reveal the top 5 cards of the deck and take one card of each suit."
+        "description_en": "During your Draw Phase, you may instead reveal the top 5 cards of the deck and take one card of each suit."
       },
       {
         "name_cn": "攻心",
@@ -69,7 +202,20 @@
         "description_en": "Once per Action Phase: View another character's hand cards. You may reveal one Heart card and choose: 1. Discard it; 2. Place it on top of the deck."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "神吕蒙能否对自己发动【攻心】？",
+        "a_cn": "不可以。",
+        "q_en": "Can God Lu Meng use [Mental Attack] on himself?",
+        "a_en": "No."
+      },
+      {
+        "q_cn": "神吕蒙属于吴势力角色吗？",
+        "a_cn": "神武将在游戏开始亮出武将前，选择一种势力。",
+        "q_en": "Is God Lu Meng considered a Wu faction character?",
+        "a_en": "God generals choose a faction before the game begins, when revealing their general card."
+      }
+    ]
   },
   {
     "id": "LE003",
@@ -80,23 +226,15 @@
     "faction": "God",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "回复"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Recovery"
-    ],
+    "traits_cn": ["进攻", "辅助", "回复"],
+    "traits_en": ["Aggressive", "Support", "Recovery"],
     "expansion": "God",
     "skills": [
       {
         "name_cn": "琴音",
         "name_en": "Zither Melody",
         "description_cn": "弃牌阶段结束时，若你本阶段弃置过至少两张手牌，你可以选择令所有角色：1.各回复1点体力；2.各失去1点体力。",
-        "description_en": "At the end of your discard phase, if you discarded at least 2 hand cards this phase, choose: all characters 1. each recover 1 HP; or 2. each lose 1 HP."
+        "description_en": "At the end of your Discard Phase, if you discarded at least 2 hand cards this phase, choose: all characters 1. each recover 1 HP; or 2. each lose 1 HP."
       },
       {
         "name_cn": "业炎",
@@ -105,7 +243,32 @@
         "description_en": "Limited: During your Action Phase, choose up to 3 characters and deal them a combined total of up to 3 Fire damage. To assign 2 or more damage to a single character, you must first discard 4 cards of different suits and lose 3 HP."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "发动业炎如果周瑜进入濒死如何结算？先求桃才发动火焰伤害吗？",
+        "a_cn": "对，先求桃，没桃则死亡，但依然可以结算伤害。",
+        "q_en": "If God Zhou Yu enters the Verge of Death State while activating [Raging Flames], must Verge of Death Resolution happen first?",
+        "a_en": "Yes. If he is not saved he dies, but the remaining damage still resolves afterward."
+      },
+      {
+        "q_cn": "业炎造成的伤害是否从神周瑜起逆时针结算效果？如果业炎过程中神周瑜死亡，是否继续结算？",
+        "a_cn": "对，逆时针结算，即使死亡，依然结算，除非满足游戏结束条件。",
+        "q_en": "Does [Raging Flames] damage resolve counter-clockwise starting from God Zhou Yu? Does resolution continue if he dies during it?",
+        "a_en": "Yes, counter-clockwise. Damage continues resolving even if God Zhou Yu dies, unless the game-end condition is met."
+      },
+      {
+        "q_cn": "业炎发动是否对神周瑜发动时的体力有要求？",
+        "a_cn": "没有，几点体力都可以发动，但如果发动业炎导致周瑜进入濒死状态，则先结算濒死，不管有没有救回，后续伤害都在濒死结算后造成。",
+        "q_en": "Does activating [Raging Flames] require a minimum HP?",
+        "a_en": "No. If activating it causes God Zhou Yu to enter the Verge of Death State, Verge of Death Resolution occurs first; remaining damage resolves afterward regardless of outcome."
+      },
+      {
+        "q_cn": "神周瑜弃牌阶段发动琴音让所有人去1血，自己剩下3血手牌4张，是否需要继续弃牌到3张？",
+        "a_cn": "是的，需要继续弃牌。",
+        "q_en": "God Zhou Yu uses [Zither Melody] during his Discard Phase, causing all to lose 1 HP. He now has 3 HP and 4 hand cards. Must he continue discarding to 3?",
+        "a_en": "Yes. He must discard down to his Hand Limit."
+      }
+    ]
   },
   {
     "id": "LE004",
@@ -116,35 +279,74 @@
     "faction": "God",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "保核能力"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "Protector"
-    ],
+    "traits_cn": ["过牌", "辅助", "保核能力"],
+    "traits_en": ["Card Flow", "Support", "Protector"],
     "expansion": "God",
     "skills": [
       {
         "name_cn": "七星",
         "name_en": "Seven Stars",
         "description_cn": "游戏开始时，你将牌堆顶的七张牌暗置于你的武将牌上，称为「星」，然后你可以用任意张手牌替换等量「星」。摸牌阶段结束时，你可以用任意张手牌替换等量「星」。",
-        "description_en": "At game start, place the top 7 deck cards face-down on your general card as Stars. You may swap any number of hand cards with an equal number of Stars. At the end of your draw phase, you may again swap any number of hand cards with an equal number of Stars."
+        "description_en": "At game start, place the top 7 deck cards face-down on your general card as Stars. You may swap any number of hand cards with an equal number of Stars. At the end of your Draw Phase, you may again swap any number of hand cards with an equal number of Stars."
       },
       {
         "name_cn": "狂风",
         "name_en": "Gale",
         "description_cn": "结束阶段，你可以移去一张「星」并选择一名角色，然后直到你的下回合开始，当其受到火焰伤害时，此伤害+1。",
-        "description_en": "During your end phase, remove 1 Star and choose a character. Until your next turn begins, Fire damage that character takes is increased by 1."
+        "description_en": "During your End Phase, remove 1 Star and choose a character. Until your next turn begins, Fire damage that character takes is increased by 1."
       },
       {
         "name_cn": "大雾",
         "name_en": "Great Fog",
         "description_cn": "结束阶段，你可以移去任意张「星」并选择等量角色，然后直到你的下回合开始，当其受到非雷电伤害时，防止此伤害。",
-        "description_en": "During your end phase, remove any number of Stars and choose an equal number of characters. Until your next turn begins, non-Lightning damage those characters take is prevented."
+        "description_en": "During your End Phase, remove any number of Stars and choose an equal number of characters. Until your next turn begins, non-Lightning damage those characters take is prevented."
+      }
+    ],
+    "faq": [
+      {
+        "q_cn": "如果神诸葛在放完狂风或者大雾后在该回合死亡，该回合狂风和大雾效用是否保留？",
+        "a_cn": "不保留，神诸葛死亡则狂风大雾效果即刻消失。",
+        "q_en": "If God Zhuge Liang dies after using [Gale] or [Great Fog] this turn, do those effects remain?",
+        "a_en": "No. The effects disappear immediately upon his death."
+      },
+      {
+        "q_cn": "狂风和大雾是否可以对自己使用？",
+        "a_cn": "可以。",
+        "q_en": "Can [Gale] and [Great Fog] target God Zhuge Liang himself?",
+        "a_en": "Yes."
+      }
+    ]
+  },
+  {
+    "id": "Q.LE004",
+    "standard_id": "char_zhugeliang",
+    "name_cn": "神诸葛亮",
+    "name_en": "God Zhuge Liang",
+    "gender": "Male",
+    "faction": "God",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "过牌", "防御"],
+    "traits_en": ["Aggressive", "Card Flow", "Defensive"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "七星",
+        "name_en": "Seven Stars",
+        "description_cn": "游戏开始时，你将牌堆顶的七张牌暗置于你的武将牌上，称为「星」，然后你可以用任意张手牌替换等量「星」。摸牌阶段结束时，你可以用任意张手牌替换等量「星」。",
+        "description_en": "At game start, place the top 7 deck cards face-down on your general card as Stars. You may swap any number of hand cards with an equal number of Stars. At the end of your Draw Phase, you may again swap any number of hand cards with an equal number of Stars."
+      },
+      {
+        "name_cn": "狂风v1",
+        "name_en": "Gale v1",
+        "description_cn": "出牌阶段结束时，你可以移去任意张“星”，然后对等量其他角色各造成1点伤害。",
+        "description_en": "At the end of your Action Phase, you may remove any number of Stars. Deal 1 damage to an equal number of other characters."
+      },
+      {
+        "name_cn": "大雾v1",
+        "name_en": "Great Fog v1",
+        "description_cn": "结束阶段，你可以移去一张“星”，然后直到你的下回合开始，当你受到普通伤害时，此伤害-1。",
+        "description_en": "During your End Phase, you may remove 1 Star. Until your next turn begins, normal damage you take is reduced by 1."
       }
     ],
     "faq": []
@@ -158,16 +360,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["防御", "过牌", "简单"],
+    "traits_en": ["Defensive", "Card Flow", "Simple"],
     "expansion": "God",
     "skills": [
       {
@@ -183,7 +377,14 @@
         "description_en": "Locked: Other characters calculate their distance to you as +1."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "神曹操一次性受到2点伤害，归心如何结算？",
+        "a_cn": "一次一次结算，先分别获得一张翻一次面，再分别获得一张再翻一次面。",
+        "q_en": "If God Cao Cao takes 2 damage at once, how does [Rallying Hearts] resolve?",
+        "a_en": "It resolves once per damage point: first he takes 1 card from each character and flips his general card, then repeats for the second damage."
+      }
+    ]
   },
   {
     "id": "LE006",
@@ -194,16 +395,8 @@
     "faction": "God",
     "health": 5,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Sturdy"
-    ],
+    "traits_cn": ["进攻", "防御", "强命"],
+    "traits_en": ["Aggressive", "Defensive", "Sturdy"],
     "expansion": "God",
     "skills": [
       {
@@ -229,6 +422,12 @@
         "name_en": "Divine Fury",
         "description_cn": "出牌阶段限一次，你可以移除6枚「暴怒」标记，对所有其他角色各造成1点伤害，令这些角色先各弃置装备区里的所有牌，再弃置四张手牌，然后你翻面。",
         "description_en": "Once per Action Phase: Remove 6 Fury tokens. Deal 1 damage to all other characters. They each discard all equipment, then discard 4 hand cards. You then flip your general card."
+      },
+      {
+        "name_cn": "无双",
+        "name_en": "Peerless",
+        "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
+        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
       }
     ],
     "faq": []
@@ -242,16 +441,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "发育"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Scaling"
-    ],
+    "traits_cn": ["防御", "过牌", "发育"],
+    "traits_en": ["Defensive", "Card Flow", "Scaling"],
     "expansion": "God",
     "skills": [
       {
@@ -267,7 +458,32 @@
         "description_en": "You may use or play up to 2 cards of the same suit as follows: Hearts as [Peach]; Diamonds as [Fire Kill]; Clubs as [Dodge]; Spades as [Nullification]. If you convert 2 cards this way -- red cards: the recovery or damage value +1; black cards: discard 1 card from the current turn player."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【龙魂】描述中的X是多少？",
+        "a_cn": "你当前的体力值大于0时，X=你当前的体力值；你当前的体力值为0时，X=1。",
+        "q_en": "What is X in the [Dragon Soul] description?",
+        "a_en": "X equals your current HP Value when it is greater than 0. When your HP Value is 0, X = 1."
+      },
+      {
+        "q_cn": "体力为2的神赵云是否可以发动【龙魂】将最后两张方块手牌当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
+        "a_cn": "可以。该【火杀】视为最后一张手牌",
+        "q_en": "Can God Zhao Yun with 2 HP activate [Dragon Soul] to use his last 2 Diamond hand cards as a [Fire Kill], and simultaneously trigger [Sky Piercer Halberd] to target up to 3 characters?",
+        "a_en": "Yes. That [Fire Kill] is treated as the last hand card."
+      },
+      {
+        "q_cn": "体力为2的神赵云是否可以发动【龙魂】将最后一张方块手牌和装备区里的一张方块马当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
+        "a_cn": "不可以。",
+        "q_en": "Can God Zhao Yun with 2 HP activate [Dragon Soul] to use his last Diamond hand card and a Diamond mount from his Equipment Zone as a [Fire Kill], simultaneously triggering [Sky Piercer Halberd] for up to 3 targets?",
+        "a_en": "No."
+      },
+      {
+        "q_cn": "甲对神赵云使用【借刀杀人】指定杀乙，神赵云【龙魂】装备区的黑桃武器当【无懈可击】使用，甲又使用【无懈可击】，如何结算？",
+        "a_cn": "如果乙仍在神赵云的攻击范围内且神赵云愿意，依然可以使用【杀】；若不能或不愿使用【杀】，无事发生，【借刀杀人】结算完毕。",
+        "q_en": "Player A uses [Proxy Attack] on God Zhao Yun targeting Player B. God Zhao Yun uses a Spade weapon from his Equipment Zone as [Nullification] via [Dragon Soul]. Player A then uses [Nullification]. How does this resolve?",
+        "a_en": "If Player B is still within God Zhao Yun's attack range and he is willing, he may still use [Kill]. If he cannot or chooses not to, nothing happens and [Proxy Attack] finishes resolving."
+      }
+    ]
   },
   {
     "id": "LE008",
@@ -278,38 +494,97 @@
     "faction": "God",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "发育",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "控制", "困难"],
+    "traits_en": ["Scaling", "Control", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
         "name_cn": "忍戒",
-        "name_en": "Endurance Vow",
+        "name_en": "Forbearance",
         "description_cn": "锁定技，当你受到伤害后或于弃牌阶段内因弃置而失去手牌后，你获得X枚「忍」标记（X为此伤害值或你此次弃置的手牌数）。",
-        "description_en": "Locked: After you take damage or lose hand cards by discarding during your discard phase, gain X Patience tokens (X = the damage value or the number of cards discarded)."
+        "description_en": "Locked: After you take damage, or after you lose hand cards by discarding during your Discard Phase, gain X Forbearance tokens (X = the damage value or the number of hand cards discarded)."
       },
       {
         "name_cn": "拜印",
-        "name_en": "Chain Conquest",
+        "name_en": "Seal of Command",
         "description_cn": "每名角色的回合结束时，若你于此回合内杀死过角色，你可以于此回合结束后执行一个额外的回合。",
-        "description_en": "At the end of each character's turn, if you killed a character this turn, you may take an extra turn after this turn ends."
+        "description_en": "At the end of each character's turn, if you killed a character during that turn, you may take an extra turn after the current turn ends."
       },
       {
         "name_cn": "连破",
-        "name_en": "Claim the Seal",
-        "description_cn": "觉醒技，准备阶段，若「忍」标记数量不小于4，你减1点体力上限，然后获得「极略」（你可以于能发动技能「鬼才」、「放逐」、「集智」、「制衡」的时机弃1枚「忍」，然后发动一次相应技能；出牌阶段，你可以弃1枚「忍」，然后你于此回合内拥有「完杀」）。",
-        "description_en": "Awakening: During your Starting Phase, if you have 4 or more Patience tokens, reduce your max HP by 1 and gain Grand Strategy. (Grand Strategy: At any timing when you could use Ghost Talent, Exile, Gather Wisdom, or Balance, spend 1 Patience token to use that skill. During your Action Phase, spend 1 Patience token to gain Total Kill for this turn.)"
+        "name_en": "Supreme Advance",
+        "description_cn": "觉醒技，准备阶段，若「忍」标记数量不小于4，你减1点体力上限，然后获得「极略」",
+        "description_en": "Awakening: During your Starting Phase, if your Forbearance token count is at least 4, reduce your max HP by 1 and gain [Supreme Strategy]."
+      },
+      {
+        "name_cn": "极略",
+        "name_en": "Supreme Strategy",
+        "description_cn": "你可以移除1枚“忍”，发动下列一項技能：“鬼才”、“放逐”、“集智”、“制衡”或“完杀”。",
+        "description_en": "Remove 1 Forbearance token to activate one of the following skills: [Demonic Wit], [Exile], [Gather Wisdom], [Balance of Power], or [Total Annihilation]."
+      },
+      {
+        "name_cn": "鬼才",
+        "name_en": "Demonic Wit",
+        "description_cn": "当一名角色的判定牌生效前，你可以打出一张牌代替之。",
+        "description_en": "Before a judgment card takes effect, you may play a card to replace it."
+      },
+      {
+        "name_cn": "放逐",
+        "name_en": "Exile",
+        "description_cn": "当你受到伤害后，你可以令一名其他角色选择一項：1. 摸X张牌并翻面；2. 弃置X张牌并失去1点体力（X为你已损失的体力值）。",
+        "description_en": "After you take damage, you may instruct another character to choose: 1. Draw X cards and flip their general card; 2. Discard X cards and lose 1 HP (X = your HP Lost)."
+      },
+      {
+        "name_cn": "集智",
+        "name_en": "Gather Wisdom",
+        "description_cn": "当你使用普通锦囊牌时，你可以摸一张牌。若此牌是基本牌，你可以弃置此牌令本回合手牌上限+1。",
+        "description_en": "When you use a Non Time-Delay Tool card, you may draw 1 card. If that card is a Basic card, you may discard it to increase your hand limit by 1 this turn."
+      },
+      {
+        "name_cn": "制衡",
+        "name_en": "Balance of Power",
+        "description_cn": "出牌阶段限一次，你可以弃置任意张牌，然后摸等量的牌。若你以此法弃置了所有手牌，则你多摸一张牌",
+        "description_en": "Once per Action Phase: Discard any number of cards and draw the same number. If you discard all your hand cards this way, draw 1 extra card."
+      },
+      {
+        "name_cn": "完杀",
+        "name_en": "Total Annihilation",
+        "description_cn": "锁定技，你的回合内，只有你和处於瀕死狀态的角色才能使用【桃】。",
+        "description_en": "Locked: During your turn, only you and characters in the Verge of Death State may use [Peach]."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "觉醒后的神司马懿没有忍标记时受到伤害，是否可以发动【放逐】？",
+        "a_cn": "可以。神司马懿在受到伤害后触发【忍戒】获得忍标记后，依然处于受到伤害后这个时机，可以弃一枚刚刚获得的忍标记发动【放逐】。",
+        "q_en": "After awakening, can God Sima Yi activate [Exile] if he has no Forbearance tokens when taking damage?",
+        "a_en": "Yes. After taking damage, [Forbearance] triggers granting him a token. He is still within the 'after taking damage' timing window and may immediately spend that token to activate [Exile]."
+      },
+      {
+        "q_cn": "神司马懿在其他角色的回合杀死至少一名角色，在该角色的回合结束后，是否可以发动【连破】？",
+        "a_cn": "可以。",
+        "q_en": "If God Sima Yi kills at least one character during another character's turn, can he activate [Supreme Advance] after that turn ends?",
+        "a_en": "Yes."
+      },
+      {
+        "q_cn": "贾诩发动乱武，结算过程中贾诩先死亡，神司马懿再杀死至少一名角色，乱武结算完毕后神司马懿是否可以发动连破？",
+        "a_cn": "不可以。贾诩死亡其回合立即结束，神司马懿未满足在回合内杀死至少一名角色的条件。",
+        "q_en": "Jia Xu uses [Barbarians]. Jia Xu dies first during resolution, then God Sima Yi kills a character. Can God Sima Yi activate [Supreme Advance] after [Barbarians] resolves?",
+        "a_en": "No. Jia Xu's death immediately ends his turn, so the condition was not met within that turn."
+      },
+      {
+        "q_cn": "贾诩发动乱武，结算过程中神司马懿先杀死一名角色，贾诩再死亡，神司马懿是否可以发动连破？",
+        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动连破，在乱武结算完毕后进行一个额外的回合。",
+        "q_en": "Jia Xu uses [Barbarians]. God Sima Yi kills a character first, then Jia Xu dies. Can God Sima Yi activate [Supreme Advance]?",
+        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate [Supreme Advance] and take an extra turn after [Barbarians] resolves."
+      },
+      {
+        "q_cn": "贾诩发动乱武，结算过程中神司马懿杀死贾诩，乱武结算完毕后神司马懿是否可以发动连破？",
+        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动连破，在乱武结算完毕后进行一个额外的回合。",
+        "q_en": "Jia Xu uses [Barbarians]. God Sima Yi kills Jia Xu during resolution. Can God Sima Yi activate [Supreme Advance] after [Barbarians] resolves?",
+        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate [Supreme Advance] and take an extra turn after [Barbarians] resolves."
+      }
+    ]
   },
   {
     "id": "LE009",
@@ -320,16 +595,8 @@
     "faction": "God",
     "health": 6,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "辅助", "困难"],
+    "traits_en": ["Aggressive", "Support", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -342,7 +609,7 @@
         "name_cn": "结营",
         "name_en": "Entrenched Camp",
         "description_cn": "锁定技，你始终处于连环状态。所有连环状态的角色手牌上限+2。结束阶段，你令一名其他角色进入连环状态。",
-        "description_en": "Locked: You are always in Chain status. All Chained characters' hand card limits +2. During your end phase, put one other character into Chain status."
+        "description_en": "Locked: You are always in Chain status. All Chained characters' hand card limits +2. During your End Phase, put one other character into Chain status."
       }
     ],
     "faq": []
@@ -356,16 +623,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "辅助", "困难"],
+    "traits_en": ["Aggressive", "Support", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -387,7 +646,26 @@
         "description_en": "Limited: During your Action Phase, remove all Stratagem tokens. Up to that many Chained characters discard all their equipment. Deal 1 Fire damage to one of those characters."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "军略标记数为0时，能否发动摧克？",
+        "a_cn": "可以。此时军略数视为偶数，可以发动偶数项效果。",
+        "q_en": "Can [Crushing Advance] be activated when the Stratagem count is 0?",
+        "a_en": "Yes. A count of 0 is treated as even, so the even-number effect may be activated."
+      },
+      {
+        "q_cn": "军略数超过7时，是否可以发动摧克的奇数项和偶数项效果？",
+        "a_cn": "可以，且其可以与超过7项同时发动。",
+        "q_en": "When the Stratagem count exceeds 7, can both the odd and even effects of [Crushing Advance] be activated?",
+        "a_en": "Yes, and they can be activated simultaneously with the exceeds-7 effect."
+      },
+      {
+        "q_cn": "神陆逊发动绽火选择界黄月英，界黄月英是否弃置装备区的防具牌和宝物牌？",
+        "a_cn": "是。绽火是令被选择的角色自行弃置装备区的所有牌。",
+        "q_en": "When God Lu Xun uses [Blaze of Fire] and selects Jie Huang Yueying, does she also discard armor and treasure cards?",
+        "a_en": "Yes. [Blaze of Fire] instructs the selected character to discard all cards from their Equipment Zone."
+      }
+    ]
   },
   {
     "id": "LE011",
@@ -398,16 +676,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "发育"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Scaling"
-    ],
+    "traits_cn": ["进攻", "控制", "发育"],
+    "traits_en": ["Aggressive", "Control", "Scaling"],
     "expansion": "God",
     "skills": [
       {
@@ -434,16 +704,8 @@
     "faction": "God",
     "health": 6,
     "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "辅助"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Support"
-    ],
+    "traits_cn": ["进攻", "控制", "辅助"],
+    "traits_en": ["Aggressive", "Control", "Support"],
     "expansion": "God",
     "skills": [
       {
@@ -456,10 +718,23 @@
         "name_cn": "劫营",
         "name_en": "Camp Raid",
         "description_cn": "回合开始时，若场上没有「营」标记，你获得「营」。结束阶段，你可以将「营」置于一名角色的武将牌上。有「营」的角色摸牌阶段多摸一张牌、出牌阶段使用【杀】的限制次数+1、手牌上限+1。有「营」的其他角色回合结束后，你获得其所有手牌和「营」。",
-        "description_en": "At the start of your turn, if no Camp token is in play, gain Camp. During your end phase, you may place Camp on a character's general card. The Camp character draws +1 per draw phase, uses [Kill] +1 per Action Phase, and has hand limit +1. After their turn ends, take all their hand cards and Camp."
+        "description_en": "At the start of your turn, if no Camp token is in play, gain Camp. During your End Phase, you may place Camp on a character's general card. The Camp character draws +1 per Draw Phase, uses [Kill] +1 per Action Phase, and has hand limit +1. After their turn ends, take all their hand cards and Camp."
       }
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "神甘宁发动魄袭观看别人的手牌时两个人凑不齐共计四张牌时该如何处理？",
+        "a_cn": "只能观看手牌，不能进行其他操作。",
+        "q_en": "When activating [Soul Raid], if the combined hands total fewer than 4 cards, what happens?",
+        "a_en": "God Gan Ning may only view the hand cards. No further action can be taken."
+      },
+      {
+        "q_cn": "神甘宁的营可以标记自己吗？",
+        "a_cn": "可以，但不会触发获得手牌。",
+        "q_en": "Can God Gan Ning place the Camp token on himself?",
+        "a_en": "Yes, but the effect of taking all hand cards will not trigger."
+      }
+    ]
   },
   {
     "id": "LE013",
@@ -470,16 +745,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -535,6 +802,34 @@
     ]
   },
   {
+    "id": "QLE013",
+    "standard_id": "char_diaochan",
+    "name_cn": "神貂蝉",
+    "name_en": "God Diao Chan",
+    "gender": "Female",
+    "faction": "God",
+    "health": 3,
+    "power_index": 3.5,
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "魅魂",
+        "name_en": "Soul Lure",
+        "description_cn": "结束阶段或当你成为【杀】的目标后，你可以令一名其他角色交给一张你声明花色的牌，若其没有则你观看其手牌然后弃置其中一张。",
+        "description_en": "During your End Phase, or after you become the target of a [Kill], you may ask one other character to give you one card of a suit you declare. If they have no card of that suit, you view their hand and discard one card from it."
+      },
+      {
+        "name_cn": "惑心v1",
+        "name_en": "Bewitching Heart v1",
+        "description_cn": "出牌阶段限一次,你可以弃置一张牌并令两名 有手牌的角色拼点,然后你声明一种花色, 没赢的角色须交给你此花色的所有牌, 否则其获 得 个此花色的“魅惑”标记。有“魅惑”的角色不能使用或打出对应花色的牌;有“魅惑”的角色的回合结束时,移除“魅惑”。",
+        "description_en": "Once per Action Phase: Discard 1 card and make two characters with hand cards compete in a showdown. Declare a suit — the loser must give you all cards of that suit; if they have none, they gain Bewitch tokens for each missing card of that suit. A Bewitched character cannot use or play cards of that suit. At the end of a Bewitched character's turn, remove their Bewitch tokens."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "LE014",
     "standard_id": "char_huatuo",
     "name_cn": "神华佗",
@@ -543,16 +838,8 @@
     "faction": "God",
     "health": 1,
     "power_index": 4.0,
-    "traits_cn": [
-      "辅助",
-      "回复",
-      "控制"
-    ],
-    "traits_en": [
-      "Support",
-      "Recovery",
-      "Control"
-    ],
+    "traits_cn": ["辅助", "回复", "控制", "困难"],
+    "traits_en": ["Support", "Recovery", "Control", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -565,7 +852,71 @@
         "name_cn": "游医",
         "name_en": "Traveling Physician",
         "description_cn": "弃牌阶段结束时，你可以将此阶段弃置的牌置入「仁」区。出牌阶段限一次，你可以弃置所有「仁」区的牌，令所有角色回复1点体力。",
-        "description_en": "At the end of your discard phase, you may place cards discarded this phase into the Benevolence area. Once per Action Phase: discard all Benevolence area cards; all characters recover 1 HP."
+        "description_en": "At the end of your Discard Phase, you may place cards discarded this phase into the Benevolence area. Once per Action Phase: discard all Benevolence area cards; all characters recover 1 HP."
+      },
+      {
+        "name_cn": "五灵：虎",
+        "name_en": "Five Spirits: Tiger",
+        "description_cn": "若你使用的牌仅指定唯一目标，则此牌对目标角色造成伤害时，此伤害+1。",
+        "description_en": "If a card you use targets only one character, damage dealt by that card +1."
+      },
+      {
+        "name_cn": "五灵：鹿",
+        "name_en": "Five Spirits: Deer",
+        "description_cn": "你获得“鹿靈”标記时，回复1点体力，移除判定区所有牌。你不能成为延时锦囊牌的目标",
+        "description_en": "When you gain a Deer token, recover 1 HP and remove all cards from your Judgment Zone. You cannot be targeted by Time-Delayed Tool cards."
+      },
+      {
+        "name_cn": "五灵：熊",
+        "name_en": "Five Spirits: Bear",
+        "description_cn": "每回合限一次，你受到伤害时，此伤害-1。",
+        "description_en": "Once per turn, damage you take is reduced by 1."
+      },
+      {
+        "name_cn": "五灵：猿",
+        "name_en": "Five Spirits: Ape",
+        "description_cn": "你获得“猿”标記时，选择一名其他角色，获得其裝备区里的一张牌",
+        "description_en": "When you gain an Ape token, choose another character and take 1 card from their Equipment Zone."
+      },
+      {
+        "name_cn": "五灵：鹤",
+        "name_en": "Five Spirits: Crane",
+        "description_cn": "你获得“鹤”标記时，摸三张牌。",
+        "description_en": "When you gain a Crane token, draw 3 cards."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QLE014",
+    "standard_id": "char_huatuo",
+    "name_cn": "神华佗",
+    "name_en": "God Hua Tuo",
+    "gender": "Male",
+    "faction": "God",
+    "health": 1,
+    "power_index": 3.5,
+    "traits_cn": ["辅助", "回复", "过牌"],
+    "traits_en": ["Support", "Recovery", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "济世",
+        "name_en": "Heal the World",
+        "description_cn": "游戏开始时，你获得3枚“药”（数量至多为3）。当一名角色进入濒死状态时，你可以弃1枚“药”，令其将体力回复至1点。当你于回合外失去红色手牌时，你获得等量“药”。你的手牌上限+3。+1。鹤灵：拥有「鹤」标记的角色获得「鹤」标记时，摸三张牌。熊灵：每回合限一次，你受到伤害时，此伤害-1。猿灵：拥有「猿」标记的角色获得「猿」标记时，选择另一名角色，获得其装备区的一张牌。鹿灵：你获得「鹿」标记时，回复1点体力，移除判定区所有牌。你不能成为延时锦囊目标。",
+        "description_en": "At game start, gain 3 Medicine tokens (max 3). When a character enters the Verge of Death State, you may spend 1 Medicine token to recover their HP to 1. When you lose red hand cards outside your turn, gain an equal number of Medicine tokens. Your hand limit +3."
+      },
+      {
+        "name_cn": "桃仙",
+        "name_en": "Peach Immortal",
+        "description_cn": "你可以将一张红桃牌当【桃】使用。当其他角色使用【桃】时，你摸一张牌",
+        "description_en": "You may use a Heart card as [Peach]. When another character uses [Peach], you draw 1 card."
+      },
+      {
+        "name_cn": "神针",
+        "name_en": "Divine Needle",
+        "description_cn": "回合开始时，你可以弃任意枚“药”，然后选择一项：1.令等量角色各回复1点体力；2.令等量角色各失去1点体力。",
+        "description_en": "At the start of your turn, you may discard any number of Medicine tokens and choose: 1. An equal number of characters each recover 1 HP; 2. An equal number of characters each lose 1 HP."
       }
     ],
     "faq": []
@@ -579,16 +930,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -615,16 +958,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "回复",
-      "加伤"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Recovery",
-      "Damage Boost"
-    ],
+    "traits_cn": ["进攻", "回复", "加伤"],
+    "traits_en": ["Aggressive", "Recovery", "Damage Boost"],
     "expansion": "God",
     "skills": [
       {
@@ -649,6 +984,40 @@
     "faq": []
   },
   {
+    "id": "QLE016",
+    "standard_id": "char_dianwei",
+    "name_cn": "神典韦",
+    "name_en": "God Dian Wei",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "回复", "加伤"],
+    "traits_en": ["Aggressive", "Recovery", "Damage Boost"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "神卫",
+        "name_en": "Divine Guard",
+        "description_cn": "回合开始时，可以以一名没有“卫”的角获得“卫”标记（若你的体力值为1，则改为至多两名）。有“卫”的角色受到伤害时，其可以移除“卫”，然后将伤害转移给你。回合开始时，你可以令一名没有“卫”的角色获得“卫”。当有“卫”的角色受到伤害时，其可以弃其“卫”，然后将此伤害转移给你。",
+        "description_en": "At the start of your turn, you may give 1 Guard token to a character without one (if your HP Value is 1, give to up to 2 characters instead). When a Guarded character takes damage, they may discard their Guard token to transfer that damage to you."
+      },
+      {
+        "name_cn": "恶来",
+        "name_en": "Fierce Advent",
+        "description_cn": "锁定技，当一名角色弃其“卫”后，你选择一项：1.回复1点体力；2.对你攻击范围内的一名其他角色造成1点伤害。",
+        "description_en": "Locked: When a character discards their Guard token, choose: 1. Recover 1 HP; 2. Deal 1 damage to a character within your attack range."
+      },
+      {
+        "name_cn": "狂袭",
+        "name_en": "Savage Strike",
+        "description_cn": "锁定技，若场上有“卫”，你造成的伤害+1。",
+        "description_en": "Locked: While any Guard token is in play, damage you deal +1."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "LE017",
     "standard_id": "char_lusu",
     "name_cn": "神鲁肃",
@@ -657,16 +1026,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "过牌"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Card Flow"
-    ],
+    "traits_cn": ["控制", "辅助", "过牌"],
+    "traits_en": ["Control", "Support", "Card Flow"],
     "expansion": "God",
     "skills": [
       {
@@ -699,16 +1060,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "发育",
-      "回复",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Recovery",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "回复", "困难"],
+    "traits_en": ["Scaling", "Recovery", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -722,6 +1075,24 @@
         "name_en": "Imperial Will",
         "description_cn": "觉醒技，当你的技能数超过体力上限后，你减少1点体力上限，失去任意个其他技能并获得「圣质」「权道」「持纲」中的前等量个。",
         "description_en": "Awakening: When your skill count exceeds your max HP, reduce max HP by 1, lose any number of other skills, and gain the first matching number of skills among: Sacred Essence, Sovereign Path, and Uphold Order."
+      },
+      {
+        "name_cn": "圣质",
+        "name_en": "Sacred Essence",
+        "description_cn": "锁定技，当你发动非锁定技后，你本回合使用的下一张牌无距离和次数限制。",
+        "description_en": "Locked: After you activate a non-Locked skill, the next card you use this turn has no distance or frequency restriction."
+      },
+      {
+        "name_cn": "权道",
+        "name_en": "Sovereign Path",
+        "description_cn": "锁定技，当你使用【杀】或普通锦囊牌时，你将手牌中两者数量弃至相同并摸一张牌。",
+        "description_en": "Locked: When you use a [Kill] or a Non Time-Delay Tool card, discard hand cards until your counts of [Kill] and Tool cards are equal, then draw 1 card."
+      },
+      {
+        "name_cn": "持纲",
+        "name_en": "Uphold Order",
+        "description_cn": "转换技，锁定技，阴：你的判定阶段改为出牌阶段。；阳：你的判定阶段改为摸牌阶段",
+        "description_en": "Convert/Locked — Yin: Your Judgment Phase becomes an Action Phase. Yang: Your Judgment Phase becomes a Draw Phase."
       }
     ],
     "faq": []
@@ -735,16 +1106,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 5.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "辅助"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Support"
-    ],
+    "traits_cn": ["控制", "过牌", "辅助"],
+    "traits_en": ["Control", "Card Flow", "Support"],
     "expansion": "God",
     "skills": [
       {
@@ -756,8 +1119,8 @@
       {
         "name_cn": "灵策",
         "name_en": "Spirit Strategy",
-        "description_cn": "锁定技。一名角色使用非虚拟非转化的锦囊牌时，若此牌的牌名属于智囊牌名、「定汉」已记录的牌名或【奇正相生※】时，你摸一张牌。",
-        "description_en": "Locked: When a character uses a non-virtual non-converted Tool card, if its name matches a Wisdom card name, a name recorded in Grand Pacification, or [Qizheng Xiangsheng], draw 1 card."
+        "description_cn": "锁定技。一名角色使用非虚拟非转化的锦囊牌时，若此牌的牌名属于智囊牌名、「定汉」已记录的牌名或【奇正相生】时，你摸一张牌。（智囊牌的初始記錄为【无中生有】、【过河拆橋】、【无懈可擊】）。",
+        "description_en": "Locked: When a character uses a non-virtual, non-converted Tool card whose name matches a Strategist card name, a name recorded in [Grand Pacification], or [Qizheng Xiangsheng], you draw 1 card. (Initial Strategist card names: [Resupply], [Dismantle], [Nullification].)"
       },
       {
         "name_cn": "定汉",
@@ -777,16 +1140,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.5,
-    "traits_cn": [
-      "发育",
-      "辅助",
-      "过牌"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Support",
-      "Card Flow"
-    ],
+    "traits_cn": ["发育", "辅助", "过牌"],
+    "traits_en": ["Scaling", "Support", "Card Flow"],
     "expansion": "God",
     "skills": [
       {
@@ -798,7 +1153,7 @@
       {
         "name_cn": "天翊",
         "name_en": "Heavenly Soar",
-        "description_cn": "觉醒技，准备阶段，若所有存活的角色在本局游戏内均受到过伤害，你增加2点体力上限，回复1点体力，然后令一名角色获得技能「佐幸※」。",
+        "description_cn": "觉醒技，准备阶段，若所有存活的角色在本局游戏内均受到过伤害，你增加2点体力上限，回复1点体力，然后令一名角色获得技能「佐幸」。",
         "description_en": "Awakening: During your Starting Phase, if all surviving characters have taken damage this game, increase your max HP by 2, recover 1 HP, then grant one character the skill Blessing."
       },
       {
@@ -806,6 +1161,12 @@
         "name_en": "Radiant Passage",
         "description_cn": "限定技，出牌阶段，你可选择一名角色：若其有未触发的觉醒技，且你体力上限不小于X（X为场上存活人数），则你选择其中一个觉醒技，其视为已满足觉醒条件；否则其摸四张牌。若如此做，你减少2点体力上限。",
         "description_en": "Limited: During your Action Phase, choose a character. If they have an untriggered Awakening skill and your max HP is at least equal to the number of survivors, choose one of their Awakening skills and they are treated as having met its condition. Otherwise they draw 4 cards. Either way, reduce your max HP by 2."
+      },
+      {
+        "name_cn": "佐幸",
+        "name_en": "Blessing",
+        "description_cn": "出牌阶段限一次,若令你获得此技能的角色存活且体力上 限大于1,你可以令该角色减1点体力上限,然后你视为使 用一张普通锦囊牌。",
+        "description_en": "Once per Action Phase: If the character who granted you this skill is alive and has a max HP greater than 1, you may reduce their max HP by 1 and treat it as using a Non Time-Delay Tool card."
       }
     ],
     "faq": []
@@ -819,16 +1180,8 @@
     "faction": "God",
     "health": 6,
     "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "防御"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Defensive"
-    ],
+    "traits_cn": ["进攻", "控制", "防御"],
+    "traits_en": ["Aggressive", "Control", "Defensive"],
     "expansion": "God",
     "skills": [
       {
@@ -861,16 +1214,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "使命",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Mission",
-      "Sturdy"
-    ],
+    "traits_cn": ["进攻", "使命", "强命"],
+    "traits_en": ["Aggressive", "Mission", "Sturdy"],
     "expansion": "God",
     "skills": [
       {
@@ -884,6 +1229,12 @@
         "name_en": "Break the Siege",
         "description_cn": "使命技，游戏开始时，你令所有其他角色获得「围」标记。回合开始时，你令所有拥有「围」标记的角色将「围」标记移动到下家角色（若你获得「围」标记，则直接交给下家）。有「围」的角色受到伤害后，弃置其「围」标记。有「围」的角色回合开始时，你可以选择一项：1.弃置一张手牌，对其造成1点伤害；2.若其体力值不大于你，获得其一张手牌；若如此做，直到本回合结束，你视为在其攻击范围内。成功：你的回合开始时，若场上没有「围」标记，你获得技能「神著※」。失败：若你成功达成使命前，进入濒死状态时，你将体力值回复至1点，移除场上所有的「围」标记，然后弃置装备区所有牌。",
         "description_en": "Mission: At game start, all other characters gain a Siege token. At the start of your turn, all Sieged characters pass their Siege token to their next player (if you receive one, pass it on immediately). Sieged characters lose their token upon taking damage. When a Sieged character's turn begins, choose: 1. Discard 1 hand card and deal 1 damage to them; 2. If their HP does not exceed yours, take 1 hand card from them. If you act, you are treated as within their attack range until end of turn. Success: At the start of your turn, if no Siege tokens remain in play, gain skill Divine Record. Failure: If you enter the Verge of Death State before succeeding, recover to 1 HP, remove all Siege tokens, and discard all your equipment."
+      },
+      {
+        "name_cn": "神著",
+        "name_en": "Divine Record",
+        "description_cn": "锁定技，当你使用非转化且非虚拟的【杀】结算结束后，你选择一項：1.摸一张牌，然后若此时是你的出牌阶段，你本阶段使用【杀】的次数上限+1；2.摸三张牌，然后你本回合不能再使用【杀】。",
+        "description_en": "Locked: After a non-converted, non-virtual [Kill] you use finishes resolving, choose: 1. Draw 1 card; if it is currently your Action Phase, your [Kill] frequency limit +1 this phase; 2. Draw 3 cards, then you cannot use [Kill] again this turn."
       }
     ],
     "faq": []
@@ -897,16 +1248,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "过牌"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Card Flow"
-    ],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "God",
     "skills": [
       {
@@ -925,43 +1268,131 @@
     "faq": []
   },
   {
+    "id": "LE024",
+    "standard_id": "char_xuchu",
+    "name_cn": "神许褚",
+    "name_en": "God Xu Chu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 5,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "发育", "困难"],
+    "traits_en": ["Aggressive", "Scaling", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "争擎",
+        "name_en": "Compete for Glory",
+        "description_cn": "锁定技，每轮结束时，你令所有角色各弃其所有「擎」，然后本轮於一回合内造成伤害值最多的一名角色（多名角色中若包含你，则选择你，否则随机选择其中一名）获得X枚「擎」并与你各摸一张牌（X为其該回合造成的伤害值）。若为你获得「擎」且为获得数量最多的一次，你改为摸X张牌（至多摸五张）。",
+        "description_en": "Locked: At the end of each round, all characters discard all their Pillar tokens. The character who dealt the most damage in a single turn this round (if tied and you are among them choose yourself, otherwise random) gains X Pillar tokens and both draw 1 card (X = damage dealt that turn). If you gain Pillar tokens and it is the highest count gained this way, instead draw X cards (max 5)."
+      },
+      {
+        "name_cn": "壮魄",
+        "name_en": "Heroic Spirit",
+        "description_cn": "你可以将牌面信息中有「【杀】」的牌当【决斗】使用，当此【决斗】指定目标后，若：你有「擎」，你可以弃任意枚「擎」，然后令目标角色弃置等量的牌；目标角色有「擎」，此牌伤害+1。",
+        "description_en": "You may use a card that references [Kill] in its text as [Duel]. After this [Duel]'s target is designated: if you have Pillar tokens, you may discard any number to force the target to discard an equal number of cards; if the target has Pillar tokens, this card deals +1 damage."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE025",
+    "standard_id": "char_zhangfei",
+    "name_cn": "神张飞",
+    "name_en": "God Zhang Fei",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 4.0,
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "神裁",
+        "name_en": "Divine Judgment",
+        "description_cn": "出牌阶段限一次，你可以令一名其他角色进行判定且你获得判定牌。若判定牌包含以下内容，其获得（已有标記则改为修改）对应标記：体力：“笞”标記，每次受到伤害后失去等量体力；武器：“杖”标记，无法响应【杀】；打出：“徒”标记，以此法外失去手牌后随机弃置一张手牌；距离：“流”标记，结束阶段将武将牌翻面；若判定牌不包含以上内容，該角色获得一个“死”标記且手牌上限減少其身上“死”标記个数，然后你获得其区域内一张牌。“死”标記个数大於场上存活人数的角色回合结束时，其直接死亡。",
+        "description_en": "Once per Action Phase: Choose another character to make a judgment; you gain the judgment card. Based on the card's face information, they gain (or modify) a corresponding token: HP value related — Flog token: lose HP equal to damage received each time; Weapon related — Rod token: cannot respond to [Kill]; Play related — Bondsman token: randomly discard 1 hand card each time a hand card is lost other than this way; Distance related — Exile token: flip general card at End Phase. If none of the above apply, they gain 1 Death token and their hand limit decreases by their Death token count; you take 1 card from their area. A character whose Death token count exceeds the number of survivors dies at the end of their turn."
+      },
+      {
+        "name_cn": "巡使",
+        "name_en": "Patrol Envoy",
+        "description_cn": "锁定技，你的多目标锦囊牌均视为无色的【杀】。你使用无色牌无距离和次数限制且可以额外指定任意个目标，然后修改“神裁”的发动次数（每次修改次数+1，至多为5）。",
+        "description_en": "Locked: Your multi-target Tool cards are treated as colorless [Kill]. Your colorless cards have no distance or frequency restriction and may target any number of additional characters; each use also modifies [Divine Judgment]'s activation limit (+1 each time, max 5)."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "LE027",
-    "standard_id": "char_zhangjiao",
+    "standard_id": "char_zhangjue",
     "name_cn": "神张角",
     "name_en": "God Zhang Jue",
     "gender": "Male",
     "faction": "God",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "困难",
-      "强命",
-      "爆发"
-    ],
-    "traits_en": [
-      "High Difficulty",
-      "Sturdy",
-      "Burst"
-    ],
+    "traits_cn": ["爆发", "困难", "强命"],
+    "traits_en": ["Burst", "High Difficulty", "Sturdy"],
     "expansion": "God",
     "skills": [
       {
         "name_cn": "异兆",
         "name_en": "Ominous Signs",
-        "description_cn": "锁定技，当你使用或打出牌时，你获得此牌点数的「黄」标记，若「黄」的十位数变化，你获得牌堆中一张与变化后十位数点数相同的牌。",
-        "description_en": "Locked: When you use or play a card, gain Yellow tokens equal to its point value. When the tens digit of your Yellow count changes, take a card from the deck matching that new tens digit in value."
+        "description_cn": "锁定技,你使用或打出一张牌后,获得等于此牌点数 的“黄”标记。每次“黄”的十位数因此变化时,你 获得牌堆中一张与变化后十位数点数相同的牌锁定技，当你使用或打出牌时，你获得此牌点数的「黄」标记，若「黄」的十位数变化，你获得牌堆中一张与变化后十位数点数相同的牌。",
+        "description_en": "Locked: When you use or play a card, gain Yellow tokens equal to that card's rank. Whenever the tens digit of your Yellow token count increases, take 1 card from the deck whose rank equals that new tens digit."
+      },
+      {
+        "name_cn": "三首",
+        "name_en": "Three Heads",
+        "description_cn": "当你受到伤害时,你可以亮出牌堆顶三张牌,若其中 有本回合没使用过的牌的类型,则防止此伤害。",
+        "description_en": "When you would take damage, you may reveal the top 3 cards of the deck. If any is a card type you have not used this turn, prevent the damage."
       },
       {
         "name_cn": "肆军",
         "name_en": "Army Rampage",
-        "description_cn": "准备阶段，若「黄」标记数大于牌堆牌数，你可以移除所有「黄」并获得牌堆中若干张点数和为36的牌。",
-        "description_en": "During your Starting Phase, if your Yellow token count exceeds the deck size, remove all Yellow tokens and take cards from the deck whose point values sum to 36."
+        "description_cn": "准备阶段,若“黄”标记数量大于牌堆的剩余牌数, 你可以移去所有“黄”标记,然后随机获得点数之和 为36的牌并洗牌。",
+        "description_en": "During your Starting Phase, if your Yellow token count exceeds the remaining cards in the deck, you may remove all Yellow tokens, then randomly gain cards whose combined rank totals 36 and shuffle the deck."
       },
       {
         "name_cn": "天劫",
         "name_en": "Heavenly Calamity",
-        "description_cn": "牌堆洗过牌的回合结束时，你可以对至多三名其他角色各造成X点雷电伤害（X为其手牌中【闪】的数量且至少为1）。",
-        "description_en": "At the end of a turn in which the deck was reshuffled, deal X Lightning damage to up to 3 other characters (X = number of [Dodge] in their hand cards, minimum 1)."
+        "description_cn": "每回合结束时,若本回合牌堆洗过牌,你可以选择至 多三名其他角色,依次对这些角色造成点雷电伤害 (X为其手牌中【闪】的数量且至少为1)。",
+        "description_en": "At the end of each turn, if the deck was shuffled this turn, you may choose up to 3 other characters and deal each X Lightning damage in sequence (X = the number of [Dodge] cards in their hand, minimum 1)."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE028",
+    "standard_id": "char_zuoci",
+    "name_cn": "神左慈",
+    "name_en": "God Zuo Ci",
+    "gender": "Male",
+    "faction": "God",
+    "health": 3,
+    "power_index": 3.5,
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "幻术",
+        "name_en": "Illusion Arts",
+        "description_cn": "锁定技,当你受到1点伤害或每轮开始时,你获得两 张“幻术”牌(“幻术”牌不计入手牌上限且至多为 你体力上限的两倍),若“幻术”牌达到上限则改为 摸等量的牌。出牌阶段开始时,手牌中所有未“幻 化”的“幻术”牌变为同花色的其他牌。其他角色获 得“幻术”牌后销毁之,然后你摸一张牌。",
+        "description_en": "Locked: When you take 1 damage or at the start of each round, gain 2 Illusion cards (these do not count toward your hand limit; maximum = twice your max HP); if the cap is reached, draw those cards instead. At the start of your Action Phase, all un-Transformed Illusion cards become other cards of the same suit. When another character gains an Illusion card, it is immediately destroyed and you draw 1 card."
+      },
+      {
+        "name_cn": "幻化",
+        "name_en": "Transform",
+        "description_cn": "每回合限两次,你可以“幻化”手中的一张“幻术” 牌,令此牌的花色、点数、牌名与你的一张手牌(不包含 “幻术”牌)一致,若“幻化”目标的花色与“幻术” 牌一致,你获得一张“幻术”牌。(每张牌只能“幻化 和被“幻化”各一次)",
+        "description_en": "Twice per turn: Transform an Illusion card in hand — it adopts the suit, rank, and name of one of your non-Illusion hand cards. If their suits match, gain 1 Illusion card. (Each card may be Transformed and be a Transformation target only once.)"
+      },
+      {
+        "name_cn": "幻境",
+        "name_en": "Realm of Illusion",
+        "description_cn": "限定技,你获得X张“幻术”牌,然后直到本回合结 束,“幻化”发动次数增加次且可以令“幻术”牌 成为“幻化”目标(X为你当前已损失体力值的两倍, 且至少为1",
+        "description_en": "Limited: Gain X Illusion cards. Until the end of this turn, [Transform]'s activation limit increases and Illusion cards may also be selected as Transformation targets (X = twice your current HP Lost, minimum 1)."
       }
     ],
     "faq": []
@@ -975,16 +1406,8 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "发育",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "进攻", "困难"],
+    "traits_en": ["Scaling", "Aggressive", "High Difficulty"],
     "expansion": "God",
     "skills": [
       {
@@ -1023,41 +1446,213 @@
     "faction": "God",
     "health": 4,
     "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Burst"
-    ],
+    "traits_cn": ["发育", "爆发", "过牌"],
+    "traits_en": ["Scaling", "Burst", "Card Flow"],
     "expansion": "God",
     "skills": [
       {
-        "name_cn": "星魂",
-        "name_en": "Star Soul",
-        "description_cn": "出牌阶段限一次，你可观看牌堆顶五张牌，用任意张手牌与其中等量牌进行交换并排序，然后你令一名其他角色展示你手牌与牌堆顶共五张牌，你对其依次使用其中的【杀】。",
-        "description_en": "Once per Action Phase: View the top 5 cards of the deck. Swap any number of hand cards with an equal number of those cards and arrange them. Then have one other character reveal a combined 5 cards from your hand and the top of the deck; use any [Kill] among them against that character in sequence."
+        "name_cn": "天任",
+        "name_en": "Heaven's Mandate",
+        "description_cn": "锁定技，当有基本牌或普通锦囊牌不是因使用而进入弃牌堆后，你获得一个“天任”标記。当你的“天任”标記大於等於你的体力上限时，你移除等量的“天任”然后增加1点体力上限并摸两张牌。",
+        "description_en": "Locked: Whenever a Basic or Non Time-Delay Tool card enters the Discard Pile other than by being used, gain 1 Mandate token. When your Mandate token count reaches or exceeds your max HP, remove that many tokens, increase your max HP by 1, and draw 2 cards."
       },
       {
-        "name_cn": "天涛",
-        "name_en": "Celestial Surge",
-        "description_cn": "锁定技，结束阶段，你选择一个区域并弃置其中所有牌，然后依次弃置任意名其他角色相同区域各一张牌，因此弃置牌且未弃置【杀】的角色失去1点体力。",
-        "description_en": "Locked: During your end phase, choose an area and discard all cards in it. Then discard 1 card from that same area of any number of other characters. Characters who discarded but had no [Kill] among them lose 1 HP."
+        "name_cn": "九伐",
+        "name_en": "Nine Campaigns",
+        "description_cn": "你每次使用九张不同牌名的牌后，你可以亮出牌堆顶的九张牌，你选择并获得其中点数重复的牌各一张，其余的牌置入弃牌堆。",
+        "description_en": "Each time you use 9 cards with different names, you may reveal the top 9 cards of the deck. Choose and keep one copy of each card with a duplicated rank; place the rest in the Discard Pile."
       },
       {
-        "name_cn": "神霈",
-        "name_en": "Divine Revival",
-        "description_cn": "限定技，你进入濒死时，可回复X点体力（X为你本局游戏进入过濒死的次数），对一名角色造成等量雷电伤害并获得「回天」。",
-        "description_en": "Limited: When you enter the Verge of Death State, recover X HP (X = number of times you have entered the Verge of Death State this game), deal that much Lightning damage to one character, and gain Return of Heaven."
+        "name_cn": "平襄",
+        "name_en": "Pacify Xiang",
+        "description_cn": "限定技， 出牌阶段，你可以減9点体力上限。若如此做，你视为使用至多九张火【杀】。然后你失去“九伐”且本局遊戲你的手牌上限改为体力上限。",
+        "description_en": "Limited: During your Action Phase, you may reduce your max HP by 9. If you do, you are treated as using up to 9 [Fire Kill] cards. You then lose [Nine Campaigns] and your hand limit for the rest of the game equals your max HP."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE031",
+    "standard_id": "char_huangzhong",
+    "name_cn": "神黄忠",
+    "name_en": "God Huang Zhong",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "爆发", "发育"],
+    "traits_en": ["Aggressive", "Burst", "Scaling"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "裂穹",
+        "name_en": "Rend the Sky",
+        "description_cn": "当你对其他角色造成伤害后，你可以在任意部位中选择一个“击伤”；可选择被击伤的部位：力烽：令其随机弃置一半手牌（向上取整）。地机：令其下一次受到的伤害+1直到其回合结束。中枢：令其使用的下一张牌无效直到其回合结束。气海：令其不能使用或打出红桃牌直到其回合结束。若你击伤了一名角色，则本回合再次击伤该角色时出现“天冲”选项。天冲：令其失去所有体力值，若其因此死亡，你+1体力上限。",
+        "description_en": "After you deal damage to another character, you may choose a Strike Location: Power — they randomly discard half their hand cards (round up); Ground — the next damage they take this turn +1; Center — the next card they use this turn is Nullified; Qi Sea — they cannot use or play Heart cards until the end of their turn. If you have already struck that character this turn, a second strike adds the Heaven Strike option — Heaven Strike: they lose all HP; if they die from this, your max HP +1."
       },
       {
-        "name_cn": "回天",
-        "name_en": "Return of Heaven",
-        "description_cn": "一名体力值大于你的角色回合结束时，你可摸一张牌并执行一个额外的回合。每轮开始时，若你发动过此技能，你死亡。",
-        "description_en": "When a character with more HP than you ends their turn, draw 1 card and take an extra turn. At the start of each round, if you have activated this skill, you die."
+        "name_cn": "斩决",
+        "name_en": "Decisive Slash",
+        "description_cn": "出牌阶段开始时，你可以选择一项：1.摸体力值张牌，此阶段使用的下一张【杀】无距离限制且不能被响应；2.摸损失体力值张牌，此阶段下一次造成伤害后，回复等量体力值。",
+        "description_en": "At the start of your Action Phase, choose: 1. Draw cards equal to your HP Value; the next [Kill] you use this phase has no distance restriction and cannot be responded to; 2. Draw cards equal to your HP Lost; after the next damage you deal this phase, recover HP equal to that damage."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE034",
+    "standard_id": "char_zhenji",
+    "name_cn": "神甄姬",
+    "name_en": "God Zhen Ji",
+    "gender": "Female",
+    "faction": "God",
+    "health": 3,
+    "power_index": 4.0,
+    "traits_cn": ["控制", "过牌", "防御"],
+    "traits_en": ["Control", "Card Flow", "Defensive"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "神赋",
+        "name_en": "Divine Verse",
+        "description_cn": "结束阶段，若你的手牌数为：奇数，你可以对一名其他角色造成1点雷电伤害，若其因此死亡，你可以重复此流程；偶数，你可以令一名角色摸一张牌或弃置其一张牌，然后若其手牌数等于体力值，你可以重复此流程（不能对本回合选择过的目标发动）。回合结束后，你摸X张牌（X为此技能本回合发动次数且至多为5）。",
+        "description_en": "During your End Phase, if your hand card count is: odd — you may deal 1 Lightning damage to another character; if they die from this, you may repeat; even — you may instruct a character to draw 1 card or discard 1 hand card; if their hand card count then equals their HP Value, you may repeat (cannot target the same character twice this turn). After your turn ends, draw X cards (X = number of times this skill activated this turn, max 5)."
+      },
+      {
+        "name_cn": "七弦",
+        "name_en": "Seven Strings",
+        "description_cn": "锁定技，你的手牌上限为7。",
+        "description_en": "Locked: Your hand card limit is 7."
+      },
+      {
+        "name_cn": "飞凫",
+        "name_en": "Flying Teal",
+        "description_cn": "你可以将一张黑色牌当【闪】使用或打出。",
+        "description_en": "You may use or play a black card as [Dodge]."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE034_v1",
+    "standard_id": "char_zhenji",
+    "name_cn": "神甄姬",
+    "name_en": "God Zhen Ji",
+    "gender": "Female",
+    "faction": "God",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": ["控制", "过牌"],
+    "traits_en": ["Control", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "神赋",
+        "name_en": "Divine Verse",
+        "description_cn": "结束阶段，若你的手牌数为：奇数，你可以对一名其他角色造成1点雷电伤害，若其因此死亡，你可以重复此流程；偶数，你可以令一名角色摸一张牌或弃置一张手牌，然后若其手牌数等于体力值，你可以重复此流程。",
+        "description_en": "During your End Phase, if your hand card count is: odd — you may deal 1 Lightning damage to another character; if they die from this, you may repeat; even — you may instruct a character to draw 1 card or discard 1 hand card; if their hand card count then equals their HP Value, you may repeat."
+      },
+      {
+        "name_cn": "七弦",
+        "name_en": "Seven Strings",
+        "description_cn": "锁定技，你的手牌上限为7。",
+        "description_en": "Locked: Your hand card limit is 7."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE035",
+    "standard_id": "char_pangtong",
+    "name_cn": "神庞统",
+    "name_en": "God Pang Tong",
+    "gender": "Male",
+    "faction": "God",
+    "health": 1,
+    "power_index": 4.5,
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "鸾锁",
+        "name_en": "Phoenix Chain",
+        "description_cn": "锁定技,你的回合内,所有角色不能弃置手牌 且当前手牌与本回合进入弃牌堆的牌花色不同 的牌均视为【铁索连环】。",
+        "description_en": "Locked: During your turn, no character may discard hand cards, and any hand card whose suit differs from all suits of cards that entered the Discard Pile this turn is treated as [Iron Shackles]."
+      },
+      {
+        "name_cn": "凤燎",
+        "name_en": "Phoenix Blaze",
+        "description_cn": "锁定技,转换技,当你使用牌指定唯一目标 后,阳:你令其摸一张牌;阴:你对其造成1 点火属性伤害。",
+        "description_en": "Convert/Locked: When you use a card targeting only one character — Yang: they draw 1 card; Yin: you deal them 1 Fire damage."
+      },
+      {
+        "name_cn": "鹍浴",
+        "name_en": "Kunpeng Rebirth",
+        "description_cn": "锁定技,你的体力上限始终为1。当你死亡时, 你将牌堆中的一张火属性伤害牌移出游戏,然 后复活并将体力值回复至1点。",
+        "description_en": "Locked: Your max HP is always 1. When you die, remove 1 Fire-damage card from the deck from the game, then revive and recover your HP to 1."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "Q.LE035",
+    "standard_id": "char_pangtong",
+    "name_cn": "神庞统",
+    "name_en": "God Pang Tong",
+    "gender": "Male",
+    "faction": "God",
+    "health": 3,
+    "power_index": 3.5,
+    "traits_cn": ["辅助", "控制", "过牌"],
+    "traits_en": ["Support", "Control", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "论策",
+        "name_en": "Strategic Plan",
+        "description_cn": "每轮开始时,你可以选择一名角色并令其获得以下计策中的一策 （仅你可见）:1. 上策,其出牌阶段开始时,可以立即使用一张[杀】, 此[杀】无距离和次数限制且不计入次数;2.中策, 直到其回合结束, 其回合内首次使用[杀]指定目标时,你获得其一张牌; 3.下策,若该角色出牌阶段未使用【杀】 造成过伤害,其回合结束时,你可以将至多三张牌交给该角色 （若该角色为你改为摸三张牌）并令其回复1点体力。",
+        "description_en": "At the start of each round, you may choose a character and secretly give them one Stratagem: 1. Upper — at the start of their Action Phase, they may immediately use 1 [Kill] with no distance or frequency restriction (not counting toward limits); 2. Middle — the first time they target someone with [Kill] this turn, you take 1 of their cards; 3. Lower — if they dealt no damage via [Kill] during their Action Phase, at the end of their turn you may give them up to 3 cards (or draw 3 if the target is yourself) and they recover 1 HP."
+      },
+      {
+        "name_cn": "览害",
+        "name_en": "Survey of Harm",
+        "description_cn": "锁定技,有计策的角色回合结束时,若此回合有计策：1. 成功发动,你摸 X 张牌并发动-次 “论策” (X 为你本轮计策成功的次数且至多为 3); 2.未成功发动,你增加1 点体力上限 （体力上限至多加 3) 并回复1点体力",
+        "description_en": "Locked: At the end of the turn of a character with a Stratagem, if this turn the Stratagem was: 1. Successfully triggered — draw X cards and activate [Strategic Plan] once more (X = successful Stratagems this round, max 3); 2. Not triggered — increase your max HP by 1 (max +3) and recover 1 HP."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE037",
+    "standard_id": "char_daqiao&xiaoqiao",
+    "name_cn": "大乔&小乔",
+    "name_en": "Da Qiao & Xiao Qiao",
+    "gender": "Female",
+    "faction": "God",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": ["辅助", "发育", "过牌"],
+    "traits_en": ["Support", "Scaling", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "双姝",
+        "name_en": "Twin Beauties",
+        "description_cn": "准备阶段，你可以 亮出牌堆顶的两张牌，若其中：包含方块牌，本回合〖娉婷〗可选择的项数+1；包含红桃牌，本回合〖移筝〗可选择的项数+1；只有黑色牌，你获得这些牌。",
+        "description_en": "During your Starting Phase, you may reveal the top 2 cards of the deck. If they include: a Diamond — [Graceful Bearing]'s selectable options +1 this turn; a Heart — [Zither Shift]'s selectable options +1 this turn; only black cards — you gain those cards."
+      },
+      {
+        "name_cn": "娉婷",
+        "name_en": "Graceful Bearing",
+        "description_cn": "出牌阶段开始时，你可以令你本阶段使用牌时获得至多2项效果：1.第一张牌无距离限制；2.第二张牌指定目标后，你获得之；3.第三张牌结算结束后，你摸两张牌；4.第四张牌额外结算一次。",
+        "description_en": "At the start of your Action Phase, you may grant up to 2 of the following effects to cards you use this phase: 1. First card — no distance restriction; 2. Second card — after targeting, you gain that card; 3. Third card — after resolution, draw 2 cards; 4. Fourth card — resolves one additional time."
+      },
+      {
+        "name_cn": "移筝",
+        "name_en": "Zither Shift",
+        "description_cn": "出牌阶段结束时，你可以选择至多1项：1.移动场上的一张武器牌；2.移动场上的一张坐骑牌；3.移动场上的一张防具牌。然后若你本回合移动的牌数为：1，你回复1点体力；2，直到你的下回合开始，当你失去一张牌后，你摸一张牌。",
+        "description_en": "At the end of your Action Phase, choose up to 1 option: 1. Move 1 weapon from the field; 2. Move 1 mount from the field; 3. Move 1 armor from the field. Then if you moved: 1 card total this turn — recover 1 HP; 2 cards total — until your next turn begins, whenever you lose a card, draw 1 card."
       }
     ],
     "faq": []
@@ -1071,16 +1666,8 @@
     "faction": "God",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "发育"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "Scaling"
-    ],
+    "traits_cn": ["辅助", "控制", "发育"],
+    "traits_en": ["Support", "Control", "Scaling"],
     "expansion": "God",
     "skills": [
       {
@@ -1105,109 +1692,429 @@
     "faq": []
   },
   {
-    "id": "SP008-1",
+    "id": "HLQUN001",
     "standard_id": "char_lvbu",
-    "name_cn": "虎牢关神吕布·最强神话",
-    "name_en": "Tiger Cage God Lu Bu · Supreme Myth",
+    "name_cn": "最强神话·神吕布",
+    "name_en": "Supreme Myth · God Lu Bu",
     "gender": "Male",
     "faction": "God",
     "health": 8,
-    "power_index": 4.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Simple"
-    ],
+    "power_index": 5.0,
+    "traits_cn": ["进攻", "防御", "强命"],
+    "traits_en": ["Aggressive", "Defensive", "Sturdy"],
     "expansion": "God",
     "skills": [
-      {
-        "name_cn": "马术",
-        "name_en": "Horsemanship",
-        "description_cn": "锁定技，你计算与其他角色的距离-1。",
-        "description_en": "Locked Skill: Your distance to others is calculated as -1."
-      },
       {
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked Skill: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
+        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
       },
       {
-        "name_cn": "修罗",
-        "name_en": "Asura",
-        "description_cn": "准备阶段，你可以弃置与你判定区内一张牌花色相同的一张手牌，弃置你判定区内的此牌，且你可以重复此流程。",
-        "description_en": "During your Starting Phase, you may discard one hand card that shares a suit with a card in your judgment zone to remove that judgment zone card. You may repeat this process."
+        "name_cn": "应战",
+        "name_en": "Battle Ready",
+        "description_cn": "锁定技,若你装备区里有:武器牌,你使用【杀】的次 数上限+1:防具牌,防止你受到的大于1点的伤害: 坐骑牌,你于摸牌阶段多摸一张牌:宝物牌,你跳过 判定阶段",
+        "description_en": "Locked: For each card type in your Equipment Zone: Weapon — your [Kill] frequency limit +1; Armor — prevent damage to you exceeding 1; Mount — draw 1 extra card during Draw Phase; Treasure — skip your Judgment Phase."
       },
       {
-        "name_cn": "神威",
-        "name_en": "Divine Might",
-        "description_cn": "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限+2。",
-        "description_en": "Locked: During your Draw Phase, draw 2 additional cards. Your hand card limit is +2."
+        "name_cn": "精甲",
+        "name_en": "Masterwork Armor",
+        "description_cn": "锁定技,游戏开始时,将【红棉百花袍】或【玲珑狮蛮 带】中的一张与【束发紫金冠】、【无双方天】置入你 的装备区。",
+        "description_en": "Locked: At game start, place one of [Red Cotton Hundred-Flower Robe] or [Exquisite Lion-Mane Belt], along with [Crown of Purple Gold] and [Peerless Halberd], into your Equipment Zone."
       },
       {
-        "name_cn": "神戟",
-        "name_en": "Divine Halberd",
-        "description_cn": "锁定技，若你未装备武器，你使用【杀】指定的目标数上限+2。",
-        "description_en": "Locked: If you have no weapon equipped, the maximum number of targets you may declare for each [Kill] is +2."
+        "name_cn": "马术",
+        "name_en": "Horsemanship",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": "Locked: Your distance to others is calculated as -1."
       }
     ],
     "faq": []
   },
   {
-    "id": "SP008-2",
+    "id": "HLQUN002",
     "standard_id": "char_lvbu",
-    "name_cn": "虎牢关神吕布·暴怒的战神",
-    "name_en": "Tiger Cage God Lu Bu · Warlord Enraged",
+    "name_cn": "暴怒的战神·神吕布",
+    "name_en": "Furious War God · God Lu Bu",
     "gender": "Male",
     "faction": "God",
-    "health": 4,
-    "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Simple"
-    ],
+    "health": 6,
+    "power_index": 4.5,
+    "traits_cn": ["进攻", "发育", "过牌"],
+    "traits_en": ["Aggressive", "Scaling", "Card Flow"],
     "expansion": "God",
     "skills": [
+      {
+        "name_cn": "无双",
+        "name_en": "Peerless",
+        "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
+        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
+      },
       {
         "name_cn": "马术",
         "name_en": "Horsemanship",
         "description_cn": "锁定技，你计算与其他角色的距离-1。",
-        "description_en": "Locked Skill: Your distance to others is calculated as -1."
+        "description_en": "Locked: Your distance to others is calculated as -1."
+      },
+      {
+        "name_cn": "修罗",
+        "name_en": "Asura",
+        "description_cn": "回合开始时,你可以弃置一张牌,并弃置你判定区里 一张花色相同的牌,然后你可以重复此流程。",
+        "description_en": "At the start of your turn, you may discard 1 card and discard a card of the same suit from your Judgment Zone. You may repeat this."
+      },
+      {
+        "name_cn": "神威",
+        "name_en": "Divine Might",
+        "description_cn": "锁定技,摸牌阶段,你多摸X张牌;你的手牌上限+X (X为场上与你阵营不同的角色数)。",
+        "description_en": "Locked: During your Draw Phase, draw X extra cards; your hand limit +X (X = number of characters with a different faction from you in play)."
+      },
+      {
+        "name_cn": "神戟",
+        "name_en": "Divine Halberd",
+        "description_cn": "出牌阶段,你使用【杀】的次数+1;你使用【杀】可 以增加至多两个目标。",
+        "description_en": "During your Action Phase, your [Kill] frequency +1; you may add up to 2 extra targets when using [Kill]."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "HLQUN003",
+    "standard_id": "char_lvbu",
+    "name_cn": "神鬼无前·神吕布",
+    "name_en": "Godlike Unstoppable · God Lu Bu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 6,
+    "power_index": 5.0,
+    "traits_cn": ["进攻", "防御", "爆发"],
+    "traits_en": ["Aggressive", "Defensive", "Burst"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "无双",
+        "name_en": "Peerless",
+        "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
+        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
+      },
+      {
+        "name_cn": "神躯",
+        "name_en": "Divine Physique",
+        "description_cn": "每回合开始时,若你的手牌数不大于体力上限, 你摸两张牌;当你受到伤害后,你可以使用一张 【桃】。",
+        "description_en": "At the start of each turn, if your hand card count does not exceed your max HP, draw 2 cards. After you take damage, you may use a [Peach]."
+      },
+      {
+        "name_cn": "极武",
+        "name_en": "Ultimate Martial",
+        "description_cn": "出牌阶段各限一次,你可以弃置一张牌并获得 “强袭” “铁骑” “完杀” “旋风” 中的一个技 能直到本回合结束",
+        "description_en": "Once per option per Action Phase: Discard 1 card to gain one of the following skills until end of turn: [Violent Assault], [Iron Cavalry], [Total Annihilation], or [Whirlwind]."
+      },
+      {
+        "name_cn": "强袭",
+        "name_en": "Violent Assault",
+        "description_cn": "出牌阶段限两次，你可以受到1点伤害或弃置一张武器牌，对一名本回合内未以此法指定过的其他角色造成1点伤害。",
+        "description_en": "Twice per Action Phase: Lose 1 health or discard a weapon to deal 1 damage to a new target."
+      },
+      {
+        "name_cn": "铁骑",
+        "name_en": "Iron Cavalry",
+        "description_cn": "当你使用【杀】指定目标后，你可以令其本回合非锁定技失效，然后你判定，除非其弃置一张与判定结果花色相同的牌，否则其不能抵消此【杀】。",
+        "description_en": "When using [Kill], you can disable the target's non-locked skills for the turn. Perform a judgment; they cannot dodge unless they discard a card of the same suit as the judgment."
+      },
+      {
+        "name_cn": "完杀",
+        "name_en": "Total Annihilation",
+        "description_cn": "锁定技，在你的回合内：只有你和处于濒死状态的角色才能使用【桃】；任意角色的濒死结算中，除你和濒死角色外的其他角色的非锁定技失效。",
+        "description_en": "Locked: During your turn, only you and characters in the Verge of Death State may use [Peach]. During any Verge of Death Resolution this turn, all non-Locked skills of characters other than you and the dying character are Nullified."
+      },
+      {
+        "name_cn": "旋风",
+        "name_en": "Whirlwind",
+        "description_cn": "当你失去装备区里的牌后，或一次性失去至少两张牌后，你可以依次弃置至多两名其他角色共计至多两张牌。",
+        "description_en": "After losing equipment or 2+ cards at once, discard up to 2 cards from up to 2 other characters."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE007_Beta",
+    "standard_id": "char_zhaoyun",
+    "name_cn": "高达一号",
+    "name_en": "Zilong",
+    "gender": "Male",
+    "faction": "God",
+    "health": 1,
+    "power_index": 1.5,
+    "traits_cn": ["防御", "过牌"],
+    "traits_en": ["Defensive", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "绝境",
+        "name_en": "Desperation",
+        "description_cn": "锁定技,你始终跳过摸牌阶段。当你的手牌发生变化时,你立即调整为四张",
+        "description_en": "Locked: You always skip your Draw Phase. Whenever your hand card count changes, immediately adjust to exactly 4 cards."
+      },
+      {
+        "name_cn": "龙魂",
+        "name_en": "Dragon Soul",
+        "description_cn": "你的牌可以按以下规则使用或打出：红桃当【桃】；方块当火【杀】，梅花当【闪】，黑桃当【无懈可击】。",
+        "description_en": "Your cards may be used or played as follows: Hearts as [Peach]; Diamonds as [Fire Kill]; Clubs as [Dodge]; Spades as [Nullification]."
+      },
+      {
+        "name_cn": "斩将",
+        "name_en": "Slay the General",
+        "description_cn": "准备阶段，若其他角色装备区里有【青红剑】 你可以获得之。",
+        "description_en": "During your Starting Phase, if [Qing Gang Sword] is in another character's Equipment Zone, you may take it."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "Q.LE006",
+    "standard_id": "char_lvbu",
+    "name_cn": "神吕布",
+    "name_en": "God Lu Bu",
+    "gender": "Male",
+    "faction": "God",
+    "health": 6,
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "防御"],
+    "traits_en": ["Aggressive", "Defensive"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "无前",
+        "name_en": "Unstoppable",
+        "description_cn": "锁定技,你于回合内使用的第一张【杀】或 【决斗】获得“无双”效果且无视目标角色的 防具",
+        "description_en": "Locked: The first [Kill] or [Duel] you use each turn gains the Peerless effect and ignores the target's equipped armor."
+      },
+      {
+        "name_cn": "神愤",
+        "name_en": "Divine Fury",
+        "description_cn": "限定技，牌阶段，你可以失去3点体力然后对所有其他角色各造成1点伤害，这些角色先各弃置其装备区里的所有牌，再各弃置四张手牌。",
+        "description_en": "Limited: During your Action Phase, you may lose 3 HP. Deal 1 damage to all other characters. They each discard all cards from their Equipment Zone, then each discard 4 hand cards."
       },
       {
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked Skill: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
+        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE002_v1",
+    "standard_id": "char_lumeng",
+    "name_cn": "神吕蒙",
+    "name_en": "God Lu Meng",
+    "gender": "Male",
+    "faction": "God",
+    "health": 3,
+    "power_index": 3.5,
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "涉猎v1",
+        "name_en": "Wide Reading v1",
+        "description_cn": "摸牌阶段,你可以改为亮出牌堆顶的五张牌获得其中每种花色的牌各一张。每轮限一次,回合结束时, 你回合使用过的花色数大于等于体力值,你获得一个额外的摸牌或出牌阶段。",
+        "description_en": "During your Draw Phase, you may instead reveal the top 5 cards of the deck and take one card of each suit. Once per round, at the end of your turn, if the number of different suits among cards you used this turn is at least equal to your HP Value, you gain an extra Draw Phase or Action Phase."
       },
       {
-        "name_cn": "修罗",
-        "name_en": "Asura",
-        "description_cn": "准备阶段，你可以弃置与你判定区内一张牌花色相同的一张手牌，弃置你判定区内的此牌，且你可以重复此流程。",
-        "description_en": "During your Starting Phase, you may discard one hand card that shares a suit with a card in your judgment zone to remove that judgment zone card. You may repeat this process."
+        "name_cn": "攻心v1",
+        "name_en": "Mental Attack v1",
+        "description_cn": "出牌阶段限一次,你可以观看一名其他角色的手牌,然后你可以展示其中一张牌并置于牌堆顶或弃置之。若其手牌中的花色数因此减少你可以令其本回合不能使用或打出一种颜色的牌。",
+        "description_en": "Once per Action Phase: View another character's hand cards, then you may reveal 1 card and place it on top of the deck or discard it. If the number of different suits in their hand decreases as a result, you may prevent them from using or playing cards of one color for the rest of this turn."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "Q.LE018",
+    "standard_id": "char_sunquan",
+    "name_cn": "神孙权",
+    "name_en": "God Sun Quan",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": ["控制", "辅助", "过牌"],
+    "traits_en": ["Control", "Support", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "劝学",
+        "name_en": "Encourage Study",
+        "description_cn": "出牌阶段开始时，你可以令至多两名其他角色各获得“学”，其于回合开始时弃其“学”并选择一项：1.本回合出牌阶段不能对除其以外的角色使用牌；2.失去1点体力。",
+        "description_en": "At the start of your Action Phase, you may give a Study token to up to 2 other characters. At the start of their turn, they discard their Study token and choose: 1. Cannot use cards targeting other characters during their Action Phase this turn; 2. Lose 1 HP."
       },
       {
-        "name_cn": "神威",
-        "name_en": "Divine Might",
-        "description_cn": "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限+2。",
-        "description_en": "Locked: During your Draw Phase, draw 2 additional cards. Your hand card limit is +2."
+        "name_cn": "射虎",
+        "name_en": "Tiger Hunt",
+        "description_cn": "锁定技，当你对有“学”的角色使用【杀】时，你弃置其一张手牌。",
+        "description_en": "Locked: When you use [Kill] against a character with a Study token, discard 1 of their hand cards."
       },
       {
-        "name_cn": "神戟",
-        "name_en": "Divine Halberd",
-        "description_cn": "锁定技，若你未装备武器，你使用【杀】指定的目标数上限+2。",
-        "description_en": "Locked: If you have no weapon equipped, the maximum number of targets you may declare for each [Kill] is +2."
+        "name_cn": "鼎立",
+        "name_en": "Tripod Balance",
+        "description_cn": "每轮限一次，当其他角色弃其“学”时，若其体力值：不小于你，你可以回复1点体力；小于你，你可以摸等同于你与其体力值差张牌（至多摸两张）。",
+        "description_en": "Once per round: When another character discards their Study token, if their HP Value is at least equal to yours, you may recover 1 HP. If their HP Value is less than yours, draw cards equal to the difference (max 2)."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LEXXX",
+    "standard_id": "char_caopi",
+    "name_cn": "神曹丕",
+    "name_en": "God Cao Pi",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 4.0,
+    "traits_cn": ["发育", "过牌", "辅助"],
+    "traits_en": ["Scaling", "Card Flow", "Support"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "储元",
+        "name_en": "Reserve Source",
+        "description_cn": "当一名角色受到伤害后，你可以令其摸一张牌，然后其将一张手牌置于你的武将牌上，称为“储”。你的手牌上限+X（X为“储”数）。",
+        "description_en": "When a character takes damage, you may have them draw 1 card, then they place 1 hand card face-down on your general card as a Reserve. Your hand limit +X (X = number of Reserve cards)."
+      },
+      {
+        "name_cn": "登极",
+        "name_en": "Ascend the Throne",
+        "description_cn": "觉醒技，准备阶段，若你的“储”数不小于3，你减1点体力上限，获得所有“储”，获得〖奸雄〗和〖天行〗。",
+        "description_en": "Awakening: During your Starting Phase, if you have at least 3 Reserve cards, reduce your max HP by 1, gain all Reserve cards, and gain [Treacherous Hero] and [Imperial March]."
+      },
+      {
+        "name_cn": "奸雄",
+        "name_en": "Treacherous Hero",
+        "description_cn": "当你受到伤害后，你可以摸一张牌，并获得造成此伤害的牌。",
+        "description_en": "After taking damage, you may draw 1 card and gain the card that caused the damage."
+      },
+      {
+        "name_cn": "天行",
+        "name_en": "Imperial March",
+        "description_cn": "觉醒技，准备阶段，若你的“储”数不小于3，你减1点体力上限，获得所有“储”，失去〖储元〗，并获得下列技能中的一项：〖仁德〗、〖制衡〗、〖乱击〗、〖放权〗。",
+        "description_en": "Awakening: During your Starting Phase, if you have at least 3 Reserve cards, reduce your max HP by 1, gain all Reserve cards, lose [Reserve Source], and gain one of: [Benevolence], [Balance of Power], [Volley], or [Abdicate]."
+      },
+      {
+        "name_cn": "仁德",
+        "name_en": "Benevolence",
+        "description_cn": "出牌阶段，每名角色限一次，你可以交给一名其他角色任意张手牌。当你本阶段以此法给出第二张牌时，你可以视为使用一张基本牌（使用【杀】有次数限制）。",
+        "description_en": "During your Action Phase, once per character: you may give another character any number of hand cards. When you give out your second card this phase via this method, you may treat it as using a Basic card (using [Kill] still counts toward the frequency limit)."
+      },
+      {
+        "name_cn": "制衡",
+        "name_en": "Balance of Power",
+        "description_cn": "出牌阶段限一次，你可以弃置任意张牌，然后摸等量张牌，若你以此法弃置了所有手牌，你额外摸一张牌。",
+        "description_en": "Once per Action Phase: Discard any number of cards and draw the same number. Draw 1 extra if all hand cards were discarded."
+      },
+      {
+        "name_cn": "乱击",
+        "name_en": "Volley",
+        "description_cn": "你可以将两张花色相同的手牌当【万箭齐发】使用。你使用【万箭齐发】可以少选一个目标。",
+        "description_en": "Play 2 cards of the same suit as [Raining Arrows]. You can choose 1 fewer target."
+      },
+      {
+        "name_cn": "放权",
+        "name_en": "Abdicate",
+        "description_cn": "你可以跳过出牌阶段，然后弃牌阶段开始时，你可以弃置一张手牌并令一名其他角色执行一个额外的回合。",
+        "description_en": "You may skip Action Phase; at Discard Phase, discard 1 card to grant another character an extra turn."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE011_v1",
+    "standard_id": "char_zhangliao",
+    "name_cn": "神张辽",
+    "name_en": "God Zhang Liao",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "发育"],
+    "traits_en": ["Aggressive", "Control", "Scaling"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "夺锐",
+        "name_en": "Skill Seizure",
+        "description_cn": "当你于出牌阶段内对一名其他角色造成伤害后，你可以废除你的一个装备栏，然后你选择其武将牌上的一个技能（除限定、觉醒、主公、隐匿技外），令其此技能于其下个回合结束之前无效，你于其下个回合结束或其死亡前拥有此技能且不能发动「夺锐」。",
+        "description_en": "After dealing damage to a character during your Action Phase, you may destroy one of your equipment slots. Then choose one skill on that character's general card (excluding Limited, Awakening, Lord, and Hidden skills). That skill is disabled until the end of their next turn; you gain that skill until then (or until they die) and cannot use Skill Seizure again during that time."
+      },
+      {
+        "name_cn": "止啼v1",
+        "name_en": "Intimidation v1",
+        "description_cn": "锁定技，你攻击范围内已受伤的角色手牌上限-1；当你和这些角色拼点或【决斗】你赢时，你恢复一个装备栏。当你受到伤害后，若来源在你的攻击范围内且已受伤，你恢复一个装备栏。",
+        "description_en": "Locked: Injured characters within your attack range have their hand limit -1. When you win a showdown against or defeat an injured character in your attack range in a [Duel], restore 1 equipment slot. After you take damage from an injured character within your attack range, restore 1 equipment slot."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE011_v2",
+    "standard_id": "char_zhangliao",
+    "name_cn": "神张辽",
+    "name_en": "God Zhang Liao",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": ["进攻", "控制", "发育"],
+    "traits_en": ["Aggressive", "Control", "Scaling"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "夺锐v1",
+        "name_en": "Skill Seizure v1",
+        "description_cn": "当你于出牌阶段对其他角色造成伤害后,若其技能未因本技能而失效,你可以令其一个技能于下回合结束前失效,若如此做,你结束出牌阶段。",
+        "description_en": "After you deal damage to a character during your Action Phase, if their skills have not already been disabled by this skill, you may disable one of their skills until the end of their next turn. If you do, end your Action Phase."
+      },
+      {
+        "name_cn": "止啼v2",
+        "name_en": "Intimidation v2",
+        "description_cn": "锁定技, 攻击范围内已受伤角色的手牌上限-1。若已受伤角色数不小于：1.你的手牌上限+1; 3.你摸牌阶段摸牌数+1;5.结束阶段,你废除一名其他角色随机一个装备栏。",
+        "description_en": "Locked: Injured characters within your attack range have their hand limit -1. If the number of injured characters in your attack range is at least: 1 — your hand limit +1; 3 — your Draw Phase draw count +1; 5 — during your End Phase, destroy one random equipment slot of another character."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "LE014_v1",
+    "standard_id": "char_huatuo",
+    "name_cn": "神华佗",
+    "name_en": "God Hua Tuo",
+    "gender": "Male",
+    "faction": "God",
+    "health": 3,
+    "power_index": 4.0,
+    "traits_cn": ["辅助", "控制", "过牌"],
+    "traits_en": ["Support", "Control", "Card Flow"],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "静域",
+        "name_en": "Stillness Domain",
+        "description_cn": "锁定技，每个技能每轮限一次，当一名角色发动除〖静域〗外的技能时，你摸一张牌。",
+        "description_en": "Locked: Once per skill per round, whenever a character activates a skill other than [Stillness Domain], you draw 1 card."
+      },
+      {
+        "name_cn": "滤心",
+        "name_en": "Filter the Heart",
+        "description_cn": "出牌阶段限一次，你可以交给一名其他角色一张手牌并选择一项：1.令其摸X张牌；2.令其随机弃置X张手牌（X为游戏轮数且至多为5）。然后若其以此法摸到/弃置了与你交给其的牌牌名相同的牌，其下次发动技能时回复/失去1点体力。",
+        "description_en": "Once per Action Phase: Give another character 1 hand card and choose: 1. They draw X cards; 2. They randomly discard X hand cards (X = current round number, max 5). If they drew or discarded a card with the same name as the one you gave, they recover or lose 1 HP when they next activate a skill."
+      },
+      {
+        "name_cn": "寰道",
+        "name_en": "Universal Path",
+        "description_cn": "限定技，出牌阶段，你可以选择一名其他角色，令其复原武将牌，然后其可以获得其同名武将的随机一个不同名技能并选择失去一个其他技能。",
+        "description_en": "Limited: During your Action Phase, choose another character. Their general card is restored to its original state. They may then gain one random skill from a general of the same name that they do not already have, and choose to lose one of their other skills."
       }
     ],
     "faq": []

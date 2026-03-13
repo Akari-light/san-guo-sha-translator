@@ -9,7 +9,7 @@
       "出牌階段。你攻擊範圍內的一名其他角色。【殺】對目標角色造成1點傷害"
     ],
     "effect_en": [
-      "During your action phase, attack one other character within your attack range. [Kill] Deal 1 damage to the target character."
+      "During your Action Phase, use this card to target one character within your attack range. Deal 1 damage to the target. The target may play a [Dodge] to evade."
     ],
     "faq": [
       {
@@ -51,7 +51,7 @@
       "在自己的回合內使用桃，可以讓自己恢復一點體力。其他人濒死時候使用桃可使其恢復一點體力"
     ],
     "effect_en": [
-      "Using a peach during your action phase will restore one point of your health. Using a peach when another player enter the brink of death will restore one point of their health."
+      "During your Action Phase, use this on yourself to recover 1 HP. During any character's Verge of Death Resolution, use this on a character at 0 HP to recover their HP to 1."
     ],
     "faq": [
       {
@@ -78,7 +78,7 @@
       "出牌階段，對自己使用，令自己的下一張使用的【殺】造成的傷害+1 (每回合限使用1次); 任何時候，當自己進入濒死階段時，對自己使用，立即恢復 1 點體力值。"
     ],
     "effect_en": [
-      "During your action phase, use this on yourself to increase the damage of your next [Kill] by 1 (can only be used once per turn); at any time, when you enter the brink of death, use this on yourself to immediately restore 1 health point."
+      "During your Action Phase, use on yourself; your next [Kill] this turn deals +1 damage (once per turn). At any time during Verge of Death Resolution, use on yourself to recover 1 HP."
     ],
     "faq": [
       {
@@ -105,7 +105,7 @@
       "出牌階段。你攻擊範圍內的一名其他角色。【殺】對目標角色造成1點火屬性傷害"
     ],
     "effect_en": [
-      "During your action phase, attack other characters within your attack range. 【Kill】Deal 1 point of fire damage to the target character."
+      "During your Action Phase, use this card to target one character within your attack range. Deal 1 Fire damage to the target. The target may play a [Dodge] to evade."
     ],
     "faq": []
   },
@@ -153,7 +153,7 @@
       {
         "q_cn": "我可以在出牌阶段主动使用【毒】吗？",
         "a_cn": "可以，使用它属于离开手牌，你失去1点体力，然后将其置于牌堆顶。",
-        "q_en": "Can I actively play [Poison] during my action phase?",
+        "q_en": "Can I actively play [Poison] during my Action Phase?",
         "a_en": "Yes. Playing it counts as leaving your hand — you lose 1 HP and it is placed on top of the draw pile."
       }
     ]

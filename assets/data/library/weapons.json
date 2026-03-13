@@ -132,7 +132,7 @@
       "每回合出牌阶段开始时，你可以摸一张牌。当你使用【杀】对目标角色造成伤害时，你可以选择一张该角色的装备牌，将其转移至你的装备区。"
     ],
     "effect_en": [
-      "At the start of your action phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own equipment zone."
+      "At the start of your Action Phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own equipment zone."
     ],
     "faq": [
       {
@@ -492,7 +492,7 @@
       {
         "q_cn": "是否可以发动【丈八蛇矛】响应【南蛮入侵】或【决斗】？",
         "a_cn": "可以。",
-        "q_en": "Can [Serpent Spear] be used to respond to [Barbarian Invasion] or [Duel]?",
+        "q_en": "Can [Serpent Spear] be used to respond to [Barbarians] or [Duel]?",
         "a_en": "Yes."
       },
       {
@@ -574,7 +574,7 @@
     "effect_en": [
       "Locked: When this card enters your equipment zone, discard all other cards currently in your equipment zone.",
       "Locked: When you use [Kill] targeting a character, their armor is negated; if that character is currently at full health (HP equal to max HP), the [Kill] deals +1 damage.",
-      "Gift: During your action phase, you may give this card face-up to another character; if they already have an equipment card in the same slot, it replaces the existing one."
+      "Gift: During your Action Phase, you may give this card face-up to another character; if they already have an equipment card in the same slot, it replaces the existing one."
     ],
     "faq": [
       {
