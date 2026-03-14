@@ -318,7 +318,7 @@
     ]
   },
   {
-    "id": "Q.LE004",
+    "id": "QLE004",
     "standard_id": "char_zhugeliang",
     "name_cn": "神诸葛亮",
     "name_en": "God Zhuge Liang",
@@ -682,13 +682,13 @@
     "skills": [
       {
         "name_cn": "夺锐",
-        "name_en": "Skill Seizure",
+        "name_en": "Usurp the Edge",
         "description_cn": "当你于出牌阶段内对一名其他角色造成伤害后，你可以废除你的一个装备栏，然后你选择其武将牌上的一个技能（除限定、觉醒、主公、隐匿技外），令其此技能于其下个回合结束之前无效，你于其下个回合结束或其死亡前拥有此技能且不能发动「夺锐」。",
         "description_en": "After dealing damage to a character during your Action Phase, you may destroy one of your equipment slots. Then choose one skill on that character's general card (excluding Limited, Awakening, Lord, and Hidden skills). That skill is disabled until the end of their next turn; you gain that skill until then (or until they die) and cannot use Skill Seizure again during that time."
       },
       {
         "name_cn": "止啼",
-        "name_en": "Intimidation",
+        "name_en": "Cry of the Fallen",
         "description_cn": "锁定技，你攻击范围内已受伤的其他角色的手牌上限-1；当符合下列任意一项时机条件，若你有已废除的装备栏，你选择其中一个装备栏恢复：1.当你因【决斗】效果对你攻击范围内已受伤的其他角色造成伤害时；2.当你与你攻击范围内已受伤的其他角色的拼点结果确定后，若结果为你赢；3.当你受到你攻击范围内已受伤的其他角色对你造成伤害后。",
         "description_en": "Locked: Injured characters within your attack range have their hand card limit -1. Whenever any of the following occurs and you have a destroyed equipment slot, restore one destroyed slot: 1. You deal damage to an injured character in your attack range via [Duel]; 2. You win a showdown against an injured character in your attack range; 3. You take damage from an injured character within your attack range."
       }
@@ -697,7 +697,7 @@
   },
   {
     "id": "LE012",
-    "standard_id": "char_gan_ning",
+    "standard_id": "char_ganning",
     "name_cn": "神甘宁",
     "name_en": "God Gan Ning",
     "gender": "Male",
@@ -710,7 +710,7 @@
     "skills": [
       {
         "name_cn": "魄袭",
-        "name_en": "Soul Raid",
+        "name_en": "Spirit Ambush",
         "description_cn": "出牌阶段限一次，你可以观看一名其他角色的手牌并可以弃置你与其手牌中共计四张不同花色的牌，若如此做，你根据弃置牌中你的牌的数量执行效果：0张，减少1点体力上限；1张，结束出牌阶段且本回合手牌上限-1；3张，回复1点体力；4张，摸四张牌。",
         "description_en": "Once per Action Phase: View a character's hand cards. You may discard a combined total of 4 cards of different suits from yours and theirs. Effect based on how many discarded cards were yours -- 0: reduce your max HP by 1; 1: end Action Phase and hand limit -1 this turn; 3: recover 1 HP; 4: draw 4 cards."
       },
@@ -1032,7 +1032,7 @@
     "skills": [
       {
         "name_cn": "榻谟",
-        "name_en": "Longbed Strategy",
+        "name_en": "Couch Counsel",
         "description_cn": "（身份场）游戏开始时，你可以重新分配除主公外每名角色的座次。（斗地主）游戏开始时，你可以重新分配三号位以外的角色的座次。",
         "description_en": "(Identity mode) At game start, you may reassign seating positions for all characters except the Lord. (Landlord mode) You may reassign seating for all characters except seat 3."
       },
@@ -1066,7 +1066,7 @@
     "skills": [
       {
         "name_cn": "驭衡",
-        "name_en": "Balance of Power",
+        "name_en": "Rein and Balance",
         "description_cn": "锁定技，回合开始时，你弃置任意张花色不同的牌，随机获得等量吴势力武将的技能。回合结束时，你失去以此法获得的技能，摸等量张牌。",
         "description_en": "Locked: At the start of your turn, discard any number of cards of different suits and randomly gain an equal number of Wu-faction generals' skills. At the end of your turn, lose those skills and draw that many cards."
       },
@@ -1198,7 +1198,7 @@
       },
       {
         "name_cn": "冯河",
-        "name_en": "Ford Crossing",
+        "name_en": "Reckless Crossing",
         "description_cn": "锁定技，你的手牌数上限等于已损失体力值。当你受到其他角色造成的伤害时，若你有手牌且体力上限大于1，则防止本次伤害，然后减少1点体力值上限并将1张手牌交给一名其他角色，然后若你拥有技能「英霸」，令伤害来源获得1个「平定」标记。",
         "description_en": "Locked: Your hand card limit equals your lost HP. When another character deals damage to you, if you have hand cards and your max HP is greater than 1, prevent the damage, reduce your max HP by 1, give 1 hand card to a character, and if you have Heroic Dominance, give the damage source 1 Pacify token."
       }
@@ -1232,7 +1232,7 @@
       },
       {
         "name_cn": "神著",
-        "name_en": "Divine Record",
+        "name_en": "Divine Annals",
         "description_cn": "锁定技，当你使用非转化且非虚拟的【杀】结算结束后，你选择一項：1.摸一张牌，然后若此时是你的出牌阶段，你本阶段使用【杀】的次数上限+1；2.摸三张牌，然后你本回合不能再使用【杀】。",
         "description_en": "Locked: After a non-converted, non-virtual [Kill] you use finishes resolving, choose: 1. Draw 1 card; if it is currently your Action Phase, your [Kill] frequency limit +1 this phase; 2. Draw 3 cards, then you cannot use [Kill] again this turn."
       }
@@ -1254,7 +1254,7 @@
     "skills": [
       {
         "name_cn": "狩骊",
-        "name_en": "Mount Hunt",
+        "name_en": "Steed Hunt",
         "description_cn": "锁定技，游戏开始时，从下家开始所有角色随机使用牌堆中的一张坐骑。你可将场上的一张进攻马当【杀】（不计入次数）、防御马当【闪】使用或打出，以此法失去坐骑的角色本回合非锁定技失效，你与其本回合受到的伤害+1且改为雷电伤害。",
         "description_en": "Locked: At the start of the game, each character beginning with your next-seat neighbor randomly equips one mount from the deck. You may treat one Attack Horse on the field as a [Kill] (not counting toward frequency) or one Defense Horse as a [Dodge] to use or play. A character who loses their mount this way has all non-Locked skills disabled for this turn, and all damage you and that character take this turn is +1 and becomes Thunder damage."
       },
@@ -1282,7 +1282,7 @@
     "skills": [
       {
         "name_cn": "争擎",
-        "name_en": "Compete for Glory",
+        "name_en": "Contest of Pillars",
         "description_cn": "锁定技，每轮结束时，你令所有角色各弃其所有「擎」，然后本轮於一回合内造成伤害值最多的一名角色（多名角色中若包含你，则选择你，否则随机选择其中一名）获得X枚「擎」并与你各摸一张牌（X为其該回合造成的伤害值）。若为你获得「擎」且为获得数量最多的一次，你改为摸X张牌（至多摸五张）。",
         "description_en": "Locked: At the end of each round, all characters discard all their Pillar tokens. The character who dealt the most damage in a single turn this round (if tied and you are among them choose yourself, otherwise random) gains X Pillar tokens and both draw 1 card (X = damage dealt that turn). If you gain Pillar tokens and it is the highest count gained this way, instead draw X cards (max 5)."
       },
@@ -1310,7 +1310,7 @@
     "skills": [
       {
         "name_cn": "神裁",
-        "name_en": "Divine Judgment",
+        "name_en": "Divine Tribunal",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色进行判定且你获得判定牌。若判定牌包含以下内容，其获得（已有标記则改为修改）对应标記：体力：“笞”标記，每次受到伤害后失去等量体力；武器：“杖”标记，无法响应【杀】；打出：“徒”标记，以此法外失去手牌后随机弃置一张手牌；距离：“流”标记，结束阶段将武将牌翻面；若判定牌不包含以上内容，該角色获得一个“死”标記且手牌上限減少其身上“死”标記个数，然后你获得其区域内一张牌。“死”标記个数大於场上存活人数的角色回合结束时，其直接死亡。",
         "description_en": "Once per Action Phase: Choose another character to make a judgment; you gain the judgment card. Based on the card's face information, they gain (or modify) a corresponding token: HP value related — Flog token: lose HP equal to damage received each time; Weapon related — Rod token: cannot respond to [Kill]; Play related — Bondsman token: randomly discard 1 hand card each time a hand card is lost other than this way; Distance related — Exile token: flip general card at End Phase. If none of the above apply, they gain 1 Death token and their hand limit decreases by their Death token count; you take 1 card from their area. A character whose Death token count exceeds the number of survivors dies at the end of their turn."
       },
@@ -1472,6 +1472,46 @@
     "faq": []
   },
   {
+    "id": "LE030_v1",
+    "standard_id": "char_jiangwei",
+    "name_cn": "神姜维",
+    "name_en": "God Jiang Wei",
+    "gender": "Male",
+    "faction": "God",
+    "health": 4,
+    "power_index": 4.5,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "God",
+    "skills": [
+      {
+        "name_cn": "星魂",
+        "name_en": "Astral Soul",
+        "description_cn": "出牌阶段限一次,你可以观看牌堆顶五张牌,用任 意张手牌交换其中等量的牌,并将这些牌以任意顺 序置于牌堆顶,然后令一名其他角色展示你手牌与 牌堆顶共五张牌,你对其依次使用其中的【杀】。",
+        "description_en": "Once per Action Phase: Look at the top 5 cards of the Draw Pile. Exchange any number of your hand cards for an equal number among those 5, then arrange all 5 in any order and return them to the top of the Draw Pile. Then choose another character to reveal the top 5 cards of the Draw Pile combined with your hand (5 total); use each [Kill] among them against that character in sequence."
+      },
+      {
+        "name_cn": "天涛",
+        "name_en": "Celestial Tide",
+        "description_cn": "锁定技,结束阶段,你选择一个区域并弃置其中 所有牌,然后依次弃置任意名其他角色相同区域 各一张牌,因此弃置牌且未弃置【杀】的角色失 去点体力。",
+        "description_en": "Locked: During your End Phase, choose a zone. Discard all cards in that zone, then in sequence discard one card from the same zone of each other character. Any character who discarded cards this way but did not discard a [Kill] loses 1 HP."
+      },
+      {
+        "name_cn": "神霈",
+        "name_en": "Divine Deluge",
+        "description_cn": "限定技,当你进入濒死状态时,你可以回复点体 力(为你本局进入濒死状态的次数),并对一名 角色造成等量的雷电伤害,然后获得“回天”。",
+        "description_en": "Limited: When you enter the Verge of Death State, you may recover X HP (X = the number of times you have entered the Verge of Death State this game) and deal X lightning damage to one character. Then gain [Return of Heaven]."
+      },
+      {
+        "name_cn": "回天",
+        "name_en": "Return of Heaven",
+        "description_cn": "一名体力值大于你的角色的回合结束时,你可以 摸一张牌并执行一个额外的回合。每轮开始时, 若你发动过此技能,你死亡。",
+        "description_en": "At the end of a character's turn whose HP Value is greater than yours, you may draw 1 card and take an additional turn. At the start of each round, if you have activated this skill, you die."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "LE031",
     "standard_id": "char_huangzhong",
     "name_cn": "神黄忠",
@@ -1596,7 +1636,7 @@
     "faq": []
   },
   {
-    "id": "Q.LE035",
+    "id": "QLE035",
     "standard_id": "char_pangtong",
     "name_cn": "神庞统",
     "name_en": "God Pang Tong",
@@ -1838,8 +1878,8 @@
   {
     "id": "LE007_Beta",
     "standard_id": "char_zhaoyun",
-    "name_cn": "高达一号",
-    "name_en": "Zilong",
+    "name_cn": "神赵云",
+    "name_en": "God Zhao Yun",
     "gender": "Male",
     "faction": "God",
     "health": 1,
@@ -1870,7 +1910,7 @@
     "faq": []
   },
   {
-    "id": "Q.LE006",
+    "id": "QLE006",
     "standard_id": "char_lvbu",
     "name_cn": "神吕布",
     "name_en": "God Lu Bu",
@@ -1932,7 +1972,7 @@
     "faq": []
   },
   {
-    "id": "Q.LE018",
+    "id": "QLE018",
     "standard_id": "char_sunquan",
     "name_cn": "神孙权",
     "name_en": "God Sun Quan",
@@ -2044,13 +2084,13 @@
     "skills": [
       {
         "name_cn": "夺锐",
-        "name_en": "Skill Seizure",
+        "name_en": "Usurp the Edge",
         "description_cn": "当你于出牌阶段内对一名其他角色造成伤害后，你可以废除你的一个装备栏，然后你选择其武将牌上的一个技能（除限定、觉醒、主公、隐匿技外），令其此技能于其下个回合结束之前无效，你于其下个回合结束或其死亡前拥有此技能且不能发动「夺锐」。",
         "description_en": "After dealing damage to a character during your Action Phase, you may destroy one of your equipment slots. Then choose one skill on that character's general card (excluding Limited, Awakening, Lord, and Hidden skills). That skill is disabled until the end of their next turn; you gain that skill until then (or until they die) and cannot use Skill Seizure again during that time."
       },
       {
         "name_cn": "止啼v1",
-        "name_en": "Intimidation v1",
+        "name_en": "Cry of the Fallen v1",
         "description_cn": "锁定技，你攻击范围内已受伤的角色手牌上限-1；当你和这些角色拼点或【决斗】你赢时，你恢复一个装备栏。当你受到伤害后，若来源在你的攻击范围内且已受伤，你恢复一个装备栏。",
         "description_en": "Locked: Injured characters within your attack range have their hand limit -1. When you win a showdown against or defeat an injured character in your attack range in a [Duel], restore 1 equipment slot. After you take damage from an injured character within your attack range, restore 1 equipment slot."
       }
@@ -2072,49 +2112,15 @@
     "skills": [
       {
         "name_cn": "夺锐v1",
-        "name_en": "Skill Seizure v1",
+        "name_en": "Usurp the Edge v1",
         "description_cn": "当你于出牌阶段对其他角色造成伤害后,若其技能未因本技能而失效,你可以令其一个技能于下回合结束前失效,若如此做,你结束出牌阶段。",
         "description_en": "After you deal damage to a character during your Action Phase, if their skills have not already been disabled by this skill, you may disable one of their skills until the end of their next turn. If you do, end your Action Phase."
       },
       {
         "name_cn": "止啼v2",
-        "name_en": "Intimidation v2",
+        "name_en": "Cry of the Fallen v2",
         "description_cn": "锁定技, 攻击范围内已受伤角色的手牌上限-1。若已受伤角色数不小于：1.你的手牌上限+1; 3.你摸牌阶段摸牌数+1;5.结束阶段,你废除一名其他角色随机一个装备栏。",
         "description_en": "Locked: Injured characters within your attack range have their hand limit -1. If the number of injured characters in your attack range is at least: 1 — your hand limit +1; 3 — your Draw Phase draw count +1; 5 — during your End Phase, destroy one random equipment slot of another character."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "LE014_v1",
-    "standard_id": "char_huatuo",
-    "name_cn": "神华佗",
-    "name_en": "God Hua Tuo",
-    "gender": "Male",
-    "faction": "God",
-    "health": 3,
-    "power_index": 4.0,
-    "traits_cn": ["辅助", "控制", "过牌"],
-    "traits_en": ["Support", "Control", "Card Flow"],
-    "expansion": "God",
-    "skills": [
-      {
-        "name_cn": "静域",
-        "name_en": "Stillness Domain",
-        "description_cn": "锁定技，每个技能每轮限一次，当一名角色发动除〖静域〗外的技能时，你摸一张牌。",
-        "description_en": "Locked: Once per skill per round, whenever a character activates a skill other than [Stillness Domain], you draw 1 card."
-      },
-      {
-        "name_cn": "滤心",
-        "name_en": "Filter the Heart",
-        "description_cn": "出牌阶段限一次，你可以交给一名其他角色一张手牌并选择一项：1.令其摸X张牌；2.令其随机弃置X张手牌（X为游戏轮数且至多为5）。然后若其以此法摸到/弃置了与你交给其的牌牌名相同的牌，其下次发动技能时回复/失去1点体力。",
-        "description_en": "Once per Action Phase: Give another character 1 hand card and choose: 1. They draw X cards; 2. They randomly discard X hand cards (X = current round number, max 5). If they drew or discarded a card with the same name as the one you gave, they recover or lose 1 HP when they next activate a skill."
-      },
-      {
-        "name_cn": "寰道",
-        "name_en": "Universal Path",
-        "description_cn": "限定技，出牌阶段，你可以选择一名其他角色，令其复原武将牌，然后其可以获得其同名武将的随机一个不同名技能并选择失去一个其他技能。",
-        "description_en": "Limited: During your Action Phase, choose another character. Their general card is restored to its original state. They may then gain one random skill from a general of the same name that they do not already have, and choose to lose one of their other skills."
       }
     ],
     "faq": []
