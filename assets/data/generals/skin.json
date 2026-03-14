@@ -7,50 +7,50 @@
   },
   {
     "id": "LE018_skin1",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE018",
+    "name_cn": "神孙权·皮肤",
+    "name_en": "God Sun Quan · Alt"
   },
   {
     "id": "LE008_skin1",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE008",
+    "name_cn": "神司马懿·皮肤",
+    "name_en": "God Sima Yi · Alt"
   },
   {
     "id": "LE007_skin1",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE007",
+    "name_cn": "神赵云·皮肤",
+    "name_en": "God Zhao Yun · Alt"
   },
   {
     "id": "LE005_skin2",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE005",
+    "name_cn": "神曹操·皮肤2",
+    "name_en": "God Cao Cao · Alt 2"
   },
   {
     "id": "LE005_skin1",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE005",
+    "name_cn": "神曹操·皮肤",
+    "name_en": "God Cao Cao · Alt"
   },
   {
     "id": "LE002_skin1",
-    "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "base_id": "LE002",
+    "name_cn": "神吕蒙·皮肤",
+    "name_en": "God Lu Meng · Alt"
   },
   {
     "id": "",
     "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "name_cn": "·皮肤",
+    "name_en": " · Alt"
   },
   {
     "id": "",
     "base_id": "",
-    "name_cn": "",
-    "name_en": ""
+    "name_cn": "·皮肤",
+    "name_en": " · Alt"
   }
 ]
