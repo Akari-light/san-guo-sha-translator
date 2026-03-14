@@ -194,7 +194,7 @@
       {
         "name_cn": "罡拳",
         "name_en": "Astral Strike",
-        "description_cn": "若你使用的上一张牌为炁，你可以将一张装备牌当指定相邻角色为目标的火【杀】使用；否则，你可以将一张锦囊牌当【决斗】使用。",
+        "description_cn": "若你使用的上一张牌为炁，你可以将一张装备牌当指定相邻角色为目标的【火杀】使用；否则，你可以将一张锦囊牌当【决斗】使用。",
         "description_en": "If the last card you used was a [Qi] card, you may use an equipment card as a [Fire Kill] targeting an adjacent character; otherwise, you may use a tool card as a [Duel].",
         "skill_type": "active"
       }
