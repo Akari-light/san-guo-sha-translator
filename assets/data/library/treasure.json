@@ -9,7 +9,7 @@
       "出牌阶段限一次, 你可以将一张手牌扣置于你装备区里的【木牛流马】下, 然后你可以将此装备移动到一名其他角色的装备区里; 你可以如手牌般使用或打出【木牛流马】下的牌。"
     ],
     "effect_en": [
-      "Once per play phase, if fewer than five cards are stored under this card, you may place one hand card face-down beneath it. If you do, you may move this card to the equipment zone of another character who has no treasure card there. You may use or play any card stored beneath this card as though it were a hand card."
+      "Once per Action Phase, if fewer than five cards are stored under this card, you may place one hand card face-down beneath it. If you do, you may move this card to the equipment zone of another character who has no treasure card there. You may use or play any card stored beneath this card as though it were a hand card."
     ],
     "faq": [
       {
@@ -59,10 +59,12 @@
     "effect_cn": [
       "锁定技，你于回合内使用基本牌无距离限制且造成的伤害和回复的体力+1；当你于回合外使用或打出基本牌时，你摸一张牌；此牌离开你的装备区后移出游戏。"
     ],
-    "effect_en": [""],
+    "effect_en": [
+      "Locked: During your turn, Basic cards you use have no distance restriction, and the damage they deal and the HP they recover are each increased by 1. When you use or play a Basic card outside of your turn, draw 1 card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": [
       {
-        "q_cn": "【霹雳车】离开装备区后为何被销毁而不是进入弃牌堆？",
+        "q_cn": "【霹靂車】离开装备区后为何被销毁而不是进入弃牌堆？",
         "a_cn": "这是该牌的特殊规则。一旦离开装备区（无论是被弃置、被夺取还是其他原因），牌直接从游戏中移除，不进入弃牌堆。",
         "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the equipment zone?",
         "a_en": "This is a special rule on the card. Regardless of how it leaves the equipment zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
@@ -70,133 +72,185 @@
     ]
   },
   {
-    "id": "",
+    "id": "treasure_siege_engine",
     "name_cn": "大攻車",
-    "name_en": "",
+    "name_en": "Siege Engine",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["出牌阶段开始时，你可以视为使用一张【杀】，此【杀】对目标角色造成伤害后，你弃置其一张牌（每次修改选择一项：1.此【杀】无距离限制；2.此【杀】可多指定一个目标；3.此【杀】对目标角色造成伤害后，你多弃置其一张牌）；此牌离开你的装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "出牌阶段开始时，你可以视为使用一张【杀】，此【杀】对目标角色造成伤害后，你弃置其一张牌（每次修改选择一项：1.此【杀】无距离限制；2.此【杀】可多指定一个目标；3.此【杀】对目标角色造成伤害后，你多弃置其一张牌）；此牌离开你的装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "At the start of your Action Phase, you may be treated as using a [Kill]. When this [Kill] deals damage to the target character, you discard 1 of their cards. Each time you activate this card's effect, choose one upgrade (cumulative): 1. This [Kill] has no distance restriction; 2. This [Kill] may designate one additional target; 3. When this [Kill] deals damage to a target character, discard one additional card from them. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_grain_wagon",
     "name_cn": "四乘糧輿",
-    "name_en": "",
+    "name_en": "Grain Wagon",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "At the end of any character's turn, if your hand card count is less than your HP Value, you may draw 2 cards, then discard this card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_flywheel_war_chariot",
     "name_cn": "飛輪戰輿",
-    "name_en": "",
+    "name_en": "Flywheel War Chariot",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["其他角色的回合结束时，若其本回合使用过非基本牌，你可以令其交给你一张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "其他角色的回合结束时，若其本回合使用过非基本牌，你可以令其交给你一张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "At the end of another character's turn, if they used any non-Basic card this turn, you may have them give you 1 card, then discard this card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_iron_caltrop_chariot",
     "name_cn": "鐵蒺玄輿",
-    "name_en": "",
+    "name_en": "Iron Caltrop Chariot",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["其他角色的回合结束时，若其本回合未造成过伤害，你可以令其弃置两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "其他角色的回合结束时，若其本回合未造成过伤害，你可以令其弃置两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "At the end of another character's turn, if they dealt no damage this turn, you may have them discard 2 cards, then discard this card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "虚妄之冕】",
-    "name_en": "",
+    "id": "treasure_crown_of_delusion",
+    "name_cn": "虚妄之冕",
+    "name_en": "Crown of Delusion",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。"
+    ],
+    "effect_en": [
+      "Locked: During your Draw Phase, draw 2 additional cards. Your Hand Limit is reduced by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "東發紫金冠",
-    "name_en": "",
+    "id": "treasure_lv_bu_war_crown",
+    "name_cn": "束發紫金冠",
+    "name_en": "Lü Bu's War Crown",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["回合开始时，你可以对一名其他角色造成1点伤害。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "回合开始时，你可以对一名其他角色造成1点伤害。"
+    ],
+    "effect_en": [
+      "At the start of your turn, you may deal 1 damage to another character."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_three_strategies",
     "name_cn": "三略",
-    "name_en": "",
+    "name_en": "Three Strategies",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["锁定技，你的攻击范围+1；你的手牌上限+1；你使用【杀】的次数 +1。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "锁定技，你的攻击范围+1；你的手牌上限+1；你使用【杀】的次数 +1。"
+    ],
+    "effect_en": [
+      "Locked: Your Attack Range is increased by 1. Your Hand Limit is increased by 1. Your [Kill] frequency limit is increased by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_oracle_mirror",
     "name_cn": "照骨鏡",
-    "name_en": "",
+    "name_en": "Oracle Mirror",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"
+    ],
+    "effect_en": [
+      "At the end of your Action Phase, you may reveal a Basic card or Non Time-Delay Tool card from your hand, then you are treated as having used another card of the same name and the same sub-category."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_taigong_cipher",
     "name_cn": "太公陰符",
-    "name_en": "",
+    "name_en": "Taigong's Cipher",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["出牌阶段开始时，你可以令一名角色橫置或重置；出牌阶段结束时，你可以重铸一张手牌。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "出牌阶段开始时，你可以令一名角色横置或重置；出牌阶段结束时，你可以重铸一张手牌。"
+    ],
+    "effect_en": [
+      "At the start of your Action Phase, you may place one character's General Card in horizontal position or Reset it. At the end of your Action Phase, you may Reforge 1 hand card."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_celestial_scheme",
     "name_cn": "天機圖",
-    "name_en": "",
+    "name_en": "Celestial Scheme",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["锁定技，此牌置入你的装备区后，你弃置另一张牌；此牌离开你的装备区后，你将手牌摸至5。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "锁定技，此牌置入你的装备区后，你弃置另一张牌；此牌离开你的装备区后，你将手牌摸至5。"
+    ],
+    "effect_en": [
+      "Locked: When this card enters your Equipment Zone, discard 1 other card. When this card leaves your Equipment Zone, draw cards until you have 5 hand cards."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_golden_comb",
     "name_cn": "金梳",
-    "name_en": "",
+    "name_en": "Golden Comb",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["锁定技，出牌阶段结束时，你将手牌摸至手牌上限(至多摸至五张)；此牌离开装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "锁定技，出牌阶段结束时，你将手牌摸至手牌上限(至多摸至五张)；此牌离开装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "Locked: At the end of your Action Phase, draw cards until you reach your Hand Limit (up to a maximum of 5 cards drawn). When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_rhinoceros_comb",
     "name_cn": "犀梳",
-    "name_en": "",
+    "name_en": "Rhinoceros Comb",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["判定阶段开始前，你可以选择一项：1.跳过本回合判定阶段；2.跳过本回合的弃牌阶段；此牌离开装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "判定阶段开始前，你可以选择一项：1.跳过本回合判定阶段；2.跳过本回合的弃牌阶段；此牌离开装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "Before your Judgment Phase begins, choose one: 1. Skip your Judgment Phase this turn; 2. Skip your Discard Phase this turn. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "treasure_jade_comb",
     "name_cn": "瓊梳",
-    "name_en": "",
+    "name_en": "Jade Comb",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
-    "effect_cn": ["当你受到伤害时，你可以弃置等于此伤害值的牌，然后防止此伤害；此牌离开装备区后移出游戏。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "当你受到伤害时，你可以弃置等于此伤害值的牌，然后防止此伤害；此牌离开装备区后移出游戏。"
+    ],
+    "effect_en": [
+      "When you receive damage, you may discard a number of cards equal to the damage value to prevent that damage. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
     "faq": []
   }
 ]
