@@ -117,9 +117,12 @@
     "name_en": "Rainbow Deer",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["锁定技，当你造成属性伤害时，此伤害+1。"
+    "effect_cn": [
+      "你计算与其他角色的距离-1。",
+      "锁定技，当你造成属性伤害时，此伤害+1。"
     ],
     "effect_en": [
+      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking).",
       "Locked: When you deal elemental damage, the damage gets a +1 modifier"
     ],
     "faq": []
@@ -130,9 +133,8 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
-    ],
-    "effect_en": [""],
+    "effect_cn": ["其他角色计算与你的距离+2。"],
+    "effect_en": ["When another player is calculating their range to you, add 2 (only in effect when you are being targeted)."],
     "faq": []
   },
   {
@@ -141,10 +143,18 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
+    "effect_cn": [
+      "你计算与其他角色的距离-1和其他角色计算与你的距离+1。"
     ],
     "effect_en": [""],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "装备了【夢魘赤兔】还能装备其他马吗？",
+        "a_cn": "不可以，一只【夢魘赤兔】抵两匹马",
+        "q_en": "",
+        "a_en": ""
+      }   
+    ]
   },
   {
     "id": "",
@@ -152,9 +162,8 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
-    ],
-    "effect_en": [""],
+    "effect_cn": ["其他角色计算与你的距离-2。"],
+    "effect_en": ["When you calculate the distance to another player, subtract 2 (only in effect when you are attacking)."],
     "faq": []
   },
   {
@@ -163,9 +172,8 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
-    ],
-    "effect_en": [""],
+    "effect_cn": ["其他角色计算与你的距离+2。"],
+    "effect_en": ["When another player is calculating their range to you, add 2 (only in effect when you are being targeted)."],
     "faq": []
   },
   {
@@ -174,20 +182,14 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
+    "effect_cn": [
+      "其他角色计算与你的距离-2。",
+      "出牌阶段，你每使用或打出一张黑色牌时，你可以摸一张牌。回合外，你不能成为普通【杀】的目标。"
     ],
-    "effect_en": [""],
-    "faq": []
-  },
-  {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
-    "category_cn": "坐骑牌",
-    "category_en": "Mount",
-    "effect_cn": [""
+    "effect_en": [
+      "When you calculate the distance to another player, subtract 2 (only in effect when you are attacking).",
+      ""
     ],
-    "effect_en": [""],
     "faq": []
   },
   {
@@ -196,8 +198,7 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
-    ],
+    "effect_cn": ["装备后，回合开始阶段，你可以观看牌堆顶的一张牌，然后选择将其置于牌堆顶或牌堆底。"],
     "effect_en": [""],
     "faq": []
   },
@@ -207,9 +208,14 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
+    "effect_cn": [
+      "其他角色计算与你的距离+1。",
+      "锁定技，你的手牌上限+X，X为你装备区内的牌数。"
     ],
-    "effect_en": [""],
+    "effect_en": [
+      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted).",
+      ""
+    ],
     "faq": []
   },
   {
@@ -218,8 +224,7 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
-    ],
+    "effect_cn": ["装备后，若目标角色的装备区里没有牌。你使用【杀】或【决斗】（你为伤害来源时）造成的伤害+1。"],
     "effect_en": [""],
     "faq": []
   },
@@ -229,7 +234,9 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
+    "effect_cn": [
+      "其他角色计算与你的距离-2。",
+      "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
     ],
     "effect_en": [""],
     "faq": []
@@ -240,9 +247,11 @@
     "name_en": "",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": [""
+    "effect_cn": [
+      "其他角色计算与你的距离-2。",
+      "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
     ],
-    "effect_en": [""],
+    "effect_en": ["锁定技，若你的体力值为1，你视为拥有技能“狂骨”。"],
     "faq": []
   }
 ]
