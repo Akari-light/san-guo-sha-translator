@@ -8,20 +8,34 @@
     "faction": "",
     "health": 6,
     "power_index": 0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "简单"
-    ],
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
-        "name_cn": "谋溃",
+        "name_cn": "试药",
         "name_en": "",
-        "description_cn": "当你使用【杀】指定目标后，你可以选择一项：1.摸一张牌；2.弃置其一张牌。然后若此【杀】被【闪】抵消，其弃置你一张牌。",
+        "description_cn": "每名角色出牌阶段限一次，其可以摸一张牌并令你获得一张【毒】，然后进行判定，若结果为：黑色，你减1点体力上限，其获得一张【毒】；红色，其可以将一张红色牌当【桃】使用。",
         "description_en": ""
-      }
+      },
+      {
+        "name_cn": "佐愈谋溃",
+        "name_en": "",
+        "description_cn": "每回合限一次，当其他角色于回合外回复/失去体力后，你可以加1点体力上限/对其发动一次〖毒医〗。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "毒医",
+        "name_en": "",
+        "description_cn": "每回合每种牌名限一次，你可以将一张【毒】当【杀】、【刮骨疗毒】或【以毒攻毒】使用。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "拒疗",
+        "name_en": "",
+        "description_cn": "锁定技，【毒】对你无效；当其他角色成为你使用的转化牌的目标后，其选择是否减1点体力上限并令此牌对其无效。",
+        "description_en": ""
+      }   
     ],
     "faq": []
   },  
