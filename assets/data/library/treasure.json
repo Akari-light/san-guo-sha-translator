@@ -9,7 +9,7 @@
       "出牌阶段限一次, 你可以将一张手牌扣置于你装备区里的【木牛流马】下, 然后你可以将此装备移动到一名其他角色的装备区里; 你可以如手牌般使用或打出【木牛流马】下的牌。"
     ],
     "effect_en": [
-      "Once per Action Phase, if fewer than five cards are stored under this card, you may place one hand card face-down beneath it. If you do, you may move this card to the equipment zone of another character who has no treasure card there. You may use or play any card stored beneath this card as though it were a hand card."
+      "Once per Action Phase, you may place one hand card face-down beneath [Wooden Ox]. If you do, you may move this card to another character's Equipment Zone. You may use or play any card stored beneath this card as though it were a hand card."
     ],
     "faq": [
       {
@@ -22,13 +22,13 @@
         "q_cn": "一张牌最多可以储存几张牌？",
         "a_cn": "至多5张。每个出牌阶段只能放入1张。",
         "q_en": "How many cards can be stored under [Wooden Ox] at once?",
-        "a_en": "Up to 5 cards. Only 1 card may be placed under it per play phase."
+        "a_en": "Up to 5 cards. Only 1 card may be placed under it per Action Phase."
       },
       {
         "q_cn": "把【木牛流马】传给别人时，储备牌也一起转移吗？",
         "a_cn": "视情况而定。若【木牛流马】是从装备区移动到另一个装备区（如通过本身效果、甘露、巧变等），储备牌随之一并转移。若【木牛流马】进入装备区以外的区域（如被顺手牵羊牵走后进入手牌区，或被过河拆桥弃置），储备牌全部置入弃牌堆。",
         "q_en": "When [Wooden Ox] moves to another character, do stored cards transfer too?",
-        "a_en": "It depends. If [Wooden Ox] moves from one equipment zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the equipment zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the discard pile."
+        "a_en": "It depends. If [Wooden Ox] moves from one Equipment Zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the Equipment Zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the discard pile."
       },
       {
         "q_cn": "没有放入储备牌的情况下，可以移动【木牛流马】吗？",
@@ -64,10 +64,10 @@
     ],
     "faq": [
       {
-        "q_cn": "【霹靂車】离开装备区后为何被销毁而不是进入弃牌堆？",
+        "q_cn": "【霹雳车】离开装备区后为何被销毁而不是进入弃牌堆？",
         "a_cn": "这是该牌的特殊规则。一旦离开装备区（无论是被弃置、被夺取还是其他原因），牌直接从游戏中移除，不进入弃牌堆。",
-        "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the equipment zone?",
-        "a_en": "This is a special rule on the card. Regardless of how it leaves the equipment zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
+        "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the Equipment Zone?",
+        "a_en": "This is a special rule on the card. Regardless of how it leaves the Equipment Zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
       }
     ]
   },
@@ -179,7 +179,7 @@
       "出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"
     ],
     "effect_en": [
-      "At the end of your Action Phase, you may reveal a Basic card or Non Time-Delay Tool card from your hand, then you are treated as having used another card of the same name and the same sub-category."
+      "At the end of your Action Phase, you may reveal a Basic card or Non Time-Delay Tool card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
     ],
     "faq": []
   },
@@ -250,6 +250,63 @@
     ],
     "effect_en": [
       "When you receive damage, you may discard a number of cards equal to the damage value to prevent that damage. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_kongming_lantern",
+    "name_cn": "孔明燈",
+    "name_en": "Kongming Lantern",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "锁定技，当你从装备区失去【孔明灯】时，回复1点体力。任意角色处于濒死状态时，你可以将你装备区的【孔明灯】当【桃】使用"
+    ],
+    "effect_en": [
+      "Locked: When you lose [Kongming Lantern] from your Equipment Zone, recover 1 HP. When any character enters the Verge of Death State, you may use [Kongming Lantern] from your Equipment Zone as a [Peach]."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_hua_tuo_scripture",
+    "name_cn": "青囊書",
+    "name_en": "Hua Tuo's Scripture",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "锁定技，当你失去装备区的【青囊书】时，你回复体力至上限。"
+    ],
+    "effect_en": [
+      "Locked: When you lose [Hua Tuo's Scripture] from your Equipment Zone, recover HP up to your Max HP."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_alchemy_furnace",
+    "name_cn": "熔爐",
+    "name_en": "Alchemy Furnace",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "出牌阶段，你可以弃置一张装备牌摸三张牌。"
+    ],
+    "effect_en": [
+      "During your Action Phase, you may discard 1 Equipment card to draw 3 cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_imperial_seal",
+    "name_cn": "玉璽",
+    "name_en": "Imperial Seal",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "结束阶段开始时，你可以摸一张牌。",
+      "锁定技，当你受到伤害后，将【玉玺】置入弃牌堆。"
+    ],
+    "effect_en": [
+      "At the start of your End Phase, you may draw 1 card. Locked: When you receive damage, place [Imperial Seal] into the Discard Pile."
     ],
     "faq": []
   }

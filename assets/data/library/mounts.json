@@ -123,5 +123,126 @@
       "Locked: When you deal elemental damage, the damage gets a +1 modifier"
     ],
     "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "五色火牛",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "夢魘赤兔",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "奇門虎獸",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "巨牙河馬",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "幻霊戰獅",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "戰鷹",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "玄天雷動",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "蒼狼",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "通天仙鹿",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "雪狼",
+    "name_en": "",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [""
+    ],
+    "effect_en": [""],
+    "faq": []
   }
 ]
