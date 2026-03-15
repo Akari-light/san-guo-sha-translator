@@ -110,5 +110,18 @@
       "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
     ],
     "faq": []
+  },
+  {
+    "id": "mount_rainbow_dear",
+    "name_cn": "七彩神鹿",
+    "name_en": "Rainbow Deer",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": ["锁定技，当你造成属性伤害时，此伤害+1。"
+    ],
+    "effect_en": [
+      "Locked: When you deal elemental damage, the damage gets a +1 modifier"
+    ],
+    "faq": []
   }
 ]

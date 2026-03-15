@@ -49,5 +49,154 @@
         "a_en": "No. Those skills require discarding a card, and stored cards can only be used or played — they cannot be discarded."
       }
     ]
+  },
+  {
+    "id": "treasure_catapult",
+    "name_cn": "霹靂車",
+    "name_en": "Catapult",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": [
+      "锁定技，你于回合内使用基本牌无距离限制且造成的伤害和回复的体力+1；当你于回合外使用或打出基本牌时，你摸一张牌；此牌离开你的装备区后移出游戏。"
+    ],
+    "effect_en": [""],
+    "faq": [
+      {
+        "q_cn": "【霹雳车】离开装备区后为何被销毁而不是进入弃牌堆？",
+        "a_cn": "这是该牌的特殊规则。一旦离开装备区（无论是被弃置、被夺取还是其他原因），牌直接从游戏中移除，不进入弃牌堆。",
+        "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the equipment zone?",
+        "a_en": "This is a special rule on the card. Regardless of how it leaves the equipment zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
+      }
+    ]
+  },
+  {
+    "id": "",
+    "name_cn": "大攻車",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["出牌阶段开始时，你可以视为使用一张【杀】，此【杀】对目标角色造成伤害后，你弃置其一张牌（每次修改选择一项：1.此【杀】无距离限制；2.此【杀】可多指定一个目标；3.此【杀】对目标角色造成伤害后，你多弃置其一张牌）；此牌离开你的装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "四乘糧輿",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["一名角色的回合结束时，若你的手牌数小于体力值，你可以摸两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "飛輪戰輿",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["其他角色的回合结束时，若其本回合使用过非基本牌，你可以令其交给你一张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "鐵蒺玄輿",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["其他角色的回合结束时，若其本回合未造成过伤害，你可以令其弃置两张牌，然后弃置此牌；此牌离开你的装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "虚妄之冕】",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "東發紫金冠",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["回合开始时，你可以对一名其他角色造成1点伤害。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "三略",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["锁定技，你的攻击范围+1；你的手牌上限+1；你使用【杀】的次数 +1。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "照骨鏡",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "太公陰符",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["出牌阶段开始时，你可以令一名角色橫置或重置；出牌阶段结束时，你可以重铸一张手牌。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "天機圖",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["锁定技，此牌置入你的装备区后，你弃置另一张牌；此牌离开你的装备区后，你将手牌摸至5。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "金梳",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["锁定技，出牌阶段结束时，你将手牌摸至手牌上限(至多摸至五张)；此牌离开装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "犀梳",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["判定阶段开始前，你可以选择一项：1.跳过本回合判定阶段；2.跳过本回合的弃牌阶段；此牌离开装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "瓊梳",
+    "name_en": "",
+    "category_cn": "宝物牌",
+    "category_en": "Treasure",
+    "effect_cn": ["当你受到伤害时，你可以弃置等于此伤害值的牌，然后防止此伤害；此牌离开装备区后移出游戏。"],
+    "effect_en": [""],
+    "faq": []
   }
 ]

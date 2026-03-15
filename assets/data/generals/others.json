@@ -2,6 +2,32 @@
   {
     "id": "",
     "standard_id": "",
+    "name_cn": "华雌",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "",
+    "health": 6,
+    "power_index": 0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "谋溃",
+        "name_en": "",
+        "description_cn": "当你使用【杀】指定目标后，你可以选择一项：1.摸一张牌；2.弃置其一张牌。然后若此【杀】被【闪】抵消，其弃置你一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },  
+  {
+    "id": "",
+    "standard_id": "",
     "name_cn": "伏完",
     "name_en": "",
     "gender": "",

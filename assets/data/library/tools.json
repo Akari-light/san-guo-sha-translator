@@ -292,6 +292,189 @@
     "faq": []
   },
   {
+    "id": "",
+    "name_cn": "以毒攻毒",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌阶段，对一名已受伤的角色使用。你观看目标角色的手牌，若你与其手牌中均有【毒】，则你弃置其中一张【毒】并与其各摸两张牌，否则你与其各受到1点无来源伤害。"
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "刮骨疗毒",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      "出牌階段，對一名已受傷的角色使用。該角色回復1點體力，然後可以棄置一張【毒】（防止【毒】的效果）。"
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": [
+      {
+        "q_cn": "可以替代【桃】使用吗",
+        "a_cn": "算是能够在一定程度上替代【桃】。【刮骨疗毒】可以去毒但【桃】不可以",
+        "q_en": "",
+        "a_en": ""
+      }      
+    ]
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-time delay",
+    "effect_cn": [
+      ""
+    ],
+    "effect_en": [
+      ""
+    ],
+    "faq": []
+  },
+  {
     "id": "tool_starvation",
     "name_cn": "兵粮寸断",
     "name_en": "Starvation",
