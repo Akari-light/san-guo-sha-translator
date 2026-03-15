@@ -41,7 +41,7 @@
         "q_cn": "装备【雌雄双股剑】并使用黑色【杀】攻击装备了【仁王盾】的目标时，是否可以发动武器技能？",
         "a_cn": "可以使用黑色【杀】进行攻击并发动武器技能，但由于【仁王盾】的效果，此【杀】最终无效。",
         "q_en": "If the attacker uses a black [Kill] against a target equipped with [Vajra Shield], can [Twin Swords] still activate?",
-        "a_en": "Yes, the weapon skill can activate, but the [Kill] itself is negated by [Vajra Shield]."
+        "a_en": "Yes, the weapon skill can activate, but the [Kill] itself is Nullified by [Vajra Shield]."
       },
       {
         "q_cn": "装备【雌雄双股剑】攻击异性角色时，可以选择不发动武器技能吗？",
@@ -132,13 +132,13 @@
       "每回合出牌阶段开始时，你可以摸一张牌。当你使用【杀】对目标角色造成伤害时，你可以选择一张该角色的装备牌，将其转移至你的装备区。"
     ],
     "effect_en": [
-      "At the start of your Action Phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own equipment zone."
+      "At the start of your Action Phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own Equipment Zone."
     ],
     "faq": [
       {
         "q_cn": "【飞龙夺凤】转移装备时，若目标装备区对应位置已有装备，如何处理？",
         "a_cn": "被转移的装备替换你装备区内原有的同类装备，原有装备被弃置。",
-        "q_en": "If your equipment zone already has a card in the same slot as the one you are taking with [Soaring Dragon Blade], what happens?",
+        "q_en": "If your Equipment Zone already has a card in the same slot as the one you are taking with [Soaring Dragon Blade], what happens?",
         "a_en": "The taken equipment replaces your existing card in that slot; your old equipment is discarded."
       },
       {
@@ -206,7 +206,7 @@
       {
         "q_cn": "发动【贯石斧】技能时，可以弃置自己装备区里的牌吗？",
         "a_cn": "可以，但不能弃置【贯石斧】本身。",
-        "q_en": "Can the attacker discard equipment cards from their own equipment zone to activate [Stonepiercer]?",
+        "q_en": "Can the attacker discard equipment cards from their own Equipment Zone to activate [Stonepiercer]?",
         "a_en": "Yes, but [Stonepiercer] itself cannot be discarded."
       },
       {
@@ -258,14 +258,14 @@
       "当你使用【杀】对目标角色造成伤害时，若该角色有牌，你可以防止此伤害，然后依次弃置其两张牌（可从其手牌或装备区中选择）。"
     ],
     "effect_en": [
-      "When your [Kill] would deal damage to a target, if that target has any cards (hand or equipment), you may prevent the damage and instead discard two of their cards one at a time (choosing from their hand or equipment zone)."
+      "When your [Kill] would deal damage to a target, if that target has any cards (hand or equipment), you may prevent the damage and instead discard two of their cards one at a time (choosing from their hand or Equipment Zone)."
     ],
     "faq": [
       {
         "q_cn": "发动【寒冰剑】时，是否可以选择对方装备区的牌？",
         "a_cn": "可以，手牌和装备区的牌均可选择。",
-        "q_en": "When activating [Frost Blade], can the attacker choose equipment cards from the target's equipment zone?",
-        "a_en": "Yes. Cards from both the hand and the equipment zone may be chosen."
+        "q_en": "When activating [Frost Blade], can the attacker choose equipment cards from the target's Equipment Zone?",
+        "a_en": "Yes. Cards from both the hand and the Equipment Zone may be chosen."
       },
       {
         "q_cn": "发动【寒冰剑】后，目标在弃第一张牌后没有牌了，是否还要弃第二张？",
@@ -320,7 +320,7 @@
       "锁定技，当你使用【杀】指定一个目标后，令该目标的防具本次无效。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill] targeting a character, their equipped armor is rendered ineffective for that [Kill]."
+      "Locked: When you use [Kill] targeting a character, that character's equipped armor is Nullified for that [Kill]."
     ],
     "faq": [
       {
@@ -402,7 +402,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["锁定技，与你势力相同的其他角色攻击范围+1。"],
+    "effect_cn": [
+      "锁定技，与你势力相同的其他角色攻击范围+1。"
+    ],
     "effect_en": [
       "Locked: All other characters of the same faction as you gain +1 attack range."
     ],
@@ -428,7 +430,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你可以将两张手牌当【杀】使用或打出。"],
+    "effect_cn": [
+      "你可以将两张手牌当【杀】使用或打出。"
+    ],
     "effect_en": [
       "You may treat any two hand cards as a [Kill] to use or play."
     ],
@@ -436,7 +440,7 @@
       {
         "q_cn": "发动【丈八蛇矛】技能时，可以使用装备区的牌替代手牌吗？",
         "a_cn": "不可以，必须使用手牌。",
-        "q_en": "Can equipment cards from your equipment zone be used in place of hand cards for [Serpent Spear]?",
+        "q_en": "Can equipment cards from your Equipment Zone be used in place of hand cards for [Serpent Spear]?",
         "a_en": "No. Only hand cards may be used."
       },
       {
@@ -478,7 +482,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 1,
-    "effect_cn": ["锁定技，你使用【杀】无次数限制。"],
+    "effect_cn": [
+      "锁定技，你使用【杀】无次数限制。"
+    ],
     "effect_en": [
       "Locked: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
     ],
@@ -504,7 +510,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["当你使用普通【杀】时，你可以将此【杀】改为火【杀】。"],
+    "effect_cn": [
+      "当你使用普通【杀】时，你可以将此【杀】改为火【杀】。"
+    ],
     "effect_en": [
       "When you use a normal [Kill], you may convert it into a fire [Kill]."
     ],
@@ -560,7 +568,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["锁定技，当你使用【杀】指定目标后，你令其横置。"],
+    "effect_cn": [
+      "锁定技，当你使用【杀】指定目标后，你令其横置。"
+    ],
     "effect_en": [
       "Locked: After you use [Kill] and designate a target, place that character's General Card in horizontal position."
     ],
@@ -652,7 +662,7 @@
       "锁定技，你使用【杀】无视目标角色防具，其不能使用或打出手牌直到结算完成。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill], ignore the target character's armor. That character cannot use or play hand cards until the resolution is complete."
+      "Locked: When you use [Kill], Ignore the target character's armor. That character cannot use or play out hand cards until the resolution is complete."
     ],
     "faq": []
   },
@@ -678,8 +688,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["锁定技，你使用的红色【杀】不能被响应。"],
-    "effect_en": ["Locked: Red [Kill] cards you use cannot be responded to."],
+    "effect_cn": [
+      "锁定技，你使用的红色【杀】不能被响应。"
+    ],
+    "effect_en": [
+      "Locked: Red [Kill] cards you use cannot be responded to."
+    ],
     "faq": []
   },
   {
@@ -708,7 +722,7 @@
       "锁定技，你使用【杀】无视目标角色防具；当你使用【杀】对目标角色造成伤害时，若其未受伤，此伤害+1。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill], ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, that damage is increased by 1."
+      "Locked: When you use [Kill], Ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, that damage is increased by 1."
     ],
     "faq": []
   },
@@ -747,7 +761,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你使用的属性【杀】可以视为任意属性。"],
+    "effect_cn": [
+      "你使用的属性【杀】可以视为任意属性。"
+    ],
     "effect_en": [
       "Elemental [Kill] cards you use may be treated as any elemental type."
     ],
@@ -769,36 +785,48 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_divine_ghost_dragon_moonsever",
     "name_cn": "神鬼龍斬月刀",
-    "name_en": "",
+    "name_en": "Divine Ghost Dragon Moonsever",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你的牌均可视为红桃花色。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你的牌均可视为红桃花色。"
+    ],
+    "effect_en": [
+      "All your cards may be treated as having the Hearts suit."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_soul_calming_zither",
     "name_cn": "鎮魂琴",
-    "name_en": "",
+    "name_en": "Soul-Calming Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"
+    ],
+    "effect_en": [
+      "You may use any normal [Kill] as a lightning [Kill]."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_shrine_maiden_bow",
     "name_cn": "姫神弓",
-    "name_en": "",
+    "name_en": "Shrine Maiden Bow",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 5,
-    "effect_cn": ["你使用【杀】对一名角色造成伤害时,你可以获得对方装备区里的一张牌。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你使用【杀】对一名角色造成伤害时,你可以获得对方装备区里的一张牌。"
+    ],
+    "effect_en": [
+      "When your [Kill] deals damage to a character, you may gain one card from their Equipment Zone."
+    ],
     "faq": []
   },
   {
@@ -808,11 +836,15 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你的回合外，每当你使用或打出了一张黑色手牌 (若为使用则在它结算之前)，你可以立即对你攻击范围内的任意一名角色使用一张【杀】。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你的回合外，每当你使用或打出了一张黑色手牌 (若为使用则在它结算之前)，你可以立即对你攻击范围内的任意一名角色使用一张【杀】。"
+    ],
+    "effect_en": [
+      "Outside of your turn, whenever you use or play out a black hand card (if using, before it resolves), you may immediately use a [Kill] against any one character within your Attack Range."
+    ],
     "faq": [
       {
-        "q_cn": "【銀月槍】在自己的回合内可以发动吗？",
+        "q_cn": "【银月槍】在自己的回合内可以发动吗？",
         "a_cn": "不能，只能在自己回合外发动。",
         "q_en": "Can [Moon Spear] be activated during your own turn?",
         "a_en": "No. It can only activate outside of your own turn."
@@ -820,322 +852,427 @@
     ]
   },
   {
-    "id": "",
+    "id": "weapon_dragon_chant_zither",
     "name_cn": "吟龍琴",
-    "name_en": "",
+    "name_en": "Dragon Chant Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["当你使用非延时类锦囊对其他玩家造成伤害时，你可立即摸1张手牌。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "当你使用非延时类锦囊对其他玩家造成伤害时，你可立即摸1张手牌。"
+    ],
+    "effect_en": [
+      "When you deal damage to another character by using a Non Time-Delay Tool card, you may immediately draw 1 card."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_demon_dragon_moonsever",
     "name_cn": "魔龍斬月",
-    "name_en": "",
+    "name_en": "Demon Dragon Moonsever",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["锁定技，你的一张【杀】最多可以制定2个目标"],
-    "effect_en": [""],
+    "effect_cn": [
+      "锁定技，你的一张【杀】最多可以制定2个目标"
+    ],
+    "effect_en": [
+      "Locked: Your [Kill] may designate up to 2 targets."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_yitian_sword",
     "name_cn": "倚天劍",
-    "name_en": "",
+    "name_en": "Yitian Sword",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["任何时候,你每打出一张【杀】，则立即摸1张手牌。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "任何时候,你每打出一张【杀】，则立即摸1张手牌。"
+    ],
+    "effect_en": [
+      "At any time, whenever you play out a [Kill], immediately draw 1 card."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_savage_bone_demon_zither",
     "name_cn": "蠻骨魔琴",
-    "name_en": "",
+    "name_en": "Savage Bone Demon Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你可将黑桃花色的【杀】当做【单挑】使用。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你可将黑桃花色的【杀】当做【单挑】使用。"
+    ],
+    "effect_en": [
+      "You may use a Spades [Kill] as a [Duel]."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_white_feather_fan",
     "name_cn": "白羽扇",
-    "name_en": "",
+    "name_en": "White Feather Fan",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 1,
-    "effect_cn": ["在任意角色的判定牌生效前,你可以打出一张手牌代替之。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "在任意角色的判定牌生效前,你可以打出一张手牌代替之。"
+    ],
+    "effect_en": [
+      "Before any character's Judgment Card takes effect, you may play out a hand card to substitute for it."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_sky_splitting_axe",
     "name_cn": "開天斧",
-    "name_en": "",
+    "name_en": "Sky-Splitting Axe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["当你打出的【杀】被闪避后，可再丢弃一张【杀】使目标受到1点伤害。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "当你打出的【杀】被闪避后，可再丢弃一张【杀】使目标受到1点伤害。"
+    ],
+    "effect_en": [
+      "When a [Kill] you play out is negated by a [Dodge], you may discard a [Kill] to deal 1 damage to that target."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_demon_breaker_blade",
     "name_cn": "破魔刀",
-    "name_en": "",
+    "name_en": "Demon Breaker Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["你所指定【决斗】的角色均不能出【杀】抵御。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你所指定【决斗】的角色均不能出【杀】抵御。"
+    ],
+    "effect_en": [
+      "Characters you target with [Duel] cannot play out [Kill] to respond."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_dancing_fan",
     "name_cn": "舞踏扇",
-    "name_en": "",
+    "name_en": "Dancing Fan",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你可将【闪】当做雷属性的【杀】使用。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你可将【闪】当做雷属性的【杀】使用。"
+    ],
+    "effect_en": [
+      "You may use a [Dodge] as a thunder [Kill]."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_heavy_crossbow",
     "name_cn": "重弩",
-    "name_en": "",
+    "name_en": "Heavy Crossbow",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你所打出红色的【杀】均需要2张【闪】才能闪避。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你所打出红色的【杀】均需要2张【闪】才能闪避。"
+    ],
+    "effect_en": [
+      "Red [Kill] cards you use require the target to play out 2 [Dodge] cards to negate them."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "weapon_bloodthirst_war_axe",
     "name_cn": "嗜血戰斧",
-    "name_en": "",
+    "name_en": "Bloodthirst War Axe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"
+    ],
+    "effect_en": [
+      "When you play out a [Kill], you may discard 2 hand cards to increase that [Kill]'s damage by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_meteorite_mace",
+    "name_cn": "流星槌",
+    "name_en": "Meteorite Mace",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "回合内，当你使用第六张牌时，进行一次判定：红色，你令一名已阵亡角色回复到初始状态；黑色，你令一名角色立刻阵亡。",
+      "你的手牌上限翻1倍。"
+    ],
+    "effect_en": [
+      "During your turn, when you use your sixth card, perform a Judgment: if Red, restore one eliminated character to their starting state; if Black, one character is immediately eliminated.",
+      "Your Hand Limit is doubled."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_xuanyuan_sword",
+    "name_cn": "軒轅劍",
+    "name_en": "Xuanyuan Sword",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "锁定技，你的打出的红色牌，目标角色不能出牌响应。失去此武器后，你额外增加一倍的体力上限值。"
+    ],
+    "effect_en": [
+      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_fly_whisk",
+    "name_cn": "拂塵",
+    "name_en": "Fly-Whisk",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 4,
+    "effect_cn": [
+      "锁定技，你的打出的红色牌，目标角色不能出牌响应。失去此武器后，你额外增加一倍的体力上限值。"
+    ],
+    "effect_en": [
+      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_scythe",
+    "name_cn": "烈刃飛刀",
+    "name_en": "Scythe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "结束阶段开始时，你可以弃置装备区里的【烈刃飞刀】然后展示你攻击范围内所有其他角色的一张手牌，选择其中一张，你获得之，然后将其余的牌置入弃牌堆。"
+    ],
+    "effect_en": [
+      "At the start of your End Phase, you may discard [Scythe] from your Equipment Zone — then each other character within your Attack Range reveals 1 hand card. Choose one of those cards to gain; place the remaining revealed cards into the Discard Pile."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_heroines_blade",
+    "name_cn": "巾幗之刃",
+    "name_en": "Heroine's Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "你使用【杀】指定异性为目标时，你可以选择一项：此【杀】不可被抵消；此【杀】造成的伤害+1。"
+    ],
+    "effect_en": [
+      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be negated; 2. The damage dealt by this [Kill] is increased by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_shuriken",
+    "name_cn": "蝴蝶翼",
+    "name_en": "Shuriken",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 1,
+    "effect_cn": [
+      "锁定技，每当你使用【杀】未造成伤害，你对距离1另一名角色造成1点伤害。"
+    ],
+    "effect_en": [
+      "Locked: Whenever a [Kill] you use deals no damage, deal 1 damage to another character at distance 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_great_ring_blade",
+    "name_cn": "大環刀",
+    "name_en": "Great Ring Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "锁定技，每当你使用【杀】造成伤害时，若目标角色未受伤，你令伤害+1。"
+    ],
+    "effect_en": [
+      "Locked: Whenever your [Kill] deals damage to a target character, if that character is Unwounded, that damage is increased by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_poison_blade",
+    "name_cn": "毒刃",
+    "name_en": "Poison Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "锁定技，使用【杀】造成伤害后，目标扣减1点体力上限。"
+    ],
+    "effect_en": [
+      "Locked: After your [Kill] deals damage, the target character's Max HP is reduced by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_divine_hawk_mask",
+    "name_cn": "神鷹假面",
+    "name_en": "Divine Hawk Mask",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "回合内，当你使用第六张牌时，进行一次判定：红色，你令一名已阵亡角色回复到初始状态；黑色，你令一名角色立刻阵亡。",
+      "你的手牌上限翻1倍。"
+    ],
+    "effect_en": [
+      "During your turn, when you use your sixth card, perform a Judgment: if Red, restore one eliminated character to their starting state; if Black, one character is immediately eliminated.",
+      "Your Hand Limit is doubled."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_landmine",
+    "name_cn": "地雷",
+    "name_en": "Landmine",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "锁定技，回合内，当你打出第一张点数为奇数的【杀】时，可以摸7张牌。失去此装备后，你回复体力至上限值。"
+    ],
+    "effect_en": [
+      "Locked: During your turn, when you first play out a [Kill] with an odd rank, you may draw 7 cards. When you lose this weapon, you recover HP up to your Max HP."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_nine_section_whip",
+    "name_cn": "九節鞭",
+    "name_en": "Nine-Section Whip",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 4,
+    "effect_cn": [
+      "锁定技，你的结束阶段，对场上装备区内有牌的角色，依次造成2点火属性的伤害。并且你免疫火属性的伤害。"
+    ],
+    "effect_en": [
+      "Locked: During your End Phase, deal 2 fire damage in sequence to each character on the field who has cards in their Equipment Zone. You are immune to fire damage."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_moonhiding_mirror",
+    "name_cn": "閉月鏡",
+    "name_en": "Moonhiding Mirror",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "你的打出的【杀】可定义为禁技杀，并且额外指定多一名目标角色。 失去此牌后，你对一名角色造成3点体力伤害。"
+    ],
+    "effect_en": [
+      "[Kill] cards you play out may be designated as Skill-Suppressing [Kill]s, and may designate one additional target. When you lose this weapon, deal 3 damage to one character."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_talisman_of_peace",
+    "name_cn": "太平符",
+    "name_en": "Talisman of Peace",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "有判定牌生效前，你可以拿一张牌替换之。 当失去此牌后，你可弃置一名角色区域内的所有牌，并将其体力值改为一点。"
+    ],
+    "effect_en": [
+      "Before any Judgment Card takes effect, you may replace it with a card from your hand (you keep the original Judgment Card). When you lose this weapon, you may discard all cards in one character's zone and set their HP Value to 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_chain_ring_armor",
+    "name_cn": "環鎖鎧",
+    "name_en": "Chain Ring Armor",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 5,
+    "effect_cn": [
+      "锁定技，你的【杀】无视目标角色的防具。若你手牌大于或血量小于目标角色，此【杀】不能被响应，且伤害+1。"
+    ],
+    "effect_en": [
+      "Locked: Your [Kill] Ignores the target character's armor. If your hand card count is greater than, or your HP Value is less than, the target's, that [Kill] cannot be responded to and its damage is increased by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_bright_silver_spear",
+    "name_cn": "亮銀槍",
+    "name_en": "Bright Silver Spear",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 3,
+    "effect_cn": [
+      "锁定技，你打出的红色牌，目标角色不能做出响应。失去此武器后，你额外增加一倍的体力上限值。"
+    ],
+    "effect_en": [
+      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_torture_whip",
+    "name_cn": "酷刑鞭",
+    "name_en": "Torture Whip",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 4,
+    "effect_cn": [
+      "当你对目标角色造成伤害后，可以获得其区域内的所有牌。失去此牌后，你对一名角色造成X点伤害，X为为你已受伤的体力值。"
+    ],
+    "effect_en": [
+      "After you deal damage to a target character, you may gain all cards in their zone. When you lose this weapon, deal X damage to one character, where X equals your HP Lost."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_sword_of_heaven",
+    "name_cn": "神倚天劍",
+    "name_en": "Sword of Heaven",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 4,
+    "effect_cn": [
+      "锁定技，其它角色的准备阶段，若已受伤，需弃置2张牌，或受到1点普通伤害。直到回合结束，不能保留黑色手牌。"
+    ],
+    "effect_en": [
+      "Locked: During other characters' Starting Phase, if they are Wounded, they must discard 2 cards or receive 1 normal damage. Until the end of their turn, they cannot retain black hand cards."
+    ],
     "faq": []
   },
   {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
+    "id": "weapon_poison_blowdart",
+    "name_cn": "毒吹矢",
+    "name_en": "Poison Blowdart",
     "category_cn": "武器牌",
     "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
-    "faq": []
-  },
-  {
-    "id": "",
-    "name_cn": "",
-    "name_en": "",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 0,
-    "effect_cn": [""],
-    "effect_en": [""],
+    "range": 2,
+    "effect_cn": [
+      "锁定技，你对目标角色打出的【杀】视为带有“毒”的杀。造成伤害后，该角色进入“中毒”状态。"
+    ],
+    "effect_en": [
+      "Locked: [Kill] cards you play out against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
+    ],
     "faq": []
   }
 ]
