@@ -15,7 +15,7 @@
       {
         "q_cn": "若判定结果为黑色，我还能从手牌打出【闪】吗？",
         "a_cn": "可以。判定失败不影响你正常打出【闪】。",
-        "q_en": "If the Judgment fails (black result), can I still play a [Dodge] from my hand?",
+        "q_en": "If the Judgment result is black, can I still play a [Dodge] from my hand?",
         "a_en": "Yes. A failed Judgment does not prevent you from playing a [Dodge] from your hand normally."
       },
       {
@@ -48,7 +48,7 @@
       "锁定技，当你受到伤害时，若伤害值大于1，则你将伤害值改为1；当你失去装备区里的【白银狮子】后，你回复1点体力。"
     ],
     "effect_en": [
-      "Locked: When you receive damage, if the damage value exceeds 1, reduce it to 1. When [Silver Lion Helmet] leaves your equipment zone, you recover 1 HP."
+      "Locked: When you receive damage, if the damage value exceeds 1, reduce it to 1. When you lose [Silver Lion Helmet] from your Equipment Zone, you recover 1 HP."
     ],
     "faq": [
       {
@@ -67,52 +67,13 @@
         "q_cn": "将新防具装入装备区替换【白银狮子】时，是否触发回复体力的效果？",
         "a_cn": "是的。【白银狮子】因被替换而离开装备区，触发回复1点体力的效果。",
         "q_en": "If [Silver Lion Helmet] is replaced by equipping a new armor, does the HP recovery trigger?",
-        "a_en": "Yes. [Silver Lion Helmet] leaving the equipment zone via replacement triggers the 1 HP recovery."
+        "a_en": "Yes. When [Silver Lion Helmet] is replaced by a new armor, you lose it from your Equipment Zone, which triggers the 1 HP recovery."
       },
       {
         "q_cn": "【白银狮子】对武将技能造成的伤害也有效吗？",
         "a_cn": "有效。【白银狮子】对所有来源的伤害生效，只要伤害值大于1均减为1，不限于【杀】造成的伤害。",
         "q_en": "Does [Silver Lion Helmet] apply to damage from general skills (not from [Kill])?",
         "a_en": "Yes. [Silver Lion Helmet] applies to all sources of damage. Any damage exceeding 1, regardless of source, is reduced to 1."
-      }
-    ]
-  },
-  {
-    "id": "armor_heart_guard_mirror",
-    "name_cn": "护心镜",
-    "name_en": "Heart Guard Mirror",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "当你受到伤害时，若伤害值大于或等于你当前的体力值，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
-    ],
-    "effect_en": [
-      "When you receive damage, if the damage value is greater than or equal to your current HP, you may place [Heart Guard Mirror] from your equipment zone into the discard pile to prevent that damage."
-    ],
-    "faq": [
-      {
-        "q_cn": "【护心镜】是锁定技吗？",
-        "a_cn": "不是。【护心镜】是可选效果，你可以选择不发动。",
-        "q_en": "Is [Heart Guard Mirror] a Locked skill?",
-        "a_en": "No. It is optional; you may choose not to activate it."
-      },
-      {
-        "q_cn": "体力值为1时受到1点伤害，是否可以发动【护心镜】？",
-        "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
-        "q_en": "If my current HP is 1 and I receive 1 damage, can [Heart Guard Mirror] activate?",
-        "a_en": "Yes. 1 damage equals your current HP of 1, which satisfies the trigger condition."
-      },
-      {
-        "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
-        "a_cn": "不算。【护心镜】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
-        "q_en": "When [Heart Guard Mirror] is placed into the discard pile upon activation, does it count as being 'discarded'?",
-        "a_en": "No. It is placed into the discard pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
-      },
-      {
-        "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
-        "a_cn": "可以。只要伤害值大于或等于当前体力值，无论伤害来源均可发动。",
-        "q_en": "Can [Heart Guard Mirror] prevent damage from general skills?",
-        "a_en": "Yes. As long as the damage meets the condition (greater than or equal to current HP), it can be activated regardless of the damage source."
       }
     ]
   },
@@ -126,32 +87,32 @@
       "锁定技，当你成为【火攻】或火【杀】的目标时，取消之；若你是小势力角色，你不会被横置。"
     ],
     "effect_en": [
-      "Locked: When you become the target of [Incendiary], or a fire [Kill], cancel that targeting. If you are a minor-faction character, your general card cannot be tapped (horizontally rotated)."
+      "Locked: When you become the target of [Incendiary] or a fire [Kill], you are Removed as the target. If you are a minor-faction character, your General Card cannot be placed in horizontal position."
     ],
     "faq": [
       {
         "q_cn": "【朱雀羽扇】将普通【杀】转化为火【杀】后，【明光铠】能取消此目标吗？",
         "a_cn": "可以。只要【杀】的属性在结算时为火属性，【明光铠】均可取消目标。",
-        "q_en": "If [Vermilion Bird Fan] converts a normal [Kill] into a fire [Kill], can [Radiant Plate] cancel the targeting?",
-        "a_en": "Yes. As long as the [Kill] has the fire property at the time of resolution, [Radiant Plate] can cancel the targeting."
+        "q_en": "If [Vermilion Bird Fan] converts a normal [Kill] into a fire [Kill], can [Radiant Plate] remove you as a target?",
+        "a_en": "Yes. As long as the [Kill] has the fire property at the time of resolution, [Radiant Plate] can remove you as a target."
       },
       {
         "q_cn": "装备【青釭剑】的攻击者使用火【杀】时，【明光铠】还能生效吗？",
         "a_cn": "可以。【明光铠】的取消效果发生在成为目标时，早于【青釭剑】令防具无效的结算时机，因此【明光铠】仍然有效。",
         "q_en": "If the attacker is equipped with [Qing Gang Sword] and uses a fire [Kill], can [Radiant Plate] still activate?",
-        "a_en": "Yes. [Radiant Plate]'s cancellation occurs at the moment of becoming a target, which is earlier in the resolution order than [Qing Gang Sword]'s armor-negation effect. Therefore [Radiant Plate] still applies."
+        "a_en": "Yes. [Radiant Plate]'s target removal occurs at the moment of becoming a target, which is earlier in the resolution order than [Qing Gang Sword]'s armor-negation effect. Therefore [Radiant Plate] still applies."
       },
       {
         "q_cn": "【明光铠】能防止武将技能造成的火焰伤害吗？",
         "a_cn": "不能。【明光铠】只取消特定卡牌（【火攻】、火【杀】）的目标，不防止武将技能直接造成的火焰伤害。",
         "q_en": "Does [Radiant Plate] protect against fire damage dealt directly by general skills?",
-        "a_en": "No. [Radiant Plate] only cancels targeting from [Incendiary] and fire [Kill]. It does not prevent fire damage dealt directly by general skills."
+        "a_en": "No. [Radiant Plate] only removes you as a target of [Incendiary] and fire [Kill]. It does not prevent fire damage dealt directly by general skills."
       },
       {
         "q_cn": "小势力角色的「不被横置」效果在任何时候都生效吗？",
         "a_cn": "是的。只要装备了【明光铠】且为小势力角色，一切令其横置的效果均无效。",
-        "q_en": "Does the 'cannot be tapped' effect for minor-faction characters apply at all times while equipped?",
-        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would tap their general card are Nullified."
+        "q_en": "Does the 'cannot be placed in horizontal position' effect for minor-faction characters apply at all times while equipped?",
+        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would place their General Card in horizontal position are Nullified."
       }
     ]
   },
@@ -224,6 +185,129 @@
         "a_cn": "是的。连环传导的伤害若为火焰属性，装备【藤甲】的角色受到的伤害+1。",
         "q_en": "Does fire damage transmitted via [Iron Shackles] chain also trigger [Rattan Armour]'s +1 penalty?",
         "a_en": "Yes. If chain-transmitted damage has the fire property, a character equipped with [Rattan Armour] takes +1 damage from it."
+      }
+    ]
+  },
+  {
+    "id": "armor_mystical_eight_trigrams",
+    "name_cn": "奇門八卦",
+    "name_en": "Mystical Eight Trigrams",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，【杀】对你无效。"
+    ],
+    "effect_en": [
+      "Locked: [Kill] cards have no effect on you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_black_radiance_armor",
+    "name_cn": "黑光鎧",
+    "name_en": "Black Radiance Armor",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，当你成为【杀】或伤害类锦囊牌、黑色锦囊牌的目标后，若此牌目标数大于1，此牌对你无效。"
+    ],
+    "effect_en": [
+      "Locked: When you become the target of a [Kill], a damage-dealing Tool card, or a black Tool card, if that card has more than one target, that card is Nullified against you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_hundred_blossom_robe",
+    "name_cn": "紅棉百花袍",
+    "name_en": "Hundred Blossom Robe",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，防止你受到的属性伤害。"
+    ],
+    "effect_en": [
+      "Locked: Prevent all elemental damage you receive."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_jade_robe",
+    "name_cn": "國風玉袍",
+    "name_en": "Jade Robe",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，其他角色不能对你使用普通锦囊牌。"
+    ],
+    "effect_en": [
+      "Locked: Other characters cannot target you with Non Time-Delay Tool cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_exquisite_lion_sash",
+    "name_cn": "玲瓏獅蠻帶",
+    "name_en": "Exquisite Lion Sash",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "其他角色使用牌指定你为唯一目标后，你可以进行判定，若结果为红心 ，此牌对你无效。"
+    ],
+    "effect_en": [
+      "After another character uses a card and designates you as the only target, you may perform a Judgment. If the result is Hearts, that card is Nullified against you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_tarnished_silver_armor",
+    "name_cn": "爛銀甲",
+    "name_en": "Tarnished Silver Armor",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "此牌不能被无视，该技能不能被无效：1.你可以将一张手牌当【闪】使用：2.当你受到【杀】造成的伤害时，你弃置装备区里的【烂银甲】。"
+    ],
+    "effect_en": [
+      "This card cannot be ignored and its effects cannot be Nullified: 1. You may use a hand card as a [Dodge]; 2. When you receive damage from a [Kill], discard [Tarnished Silver Armor] from your Equipment Zone."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_sentinel_mirror",
+    "name_cn": "護心鏡",
+    "name_en": "Sentinel Mirror",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "出牌阶段，你可以将手牌中的【護心鏡】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【護心鏡】置入弃牌堆，然后防止此伤害。"
+    ],
+    "effect_en": [
+      "During your Action Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you receive lethal damage or damage exceeding 1, you may remove the [Sentinel Mirror] previously planted into the Discard Pile, then prevent that damage."
+    ],
+    "faq": [
+      {
+        "q_cn": "【護心鏡】是锁定技吗？",
+        "a_cn": "不是。【護心鏡】是可选效果，你可以选择不发动。",
+        "q_en": "Is [Sentinel Mirror] a Locked skill?",
+        "a_en": "No. It is optional; you may choose not to activate it."
+      },
+      {
+        "q_cn": "体力值为1时受到1点伤害，是否可以发动【護心鏡】？",
+        "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
+        "q_en": "If my current HP is 1 and I receive 1 damage, can [Sentinel Mirror] activate?",
+        "a_en": "Yes. When your HP is 1, 1 point of damage would reduce it to 0 — that qualifies as damage that would reduce your HP to 0 or below, so the trigger condition is satisfied."
+      },
+      {
+        "q_cn": "发动【護心鏡】将其置入弃牌堆，是否算作「弃置」？",
+        "a_cn": "不算。【護心鏡】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
+        "q_en": "When [Sentinel Mirror] is placed into the discard pile upon activation, does it count as being 'discarded'?",
+        "a_en": "No. It is placed into the discard pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
+      },
+      {
+        "q_cn": "【護心鏡】可以防止武将技能造成的伤害吗？",
+        "a_cn": "可以。只要伤害会使体力值降至0或以下，或伤害值大于1，无论伤害来源均可发动。",
+        "q_en": "Can [Sentinel Mirror] prevent damage from general skills?",
+        "a_en": "Yes. As long as the damage would reduce your HP to 0 or below, or the damage value exceeds 1, [Sentinel Mirror] can be activated regardless of the damage source."
       }
     ]
   }
