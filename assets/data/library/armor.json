@@ -126,7 +126,7 @@
       "锁定技，黑色的【杀】对你无效。"
     ],
     "effect_en": [
-      "Locked: Black [Kill] cards have no effect on you."
+      "Locked: Black [Kill] cards are Nullified against you."
     ],
     "faq": [
       {
@@ -159,7 +159,7 @@
       "锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "Locked: [Barbarians], [Raining Arrows], and normal [Kill] cards have no effect on you. When you receive fire damage, that damage is increased by 1."
+      "Locked: [Barbarians], [Raining Arrows], and normal [Kill] cards are Nullified against you. When you receive fire damage, that damage is increased by 1."
     ],
     "faq": [
       {
@@ -198,7 +198,7 @@
       "锁定技，【杀】对你无效。"
     ],
     "effect_en": [
-      "Locked: [Kill] cards have no effect on you."
+      "Locked: [Kill] cards are Nullified against you."
     ],
     "faq": []
   },
@@ -240,7 +240,7 @@
       "锁定技，其他角色不能对你使用普通锦囊牌。"
     ],
     "effect_en": [
-      "Locked: Other characters cannot target you with Non Time-Delay Tool cards."
+      "Locked: Other characters cannot use Non Time-Delay Tool cards on you."
     ],
     "faq": []
   },
@@ -265,7 +265,7 @@
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
-      "此牌不能被无视，该技能不能被无效：1.你可以将一张手牌当【闪】使用：2.当你受到【杀】造成的伤害时，你弃置装备区里的【烂银甲】。"
+      "此牌不能被无视，该技能不能被无效：1.你可以将一张手牌当【闪】使用；2.当你受到【杀】造成的伤害时，你弃置装备区里的【烂银甲】。"
     ],
     "effect_en": [
       "This card cannot be ignored and its effects cannot be Nullified: 1. You may use a hand card as a [Dodge]; 2. When you receive damage from a [Kill], discard [Tarnished Silver Armor] from your Equipment Zone."
@@ -279,36 +279,194 @@
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
-      "出牌阶段，你可以将手牌中的【護心鏡】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【護心鏡】置入弃牌堆，然后防止此伤害。"
+      "出牌阶段，你可以将手牌中的【护心镜】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
     ],
     "effect_en": [
-      "During your Action Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you receive lethal damage or damage exceeding 1, you may remove the [Sentinel Mirror] previously planted into the Discard Pile, then prevent that damage."
+      "During your Action Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you receive damage that would reduce your HP to 0 or below, or damage exceeding 1, you may place [Sentinel Mirror] from any Equipment Zone into the Discard Pile to prevent that damage."
     ],
     "faq": [
       {
-        "q_cn": "【護心鏡】是锁定技吗？",
-        "a_cn": "不是。【護心鏡】是可选效果，你可以选择不发动。",
+        "q_cn": "【护心镜】是锁定技吗？",
+        "a_cn": "不是。【护心镜】是可选效果，你可以选择不发动。",
         "q_en": "Is [Sentinel Mirror] a Locked skill?",
         "a_en": "No. It is optional; you may choose not to activate it."
       },
       {
-        "q_cn": "体力值为1时受到1点伤害，是否可以发动【護心鏡】？",
+        "q_cn": "体力值为1时受到1点伤害，是否可以发动【护心镜】？",
         "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
         "q_en": "If my current HP is 1 and I receive 1 damage, can [Sentinel Mirror] activate?",
         "a_en": "Yes. When your HP is 1, 1 point of damage would reduce it to 0 — that qualifies as damage that would reduce your HP to 0 or below, so the trigger condition is satisfied."
       },
       {
-        "q_cn": "发动【護心鏡】将其置入弃牌堆，是否算作「弃置」？",
-        "a_cn": "不算。【護心鏡】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
-        "q_en": "When [Sentinel Mirror] is placed into the discard pile upon activation, does it count as being 'discarded'?",
-        "a_en": "No. It is placed into the discard pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
+        "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
+        "a_cn": "不算。【护心镜】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
+        "q_en": "When [Sentinel Mirror] is placed into the Discard Pile upon activation, does it count as being 'discarded'?",
+        "a_en": "No. It is placed into the Discard Pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
       },
       {
-        "q_cn": "【護心鏡】可以防止武将技能造成的伤害吗？",
+        "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
         "a_cn": "可以。只要伤害会使体力值降至0或以下，或伤害值大于1，无论伤害来源均可发动。",
         "q_en": "Can [Sentinel Mirror] prevent damage from general skills?",
         "a_en": "Yes. As long as the damage would reduce your HP to 0 or below, or the damage value exceeds 1, [Sentinel Mirror] can be activated regardless of the damage source."
       }
     ]
+  },
+  {
+    "id": "armor_hundred_flowers_skirt",
+    "name_cn": "百花裙",
+    "name_en": "Hundred Flowers Skirt",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，体力为一点时，任何伤害对你无效。当你失去装备区里的【百花裙】时，你可以摸两张牌。"
+    ],
+    "effect_en": [
+      "Locked: When your HP Value is 1, all damage is Nullified against you. When you lose [Hundred Flowers Skirt] from your Equipment Zone, you may draw 2 cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_demon_god_mask",
+    "name_cn": "邪神面具",
+    "name_en": "Demon God Mask",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技,你每次受到大于等于2点伤宫时,该伤害-1。",
+      "锁定技,武将牌不能被翻面。"
+    ],
+    "effect_en": [
+      "Locked: Whenever you receive damage of 2 or more, that damage is reduced by 1.",
+      "Locked: Your General Card cannot be flipped over."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_seven_star_robe",
+    "name_cn": "七星袍",
+    "name_en": "Seven Star Robe",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，属性伤害对你无效。"
+    ],
+    "effect_en": [
+      "Locked: Elemental damage is Nullified against you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_radiant_white_robe",
+    "name_cn": "聖光白衣",
+    "name_en": "Radiant White Robe",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，红色的【杀】对你无效，你的手牌上限+2。"
+    ],
+    "effect_en": [
+      "Locked: Red [Kill] cards are Nullified against you. Your Hand Limit is increased by 2."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_celestial_dragon_flame_shield",
+    "name_cn": "天龍炎盾",
+    "name_en": "Celestial Dragon Flame Shield",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "当有你成为【杀】的目标时，可丢弃1张手牌，转移给与你距离为1的角色。"
+    ],
+    "effect_en": [
+      "When you become the target of a [Kill], you may discard 1 hand card to redirect that [Kill] to a character at distance 1 from you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_sleeping_dragon_chariot",
+    "name_cn": "臥龍四輪車",
+    "name_en": "Sleeping Dragon's Chariot",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "黑色的锦囊牌对你无效。"
+    ],
+    "effect_en": [
+      "Black Tool cards are Nullified against you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_burning_pillar",
+    "name_cn": "炮烙",
+    "name_en": "Burning Pillar",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "每当你受到伤害时，可选择攻击范围内的一名角色给你1张手牌，否则该角色减少1点体力。"
+    ],
+    "effect_en": [
+      "Whenever you receive damage, you may choose a character within your Attack Range. That character must give you 1 hand card, or they lose 1 HP."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_black_tortoise_bracer",
+    "name_cn": "玄武護臂",
+    "name_en": "Black Tortoise Bracer",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "血量上限+1；主公无法装备，但可打出此牌，恢复1点血(不能进行濒死恢复)。"
+    ],
+    "effect_en": [
+      "Your Max HP is increased by 1. The Lord cannot equip this card, but may play it out to recover 1 HP (cannot be played out during a Verge of Death Resolution)."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_primal_chaos_plate",
+    "name_cn": "混沌甲",
+    "name_en": "Primal Chaos Plate",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技,防止你受到的所有伤害，当你失去装备区的【混沌甲】时，你失去X点体力，X为【混沌甲】防止过的伤害次数。"
+    ],
+    "effect_en": [
+      "Locked: Prevent all damage you receive. When you lose [Primal Chaos Plate] from your Equipment Zone, you lose X HP, where X equals the number of times damage was prevented by this card."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_blade_shield",
+    "name_cn": "刃盾",
+    "name_en": "Blade Shield",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，每当你使用或打出【闪】后，对方受到你造成的1点伤害。"
+    ],
+    "effect_en": [
+      "Locked: After each time you use or play out a [Dodge], the attacker receives 1 damage dealt by you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_ancient_paperweight",
+    "name_cn": "古銅鎮尺",
+    "name_en": "Ancient Paperweight",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，每当一名角色摸牌时，若此次摸牌数多于1，则将摸牌数改为1。",
+      "一名角色的准备阶段开始时，所有角色可以选择是否弃置一张牌，然后令此牌对其无效。"
+    ],
+    "effect_en": [
+      "Locked: Whenever a character draws cards, if they would draw more than 1, the number of cards drawn is reduced to 1.",
+      "At the start of a character's Starting Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
+    ],
+    "faq": []
   }
 ]

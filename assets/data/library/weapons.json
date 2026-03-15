@@ -422,34 +422,6 @@
     ]
   },
   {
-    "id": "weapon_moon_spear",
-    "name_cn": "银月枪",
-    "name_en": "Moon Spear",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 3,
-    "effect_cn": [
-      "你的回合外，当你使用或打出一张黑色手牌时，你可以令你攻击范围内的另一名角色打出一张【闪】，否则你对其造成1点伤害。"
-    ],
-    "effect_en": [
-      "Outside of your turn, whenever you use or play a black hand card, you may force another character within your attack range to play a [Dodge]; if they cannot or choose not to, you deal 1 damage to them."
-    ],
-    "faq": [
-      {
-        "q_cn": "【银月枪】在自己的回合内可以发动吗？",
-        "a_cn": "不能，只能在自己回合外发动。",
-        "q_en": "Can [Moon Spear] be activated during your own turn?",
-        "a_en": "No. It can only activate outside of your own turn."
-      },
-      {
-        "q_cn": "被迫打出【闪】的角色，此【闪】是否消耗其出牌次数？",
-        "a_cn": "不消耗。被【银月枪】强制打出的【闪】是响应效果，不占用出牌阶段的使用次数。",
-        "q_en": "Does the [Dodge] forced by [Moon Spear] count toward the target's card usage limit?",
-        "a_en": "No. A [Dodge] played in response to [Moon Spear] is a reactive response and does not count toward any card usage limit."
-      }
-    ]
-  },
-  {
     "id": "weapon_serpent_spear",
     "name_cn": "丈八蛇矛",
     "name_en": "Serpent Spear",
@@ -794,6 +766,376 @@
     "effect_en": [
       "During your Action Phase, after you use a card and designate exactly one target, you may discard 2 cards — that character's armor is Nullified for this turn and they cannot use or play cards."
     ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "神鬼龍斬月刀",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": ["你的牌均可视为红桃花色。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "鎮魂琴",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": ["你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "姫神弓",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 5,
+    "effect_cn": ["你使用【杀】对一名角色造成伤害时,你可以获得对方装备区里的一张牌。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "weapon_moon_spear",
+    "name_cn": "銀月槍",
+    "name_en": "Moon Spear",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": ["你的回合外，每当你使用或打出了一张黑色手牌 (若为使用则在它结算之前)，你可以立即对你攻击范围内的任意一名角色使用一张【杀】。"],
+    "effect_en": [""],
+    "faq": [
+      {
+        "q_cn": "【銀月槍】在自己的回合内可以发动吗？",
+        "a_cn": "不能，只能在自己回合外发动。",
+        "q_en": "Can [Moon Spear] be activated during your own turn?",
+        "a_en": "No. It can only activate outside of your own turn."
+      }
+    ]
+  },
+  {
+    "id": "",
+    "name_cn": "吟龍琴",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": ["当你使用非延时类锦囊对其他玩家造成伤害时，你可立即摸1张手牌。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "魔龍斬月",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": ["锁定技，你的一张【杀】最多可以制定2个目标"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "倚天劍",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": ["任何时候,你每打出一张【杀】，则立即摸1张手牌。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "蠻骨魔琴",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": ["你可将黑桃花色的【杀】当做【单挑】使用。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "白羽扇",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 1,
+    "effect_cn": ["在任意角色的判定牌生效前,你可以打出一张手牌代替之。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "開天斧",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": ["当你打出的【杀】被闪避后，可再丢弃一张【杀】使目标受到1点伤害。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "破魔刀",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": ["你所指定【决斗】的角色均不能出【杀】抵御。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "舞踏扇",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": ["你可将【闪】当做雷属性的【杀】使用。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "重弩",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 3,
+    "effect_cn": ["你所打出红色的【杀】均需要2张【闪】才能闪避。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "嗜血戰斧",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 4,
+    "effect_cn": ["你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
+    "faq": []
+  },
+  {
+    "id": "",
+    "name_cn": "",
+    "name_en": "",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [""],
+    "effect_en": [""],
     "faq": []
   }
 ]
