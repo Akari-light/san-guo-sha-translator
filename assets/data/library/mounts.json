@@ -9,7 +9,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+      "When you calculate the distance to another character, subtract 1."
     ],
     "faq": [
       {
@@ -30,7 +30,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+      "When you calculate the distance to another character, subtract 1."
     ],
     "faq": []
   },
@@ -44,7 +44,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking)."
+      "When you calculate the distance to another character, subtract 1."
     ],
     "faq": []
   },
@@ -58,7 +58,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+      "When other characters calculate the distance to you, add 1."
     ],
     "faq": [
       {
@@ -79,7 +79,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+      "When other characters calculate the distance to you, add 1."
     ],
     "faq": []
   },
@@ -93,7 +93,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+      "When other characters calculate the distance to you, add 1."
     ],
     "faq": []
   },
@@ -107,12 +107,12 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted)."
+      "When other characters calculate the distance to you, add 1."
     ],
     "faq": []
   },
   {
-    "id": "mount_rainbow_dear",
+    "id": "mount_rainbow_deer",
     "name_cn": "七彩神鹿",
     "name_en": "Rainbow Deer",
     "category_cn": "坐骑牌",
@@ -122,90 +122,108 @@
       "锁定技，当你造成属性伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another player, subtract 1 (only in effect when you are attacking).",
-      "Locked: When you deal elemental damage, the damage gets a +1 modifier"
+      "When you calculate the distance to another character, subtract 1.",
+      "Locked: When you deal elemental damage, that damage is increased by 1."
     ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_five_colour_fire_ox",
     "name_cn": "五色火牛",
-    "name_en": "",
-    "category_cn": "坐骑牌",
-    "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+2。"],
-    "effect_en": ["When another player is calculating their range to you, add 2 (only in effect when you are being targeted)."],
-    "faq": []
-  },
-  {
-    "id": "",
-    "name_cn": "夢魘赤兔",
-    "name_en": "",
+    "name_en": "Five-Colour Fire Ox",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": [
-      "你计算与其他角色的距离-1和其他角色计算与你的距离+1。"
+      "其他角色计算与你的距离+2。"
     ],
-    "effect_en": [""],
+    "effect_en": [
+      "When other characters calculate the distance to you, add 2."
+    ],
+    "faq": []
+  },
+  {
+    "id": "mount_nightmare_red_hare",
+    "name_cn": "夢魘赤兔",
+    "name_en": "Nightmare Red Hare",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [
+      "你计算与其他角色的距离-1。其他角色计算与你的距离+1。"
+    ],
+    "effect_en": [
+      "When you calculate the distance to another character, subtract 1. When other characters calculate the distance to you, add 1."
+    ],
     "faq": [
       {
-        "q_cn": "装备了【夢魘赤兔】还能装备其他马吗？",
-        "a_cn": "不可以，一只【夢魘赤兔】抵两匹马",
-        "q_en": "",
-        "a_en": ""
-      }   
+        "q_cn": "装备了【梦魇赤兔】还能装备其他马吗？",
+        "a_cn": "不可以，一只【梦魇赤兔】抵两匹马。",
+        "q_en": "Can I equip other mounts alongside [Nightmare Red Hare]?",
+        "a_en": "[Nightmare Red Hare] occupies both mount slots simultaneously. No other mount can be equipped while it is in play."
+      }
     ]
   },
   {
-    "id": "",
+    "id": "mount_mystic_tiger_beast",
     "name_cn": "奇門虎獸",
-    "name_en": "",
-    "category_cn": "坐骑牌",
-    "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离-2。"],
-    "effect_en": ["When you calculate the distance to another player, subtract 2 (only in effect when you are attacking)."],
-    "faq": []
-  },
-  {
-    "id": "",
-    "name_cn": "巨牙河馬",
-    "name_en": "",
-    "category_cn": "坐骑牌",
-    "category_en": "Mount",
-    "effect_cn": ["其他角色计算与你的距离+2。"],
-    "effect_en": ["When another player is calculating their range to you, add 2 (only in effect when you are being targeted)."],
-    "faq": []
-  },
-  {
-    "id": "",
-    "name_cn": "幻霊戰獅",
-    "name_en": "",
+    "name_en": "Mystic Tiger Beast",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": [
-      "其他角色计算与你的距离-2。",
+      "你计算与其他角色的距离-2。"
+    ],
+    "effect_en": [
+      "When you calculate the distance to another character, subtract 2."
+    ],
+    "faq": []
+  },
+  {
+    "id": "mount_giant_tusk_hippo",
+    "name_cn": "巨牙河馬",
+    "name_en": "Giant Tusk Hippo",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [
+      "其他角色计算与你的距离+2。"
+    ],
+    "effect_en": [
+      "When other characters calculate the distance to you, add 2."
+    ],
+    "faq": []
+  },
+  {
+    "id": "mount_phantom_war_lion",
+    "name_cn": "幻霊戰獅",
+    "name_en": "Phantom War Lion",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [
+      "你计算与其他角色的距离-2。",
       "出牌阶段，你每使用或打出一张黑色牌时，你可以摸一张牌。回合外，你不能成为普通【杀】的目标。"
     ],
     "effect_en": [
-      "When you calculate the distance to another player, subtract 2 (only in effect when you are attacking).",
-      ""
+      "When you calculate the distance to another character, subtract 2.",
+      "During your Action Phase, each time you use or play a black card, you may draw 1 card. Outside of your turn, you cannot be the target of normal [Kill]."
     ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_war_hawk",
     "name_cn": "戰鷹",
-    "name_en": "",
+    "name_en": "War Hawk",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["装备后，回合开始阶段，你可以观看牌堆顶的一张牌，然后选择将其置于牌堆顶或牌堆底。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "装备后，回合开始阶段，你可以观看牌堆顶的一张牌，然后选择将其置于牌堆顶或牌堆底。"
+    ],
+    "effect_en": [
+      "During your Starting Phase, you may look at the top card of the Draw Pile, then choose to place it on the top or bottom of the Draw Pile."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_dragon_turtle",
     "name_cn": "玄天雷動",
-    "name_en": "",
+    "name_en": "Dragon Turtle",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": [
@@ -213,45 +231,55 @@
       "锁定技，你的手牌上限+X，X为你装备区内的牌数。"
     ],
     "effect_en": [
-      "When another player is calculating their range to you, add 1 (only in effect when you are being targeted).",
-      ""
+      "When other characters calculate the distance to you, add 1.",
+      "Locked: Your Hand Limit is increased by X, where X is the number of cards in your Equipment Zone."
     ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_grey_wolf",
     "name_cn": "蒼狼",
-    "name_en": "",
+    "name_en": "Grey Wolf",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
-    "effect_cn": ["装备后，若目标角色的装备区里没有牌。你使用【杀】或【决斗】（你为伤害来源时）造成的伤害+1。"],
-    "effect_en": [""],
+    "effect_cn": [
+      "装备后，若目标角色的装备区里没有牌，你使用【杀】或【决斗】（你为伤害来源时）造成的伤害+1。"
+    ],
+    "effect_en": [
+      "When you use [Kill] or [Duel] (when you are the damage source) and the target character's Equipment Zone has no cards, the damage dealt is increased by 1."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_celestial_deer",
     "name_cn": "通天仙鹿",
-    "name_en": "",
+    "name_en": "Celestial Deer",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": [
-      "其他角色计算与你的距离-2。",
+      "你计算与其他角色的距离-2。",
       "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
     ],
-    "effect_en": [""],
+    "effect_en": [
+      "When you calculate the distance to another character, subtract 2.",
+      "You Ignore all equipment effects. During another character's Draw Phase, you may look at the cards they draw and gain any among them with an even rank."
+    ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "mount_snow_wolf",
     "name_cn": "雪狼",
-    "name_en": "",
+    "name_en": "Snow Wolf",
     "category_cn": "坐骑牌",
     "category_en": "Mount",
     "effect_cn": [
-      "其他角色计算与你的距离-2。",
-      "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
+      "你计算与其他角色的距离-2。",
+      "锁定技，若你的体力值为1，你视为拥有技能\"狂骨\"。"
     ],
-    "effect_en": ["锁定技，若你的体力值为1，你视为拥有技能“狂骨”。"],
+    "effect_en": [
+      "When you calculate the distance to another character, subtract 2.",
+      "Locked: If your HP Value is 1, you are treated as having the skill [Savage Bone]."
+    ],
     "faq": []
   }
 ]
