@@ -452,7 +452,7 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time.",
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
         "skill_type": "locked"
       }
     ],
@@ -1879,7 +1879,7 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time.",
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
         "skill_type": "locked"
       },
       {
@@ -1923,7 +1923,7 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time.",
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
         "skill_type": "locked"
       },
       {
@@ -1974,7 +1974,7 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time.",
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
         "skill_type": "locked"
       },
       {
@@ -2090,7 +2090,7 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Your [Kill] requires 2 [Dodge] to evade. Opponents in [Duel] with you must play 2 [Kill] at a time.",
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
         "skill_type": "locked"
       }
     ],

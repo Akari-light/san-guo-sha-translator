@@ -1,6 +1,6 @@
 [
   {
-    "id": "mo.WEI001",
+    "id": "MO_WEI001",
     "standard_id": "char_caocao",
     "name_cn": "魔曹操",
     "name_en": "Demon Cao Cao",
@@ -69,7 +69,7 @@
     ]
   },
   {
-    "id": "mo.WEI002",
+    "id": "MO_WEI002",
     "standard_id": "char_simayi",
     "name_cn": "魔司马懿",
     "name_en": "Demon Sima Yi",
@@ -157,7 +157,7 @@
     ]
   },
   {
-    "id": "mo.QUN002",
+    "id": "MO_QUN002",
     "standard_id": "char_lvbu",
     "name_cn": "魔吕布",
     "name_en": "Demon Lu Bu",
@@ -245,7 +245,7 @@
     ]
   },
   {
-    "id": "mo.QUN003",
+    "id": "MO_QUN003",
     "standard_id": "char_diaochan",
     "name_cn": "魔貂蝉",
     "name_en": "Demon Diao Chan",

@@ -130,9 +130,7 @@ class AppTheme {
   static const Color skillLocked    = Color(0xFF5BA4F5); // blue
   static const Color skillActive    = Color(0x2EFFFFFF); // subtle white
   /// Mission (使命技): teal-green — distinct from all existing types,
-  /// evokes the sense of a quest/objective. Warm enough to stand out
-  /// against locked (blue) and awakening (purple), cool enough not to
-  /// clash with lord (gold) or limited (red).
+  /// evokes the sense of a quest/objective.
   static const Color skillMission   = Color(0xFF26A99A); // teal
 
   /// Returns the accent color for a skill type.
@@ -148,26 +146,30 @@ class AppTheme {
   }
 
   // ── Expansion badge colors
-  static const Color expansionStandard   = Color(0xFFA0A0A0); // grey   — 标
-  static const Color expansionLimitBreak = Color(0xFF4B9FDE); // blue   — 界
-  static const Color expansionShenHua    = Color(0xFF4CAF8A); // teal   — 神话
-  static const Color expansionDemon      = Color(0xFFE06868); // red    — 魔
-  static const Color expansionGod        = Color(0xFFF0A820); // gold   — 神
-  static const Color expansionShiji      = Color(0xFF9C7BC4); // purple — 始
-  static const Color expansionDoudizhu   = Color(0xFFE07B39); // orange — 斗
-  static const Color expansionOther      = Color(0xFF7A8A8A); // slate  — 他
+  static const Color expansionStandard    = Color(0xFFA0A0A0); // grey       — 标
+  static const Color expansionMythReturns = Color(0xFF4CAF8A); // teal       — 临
+  static const Color expansionHeroesSoul  = Color(0xFFE8971A); // warm amber — 魂  (distinct from god gold)
+  static const Color expansionLimitBreak  = Color(0xFF4B9FDE); // blue       — 界
+  static const Color expansionDemon       = Color(0xFFE06868); // red        — 魔
+  static const Color expansionGod         = Color(0xFFF0A820); // gold       — 神
+  static const Color expansionShiji       = Color(0xFF9C7BC4); // purple     — 计
+  static const Color expansionMouGong     = Color(0xFF4AABCC); // cyan/steel — 谋
+  static const Color expansionDoudizhu    = Color(0xFFE07B39); // orange     — 斗
+  static const Color expansionOther       = Color(0xFF7A8A8A); // slate      — SP
 
   /// Returns the accent color for an expansion badge.
   static Color expansionColor(Expansion expansion) {
     switch (expansion) {
-      case Expansion.standard:   return expansionStandard;
-      case Expansion.limitBreak: return expansionLimitBreak;
-      case Expansion.shenHua:    return expansionShenHua;
-      case Expansion.demon:      return expansionDemon;
-      case Expansion.god:        return expansionGod;
-      case Expansion.shiji:      return expansionShiji;
-      case Expansion.doudizhu:   return expansionDoudizhu;
-      case Expansion.other:      return expansionOther;
+      case Expansion.standard:    return expansionStandard;
+      case Expansion.mythReturns: return expansionMythReturns;
+      case Expansion.heroesSoul:  return expansionHeroesSoul;
+      case Expansion.limitBreak:  return expansionLimitBreak;
+      case Expansion.demon:       return expansionDemon;
+      case Expansion.god:         return expansionGod;
+      case Expansion.shiji:       return expansionShiji;
+      case Expansion.mouGong:     return expansionMouGong;
+      case Expansion.doudizhu:    return expansionDoudizhu;
+      case Expansion.other:       return expansionOther;
     }
   }
 }

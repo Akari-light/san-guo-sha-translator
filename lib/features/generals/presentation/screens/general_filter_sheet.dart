@@ -303,6 +303,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
           _buildCheckTile(
             badge: expansion.badge,
             label: _expansionLabel(expansion),
+            badgeColor: AppTheme.expansionColor(expansion),
             isSelected: _state.expansions.contains(expansion),
             onTap: () => _toggleExpansion(expansion),
             theme: theme,
@@ -313,14 +314,16 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 
   String _expansionLabel(Expansion expansion) {
     switch (expansion) {
-      case Expansion.standard:   return '标准版 — Standard';
-      case Expansion.limitBreak: return '界限突破 — Limit Break';
-      case Expansion.shenHua:    return '神话再临 — Shen Hua';
-      case Expansion.demon:      return '魔武将 — Demon';
-      case Expansion.god:        return '神将 — God';
-      case Expansion.shiji:      return '始计篇 — Shiji';
-      case Expansion.doudizhu:   return '斗地主 — Doudizhu';
-      case Expansion.other:      return '其他 — Other';
+      case Expansion.standard:    return '标准版 — Standard';
+      case Expansion.mythReturns: return '神话再临 — Myth Returns';
+      case Expansion.heroesSoul:  return '一将之魂 — Hero\'s Soul';
+      case Expansion.limitBreak:  return '界限突破 — Limit Break';
+      case Expansion.demon:       return '魔武将 — Demon';
+      case Expansion.god:         return '神将 — God';
+      case Expansion.shiji:       return '始计篇 — Art of War';
+      case Expansion.mouGong:     return '谋攻篇 — Strategic Assault';
+      case Expansion.doudizhu:    return '斗地主 — Doudizhu';
+      case Expansion.other:       return '其他 — Other';
     }
   }
 
@@ -385,6 +388,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   Widget _buildCheckTile({
     required String badge,
     required String label,
+    required Color badgeColor,
     required bool isSelected,
     required VoidCallback onTap,
     required ThemeData theme,
@@ -396,14 +400,16 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
         height: 36,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: theme.colorScheme.primary.withValues(alpha: 0.1),
+          // Use the expansion's own color for the badge background
+          color: badgeColor.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(
           badge,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: theme.colorScheme.primary,
+            fontSize: badge.length > 1 ? 10 : 13,
+            color: badgeColor,
           ),
         ),
       ),

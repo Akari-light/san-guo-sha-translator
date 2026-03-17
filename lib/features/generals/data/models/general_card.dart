@@ -4,7 +4,7 @@ import '../../../../core/services/search_service.dart';
 
 /// Example JSON entry (from limit_break.json):
 /// {
-///   "id": "jx.SHU001",
+///   "id": "JX_SHU001",
 ///   "standard_id": "char_liubei",
 ///   "name_cn": "界刘备",
 ///   "name_en": "Liu Bei",
@@ -15,7 +15,15 @@ import '../../../../core/services/search_service.dart';
 ///   "traits_cn": ["进攻", "辅助", "回复"],
 ///   "traits_en": ["Aggressive", "Support", "Recovery"],
 ///   "expansion": "Limit Break",
-///   "skills": ["skill_rende", "skill_jijiang"]
+///   "skills": [
+///     {
+///       "skill_type": "active",
+///       "name_cn": "仁德",
+///       "name_en": "Benevolence",
+///       "description_cn": "...",
+///       "description_en": "..."
+///     }
+///   ]
 /// }
 
 class GeneralCard {
@@ -51,26 +59,37 @@ class GeneralCard {
 
   factory GeneralCard.fromJson(
     Map<String, dynamic> json,
+    // skillMap retained for API compatibility but is no longer used —
+    // skills are now stored as inline objects in each general's JSON entry.
     Map<String, SkillDTO> skillMap,
   ) {
-    final rawSkillIds = List<String>.from(json['skills'] ?? []);
+    final rawSkills = json['skills'] as List? ?? [];
 
     return GeneralCard(
-      id: json['id'] as String,
-      standardId: json['standard_id'] as String,
-      nameCn: json['name_cn'] as String,
-      nameEn: json['name_en'] as String,
-      gender: json['gender'] as String,
-      faction: json['faction'] as String,
-      health: json['health'] as int,
-      powerIndex: (json['power_index'] as num).toDouble(),
-      traitsCn: List<String>.from(json['traits_cn'] ?? []),
-      traitsEn: List<String>.from(json['traits_en'] ?? []),
-      expansion: Expansion.fromString(json['expansion'] as String),
-      skills: rawSkillIds
-          .map((id) => skillMap[id])
-          .whereType<SkillDTO>()
-          .toList(),
+      id:          json['id']          as String,
+      standardId:  json['standard_id'] as String,
+      nameCn:      json['name_cn']     as String,
+      nameEn:      json['name_en']     as String,
+      gender:      json['gender']      as String,
+      faction:     json['faction']     as String,
+      health:      json['health']      as int,
+      powerIndex:  (json['power_index'] as num).toDouble(),
+      traitsCn:    List<String>.from(json['traits_cn'] ?? []),
+      traitsEn:    List<String>.from(json['traits_en'] ?? []),
+      expansion:   Expansion.fromString(json['expansion'] as String),
+      // Skills are inline objects — parse each one directly.
+      // Entries that are plain strings (legacy skill IDs) are looked up in
+      // skillMap as a fallback so older data files don't break.
+      skills: rawSkills.map<SkillDTO?>((entry) {
+        if (entry is Map<String, dynamic>) {
+          // Inline skill object — preferred format
+          return SkillDTO.fromJson('inline', entry);
+        } else if (entry is String) {
+          // Legacy: skill ID string referencing skills.json
+          return skillMap[entry];
+        }
+        return null;
+      }).whereType<SkillDTO>().toList(),
       faq: (json['faq'] as List? ?? [])
           .map((item) => Map<String, String>.from(item as Map))
           .toList(),
@@ -86,15 +105,11 @@ class GeneralCard {
   /// Longer queries additionally use trigram similarity so typos
   /// and partial matches ("liu bei", "luu bei", "benev") all resolve.
   bool matchesQuery(String query) {
-    if (query.isEmpty) { return true; }
-    // Name + ID
-    if (SearchService.fuzzyMatch(query, nameEn)) { return true; }
-    if (SearchService.fuzzyMatch(query, nameCn)) { return true; }
-    if (SearchService.fuzzyMatch(query, id))     { return true; }
-    // Skill names (EN + CN) — "benevolence" finds 界刘备
-    if (skills.any((s) =>
-        SearchService.fuzzyMatch(query, s.nameEn) ||
-        SearchService.fuzzyMatch(query, s.nameCn))) { return true; }
+    if (query.isEmpty) return true;
+    if (SearchService.fuzzyMatch(query, nameEn)) return true;
+    if (SearchService.fuzzyMatch(query, nameCn)) return true;
+    if (SearchService.fuzzyMatch(query, id))     return true;
+    if (skills.any((s) => SearchService.fuzzyMatch(query, s.nameEn) ||  SearchService.fuzzyMatch(query, s.nameCn))) return true;
     return false;
   }
 

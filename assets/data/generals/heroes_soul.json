@@ -1,6 +1,6 @@
 [
   {
-    "id": "YJ.WEI026",
+    "id": "YJ_WEI026",
     "standard_id": "char_caozhi",
     "name_cn": "曹植",
     "name_en": "Cao Zhi",
@@ -36,7 +36,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN029",
+    "id": "YJ_QUN029",
     "standard_id": "char_gaoshun",
     "name_cn": "高顺",
     "name_en": "Gao Shun",
@@ -72,7 +72,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN028",
+    "id": "YJ_QUN028",
     "standard_id": "char_chen_gong",
     "name_cn": "陈宫",
     "name_en": "Chen Gong",
@@ -108,7 +108,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU021",
+    "id": "YJ_WU021",
     "standard_id": "char_lingtong",
     "name_cn": "凌统",
     "name_en": "Ling Tong",
@@ -138,7 +138,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU022",
+    "id": "YJ_SHU022",
     "standard_id": "char_masu",
     "name_cn": "马谡",
     "name_en": "Ma Su",
@@ -174,7 +174,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU024",
+    "id": "YJ_WU024",
     "standard_id": "char_wuguotai",
     "name_cn": "吴国太",
     "name_en": "Lady Wu",
@@ -210,7 +210,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU020",
+    "id": "YJ_WU020",
     "standard_id": "char_xusheng",
     "name_cn": "徐盛",
     "name_en": "Xu Sheng",
@@ -240,7 +240,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI024",
+    "id": "YJ_WEI024",
     "standard_id": "char_yujin",
     "name_cn": "于禁",
     "name_en": "Yu Jin",
@@ -270,7 +270,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI027",
+    "id": "YJ_WEI027",
     "standard_id": "char_zhangchunhua",
     "name_cn": "张春华",
     "name_en": "Zhang Chunhua",
@@ -306,7 +306,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI029",
+    "id": "YJ_WEI029",
     "standard_id": "char_caozhang",
     "name_cn": "曹彰",
     "name_en": "Cao Zhang",
@@ -336,7 +336,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI020",
+    "id": "YJ_WEI020",
     "standard_id": "char_xunyou",
     "name_cn": "荀攸",
     "name_en": "Xun You",
@@ -372,7 +372,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU027",
+    "id": "YJ_SHU027",
     "standard_id": "char_liaohua",
     "name_cn": "廖化",
     "name_en": "Liao Hua",
@@ -408,7 +408,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU019",
+    "id": "YJ_SHU019",
     "standard_id": "char_madai",
     "name_cn": "马岱",
     "name_en": "Ma Dai",
@@ -444,7 +444,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU026",
+    "id": "YJ_WU026",
     "standard_id": "char_buliangshi",
     "name_cn": "步练师",
     "name_en": "Bu Lianshi",
@@ -480,7 +480,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU027",
+    "id": "YJ_WU027",
     "standard_id": "char_chengpu",
     "name_cn": "程普",
     "name_en": "Cheng Pu",
@@ -516,7 +516,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU028",
+    "id": "YJ_WU028",
     "standard_id": "char_handang",
     "name_cn": "韩当",
     "name_en": "Han Dang",
@@ -552,7 +552,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN019",
+    "id": "YJ_QUN019",
     "standard_id": "char_huaxiong",
     "name_cn": "将华雄",
     "name_en": "Hua Xiong",
@@ -582,7 +582,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN030",
+    "id": "YJ_QUN030",
     "standard_id": "char_liubiao",
     "name_cn": "刘表",
     "name_en": "Liu Biao",
@@ -618,7 +618,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI028",
+    "id": "YJ_WEI028",
     "standard_id": "char_zhonghui",
     "name_cn": "钟会",
     "name_en": "Zhong Hui",
@@ -654,7 +654,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI031",
+    "id": "YJ_WEI031",
     "standard_id": "char_caochong",
     "name_cn": "曹冲",
     "name_en": "Cao Chong",
@@ -690,7 +690,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI032",
+    "id": "YJ_WEI032",
     "standard_id": "char_guohuai",
     "name_cn": "郭淮",
     "name_en": "Guo Huai",
@@ -720,7 +720,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI033",
+    "id": "YJ_WEI033",
     "standard_id": "char_manchong",
     "name_cn": "满宠",
     "name_en": "Man Chong",
@@ -756,7 +756,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU028",
+    "id": "YJ_SHU028",
     "standard_id": "char_guanping",
     "name_cn": "关平",
     "name_en": "Guan Ping",
@@ -764,29 +764,21 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "多刀"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Multi-Strike"
-    ],
+    "traits_cn": [],
+    "traits_en": [],
     "expansion": "Hero's Soul",
     "skills": [
       {
-        "name_cn": "龙吟",
-        "name_en": "Dragon's Roar",
-        "description_cn": "当一名角色于其出牌阶段内使用【杀】时，你可以弃置一张牌，令此【杀】不计入此阶段使用次数，若此【杀】为红色，你摸一张牌。",
-        "description_en": "When you use [Kill], it may target all characters within your attack range simultaneously."
+        "name_cn": "武威",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可展示手牌并将其中一种颜色的所有牌当【杀】使用(无次数距离限制)，其中每有一种类型你可选择一项执行(可重复选择):1. 摸一张牌;2.目标角色本回合非锁定技能失效;3.此 技能本回合可发动次数+1。若此【杀】执行了所有 选项,则伤害+1。",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "YJ.SHU029",
+    "id": "YJ_SHU029",
     "standard_id": "char_jianyong",
     "name_cn": "简雍",
     "name_en": "Jian Yong",
@@ -822,7 +814,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU030",
+    "id": "YJ_SHU030",
     "standard_id": "char_liufeng",
     "name_cn": "刘封",
     "name_en": "Liu Feng",
@@ -852,7 +844,29 @@
     "faq": []
   },
   {
-    "id": "YJ.WU029",
+    "id": "YJ_SHU117",
+    "standard_id": "",
+    "name_cn": "陈式",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "擎北",
+        "name_en": "",
+        "description_cn": "每轮开始时,你选择任意种花色,然后你本轮无法使用这些花色的牌且使用手牌后摸选择花色数张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "YJ_WU029",
     "standard_id": "char_panzhangjiazhong",
     "name_cn": "潘璋马忠",
     "name_en": "Pan Zhang & Ma Zhong",
@@ -888,7 +902,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU030",
+    "id": "YJ_WU030",
     "standard_id": "char_yufan",
     "name_cn": "虞翻",
     "name_en": "Yu Fan",
@@ -924,7 +938,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU031",
+    "id": "YJ_WU031",
     "standard_id": "char_zhuran",
     "name_cn": "朱然",
     "name_en": "Zhu Ran",
@@ -954,7 +968,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN031",
+    "id": "YJ_QUN031",
     "standard_id": "char_fuhuanghou",
     "name_cn": "伏皇后",
     "name_en": "Empress Fu",
@@ -990,7 +1004,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN032",
+    "id": "YJ_QUN032",
     "standard_id": "char_liru",
     "name_cn": "李儒",
     "name_en": "Li Ru",
@@ -1032,7 +1046,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU024",
+    "id": "YJ_SHU024",
     "standard_id": "char_fazheng",
     "name_cn": "法正",
     "name_en": "Fa Zheng",
@@ -1068,7 +1082,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU017",
+    "id": "YJ_SHU017",
     "standard_id": "char_xushu",
     "name_cn": "徐庶",
     "name_en": "Xu Shu",
@@ -1104,7 +1118,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI030",
+    "id": "YJ_WEI030",
     "standard_id": "char_wangyi",
     "name_cn": "王异",
     "name_en": "Wang Yi",
@@ -1140,7 +1154,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU026",
+    "id": "YJ_SHU026",
     "standard_id": "char_guanxing&zhangbao",
     "name_cn": "关兴&张苞",
     "name_en": "Guan Xing & Zhang Bao",
@@ -1170,7 +1184,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI034",
+    "id": "YJ_WEI034",
     "standard_id": "char_caozhen",
     "name_cn": "曹真",
     "name_en": "Cao Zhen",
@@ -1200,7 +1214,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI036",
+    "id": "YJ_WEI036",
     "standard_id": "char_hanhao_shihuan",
     "name_cn": "韩浩史涣",
     "name_en": "Han Hao & Shi Huan",
@@ -1236,7 +1250,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI035",
+    "id": "YJ_WEI035",
     "standard_id": "char_chenqun",
     "name_cn": "陈群",
     "name_en": "Chen Qun",
@@ -1272,7 +1286,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU031",
+    "id": "YJ_SHU031",
     "standard_id": "char_wuyi",
     "name_cn": "吴懿",
     "name_en": "Wu Yi",
@@ -1295,14 +1309,14 @@
       {
         "name_cn": "奔袭",
         "name_en": "Blitz Charge",
-        "description_cn": "锁定技，当你于回合内使用牌时，你本回合计算与其他角色的距离-1。当你于回合内使用仅指定单一目标的【杀】或普通锦囊牌时，若你与所有其他角色的距离均为1，你依次选择至多两项，令此牌：1.目标数+1；2.无视防具；3.不能被抵消；4.造成伤害后，你摸一张牌。",
-        "description_en": "Action Phase: You may use [Kill] without distance restrictions."
+        "description_cn": "锁定技,当你于回合内使用【杀】或普通锦囊牌指 定唯一目标时,若你与其他角色的距离均为1,你 选择至多两项:1.此牌无视目标角色防具;2.此牌增 加一个目标;3.此牌不能被抵消;4.此牌造成伤害 时,你摸一张牌;你于回合内与其他角色的距离-X (为你本回合使用过的牌数)。",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "YJ.SHU033",
+    "id": "YJ_SHU033",
     "standard_id": "char_zhoucang",
     "name_cn": "周仓",
     "name_en": "Zhou Cang",
@@ -1332,7 +1346,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU032",
+    "id": "YJ_SHU032",
     "standard_id": "char_zhangsong",
     "name_cn": "张松",
     "name_en": "Zhang Song",
@@ -1368,7 +1382,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU033",
+    "id": "YJ_WU033",
     "standard_id": "char_sunluban",
     "name_cn": "孙鲁班",
     "name_en": "Sun Luban",
@@ -1404,7 +1418,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU034",
+    "id": "YJ_WU034",
     "standard_id": "char_zhuhuan",
     "name_cn": "朱桓",
     "name_en": "Zhu Huan",
@@ -1440,7 +1454,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU032",
+    "id": "YJ_WU032",
     "standard_id": "char_guyong",
     "name_cn": "顾雍",
     "name_en": "Gu Yong",
@@ -1476,7 +1490,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN034",
+    "id": "YJ_QUN034",
     "standard_id": "char_jushou",
     "name_cn": "沮授",
     "name_en": "Ju Shou",
@@ -1512,7 +1526,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN033",
+    "id": "YJ_QUN033",
     "standard_id": "char_caifuren",
     "name_cn": "蔡夫人",
     "name_en": "Lady Cai",
@@ -1548,7 +1562,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI037",
+    "id": "YJ_WEI037",
     "standard_id": "char_caorui",
     "name_cn": "曹叡",
     "name_en": "Cao Rui",
@@ -1590,7 +1604,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI038",
+    "id": "YJ_WEI038",
     "standard_id": "char_caoxiu",
     "name_cn": "曹休",
     "name_en": "Cao Xiu",
@@ -1626,7 +1640,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI039",
+    "id": "YJ_WEI039",
     "standard_id": "char_zhongyao",
     "name_cn": "钟繇",
     "name_en": "Zhong Yao",
@@ -1662,7 +1676,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU034",
+    "id": "YJ_SHU034",
     "standard_id": "char_liuchen",
     "name_cn": "刘谌",
     "name_en": "Liu Chen",
@@ -1685,20 +1699,20 @@
       {
         "name_cn": "战绝",
         "name_en": "Fight to the End",
-        "description_cn": "你可以将所有手牌当【决斗】使用，然后你与因此受伤的角色各摸一张牌，若你本阶段以此法摸过至少两张牌，本技能失效。",
-        "description_en": "When you take damage, you may immediately use 1 [Kill] without it counting toward your limit."
+        "description_cn": "你可以将所有手牌当【决斗】使用，然后你和因此受伤的角色各摸一张牌；若你本阶段因此技能而摸过至少三张牌，此技能本阶段失效。当你受到【决斗】的伤害后，你可以弃置伤害来源区域里的一张牌。",
+        "description_en": ""
       },
       {
         "name_cn": "勤王",
         "name_en": "Loyal Service",
-        "description_cn": "主公技，你可以弃置一张牌发动“激将”，响应此“激将”使用或打出【杀】的角色摸一张牌。",
-        "description_en": "Lord Skill: When another Shu character takes damage during their turn, they may give you 1 hand card. If the card is [Kill], you may use it immediately."
+        "description_cn": "主公技，出牌阶段限一次，你可以令其他蜀势力角色依次选择是否交给你一张基本牌，然后你可以令所有交给你牌的角色各摸一张牌（以此法获得的牌本回合不会被〖战绝〗使用）。",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "YJ.SHU035",
+    "id": "YJ_SHU035",
     "standard_id": "char_xiahouzhi",
     "name_cn": "夏侯氏",
     "name_en": "Lady Xiahou",
@@ -1734,7 +1748,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU036",
+    "id": "YJ_SHU036",
     "standard_id": "char_zhangyi",
     "name_cn": "张嶷",
     "name_en": "Zhang Yi",
@@ -1770,7 +1784,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU036",
+    "id": "YJ_WU036",
     "standard_id": "char_sunxiu",
     "name_cn": "孙休",
     "name_en": "Sun Xiu",
@@ -1812,7 +1826,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU037",
+    "id": "YJ_WU037",
     "standard_id": "char_zhuzhi",
     "name_cn": "朱治",
     "name_en": "Zhu Zhi",
@@ -1842,7 +1856,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU035",
+    "id": "YJ_WU035",
     "standard_id": "char_quancong",
     "name_cn": "全琮",
     "name_en": "Quan Cong",
@@ -1872,7 +1886,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN035",
+    "id": "YJ_QUN035",
     "standard_id": "char_gongsun_yuan",
     "name_cn": "公孙渊",
     "name_en": "Gongsun Yuan",
@@ -1902,7 +1916,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN036",
+    "id": "YJ_QUN036",
     "standard_id": "char_guotu_fengji",
     "name_cn": "郭图逢纪",
     "name_en": "Guo Tu & Feng Ji",
@@ -1938,7 +1952,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI040",
+    "id": "YJ_WEI040",
     "standard_id": "char_guohuanghou",
     "name_cn": "郭皇后",
     "name_en": "Empress Guo",
@@ -1974,7 +1988,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU038",
+    "id": "YJ_SHU038",
     "standard_id": "char_liyan",
     "name_cn": "李严",
     "name_en": "Li Yan",
@@ -2010,7 +2024,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU039",
+    "id": "YJ_WU039",
     "standard_id": "char_sundeng",
     "name_cn": "孙登",
     "name_en": "Sun Deng",
@@ -2040,7 +2054,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN037",
+    "id": "YJ_QUN037",
     "standard_id": "char_liuyu",
     "name_cn": "刘虞",
     "name_en": "Liu Yu",
@@ -2076,7 +2090,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU038",
+    "id": "YJ_WU038",
     "standard_id": "char_cenhun",
     "name_cn": "岑昏",
     "name_en": "Cen Hun",
@@ -2112,7 +2126,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI041",
+    "id": "YJ_WEI041",
     "standard_id": "char_sunzi_liufang",
     "name_cn": "孙资刘放",
     "name_en": "Sun Zi & Liu Fang",
@@ -2148,7 +2162,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU037",
+    "id": "YJ_SHU037",
     "standard_id": "char_huanghao",
     "name_cn": "黄皓",
     "name_en": "Huang Hao",
@@ -2184,7 +2198,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN038",
+    "id": "YJ_QUN038",
     "standard_id": "char_zhangrang",
     "name_cn": "张让",
     "name_en": "Zhang Rang",
@@ -2214,7 +2228,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI064",
+    "id": "YJ_WEI064",
     "standard_id": "char_xinxianying",
     "name_cn": "辛宪英",
     "name_en": "Xin Xianying",
@@ -2250,7 +2264,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU064",
+    "id": "YJ_SHU064",
     "standard_id": "char_wuxian",
     "name_cn": "吴苋",
     "name_en": "Wu Xian",
@@ -2286,7 +2300,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WU064",
+    "id": "YJ_WU064",
     "standard_id": "char_xushi",
     "name_cn": "徐氏",
     "name_en": "Lady Xu",
@@ -2322,7 +2336,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN064",
+    "id": "YJ_QUN064",
     "standard_id": "char_caojie",
     "name_cn": "曹节",
     "name_en": "Cao Jie",
@@ -2358,7 +2372,7 @@
     "faq": []
   },
   {
-    "id": "YJ.WEI065",
+    "id": "YJ_WEI065",
     "standard_id": "char_jikang",
     "name_cn": "嵇康",
     "name_en": "Ji Kang",
@@ -2394,7 +2408,7 @@
     "faq": []
   },
   {
-    "id": "YJ.SHU065",
+    "id": "YJ_SHU065",
     "standard_id": "char_qinmi",
     "name_cn": "秦宓",
     "name_en": "Qin Mi",
@@ -2417,26 +2431,26 @@
       {
         "name_cn": "谏征",
         "name_en": "Remonstrate Against War",
-        "description_cn": "当其他角色使用【杀】指定其他角色为目标时，若你在使用者的攻击范围内，你可以将一张手牌置于牌堆顶，取消所有目标，然后若此【杀】不为黑色，你成为目标。",
-        "description_en": "When a character uses a damage-dealing card, if you have more hand cards than them, you may discard 1 card to make that card ineffective."
+        "description_cn": "攻击范围内包含你的角色使用【杀】指定目标时,若你不 为此【杀】目标, 你以将一张手牌置于牌堆顶,取消 之,然后后若此【杀】不为黑色,你成为此【杀】目标。 ",
+        "description_en": ""
       },
       {
         "name_cn": "专对",
         "name_en": "Precise Response",
-        "description_cn": "当你使用【杀】指定目标后，你可以与其拼点，若你赢，其不能响应此【杀】；当你成为【杀】的目标后，你可以与使用者拼点，若你赢，此【杀】对你无效。",
-        "description_en": "When you are targeted by a card, you may reveal 1 hand card of the same type; if you do, that card has no effect on you."
+        "description_cn": "当你使用【杀】指定目标后,你可以与其拼点：若你 赢,其不能响应此【杀】：当你成为【杀】的目标后, 你可以与使用者拼点： 若你贏, 此 杀对你无效。",
+        "description_en": ""
       },
       {
         "name_cn": "天辩",
         "name_en": "Heavenly Debate",
-        "description_cn": "当你拼点时，你可以用牌堆顶的牌拼点。你的红桃拼点牌的点数视为K。",
-        "description_en": "Locked Skill: Each time you successfully cancel a card using \"Precise Response,\" draw 1 card."
+        "description_cn": "你可以用牌堆顶的牌拼点： 你的红桃拼点牌点数视为K",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "YJ.WU065",
+    "id": "YJ_WU065",
     "standard_id": "char_xuezong",
     "name_cn": "薛综",
     "name_en": "Xue Zong",
@@ -2472,7 +2486,7 @@
     "faq": []
   },
   {
-    "id": "YJ.QUN065",
+    "id": "YJ_QUN065",
     "standard_id": "char_caiyong",
     "name_cn": "蔡邕",
     "name_en": "Cai Yong",

@@ -24,13 +24,15 @@
         "name_cn": "仁德",
         "name_en": "Benevolence",
         "description_cn": "出牌阶段，你可以将任意张手牌交给其他角色，然后你本阶段以此法给出第二张牌或更多时，你回复1点体力。",
-        "description_en": "During your Action Phase, you may give any number of hand cards to other characters (distributed however you like, one card at a time to each target). When you give out your second card this way during this phase, recover 1 HP."
+        "description_en": "During your Action Phase, you may give any number of hand cards to other characters (distributed however you like, one card at a time to each target). When you give out your second card this way during this phase, recover 1 HP.",
+        "skill_type": "active"
       },
       {
         "name_cn": "激将",
         "name_en": "Rally the Vanguard",
-        "description_cn": "主公技，其他蜀势力角色可以在你需要时代替你使用或打出【杀】（视为由你使用或打出）。",
-        "description_en": "Lord Skill: Other Shu faction characters can use or play the [Kill] skill on your behalf when needed (considered as if you used or played it)."
+        "description_cn": "主公技，当你需要使用或打出【杀】时，你可以令其他蜀势力角色选择是否打出一张【杀】（视为由你使用或打出）。",
+        "description_en": "Lord Skill: When you need to use or play out a [Kill], you may have other Shu faction characters each choose whether to play out a [Kill] on your behalf (treated as used or played out by you).",
+        "skill_type": "lord"
       }
     ],
     "faq": []
@@ -60,7 +62,8 @@
         "name_cn": "武圣",
         "name_en": "Saint of War",
         "description_cn": "你可以将一张红色牌当【杀】使用或打出。",
-        "description_en": "You may play any red card as a [Kill]"
+        "description_en": "You may use or play out any red card as a [Kill].",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -90,7 +93,8 @@
         "name_cn": "咆哮",
         "name_en": "Roar",
         "description_cn": "锁定技，你使用【杀】无次数限制。",
-        "description_en": "Locked: No limit on [Kill] usage."
+        "description_en": "Locked: You may use [Kill] any number of times per turn.",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -120,13 +124,15 @@
         "name_cn": "观星",
         "name_en": "Read the Stars",
         "description_cn": "准备阶段，你可以观看牌堆顶的X张牌（X为存活角色数且至多为5），然后以任意顺序置于牌堆顶或牌堆底。",
-        "description_en": "During your Starting Phase, you may look at the top X cards of the deck (X = number of surviving characters, max 5), then place them back on the top or bottom of the deck in any order."
+        "description_en": "During your Starting Phase, you may look at the top X cards of the Draw Pile (X = number of surviving characters, max 5), then place them back on the top or bottom of the Draw Pile in any order.",
+        "skill_type": "active"
       },
       {
         "name_cn": "空城",
         "name_en": "Empty Fort",
         "description_cn": "锁定技，若你没有手牌，你不能成为【杀】或【决斗】的目标。",
-        "description_en": "Locked: If you have no hand cards, you cannot be targeted by [Kill] or [Duel]."
+        "description_en": "Locked: If you have no hand cards, you cannot be targeted by [Kill] or [Duel].",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -156,7 +162,8 @@
         "name_cn": "龙胆",
         "name_en": "Dragon's Courage",
         "description_cn": "你可以将一张【杀】当【闪】、【闪】当【杀】使用或打出。",
-        "description_en": "You may play [Kill] as [Dodge], [Dodge] as [Kill]."
+        "description_en": "You may use or play out [Kill] as [Dodge], or [Dodge] as [Kill].",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -186,13 +193,15 @@
         "name_cn": "铁骑",
         "name_en": "Iron Cavalry",
         "description_cn": "当你使用【杀】指定目标后，你可以判定，若为红色，其不能使用【闪】响应此【杀】。",
-        "description_en": "When you use [Kill] and designate a target, you may make a judgment. If the result is red, that character cannot use [Dodge] to respond to this [Kill]."
+        "description_en": "When you use [Kill] and designate a target, you may make a judgment. If the result is red, that character cannot use [Dodge] to respond to this [Kill].",
+        "skill_type": "active"
       },
       {
         "name_cn": "马术",
         "name_en": "Horsemanship",
         "description_cn": "锁定技，你计算与其他角色的距离-1。",
-        "description_en": "Locked: Your distance to other characters is calculated as -1."
+        "description_en": "Locked: When you calculate the distance to another character, subtract 1.",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -222,13 +231,15 @@
         "name_cn": "集智",
         "name_en": "Gathered Wisdom",
         "description_cn": "当你使用普通锦囊牌时，你可以摸一张牌。",
-        "description_en": "When you use a Non Time-Delay Tool card, you may draw 1 card."
+        "description_en": "When you use a Non Time-Delay Tool card, you may draw 1 card.",
+        "skill_type": "active"
       },
       {
         "name_cn": "奇才",
         "name_en": "Extraordinary Talent",
         "description_cn": "锁定技，你使用锦囊牌无距离限制。",
-        "description_en": "Locked: You may use tool cards without distance restrictions."
+        "description_en": "Locked: You may use Tool cards without distance restrictions.",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -258,13 +269,15 @@
         "name_cn": "制衡",
         "name_en": "Balance of Power",
         "description_cn": "出牌阶段限一次，你可以弃置任意张牌，然后摸等量张牌。",
-        "description_en": "Once per Action Phase: Discard any number of cards, then draw the same number."
+        "description_en": "Once per Action Phase: Discard any number of cards, then draw the same number.",
+        "skill_type": "active"
       },
       {
         "name_cn": "救援",
         "name_en": "Rescue",
         "description_cn": "主公技，锁定技，其他吴势力角色对你使用【桃】的回复值+1。",
-        "description_en": "Lord Skill: Locked: When another Wu faction character uses [Peach] to heal you, the recovery value +1."
+        "description_en": "Lord Skill: Locked: When another Wu faction character uses [Peach] to recover HP for you, the HP recovered is increased by 1.",
+        "skill_type": "lord"
       }
     ],
     "faq": []
@@ -294,7 +307,8 @@
         "name_cn": "奇袭",
         "name_en": "Surprise Raid",
         "description_cn": "你可以将一张黑色牌当【过河拆桥】使用。",
-        "description_en": "You may play any black card as [Dismantle]."
+        "description_en": "You may play any black card as [Dismantle].",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -324,7 +338,8 @@
         "name_cn": "克己",
         "name_en": "Self-Discipline",
         "description_cn": "若你未于本回合出牌阶段使用或打出过【杀】，你可以跳过弃牌阶段。",
-        "description_en": "If you did not use or play [Kill] during your Action Phase, you may skip your Discard Phase."
+        "description_en": "If you did not use or play out [Kill] during your Action Phase this turn, you may skip your Discard Phase.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -354,7 +369,8 @@
         "name_cn": "苦肉",
         "name_en": "Self-Harm",
         "description_cn": "出牌阶段，你可以失去1点体力，然后摸两张牌。",
-        "description_en": "During your Action Phase, you may lose 1 HP, then draw 2 cards."
+        "description_en": "During your Action Phase, you may lose 1 HP, then draw 2 cards.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -384,13 +400,15 @@
         "name_cn": "英姿",
         "name_en": "Heroic Bearing",
         "description_cn": "摸牌阶段，你可以多摸一张牌。",
-        "description_en": "Draw Phase: You may draw 1 extra card."
+        "description_en": "Draw Phase: You may draw 1 extra card.",
+        "skill_type": "active"
       },
       {
         "name_cn": "反间",
         "name_en": "Double Agent",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一种花色，令其获得并展示你的一张手牌，若此牌花色与其选择的花色不同，你对其造成1点伤害。",
-        "description_en": "Once per Action Phase: Choose another character. They declare a suit, then take 1 of your hand cards and reveal it. If the card's suit does not match what they declared, deal 1 damage to them."
+        "description_en": "Once per Action Phase: Choose another character. They declare a suit, then gain and reveal 1 of your hand cards. If the card's suit does not match what they declared, you deal 1 damage to them.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -420,13 +438,15 @@
         "name_cn": "国色",
         "name_en": "Peerless Beauty",
         "description_cn": "你可以将一张方片牌当【乐不思蜀】使用。",
-        "description_en": "You may play any Diamond card as [Acedia]."
+        "description_en": "You may play any Diamond card as [Acedia].",
+        "skill_type": "active"
       },
       {
         "name_cn": "流离",
         "name_en": "Drift and Scatter",
         "description_cn": "当你成为【杀】的目标时，你可以弃置一张牌并将此【杀】转移给你攻击范围内的一名其他角色。",
-        "description_en": "When you are targeted by [Kill], you may discard 1 card and redirect it to another character within your attack range."
+        "description_en": "When you are targeted by [Kill], you may discard 1 card and redirect that [Kill] to another character within your Attack Range.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -456,13 +476,15 @@
         "name_cn": "谦逊",
         "name_en": "Humility",
         "description_cn": "锁定技，你不能成为【顺手牵羊】和【乐不思蜀】的目标。",
-        "description_en": "Locked: You cannot be targeted by [Steal] or [Acedia]."
+        "description_en": "Locked: You cannot be targeted by [Steal] or [Acedia].",
+        "skill_type": "locked"
       },
       {
         "name_cn": "连营",
         "name_en": "Linked Camps",
         "description_cn": "当你失去最后的手牌后，你可以摸一张牌。",
-        "description_en": "When you lose your last hand card, you may draw 1 card."
+        "description_en": "When you lose your last hand card, you may draw 1 card.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -492,13 +514,15 @@
         "name_cn": "奸雄",
         "name_en": "Treacherous Hero",
         "description_cn": "当你受到伤害后，你可以获得造成此伤害的牌。",
-        "description_en": "When you take damage, you may gain the card that caused the damage."
+        "description_en": "When you take damage, you may gain the card that caused the damage.",
+        "skill_type": "active"
       },
       {
         "name_cn": "护驾",
         "name_en": "Imperial Guard",
         "description_cn": "主公技，其他魏势力角色可以在你需要时代替你使用或打出【闪】（视为由你使用或打出）。",
-        "description_en": "Lord Skill: Other Wei faction characters may use or play [Dodge] on your behalf when you need it (treated as if used or played by you)."
+        "description_en": "Lord Skill: When you need to use or play out a [Dodge], other Wei faction characters may choose to play out a [Dodge] on your behalf (treated as used or played out by you).",
+        "skill_type": "lord"
       }
     ],
     "faq": []
@@ -528,13 +552,15 @@
         "name_cn": "反馈",
         "name_en": "Retribution",
         "description_cn": "当你受到伤害后，你可以获得伤害来源的一张牌。",
-        "description_en": "When you take damage, you may take 1 card from the damage source."
+        "description_en": "When you take damage, you may take 1 card from the damage source.",
+        "skill_type": "active"
       },
       {
         "name_cn": "鬼才",
         "name_en": "Demonic Wit",
         "description_cn": "当一张判定牌生效前，你可以用一张手牌代替之。",
-        "description_en": "When a judgment card is about to take effect, you may replace it with a hand card."
+        "description_en": "When a Judgment Card is about to take effect, you may substitute it with a hand card.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -564,7 +590,8 @@
         "name_cn": "刚烈",
         "name_en": "Unyielding",
         "description_cn": "当你受到伤害后，你可以判定，若结果不为红桃，伤害来源选择弃置两张手牌或受到1点伤害。",
-        "description_en": "When you take damage, make a judgment. If it is not Heart, the damage source must discard 2 hand cards or take 1 damage."
+        "description_en": "When you receive damage, you may perform a Judgment. If the result is not Hearts, the damage source chooses to discard 2 hand cards or take 1 damage.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -593,8 +620,9 @@
       {
         "name_cn": "突袭",
         "name_en": "Blitz",
-        "description_cn": "摸牌阶段，你可以改为获得至多两名角色的各一张手牌。",
-        "description_en": "Draw Phase: Instead, you may take 1 hand card from each of up to 2 characters."
+        "description_cn": "摸牌阶段，你可以少摸任意张牌并获得等量的其他角色各一张手牌。",
+        "description_en": "Draw Phase: You can draw fewer cards and instead take the same number of cards from other characters' hands.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -624,7 +652,8 @@
         "name_cn": "裸衣",
         "name_en": "Bare-Chested",
         "description_cn": "摸牌阶段，你可以少摸一张牌，然后你本回合使用【杀】或【决斗】造成的伤害+1。",
-        "description_en": "Draw Phase: You may draw 1 fewer card. If you do, your [Kill] and [Duel] deal +1 damage this turn."
+        "description_en": "Draw Phase: You may draw 1 fewer card. If you do, your [Kill] and [Duel] deal +1 damage this turn.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -654,13 +683,15 @@
         "name_cn": "天妒",
         "name_en": "Heaven's Envy",
         "description_cn": "当你的判定牌生效后，你可以获得此牌。",
-        "description_en": "When your judgment card takes effect, you may keep it."
+        "description_en": "When your Judgment Card takes effect, you may keep it.",
+        "skill_type": "active"
       },
       {
         "name_cn": "遗计",
         "name_en": "Dying Stratagem",
         "description_cn": "当你受到1点伤害后，你可以观看牌堆顶的两张牌，然后将这些牌交给任意角色。",
-        "description_en": "When you take 1 damage, you may look at the top 2 cards of the deck, then give them to any characters."
+        "description_en": "When you receive 1 damage, you may look at the top 2 cards of the Draw Pile, then give them to any characters.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -690,13 +721,15 @@
         "name_cn": "洛神",
         "name_en": "Goddess of the Luo",
         "description_cn": "准备阶段，你可以判定，若结果为黑色，你获得此牌，然后你可以重复此流程。",
-        "description_en": "Starting Phase: Make a judgment. If it is black, gain that card and repeat this process."
+        "description_en": "During your Starting Phase, you may perform a Judgment. If the result is Black, gain that card, then you may repeat this process.",
+        "skill_type": "active"
       },
       {
         "name_cn": "倾国",
         "name_en": "Fell a Kingdom",
         "description_cn": "你可以将一张黑色手牌当【闪】使用或打出。",
-        "description_en": "You may play any black hand card as [Dodge]."
+        "description_en": "You may play any black hand card as [Dodge].",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -726,13 +759,15 @@
         "name_cn": "急救",
         "name_en": "Field Medicine",
         "description_cn": "在你的回合外，你可以将一张红色牌当【桃】使用。",
-        "description_en": "Outside your turn, you may play any red card as [Peach]."
+        "description_en": "Outside your turn, you may play any red card as [Peach].",
+        "skill_type": "active"
       },
       {
         "name_cn": "青囊",
-        "name_en": "Cure the Plague",
+        "name_en": "Physician's Tome",
         "description_cn": "出牌阶段限一次，你可以弃置一张手牌令一名角色回复1点体力。",
-        "description_en": "Once per Action Phase: Discard 1 hand card to let a character recover 1 health."
+        "description_en": "Once per Action Phase: Discard 1 hand card to have a character recover 1 HP.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -762,7 +797,8 @@
         "name_cn": "无双",
         "name_en": "Peerless",
         "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你【决斗】的角色每次需打出两张【杀】。",
-        "description_en": "Locked: Cancelling your [Kill] requires 2 [Dodge]. Each [Kill] played against you in a [Duel] also requires 2."
+        "description_en": "Locked: Negating your [Kill] requires 2 [Dodge]. Each time a character plays out a [Kill] against you in a [Duel], they must play out 2 [Kill] cards instead of 1.",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -792,13 +828,15 @@
         "name_cn": "闭月",
         "name_en": "Eclipse the Moon",
         "description_cn": "结束阶段，你可以摸一张牌。",
-        "description_en": "End Phase: You may draw 1 card."
+        "description_en": "End Phase: You may draw 1 card.",
+        "skill_type": "active"
       },
       {
         "name_cn": "离间",
         "name_en": "Sow Discord",
         "description_cn": "出牌阶段限一次，你可以弃置一张牌令一名男性角色视为对另一名男性角色使用一张【决斗】（不能被【无懈可击】抵消）。",
-        "description_en": "Once per Action Phase: Discard 1 card to force a male character to [Duel] another male character (cannot be negated by [Nullification])."
+        "description_en": "Once per Action Phase: Discard 1 card to force a male character to [Duel] another male character (cannot be negated by [Nullification]).",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -828,13 +866,15 @@
         "name_cn": "枭姬",
         "name_en": "Fierce Lady",
         "description_cn": "当你失去装备区里的一张牌后，你可以摸两张牌。",
-        "description_en": "When you lose a card from your equipment area, you may draw 2 cards."
+        "description_en": "When you lose a card from your Equipment Zone, you may draw 2 cards.",
+        "skill_type": "active"
       },
       {
         "name_cn": "结姻",
         "name_en": "Political Marriage",
         "description_cn": "出牌阶段限一次，你可以弃置两张手牌，令你与一名已受伤的男性角色各回复1点体力。",
-        "description_en": "Once per Action Phase: Discard 2 hand cards. You and 1 injured male character each recover 1 health."
+        "description_en": "Once per Action Phase: Discard 2 hand cards. You and 1 Wounded male character each recover 1 HP.",
+        "skill_type": "active"
       }
     ],
     "faq": []
@@ -864,7 +904,8 @@
         "name_cn": "耀武",
         "name_en": "Show of Arms",
         "description_cn": "锁定技，当一名角色使用红色【杀】对你造成伤害时，其选择回复1点体力或摸一张牌。",
-        "description_en": "Locked: When a character deals damage to you with a red [Kill], they must choose: recover 1 health or draw 1 card."
+        "description_en": "Locked: When a character deals damage to you with a red [Kill], they must choose: recover 1 HP or draw 1 card.",
+        "skill_type": "locked"
       }
     ],
     "faq": []
@@ -894,13 +935,15 @@
         "name_cn": "妄尊",
         "name_en": "Vainglorious",
         "description_cn": "主公的准备阶段，你可以摸一张牌，然后令其本回合手牌上限-1。",
-        "description_en": "Your Starting Phase: You may draw 1 card, then reduce another character's hand limit by 1 this turn."
+        "description_en": "During the Lord's Starting Phase, you may draw 1 card, then reduce the Lord's Hand Limit by 1 this turn.",
+        "skill_type": "active"
       },
       {
         "name_cn": "同疾",
         "name_en": "Shared Ailment",
         "description_cn": "锁定技，若你的手牌数大于体力值，攻击范围内包含你的其他角色使用【杀】不能指定除你外的角色为目标。",
-        "description_en": "Locked: If your hand count exceeds your health, other characters who can attack you may not target anyone other than you with [Kill]."
+        "description_en": "Locked: If your hand card count exceeds your HP Value, other characters whose Attack Range includes you cannot use [Kill] to target anyone other than you.",
+        "skill_type": "locked"
       }
     ],
     "faq": []

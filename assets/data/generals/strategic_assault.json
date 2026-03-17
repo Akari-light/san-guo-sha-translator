@@ -1,0 +1,58 @@
+[
+    {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Strategic Assault",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "MG_WU007",
+    "standard_id": "",
+    "name_cn": "陆逊",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Strategic Assault",
+    "skills": [
+      {
+        "name_cn": "谦逊",
+        "name_en": "",
+        "description_cn": "当一张锦囊牌对你生效时,若你武将牌上没有同名牌 且你不是使用者,则你将之置于武将牌上,然后可将 至多张牌移出游戏直到本回合结束(X为你武将牌上 的牌数且至多为5);出牌阶段开始时,你可以使用 一张武将牌上的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "连营",
+        "name_en": "",
+        "description_cn": "其他角色的回合结束时,你可观看牌堆顶的张牌,然 后将这些牌交给任意角色(为你本回合失去的牌数: 且至多为5)。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  }  
+]

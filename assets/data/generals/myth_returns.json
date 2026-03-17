@@ -1,5 +1,35 @@
 [
   {
+    "id": "SHU008",
+    "standard_id": "char_huangzhong",
+    "name_cn": "黄忠",
+    "name_en": "Huang Zhong",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "烈弓",
+        "name_en": "Fierce Archery",
+        "description_cn": "当你于出牌阶段使用【杀】指定目标后，若其手牌数不小于你的体力值或不大于你的攻击范围，你可以令其不能抵消此【杀】。",
+        "description_en": "When you use [Kill] and designate a target during your Action Phase, you may apply one or both conditions: (1) if their hand count ≤ yours, they cannot negate this [Kill]; (2) if their health ≥ yours, this [Kill] deals +1 damage."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "SHU009",
     "standard_id": "char_weiyan",
     "name_cn": "魏延",
@@ -36,174 +66,6 @@
     "faq": []
   },
   {
-    "id": "WEI008",
-    "standard_id": "char_xiahouyuan",
-    "name_cn": "夏侯渊",
-    "name_en": "Xiahou Yuan",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "爆发",
-      "翻面"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Burst",
-      "Flip"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "神速",
-        "name_en": "Lightning Speed",
-        "description_cn": "你可以选择至多三项：1.跳过判定阶段和摸牌阶段；2.跳过出牌阶段并弃置一张装备牌；3.跳过弃牌阶段并翻面。你每选择一项，你视为使用一张无距离限制的【杀】。",
-        "description_en": "You may choose up to 3 options before your Starting Phase: (1) skip Judgment and Draw phases; (2) skip Action Phase and discard 1 equipment; (3) skip Discard Phase and flip. For each option chosen, use 1 [Kill] with no distance limit."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI011",
-    "standard_id": "char_caoren",
-    "name_cn": "曹仁",
-    "name_en": "Cao Ren",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "持久"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Ramping"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "据守",
-        "name_en": "Steadfast Defense",
-        "description_cn": "结束阶段，你可以翻面并摸四张牌，然后弃置一张手牌，若为装备牌，你改为使用之。",
-        "description_en": "End Phase: You may flip face-down and draw 4 cards, then discard 1 hand card; if it is an equipment, you may equip it instead."
-      },
-      {
-        "name_cn": "解围",
-        "name_en": "Break the Siege",
-        "description_cn": "你可以将装备区里的牌当【无懈可击】使用。当你从背面翻至正面时，你可以弃置一张牌，然后移动场上一张牌。",
-        "description_en": "You may play a card from your equipment area as [Nullification]. When you flip from face-down to face-up, you may discard 1 card and move 1 card in any area to another area."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU011",
-    "standard_id": "char_xiaoqiao",
-    "name_cn": "小乔",
-    "name_en": "Xiao Qiao",
-    "gender": "Female",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "配合神将",
-      "持久"
-    ],
-    "traits_en": [
-      "Defensive",
-      "God General Synergy",
-      "Ramping"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "红颜",
-        "name_en": "Rosy Cheeks",
-        "description_cn": "锁定技，你的黑桃牌视为红桃牌。",
-        "description_en": "Locked Skill: Your Spade cards are treated as Heart cards."
-      },
-      {
-        "name_cn": "天香",
-        "name_en": "Celestial Fragrance",
-        "description_cn": "当你受到伤害时，你可以弃置一张红桃手牌，防止此伤害并选择一名其他角色，你选择令其：1.受到伤害来源的1点伤害并摸X张牌（X为其已损失体力值且至多为5）；2.失去1点体力并获得你弃置的牌。",
-        "description_en": "When you take damage, you may discard 1 Heart hand card to prevent it, then choose another character to: (1) take 1 damage from the source and draw X cards (X = their lost health, max 5); or (2) lose 1 health and gain your discarded card."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI012",
-    "standard_id": "char_dianwei",
-    "name_cn": "典韦",
-    "name_en": "Dian Wei",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "简单",
-      "多刀"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Simple",
-      "Multi-Strike"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "强袭",
-        "name_en": "Violent Assault",
-        "description_cn": "出牌阶段限两次，你可以受到1点伤害或弃置一张武器牌，对一名本回合内未以此法指定过的其他角色造成1点伤害。",
-        "description_en": "Twice per Action Phase: Lose 1 health or discard a weapon to deal 1 damage to a new target."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI013",
-    "standard_id": "char_xunyu",
-    "name_cn": "荀彧",
-    "name_en": "Xun Yu",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 3,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "卖血"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Glass Cannon"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "驱虎",
-        "name_en": "Drive the Tiger",
-        "description_cn": "出牌阶段限一次，你可以与体力值大于你的一名角色拼点：若你赢，其对其攻击范围内一名由你选择的角色造成1点伤害；若你没赢，其对你造成1点伤害。",
-        "description_en": "Once per Action Phase: Compete in points with a character whose health exceeds yours. If you win, they deal 1 damage to a character of your choice within their range. If you lose, they deal 1 damage to you."
-      },
-      {
-        "name_cn": "节命",
-        "name_en": "Preserve Lives",
-        "description_cn": "当你受到1点伤害后，你可以令一名角色将手牌摸至X张（X为其体力上限且至多为5）。",
-        "description_en": "When you take 1 damage, you may let a character draw up to X cards (X = their max health, max 5)."
-      }
-    ],
-    "faq": []
-  },
-  {
     "id": "SHU010",
     "standard_id": "char_pangtong",
     "name_cn": "庞统",
@@ -227,21 +89,21 @@
       {
         "name_cn": "连环",
         "name_en": "Chain Links",
-        "description_cn": "你可以将一张梅花手牌当【铁索连环】使用或重铸。",
+        "description_cn": "你可以将一张梅花手牌当【铁索连环】使用，或重铸一张梅花手牌。",
         "description_en": "You may play any Club hand card as [Iron Shackles] or use it to Reforge [Iron Shackles]."
       },
       {
         "name_cn": "涅槃",
         "name_en": "Nirvana",
         "description_cn": "限定技，当你处于濒死状态时，你可以弃置你区域内里的所有牌，复原你的武将牌，摸三张牌，回复至3点体力。",
-        "description_en": "Limited Skill: When you are in a dying state, you may discard all cards in your area, reset your character card to face-up, draw 3 cards, and recover to 3 health."
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "SHU004",
-    "standard_id": "char_wolong_zhugeliang",
+    "id": "SHU011",
+    "standard_id": "char_wolongzhugeliang",
     "name_cn": "卧龙诸葛亮",
     "name_en": "Wolong Zhuge Liang",
     "gender": "Male",
@@ -282,325 +144,93 @@
     "faq": []
   },
   {
-    "id": "WU012",
-    "standard_id": "char_taishici",
-    "name_cn": "太史慈",
-    "name_en": "Tai Shi Ci",
+    "id": "SHU012",
+    "standard_id": "char_jiangwei",
+    "name_cn": "姜维",
+    "name_en": "Jiang Wei",
     "gender": "Male",
-    "faction": "Wu",
-    "health": 4,
-    "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "拼点"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Point Fight"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "天义",
-        "name_en": "Heaven's Justice",
-        "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合使用【杀】的次数+1、无距离限制且可以多指定一个目标；若你没赢，你本回合不能使用【杀】。",
-        "description_en": "Once per Action Phase: Compete in points with a character. If you win, your [Kill] limit +1 and ignores distance this turn and may target 1 extra character. If you lose, you cannot use [Kill] this turn."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI045",
-    "standard_id": "char_pangde",
-    "name_cn": "庞德",
-    "name_en": "Pang De",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "马术",
-        "name_en": "Horsemanship",
-        "description_cn": "锁定技，你计算与其他角色的距离-1。",
-        "description_en": "Locked Skill: Your distance to other characters is calculated as -1."
-      },
-      {
-        "name_cn": "鞬出",
-        "name_en": "Jianchu",
-        "description_cn": "当你使用【杀】指定目标后，你可以弃置其一张牌，若弃置牌为：装备牌，其不能抵消此【杀】；非装备牌，其获得此【杀】。",
-        "description_en": "When using [Kill], discard 1 of their cards. If basic: they gain the [Kill]. If non-basic: it's unavoidable and [Kill] limit +1."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN005",
-    "standard_id": "char_yanliang_wenchou",
-    "name_cn": "颜良文丑",
-    "name_en": "Yan Liang & Wen Chou",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 1.5,
-    "traits_cn": [
-      "进攻",
-      "简单",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Simple",
-      "Burst"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "双雄",
-        "name_en": "Twin Warriors",
-        "description_cn": "摸牌阶段，你可以改为进行一次判定，你获得判定牌且本回合可以将一张与之颜色不同的手牌当【决斗】使用。",
-        "description_en": "Draw Phase: Instead, make a judgment and keep the judgment card. You may then play a hand card of a different color as [Duel] this turn."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN004",
-    "standard_id": "char_yuan_shao",
-    "name_cn": "袁绍",
-    "name_en": "Yuan Shao",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "简单",
-      "减目标"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Simple",
-      "Target Reduction"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "乱击",
-        "name_en": "Volley",
-        "description_cn": "你可以将两张花色相同的手牌当【万箭齐发】使用。",
-        "description_en": "You may play 2 hand cards of the same suit as [Raining Arrows]."
-      },
-      {
-        "name_cn": "血裔",
-        "name_en": "Bloodline",
-        "description_cn": "主公技，锁定技，你的手牌上限+X（X为其他群势力角色数的两倍）。",
-        "description_en": "Lord Skill — Locked Skill: Your hand limit +X (X = twice the number of other surviving Qun characters)."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI010",
-    "standard_id": "char_xuhuang",
-    "name_cn": "徐晃",
-    "name_en": "Xu Huang",
-    "gender": "Male",
-    "faction": "Wei",
+    "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
     "traits_cn": [
       "控制",
-      "持久",
-      "颜色爱好者"
+      "困难",
+      "拆迁办"
     ],
     "traits_en": [
       "Control",
-      "Ramping",
-      "Color Specialist"
+      "High Difficulty",
+      "Disruptor"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "断粮",
-        "name_en": "Cut Supply Lines",
-        "description_cn": "你可以将一张黑色基本牌或黑色装备牌当【兵粮寸断】使用。你对手牌数不小于你的角色使用【兵粮寸断】无距离限制。",
-        "description_en": "You may play any black basic or black equipment card as [Starvation]. Your [Starvation] ignores distance against characters whose hand count ≥ yours."
+        "name_cn": "挑衅",
+        "name_en": "Provocation",
+        "description_cn": "出牌阶段限一次，你可以选择一名攻击范围内含有你的角色，然后除非该角色对你使用一张【杀】，否则你弃置其一张牌。",
+        "description_en": ""
       },
       {
-        "name_cn": "截辎",
-        "name_en": "Intercept Provisions",
-        "description_cn": "锁定技，当其他角色跳过摸牌阶段后，你摸一张牌。",
-        "description_en": "Locked Skill: When another character skips their Draw Phase, you draw 1 card."
-      }
+        "name_cn": "志继",
+        "name_en": "Inherit the Will",
+        "description_cn": "觉醒技，准备阶段，若你没有手牌，你回复1点体力或摸两张牌，然后减1点体力上限，获得观星",
+        "description_en": ""
+      },
+      {
+        "name_cn": "观星",
+        "name_en": "Read the Stars",
+        "description_cn": "准备阶段，你可以观看牌堆顶的X张牌（X为存活角色数且至多为5），然后以任意顺序置于牌堆顶或牌堆底。",
+        "description_en": "During your Starting Phase, you may look at the top X cards of the Draw Pile (X = number of surviving characters, max 5), then place them back on the top or bottom of the Draw Pile in any order.",
+        "skill_type": "active"
+      }      
     ],
     "faq": []
   },
   {
-    "id": "WEI014",
-    "standard_id": "char_caopi",
-    "name_cn": "曹丕",
-    "name_en": "Cao Pi",
+    "id": "SHU013",
+    "standard_id": "char_liushan",
+    "name_cn": "刘禅",
+    "name_en": "Liu Shan",
     "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 3.5,
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 2.5,
     "traits_cn": [
       "防御",
-      "控制",
-      "卖血"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Glass Cannon"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "行殇",
-        "name_en": "Reap the Fallen",
-        "description_cn": "当其他角色死亡时，你可以获得其所有牌。",
-        "description_en": "When another character dies, you may gain all their cards."
-      },
-      {
-        "name_cn": "放逐",
-        "name_en": "Exile",
-        "description_cn": "当你受到伤害后，你可以令一名其他角色翻面，并令其摸X张牌（X为你已损失体力值）。",
-        "description_en": "When you take damage, you may flip another character face-down and have them draw X cards (X = damage taken)."
-      },
-      {
-        "name_cn": "颂威",
-        "name_en": "Laud Authority",
-        "description_cn": "主公技，当其他魏势力角色的黑色判定牌生效后，其可以令你摸一张牌。",
-        "description_en": "Lord Skill: When another Wei character's black judgment card takes effect, they may have you draw 1 card."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU009",
-    "standard_id": "char_sunjian",
-    "name_cn": "孙坚",
-    "name_en": "Sun Jian",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "控制",
       "辅助",
-      "简单"
+      "主公技"
     ],
     "traits_en": [
-      "Control",
-      "Support",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "英魂",
-        "name_en": "Heroic Spirit",
-        "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
-        "description_en": "Starting Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN006",
-    "standard_id": "char_dongzhuo",
-    "name_cn": "董卓",
-    "name_en": "Dong Zhuo",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 8,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "加伤"
-    ],
-    "traits_en": [
-      "Aggressive",
       "Defensive",
-      "Damage Boost"
+      "Support",
+      "Lord Skill"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "酒池",
-        "name_en": "Pool of Wine",
-        "description_cn": "你可以将一张黑桃手牌当【酒】使用。",
-        "description_en": "You may play any Spade hand card as [Wine]."
+        "name_cn": "享乐",
+        "name_en": "Idle Pleasure",
+        "description_cn": "锁定技，当你成为一名角色使用【杀】的目标后，除非该角色弃置一张基本牌，否则此【杀】对你无效。",
+        "description_en": "Locked Skill: When you are targeted by [Kill], it has no effect unless the user first discards 1 basic card."
       },
       {
-        "name_cn": "肉林",
-        "name_en": "Forest of Flesh",
-        "description_cn": "锁定技，你对女性角色使用的【杀】和女性角色对你使用的【杀】均需使用两张【闪】才能抵消。",
-        "description_en": "Locked Skill: Both your [Kill] targeting female characters and female characters' [Kill] targeting you require 2 [Dodge] to cancel."
+        "name_cn": "放权",
+        "name_en": "Abdicate",
+        "description_cn": "你可以跳过出牌阶段，然后本回合结束时，你可以弃置一张手牌并令一名其他角色执行一个额外的回合。",
+        "description_en": "You may skip your Action Phase. At the end of this turn, you may discard 1 hand card and give another character an extra turn."
       },
       {
-        "name_cn": "崩坏",
-        "name_en": "Collapse",
-        "description_cn": "锁定技，结束阶段，若你不是体力值最小的角色，你失去1点体力或减少1点体力上限。",
-        "description_en": "Locked Skill — End Phase: If you do not have the lowest health, you must lose 1 health or reduce your max health by 1."
+        "name_cn": "若愚",
+        "name_en": "Feign Foolishness",
+        "description_cn": "主公技，觉醒技，准备阶段，若你是体力值最小的角色，你增加1点体力上限，回复1点体力，然后获得“激将”。",
+        "description_en": "Lord Skill — Awakening Skill — Starting Phase: If you have the lowest health, increase your max health by 1, recover 1 health, and gain \"Rally the Vanguard.\""
       },
       {
-        "name_cn": "暴虐",
-        "name_en": "Tyranny",
-        "description_cn": "主公技，当其他群势力角色造成伤害后，其可以令你判定，若结果为黑桃，你回复1点体力。",
-        "description_en": "Lord Skill: After another Qun character deals damage, they may have you make a judgment. If the result is Spade, you recover 1 health."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "SHU015",
-    "standard_id": "char_zhurong",
-    "name_cn": "祝融",
-    "name_en": "Zhu Rong",
-    "gender": "Female",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "拼点"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Point Fight"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "巨象",
-        "name_en": "War Elephants",
-        "description_cn": "锁定技，【南蛮入侵】对你无效。当其他角色使用的【南蛮入侵】结算结束后，你获得之。",
-        "description_en": "Locked Skill: [Barbarians] has no effect on you. After another character's [Barbarians] finishes resolving, you gain that card."
-      },
-      {
-        "name_cn": "烈刃",
-        "name_en": "Blazing Blade",
-        "description_cn": "当你使用【杀】对目标角色造成伤害后，你可以与其拼点：若你赢，你获得其一张牌。",
-        "description_en": "When your [Kill] deals damage to a target, you may compete in points with them. If you win, gain 1 of their cards."
+        "name_cn": "激将",
+        "name_en": "Rally the Vanguard",
+        "description_cn": "主公技，当你需要使用或打出【杀】时，你可以令其他蜀势力角色选择是否打出一张【杀】（视为由你使用或打出）。",
+        "description_en": "Lord Skill: When you need to use or play out a [Kill], you may have other Shu faction characters each choose whether to play out a [Kill] on your behalf (treated as used or played out by you).",
+        "skill_type": "lord"
       }
     ],
     "faq": []
@@ -629,626 +259,50 @@
       {
         "name_cn": "祸首",
         "name_en": "Instigator",
-        "description_cn": "锁定技，【南蛮入侵】对你无效。当其他角色使用【南蛮入侵】指定目标后，你代替其成为此牌的伤害来源。",
-        "description_en": "Locked Skill: [Barbarians] has no effect on you. When another character uses [Barbarians], you become the damage source for that card."
+        "description_cn": "锁定技，【南蛮入侵】对你无效；当其他角色使用【南蛮入侵】指定目标后，你代替其成为此牌造成的伤害的来源。",
+        "description_en": ""
       },
       {
         "name_cn": "再起",
         "name_en": "Rise Again",
-        "description_cn": "摸牌阶段，若你已受伤，你可以改为亮出牌堆顶X张牌（X为你已损失体力值+1），回复与其中红桃牌数等量的体力并获得剩余牌。",
-        "description_en": "Draw Phase: If you are injured, instead reveal the top X cards (X = lost health + 1). Recover 1 health per Heart card revealed, then keep the rest."
+        "description_cn": "摸牌阶段，若你已受伤，你可以改为亮出牌堆顶的X张牌（X为你已损失的体力值），然后回复等同于其中红桃牌数量的体力，并获得其余的牌。",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "WEI047",
-    "standard_id": "char_jiaxu",
-    "name_cn": "贾诩",
-    "name_en": "Jia Xu",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "High Difficulty"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "完杀",
-        "name_en": "Total Annihilation",
-        "description_cn": "锁定技，在你的回合内，不处于濒死状态的其他角色不能使用【桃】。",
-        "description_en": "Locked Skill: During your turn, characters not in a dying state cannot use [Peach]."
-      },
-      {
-        "name_cn": "乱武",
-        "name_en": "Reign of Chaos",
-        "description_cn": "限定技，出牌阶段，你可以令所有其他角色依次选择一项：1.对其距离最近的另一名角色使用一张【杀】；2.失去1点体力。",
-        "description_en": "Limited Skill — Action Phase: Force all other characters to take turns: either use [Kill] on their nearest character, or lose 1 health."
-      },
-      {
-        "name_cn": "帷幕",
-        "name_en": "Iron Curtain",
-        "description_cn": "锁定技，你不能成为黑色锦囊牌的目标。",
-        "description_en": "Locked Skill: You cannot be targeted by black tool cards."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU014",
-    "standard_id": "char_lusu",
-    "name_cn": "鲁肃",
-    "name_en": "Lu Su",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "好施",
-        "name_en": "Generosity",
-        "description_cn": "摸牌阶段，你可以多摸两张牌，然后若你的手牌数大于5，你将一半的手牌（向下取整）交给手牌最少的一名其他角色。",
-        "description_en": "Draw Phase: You may draw 2 extra cards. If your hand count then exceeds 5, give half your hand cards (rounded down) to the character with the fewest hand cards."
-      },
-      {
-        "name_cn": "缔盟",
-        "name_en": "Forge Alliance",
-        "description_cn": "出牌阶段限一次，你可以选择两名其他角色并弃置X张牌（X为两者手牌数之差），然后交换两者手牌。",
-        "description_en": "Once per Action Phase: Choose 2 other characters and discard X cards (X = difference in their hand counts), then swap their hand cards."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI009",
-    "standard_id": "char_zhanghe",
-    "name_cn": "张郃",
-    "name_en": "Zhang He",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "巧变",
-        "name_en": "Agile Shift",
-        "description_cn": "你可以弃置一张手牌并跳过一个阶段（准备阶段和结束阶段除外），若为：摸牌阶段，你可以获得至多两名角色各一张手牌；出牌阶段，你可以移动场上一张牌。",
-        "description_en": "You may discard 1 hand card to skip a phase (not Preparation or End Phase). Draw Phase: take 1 hand card from each of up to 2 characters instead. Action Phase: move 1 card from one area to another instead."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI015",
-    "standard_id": "char_dengai",
-    "name_cn": "邓艾",
-    "name_en": "Deng Ai",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "发育"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Scaling"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "屯田",
-        "name_en": "Field Farming",
-        "description_cn": "当你于回合外失去牌后，你可以判定，当非红桃判定牌生效后，你将此牌置于你的武将牌上，称为“田”。你计算与其他角色的距离-X（X为你“田”的数量）。",
-        "description_en": "When you lose cards outside your turn, make a judgment. If it is not Heart, place the judgment card on your character card as \"Field.\" Your distance to others is -X (X = Field cards)."
-      },
-      {
-        "name_cn": "凿险",
-        "name_en": "Breach the Pass",
-        "description_cn": "觉醒技，准备阶段，若“田”的数量不小于3，你减少1点体力上限，然后获得“急袭”。",
-        "description_en": "Awakening Skill — Starting Phase: If you have ≥3 Field cards, reduce your max health by 1 and gain \"Rapid Strike.\""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "SHU012",
-    "standard_id": "char_jiangwei",
-    "name_cn": "姜维",
-    "name_en": "Jiang Wei",
-    "gender": "Male",
-    "faction": "Shu",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "困难",
-      "拆迁办"
-    ],
-    "traits_en": [
-      "Control",
-      "High Difficulty",
-      "Disruptor"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "挑衅",
-        "name_en": "Provocation",
-        "description_cn": "出牌阶段限一次，你可以令一名攻击范围内包含你的角色对你使用一张【杀】，否则你弃置其一张牌。",
-        "description_en": "Once per Action Phase: Force a character whose attack range includes you to use [Kill] on you, or you discard 1 of their cards."
-      },
-      {
-        "name_cn": "志继",
-        "name_en": "Inherit the Will",
-        "description_cn": "觉醒技，准备阶段，若你没有手牌，你回复1点体力或摸两张牌，然后减少1点体力上限并获得“观星”。",
-        "description_en": "Awakening Skill — Starting Phase: If you have no hand cards, recover 1 health or draw 2 cards, reduce your max health by 1, and gain \"Read the Stars.\""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "SHU013",
-    "standard_id": "char_liushan",
-    "name_cn": "刘禅",
-    "name_en": "Liu Shan",
-    "gender": "Male",
-    "faction": "Shu",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "主公技"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Lord Skill"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "享乐",
-        "name_en": "Idle Pleasure",
-        "description_cn": "锁定技，当你成为一名角色使用【杀】的目标后，除非其弃置一张基本牌，否则令此【杀】对你无效。",
-        "description_en": "Locked Skill: When you are targeted by [Kill], it has no effect unless the user first discards 1 basic card."
-      },
-      {
-        "name_cn": "放权",
-        "name_en": "Abdicate",
-        "description_cn": "你可以跳过出牌阶段，然后本回合结束时，你可以弃置一张手牌并令一名其他角色执行一个额外的回合。",
-        "description_en": "You may skip your Action Phase. At the end of this turn, you may discard 1 hand card and give another character an extra turn."
-      },
-      {
-        "name_cn": "若愚",
-        "name_en": "Feign Foolishness",
-        "description_cn": "主公技，觉醒技，准备阶段，若你是体力值最小的角色，你增加1点体力上限，回复1点体力，然后获得“激将”。",
-        "description_en": "Lord Skill — Awakening Skill — Starting Phase: If you have the lowest health, increase your max health by 1, recover 1 health, and gain \"Rally the Vanguard.\""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU010",
-    "standard_id": "char_sunce",
-    "name_cn": "孙策",
-    "name_en": "Sun Ce",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "卖血"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Glass Cannon"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "激昂",
-        "name_en": "Ardor",
-        "description_cn": "当你使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】的目标后，你可以摸一张牌。",
-        "description_en": "When you use [Duel] or a red [Kill], or become the target of [Duel] or a red [Kill], you may draw 1 card."
-      },
-      {
-        "name_cn": "魂姿",
-        "name_en": "Spirit Awakening",
-        "description_cn": "觉醒技，准备阶段，若你的体力值为1，你减少1点体力上限，然后获得“英姿”和“英魂”。",
-        "description_en": "Awakening Skill — Starting Phase: If your health is 1, reduce your max health by 1, then gain \"Heroic Bearing\" and \"Heroic Spirit.\""
-      },
-      {
-        "name_cn": "制霸",
-        "name_en": "Dominance",
-        "description_cn": "主公技，其他吴势力角色出牌阶段限一次，其可以与你拼点：若其没赢，你可以获得两张拼点牌。若你发动过“魂姿”，你可以拒绝此拼点。",
-        "description_en": "Lord Skill: Other Wu characters may once per Action Phase compete in points with you. If they lose, you keep both cards."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU015",
-    "standard_id": "char_zhangzhao_zhanghong",
-    "name_cn": "张昭张弘",
-    "name_en": "Zhang Zhao & Zhang Hong",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "配合神将"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "God General Synergy"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "直谏",
-        "name_en": "Direct Remonstrance",
-        "description_cn": "出牌阶段，你可以将手牌中一张装备牌置入一名其他角色的装备区，然后摸一张牌。",
-        "description_en": "Action Phase: You may place 1 equipment from your hand into another character's equipment area, then draw 1 card."
-      },
-      {
-        "name_cn": "固政",
-        "name_en": "Consolidate Power",
-        "description_cn": "其他角色弃牌阶段结束时，你可以令其获得一张此阶段因弃置进入弃牌堆的牌，然后你可以获得剩余牌。",
-        "description_en": "When another character's Discard Phase ends, you may let them regain 1 card they discarded this phase, then gain the rest."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN009",
-    "standard_id": "char_zuoci",
-    "name_cn": "左慈",
-    "name_en": "Zuo Ci",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "发育",
-      "回复",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Recovery",
-      "High Difficulty"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "化身",
-        "name_en": "Disguise",
-        "description_cn": "游戏开始时，你随机获得两张武将牌作为“化身”牌，然后展示其中一张，获得此“化身”牌上的一个技能。回合开始时和回合结束后，你可以替换展示的“化身”牌及因此获得的技能。",
-        "description_en": "Game start: Randomly gain 2 character cards as \"Disguise\" cards, reveal 1 and gain 1 of its skills. At the start and end of each turn, you may swap your revealed Disguise card and update your gained skill."
-      },
-      {
-        "name_cn": "新生",
-        "name_en": "Rebirth",
-        "description_cn": "当你受到1点伤害后，你可以获得一张新的“化身”牌。",
-        "description_en": "When you take 1 damage, you may gain a new \"Disguise\" card."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN012",
-    "standard_id": "char_cai_wenji",
-    "name_cn": "蔡文姬",
-    "name_en": "Cai Wenji",
+    "id": "SHU015",
+    "standard_id": "char_zhurong",
+    "name_cn": "祝融",
+    "name_en": "Zhu Rong",
     "gender": "Female",
     "faction": "Qun",
-    "health": 3,
+    "health": 4,
     "power_index": 3.0,
     "traits_cn": [
-      "防御",
-      "辅助",
-      "卖血"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Glass Cannon"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "悲歌",
-        "name_en": "Lament",
-        "description_cn": "当一名角色受到【杀】的伤害后，你可以弃置一张牌令其判定，若结果为：红桃，其回复1点体力；方片，其摸两张牌；梅花，伤害来源弃置两张牌；黑桃，伤害来源翻面。",
-        "description_en": "When a character takes damage from [Kill], you may discard 1 card and make a judgment for them: Heart — recover 1 health; Diamond — draw 2 cards; Club — damage source discards 2 cards; Spade — damage source flips."
-      },
-      {
-        "name_cn": "断肠",
-        "name_en": "Heartbreak",
-        "description_cn": "锁定技，当你死亡时，杀死你的角色失去所有技能。",
-        "description_en": "Locked Skill: When you die, the character who killed you loses all their skills."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "SHU008",
-    "standard_id": "char_huangzhong",
-    "name_cn": "黄忠",
-    "name_en": "Huang Zhong",
-    "gender": "Male",
-    "faction": "Shu",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "简单",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Simple",
-      "Sturdy"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "烈弓",
-        "name_en": "Fierce Archery",
-        "description_cn": "当你于出牌阶段使用【杀】指定目标后，若其手牌数不小于你的体力值或不大于你的攻击范围，你可以令其不能抵消此【杀】。",
-        "description_en": "When you use [Kill] and designate a target during your Action Phase, you may apply one or both conditions: (1) if their hand count ≤ yours, they cannot negate this [Kill]; (2) if their health ≥ yours, this [Kill] deals +1 damage."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN021",
-    "standard_id": "char_yuanshu",
-    "name_cn": "袁术",
-    "name_en": "Yuan Shu",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "简单",
-      "仲家帝"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Simple",
-      "Self-Proclaimed Emperor"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "庸肆",
-        "name_en": "Debauched",
-        "description_cn": "锁定技，摸牌阶段，你多摸X张牌；弃牌阶段开始时，你弃置X张牌。（X为全场势力数）",
-        "description_en": "Locked Skill — Draw Phase: Draw X extra cards; at the start of your Discard Phase, discard X cards (X = number of factions among surviving characters)."
-      },
-      {
-        "name_cn": "伪帝",
-        "name_en": "False Emperor",
-        "description_cn": "锁定技，你视为拥有主公的主公技。",
-        "description_en": "Locked Skill: You are treated as possessing the Lord character's lord skills."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU013",
-    "standard_id": "char_zhoutai",
-    "name_cn": "周泰",
-    "name_en": "Zhou Tai",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "不屈",
-        "name_en": "Indomitable",
-        "description_cn": "锁定技，当你处于濒死状态时，你将牌堆顶的一张牌置于你的武将牌上，称为“创”，若此牌点数与其他“创”均不同，你回复至1点体力，否则移去此牌。若你的武将牌上有“创”，你的手牌上限为“创”的数量。",
-        "description_en": "Locked Skill: When you would enter a dying state, reveal the top card of the deck and place it on your character card as a \"Wound.\" If its point value differs from all other Wounds, recover to 1 health; otherwise remove it. Your hand limit equals your number of Wounds."
-      },
-      {
-        "name_cn": "奋激",
-        "name_en": "Invigorate",
-        "description_cn": "当一名角色的手牌被弃置或获得后，你可以失去1点体力令其摸两张牌。",
-        "description_en": "When a character's hand cards are discarded or gained, you may lose 1 health to have them draw 2 cards."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN011",
-    "standard_id": "char_yuji",
-    "name_cn": "于吉",
-    "name_en": "Yu Ji",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 1.5,
-    "traits_cn": [
-      "困难",
-      "转化大师",
-      "锦囊大师"
-    ],
-    "traits_en": [
-      "High Difficulty",
-      "Converter",
-      "Tool Master"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "蛊惑",
-        "name_en": "Hex",
-        "description_cn": "每回合限一次，你可以扣置一张手牌当任意基本牌或普通锦囊牌使用或打出，其他角色可以质疑并展示此牌：若为假则此牌作废，若为真则质疑者获得“缠怨”。",
-        "description_en": "Once per turn: Place 1 hand card face-down and use it as any basic or Non Time-Delay Tool card. Others may challenge it — if the card is not what you claimed, it is cancelled; if it is, the challenger gains \"Grudge.\""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN010",
-    "standard_id": "char_zhangjue",
-    "name_cn": "张角",
-    "name_en": "Zhang Jue",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "判定"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Judgment"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "鬼道",
-        "name_en": "Ghost Path",
-        "description_cn": "当一张判定牌生效前，你可以用一张黑色牌替换之。",
-        "description_en": "When a judgment card is about to take effect, you may replace it with a black hand card."
-      },
-      {
-        "name_cn": "黄天",
-        "name_en": "Yellow Heaven",
-        "description_cn": "主公技，其他群势力角色出牌阶段限一次，其可以交给你一张【闪】或【闪电】。",
-        "description_en": "Lord Skill: Other Qun characters may once per Action Phase give you a [Dodge] or Spade hand card."
-      },
-      {
-        "name_cn": "雷击",
-        "name_en": "Thunder Strike",
-        "description_cn": "当你使用或打出【闪】时，你可以令一名其他角色判定，若结果为：黑桃，你对其造成2点雷电伤害；梅花，你回复1点体力，然后对其造成1点雷电伤害。",
-        "description_en": "When you use or play [Dodge], you may make a judgment for a character: Spade — deal 2 lightning damage to them; Club — recover 1 health and then deal 1 lightning damage to them."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI053",
-    "standard_id": "char_wangji",
-    "name_cn": "王基",
-    "name_en": "Wang Ji",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
       "控制",
       "过牌",
-      "困难"
+      "拼点"
     ],
     "traits_en": [
       "Control",
       "Card Flow",
-      "High Difficulty"
+      "Point Fight"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "奇制",
-        "name_en": "Adaptive Tactics",
-        "description_cn": "当你于回合内使用非装备牌指定目标后，你可以弃置另一名角色一张牌，然后令其摸一张牌。",
-        "description_en": "When you use a non-equipment card targeting a character during your turn, you may discard 1 card from another character, then have them draw 1 card."
+        "name_cn": "巨象",
+        "name_en": "War Elephants",
+        "description_cn": "锁定技，【南蛮入侵】对你无效；当其他角色使用的【南蛮入侵】结算结束后，你获得之。",
+        "description_en": "Locked Skill: [Barbarians] has no effect on you. After another character's [Barbarians] finishes resolving, you gain that card."
       },
       {
-        "name_cn": "进趋",
-        "name_en": "Advance",
-        "description_cn": "结束阶段，你可以摸两张牌，然后将手牌弃至X张（X为你本回合发动“奇制”的次数）。",
-        "description_en": "End Phase: You may draw 2 cards, then discard down to X cards (X = number of times \"Adaptive Tactics\" was used this turn)."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "SHU066",
-    "standard_id": "char_yanyan",
-    "name_cn": "严颜",
-    "name_en": "Yan Yan",
-    "gender": "Male",
-    "faction": "Shu",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "拒战",
-        "name_en": "Resist Battle",
-        "description_cn": "转换技，阳：当你成为其他角色使用【杀】的目标后，你可以与其各摸一张牌，然后其本回合不能再对你使用牌。 阴：当你使用【杀】指定一名角色为目标后，你可以获得其一张牌，然后你本回合不能再对其使用牌。",
-        "description_en": "Toggle Skill — Yang: When another character uses [Kill] on you, both draw 1 card; they cannot target you again this turn. Yin: When your [Kill] targets a character, gain 1 of their cards; you cannot target them again this turn."
+        "name_cn": "烈刃",
+        "name_en": "Blazing Blade",
+        "description_cn": "当你使用【杀】对目标角色造成伤害后，你可以与其拼点，若你赢，你获得其一张牌。",
+        "description_en": "When your [Kill] deals damage to a target, you may compete in points with them. If you win, gain 1 of their cards."
       }
     ],
     "faq": []
@@ -1277,242 +331,44 @@
       {
         "name_cn": "飞军",
         "name_en": "Flying Corps",
-        "description_cn": "出牌阶段限一次，你可以弃置一张牌，然后选择一项：1.令一名手牌数大于你的角色交给你一张牌；2.令一名装备区里牌数大于你的角色弃置一张装备区里的牌。",
-        "description_en": "Once per Action Phase: Discard 1 card, then either (1) force a character with more hand cards than you to give you 1, or (2) force a character with more equipment than you to discard 1 equipment."
+        "description_cn": "出牌阶段限一次,你可以弃置一张牌,然后选择一 项：令一名手牌数大于你的角色交给你一张牌;或令 名装备区里牌数大于你的角色弃置一张装备牌。",
+        "description_en": ""
       },
       {
         "name_cn": "兵略",
         "name_en": "Military Strategy",
-        "description_cn": "锁定技，当你首次对一名角色发动“飞军”时，你摸两张牌。",
-        "description_en": "Locked Skill: The first time each turn you use \"Flying Corps\" on a character, draw 2 cards."
+        "description_cn": "锁定技,当你发动 “飞军” , 目标与你之前指 定的目标均不相同,则你摸两张牌",
+        "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "WU066",
-    "standard_id": "char_luji",
-    "name_cn": "陆绩",
-    "name_en": "Lu Ji",
+    "id": "SHU066",
+    "standard_id": "char_yanyan",
+    "name_cn": "严颜",
+    "name_en": "Yan Yan",
     "gender": "Male",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 3.5,
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 3.0,
     "traits_cn": [
       "防御",
-      "辅助",
+      "控制",
       "简单"
     ],
     "traits_en": [
       "Defensive",
-      "Support",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "怀橘",
-        "name_en": "Cherish Tangerines",
-        "description_cn": "锁定技，游戏开始时，你获得3枚“橘”标记。当有“橘”的角色受到伤害时，防止此伤害并移除1枚“橘”。有“橘”的角色摸牌阶段多摸一张牌。",
-        "description_en": "Locked Skill: At game start, give 3 characters 1 \"Tangerine\" token each. Characters with a Tangerine draw 1 extra card per Draw Phase. When a character with a Tangerine takes damage, prevent it and remove 1 Tangerine."
-      },
-      {
-        "name_cn": "遗礼",
-        "name_en": "Parting Gift",
-        "description_cn": "出牌阶段开始时，你可以失去1点体力或移除1枚“橘”，然后令一名其他角色获得1枚“橘”。",
-        "description_en": "Action Phase start: You may lose 1 health or remove 1 Tangerine, then give another character 1 Tangerine."
-      },
-      {
-        "name_cn": "整论",
-        "name_en": "Even Counsel",
-        "description_cn": "若你没有“橘”，你可以跳过摸牌阶段并获得1枚“橘”。",
-        "description_en": "If you have no Tangerines, you may skip your Draw Phase and gain 1 Tangerine."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WU067",
-    "standard_id": "char_sunliang",
-    "name_cn": "孙亮",
-    "name_en": "Sun Liang",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "主公技"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Lord Skill"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "溃诛",
-        "name_en": "Rout and Execute",
-        "description_cn": "弃牌阶段结束时，你可以选择一项：1.令至多X名角色各摸一张牌；2.对任意名体力值之和为X的角色各造成1点伤害。（X为你本阶段弃置的牌数）",
-        "description_en": "Discard Phase end: Choose either (1) up to X characters each draw 1 card, or (2) deal 1 damage each to any number of characters whose combined health totals X (X = cards you discarded this phase)."
-      },
-      {
-        "name_cn": "掣政",
-        "name_en": "Restrain the Court",
-        "description_cn": "锁定技，你防止于你的出牌阶段对攻击范围内不包含你的角色造成的伤害。出牌阶段结束时，若你本阶段使用的牌数小于这些角色数，你弃置其中一名角色一张牌。",
-        "description_en": "Locked Skill: Prevent damage you deal during your Action Phase to characters outside your attack range. Action Phase end: If you used fewer cards than the number of such characters, discard 1 of their cards."
-      },
-      {
-        "name_cn": "立军",
-        "name_en": "Rally the Army",
-        "description_cn": "主公技，其他吴势力角色出牌阶段限一次，当其使用【杀】后，其可以令你获得之，然后你可以令其摸一张牌且此回合使用【杀】的限制次数+1。",
-        "description_en": "Lord Skill: Once per Action Phase, when another Wu character uses [Kill], they may give it to you; you may then have them draw 1 card and use [Kill] 1 extra time this turn."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI066",
-    "standard_id": "char_kuaiyue_kuailiang",
-    "name_cn": "蒯越蒯良",
-    "name_en": "Kuai Yue & Kuai Liang",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 3.0,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "High Difficulty"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "荐降",
-        "name_en": "Counsel Surrender",
-        "description_cn": "当你成为其他角色使用牌的目标后，你可以令手牌数最少的一名角色摸一张牌。",
-        "description_en": "When you become the target of another character's card, you may have the character with the fewest hand cards draw 1 card."
-      },
-      {
-        "name_cn": "审时",
-        "name_en": "Read the Moment",
-        "description_cn": "转换技，阳：出牌阶段限一次，你可以交给手牌数最多的其他角色一张牌，并对其造成1点伤害。若其因此死亡，你可以令一名角色将手牌摸至四张。 阴：当其他角色对你造成伤害后，你可以观看其手牌，并交给其一张牌。当前回合结束阶段，若其未失去此牌，你将手牌摸至四张。",
-        "description_en": "Toggle Skill — Yang: Once per Action Phase, give 1 card to the character with the most hand cards and deal them 1 damage; if they die, let a character draw to 4 cards. Yin: When another character deals damage to you, look at their hand and give them 1 card; at their End Phase, if they still hold it, draw to 4 cards."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN066",
-    "standard_id": "char_xuyou",
-    "name_cn": "许攸",
-    "name_en": "Xu You",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 3,
-    "power_index": 4.0,
-    "traits_cn": [
-      "过牌",
-      "困难",
-      "多刀"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "High Difficulty",
-      "Multi-Strike"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "成略",
-        "name_en": "Master Strategy",
-        "description_cn": "转换技，出牌阶段限一次，阳：你可以摸一张牌并弃置两张手牌；阴：你可以摸两张牌并弃置一张手牌。然后你本阶段使用与弃置牌花色相同的牌无距离和次数限制。",
-        "description_en": "Toggle Skill — Once per Action Phase: Yang — draw 1 card then discard 2; Yin — draw 2 cards then discard 1. Cards matching the discarded suits have no range or count limit this Action Phase."
-      },
-      {
-        "name_cn": "恃才",
-        "name_en": "Rely on Talent",
-        "description_cn": "当你每回合首次使用一种类型的牌后，你可以将之置于牌堆顶，然后摸一张牌。",
-        "description_en": "After the first time each turn you play each type of card, you may place it on top of the deck and draw 1 card."
-      },
-      {
-        "name_cn": "寸目",
-        "name_en": "Bottom Draw",
-        "description_cn": "锁定技，当你摸牌时，你改为从牌堆底摸牌。",
-        "description_en": "Locked Skill: When you draw cards, draw from the bottom of the deck instead."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "QUN067",
-    "standard_id": "char_luzhi",
-    "name_cn": "卢植",
-    "name_en": "Lu Zhi",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 1.5,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Simple"
-    ],
-    "expansion": "Myth Returns",
-    "skills": [
-      {
-        "name_cn": "明任",
-        "name_en": "Clear Commission",
-        "description_cn": "游戏开始时，你摸两张牌，然后将你的一张手牌置于你的武将牌上，称为“任”。结束阶段，你可以用手牌替换“任”。",
-        "description_en": "Game start: Draw 2 cards, then place 1 on your character card as \"Duty.\" End Phase: You may replace \"Duty\" with a hand card."
-      },
-      {
-        "name_cn": "贞良",
-        "name_en": "Steadfast Loyalty",
-        "description_cn": "转换技，阳：出牌阶段限一次，你可以选择攻击范围内的一名其他角色，然后弃置一张与“任”颜色相同的牌对其造成1点伤害。阴：当你于回合外使用或打出的牌置入弃牌堆时，若此牌与“任”颜色相同，你可以令一名角色摸一张牌。",
-        "description_en": "Toggle Skill — Yang: Once per Action Phase, discard a card matching \"Duty's\" color and deal 1 damage to a character in your range. Yin: When you use or play a card outside your turn that matches \"Duty's\" color, you may have a character draw 1 card."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "WEI067",
-    "standard_id": "char_haozhao",
-    "name_cn": "郝昭",
-    "name_en": "Hao Zhao",
-    "gender": "Male",
-    "faction": "Wei",
-    "health": 4,
-    "power_index": 3.5,
-    "traits_cn": [
-      "控制",
-      "困难",
-      "配合神将"
-    ],
-    "traits_en": [
       "Control",
-      "High Difficulty",
-      "God General Synergy"
+      "Simple"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "镇骨",
-        "name_en": "Steady Resolve",
-        "description_cn": "结束阶段，你可以选择一名其他角色，本回合结束时和其下回合结束时，其将手牌调整至与你手牌数相同（至多摸至五张）。",
-        "description_en": "End Phase: Choose another character. At the end of this turn and the end of their next turn, they adjust their hand count to match yours (draw to max 5, or discard down)."
+        "name_cn": "拒战",
+        "name_en": "Resist Battle",
+        "description_cn": "转换技，阳：当你成为其他角色使用【杀】的目标后，你可以与其各摸一张牌，然后其本回合不能再对你使用牌。 阴：当你使用【杀】指定目标后，你可以获得其中一名目标的一张牌，然后你本回合不能再对其使用牌。",
+        "description_en": ""
       }
     ],
     "faq": []
@@ -1584,6 +440,890 @@
     "faq": []
   },
   {
+    "id": "WEI008",
+    "standard_id": "char_xiahouyuan",
+    "name_cn": "夏侯渊",
+    "name_en": "Xiahou Yuan",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "爆发",
+      "翻面"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Burst",
+      "Flip"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "神速",
+        "name_en": "Lightning Speed",
+        "description_cn": "你可以做出如下选择：1.跳过判定阶段和摸牌阶段。2.跳过出牌阶段并弃置一张装备牌。你每选择一项，便视为你使用一张无距离限制的【杀】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI009",
+    "standard_id": "char_zhanghe",
+    "name_cn": "张郃",
+    "name_en": "Zhang He",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "巧变",
+        "name_en": "Agile Shift",
+        "description_cn": "你可以弃置一张手牌并跳过一个阶段（准备阶段和结束阶段除外），若为：摸牌阶段，你可以获得至多两名角色各一张手牌；出牌阶段，你可以移动场上一张牌。",
+        "description_en": "You may discard 1 hand card to skip a phase (not Preparation or End Phase). Draw Phase: take 1 hand card from each of up to 2 characters instead. Action Phase: move 1 card from one area to another instead."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI010",
+    "standard_id": "char_xuhuang",
+    "name_cn": "徐晃",
+    "name_en": "Xu Huang",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "持久",
+      "颜色爱好者"
+    ],
+    "traits_en": [
+      "Control",
+      "Ramping",
+      "Color Specialist"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "断粮",
+        "name_en": "Cut Supply Lines",
+        "description_cn": "你可以将一张黑色基本牌或黑色装备牌当【兵粮寸断】使用；你可以对距离为2的角色使用【兵粮寸断】。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI011",
+    "standard_id": "char_caoren",
+    "name_cn": "曹仁",
+    "name_en": "Cao Ren",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Ramping"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "据守",
+        "name_en": "Steadfast Defense",
+        "description_cn": "结束阶段开始时，你可以摸三张牌。若如此做，你翻面。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI012",
+    "standard_id": "char_dianwei",
+    "name_cn": "典韦",
+    "name_en": "Dian Wei",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Multi-Strike"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "强袭",
+        "name_en": "Violent Assault",
+        "description_cn": "出牌阶段限一次，你可以失去1点体力或弃置一张武器牌，并对你攻击范围内的一名其他角色造成1点伤害。",
+        "description_en": "Once per Action Phase: Lose 1 health or discard a weapon to deal 1 damage to a new target."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI013",
+    "standard_id": "char_xunyu",
+    "name_cn": "荀彧",
+    "name_en": "Xun Yu",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Glass Cannon"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "驱虎",
+        "name_en": "Drive the Tiger",
+        "description_cn": "出牌阶段限一次，你可以与一名体力值大于你的角色拼点。若你赢，该角色对其攻击范围内你选择的一名角色造成1点伤害；若你没赢，该角色对你造成1点伤害。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "节命",
+        "name_en": "Preserve Lives",
+        "description_cn": "当你受到1点伤害后，你可以令一名角色将手牌摸至X张（X为其体力上限且至多为5）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI014",
+    "standard_id": "char_caopi",
+    "name_cn": "曹丕",
+    "name_en": "Cao Pi",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "行殇",
+        "name_en": "Reap the Fallen",
+        "description_cn": "当其他角色死亡时，你可以获得其所有的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "放逐",
+        "name_en": "Exile",
+        "description_cn": "当你受到伤害后，你可以令一名其他角色翻面，然后该角色摸X张牌（X为你已损失的体力值）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "颂威",
+        "name_en": "Laud Authority",
+        "description_cn": "主公技，当其他魏势力角色的黑色判定牌生效后，其可以令你摸一张牌。",
+        "description_en": "Lord Skill: When another Wei character's black judgment card takes effect, they may have you draw 1 card."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI015",
+    "standard_id": "char_dengai",
+    "name_cn": "邓艾",
+    "name_en": "Deng Ai",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "发育"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Scaling"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "屯田",
+        "name_en": "Field Farming",
+        "description_cn": "当你于回合外失去牌后，你可以判定，当非红桃判定牌生效后，你将此牌置于你的武将牌上，称为“田”。你计算与其他角色的距离-X（X为你“田”的数量）。",
+        "description_en": "When you lose cards outside your turn, make a judgment. If it is not Heart, place the judgment card on your character card as \"Field.\" Your distance to others is -X (X = Field cards)."
+      },
+      {
+        "name_cn": "凿险",
+        "name_en": "Breach the Pass",
+        "description_cn": "觉醒技，准备阶段，若“田”的数量不小于3，你减少1点体力上限，然后获得“急袭”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "急袭",
+        "name_en": "",
+        "description_cn": "你可以将一张“田”当【顺手牵羊】使用",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN008",
+    "standard_id": "char_pangde",
+    "name_cn": "庞德",
+    "name_en": "Pang De",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "马术",
+        "name_en": "Horsemanship",
+        "description_cn": "锁定技，你计算与其他角色的距离-1。",
+        "description_en": "Locked: When you calculate the distance to another character, subtract 1.",
+        "skill_type": "locked"
+      },
+      {
+        "name_cn": "鞬出",
+        "name_en": "Jianchu",
+        "description_cn": "当你使用的【杀】被目标角色使用的【闪】抵消时，你可以弃置其一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI047",
+    "standard_id": "char_jiaxu",
+    "name_cn": "贾诩",
+    "name_en": "Jia Xu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "完杀",
+        "name_en": "Total Annihilation",
+        "description_cn": "锁定技，你的回合内，不处于濒死状态的其他角色不能使用【桃】。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "乱武",
+        "name_en": "Reign of Chaos",
+        "description_cn": "限定技，出牌阶段，你可以令所有其他角色除非对各自距离最小的另一名角色使用一张【杀】，否则失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "帷幕",
+        "name_en": "Iron Curtain",
+        "description_cn": "锁定技，你不能被选择为黑色锦囊牌的目标。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI053",
+    "standard_id": "char_wangji",
+    "name_cn": "王基",
+    "name_en": "Wang Ji",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "奇制",
+        "name_en": "Adaptive Tactics",
+        "description_cn": "当你于回合内使用基本牌或锦囊牌指定目标后，你可以弃置不是此牌目标的一名角色一张牌，然后该角色摸一张牌。",
+        "description_en": "When you use a non-equipment card targeting a character during your turn, you may discard 1 card from another character, then have them draw 1 card."
+      },
+      {
+        "name_cn": "进趋",
+        "name_en": "Advance",
+        "description_cn": "结束阶段，你可以摸两张牌，然后将手牌弃置至X张（X为你于此回合内发动过“奇制”的次数）。",
+        "description_en": "End Phase: You may draw 2 cards, then discard down to X cards (X = number of times \"Adaptive Tactics\" was used this turn)."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI066",
+    "standard_id": "char_kuaiyue&kuailiang",
+    "name_cn": "蒯越&蒯良",
+    "name_en": "Kuai Yue & Kuai Liang",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "荐降",
+        "name_en": "Counsel Surrender",
+        "description_cn": "当你成为其他角色使用牌的目标后，你可令手牌数最少的一名角色摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "审时",
+        "name_en": "Read the Moment",
+        "description_cn": "转换技，阳：出牌阶段限一次，你可以将一张牌交给一名手牌数最多的角色，然后对其造成1点伤害。若该角色因此死亡，则你可以令一名角色将手牌摸至四张。 阴：其他角色对你造成伤害后，你可以观看该角色的手牌，然后交给其一张牌，当前回合结束时，若该角色未失去此牌，你将手牌摸至四张。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI067",
+    "standard_id": "char_haozhao",
+    "name_cn": "郝昭",
+    "name_en": "Hao Zhao",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": [
+      "控制",
+      "困难",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Control",
+      "High Difficulty",
+      "God General Synergy"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "镇骨",
+        "name_en": "Steady Resolve",
+        "description_cn": "结束阶段，你可以选择一名其他角色，本回合结束时和其下回合结束时，其将手牌调整至与你手牌数相同（至多摸至五张）。",
+        "description_en": "End Phase: Choose another character. At the end of this turn and the end of their next turn, they adjust their hand count to match yours (draw to max 5, or discard down)."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WEI068",
+    "standard_id": "char_guanqiujian",
+    "name_cn": "毌丘俭",
+    "name_en": "Guanqiu Jian",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "简单",
+      "母兵脸"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Imposing"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "征荣",
+        "name_en": "Claim Glory",
+        "description_cn": "当你使用【杀】或伤害锦囊牌时，你可以选择其中一个手牌数不小于你的目标角色，将其一张牌置于你的武将牌上，称为“荣”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鸿举",
+        "name_en": "Grand Rise",
+        "description_cn": "觉醒技，准备阶段，若“荣”的数量不小于3，你用任意手牌替换等量的“荣”，减少1点体力上限并获得“清侧”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "清侧",
+        "name_en": "",
+        "description_cn": "出牌阶段、你可以移去一张“荣”,然后弃置场上的一张牌",
+        "description_en": ""
+      }      
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU009",
+    "standard_id": "char_sunjian",
+    "name_cn": "孙坚",
+    "name_en": "Sun Jian",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "英魂",
+        "name_en": "Heroic Spirit",
+        "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
+        "description_en": "Starting Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU010",
+    "standard_id": "char_sunce",
+    "name_cn": "孙策",
+    "name_en": "Sun Ce",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Glass Cannon"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "激昂",
+        "name_en": "Ardor",
+        "description_cn": "当你使用【决斗】或红色【杀】指定目标后，或成为【决斗】或红色【杀】的目标后，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "魂姿",
+        "name_en": "Spirit Awakening",
+        "description_cn": "觉醒技，准备阶段，若你的体力值为1，你减1点体力上限，然后获得技能英姿和英魂）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "制霸",
+        "name_en": "Dominance",
+        "description_cn": "主公技，其他吴势力角色的出牌阶段限一次，该角色可以与你拼点（若你已觉醒，你可以拒绝此拼点），若其没赢，你可以获得拼点的两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "英姿",
+        "name_en": "Heroic Bearing",
+        "description_cn": "摸牌阶段，你可以多摸一张牌。",
+        "description_en": "Draw Phase: You may draw 1 extra card.",
+        "skill_type": "active"
+      },
+      {
+        "name_cn": "英魂",
+        "name_en": "Heroic Spirit",
+        "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
+        "description_en": "Starting Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
+      }     
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU011",
+    "standard_id": "char_xiaoqiao",
+    "name_cn": "小乔",
+    "name_en": "Xiao Qiao",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "配合神将",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "God General Synergy",
+      "Ramping"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "红颜",
+        "name_en": "Rosy Cheeks",
+        "description_cn": "锁定技，你的黑桃手牌只能当做红桃牌使用、打出、弃置或交给其他角色。你的黑桃判定牌只能当做红桃判定牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "天香",
+        "name_en": "Celestial Fragrance",
+        "description_cn": "当你受到伤害时，你可以弃置一张红桃手牌并选择一名其他角色。若如此做，你将此伤害转移给该角色，然后其摸X张牌（X为该角色已损失的体力值）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU012",
+    "standard_id": "char_taishici",
+    "name_cn": "太史慈",
+    "name_en": "Tai Shi Ci",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "拼点"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Point Fight"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "天义",
+        "name_en": "Heaven's Justice",
+        "description_cn": "出牌阶段限一次，你可以拼点：若你赢，你本回合使用【杀】的次数+1、无距离限制且可以多指定一个目标；若你没赢，你本回合不能使用【杀】。",
+        "description_en": "Once per Action Phase: Compete in points with a character. If you win, your [Kill] limit +1 and ignores distance this turn and may target 1 extra character. If you lose, you cannot use [Kill] this turn."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU013",
+    "standard_id": "char_zhoutai",
+    "name_cn": "周泰",
+    "name_en": "Zhou Tai",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "不屈",
+        "name_en": "Indomitable",
+        "description_cn": "任何时候，当你的体力被扣减到或更低时，每扣减1点体力：从牌堆亮出一张牌放在你的角色牌上，若该牌的点数与你角色牌上已有的任何一张牌都不同，你可以不死去。此牌亮出的时刻为你的濒死状态。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU014",
+    "standard_id": "char_lusu",
+    "name_cn": "鲁肃",
+    "name_en": "Lu Su",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "好施",
+        "name_en": "Generosity",
+        "description_cn": "摸牌阶段，你可以多摸两张牌，然后若你的手牌数大于5，你将一半的手牌（向下取整）交给手牌最少的一名其他角色。",
+        "description_en": "Draw Phase: You may draw 2 extra cards. If your hand count then exceeds 5, give half your hand cards (rounded down) to the character with the fewest hand cards."
+      },
+      {
+        "name_cn": "缔盟",
+        "name_en": "Forge Alliance",
+        "description_cn": "出牌阶段限一次，你可以选择两名其他角色并弃置X张牌（X为两者手牌数之差），然后交换两者手牌。",
+        "description_en": "Once per Action Phase: Choose 2 other characters and discard X cards (X = difference in their hand counts), then swap their hand cards."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU015",
+    "standard_id": "char_zhangzhao_zhanghong",
+    "name_cn": "张昭张纮",
+    "name_en": "Zhang Zhao & Zhang Hong",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "God General Synergy"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "直谏",
+        "name_en": "Direct Remonstrance",
+        "description_cn": "出牌阶段，你可以将手牌中的一张装备牌置于一名其他角色的装备区里，然后摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "固政",
+        "name_en": "Consolidate Power",
+        "description_cn": "其他角色的弃牌阶段结束时，你可以将该角色此阶段弃置的一张手牌交给该角色，然后你可以获得其余此阶段弃置的牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU019",
+    "standard_id": "char_lukang",
+    "name_cn": "陆抗",
+    "name_en": "Lu Kang",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "谦节",
+        "name_en": "Humble Restraint",
+        "description_cn": "锁定技、 不能被横置、且不能成为延时类锦囊牌或其他角 色拼点的目标。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "决堰",
+        "name_en": "Breach the Dam",
+        "description_cn": "出牌阶段限一次、你可以废除你装备区里的一种装备栏、然后执行对应的一项：武器栏、本回合你可以多使用三张【杀】：防具栏、三张牌、本合手牌上限+3；坐骑栏、本回合你使用牌无距离限制：宝物栏、本回合获得“集智”",
+        "description_en": ""
+      },
+      {
+        "name_cn": "破势",
+        "name_en": "Break the Tide",
+        "description_cn": "觉醒技、备阶段、若你所有装备栏均被废除或体力值为 1 则你减点体力上限、然后将手牌补至体力上限、失去“决堰”并获得“怀柔”。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "集智",
+        "name_en": "Gathered Wisdom",
+        "description_cn": "当你使用非转化锦囊牌时，你可以摸一张牌，若此牌是基本牌，你可以弃置此牌令你本回合手牌上限+1。",
+        "description_en": "When playing a non-converted tool card, draw 1 card. If basic, you can discard it to increase hand limit by 1 for the turn."
+      },
+      {
+        "name_cn": "怀柔",
+        "name_en": "",
+        "description_cn": "出牌阶段、可以重铸装备牌。",
+        "description_en": ""
+      }  
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU066",
+    "standard_id": "char_luji",
+    "name_cn": "陆绩",
+    "name_en": "Lu Ji",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 3.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "怀橘",
+        "name_en": "Cherish Tangerines",
+        "description_cn": "锁定技，游戏开始时，你获得3个“橘”标记。（有“橘”的角色受到伤害时，你防止此伤害，然后移去一个“橘”；你令有“橘”的角色摸牌阶段额外摸一张牌）",
+        "description_en": ""
+      },
+      {
+        "name_cn": "遗礼",
+        "name_en": "Parting Gift",
+        "description_cn": "出牌阶段开始时，你可以失去1点体力或移去一个“橘”，然后令一名其他角色获得一个“橘”。",
+        "description_en": "Action Phase start: You may lose 1 health or remove 1 Tangerine, then give another character 1 Tangerine."
+      },
+      {
+        "name_cn": "整论",
+        "name_en": "Even Counsel",
+        "description_cn": "若你没有“橘”，你可以跳过摸牌阶段然后获得一个“橘”。",
+        "description_en": "If you have no Tangerines, you may skip your Draw Phase and gain 1 Tangerine."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "WU067",
+    "standard_id": "char_sunliang",
+    "name_cn": "孙亮",
+    "name_en": "Sun Liang",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "主公技"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Lord Skill"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "溃诛",
+        "name_en": "Rout and Execute",
+        "description_cn": "弃牌阶段结束后，你可以选择一项：令至多X名角色各摸一张牌；对任意名体力值之和为X的角色造成一点伤害，若不少于2名角色，你失去一点体力（X为你此阶段弃置的牌数）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "掣政",
+        "name_en": "Restrain the Court",
+        "description_cn": "锁定技，你的出牌阶段内，攻击范围内不包含你的角色不能成为你使用牌的目标。出牌阶段结束时，若你本阶段内使用的牌数小于这些角色数，你弃置其中一名角色一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "立军",
+        "name_en": "Rally the Army",
+        "description_cn": "主公技，其他吴势力角色于其出牌阶段使用【杀】结算结束后，其可以将此【杀】交给你，然后你可以令其摸一张牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "WU068",
     "standard_id": "char_zhoufei",
     "name_cn": "周妃",
@@ -1620,79 +1360,295 @@
     "faq": []
   },
   {
-    "id": "WEI068",
-    "standard_id": "char_guanqiujian",
-    "name_cn": "毌丘俭",
-    "name_en": "Guanqiu Jian",
+    "id": "QUN004",
+    "standard_id": "char_yuan_shao",
+    "name_cn": "袁绍",
+    "name_en": "Yuan Shao",
     "gender": "Male",
-    "faction": "Wei",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 2.5,
+    "power_index": 3.0,
     "traits_cn": [
-      "控制",
+      "进攻",
       "简单",
-      "母兵脸"
+      "减目标"
     ],
     "traits_en": [
-      "Control",
+      "Aggressive",
       "Simple",
-      "Imposing"
+      "Target Reduction"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "征荣",
-        "name_en": "Claim Glory",
-        "description_cn": "当你使用【杀】或伤害锦囊牌时，你可以选择其中一个手牌数不小于你的目标角色，将其一张牌置于你的武将牌上，称为“荣”。",
-        "description_en": "When you use [Kill] or a damage tool card, choose a target with hand cards ≥ yours and place 1 of their cards on your character card as a \"Glory\" marker."
+        "name_cn": "乱击",
+        "name_en": "Volley",
+        "description_cn": "你可以将两张花色相同的手牌当【万箭齐发】使用。",
+        "description_en": "You may play 2 hand cards of the same suit as [Raining Arrows]."
       },
       {
-        "name_cn": "鸿举",
-        "name_en": "Grand Rise",
-        "description_cn": "觉醒技，准备阶段，若“荣”的数量不小于3，你用任意手牌替换等量的“荣”，减少1点体力上限并获得“清侧”。",
-        "description_en": "Awakening Skill — Starting Phase: If you have ≥3 Glory markers, exchange any hand cards for equal Glory markers, reduce your max health by 1, and gain \"Clear the Court.\""
+        "name_cn": "血裔",
+        "name_en": "Bloodline",
+        "description_cn": "主公技，锁定技，你的手牌上限+X（X为其他群势力角色数的两倍）。",
+        "description_en": "Lord Skill — Locked Skill: Your hand limit +X (X = twice the number of other surviving Qun characters)."
       }
     ],
     "faq": []
   },
   {
-    "id": "WU019",
-    "standard_id": "char_lukang",
-    "name_cn": "陆抗",
-    "name_en": "Lu Kang",
+    "id": "QUN005",
+    "standard_id": "char_yanliang_wenchou",
+    "name_cn": "颜良文丑",
+    "name_en": "Yan Liang & Wen Chou",
     "gender": "Male",
-    "faction": "Wu",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 3.0,
+    "power_index": 1.5,
     "traits_cn": [
       "进攻",
-      "过牌",
-      "困难"
+      "简单",
+      "爆发"
     ],
     "traits_en": [
       "Aggressive",
-      "Card Flow",
+      "Simple",
+      "Burst"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "双雄",
+        "name_en": "Twin Warriors",
+        "description_cn": "摸牌阶段，你可以改为进行一次判定，你获得生效后的判定牌，然后本回合你可以将与判定结果颜色不同的一张手牌当【决斗】使用。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN006",
+    "standard_id": "char_dongzhuo",
+    "name_cn": "董卓",
+    "name_en": "Dong Zhuo",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 8,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Damage Boost"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "酒池",
+        "name_en": "Pool of Wine",
+        "description_cn": "你可以将一张黑桃手牌当【酒】使用。",
+        "description_en": "You may play any Spade hand card as [Wine]."
+      },
+      {
+        "name_cn": "肉林",
+        "name_en": "Forest of Flesh",
+        "description_cn": "锁定技，你对女性角色使用的【杀】和女性角色对你使用的【杀】均需使用两张【闪】才能抵消。",
+        "description_en": "Locked Skill: Both your [Kill] targeting female characters and female characters' [Kill] targeting you require 2 [Dodge] to cancel."
+      },
+      {
+        "name_cn": "崩坏",
+        "name_en": "Collapse",
+        "description_cn": "锁定技，结束阶段，若你不是体力值最小的角色，你失去1点体力或减1点体力上限。",
+        "description_en": "Locked Skill — End Phase: If you do not have the lowest health, you must lose 1 health or reduce your max health by 1."
+      },
+      {
+        "name_cn": "暴虐",
+        "name_en": "Tyranny",
+        "description_cn": "主公技，当其他群势力角色造成伤害后，其可以令你判定，若结果为黑桃，你回复1点体力。",
+        "description_en": "Lord Skill: After another Qun character deals damage, they may have you make a judgment. If the result is Spade, you recover 1 health."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN009",
+    "standard_id": "char_zuoci",
+    "name_cn": "左慈",
+    "name_en": "Zuo Ci",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "发育",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Recovery",
       "High Difficulty"
     ],
     "expansion": "Myth Returns",
     "skills": [
       {
-        "name_cn": "谦节",
-        "name_en": "Humble Restraint",
-        "description_cn": "锁定技，当你进入连环状态时，你防止之。你不能成为延时锦囊牌和其他角色拼点的目标。",
-        "description_en": "Locked Skill: When you would be chained, prevent it. You cannot be targeted by delay tool cards or compete-in-points effects."
+        "name_cn": "化身",
+        "name_en": "Disguise",
+        "description_cn": "游戏开始时，你随机获得两张武将牌作为化身牌，然后亮出其中一张。你获得亮出化身牌的一个技能，且性别和势力视为与化身牌相同。回合开始时或结束后，你可以更改亮出的化身牌。",
+        "description_en": ""
       },
       {
-        "name_cn": "决堰",
-        "name_en": "Breach the Dam",
-        "description_cn": "出牌阶段限一次，你可以废除一个装备栏并于本回合获得对应效果：武器栏，使用【杀】的限制次数+3；防具栏，摸三张牌且手牌上限+3；坐骑栏，使用牌无距离限制；宝物栏，获得“集智”。",
-        "description_en": "Once per Action Phase: Disable 1 of your equipment slots and gain its effect this turn: Weapon — [Kill] limit +3; Armor — draw 3 cards and hand limit +3; Mount — no distance limit; Treasure — gain \"Gathered Wisdom.\""
+        "name_cn": "新生",
+        "name_en": "Rebirth",
+        "description_cn": "当你受到1点伤害后，你获得一张新的化身牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN010",
+    "standard_id": "char_zhangjue",
+    "name_cn": "张角",
+    "name_en": "Zhang Jue",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "判定"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Judgment"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "鬼道",
+        "name_en": "Ghost Path",
+        "description_cn": "当一名角色的判定牌生效前，你可以打出一张黑色牌替换之。",
+        "description_en": "When a judgment card is about to take effect, you may replace it with a black hand card."
       },
       {
-        "name_cn": "破势",
-        "name_en": "Break the Tide",
-        "description_cn": "觉醒技，准备阶段，若你的装备栏均被废除或体力值为1，你减少1点体力上限，将手牌摸至体力上限，失去“决堰”并获得“怀柔”。",
-        "description_en": "Awakening Skill — Starting Phase: If all your equipment slots are disabled or your health is 1, reduce your max health by 1, draw cards up to your max health, lose \"Breach the Dam,\" and gain \"Conciliate.\""
+        "name_cn": "黄天",
+        "name_en": "Yellow Heaven",
+        "description_cn": "主公技，其他群势力角色的出牌阶段限一次，该角色可以将一张【闪】或【闪电】交给你。",
+        "description_en": "Lord Skill: Other Qun characters may once per Action Phase give you a [Dodge] or Spade hand card."
+      },
+      {
+        "name_cn": "雷击",
+        "name_en": "Thunder Strike",
+        "description_cn": "每当你使用或打出一张【闪】时，可令任意一名角色判定，若为黑桃，你对该角色造成2点雷电伤害。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN011",
+    "standard_id": "char_yuji",
+    "name_cn": "于吉",
+    "name_en": "Yu Ji",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 1.5,
+    "traits_cn": [
+      "困难",
+      "转化大师",
+      "锦囊大师"
+    ],
+    "traits_en": [
+      "High Difficulty",
+      "Converter",
+      "Tool Master"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "蛊惑",
+        "name_en": "Hex",
+        "description_cn": "当你需要使用或打出一张基本牌或普通锦囊牌时，你可以声明并将一张手牌扣于桌上。若无人质疑，则该牌按你所述之牌来用。若有人质疑，则亮出验明：若为真，质疑者各失去1点体力；若为假，质疑者各摸一张牌，除非被质疑的牌是红桃且为真（仍可用），否则无论真假，该牌都作废，弃置之。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN012",
+    "standard_id": "char_cai_wenji",
+    "name_cn": "蔡文姬",
+    "name_en": "Cai Wenji",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "悲歌",
+        "name_en": "Lament",
+        "description_cn": "当一名角色受到【杀】造成的伤害后，你可以弃置一张牌，然后令其进行判定，若结果为：红桃，其回复1点体力；方块，其摸两张牌；梅花，伤害来源弃置两张牌；黑桃，伤害来源翻面。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "断肠",
+        "name_en": "Heartbreak",
+        "description_cn": "锁定技，当你死亡时，杀死你的角色失去所有武将技能。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN021",
+    "standard_id": "char_yuanshu",
+    "name_cn": "仲帝袁术",
+    "name_en": "Yuan Shu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "仲家帝"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Self-Proclaimed Emperor"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "庸肆",
+        "name_en": "Debauched",
+        "description_cn": "锁定技，摸牌阶段，你改为摸X张牌（X为存活势力数）；出牌阶段结束时，若你此阶段：1.没有造成伤害，将手牌摸至当前体力值；2.造成伤害数超过1点，本回合手牌上限改为已损失体力值。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伪帝",
+        "name_en": "False Emperor",
+        "description_cn": "主公技，你于弃牌阶段弃置的牌可以交给任意名其他群雄角色各一张。",
+        "description_en": ""
       }
     ],
     "faq": []
@@ -1729,6 +1685,84 @@
         "name_en": "Heed Counsel",
         "description_cn": "当你成为锦囊牌的目标时，若此牌的目标数大于1，你可以交给其中一名目标角色一张牌，然后摸一张牌，若你给出的牌是装备牌，改为摸两张牌。",
         "description_en": "When you are targeted by a multi-target tool card, give 1 of the other targets a hand card, then draw 1 card. If you gave an equipment card, draw 2 instead."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN066",
+    "standard_id": "char_xuyou",
+    "name_cn": "许攸",
+    "name_en": "Xu You",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 4.0,
+    "traits_cn": [
+      "过牌",
+      "困难",
+      "多刀"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "High Difficulty",
+      "Multi-Strike"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "成略",
+        "name_en": "Master Strategy",
+        "description_cn": "转换技，出牌阶段限一次，阳：你可以摸一张牌，然后弃置两张手牌。 阴：你可以摸两张牌，然后弃置一张手牌。 若如此做，直到本回合结束，你使用与弃置牌相同花色的牌无距离和次数限制。",
+        "description_en": "Toggle Skill — Once per Action Phase: Yang — draw 1 card then discard 2; Yin — draw 2 cards then discard 1. Cards matching the discarded suits have no range or count limit this Action Phase."
+      },
+      {
+        "name_cn": "恃才",
+        "name_en": "Rely on Talent",
+        "description_cn": "当你使用一张牌结算结束后，若此牌与你本回合使用的牌类型均不同（包括装备牌），你可以将此牌置于牌堆顶，然后摸一张牌。",
+        "description_en": "After the first time each turn you play each type of card, you may place it on top of the deck and draw 1 card."
+      },
+      {
+        "name_cn": "寸目",
+        "name_en": "Bottom Draw",
+        "description_cn": "锁定技，当你摸牌时，改为从牌堆底摸牌。",
+        "description_en": "Locked Skill: When you draw cards, draw from the bottom of the deck instead."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "QUN067",
+    "standard_id": "char_luzhi",
+    "name_cn": "卢植",
+    "name_en": "Lu Zhi",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 1.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Myth Returns",
+    "skills": [
+      {
+        "name_cn": "明任",
+        "name_en": "Clear Commission",
+        "description_cn": "游戏开始时，你摸一张牌，然后将你的一张手牌置于你的武将牌上，称为“任”。结束阶段，你可以用手牌替换“任”。",
+        "description_en": "Game start: Draw 2 cards, then place 1 on your character card as \"Duty.\" End Phase: You may replace \"Duty\" with a hand card."
+      },
+      {
+        "name_cn": "贞良",
+        "name_en": "Steadfast Loyalty",
+        "description_cn": "转换技，阳：出牌阶段限一次，你可以选择一名攻击范围内的其他角色并弃置x张与“任”颜色相同的牌对其造成1点伤害（x为你与其体力值之差且至少为1） 阴：你的回合外，当你使用或打出的牌结算结束后，若此牌与“任”类别相同，则你可令一名角色摸一张牌。",
+        "description_en": ""
       }
     ],
     "faq": []

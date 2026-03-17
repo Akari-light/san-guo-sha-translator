@@ -2,6 +2,34 @@
   {
     "id": "",
     "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "",
+    "health": 0,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      } 
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
     "name_cn": "华雌",
     "name_en": "",
     "gender": "Male",
@@ -438,44 +466,6 @@
         "name_cn": "闭月",
         "name_en": "",
         "description_cn": "结束阶段，若你没有手牌，你可以摸两张牌，否则你可以摸一张牌。",
-        "description_en": ""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "SP贾诩",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 1.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "爆发"
-    ],
-    "traits_en": [],
-    "expansion": "",
-    "skills": [
-      {
-        "name_cn": "缜略",
-        "name_en": "",
-        "description_cn": "锁定技，你的普通锦囊牌不能被抵消；你不能成为延时锦囊牌的目标。",
-        "description_en": ""
-      },
-      {
-        "name_cn": "间书",
-        "name_en": "",
-        "description_cn": "限定技，出牌阶段，你可以交给一名其他角色一张黑色手牌，并选择另一名角色，然后令两者拼点：赢的角色弃置两张牌，没赢的角色失去1点体力。",
-        "description_en": ""
-      },
-      {
-        "name_cn": "拥嫡",
-        "name_en": "",
-        "description_cn": "限定技，回合开始时，你可以令一名其他男性角色增加1点体力上限并回复1点体力，然后令其武将牌上的主公技生效。",
         "description_en": ""
       }
     ],
@@ -1846,32 +1836,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU073",
     "standard_id": "",
     "name_cn": "邓芝",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "配合神将"
-    ],
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
-        "name_cn": "修好",
+        "name_cn": "简亮",
         "name_en": "",
-        "description_cn": "每回合限一次，当你对其他角色造成伤害，或其他角色对你造成伤害时，你可以防止此伤害，令伤害来源摸两张牌。",
+        "description_cn": "摸牌阶段开始时,若你的手牌数不为场上最多,你可 以令至多两名角色各摸一张牌。",
         "description_en": ""
       },
       {
-        "name_cn": "素俭",
+        "name_cn": "危盟",
         "name_en": "",
-        "description_cn": "锁定技，弃牌阶段，你改为以下一项：1.将所有非本回合获得的手牌分配给其他角色；2.弃置非本回合获得的手牌，并弃置一名其他角色至多等量张牌。",
+        "description_cn": "出牌阶段限一次,你可以展示并获得一名其他角色的 至多手牌(X为你的体力值),然后展示并交给其 等量的牌,若你获得的牌点数之和大于你交给其的牌 点数之和,你弃置其区域里的一张牌,小于你交给其 的牌点数之和,你摸一张牌。",
         "description_en": ""
       }
     ],
@@ -3180,26 +3166,22 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU020",
     "standard_id": "",
     "name_cn": "沙摩柯",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "过牌",
-      "23451",
-      "沙师弟"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
         "name_cn": "蒺藜",
         "name_en": "",
-        "description_cn": "当你每回合使用或打出第X张牌时，你可以摸X张牌。（X为你的攻击范围）",
+        "description_cn": "出牌阶段内限一次，当你使用或打出本回合的第X张牌时，你可以摸X张牌（X为你的攻击范围）。",
         "description_en": ""
       }
     ],
@@ -4104,32 +4086,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU091",
     "standard_id": "",
     "name_cn": "杨仪",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
         "name_cn": "狷狭",
         "name_en": "",
-        "description_cn": "结束阶段，你可以视为对一名其他角色依次使用至多两张不同的仅指定单一目标且目标不为自己的普通锦囊牌，然后其下个结束阶段可以视为对你使用等量张【杀】。",
+        "description_cn": "回合结束时,你可以视为对一名其他角色使用至多三 张牌名不同的单目标普通锦囊牌,该角色于其下个回 合结束时可以视为对你使用等量张【杀】。",
         "description_en": ""
       },
       {
         "name_cn": "定措",
         "name_en": "",
-        "description_cn": "每回合限一次，当你造成或受到伤害后，你可以摸两张牌，若这两张牌颜色不同，你弃置一张手牌。",
+        "description_cn": "每回合限一次,当你造成或受到伤害后,你可以摸两 张牌并展示之,若这两张牌的颜色不同,你弃置一张 手牌。",
         "description_en": ""
       }
     ],
@@ -4476,32 +4454,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU051",
     "standard_id": "",
     "name_cn": "伊籍",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 0.0,
-    "traits_cn": [
-      "辅助",
-      "简单",
-      "配合神将"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
         "name_cn": "机捷",
         "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以观看牌堆底的一张牌，然后交给任意角色。",
+        "description_cn": "出牌阶段限一次，你可以观看牌堆底的一张牌，然后将之交给一名角色。",
         "description_en": ""
       },
       {
         "name_cn": "急援",
         "name_en": "",
-        "description_cn": "当一名角色进入濒死状态或你交给一名其他角色牌时，你可以令其摸一张牌。",
+        "description_cn": "当一名角色进入濒死状态时，你可以令该角色摸一张牌。",
         "description_en": ""
       }
     ],
@@ -4732,32 +4706,28 @@
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SP_SHU090",
+    "standard_id": "char_huojun",
     "name_cn": "霍峻",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 0.0,
-    "traits_cn": [
-      "防御",
-      "发育",
-      "简单"
-    ],
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
-        "name_cn": "穷守",
+        "name_cn": "孤扼",
         "name_en": "",
-        "description_cn": "锁定技，游戏开始时，你废除所有装备栏并摸四张牌。你的手牌上限+4。",
+        "description_cn": "每名其他角色的回合内限一次，当你需要使用或打出【杀】或【闪】时，你可以展示所有手牌（无牌则跳过），若其中【杀】和【闪】的总数不超过1，你视为使用或打出之。",
         "description_en": ""
       },
       {
-        "name_cn": "奋锐",
+        "name_cn": "伺攻",
         "name_en": "",
-        "description_cn": "结束阶段，你可以：弃置一张牌并复原一个装备栏，随机使用一张对应装备牌，然后你可以对一名装备区里牌数小于你的角色造成X点伤害（X为你与其装备区里牌数之差），若如此做，你不能再以此法造成伤害。",
+        "description_cn": "其他角色的回合结束时，若其于本回合内使用牌被响应过，你可以将手牌数调整至1，视为对其使用一张需X张【闪】抵消的【杀】，此【杀】造成的伤害+1（X为你以此法弃置牌数且至少为1）。若此【杀】造成伤害，此技能本轮失效。",
         "description_en": ""
       }
     ],
@@ -5258,32 +5228,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU083",
     "standard_id": "",
     "name_cn": "谯周",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 3.5,
-    "traits_cn": [
-      "辅助",
-      "简单",
-      "多刀"
-    ],
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0,
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
         "name_cn": "知命",
         "name_en": "",
-        "description_cn": "准备阶段与弃牌阶段结束时，你摸一张牌，然后你可以将一张牌置于牌堆顶。",
+        "description_cn": "准备阶段与弃牌阶段结束时，你摸一张牌，然后可以将一张牌置于牌堆顶。",
         "description_en": ""
       },
       {
         "name_cn": "星卜",
         "name_en": "",
-        "description_cn": "结束阶段，你可以亮出牌堆顶三张牌，然后你可以根据其中红色牌数令一名其他角色于其下回合获得以下效果：3，摸牌阶段额外摸两张牌、出牌阶段使用【杀】的限制次数+1；2，出牌阶段使用【杀】的限制次数-1、跳过弃牌阶段；不大于1，准备阶段弃置一张手牌。",
+        "description_cn": "结束阶段，你可以亮出牌堆顶的三张牌，然后你可以根据其中红色牌的数量，令一名你指定的其他角色获得以下对应的效果：为3，其下个回合摸牌阶段多摸两张牌、出牌阶段使用【杀】的次数上限+1；为2，其下个回合出牌阶段使用【杀】的次数上限-1、跳过弃牌阶段；不大于1，其下个回合准备阶段弃置一张手牌。",
         "description_en": ""
       }
     ],
@@ -5354,32 +5320,52 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU056",
     "standard_id": "",
     "name_cn": "周群",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "辅助"
-    ],
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0,
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
         "name_cn": "天候",
         "name_en": "",
-        "description_cn": "锁定技，准备阶段，你观看牌堆顶的牌并选择是否用你的一张手牌交换之，然后展示牌堆顶的牌，令一名角色根据此牌花色获得技能直到你下一准备阶段：红桃“烈暑”；方片“凝雾”；黑桃“骤雨”；梅花“严霜”。",
+        "description_cn": "锁定技，结束阶段，你观看牌堆顶的三张牌并选择是否用你的手牌交换之，然后展示牌堆顶三张牌中的一张，令一名角色根据此牌花色获得技能直到你下次发动此技能：红桃-〖烈暑〗、方块-〖凝雾〗、黑桃-〖骤雨〗、梅花-〖严霜〗。",
         "description_en": ""
       },
       {
         "name_cn": "谶说",
         "name_en": "",
-        "description_cn": "结束阶段，你可以展示一张手牌，然后展示牌堆顶的牌，若两张牌类型/花色/点数/牌名字数中任意项相同且展示牌堆顶牌数小于3，重复此流程，最后你获得以此法展示的牌。",
+        "description_cn": "准备阶段，你可以令一名角色展示一张手牌，然后展示牌堆顶的一张牌，若两张牌类别/花色/点数/牌名字数中任意项相同且展示牌堆顶的牌数小于3，重复此流程，最后你获得以此法展示的牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "烈暑",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色的结束阶段，若其体力值全场最大，其失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "凝雾",
+        "name_en": "",
+        "description_cn": "锁定技，当其他角色使用【杀】指定非相邻角色为唯一目标时，其进行判定，若结果点数大于此【杀】，此【杀】无效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "骤雨",
+        "name_en": "",
+        "description_cn": "锁定技，防止其他角色造成的火焰伤害。当一名角色受到雷电伤害后，其相邻角色失去1点体力。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "严霜",
+        "name_en": "",
+        "description_cn": "锁定技，其他角色的结束阶段，若其体力值全场最小，其失去1点体力。",
         "description_en": ""
       }
     ],
@@ -5566,26 +5552,22 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU079",
     "standard_id": "",
     "name_cn": "孟达",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "多刀",
-      "配合神将",
-      "持久"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
         "name_cn": "苟得",
         "name_en": "",
-        "description_cn": "每回合结束时，若与你势力相同的角色此回合执行过以下项，你可以执行另一项：1.摸一张牌；2.弃置一名角色一张手牌；3.视为使用一张【杀】；4.变更势力。",
+        "description_cn": "每回合结束时，若与你势力相同的角色本回合执行过以下项，你可以执行另一项：1.摸一张牌；2.弃置一名角色一张手牌；3.视为使用一张【杀】；4.变更势力。",
         "description_en": ""
       }
     ],
@@ -5714,32 +5696,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU018B",
     "standard_id": "",
     "name_cn": "费祎",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "过牌",
-      "发育",
-      "困难"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
         "name_cn": "晏如",
         "name_en": "",
-        "description_cn": "出牌阶段各限一次，若你的手牌数为：奇数，你可以摸三张牌并弃置至少半数手牌；偶数，你可以弃置至少半数手牌并摸三张牌。",
+        "description_cn": "出牌阶段各限一次,若你的手牌数为:奇数,你可以 摸一张牌并置至少半数手牌;偶数,你可以弃置至 少半数手牌并摸三张牌。",
         "description_en": ""
       },
       {
         "name_cn": "和衷",
         "name_en": "",
-        "description_cn": "每回合各限一次，当你的手牌数变为1后，你可以展示之并摸一张牌，然后令你本回合下次使用点数大于/小于此牌点数的锦囊牌各多结算一次。",
+        "description_cn": "每回合各限一次,当你的手牌数变为1后,你可以展 示之并摸一张牌,然后令你本回合下次使用点数大于 /小于此牌点数的普通锦囊牌各多结算一次。",
         "description_en": ""
       }
     ],
@@ -5810,70 +5788,62 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU072",
     "standard_id": "",
     "name_cn": "彭羕",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 0.0,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "困难"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
-        "name_cn": "寸目",
-        "name_en": "",
-        "description_cn": "锁定技，当你摸牌时，你改为从牌堆底摸牌。",
-        "description_en": ""
-      },
-      {
         "name_cn": "嚣翻",
         "name_en": "",
-        "description_cn": "当你需要使用牌时，你可以观看牌堆底X+1张牌，然后可以使用其中你需要的牌并弃置你前X个区域里的牌：1.判定区；2.装备区；3.手牌区。（X为本回合使用过牌的类型数）。",
+        "description_cn": "当你需要使用牌时，你可以观看牌堆底的X+1张牌，然后可以使用其中你需要的牌并弃置你前X个区域里的牌：1.判定区；2.装备区；3.手牌区。（X为本回合使用过牌的类型数）",
         "description_en": ""
       },
       {
         "name_cn": "侻失",
         "name_en": "",
-        "description_cn": "锁定技，你不能使用【无懈可击】。你使用点数为字母的牌无效并摸一张牌，且下次对手牌数小于你的角色使用牌无距离和次数限制。任意回合你使用3次伤害牌未造成伤害后，“嚣翻”失效至回合结束。",
+        "description_cn": "锁定技，你不能使用【无懈可击】。当你使用点数为字母的牌时，你令之无效并摸一张牌，然后你下次对手牌数小于你的角色使用牌无距离和次数限制。当你于一回合内使用了三张未造成伤害的伤害牌后，〖嚣翻〗于本回合内失效。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "寸目",
+        "name_en": "",
+        "description_cn": "锁定技，当你摸牌时，改为从牌堆底摸牌。",
         "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU018A",
     "standard_id": "",
     "name_cn": "蒋琬",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 0.0,
-    "traits_cn": [
-      "过牌",
-      "发育",
-      "困难"
-    ],
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
-        "name_cn": "蓄发",
+        "name_cn": "自若",
         "name_en": "",
-        "description_cn": "出牌阶段各限一次，你可以：1.将至少半数手牌置于武将牌上，称为“蓄发”牌，然后你可以将一张牌当“蓄发”牌中任意普通锦囊牌使用；2.移去至少半数“蓄发”牌，然后你可以将一张牌当移去牌中的一张普通锦囊牌使用。",
+        "description_cn": "转换技,锁定技,当你使用,①最左侧的手牌时,你摸 一张牌;②最右侧的手牌时,你摸一张牌。你以此法摸 牌后本回合不能整理手牌。",
         "description_en": ""
       },
       {
-        "name_cn": "自若",
+        "name_cn": "蓄发",
         "name_en": "",
-        "description_cn": "转换技，锁定技，当你使用，阳：最左侧的手牌时，你摸一张牌；阴：最右侧的手牌时，你摸一张牌。你以此法摸牌后本回合不能整理手牌。",
+        "description_cn": "出牌阶段各限一次,你可以:1.将至少半数手牌置于武 将牌上,称为“蓄发”牌,然后你可以将一张牌当“蓄 发”牌中任意普通锦囊牌使用;2.移去至少半数“蓄 发牌,然后你可以将一张牌当移去牌中的一张普通锦 變牌使用",
         "description_en": ""
       }
     ],
@@ -6194,32 +6164,28 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_SHU063",
     "standard_id": "",
     "name_cn": "胡金定",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 4.0,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "持久"
-    ],
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Others",
     "skills": [
       {
         "name_cn": "轻缘",
         "name_en": "",
-        "description_cn": "锁定技，游戏开始时，你选择一名其他角色。当你首次受到伤害后，你再选择一名其他角色。每回合限一次，当以此法选择的角色获得牌后，你获得其中随机一名角色一张手牌。",
+        "description_cn": "锁定技,游戏开始时或当你首次受到伤害时,你选 择一名未选择过的其他角色;每回合限一次,当 “轻缘”角色获得牌后,你获得一名“轻缘”角色 一张手牌。",
         "description_en": ""
       },
       {
         "name_cn": "重身",
         "name_en": "",
-        "description_cn": "你本轮获得的红色牌可当【闪】使用。",
+        "description_cn": "你可以将一张本轮获得的红色牌当【闪】使用。",
         "description_en": ""
       }
     ],
@@ -7804,6 +7770,734 @@
         "name_cn": "作保",
         "name_en": "",
         "description_cn": "限定技，你参与的议事展示意见时，你可以令此次议事中，所有黑桃意见牌视为红桃。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU016",
+    "standard_id": "",
+    "name_cn": "甘夫人",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "智诫",
+        "name_en": "",
+        "description_cn": "每轮限一次，一名角色的出牌阶段开始时，你可以展示其一张手牌。当其于此阶段内使用与此牌类别相同的牌后，其摸一张牌，然后弃置X张牌（X为此回合其使用此类别牌的次数-1）；此阶段结束时，若其此阶段以此法获得的牌数大于弃置的牌数，你与其各摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "淑慎",
+        "name_en": "",
+        "description_cn": "每回合各限一次，当你回复体力后，你可以令一名其他角色摸两张牌；当你一次获得至少两张牌后，你可以令一名其他角色回复1点体力。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU043",
+    "standard_id": "",
+    "name_cn": "马良",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "应援",
+        "name_en": "",
+        "description_cn": "当你于回合内使用牌结算完成进入弃牌堆时,你可以 将之交给一名其他角色(每种牌名每回合限一次)。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "自书",
+        "name_en": "",
+        "description_cn": "锁定技,当你于回合内非因“自书”获得手牌后,你 摸一张牌;其他角色的结束阶段,你将本回合获得的 手牌置入弃牌堆。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU042",
+    "standard_id": "",
+    "name_cn": "张星彩",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "甚贤",
+        "name_en": "",
+        "description_cn": "当其他角色于你回合外因弃置而失去基本牌后，你可以摸一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "枪舞",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次，你可以进行判定。若如此做，直到回合结束，你使用点数小于结果的【杀】无距离限制，且你使用点数大于结果的【杀】不计入次数限制。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU057",
+    "standard_id": "",
+    "name_cn": "吴班",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "诱战",
+        "name_en": "",
+        "description_cn": "锁定技，当其他角色于你的回合内失去牌后，你摸一张牌且你本回合的手牌上限+1，其本回合下次受到的伤害+1。然后结束阶段，若其本回合未受到过伤害，其摸X张牌（X为其本回合失去牌的次数且至多为3）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU146",
+    "standard_id": "",
+    "name_cn": "庞宏",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "评骘",
+        "name_en": "",
+        "description_cn": "转换技，出牌阶段限一次，你可以观看一名角色的手牌并展示其中一张，阳：你弃置此牌，其视为对你使用一张【火攻】，若此牌未造成过伤害，此技能视为未发动过；阴：其使用此牌，若此牌造成过伤害，此技能视为未发动过。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "刚简",
+        "name_en": "",
+        "description_cn": "锁定技，每回合结束时，若你本回合未受到过伤害，你摸X张牌（X为本回合展示过的牌数且至多为5）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU110",
+    "standard_id": "",
+    "name_cn": "卧龙&凤雏",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "游龙",
+        "name_en": "",
+        "description_cn": "转换技，每轮各限一次，你可以废除一个装备栏并视为使用一张，阳：普通锦囊牌；阴：基本牌。(每种牌名 限一次)",
+        "description_en": ""
+      },
+      {
+        "name_cn": "鸾凤",
+        "name_en": "",
+        "description_cn": "限定技,一名角色进入濒死状态时,若其体力上限不 小于你,你可以令其恢复所有已废除装备栏,然后该 角色将体力回复至3点并将手牌摸至6-X(为其恢复 的装备栏数),若该角色为你,你重置“游龙”",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU127",
+    "standard_id": "",
+    "name_cn": "黄舞蝶",
+    "name_en": "",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "双锐",
+        "name_en": "",
+        "description_cn": "准备阶段，你可以视为对一名其他角色使用一张【杀】，若其：不在你的攻击范围内，此【杀】不能被响应，你获得〖狩星〗直到回合结束；在你的攻击范围内，此【杀】伤害+1，你获得〖铩雪〗直到回合结束。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "伏械",
+        "name_en": "",
+        "description_cn": "出牌阶段，你可以弃置一张武器牌或失去一个其他技能，令一名其他角色弃置两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "狩星",
+        "name_en": "",
+        "description_cn": "你可以将X张牌当一张不计入次数的【杀】对一名攻击范围外的角色使用（X为你与其的距离）。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "铩雪",
+        "name_en": "",
+        "description_cn": "当你对其他角色造成伤害后，你可以摸两张牌，然后弃置X张牌（X为你与其的距离）。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU054",
+    "standard_id": "",
+    "name_cn": "张翼",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "执义",
+        "name_en": "",
+        "description_cn": "锁定技,一名角色的结束阶段,若你本回合使用 或打出过基本牌,你视为使用其中一张或摸一张 牌。",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "",
+    "standard_id": "",
+    "name_cn": "",
+    "name_en": "",
+    "gender": "",
+    "faction": "",
+    "health": 0,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Others",
+    "skills": [
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
+        "description_en": ""
+      },
+      {
+        "name_cn": "",
+        "name_en": "",
+        "description_cn": "",
         "description_en": ""
       }
     ],

@@ -5,27 +5,34 @@ import '../models/general_card.dart';
 import '../../../../core/models/skill_dto.dart';
 
 class GeneralLoader {
-  // ── Setup 
+  // ── Setup
   static final GeneralLoader _instance = GeneralLoader._internal();
   factory GeneralLoader() => _instance;
   GeneralLoader._internal();
 
-  // ── Cache Data 
+  // ── Cache Data
   List<GeneralCard>? _cachedGenerals;
   Map<String, SkillDTO>? _cachedSkillMap;
 
-  // ── Config 
-  /// To add a new general expansion, add its file path here
+  // ── Config
+  /// To activate a file: uncomment its entry below.
+  /// File is loaded as soon as it appears in this list.
   static const List<String> _expansionFiles = [
     'assets/data/generals/limit_break.json',
     'assets/data/generals/demon.json',
     'assets/data/generals/god.json',
-    // 'assets/data/generals/standard.json',  // Uncomment when ready
+    // 'assets/data/generals/standard.json',         // Uncomment when skill_type filled
+    // 'assets/data/generals/myth_returns.json',      // Uncomment when skill_type filled
+    // 'assets/data/generals/heroes_soul.json',       // Uncomment when skill_type filled
+    // 'assets/data/generals/art_of_war.json',        // File not yet created
+    // 'assets/data/generals/strategic_assault.json', // File not yet created
+    // 'assets/data/generals/doudizhu.json',          // File not yet created
+    // 'assets/data/generals/others.json',            // Uncomment when IDs/name_en filled
   ];
 
   static const String _skillsFile = 'assets/data/skills.json';
 
-  // ── Public API 
+  // ── Public API
   Future<List<GeneralCard>> getGenerals() async {
     if (_cachedGenerals != null) return _cachedGenerals!;
 
@@ -40,7 +47,6 @@ class GeneralLoader {
     if (_cachedSkillMap != null) return _cachedSkillMap!;
     return _loadSkillMap();
   }
-
 
   Future<List<GeneralCard>> getVariants(String standardId) async {
     final all = await getGenerals();
@@ -66,7 +72,7 @@ class GeneralLoader {
     _cachedSkillMap = null;
   }
 
-  // ── Private 
+  // ── Private
   Future<Map<String, SkillDTO>> _loadSkillMap() async {
     if (_cachedSkillMap != null) return _cachedSkillMap!;
 
