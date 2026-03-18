@@ -326,7 +326,7 @@
       },
       {
         "name_cn": "奇谋",
-        "name_en": "Desperate Gambit",
+        "name_en": "Audacious Stratagem",
         "description_cn": "限定技、出牌阶段、你可以失去任意点体力、然后直到回合结束、你计算与其他角色的距离-X，且你可以多使用X张【杀】。（X为你失去的体力值）",
         "description_en": "Limited: During your Action Phase, you may lose any amount of HP. Until the end of this turn, your distance to other characters is reduced by X, and you may Use X additional [Kill] cards (X = HP lost).",
         "skill_type": "limited"
@@ -509,7 +509,8 @@
         "name_en": "Feign Foolishness",
         "description_cn": "主公技，觉醒技，准备阶段，若你是体力值最小的角色，你增加1点体力上限，回复1点体力，然后获得“激将”。",
         "description_en": "Lord Skill — Awakening: Starting Phase, if you have the lowest HP Value on the field, increase your Max HP by 1, recover 1 HP, then gain 〖Rally the Vanguard〗.",
-        "skill_type": "awakening"
+        "skill_type": "awakening",
+        "skill_type_secondary": "lord"
       },
       {
         "name_cn": "激将",
@@ -599,7 +600,7 @@
   },
   {
     "id": "JX_SHU017",
-    "standard_id": "char_xusu",
+    "standard_id": "char_xushu",
     "name_cn": "界徐庶",
     "name_en": "Xu Shu",
     "gender": "Male",
@@ -720,7 +721,7 @@
   },
   {
     "id": "JX_SHU026",
-    "standard_id": "char_guanxing_zhangbao",
+    "standard_id": "char_guanxing&zhangbao",
     "name_cn": "界关兴&张苞",
     "name_en": "Guan Xing & Zhang Bao",
     "gender": "Male",
@@ -827,7 +828,7 @@
   },
   {
     "id": "JX_SHU032",
-    "standard_id": "char_zhangsung",
+    "standard_id": "char_zhangsong",
     "name_cn": "张松",
     "name_en": "Zhang Song",
     "gender": "Male",
@@ -1000,7 +1001,7 @@
     "skills": [
       {
         "name_cn": "突袭",
-        "name_en": "Blitz",
+        "name_en": "Sudden Raid",
         "description_cn": "摸牌阶段，你可以少摸任意张牌并获得等量的其他角色各一张手牌。",
         "description_en": "Draw Phase: You may draw fewer cards than normal and instead take the same number of cards from other characters' hands (at most 1 card per character).",
         "skill_type": "active"
@@ -1069,7 +1070,7 @@
       },
       {
         "name_cn": "遗计",
-        "name_en": "Dying Stratagem",
+        "name_en": "Posthumous Plan",
         "description_cn": "当你受到1点伤害后，你可以摸两张牌，然后你可以交给至多两名其他角色共计至多两张手牌。",
         "description_en": "After you take 1 damage, you may draw 2 cards, then give up to 2 of your hand cards to up to 2 other characters (1 card per character).",
         "skill_type": "active"
@@ -1745,7 +1746,7 @@
     "id": "JX_WEI033",
     "standard_id": "char_manchong",
     "name_cn": "满宠",
-    "name_en": "满宠 Man Chong",
+    "name_en": "Man Chong",
     "gender": "Male",
     "faction": "Wei",
     "health": 3,
@@ -1819,7 +1820,7 @@
   },
   {
     "id": "JX_WU002",
-    "standard_id": "char_gan_ning",
+    "standard_id": "char_ganning",
     "name_cn": "界甘宁",
     "name_en": "Gan Ning",
     "gender": "Male",
@@ -1975,7 +1976,7 @@
       },
       {
         "name_cn": "反间",
-        "name_en": "Double Agent",
+        "name_en": "Counter-Spy",
         "description_cn": "出牌阶段限一次，你可以展示并交给一名其他角色一张手牌，其选择一项：1.展示所有手牌，弃置与此牌相同花色的牌；2.失去1点体力。",
         "description_en": "Once per Action Phase: Reveal and give 1 hand card to another character. They choose one: 1. Reveal all their hand cards and discard all cards matching the suit of the card you gave; 2. Lose 1 HP.",
         "skill_type": "active"
@@ -2006,7 +2007,7 @@
     "skills": [
       {
         "name_cn": "流离",
-        "name_en": "Drift and Scatter",
+        "name_en": "Displaced",
         "description_cn": "当你成为【杀】的目标时，你可以弃置一张牌并将此【杀】转移给你攻击范围内的一名其他角色。",
         "description_en": "When you become the target of [Kill], you may discard 1 card and Transfer that [Kill] to another character within your Attack Range.",
         "skill_type": "active"
@@ -2348,7 +2349,7 @@
   },
   {
     "id": "JX_WU015",
-    "standard_id": "char_zhangzhao_zhanghong",
+    "standard_id": "char_zhangzhao&zhanghong",
     "name_cn": "界张昭张纮",
     "name_en": "Zhang Zhao & Zhang Hong",
     "gender": "Male",
@@ -2486,11 +2487,11 @@
   },
   {
     "id": "JX_WU026",
-    "standard_id": "char_bulinshi",
+    "standard_id": "char_bulianshi",
     "name_cn": "步练师",
-    "name_en": "步练师 Bu Lianshi",
+    "name_en": "Bu Lianshi",
     "gender": "Female",
-    "faction": "W",
+    "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
     "traits_cn": [
@@ -2602,7 +2603,7 @@
     "id": "JX_WU031",
     "standard_id": "char_zhuran",
     "name_cn": "朱然",
-    "name_en": "朱然 Zhu Ran",
+    "name_en": "Zhu Ran",
     "gender": "Male",
     "faction": "Wu",
     "health": 4,
@@ -2745,7 +2746,7 @@
   },
   {
     "id": "JX_QUN004",
-    "standard_id": "char_yuan_shao",
+    "standard_id": "char_yuanshao",
     "name_cn": "界袁绍",
     "name_en": "Yuan Shao",
     "gender": "Male",
@@ -2776,7 +2777,8 @@
         "name_en": "Bloodline",
         "description_cn": "主公技，锁定技，你的手牌上限+X（X为其他群势力角色数的两倍）。",
         "description_en": "Lord Skill — Locked: Your Hand Limit is increased by X (X = twice the number of other surviving Qun faction characters).",
-        "skill_type": "lord"
+        "skill_type": "lord",
+        "skill_type_secondary": "locked"
       }
     ],
     "faq": []
@@ -2866,9 +2868,9 @@
   },
   {
     "id": "JX_QUN007",
-    "standard_id": "char_jiayu",
+    "standard_id": "char_jiaxu",
     "name_cn": "贾诩",
-    "name_en": "贾诩 Jia Xu",
+    "name_en": "Jia Xu",
     "gender": "Male",
     "faction": "Qun",
     "health": 3,
@@ -2987,7 +2989,7 @@
   },
   {
     "id": "JX_QUN010",
-    "standard_id": "char_zhangjue",
+    "standard_id": "char_zhangjiao",
     "name_cn": "界张角",
     "name_en": "Zhang Jue",
     "gender": "Male",
@@ -3063,7 +3065,7 @@
   },
   {
     "id": "JX_QUN012",
-    "standard_id": "char_cai_wenji",
+    "standard_id": "char_caiwenji",
     "name_cn": "界蔡文姬",
     "name_en": "Cai Wenji",
     "gender": "Female",
@@ -3139,7 +3141,7 @@
   },
   {
     "id": "JX_QUN026",
-    "standard_id": "char_gongsun_zan",
+    "standard_id": "char_gongsunzan",
     "name_cn": "界公孙瓒",
     "name_en": "Gongsun Zan",
     "gender": "Male",

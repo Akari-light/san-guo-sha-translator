@@ -176,7 +176,7 @@
     "gender": "Male",
     "faction": "Shu",
     "health": 4,
-    "power_index": 1.5,
+    "power_index": 2.0,
     "traits_cn": [
       "进攻",
       "简单",
@@ -277,7 +277,8 @@
         "name_en": "Rescue",
         "description_cn": "主公技，锁定技，其他吴势力角色对你使用【桃】的回复值+1。",
         "description_en": "Lord Skill: Locked: When another Wu faction character uses [Peach] to recover HP for you, the HP recovered is increased by 1.",
-        "skill_type": "lord"
+        "skill_type": "lord",
+        "skill_type_secondary": "locked"
       }
     ],
     "faq": []
@@ -405,7 +406,7 @@
       },
       {
         "name_cn": "反间",
-        "name_en": "Double Agent",
+        "name_en": "Counter-Spy",
         "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一种花色，令其获得并展示你的一张手牌，若此牌花色与其选择的花色不同，你对其造成1点伤害。",
         "description_en": "Once per Action Phase: Choose another character. They declare a suit, then gain and reveal 1 of your hand cards. If the card's suit does not match what they declared, you deal 1 damage to them.",
         "skill_type": "active"
@@ -443,7 +444,7 @@
       },
       {
         "name_cn": "流离",
-        "name_en": "Drift and Scatter",
+        "name_en": "Displaced",
         "description_cn": "当你成为【杀】的目标时，你可以弃置一张牌并将此【杀】转移给你攻击范围内的一名其他角色。",
         "description_en": "When you are targeted by [Kill], you may discard 1 card and redirect that [Kill] to another character within your Attack Range.",
         "skill_type": "active"
@@ -619,7 +620,7 @@
     "skills": [
       {
         "name_cn": "突袭",
-        "name_en": "Blitz",
+        "name_en": "Sudden Raid",
         "description_cn": "摸牌阶段，你可以少摸任意张牌并获得等量的其他角色各一张手牌。",
         "description_en": "Draw Phase: You can draw fewer cards and instead take the same number of cards from other characters' hands.",
         "skill_type": "active"
@@ -688,7 +689,7 @@
       },
       {
         "name_cn": "遗计",
-        "name_en": "Dying Stratagem",
+        "name_en": "Posthumous Plan",
         "description_cn": "当你受到1点伤害后，你可以观看牌堆顶的两张牌，然后将这些牌交给任意角色。",
         "description_en": "When you receive 1 damage, you may look at the top 2 cards of the Draw Pile, then give them to any characters.",
         "skill_type": "active"

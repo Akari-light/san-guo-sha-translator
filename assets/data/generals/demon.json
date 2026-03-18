@@ -98,7 +98,7 @@
       },
       {
         "name_cn": "谋变",
-        "name_en": "Final Gambit",
+        "name_en": "Scheme of Transformation",
         "description_cn": "准备阶段，若你【诡伏】记录数至少为3，你可入魔，获得你【诡伏】记录的技能，并获得【骤袭】。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
         "description_en": "Starting Phase: If the total number of entries recorded by [Ambuscade] is at least 3, you may Demonize — gain all skills recorded by [Ambuscade] and gain [Onslaught]. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP.",
         "skill_type": "active"

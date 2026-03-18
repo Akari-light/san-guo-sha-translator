@@ -751,7 +751,8 @@
         "name_en": "Dragon Fury",
         "description_cn": "转换技，锁定技，出牌阶段开始时，阳：你失去1点体力并摸一张牌，然后本阶段你的红色手牌均视为火【杀】且无距离限制；阴：你减少1点体力上限并摸一张牌，然后本阶段你的锦囊牌均视为雷【杀】且无次数限制。",
         "description_en": "Convert/Locked: At the start of your Action Phase -- Yang: lose 1 HP and draw 1 card; your red hand cards are treated as [Fire Kill] with no distance limit this phase. Yin: reduce max HP by 1 and draw 1 card; your Tool cards are treated as [Lightning Kill] with no frequency limit this phase.",
-        "skill_type": "convert"
+        "skill_type": "convert",
+        "skill_type_secondary": "locked"
       },
       {
         "name_cn": "结营",
@@ -1182,7 +1183,8 @@
         "name_en": "Omen of Chaos",
         "description_cn": "限定技，一名角色的濒死结算完成后，若其未脱离濒死状态，你可以令其增加3点体力上限并失去所有非锁定技，然后其将体力回复至3点并摸四张牌，本局游戏你可以令其减少1点体力上限并对一名你选择的角色造成1点伤害（出牌阶段每名角色限一次）。",
         "description_en": "Limited: After a Verge of Death Resolution completes for a character who has not escaped the Verge of Death State, you may increase their max HP by 3, remove all their non-Locked skills, recover their HP to 3, and let them draw 4 cards. For the rest of the game you may, once per character per Action Phase, reduce their max HP by 1 to deal 1 damage to a character of your choice.",
-        "skill_type": "locked"
+        "skill_type": "limited",
+        "skill_type_secondary": "locked"
       }
     ],
     "faq": []
@@ -1220,7 +1222,7 @@
         "name_en": "Carry Generals",
         "description_cn": "锁定技，准备阶段，你从随机五张武将牌中选择任意张当武器牌置于装备区，此类牌：无花色点数、攻击范围为牌上的体力上限、效果为牌上描述中含有【杀】的技能（觉醒技、限定技、转换技、主公技除外）、离开装备区时销毁。",
         "description_en": "Locked: During your Starting Phase, choose any number of cards from 5 randomly drawn general cards to place in your equipment zone as weapon cards. These cards have no suit or value; their attack range equals the max HP on that general card; their effect is any skill on that card containing [Kill] (excluding Awakening, Limited, Convert, and Lord skills); they are destroyed when they leave the equipment zone.",
-        "skill_type": "convert"
+        "skill_type": "locked"
       },
       {
         "name_cn": "摧决",
@@ -1376,7 +1378,8 @@
         "name_en": "Uphold Order",
         "description_cn": "转换技，锁定技，阴：你的判定阶段改为出牌阶段。；阳：你的判定阶段改为摸牌阶段",
         "description_en": "Convert/Locked — Yin: Your Judgment Phase becomes an Action Phase. Yang: Your Judgment Phase becomes a Draw Phase.",
-        "skill_type": "convert"
+        "skill_type": "convert",
+        "skill_type_secondary": "locked"
       }
     ],
     "faq": []
@@ -1556,7 +1559,7 @@
         "name_en": "Break the Siege",
         "description_cn": "使命技，游戏开始时，你令所有其他角色获得「围」标记。回合开始时，你令所有拥有「围」标记的角色将「围」标记移动到下家角色（若你获得「围」标记，则直接交给下家）。有「围」的角色受到伤害后，弃置其「围」标记。有「围」的角色回合开始时，你可以选择一项：1.弃置一张手牌，对其造成1点伤害；2.若其体力值不大于你，获得其一张手牌；若如此做，直到本回合结束，你视为在其攻击范围内。成功：你的回合开始时，若场上没有「围」标记，你获得技能「神著※」。失败：若你成功达成使命前，进入濒死状态时，你将体力值回复至1点，移除场上所有的「围」标记，然后弃置装备区所有牌。",
         "description_en": "Mission: At game start, all other characters gain a Siege token. At the start of your turn, all Sieged characters pass their Siege token to their next player (if you receive one, pass it on immediately). Sieged characters lose their token upon taking damage. When a Sieged character's turn begins, choose: 1. Discard 1 hand card and deal 1 damage to them; 2. If their HP does not exceed yours, take 1 hand card from them. If you act, you are treated as within their attack range until end of turn. Success: At the start of your turn, if no Siege tokens remain in play, gain skill Divine Record. Failure: If you enter the Verge of Death State before succeeding, recover to 1 HP, remove all Siege tokens, and discard all your equipment.",
-        "skill_type": "active"
+        "skill_type": "mission"
       },
       {
         "name_cn": "神著",
@@ -1684,7 +1687,7 @@
   },
   {
     "id": "LE027",
-    "standard_id": "char_zhangjue",
+    "standard_id": "char_zhangjiao",
     "name_cn": "神张角",
     "name_en": "God Zhang Jue",
     "gender": "Male",
@@ -2072,7 +2075,8 @@
         "name_en": "Phoenix Blaze",
         "description_cn": "锁定技,转换技,当你使用牌指定唯一目标 后,阳:你令其摸一张牌;阴:你对其造成1 点火属性伤害。",
         "description_en": "Convert/Locked: When you use a card targeting only one character — Yang: they draw 1 card; Yin: you deal them 1 Fire damage.",
-        "skill_type": "convert"
+        "skill_type": "convert",
+        "skill_type_secondary": "locked"
       },
       {
         "name_cn": "鹍浴",

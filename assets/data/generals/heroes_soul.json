@@ -757,7 +757,7 @@
   },
   {
     "id": "YJ_WU026",
-    "standard_id": "char_buliangshi",
+    "standard_id": "char_bulianshi",
     "name_cn": "步练师",
     "name_en": "Bu Lianshi",
     "gender": "Female",
@@ -861,7 +861,7 @@
       },
       {
         "name_cn": "解烦",
-        "name_en": "Relieve Distress",
+        "name_en": "Dispel Vexation",
         "description_cn": "限定技，出牌阶段，你可以选择一名角色，令能攻击到该角色的所有角色选择一项:弃置一张武器牌；或令该角色摸一张牌。",
         "description_en": "Limited: During your Action Phase, choose a character. All characters who have them within their Attack Range each choose one: discard 1 Weapon card; or let that character draw 1 card.",
         "skill_type": "limited"
@@ -871,7 +871,7 @@
   },
   {
     "id": "YJ_WU029",
-    "standard_id": "char_panzhangjiazhong",
+    "standard_id": "char_panzhang&mazhong",
     "name_cn": "潘璋&马忠",
     "name_en": "Pan Zhang & Ma Zhong",
     "gender": "Male",
@@ -1161,7 +1161,8 @@
         "name_en": "Imperial Edict",
         "description_cn": "主公技，锁定技，你距离为1的角色视为在其他吴势力角色的攻击范围内。",
         "description_en": "Lord Skill — Locked: Characters at distance 1 from you are treated as being within the Attack Range of all other Wu faction characters.",
-        "skill_type": "lord"
+        "skill_type": "lord",
+        "skill_type_secondary": "locked"
       }
     ],
     "faq": []
@@ -1665,7 +1666,7 @@
   },
   {
     "id": "YJ_WEI036",
-    "standard_id": "char_hanhao_shihuan",
+    "standard_id": "char_hanhao&shihuan",
     "name_cn": "韩浩&史涣",
     "name_en": "Han Hao & Shi Huan",
     "gender": "Male",
@@ -1741,7 +1742,8 @@
         "name_en": "Rise and Fall",
         "description_cn": "主公技，限定技，当你进入濒死状态时，你可令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害",
         "description_en": "Lord Skill — Limited: When you enter the Verge of Death State, other Wei faction characters each choose whether to restore 1 HP to you one at a time. Each character who does takes 1 damage after this Verge of Death Resolution ends.",
-        "skill_type": "lord"
+        "skill_type": "limited",
+        "skill_type_secondary": "lord"
       }
     ],
     "faq": []
@@ -1876,7 +1878,7 @@
   },
   {
     "id": "YJ_WEI041",
-    "standard_id": "char_sunzi_liufang",
+    "standard_id": "char_sunzi&liufang",
     "name_cn": "孙资&刘放",
     "name_en": "Sun Zi & Liu Fang",
     "gender": "Male",
@@ -1990,7 +1992,7 @@
   },
   {
     "id": "YJ_QUN028",
-    "standard_id": "char_chen_gong",
+    "standard_id": "char_chengong",
     "name_cn": "陈宫",
     "name_en": "Chen Gong",
     "gender": "Male",
@@ -2125,7 +2127,7 @@
     "skills": [
       {
         "name_cn": "惴恐",
-        "name_en": "Fearful Dread",
+        "name_en": "Trepidation",
         "description_cn": "其他角色的回合开始时，若你已受伤，你可以与其拼点:若你赢，本回合该角色只能对自己使用牌:若你没赢，本回合其与你的距离视为1。",
         "description_en": "At the start of another character's turn, if you are Wounded, you may initiate a Point Duel with them. If you win, they can only use cards targeting themselves this turn. If you lose, their distance to you is treated as 1 this turn.",
         "skill_type": "active"
@@ -2180,7 +2182,7 @@
   },
   {
     "id": "YJ_QUN035",
-    "standard_id": "char_gongsun_yuan",
+    "standard_id": "char_gongsuyuan",
     "name_cn": "公孙渊",
     "name_en": "Gongsun Yuan",
     "gender": "Male",
@@ -2211,7 +2213,7 @@
   },
   {
     "id": "YJ_QUN036",
-    "standard_id": "char_guotu_fengji",
+    "standard_id": "char_guotu&fengji",
     "name_cn": "郭图逢纪",
     "name_en": "Guo Tu & Feng Ji",
     "gender": "Male",
@@ -2255,7 +2257,7 @@
     "gender": "Male",
     "faction": "Qun",
     "health": 4,
-    "power_index": 2.5,
+    "power_index": 3.0,
     "traits_cn": [
       "防御",
       "控制",

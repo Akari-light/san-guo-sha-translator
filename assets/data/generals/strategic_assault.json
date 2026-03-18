@@ -8,8 +8,16 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "发育", "强命"],
-    "traits_en": ["Aggressive", "Scaling", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Scaling",
+      "Sturdy"
+    ],
     "expansion": "Strategic Assault",
     "skills": [
       {
@@ -38,8 +46,16 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["过牌", "控制", "困难"],
-    "traits_en": ["Card Flow", "Control", "High Difficulty"],
+    "traits_cn": [
+      "过牌",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "Strategic Assault",
     "skills": [
       {
@@ -68,8 +84,16 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "卖血", "爆发"],
-    "traits_en": ["Aggressive", "Glass Cannon", "Burst"],
+    "traits_cn": [
+      "进攻",
+      "卖血",
+      "爆发"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Glass Cannon",
+      "Burst"
+    ],
     "expansion": "Strategic Assault",
     "skills": [
       {
@@ -91,15 +115,23 @@
   },
   {
     "id": "MG_WU028",
-    "standard_id": "char_handan",
+    "standard_id": "char_handang",
     "name_cn": "韩当",
     "name_en": "Han Dang",
     "gender": "Male",
     "faction": "Wu",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["进攻", "控制", "强命"],
-    "traits_en": ["Aggressive", "Control", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Sturdy"
+    ],
     "expansion": "Strategic Assault",
     "skills": [
       {
@@ -111,7 +143,7 @@
       },
       {
         "name_cn": "解烦",
-        "name_en": "Relieve Distress",
+        "name_en": "Dispel Vexation",
         "description_cn": "出牌阶段限一次，你可指定一名角色，令其选择一项：1.攻击范围内含有其的角色依次弃一张牌；2.其摸此时攻击范围内有其的角色数的牌；背水：此技能失效直至你杀死一名角色。",
         "description_en": "Once per Action Phase: Choose a character. They must choose one: 1. Each character who has them within their Attack Range discards 1 card one at a time; 2. They draw cards equal to the number of characters who have them within Attack Range. Back Against the Wall: This skill is disabled until you kill a character.",
         "skill_type": "active"
