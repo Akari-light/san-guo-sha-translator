@@ -909,43 +909,5 @@
       }
     ],
     "faq": []
-  },
-  {
-    "id": "QUN021",
-    "standard_id": "char_yuanshu",
-    "name_cn": "袁术",
-    "name_en": "Yuan Shu",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
-    "expansion": "Standard",
-    "skills": [
-      {
-        "name_cn": "妄尊",
-        "name_en": "Vainglorious",
-        "description_cn": "主公的准备阶段，你可以摸一张牌，然后令其本回合手牌上限-1。",
-        "description_en": "During the Lord's Starting Phase, you may draw 1 card, then reduce the Lord's Hand Limit by 1 this turn.",
-        "skill_type": "active"
-      },
-      {
-        "name_cn": "同疾",
-        "name_en": "Shared Ailment",
-        "description_cn": "锁定技，若你的手牌数大于体力值，攻击范围内包含你的其他角色使用【杀】不能指定除你外的角色为目标。",
-        "description_en": "Locked: If your hand card count exceeds your HP Value, other characters whose Attack Range includes you cannot use [Kill] to target anyone other than you.",
-        "skill_type": "locked"
-      }
-    ],
-    "faq": []
   }
 ]
