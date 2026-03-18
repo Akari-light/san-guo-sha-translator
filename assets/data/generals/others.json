@@ -4172,7 +4172,7 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_QUN091",
     "standard_id": "",
     "name_cn": "冯方女",
     "name_en": "",
@@ -4624,32 +4624,56 @@
     "faq": []
   },
   {
-    "id": "",
-    "standard_id": "",
+    "id": "SP_SHU059",
+    "standard_id": "char_puyuan",
     "name_cn": "蒲元",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 0.0,
-    "traits_cn": [
-      "发育",
-      "强命",
-      "多刀"
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "",
+    "skills": [
+      {
+        "name_cn": "天匠",
+        "name_en": "",
+        "description_cn": "游戏开始时,你获得牌堆中两张副类别不同的装备牌并 置入你的装备区;出牌阶段,你可以将你装备区里的牌 置入其他角色的装备区(替换原有装备),若此牌为 “铸刃”装备,你摸两张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "铸刃",
+        "name_en": "",
+        "description_cn": "出牌阶段限一次,你可以弃置一张手牌并进行判定,若 结果点数不大于你弃置牌的点数,你获得一张与你弃置 牌花色相同的“铸刀”装备,若此牌已加入游戏或结果 点数大于你弃置牌的点数,你获得一张【杀】(【天雷 刃】须弃置【闪电】获得且跳过判定)。",
+        "description_en": ""
+      }
     ],
+    "faq": []
+  },
+  {
+    "id": "SP_SHU059-1",
+    "standard_id": "char_puyuan",
+    "name_cn": "蒲元",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
     "traits_en": [],
     "expansion": "",
     "skills": [
       {
         "name_cn": "神工",
         "name_en": "",
-        "description_cn": "出牌阶段各限一次，你可以弃置一张武器/防具/坐骑或宝物牌，进行一次*锻造*，选择一张武器/防具/宝物牌置于一名角色的装备区（替换原装备）。当以此法获得的装备牌进入弃牌堆时，销毁之，然后此回合结束阶段，你摸一张牌。",
+        "description_cn": "出牌阶段各限一次,你可以弃置一张武器牌/防具牌/坐 骑牌或宝物牌,并进行锻造,然后将一张“神工”武器 /防具/完物置入一名角色的装备区(替换原有装备); 每回台结束时,若“神工”装备于本回合移出游戏,你 摸一张牌。",
         "description_en": ""
       },
       {
         "name_cn": "奇思",
         "name_en": "",
-        "description_cn": "游戏开始时，你获得两张不同副类型的装备牌并置入你的装备区。摸牌阶段，你可以少摸一张牌，声明武器、防具、坐骑或宝物牌中的一种并从牌堆或弃牌堆中获得之。",
+        "description_cn": "游戏开始时,你获得牌堆中两张副类别不同的装备牌并 置入你的装备区;摸牌阶段,你可以少摸一张牌,并获 得牌堆或弃牌堆中一张任意副类别的装备牌",
         "description_en": ""
       }
     ],
@@ -7086,13 +7110,13 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_QUN158",
     "standard_id": "",
     "name_cn": "彻里吉",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [
       "控制",
@@ -7105,13 +7129,13 @@
       {
         "name_cn": "车悬",
         "name_en": "",
-        "description_cn": "出牌阶段，若你的装备区里没有宝物牌，你可以弃置一张黑色牌，选择一张“舆”置入你的装备区。当你非因使用装备牌失去装备区里的宝物牌后，你可以判定，若结果为黑色，将一张随机的“舆”置入你的装备区。",
+        "description_cn": "出牌阶段,若你的装备区里没有宝物牌,你可以弃置一 张黑色牌,然后将一张“舆”置入你的装备区;当你非 因替换而失去装备区里的宝物牌后,你可以进行判定, 若结果为黑色,随机将一张“舆”置入你的装备区。",
         "description_en": ""
       },
       {
         "name_cn": "羌首",
         "name_en": "",
-        "description_cn": "锁定技，若你的装备区里有宝物牌，你与其他角色的距离-1。",
+        "description_cn": "锁定线,若你的装备区里有宝物牌,你与其他角色的距 离-1。",
         "description_en": ""
       }
     ],
@@ -8807,37 +8831,37 @@
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_WEI062",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "劉曄",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
     "expansion": "Others",
     "skills": [
       {
-        "name_cn": "",
+        "name_cn": "破垣",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "游戏开始或回合开始时,若你的装备区里有【霹雳 车】,你可以拜置一名其他角色的至多两张牌,若 没有,将【霹雳车】置入你的装备区。",
         "description_en": ""
       },
       {
-        "name_cn": "",
+        "name_cn": "画策",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次,你可以将一张手牌当上一轮所有 角色均未使用过的普通锦囊牌使用。",
         "description_en": ""
       }
     ],
     "faq": []
   },
   {
-    "id": "",
+    "id": "SP_WU055",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "張奮",
     "name_en": "",
     "gender": "",
     "faction": "",

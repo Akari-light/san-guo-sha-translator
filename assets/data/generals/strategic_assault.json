@@ -1,140 +1,120 @@
 [
   {
     "id": "MG_QUN002",
-    "standard_id": "",
+    "standard_id": "char_lvbu",
     "name_cn": "吕布",
-    "name_en": "",
+    "name_en": "Lu Bu",
     "gender": "Male",
     "faction": "Qun",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "发育", "强命"],
+    "traits_en": ["Aggressive", "Scaling", "Sturdy"],
     "expansion": "Strategic Assault",
     "skills": [
       {
         "name_cn": "无双",
-        "name_en": "",
-        "description_cn": "锁定技,你使用的【杀】需两张【闪】才能抵消;与你进 行【决斗】的角色每次需要打出两张【杀】。若对方没有 使用或打出【杀】或【闪】,则此【杀】或【决斗】对其 造成的伤害+1。",
-        "description_en": ""
+        "name_en": "Peerless",
+        "description_cn": "锁定技，你使用的【杀】需两张【闪】才能抵消；与你进行【决斗】的角色每次需要打出两张【杀】。若对方没有使用或打出【杀】或【闪】，则此【杀】或【决斗】对其造成的伤害+1。",
+        "description_en": "Locked: Cancelling your [Kill] requires 2 [Dodge]; each [Kill] played against you in a [Duel] also requires 2. If the target uses no [Kill] or [Dodge] in response, the damage dealt by that [Kill] or [Duel] is increased by 1.",
+        "skill_type": "locked"
       },
       {
         "name_cn": "利驭",
-        "name_en": "",
-        "description_cn": "当你使用【杀对一名其他角色造成伤害后,你可获得其 区域里至多等同于伤害数张牌,然后其摸等量张牌。然后 双方展示获得的牌,若你与其因此获得了全部类别的牌, 其选择一项:1.你视为对由其指定的另一名其他角色使用 一张【决斗】;2.其获得〖无双〗直至其下回合结束。",
-        "description_en": ""
+        "name_en": "Ruthless Dominance",
+        "description_cn": "当你使用【杀】对一名其他角色造成伤害后，你可获得其区域里至多等同于伤害数张牌，然后其摸等量张牌。然后双方展示获得的牌，若你与其因此获得了全部类别的牌，其选择一项：1.你视为对由其指定的另一名其他角色使用一张【决斗】；2.其获得〖无双〗直至其下回合结束。",
+        "description_en": "After your [Kill] deals damage to another character, you may take up to X cards from their zones (X = damage dealt), then they draw the same number. Both players then reveal the cards gained. If between the two of you all card categories are represented, that character chooses one: 1. You are treated as using [Duel] against another character they designate; 2. They gain 〖Peerless〗 until the end of their next turn.",
+        "skill_type": "active"
       }
     ],
     "faq": []
   },
   {
     "id": "MG_WU007",
-    "standard_id": "",
+    "standard_id": "char_luxun",
     "name_cn": "陆逊",
-    "name_en": "",
+    "name_en": "Lu Xun",
     "gender": "Male",
     "faction": "Wu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
+    "power_index": 3.5,
+    "traits_cn": ["过牌", "控制", "困难"],
+    "traits_en": ["Card Flow", "Control", "High Difficulty"],
     "expansion": "Strategic Assault",
     "skills": [
       {
         "name_cn": "谦逊",
-        "name_en": "",
-        "description_cn": "当一张锦囊牌对你生效时,若你武将牌上没有同名牌 且你不是使用者,则你将之置于武将牌上,然后可将 至多张牌移出游戏直到本回合结束(X为你武将牌上 的牌数且至多为5);出牌阶段开始时,你可以使用 一张武将牌上的牌。",
-        "description_en": ""
+        "name_en": "Humility",
+        "description_cn": "当一张锦囊牌对你生效时，若你武将牌上没有同名牌且你不是使用者，则你将之置于武将牌上，然后可将至多X张牌移出游戏直到本回合结束（X为你武将牌上的牌数且至多为5）；出牌阶段开始时，你可以使用一张武将牌上的牌。",
+        "description_en": "When a Tool card takes effect on you, if your character card has no card of the same name and you are not the User, place it on your character card. You may then Remove from the Game up to X cards until the end of this turn (X = number of cards on your character card, max 5). At the start of your Action Phase, you may Use 1 card from your character card.",
+        "skill_type": "active"
       },
       {
         "name_cn": "连营",
-        "name_en": "",
-        "description_cn": "其他角色的回合结束时,你可观看牌堆顶的张牌,然 后将这些牌交给任意角色(为你本回合失去的牌数: 且至多为5)。",
-        "description_en": ""
+        "name_en": "Linked Camps",
+        "description_cn": "其他角色的回合结束时，你可观看牌堆顶的X张牌，然后将这些牌交给任意角色（X为你本回合失去的牌数，且至多为5）。",
+        "description_en": "At the end of another character's turn, you may look at the top X cards of the deck, then distribute them among any characters (X = number of cards you lost this turn, max 5).",
+        "skill_type": "active"
       }
     ],
     "faq": []
   },
   {
     "id": "MG_WU004",
-    "standard_id": "",
+    "standard_id": "char_huanggai",
     "name_cn": "黄盖",
-    "name_en": "",
+    "name_en": "Huang Gai",
     "gender": "Male",
     "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "卖血", "爆发"],
+    "traits_en": ["Aggressive", "Glass Cannon", "Burst"],
     "expansion": "Strategic Assault",
     "skills": [
       {
-        "name_cn": "苦肉〗",
-        "name_en": "",
-        "description_cn": "出牌阶段开始时，你可以展示一张牌,并将此牌交给一名其他角色,然后你失去1点体力,若此牌为【桃】或 【酒】,改为失去2点;当你失去1点体力后,你获得 2点护甲。",
-        "description_en": ""
+        "name_cn": "苦肉",
+        "name_en": "Self-Harm",
+        "description_cn": "出牌阶段开始时，你可以展示一张牌并将此牌交给一名其他角色，然后你失去1点体力（若此牌为【桃】或【酒】，改为失去2点体力）；当你失去1点体力后，你获得2点护甲。",
+        "description_en": "At the start of your Action Phase, you may reveal 1 hand card and give it to another character, then lose 1 HP (if the card is [Peach] or [Wine], lose 2 HP instead). Whenever you lose 1 HP, gain 2 Armor.",
+        "skill_type": "active"
       },
       {
         "name_cn": "诈降",
-        "name_en": "",
-        "description_cn": "锁定技,摸牌阶段,你多摸张牌;每回合你使用的前X 张牌无距离次数限制且不能被响应(为你已损失的体 力值)。",
-        "description_en": ""
+        "name_en": "Feigned Surrender",
+        "description_cn": "锁定技，摸牌阶段，你多摸X张牌；每回合你使用的前X张牌无距离次数限制且不能被响应（X为你已损失的体力值）。",
+        "description_en": "Locked: During your Draw Phase, draw X additional cards. Each turn, the first X cards you use have no distance or count restrictions and cannot be responded to (X = your HP Lost).",
+        "skill_type": "locked"
       }
     ],
     "faq": []
   },
   {
     "id": "MG_WU028",
-    "standard_id": "",
+    "standard_id": "char_handan",
     "name_cn": "韩当",
-    "name_en": "",
+    "name_en": "Han Dang",
     "gender": "Male",
     "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
+    "power_index": 3.5,
+    "traits_cn": ["进攻", "控制", "强命"],
+    "traits_en": ["Aggressive", "Control", "Sturdy"],
     "expansion": "Strategic Assault",
     "skills": [
       {
         "name_cn": "弓骑",
-        "name_en": "",
-        "description_cn": "你的攻击范围+4。出牌阶段开始时,你可弃一张牌, 若如此做,则此阶段你使用的牌其他角色只能使用或 打出虚拟牌或与你弃置牌颜色相同的手牌响应。",
-        "description_en": ""
+        "name_en": "Mounted Archery",
+        "description_cn": "你的攻击范围+4。出牌阶段开始时，你可弃一张牌，若如此做，则此阶段你使用的牌其他角色只能使用或打出虚拟牌或与你弃置牌颜色相同的手牌响应。",
+        "description_en": "Your Attack Range is increased by 4. At the start of your Action Phase, you may discard 1 card; if you do, other characters may only Use or Play virtual cards or hand cards matching the color of the discarded card to respond to your cards this phase.",
+        "skill_type": "active"
       },
       {
         "name_cn": "解烦",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次,你可指定一名角色,令其选择一项: 1.攻击范围内含有其的角色依次弃一张牌;2.其摸此时 攻击范围内有其的角色数的牌;背水:此技能失效直至 你杀死一名角色。",
-        "description_en": ""
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Strategic Assault",
-    "skills": [
-      {
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      {
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
+        "name_en": "Relieve Distress",
+        "description_cn": "出牌阶段限一次，你可指定一名角色，令其选择一项：1.攻击范围内含有其的角色依次弃一张牌；2.其摸此时攻击范围内有其的角色数的牌；背水：此技能失效直至你杀死一名角色。",
+        "description_en": "Once per Action Phase: Choose a character. They must choose one: 1. Each character who has them within their Attack Range discards 1 card one at a time; 2. They draw cards equal to the number of characters who have them within Attack Range. Back Against the Wall: This skill is disabled until you kill a character.",
+        "skill_type": "active"
       }
     ],
     "faq": []

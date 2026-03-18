@@ -146,54 +146,6 @@
     "faq": []
   },
   {
-    "id": "JX_SHU011",
-    "standard_id": "char_wolongzhugeliang",
-    "name_cn": "界卧龙诸葛亮",
-    "name_en": "Wolong Zhuge Liang",
-    "gender": "Male",
-    "faction": "Shu",
-    "health": 3,
-    "power_index": 5.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "保核能力"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Protector"
-    ],
-    "expansion": "Limit Break",
-    "skills": [
-      {
-        "name_cn": "八阵",
-        "name_en": "Eight Trigram Array",
-        "description_cn": "锁定技，若你的装备区里没有防具牌，你视为装备着【八卦阵】。",
-        "description_en": "Locked Skill: If no armor is equipped, you are treated as having [Eight Trigrams] equipped."
-      },
-      {
-        "name_cn": "藏拙",
-        "name_en": "Feign Weakness",
-        "description_cn": "锁定技，弃牌阶段开始时，若你本回合未使用过锦囊牌，你的锦囊牌不计入手牌上限。",
-        "description_en": "Locked Skill: If no tool cards were used this turn, your tool cards don't count towards hand limit at Discard Phase."
-      },
-      {
-        "name_cn": "火计",
-        "name_en": "Fire Stratagem",
-        "description_cn": "你可以将一张红色牌当【火攻】使用。你的【火攻】改为令目标展示随机手牌，你弃置与展示牌颜色相同的牌以造成伤害。",
-        "description_en": "Play red cards as [Incendiary]. Targets reveal a random card; discard the same color to deal damage."
-      },
-      {
-        "name_cn": "看破",
-        "name_en": "See Through",
-        "description_cn": "你可以将一张黑色牌当【无懈可击】使用。你的【无懈可击】不能被响应。",
-        "description_en": "Play black cards as [Nullification]. Your [Nullification] cannot be countered."
-      }
-    ],
-    "faq": []
-  },
-  {
     "id": "JX_SHU005",
     "standard_id": "char_zhaoyun",
     "name_cn": "界赵云",
@@ -406,6 +358,54 @@
     "faq": []
   },
   {
+    "id": "JX_SHU011",
+    "standard_id": "char_wolongzhugeliang",
+    "name_cn": "界卧龙诸葛亮",
+    "name_en": "Wolong Zhuge Liang",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 5.0,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "保核能力"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Protector"
+    ],
+    "expansion": "Limit Break",
+    "skills": [
+      {
+        "name_cn": "八阵",
+        "name_en": "Eight Trigram Array",
+        "description_cn": "锁定技，若你的装备区里没有防具牌，你视为装备着【八卦阵】。",
+        "description_en": "Locked Skill: If no armor is equipped, you are treated as having [Eight Trigrams] equipped."
+      },
+      {
+        "name_cn": "藏拙",
+        "name_en": "Feign Weakness",
+        "description_cn": "锁定技，弃牌阶段开始时，若你本回合未使用过锦囊牌，你的锦囊牌不计入手牌上限。",
+        "description_en": "Locked Skill: If no tool cards were used this turn, your tool cards don't count towards hand limit at Discard Phase."
+      },
+      {
+        "name_cn": "火计",
+        "name_en": "Fire Stratagem",
+        "description_cn": "你可以将一张红色牌当【火攻】使用。你的【火攻】改为令目标展示随机手牌，你弃置与展示牌颜色相同的牌以造成伤害。",
+        "description_en": "Play red cards as [Incendiary]. Targets reveal a random card; discard the same color to deal damage."
+      },
+      {
+        "name_cn": "看破",
+        "name_en": "See Through",
+        "description_cn": "你可以将一张黑色牌当【无懈可击】使用。你的【无懈可击】不能被响应。",
+        "description_en": "Play black cards as [Nullification]. Your [Nullification] cannot be countered."
+      }
+    ],
+    "faq": []
+  },
+  {
     "id": "JX_SHU012",
     "standard_id": "char_jiangwei",
     "name_cn": "界姜维",
@@ -443,7 +443,7 @@
         "name_en": "Read the Stars",
         "description_cn": "准备阶段，你可以观看牌堆顶的五张牌（存活人数小于4时改为三张），然后以任意顺序放回牌堆顶或牌堆底。若你将这些牌均放至牌堆底，则结束阶段你可以再进行一次“观星”。",
         "description_en": ""
-      }      
+      }
     ],
     "faq": []
   },
@@ -492,7 +492,7 @@
         "description_cn": "主公技，当你需要使用或打出【杀】时，你可以令其他蜀势力角色选择是否打出一张【杀】（视为由你使用或打出）。",
         "description_en": "Lord Skill: When you need to use or play out a [Kill], you may have other Shu faction characters each choose whether to play out a [Kill] on your behalf (treated as used or played out by you).",
         "skill_type": "lord"
-      }      
+      }
     ],
     "faq": []
   },
@@ -538,7 +538,7 @@
     "name_cn": "界祝融",
     "name_en": "Zhu Rong",
     "gender": "Female",
-    "faction": "Qun",
+    "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
     "traits_cn": [
@@ -685,7 +685,7 @@
   {
     "id": "JX_SHU026",
     "standard_id": "char_guanxing_zhangbao",
-    "name_cn": "界关兴张苞",
+    "name_cn": "界关兴&张苞",
     "name_en": "Guan Xing & Zhang Bao",
     "gender": "Male",
     "faction": "Shu",
@@ -1184,7 +1184,7 @@
         "name_en": "",
         "description_cn": "你可以将装备区里的牌当【无懈可击】使用；当你从背面翻至正面时，你可以弃置一张手牌，然后移动场上的一张牌。",
         "description_en": ""
-      }      
+      }
     ],
     "faq": []
   },
@@ -1287,7 +1287,7 @@
         "description_cn": "当你受到伤害后，你可以令一名其他角色选择一项：摸X张牌并将武将牌翻面；弃置X张牌并失去1点体力。（X为你已损失的体力值）",
         "description_en": ""
       },
-       {
+      {
         "name_cn": "颂威",
         "name_en": "Laud Authority",
         "description_cn": "主公技，当其他魏势力角色的黑色判定牌生效后，其可以令你摸一张牌。",
@@ -1320,14 +1320,14 @@
       {
         "name_cn": "恂恂",
         "name_en": "Careful Survey",
-        "description_cn": "摸牌阶段开始时，你可以观看牌堆顶的四张牌，然后将其中两张牌置于牌堆顶，将剩余牌置于牌堆底。",
-        "description_en": "Start of Draw Phase: View top 4 cards. Put 2 on top and 2 at the bottom of the deck."
+        "description_cn": "摸牌阶段开始时,你可改为观看牌堆顶的四张 牌将其中两张牌收入手牌,其余以任意顺序置 于牌堆底。",
+        "description_en": ""
       },
       {
         "name_cn": "忘隙",
         "name_en": "Set Aside Grudges",
-        "description_cn": "当你对其他角色造成1点伤害后，或受到其他角色的1点伤害后，你可以摸两张牌并交给该角色其中一张牌。",
-        "description_en": "After dealing or taking 1 damage to/from another character, draw 2 cards and give 1 to that character."
+        "description_cn": "当你对其他角色造成1点伤害后,或受到其他角 色造成的1点伤害后,你可以与该角色各摸一张",
+        "description_en": ""
       }
     ],
     "faq": [
@@ -1473,23 +1473,15 @@
   },
   {
     "id": "JX_WEI028",
-    "standard_id": "char_caozhang",
-    "name_cn": "界曹彰",
-    "name_en": "Cao Zhang",
+    "standard_id": "",
+    "name_cn": "界钟会",
+    "name_en": "",
     "gender": "Male",
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "多刀",
-      "爆发"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Multi-Strike",
-      "Burst"
-    ],
+    "traits_cn": [],
+    "traits_en": [],
     "expansion": "Limit Break",
     "skills": [
       {
@@ -1509,7 +1501,7 @@
         "name_en": "",
         "description_cn": "出牌阶段限一次,你可以移去一张“权”,令一 名角色摸两张牌,然后若其手牌数大于你,你对其造成 1点伤害",
         "description_en": ""
-      }            
+      }
     ],
     "faq": []
   },
@@ -1826,7 +1818,7 @@
     "faq": [
       {
         "q_cn": "比的角色令我失去体力，我能不能使用【诈降】",
-        "a_cn": "可以，只要你是失去体力就能摸三张牌。不过技能的第二个效果只能在你的出牌阶段内使用",      
+        "a_cn": "可以，只要你是失去体力就能摸三张牌。不过技能的第二个效果只能在你的出牌阶段内使用",
         "q_en": "",
         "a_en": ""
       }
@@ -2064,7 +2056,7 @@
         "name_en": "Heroic Spirit",
         "description_cn": "准备阶段，若你已受伤，你可以选择一名其他角色并选择一项：1.令其摸X张牌，然后弃置一张牌；2.令其摸一张牌，然后弃置X张牌。（X为你已损失体力值）",
         "description_en": "Starting Phase: If you are injured, choose another character. They either (1) draw X cards then discard 1, or (2) draw 1 card then discard X cards (X = your lost health)."
-      }            
+      }
     ],
     "faq": []
   },
@@ -2363,7 +2355,7 @@
       }
     ],
     "faq": []
-  },  
+  },
   {
     "id": "JX_WU027",
     "standard_id": "char_chengpu",
@@ -2396,42 +2388,6 @@
         "name_en": "Aged Wine",
         "description_cn": "你或你相邻角色的【杀】因弃置置入弃牌堆后，将之置于你的武将牌上，称为“醇”。当一名角色处于濒死状态时，你可以移去X张“醇”视为其使用一张【酒】(X为本轮以此法使用【酒】的次数)。",
         "description_en": "Discarded [Kill] from you/neighbors become 'Chun' tokens. Move X tokens to save a dying character as if using [Wine] (X = use count this round)."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "JX_WU028",
-    "standard_id": "char_handang",
-    "name_cn": "界韩当",
-    "name_en": "Han Dang",
-    "gender": "Male",
-    "faction": "Wu",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "过牌"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Card Flow"
-    ],
-    "expansion": "Limit Break",
-    "skills": [
-      {
-        "name_cn": "弓骑",
-        "name_en": "Mounted Archery",
-        "description_cn": "出牌阶段限一次，你可以弃置一张牌使你本回合攻击范围无限，且你使用与弃置的牌花色相同的【杀】无次数限制。若弃置的牌为装备牌，你可以弃置一名其他角色一张牌。",
-        "description_en": "Once per Action Phase: Discard 1 to have infinite range and unlimited same-suit [Kill]. If equipment, discard 1 card from another character."
-      },
-      {
-        "name_cn": "解烦",
-        "name_en": "Quell the Trouble",
-        "description_cn": "限定技，出牌阶段，你可以选择一名角色，令所有攻击范围内包含其的角色选择一项：1.弃置一张武器牌；2.令该角色摸一张牌。若此时为第一轮，回合结束时，此技能视为未发动过。",
-        "description_en": "Limited Skill: Choose a character; everyone in range of them must discard a weapon or let them draw 1."
       }
     ],
     "faq": []
@@ -3038,42 +2994,6 @@
         "name_en": "Wise Counsel",
         "description_cn": "出牌阶段限一次，你可以将一张装备牌或【杀】交给一名其他角色，然后其选择一项：1.视为对其攻击范围内你选择的另一名角色使用【杀】；2.摸一张牌。",
         "description_en": "Once per Action Phase: Give equipment or [Kill] to another. They either: 1. Use [Kill] on a target you choose; 2. Draw 1 card."
-      }
-    ],
-    "faq": []
-  },
-  {
-    "id": "JX_QUN029",
-    "standard_id": "char_gaoshun",
-    "name_cn": "界高顺",
-    "name_en": "Gao Shun",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "多刀"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Multi-Strike"
-    ],
-    "expansion": "Limit Break",
-    "skills": [
-      {
-        "name_cn": "陷阵",
-        "name_en": "Breach the Lines",
-        "description_cn": "出牌阶段限一次，你可以与一名角色拼点。若你赢，直到回合结束，你无视该角色的防具，且对该角色使用牌没有距离和次数限制；若你没赢，本回合你不能使用【杀】。",
-        "description_en": "Once per Action Phase: Pindian. If win: Ignore target's armor and use cards on them without range/count limits. If lose: cannot use [Kill] this turn."
-      },
-      {
-        "name_cn": "禁酒",
-        "name_en": "Temperance",
-        "description_cn": "锁定技，你的【酒】只能当做【杀】。",
-        "description_en": "Locked Skill: Your [Wine] can only be played as [Kill]."
       }
     ],
     "faq": []
