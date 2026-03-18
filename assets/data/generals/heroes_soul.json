@@ -854,7 +854,7 @@
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "Others",
+    "expansion": "Hero's Soul",
     "skills": [
       {
         "name_cn": "擎北",
@@ -2517,6 +2517,34 @@
         "name_en": "Breadth of Learning",
         "description_cn": "摸牌阶段结束后，你可以用任意张牌替换等量张“书”，然后若你的“书”包含四种花色，你将所有“书”交给任意名其他角色。",
         "description_en": "Locked Skill: At the start of your turn, reveal the top card of the deck. Its suit determines your Action Phase enhancement: Heart — use [Kill] up to 2 times; Diamond — use tool cards without limit; Club — use [Kill] without limit; Spade — use both [Kill] and tool cards without limit."
+      }
+    ],
+    "faq": []
+  },
+  {
+    "id": "YJ_QUN205",
+    "standard_id": "",
+    "name_cn": "张奂",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 0.0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Hero's Soul",
+    "skills": [
+      {
+        "name_cn": "义拒",
+        "name_en": "",
+        "description_cn": "锁定技,其他角色使用牌指定你为唯一目标后,你弃 置一张牌。",
+        "description_en": ""
+      },
+      {
+        "name_cn": "戍国",
+        "name_en": "",
+        "description_cn": "每回合结束时,你可以依次使用本回合因弃置而置入 弃牌堆的牌直到你使用了其他角色弃置的牌。若你的 手牌数不为全场唯一最多,每有一张本回合弃置的牌 没有使用,你便摸一张牌(至多摸五张)。",
+        "description_en": ""
       }
     ],
     "faq": []
