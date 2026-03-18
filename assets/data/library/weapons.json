@@ -142,8 +142,8 @@
         "a_en": "The taken equipment replaces your existing card in that slot; your old equipment is discarded."
       },
       {
-        "q_cn": "使用此牌时，是否须先将【♠2 雌雄双股剑】从牌堆中移除？",
-        "a_cn": "是的。按照游戏规则，【飞龙夺凤】在加入游戏时须替换标准版中的【♠2 雌雄双股剑】。",
+        "q_cn": "使用此牌时，是否须先将【黑桃2 雌雄双股剑】从牌堆中移除？",
+        "a_cn": "是的。按照游戏规则，【飞龙夺凤】在加入游戏时须替换标准版中的【黑桃2 雌雄双股剑】。",
         "q_en": "Does [Soaring Dragon Blade] replace another card in the deck?",
         "a_en": "Yes. When including this card, it replaces the ♠2 [Twin Swords] from the standard deck."
       }
@@ -1268,7 +1268,7 @@
     "category_en": "Weapon",
     "range": 2,
     "effect_cn": [
-      "锁定技，你对目标角色打出的【杀】视为带有“毒”的杀。造成伤害后，该角色进入“中毒”状态。"
+      "锁定技，你对目标角色打出的【杀】视为带有「毒」的杀。造成伤害后，该角色进入「中毒」状态。"
     ],
     "effect_en": [
       "Locked: [Kill] cards you play out against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."

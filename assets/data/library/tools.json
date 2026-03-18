@@ -103,7 +103,9 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": ["出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"],
+    "effect_cn": [
+      "出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"
+    ],
     "effect_en": [
       "Action Phase: Use on all characters. Each character recovers 1 HP in sequence."
     ],
@@ -118,7 +120,7 @@
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
     "effect_cn": [
-      "出牌阶段，对一至两名角色使用。目标角色横置或重置。(被横置的角色处于“连环状态”）",
+      "出牌阶段，对一至两名角色使用。目标角色横置或重置。(被横置的角色处于〖连环状态〗）",
       "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
     ],
     "effect_en": [
@@ -281,8 +283,12 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": ["出牌阶段，对自己使用。你摸两张牌。"],
-    "effect_en": ["Action Phase: Use on yourself. Draw 2 cards."],
+    "effect_cn": [
+      "出牌阶段，对自己使用。你摸两张牌。"
+    ],
+    "effect_en": [
+      "Action Phase: Use on yourself. Draw 2 cards."
+    ],
     "faq": []
   },
   {
@@ -380,7 +386,9 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": ["出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"],
+    "effect_cn": [
+      "出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"
+    ],
     "effect_en": [
       "Action Phase: Choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
@@ -395,7 +403,7 @@
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
     "effect_cn": [
-      "1.出牌阶段对一名装备区内有武器牌的角色使用，将此牌放置其武器牌旁边，其武器牌获得如下效果 “攻击范围+1，使用【杀】造成的伤害+1。”",
+      "1.出牌阶段对一名装备区内有武器牌的角色使用，将此牌放置其武器牌旁边，其武器牌获得如下效果 〖攻击范围+1，使用【杀】造成的伤害+1。〗",
       "2.出牌阶段对你使用，连续牌堆顶一张牌，直到出现一张装备牌为止，你获得之。"
     ],
     "effect_en": [
@@ -528,7 +536,7 @@
       "出牌阶段，对距离为1的一名其他角色使用。将【兵粮寸断】置入该角色的判定区。该角色判定阶段，若判定结果不为梅花，其跳过本回合的摸牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not a club, that character skips their Draw Phase this turn."
+      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Clubs, that character skips their Draw Phase this turn."
     ],
     "faq": []
   },
@@ -544,7 +552,7 @@
       "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区。该角色判定阶段，若判定结果不为红桃，其跳过本回合的出牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not a heart, that character skips their Action Phase this turn."
+      "Action Phase: Use on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Hearts, that character skips their Action Phase this turn."
     ],
     "faq": []
   },
@@ -560,7 +568,7 @@
       "出牌阶段，对自己使用。将【闪电】置入你的判定区。你的判定阶段，若判定结果为黑桃2至9，你受到3点雷电伤害；否则将【闪电】移至下家的判定区。"
     ],
     "effect_en": [
-      "Action Phase: Use on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is a spade between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
+      "Action Phase: Use on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is a Spades between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
     ],
     "faq": []
   },
@@ -589,7 +597,7 @@
     "sub_category_cn": "延时锦囊牌",
     "sub_category_en": "Time-delay",
     "effect_cn": [
-      "出牌阶段，对任意一名角色使用，将【美人计】置入其判定区。该角色判定阶段，若判定结果为红心，其须将全部手牌交给场上任意一名异性角色；若判定结果不为红心，将【美人计】移至其下家的判定区。若场上全部为同性角色，则此牌无效。"
+      "出牌阶段，对任意一名角色使用，将【美人计】置入其判定区。该角色判定阶段，若判定结果为红桃，其须将全部手牌交给场上任意一名异性角色；若判定结果不为红桃，将【美人计】移至其下家的判定区。若场上全部为同性角色，则此牌无效。"
     ],
     "effect_en": [
       "Action Phase: Use on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to their Right Neighbor's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
