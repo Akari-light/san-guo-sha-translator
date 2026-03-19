@@ -1,9 +1,21 @@
 [
   {
-    "id": "mo.QUN003_skin1",
-    "base_id": "mo.QUN003",
+    "id": "MO_QUN003_skin1",
+    "base_id": "MO_QUN003",
     "name_cn": "魔貂蝉·皮肤",
     "name_en": "Demon Diao Chan · Alt"
+  },
+  {
+    "id": "MO_WEI002_skin1",
+    "base_id": "MO_QUN002",
+    "name_cn": "魔司马懿·皮肤",
+    "name_en": "Demon Si Ma Yi · Alt"
+  },
+  {
+    "id": "MO_WEI001_skin1",
+    "base_id": "MO_WEI001",
+    "name_cn": "魔曹操·皮肤",
+    "name_en": "Demon Cao Cao · Alt"
   },
   {
     "id": "LE018_skin1",

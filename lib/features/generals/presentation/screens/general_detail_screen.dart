@@ -887,7 +887,9 @@ class _VersionSegment extends StatelessWidget {
             ),
           ),
           child: Row(
-            children: variants.map((v) {
+            children: variants.asMap().entries.map((entry) {
+              final versionIndex = entry.key + 1; // 1-based version number
+              final v        = entry.value;
               final isActive = v.id == activeId;
               final ec       = AppTheme.expansionColor(v.expansion);
               return Expanded(
@@ -910,6 +912,7 @@ class _VersionSegment extends StatelessWidget {
                       ),
                     ),
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         AnimatedDefaultTextStyle(
                           duration: const Duration(milliseconds: 220),
@@ -926,9 +929,12 @@ class _VersionSegment extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 5),
+                        // Version-index dots: 1 dot for v1, 2 for v2, etc.
+                        // Fixed size — no overflow regardless of HP value.
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(v.health, (i) {
+                          mainAxisSize: MainAxisSize.min,
+                          children: List.generate(versionIndex, (i) {
                             return Container(
                               width: 4,
                               height: 4,
@@ -936,9 +942,8 @@ class _VersionSegment extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: isActive
-                                    ? const Color(0xFFE53935)
-                                    : const Color(0xFFE53935)
-                                        .withValues(alpha: 0.3),
+                                    ? ec
+                                    : ec.withValues(alpha: 0.3),
                               ),
                             );
                           }),
