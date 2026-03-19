@@ -994,7 +994,6 @@ class _VersionSegment extends StatelessWidget {
             siblings: siblings,
             activeId: activeId,
             expansionColor: ec,
-            isEnglish: isEnglish,
             onSelect: onSelect,
           ),
         ],
@@ -1045,149 +1044,220 @@ class _VersionSegment extends StatelessWidget {
 // Short-name rule: if name_cn/name_en contains '·', use the text AFTER
 // the last '·' as the label (e.g. "虎牢关神吕布·最强神话" → "最强神话").
 // Otherwise use the full name.
-class _SubVariantRail extends StatelessWidget {
+// Animated step-rail sub-selector for within-expansion variants.
+//
+// Each node shows the card's portrait image inside a circle.
+// The active node has an expansion-coloured border ring; inactive nodes
+// are dimmed. A continuous rail line runs behind all nodes; an animated
+// filled segment slides from the previously active node to the newly
+// selected one, giving a smooth left-to-right (or right-to-left) feel.
+// Only the card ID is shown below each node — no name label.
+class _SubVariantRail extends StatefulWidget {
   final List<GeneralCard> siblings;
   final String activeId;
   final Color expansionColor;
-  final bool isEnglish;
   final ValueChanged<GeneralCard> onSelect;
 
   const _SubVariantRail({
     required this.siblings,
     required this.activeId,
     required this.expansionColor,
-    required this.isEnglish,
     required this.onSelect,
   });
 
-  String _shortName(GeneralCard card) {
-    final full = isEnglish ? card.nameEn : card.nameCn;
-    final parts = full.split('·');
-    return parts.last.trim();
+  @override
+  State<_SubVariantRail> createState() => _SubVariantRailState();
+}
+
+class _SubVariantRailState extends State<_SubVariantRail>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _ctrl;
+  late Animation<double> _progress;
+
+  // Fraction along the rail [0..1] that the filled segment travels to.
+  // 0.0 = first node, 1.0 = last node.
+  double _targetFraction = 0.0;
+  double _prevFraction   = 0.0;
+
+  // Node dimensions
+  static const double _nodeSize   = 46.0;
+  static const double _railHeight = 2.5;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 380),
+    );
+    _progress = _ctrl;
+    _targetFraction = _fractionFor(widget.activeId);
+    _prevFraction   = _targetFraction;
+    _ctrl.value = 1.0; // already at target on first build
+  }
+
+  @override
+  void didUpdateWidget(_SubVariantRail old) {
+    super.didUpdateWidget(old);
+    if (old.activeId != widget.activeId) {
+      _prevFraction   = _fractionFor(old.activeId);
+      _targetFraction = _fractionFor(widget.activeId);
+      _progress = Tween<double>(
+        begin: _prevFraction,
+        end: _targetFraction,
+      ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeInOut));
+      _ctrl.forward(from: 0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  double _fractionFor(String id) {
+    final idx = widget.siblings.indexWhere((s) => s.id == id);
+    if (widget.siblings.length <= 1) return 0.0;
+    return idx / (widget.siblings.length - 1).toDouble();
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+    final theme      = Theme.of(context);
+    final isDark     = theme.brightness == Brightness.dark;
+    final ec         = widget.expansionColor;
+    final trackColor = theme.colorScheme.outlineVariant
+        .withValues(alpha: isDark ? 0.3 : 0.35);
 
-    // Node colours
-    final activeNodeFill   = expansionColor;
-    final inactiveNodeFill = isDark
-        ? theme.colorScheme.surface
-        : theme.colorScheme.surface;
-    final inactiveNodeBorder = theme.colorScheme.outlineVariant
-        .withValues(alpha: 0.55);
-    final lineColor = theme.colorScheme.outlineVariant
-        .withValues(alpha: isDark ? 0.35 : 0.45);
-    final activeLineColor = expansionColor.withValues(alpha: 0.5);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final totalWidth = constraints.maxWidth;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: siblings.asMap().entries.map((entry) {
-        final idx      = entry.key;
-        final sibling  = entry.value;
-        final isActive = sibling.id == activeId;
-        final isLast   = idx == siblings.length - 1;
-        final label    = _shortName(sibling);
+        // Node centres are evenly spaced across the full width.
+        // First node centre = nodeSize/2, last = totalWidth - nodeSize/2.
+        final n         = widget.siblings.length;
+        final spacing   = (totalWidth - _nodeSize) / (n - 1);
+        // Rail track runs between the first and last node centres.
+        final railLeft  = _nodeSize / 2;
+        final railWidth = totalWidth - _nodeSize;
 
-        return Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        return SizedBox(
+          // Height = node + gap + ID label (up to 2 lines at 9px × 1.4 lh ≈ 26px)
+          height: _nodeSize + 6 + 26,
+          child: Stack(
+            clipBehavior: Clip.none,
             children: [
-              // ── Node + label column
-              Expanded(
-                child: GestureDetector(
-                  onTap: () => onSelect(sibling),
-                  behavior: HitTestBehavior.opaque,
-                  child: Column(
-                    children: [
-                      // Node circle
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 220),
-                        width: 28,
-                        height: 28,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: isActive
-                              ? activeNodeFill
-                              : inactiveNodeFill,
-                          border: Border.all(
-                            color: isActive
-                                ? activeNodeFill
-                                : inactiveNodeBorder,
-                            width: isActive ? 0 : 1.5,
-                          ),
-                        ),
-                        child: Center(
-                          child: AnimatedDefaultTextStyle(
-                            duration: const Duration(milliseconds: 220),
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w700,
-                              // White on filled node, expansion colour on outlined
-                              color: isActive
-                                  ? Colors.white
-                                  : expansionColor
-                                      .withValues(alpha: isDark ? 0.7 : 0.65),
-                            ),
-                            child: Text('${idx + 1}'),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      // Card ID
-                      Text(
-                        sibling.id,
-                        style: TextStyle(
-                          fontSize: 9,
-                          letterSpacing: 0.5,
-                          color: isActive
-                              ? expansionColor.withValues(alpha: 0.75)
-                              : theme.hintColor.withValues(alpha: 0.4),
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 2),
-                      // Short name
-                      Text(
-                        label,
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: isActive
-                              ? expansionColor
-                              : theme.colorScheme.onSurface
-                                  .withValues(alpha: 0.45),
-                          height: 1.3,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
+              // ── Track background line (transparent — rail only shows as
+              //    the filled segment grows, so there is no persistent grey line)
+              Positioned(
+                left:  railLeft,
+                width: railWidth,
+                top:   (_nodeSize - _railHeight) / 2,
+                height: _railHeight,
+                child: const SizedBox.shrink(),
               ),
 
-              // ── Connector line (hidden on last item)
-              if (!isLast)
-                Padding(
-                  // Vertically centre the line with the node (node height 28,
-                  // half = 14px from top of Row).
-                  padding: const EdgeInsets.only(top: 14),
-                  child: Container(
-                    width: 16,
-                    height: 1.5,
-                    color: isActive ? activeLineColor : lineColor,
+              // ── Animated filled segment
+              AnimatedBuilder(
+                animation: _progress,
+                builder: (context, _) {
+                  final frac = (_progress.value).clamp(0.0, 1.0);
+                  final filledWidth = railWidth * frac;
+                  return Positioned(
+                    left:   railLeft,
+                    width:  filledWidth,
+                    top:    (_nodeSize - _railHeight) / 2,
+                    height: _railHeight,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ec,
+                        borderRadius: BorderRadius.circular(_railHeight / 2),
+                      ),
+                    ),
+                  );
+                },
+              ),
+
+              // ── Nodes
+              ...widget.siblings.asMap().entries.map((entry) {
+                final idx      = entry.key;
+                final sibling  = entry.value;
+                final isActive = sibling.id == widget.activeId;
+                final nodeLeft = idx * spacing;
+
+                return Positioned(
+                  left: nodeLeft,
+                  top:  0,
+                  child: GestureDetector(
+                    onTap: () => widget.onSelect(sibling),
+                    behavior: HitTestBehavior.opaque,
+                    child: SizedBox(
+                      width: _nodeSize,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // Node image circle
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 260),
+                            curve: Curves.easeInOut,
+                            width:  _nodeSize,
+                            height: _nodeSize,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: isActive
+                                    ? ec
+                                    : trackColor,
+                                width: isActive ? 2.5 : 1.5,
+                              ),
+                            ),
+                            child: ClipOval(
+                              child: AnimatedOpacity(
+                                opacity: isActive ? 1.0 : 0.45,
+                                duration: const Duration(milliseconds: 260),
+                                child: Image.asset(
+                                  sibling.imagePath,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, _, _) => Container(
+                                    color: ec.withValues(alpha: 0.15),
+                                    child: Icon(
+                                      Icons.person_outline_rounded,
+                                      size: 20,
+                                      color: ec.withValues(alpha: 0.5),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          // Card ID only — no truncation, wraps if needed
+                          Text(
+                            sibling.id,
+                            style: TextStyle(
+                              fontSize: 9,
+                              letterSpacing: 0.4,
+                              fontWeight: isActive
+                                  ? FontWeight.w700
+                                  : FontWeight.w400,
+                              color: isActive
+                                  ? ec
+                                  : theme.hintColor
+                                      .withValues(alpha: 0.4),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                );
+              }),
             ],
           ),
         );
-      }).toList(),
+      },
     );
   }
 }

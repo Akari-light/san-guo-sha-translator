@@ -30,6 +30,7 @@ class GeneralLoader {
     'assets/data/generals/others.json',            // Uncomment when IDs/name_en filled
   ];
 
+
   static const String _skillsFile = 'assets/data/skills.json';
 
   // ── Public API
