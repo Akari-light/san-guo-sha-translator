@@ -55,61 +55,67 @@
   },
   {
     "id": "SP_QUN089_skin1",
-    "base_id": "char_lvlingqi",
+    "base_id": "SP_QUN089",
     "name_cn": "吕玲绮·皮肤",
     "name_en": "Lu Ling Qi · Alt"
   },
   {
     "id": "SP_QUN089_skin2",
-    "base_id": "char_lvlingqi",
+    "base_id": "SP_QUN089",
     "name_cn": "吕玲绮·皮肤2",
     "name_en": "Lu Ling Qi · Alt 2"
   },
   {
     "id": "SP_QUN091_skin1",
-    "base_id": "char_fengfangnv",
+    "base_id": "SP_QUN091",
     "name_cn": "冯方女·皮肤",
     "name_en": "Feng Fangnu · Alt"
   },
   {
+    "id": "SP_QUN091_skin2",
+    "base_id": "SP_QUN091",
+    "name_cn": "冯方女·皮肤2",
+    "name_en": "Feng Fangnu · Alt 2"
+  },
+  {
     "id": "SP_QUN193_skin1",
-    "base_id": "char_huaci",
+    "base_id": "SP_QUN193",
     "name_cn": "华雌·皮肤",
     "name_en": "Hua Ci · Alt"
   },
   {
     "id": "SP_QUN193_skin2",
-    "base_id": "char_huaci",
+    "base_id": "SP_QUN193",
     "name_cn": "华雌·皮肤",
     "name_en": "Hua Ci · Alt"
   },
   {
     "id": "SP_SHU059_skin1",
-    "base_id": "char_puyuan",
+    "base_id": "SP_SHU059",
     "name_cn": "蒲元·皮肤",
     "name_en": "Pu Yuan · Alt"
   },
   {
     "id": "SP_WEI062_skin1",
-    "base_id": "char_liuye",
+    "base_id": "SP_WEI062",
     "name_cn": "劉曄·皮肤",
     "name_en": "Liu Ye · Alt"
   },
   {
     "id": "SP_WEI070_skin1",
-    "base_id": "char_caoying",
+    "base_id": "SP_WEI070",
     "name_cn": "曹婴·皮肤",
     "name_en": "Cao Ying · Alt"
   },
   {
     "id": "SP_WU055_skin1",
-    "base_id": "char_zhangfen",
+    "base_id": "SP_WU055",
     "name_cn": "張奮·皮肤",
     "name_en": "Zhang Fen · Alt"
   },
   {
     "id": "SP_WU110_skin1",
-    "base_id": "char_panshu",
+    "base_id": "SP_WU110",
     "name_cn": "潘淑·皮肤",
     "name_en": "Pan Shu · Alt"
   }

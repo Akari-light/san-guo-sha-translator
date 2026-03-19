@@ -1,0 +1,350 @@
+[
+  {
+    "id": "info_1_1_card_counts",
+    "chapter": "info",
+    "section_num": "1.1",
+    "section_title_cn": "身份局卡牌数量一览",
+    "section_title_en": "Identity Mode Card Counts",
+    "term_cn": "卡牌数量",
+    "term_en": "Card Counts",
+    "badge": null,
+    "definition_cn": "身份局所使用的各类卡牌总数。",
+    "definition_en": "Total counts for each card type used in Identity Mode.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "身份牌共有10张：主公1张，忠臣3张，反贼4张，内奸2张。",
+        "en": "There are 10 Identity Cards in total: 1 Lord, 3 Loyalists, 4 Rebels, and 2 Spies.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "体力牌共有12张：1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
+        "en": "There are 12 HP Cards in total: 1 card showing 1/2, 1 card showing 2/3, 8 cards showing 3/4, and 2 cards showing 4/5.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "武将牌详见相关表格。",
+        "en": "General Card counts are listed in the relevant tables.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "游戏牌共有162张，详见相关表格。",
+        "en": "There are 162 Library Cards in total. See the relevant table for a full breakdown.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "另有【放权】效果标记牌1张，【缠怨】效果标记5枚，"梦魇"标记11枚，【狂风】效果标志1枚，【大雾】效果标志7枚，"暴怒"标记11枚，"忍"标记11枚。",
+        "en": "Additional tokens: 1 [Abdicate] effect token, 5 [Entangled Grudge] tokens, 11 \"Nightmare\" tokens, 1 [Gale] effect token, 7 [Great Fog] effect tokens, 11 \"Rage\" tokens, and 11 \"Forbearance\" tokens.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "身份局 卡牌数量 身份牌 体力牌 武将牌 游戏牌 主公 忠臣 反贼 内奸",
+    "search_text_en": "identity mode card counts lord loyalist rebel spy hp cards library cards"
+  },
+  {
+    "id": "info_1_1_basic_cards",
+    "chapter": "info",
+    "section_num": "1.1",
+    "section_title_cn": "身份局游戏牌一览 — 基本牌",
+    "section_title_en": "Identity Mode Library Cards — Basic Cards",
+    "term_cn": "基本牌",
+    "term_en": "Basic Cards",
+    "badge": null,
+    "definition_cn": "身份局基本牌共85张，包括普通【杀】、火【杀】、雷【杀】、【闪】、【桃】、【酒】。",
+    "definition_en": "There are 85 Basic Cards in Identity Mode, comprising normal [Kill], Fire [Kill], Thunder [Kill], [Dodge], [Peach], and [Wine].",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "普通【杀】30张：黑桃7张（7/8/8/9/9/10/10），梅花14张（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3张（10/10/J），方块6张（6/7/8/9/10/K）。",
+        "en": "Normal [Kill] × 30: Spades × 7 (7/8/8/9/9/10/10), Clubs × 14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts × 3 (10/10/J), Diamonds × 6 (6/7/8/9/10/K).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "火【杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
+        "en": "Fire [Kill] × 5 (Military Conflict expansion): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "雷【杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
+        "en": "Thunder [Kill] × 9 (Military Conflict expansion): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【闪】24张：红桃7张（2/2/8/9/J/Q/K），方块17张（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
+        "en": "[Dodge] × 24: Hearts × 7 (2/2/8/9/J/Q/K), Diamonds × 17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【桃】12张：红桃9张（3/4/5/6/6/7/8/9/Q），方块3张（2/3/Q）。",
+        "en": "[Peach] × 12: Hearts × 9 (3/4/5/6/6/7/8/9/Q), Diamonds × 3 (2/3/Q).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【酒】5张（军争篇）：黑桃2张（3/9），梅花2张（3/9），方块1张（9）。",
+        "en": "[Wine] × 5 (Military Conflict expansion): Spades × 2 (3/9), Clubs × 2 (3/9), Diamonds × 1 (9).",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "字体加粗的为军争篇里的游戏牌（火【杀】、雷【杀】、【酒】）。",
+        "en": "Cards marked as Military Conflict expansion (Fire [Kill], Thunder [Kill], [Wine]) are from the Military Conflict expansion set.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "基本牌 杀 闪 桃 酒 火杀 雷杀 普通杀 花色 点数 黑桃 梅花 红桃 方块",
+    "search_text_en": "basic cards kill dodge peach wine fire kill thunder kill normal kill suit rank spades clubs hearts diamonds"
+  },
+  {
+    "id": "info_1_1_tool_cards",
+    "chapter": "info",
+    "section_num": "1.1",
+    "section_title_cn": "身份局游戏牌一览 — 锦囊牌",
+    "section_title_en": "Identity Mode Library Cards — Tool Cards",
+    "term_cn": "锦囊牌",
+    "term_en": "Tool Cards",
+    "badge": null,
+    "definition_cn": "身份局锦囊牌共50张，分为非延时类锦囊牌（43张）和延时类锦囊牌（7张）。",
+    "definition_en": "There are 50 Tool Cards in Identity Mode, divided into Non Time-Delay Tools (43 cards) and Time-Delayed Tools (7 cards).",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "非延时类锦囊牌共43张：",
+        "en": "Non Time-Delay Tools × 43:",
+        "examples": [
+          {
+            "cn": "【过河拆桥】6张：黑桃3张（3/4/Q），梅花2张（3/4），红桃1张（Q）。",
+            "en": "[Dismantle] × 6: Spades × 3 (3/4/Q), Clubs × 2 (3/4), Hearts × 1 (Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【顺手牵羊】5张：黑桃3张（3/4/J），方块2张（3/4）。",
+            "en": "[Steal] × 5: Spades × 3 (3/4/J), Diamonds × 2 (3/4).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【决斗】3张：黑桃1张（A），梅花1张（A），方块1张（A）。",
+            "en": "[Duel] × 3: Spades × 1 (A), Clubs × 1 (A), Diamonds × 1 (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【借刀杀人】2张：梅花（Q/K）。",
+            "en": "[Proxy Attack] × 2: Clubs (Q/K).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【无中生有】4张：红桃（7/8/9/J）。",
+            "en": "[Resupply] × 4: Hearts (7/8/9/J).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【无懈可击】7张：黑桃2张（J/K），梅花2张（Q/K），红桃2张（A/K），方块1张（EX-Q）。",
+            "en": "[Nullification] × 7: Spades × 2 (J/K), Clubs × 2 (Q/K), Hearts × 2 (A/K), Diamonds × 1 (EX-Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【铁索连环】6张（军争篇）：黑桃2张（J/Q），梅花4张（10/J/Q/K）。",
+            "en": "[Iron Shackles] × 6 (Military Conflict expansion): Spades × 2 (J/Q), Clubs × 4 (10/J/Q/K).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【火攻】3张（军争篇）：红桃2张（2/3），方块1张（Q）。",
+            "en": "[Incendiary] × 3 (Military Conflict expansion): Hearts × 2 (2/3), Diamonds × 1 (Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【万箭齐发】1张：红桃（A）。",
+            "en": "[Raining Arrows] × 1: Hearts (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【南蛮入侵】3张：黑桃2张（7/K），梅花1张（7）。",
+            "en": "[Barbarians] × 3: Spades × 2 (7/K), Clubs × 1 (7).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【桃园结义】1张：红桃（A）。",
+            "en": "[Peach Garden] × 1: Hearts (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【五谷丰登】2张：红桃（3/4）。",
+            "en": "[Harvest] × 2: Hearts (3/4).",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "延时类锦囊牌共7张：",
+        "en": "Time-Delayed Tools × 7:",
+        "examples": [
+          {
+            "cn": "【闪电】2张：黑桃1张（A），红桃1张（EX-Q）。",
+            "en": "[Lightning] × 2: Spades × 1 (A), Hearts × 1 (EX-Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【乐不思蜀】3张：黑桃1张（6），红桃1张（6），梅花1张（6）。",
+            "en": "[Acedia] × 3: Spades × 1 (6), Hearts × 1 (6), Clubs × 1 (6).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【兵粮寸断】2张（军争篇）：黑桃1张（10），梅花1张（4）。",
+            "en": "[Starvation] × 2 (Military Conflict expansion): Spades × 1 (10), Clubs × 1 (4).",
+            "sub_examples": []
+          }
+        ]
+      }
+    ],
+    "search_text_cn": "锦囊牌 非延时 延时 过河拆桥 顺手牵羊 决斗 借刀杀人 无中生有 无懈可击 铁索连环 火攻 万箭齐发 南蛮入侵 桃园结义 五谷丰登 闪电 乐不思蜀 兵粮寸断",
+    "search_text_en": "tool cards non time-delay time-delayed dismantle steal duel proxy attack resupply nullification iron shackles incendiary raining arrows barbarians peach garden harvest lightning acedia starvation"
+  },
+  {
+    "id": "info_1_1_equipment_cards",
+    "chapter": "info",
+    "section_num": "1.1",
+    "section_title_cn": "身份局游戏牌一览 — 装备牌",
+    "section_title_en": "Identity Mode Library Cards — Equipment Cards",
+    "term_cn": "装备牌",
+    "term_en": "Equipment Cards",
+    "badge": null,
+    "definition_cn": "身份局装备牌共27张，分为武器牌（13张）、防具牌（6张）、坐骑牌（7张）、宝物牌（1张）。",
+    "definition_en": "There are 27 Equipment Cards in Identity Mode, comprising Weapon Cards (13), Armor Cards (6), Mount Cards (7), and Treasure Cards (1).",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "武器牌共13张：",
+        "en": "Weapon Cards × 13:",
+        "examples": [
+          {
+            "cn": "【诸葛连弩】2张：梅花1张（A），方块1张（A）。",
+            "en": "[Repeating Crossbow] × 2: Clubs × 1 (A), Diamonds × 1 (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【青釭剑】1张：黑桃（6）。",
+            "en": "[Qing Gang Sword] × 1: Spades (6).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【雌雄双股剑】1张：黑桃（2）。",
+            "en": "[Twin Swords] × 1: Spades (2).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【寒冰剑】1张：黑桃（EX-2）。",
+            "en": "[Frost Blade] × 1: Spades (EX-2).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【古锭刀】1张（军争篇）：黑桃（A）。",
+            "en": "[Ancient Scimitar] × 1 (Military Conflict expansion): Spades (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【贯石斧】1张：方块（5）。",
+            "en": "[Stonepiercer] × 1: Diamonds (5).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【青龙偃月刀】1张：黑桃（5）。",
+            "en": "[Green Dragon Crescent Blade] × 1: Spades (5).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【丈八蛇矛】1张：黑桃（Q）。",
+            "en": "[Serpent Spear] × 1: Spades (Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【方天画戟】1张：方块（Q）。",
+            "en": "[Sky Piercer] × 1: Diamonds (Q).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【朱雀羽扇】1张（军争篇）：方块（A）。",
+            "en": "[Vermilion Bird Fan] × 1 (Military Conflict expansion): Diamonds (A).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【麒麟弓】1张：红桃（5）。",
+            "en": "[Kirin Bow] × 1: Hearts (5).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【银月枪】1张：方块（Q-SP）。",
+            "en": "[Moon Spear] × 1: Diamonds (Q-SP).",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "防具牌共6张：",
+        "en": "Armor Cards × 6:",
+        "examples": [
+          {
+            "cn": "【八卦阵】2张：黑桃1张（2），梅花1张（2）。",
+            "en": "[Eight Trigrams Formation] × 2: Spades × 1 (2), Clubs × 1 (2).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【仁王盾】1张：梅花（EX-2）。",
+            "en": "[Vajra Shield] × 1: Clubs (EX-2).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【藤甲】2张（军争篇）：黑桃1张（2），梅花1张（2）。",
+            "en": "[Rattan Armour] × 2 (Military Conflict expansion): Spades × 1 (2), Clubs × 1 (2).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【白银狮子】1张（军争篇）：梅花（A）。",
+            "en": "[Silver Lion Helmet] × 1 (Military Conflict expansion): Clubs (A).",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "坐骑牌共7张：【+1坐骑】4张，【-1坐骑】3张。",
+        "en": "Mount Cards × 7: [+1 Mount] × 4, [-1 Mount] × 3.",
+        "examples": [
+          {
+            "cn": "【+1坐骑】4张：黑桃1张（5·绝影），红桃1张（K·爪黄飞电），方块1张（K·骅骝，军争篇），梅花1张（5·的卢）。",
+            "en": "[+1 Mount] × 4: Spades × 1 (5 · Jue Ying), Hearts × 1 (K · Zhao Huang Fei Dian), Diamonds × 1 (K · Hua Liu, Military Conflict expansion), Clubs × 1 (5 · Di Lu).",
+            "sub_examples": []
+          },
+          {
+            "cn": "【-1坐骑】3张：黑桃1张（K·大宛），红桃1张（5·赤兔），方块1张（K·紫骍）。",
+            "en": "[-1 Mount] × 3: Spades × 1 (K · Da Yuan), Hearts × 1 (5 · Red Hare), Diamonds × 1 (K · Zi Xing).",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "cn": "【+1坐骑】令其他角色计算与你的距离+1（防御性坐骑），【-1坐骑】令你计算与其他角色的距离-1（进攻性坐骑）。",
+        "en": "A [+1 Mount] increases the distance other characters measure to you by 1 (defensive mount). A [-1 Mount] reduces the distance you measure to other characters by 1 (offensive mount).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "宝物牌共1张：【木牛流马】1张，方块（5）。",
+        "en": "Treasure Cards × 1: [Wooden Ox] × 1, Diamonds (5).",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "装备牌 武器 防具 坐骑 宝物 诸葛连弩 青釭剑 雌雄双股剑 寒冰剑 古锭刀 贯石斧 青龙偃月刀 丈八蛇矛 方天画戟 朱雀羽扇 麒麟弓 银月枪 八卦阵 仁王盾 藤甲 白银狮子 绝影 爪黄飞电 骅骝 的卢 大宛 赤兔 紫骍 木牛流马",
+    "search_text_en": "equipment cards weapon armor mount treasure repeating crossbow qing gang sword twin swords frost blade ancient scimitar stonepiercer green dragon crescent blade serpent spear sky piercer vermilion bird fan kirin bow moon spear eight trigrams formation vajra shield rattan armour silver lion helmet jue ying zhao huang fei dian hua liu di lu da yuan red hare zi xing wooden ox"
+  }
+]
