@@ -8,10 +8,21 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["辅助", "回复", "配合神将"],
-    "traits_en": ["Support", "Recovery", "God General Synergy"],
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "配合神将"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "God General Synergy"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_benevolence", "skill_rally_the_vanguard"],
+    "skills": [
+      "skill_benevolence",
+      "skill_rally_the_vanguard"
+    ],
     "faq": []
   },
   {
@@ -23,10 +34,20 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "转化大师"],
-    "traits_en": ["Aggressive", "Simple", "Converter"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Converter"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_saint_of_war"],
+    "skills": [
+      "skill_saint_of_war"
+    ],
     "faq": []
   },
   {
@@ -38,10 +59,20 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "简单", "多刀"],
-    "traits_en": ["Aggressive", "Simple", "Multi-Strike"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Multi-Strike"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_roar"],
+    "skills": [
+      "skill_roar"
+    ],
     "faq": []
   },
   {
@@ -53,10 +84,21 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["防御", "控制", "困难"],
-    "traits_en": ["Defensive", "Control", "High Difficulty"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_read_the_stars", "skill_empty_fort"],
+    "skills": [
+      "skill_read_the_stars",
+      "skill_empty_fort"
+    ],
     "faq": []
   },
   {
@@ -68,10 +110,20 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "防御", "简单"],
-    "traits_en": ["Aggressive", "Defensive", "Simple"],
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_dragons_courage"],
+    "skills": [
+      "skill_dragons_courage"
+    ],
     "faq": []
   },
   {
@@ -83,10 +135,21 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_iron_cavalry", "skill_horsemanship"],
+    "skills": [
+      "skill_iron_cavalry",
+      "skill_horsemanship"
+    ],
     "faq": []
   },
   {
@@ -98,10 +161,21 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "简单", "爆发"],
-    "traits_en": ["Card Flow", "Simple", "Burst"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "爆发"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Burst"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_gathered_wisdom", "skill_extraordinary_talent"],
+    "skills": [
+      "skill_gathered_wisdom",
+      "skill_extraordinary_talent"
+    ],
     "faq": []
   },
   {
@@ -113,10 +187,21 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "发育", "主公技"],
-    "traits_en": ["Card Flow", "Scaling", "Lord Skill"],
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "主公技"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Scaling",
+      "Lord Skill"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_balance_of_power", "skill_rescue"],
+    "skills": [
+      "skill_balance_of_power",
+      "skill_rescue"
+    ],
     "faq": []
   },
   {
@@ -128,10 +213,20 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["控制", "简单", "转化大师"],
-    "traits_en": ["Control", "Simple", "Converter"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "转化大师"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Converter"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_surprise_raid"],
+    "skills": [
+      "skill_surprise_raid"
+    ],
     "faq": []
   },
   {
@@ -143,10 +238,20 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["防御", "发育", "简单"],
-    "traits_en": ["Defensive", "Scaling", "Simple"],
+    "traits_cn": [
+      "防御",
+      "发育",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Scaling",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_self_discipline"],
+    "skills": [
+      "skill_self_discipline"
+    ],
     "faq": []
   },
   {
@@ -158,10 +263,20 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["过牌", "简单", "多刀"],
-    "traits_en": ["Card Flow", "Simple", "Multi-Strike"],
+    "traits_cn": [
+      "过牌",
+      "简单",
+      "多刀"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Simple",
+      "Multi-Strike"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_self_harm"],
+    "skills": [
+      "skill_self_harm"
+    ],
     "faq": []
   },
   {
@@ -173,10 +288,21 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": ["进攻", "过牌", "困难"],
-    "traits_en": ["Aggressive", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_heroic_bearing", "skill_counter_spy"],
+    "skills": [
+      "skill_heroic_bearing",
+      "skill_counter_spy"
+    ],
     "faq": []
   },
   {
@@ -188,10 +314,21 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "持久"],
-    "traits_en": ["Defensive", "Control", "Ramping"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "持久"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Ramping"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_peerless_beauty", "skill_displaced"],
+    "skills": [
+      "skill_peerless_beauty",
+      "skill_displaced"
+    ],
     "faq": []
   },
   {
@@ -203,10 +340,21 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_humility", "skill_linked_camps"],
+    "skills": [
+      "skill_humility",
+      "skill_linked_camps"
+    ],
     "faq": []
   },
   {
@@ -218,10 +366,21 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": ["防御", "卖血", "简单"],
-    "traits_en": ["Defensive", "Glass Cannon", "Simple"],
+    "traits_cn": [
+      "防御",
+      "卖血",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Glass Cannon",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_treacherous_hero", "skill_imperial_guard"],
+    "skills": [
+      "skill_treacherous_hero",
+      "skill_imperial_guard"
+    ],
     "faq": []
   },
   {
@@ -233,10 +392,21 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "控制", "卖血"],
-    "traits_en": ["Defensive", "Control", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "控制",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "Glass Cannon"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_retribution", "skill_demonic_wit"],
+    "skills": [
+      "skill_retribution",
+      "skill_demonic_wit"
+    ],
     "faq": []
   },
   {
@@ -248,10 +418,20 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": ["防御", "卖血", "简单"],
-    "traits_en": ["Defensive", "Glass Cannon", "Simple"],
+    "traits_cn": [
+      "防御",
+      "卖血",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Glass Cannon",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_unyielding"],
+    "skills": [
+      "skill_unyielding"
+    ],
     "faq": []
   },
   {
@@ -263,10 +443,20 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "简单", "持久"],
-    "traits_en": ["Control", "Simple", "Ramping"],
+    "traits_cn": [
+      "控制",
+      "简单",
+      "持久"
+    ],
+    "traits_en": [
+      "Control",
+      "Simple",
+      "Ramping"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_sudden_raid"],
+    "skills": [
+      "skill_sudden_raid"
+    ],
     "faq": []
   },
   {
@@ -278,10 +468,20 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "加伤"],
-    "traits_en": ["Aggressive", "Simple", "Damage Boost"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "加伤"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Damage Boost"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_bare_chested"],
+    "skills": [
+      "skill_bare_chested"
+    ],
     "faq": []
   },
   {
@@ -293,10 +493,21 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": ["防御", "辅助", "卖血"],
-    "traits_en": ["Defensive", "Support", "Glass Cannon"],
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "卖血"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "Glass Cannon"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_heavens_envy", "skill_posthumous_plan"],
+    "skills": [
+      "skill_heavens_envy",
+      "skill_posthumous_plan"
+    ],
     "faq": []
   },
   {
@@ -308,10 +519,21 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["防御", "过牌", "简单"],
-    "traits_en": ["Defensive", "Card Flow", "Simple"],
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_goddess_of_the_luo", "skill_fell_a_kingdom"],
+    "skills": [
+      "skill_goddess_of_the_luo",
+      "skill_fell_a_kingdom"
+    ],
     "faq": []
   },
   {
@@ -323,10 +545,21 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["辅助", "回复", "简单"],
-    "traits_en": ["Support", "Recovery", "Simple"],
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "Simple"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_field_medicine", "skill_physicians_tome"],
+    "skills": [
+      "skill_field_medicine",
+      "skill_physicians_tome"
+    ],
     "faq": []
   },
   {
@@ -338,10 +571,20 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "简单", "强命"],
-    "traits_en": ["Aggressive", "Simple", "Sturdy"],
+    "traits_cn": [
+      "进攻",
+      "简单",
+      "强命"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Simple",
+      "Sturdy"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_peerless"],
+    "skills": [
+      "skill_peerless"
+    ],
     "faq": []
   },
   {
@@ -353,10 +596,21 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["进攻", "过牌", "锦囊大师"],
-    "traits_en": ["Aggressive", "Card Flow", "Tool Master"],
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "锦囊大师"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Tool Master"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_eclipse_the_moon", "skill_sow_discord"],
+    "skills": [
+      "skill_eclipse_the_moon",
+      "skill_sow_discord"
+    ],
     "faq": []
   },
   {
@@ -368,10 +622,21 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": ["过牌", "辅助", "回复"],
-    "traits_en": ["Card Flow", "Support", "Recovery"],
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "回复"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "Recovery"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_fierce_lady", "skill_political_marriage"],
+    "skills": [
+      "skill_fierce_lady",
+      "skill_political_marriage"
+    ],
     "faq": []
   },
   {
@@ -383,10 +648,20 @@
     "faction": "Qun",
     "health": 6,
     "power_index": 2.0,
-    "traits_cn": ["防御", "简单", "颜色爱好者"],
-    "traits_en": ["Defensive", "Simple", "Color Specialist"],
+    "traits_cn": [
+      "防御",
+      "简单",
+      "颜色爱好者"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Simple",
+      "Color Specialist"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_show_of_arms"],
+    "skills": [
+      "skill_show_of_arms"
+    ],
     "faq": []
   },
   {
@@ -398,10 +673,21 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": ["控制", "过牌", "困难"],
-    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_vainglorious", "skill_shared_ailment"],
+    "skills": [
+      "skill_vainglorious",
+      "skill_shared_ailment"
+    ],
     "faq": []
   },
   {
@@ -413,10 +699,20 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": ["过牌", "发育", "输出"],
-    "traits_en": ["Card Flow", "Scaling", "Damage"],
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "输出"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Scaling",
+      "Damage"
+    ],
     "expansion": "Standard",
-    "skills": ["skill_repair_armor"],
+    "skills": [
+      "skill_repair_armor"
+    ],
     "faq": [
       {
         "q_cn": "通过【缮甲】弃置手牌中的装备牌，是否也计入失去过装备区里的牌数？",
