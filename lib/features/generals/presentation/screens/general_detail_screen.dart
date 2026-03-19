@@ -856,6 +856,15 @@ class _HalfClipper extends CustomClipper<Rect> {
 }
 
 // Version segment control
+//
+// Layout:
+//   1. Expansion tab row — one tab per unique expansion, dots = within-expansion
+//      variant count (1 dot = single variant, 3 dots = 3 variants).
+//   2. Sub-variant rail — only rendered when the active expansion tab has
+//      more than one variant. Shows a step rail with numbered nodes and
+//      labels (ID + short name) so the user can pick between within-expansion
+//      variants without leaving the screen.
+//   3. Meta line — "Expansion name · N skills" always visible below.
 class _VersionSegment extends StatelessWidget {
   final List<GeneralCard> variants;
   final String activeId;
@@ -873,10 +882,25 @@ class _VersionSegment extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme  = Theme.of(context);
     final active = variants.firstWhere((v) => v.id == activeId);
+    final ec     = AppTheme.expansionColor(active.expansion);
+
+    // ── Group variants by expansion, preserving sort order.
+    // Each group is a list of GeneralCards sharing the same expansion.
+    final Map<String, List<GeneralCard>> groups = {};
+    for (final v in variants) {
+      groups.putIfAbsent(v.expansion.labelEn, () => []).add(v);
+    }
+    // The tab list: one entry per unique expansion (in original sort order).
+    final expansionKeys = groups.keys.toList();
+
+    // Within-expansion siblings of the active card.
+    final siblings = groups[active.expansion.labelEn] ?? [active];
+    final hasSubVariants = siblings.length > 1;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // ── Expansion tab row ──────────────────────────────────────────────
         Container(
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
@@ -887,14 +911,20 @@ class _VersionSegment extends StatelessWidget {
             ),
           ),
           child: Row(
-            children: variants.asMap().entries.map((entry) {
-              final versionIndex = entry.key + 1; // 1-based version number
-              final v        = entry.value;
-              final isActive = v.id == activeId;
-              final ec       = AppTheme.expansionColor(v.expansion);
+            children: expansionKeys.map((key) {
+              final group    = groups[key]!;
+              final first    = group.first;
+              final tabEc    = AppTheme.expansionColor(first.expansion);
+              final isActive = group.any((v) => v.id == activeId);
+              final dotCount = group.length; // dots = within-expansion variant count
+
               return Expanded(
                 child: GestureDetector(
-                  onTap: () => onSelect(v),
+                  // Tapping the tab selects the first card in that group
+                  // (or keeps current if already active).
+                  onTap: () => onSelect(
+                    isActive ? active : group.first,
+                  ),
                   behavior: HitTestBehavior.opaque,
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 220),
@@ -902,12 +932,12 @@ class _VersionSegment extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 9),
                     decoration: BoxDecoration(
                       color: isActive
-                          ? ec.withValues(alpha: 0.15)
+                          ? tabEc.withValues(alpha: 0.15)
                           : Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
                         color: isActive
-                            ? ec.withValues(alpha: 0.45)
+                            ? tabEc.withValues(alpha: 0.45)
                             : Colors.transparent,
                       ),
                     ),
@@ -920,21 +950,20 @@ class _VersionSegment extends StatelessWidget {
                             fontWeight: FontWeight.w900,
                             fontSize: 18,
                             color: isActive
-                                ? ec
+                                ? tabEc
                                 : theme.hintColor.withValues(alpha: 0.35),
                           ),
                           child: Text(
-                            v.expansionBadge,
+                            first.expansionBadge,
                             textAlign: TextAlign.center,
                           ),
                         ),
                         const SizedBox(height: 5),
-                        // Version-index dots: 1 dot for v1, 2 for v2, etc.
-                        // Fixed size — no overflow regardless of HP value.
+                        // Dots = number of within-expansion variants.
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
-                          children: List.generate(versionIndex, (i) {
+                          children: List.generate(dotCount, (i) {
                             return Container(
                               width: 4,
                               height: 4,
@@ -942,8 +971,8 @@ class _VersionSegment extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: isActive
-                                    ? ec
-                                    : ec.withValues(alpha: 0.3),
+                                    ? tabEc
+                                    : tabEc.withValues(alpha: 0.3),
                               ),
                             );
                           }),
@@ -957,8 +986,22 @@ class _VersionSegment extends StatelessWidget {
           ),
         ),
 
+        // ── Sub-variant step rail ──────────────────────────────────────────
+        // Only rendered when the active expansion has >1 variant.
+        if (hasSubVariants) ...[
+          const SizedBox(height: 10),
+          _SubVariantRail(
+            siblings: siblings,
+            activeId: activeId,
+            expansionColor: ec,
+            isEnglish: isEnglish,
+            onSelect: onSelect,
+          ),
+        ],
+
         const SizedBox(height: 8),
 
+        // ── Meta line: expansion label · skill count ───────────────────────
         Row(
           children: [
             Text(
@@ -967,7 +1010,7 @@ class _VersionSegment extends StatelessWidget {
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 0.5,
-                color: AppTheme.expansionColor(active.expansion),
+                color: ec,
               ),
             ),
             Text(
@@ -988,6 +1031,163 @@ class _VersionSegment extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+// Step-rail sub-selector for within-expansion variants.
+//
+// Renders a horizontal rail of numbered nodes connected by lines.
+// The active node is filled with the expansion colour; inactive nodes
+// are outlined. Each node sits above a label showing the card ID and
+// a shortened display name.
+//
+// Short-name rule: if name_cn/name_en contains '·', use the text AFTER
+// the last '·' as the label (e.g. "虎牢关神吕布·最强神话" → "最强神话").
+// Otherwise use the full name.
+class _SubVariantRail extends StatelessWidget {
+  final List<GeneralCard> siblings;
+  final String activeId;
+  final Color expansionColor;
+  final bool isEnglish;
+  final ValueChanged<GeneralCard> onSelect;
+
+  const _SubVariantRail({
+    required this.siblings,
+    required this.activeId,
+    required this.expansionColor,
+    required this.isEnglish,
+    required this.onSelect,
+  });
+
+  String _shortName(GeneralCard card) {
+    final full = isEnglish ? card.nameEn : card.nameCn;
+    final parts = full.split('·');
+    return parts.last.trim();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme  = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    // Node colours
+    final activeNodeFill   = expansionColor;
+    final inactiveNodeFill = isDark
+        ? theme.colorScheme.surface
+        : theme.colorScheme.surface;
+    final inactiveNodeBorder = theme.colorScheme.outlineVariant
+        .withValues(alpha: 0.55);
+    final lineColor = theme.colorScheme.outlineVariant
+        .withValues(alpha: isDark ? 0.35 : 0.45);
+    final activeLineColor = expansionColor.withValues(alpha: 0.5);
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: siblings.asMap().entries.map((entry) {
+        final idx      = entry.key;
+        final sibling  = entry.value;
+        final isActive = sibling.id == activeId;
+        final isLast   = idx == siblings.length - 1;
+        final label    = _shortName(sibling);
+
+        return Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ── Node + label column
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => onSelect(sibling),
+                  behavior: HitTestBehavior.opaque,
+                  child: Column(
+                    children: [
+                      // Node circle
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 220),
+                        width: 28,
+                        height: 28,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: isActive
+                              ? activeNodeFill
+                              : inactiveNodeFill,
+                          border: Border.all(
+                            color: isActive
+                                ? activeNodeFill
+                                : inactiveNodeBorder,
+                            width: isActive ? 0 : 1.5,
+                          ),
+                        ),
+                        child: Center(
+                          child: AnimatedDefaultTextStyle(
+                            duration: const Duration(milliseconds: 220),
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              // White on filled node, expansion colour on outlined
+                              color: isActive
+                                  ? Colors.white
+                                  : expansionColor
+                                      .withValues(alpha: isDark ? 0.7 : 0.65),
+                            ),
+                            child: Text('${idx + 1}'),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      // Card ID
+                      Text(
+                        sibling.id,
+                        style: TextStyle(
+                          fontSize: 9,
+                          letterSpacing: 0.5,
+                          color: isActive
+                              ? expansionColor.withValues(alpha: 0.75)
+                              : theme.hintColor.withValues(alpha: 0.4),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: 2),
+                      // Short name
+                      Text(
+                        label,
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: isActive
+                              ? expansionColor
+                              : theme.colorScheme.onSurface
+                                  .withValues(alpha: 0.45),
+                          height: 1.3,
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // ── Connector line (hidden on last item)
+              if (!isLast)
+                Padding(
+                  // Vertically centre the line with the node (node height 28,
+                  // half = 14px from top of Row).
+                  padding: const EdgeInsets.only(top: 14),
+                  child: Container(
+                    width: 16,
+                    height: 1.5,
+                    color: isActive ? activeLineColor : lineColor,
+                  ),
+                ),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }
