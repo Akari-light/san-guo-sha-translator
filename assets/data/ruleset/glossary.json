@@ -1,7 +1,6 @@
 [
   {
     "id": "glossary_2_0_guide",
-    "chapter": "glossary",
     "section_num": "2.0",
     "section_title_cn": "用语导引",
     "section_title_en": "Glossary Guide",
@@ -29,7 +28,6 @@
   },
   {
     "id": "glossary_2_1_identity_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -44,7 +42,6 @@
   },
   {
     "id": "glossary_2_1_general_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -61,7 +58,7 @@
         "examples": [
           {
             "cn": "左慈发动【化身②】不能声明邓艾的武将牌的文字里的【急袭】。",
-            "en": "When Zuo Ci activates [Shapeshifter②], he cannot declare [Swift Raid] from the text on Deng Ai's General Card (since it appears outside the skill box).",
+            "en": "When Zuo Ci activates [Shapeshifter②], he cannot declare [Sudden Raid] from the text on Deng Ai's General Card (since it appears outside the skill box).",
             "sub_examples": []
           },
           {
@@ -77,7 +74,6 @@
   },
   {
     "id": "glossary_2_1_library_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -92,7 +88,6 @@
   },
   {
     "id": "glossary_2_1_basic_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -107,7 +102,6 @@
   },
   {
     "id": "glossary_2_1_equipment_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -124,7 +118,7 @@
         "examples": [
           {
             "cn": "对装备【麒麟弓】的关羽使用【借刀杀人】选择对距离为2以上的角色使用【杀】时，关羽不可以发动【武圣】将其装备区里的【麒麟弓】当【杀】对该角色使用进行响应。",
-            "en": "When [Proxy Attack] is used on Guan Yu (equipped with [Kirin Bow]) designating a target at distance 2 or more, Guan Yu cannot activate [Valor] to use [Kirin Bow] from his Equipment Zone as a [Kill] to respond — [Kirin Bow]'s range would no longer apply since it is being used as a substitute card.",
+            "en": "When [Proxy Attack] is used on Guan Yu (equipped with [Kirin Bow]) designating a target at distance 2 or more, Guan Yu cannot activate [Saint of War] to use [Kirin Bow] from his Equipment Zone as a [Kill] to respond — [Kirin Bow]'s range would no longer apply since it is being used as a substitute card.",
             "sub_examples": []
           }
         ]
@@ -148,7 +142,7 @@
         "examples": [
           {
             "cn": "太史慈使用【杀】在选择目标时受到【天义】和【方天画戟】的影响，至多可以选择四个目标。",
-            "en": "When Tai Shi Ci uses [Kill] and selects targets, with both [Heavens' Justice] and [Sky Piercer] applying, he may select up to four targets in total.",
+            "en": "When Tai Shi Ci uses [Kill] and selects targets, with both [Heaven's Justice] and [Sky Piercer] applying, he may select up to four targets in total.",
             "sub_examples": []
           }
         ]
@@ -165,7 +159,6 @@
   },
   {
     "id": "glossary_2_1_tool_card",
-    "chapter": "glossary",
     "section_num": "2.1",
     "section_title_cn": "牌",
     "section_title_en": "Cards",
@@ -180,7 +173,6 @@
   },
   {
     "id": "glossary_2_2_card_info",
-    "chapter": "glossary",
     "section_num": "2.2",
     "section_title_cn": "牌面信息",
     "section_title_en": "Card Information",
@@ -195,7 +187,6 @@
   },
   {
     "id": "glossary_2_2_suit",
-    "chapter": "glossary",
     "section_num": "2.2",
     "section_title_cn": "牌面信息",
     "section_title_en": "Card Information",
@@ -210,7 +201,6 @@
   },
   {
     "id": "glossary_2_2_color",
-    "chapter": "glossary",
     "section_num": "2.2",
     "section_title_cn": "牌面信息",
     "section_title_en": "Card Information",
@@ -225,7 +215,6 @@
   },
   {
     "id": "glossary_2_2_faction",
-    "chapter": "glossary",
     "section_num": "2.2",
     "section_title_cn": "牌面信息",
     "section_title_en": "Card Information",
@@ -253,7 +242,6 @@
   },
   {
     "id": "glossary_2_2_skill",
-    "chapter": "glossary",
     "section_num": "2.2",
     "section_title_cn": "牌面信息",
     "section_title_en": "Card Information",
@@ -268,7 +256,6 @@
   },
   {
     "id": "glossary_2_3_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -283,7 +270,6 @@
   },
   {
     "id": "glossary_2_3_draw_pile",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -305,7 +291,6 @@
   },
   {
     "id": "glossary_2_3_discard_pile",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -320,7 +305,6 @@
   },
   {
     "id": "glossary_2_3_field",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -335,7 +319,6 @@
   },
   {
     "id": "glossary_2_3_character_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -357,7 +340,6 @@
   },
   {
     "id": "glossary_2_3_processing_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -372,7 +354,6 @@
   },
   {
     "id": "glossary_2_3_hand_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -394,7 +375,6 @@
   },
   {
     "id": "glossary_2_3_equipment_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -409,7 +389,6 @@
   },
   {
     "id": "glossary_2_3_judgment_zone",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -424,7 +403,6 @@
   },
   {
     "id": "glossary_2_3_characters_cards",
-    "chapter": "glossary",
     "section_num": "2.3",
     "section_title_cn": "区域",
     "section_title_en": "Zones",
@@ -437,7 +415,7 @@
       {
         "type": "rule",
         "cn": "在牌面中，“角色拥有的牌”会简写成“角色的牌”。一般情况下，以任何形式操作角色的牌都是指操作角色拥有的牌，即角色的手牌和装备区里的牌。但“将角色的牌视为…”（如【红颜】）中的“角色的牌”包括该角色的判定牌。",
-        "en": "On card text, \"cards owned by a character\" is often shortened to \"a character's cards\". In general usage, operating on a character's cards means operating on the cards they own — their hand cards and equipped cards. However, the phrase \"treat a character's cards as …\" (e.g. [Crimson Beauty]) includes that character's judgment cards.",
+        "en": "On card text, \"cards owned by a character\" is often shortened to \"a character's cards\". In general usage, operating on a character's cards means operating on the cards they own — their hand cards and equipped cards. However, the phrase \"treat a character's cards as …\" (e.g. [Blushing Beauty]) includes that character's judgment cards.",
         "examples": [
           {
             "cn": "执行【寒冰剑】的效果不可以弃置目标角色判定区里的牌。",
@@ -458,7 +436,6 @@
   },
   {
     "id": "glossary_2_4_rank",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -486,7 +463,6 @@
   },
   {
     "id": "glossary_2_4_max_hp",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -508,7 +484,6 @@
   },
   {
     "id": "glossary_2_4_hp",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -523,7 +498,6 @@
   },
   {
     "id": "glossary_2_4_hp_value",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -538,7 +512,6 @@
   },
   {
     "id": "glossary_2_4_hand_limit",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -553,7 +526,6 @@
   },
   {
     "id": "glossary_2_4_hp_lost",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -568,7 +540,6 @@
   },
   {
     "id": "glossary_2_4_base_damage",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -583,7 +554,6 @@
   },
   {
     "id": "glossary_2_4_distance",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -611,7 +581,6 @@
   },
   {
     "id": "glossary_2_4_attack_range",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -626,7 +595,6 @@
   },
   {
     "id": "glossary_2_4_x_variable",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -641,7 +609,6 @@
   },
   {
     "id": "glossary_2_4_is_vs_treated_as",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -663,7 +630,6 @@
   },
   {
     "id": "glossary_2_4_difference",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -678,7 +644,6 @@
   },
   {
     "id": "glossary_2_4_count",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -693,7 +658,6 @@
   },
   {
     "id": "glossary_2_4_max_min",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -708,7 +672,6 @@
   },
   {
     "id": "glossary_2_4_most_fewest",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -723,7 +686,6 @@
   },
   {
     "id": "glossary_2_4_player_count",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -738,7 +700,6 @@
   },
   {
     "id": "glossary_2_4_half",
-    "chapter": "glossary",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
@@ -753,7 +714,6 @@
   },
   {
     "id": "glossary_2_5_locked_skill",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -775,7 +735,6 @@
   },
   {
     "id": "glossary_2_5_limited_skill",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -790,7 +749,6 @@
   },
   {
     "id": "glossary_2_5_awakening_skill",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -805,7 +763,6 @@
   },
   {
     "id": "glossary_2_5_lord_skill",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -820,7 +777,6 @@
   },
   {
     "id": "glossary_2_5_characters_skills",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -835,7 +791,6 @@
   },
   {
     "id": "glossary_2_5_may",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -850,7 +805,6 @@
   },
   {
     "id": "glossary_2_5_any_number",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -865,7 +819,6 @@
   },
   {
     "id": "glossary_2_5_transfer",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -880,7 +833,6 @@
   },
   {
     "id": "glossary_2_5_one_at_a_time",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -902,7 +854,6 @@
   },
   {
     "id": "glossary_2_5_needs_must",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -917,7 +868,6 @@
   },
   {
     "id": "glossary_2_5_needs_to_use",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -932,7 +882,6 @@
   },
   {
     "id": "glossary_2_5_use_kill_on",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -947,7 +896,6 @@
   },
   {
     "id": "glossary_2_5_then",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -962,7 +910,6 @@
   },
   {
     "id": "glossary_2_5_and",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -977,7 +924,6 @@
   },
   {
     "id": "glossary_2_5_hp_reduction",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -999,7 +945,6 @@
   },
   {
     "id": "glossary_2_5_user",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1014,7 +959,6 @@
   },
   {
     "id": "glossary_2_5_source",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1029,7 +973,6 @@
   },
   {
     "id": "glossary_2_5_channel",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1044,7 +987,6 @@
   },
   {
     "id": "glossary_2_5_elemental_damage",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1059,7 +1001,6 @@
   },
   {
     "id": "glossary_2_5_chain_damage",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1074,7 +1015,6 @@
   },
   {
     "id": "glossary_2_5_wounded",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1089,7 +1029,6 @@
   },
   {
     "id": "glossary_2_5_recover",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1104,7 +1043,6 @@
   },
   {
     "id": "glossary_2_5_choose_one",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1119,7 +1057,6 @@
   },
   {
     "id": "glossary_2_5_gender",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1134,7 +1071,6 @@
   },
   {
     "id": "glossary_2_5_a_instructs_b",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1149,7 +1085,6 @@
   },
   {
     "id": "glossary_2_5_another_character",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1164,7 +1099,6 @@
   },
   {
     "id": "glossary_2_5_other_characters",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1179,7 +1113,6 @@
   },
   {
     "id": "glossary_2_5_target_character",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1194,7 +1127,6 @@
   },
   {
     "id": "glossary_2_5_by_this_method",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1209,7 +1141,6 @@
   },
   {
     "id": "glossary_2_5_visible",
-    "chapter": "glossary",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
@@ -1224,7 +1155,6 @@
   },
   {
     "id": "glossary_2_6_turn",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1246,7 +1176,6 @@
   },
   {
     "id": "glossary_2_6_neighbors",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1261,7 +1190,6 @@
   },
   {
     "id": "glossary_2_6_phase",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1295,7 +1223,6 @@
   },
   {
     "id": "glossary_2_6_skip",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1317,7 +1244,6 @@
   },
   {
     "id": "glossary_2_6_verge_of_death",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1339,7 +1265,6 @@
   },
   {
     "id": "glossary_2_6_death",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1361,7 +1286,6 @@
   },
   {
     "id": "glossary_2_6_kill",
-    "chapter": "glossary",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
@@ -1376,7 +1300,6 @@
   },
   {
     "id": "glossary_2_7_event",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1391,7 +1314,6 @@
   },
   {
     "id": "glossary_2_7_response",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1406,7 +1328,6 @@
   },
   {
     "id": "glossary_2_7_resolution",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1421,7 +1342,6 @@
   },
   {
     "id": "glossary_2_7_timing",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1436,7 +1356,6 @@
   },
   {
     "id": "glossary_2_7_effect",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1451,7 +1370,6 @@
   },
   {
     "id": "glossary_2_7_nullified",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1473,7 +1391,6 @@
   },
   {
     "id": "glossary_2_7_ignore",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1488,7 +1405,6 @@
   },
   {
     "id": "glossary_2_7_negate",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1503,7 +1419,6 @@
   },
   {
     "id": "glossary_2_7_remove_target",
-    "chapter": "glossary",
     "section_num": "2.7",
     "section_title_cn": "事件、响应与结算",
     "section_title_en": "Events, Responses, and Resolution",
@@ -1525,7 +1440,6 @@
   },
   {
     "id": "glossary_2_8_move",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1540,7 +1454,6 @@
   },
   {
     "id": "glossary_2_8_use",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1555,7 +1468,6 @@
   },
   {
     "id": "glossary_2_8_play_out",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1577,7 +1489,6 @@
   },
   {
     "id": "glossary_2_8_reforge",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1592,7 +1503,6 @@
   },
   {
     "id": "glossary_2_8_place_into",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1607,7 +1517,6 @@
   },
   {
     "id": "glossary_2_8_place_face_down",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1622,7 +1531,6 @@
   },
   {
     "id": "glossary_2_8_removed_from_game",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1637,7 +1545,6 @@
   },
   {
     "id": "glossary_2_8_discard",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1652,7 +1559,6 @@
   },
   {
     "id": "glossary_2_8_treat_card_as",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1674,7 +1580,6 @@
   },
   {
     "id": "glossary_2_8_treated_as",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1696,7 +1601,6 @@
   },
   {
     "id": "glossary_2_8_give",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1711,7 +1615,6 @@
   },
   {
     "id": "glossary_2_8_point_duel",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1726,7 +1629,6 @@
   },
   {
     "id": "glossary_2_8_draw",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1741,7 +1643,6 @@
   },
   {
     "id": "glossary_2_8_replenish",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1756,7 +1657,6 @@
   },
   {
     "id": "glossary_2_8_substitute",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1771,7 +1671,6 @@
   },
   {
     "id": "glossary_2_8_exchange",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1793,7 +1692,6 @@
   },
   {
     "id": "glossary_2_8_look_at",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1808,7 +1706,6 @@
   },
   {
     "id": "glossary_2_8_reveal_temp",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1830,7 +1727,6 @@
   },
   {
     "id": "glossary_2_8_flip_permanent",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1852,7 +1748,6 @@
   },
   {
     "id": "glossary_2_8_card_exchange",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1867,7 +1762,6 @@
   },
   {
     "id": "glossary_2_8_gain_card",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1882,7 +1776,6 @@
   },
   {
     "id": "glossary_2_8_lose_cards",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1904,7 +1797,6 @@
   },
   {
     "id": "glossary_2_8_judgment",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1919,7 +1811,6 @@
   },
   {
     "id": "glossary_2_8_operate_all",
-    "chapter": "glossary",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
@@ -1934,7 +1825,6 @@
   },
   {
     "id": "glossary_2_9_horizontal",
-    "chapter": "glossary",
     "section_num": "2.9",
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",
@@ -1949,7 +1839,6 @@
   },
   {
     "id": "glossary_2_9_reset",
-    "chapter": "glossary",
     "section_num": "2.9",
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",
@@ -1964,7 +1853,6 @@
   },
   {
     "id": "glossary_2_9_chain_state",
-    "chapter": "glossary",
     "section_num": "2.9",
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",
@@ -1986,7 +1874,6 @@
   },
   {
     "id": "glossary_2_9_flip_over",
-    "chapter": "glossary",
     "section_num": "2.9",
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",

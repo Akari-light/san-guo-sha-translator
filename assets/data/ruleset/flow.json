@@ -1,0 +1,894 @@
+[
+  {
+    "id": "flow_3_0_flow_guide",
+    "section_num": "3.0",
+    "section_title_cn": "流程导引",
+    "section_title_en": "Flow Guide",
+    "term_cn": "流程总览",
+    "term_en": "Flow Overview",
+    "badge": null,
+    "definition_cn": "本部分详细说明了游戏的流程、各类事件的结算流程以及各个流程中的时机。",
+    "definition_en": "This section details the game flow, the resolution flow for each type of event, and the timings within each flow.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "案例中提到“角色”，如无条件的说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
+        "en": "When an example refers to \"a character\" without additional qualification, it means the character's General Card skills and equipment skills are not considered — the character is treated as having no skills.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "流程是解决诸如发动时机、发动顺序等大量规律性问题的依据，这些问题于第四部分中将不会再出现。",
+        "en": "The flow charts are the basis for resolving recurring questions such as activation timing and activation order. These questions will not reappear in Part 4.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "本部分包含以下内容：游戏的流程、使用事件、打出事件、拼点事件、牌移动、牌状态改变、判定事件、伤害事件、失去体力事件、扣减体力事件、回复体力事件、减体力上限事件、加体力上限事件、濒死事件、死亡事件、专题一（使用一张牌的条件）、专题二（虚拟牌与实体牌）。",
+        "en": "This section covers: the game flow; Use Events; Play Events; Point Duel Events; Card Movement; Card State Changes; Judgment Events; Damage Events; Lose HP Events; HP Reduction Events; Recover HP Events; Reduce Max HP Events; Increase Max HP Events; Verge of Death Events; Death Events; Topic 1 (Conditions for Using a Card); Topic 2 (Virtual Cards and Physical Cards).",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "流程导引 总览 事件 结算 时机",
+    "search_text_en": "flow guide overview events resolution timing"
+  },
+  {
+    "id": "flow_3_1_turn_flow",
+    "section_num": "3.1",
+    "section_title_cn": "游戏的流程",
+    "section_title_en": "Game Flow",
+    "term_cn": "回合时机一览",
+    "term_en": "Turn Timing Reference",
+    "badge": null,
+    "definition_cn": "每名角色的回合分为六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。各阶段内外的时机如下所示。",
+    "definition_en": "Each character's turn consists of six phases in order: Starting Phase → Judgment Phase → Draw Phase → Action Phase → Discard Phase → End Phase. The timings within and around each phase are listed below.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "【回合开始前】：该角色的回合即将开始。若其武将牌背面朝上，则其翻面，然后跳过此回合。",
+        "en": "Before Turn Start: The character's turn is about to begin. If their General Card is face-down, they flip it face-up and skip their turn.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【回合开始时】：进入该角色的回合。能发动：【笔伐】的效果、【当先】、【化身②】、【惴恐】。",
+        "en": "At Turn Start: The character's turn begins. Skills that can activate: [Pen Denounce] effect, [Charge Ahead], [Shapeshifter②], [Trepidation].",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【准备阶段开始时】：能发动【洛神】、【凿险】、【观星】、【志继】、【若愚】、【神智】、【英魂】等技能。",
+        "en": "At Starting Phase Start: Skills including [Goddess of the Luo], [Breach the Pass], [Read the Stars], [Inherit the Will], [Feign Foolishness], [Divine Mind], [Heroic Spirit] and others can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【准备阶段】：暂时没有作用。",
+        "en": "Starting Phase: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【准备阶段结束时】：暂时没有作用。",
+        "en": "At Starting Phase End: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【准备阶段与判定阶段间】：能发动：【神速①】、【巧变】、【挫锐②】。",
+        "en": "Between Starting Phase and Judgment Phase: [Lightning Speed①], [Agile Maneuver], [Agile Maneuver②] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【判定阶段开始时】：能发动：【勇略】。",
+        "en": "At Judgment Phase Start: [Valiant Stratagem] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【判定阶段】：角色须检测其判定区里是否有延时类锦囊牌。若有，进行其中最后置入其判定区里的那张延时类锦囊牌的使用结算，然后重复此流程；若没有，进入“判定阶段结束时”。",
+        "en": "Judgment Phase: The character checks their Judgment Zone for Time-Delayed Tool Cards. If present, resolve the one placed there most recently, then repeat. If none remain, proceed to \"At Judgment Phase End\".",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【判定阶段结束时】：暂时没有作用。",
+        "en": "At Judgment Phase End: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【判定阶段与摸牌阶段间】：能发动：【裸衣】、【巧变】。",
+        "en": "Between Judgment Phase and Draw Phase: [Bare-Chested], [Agile Maneuver] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【摸牌阶段开始时】：角色进入摸牌阶段但还没有摸牌。能发动：【突袭（标）】、【遗计】获得“计”的效果、【恂恂】、【再起】、【眩惑】、【涉猎】等技能。",
+        "en": "At Draw Phase Start: The character has entered the Draw Phase but has not yet drawn. Skills such as [Sudden Raid], [Posthumous Plan] (gain Stratagem effect), [Careful Survey], [Rise Again], [Beguile], [Wide Reading] and others can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【摸牌阶段】：角色摸两张牌。能发动：【突袭】、【英姿①】、【好施】、【将驰】等技能。",
+        "en": "Draw Phase: The character draws 2 cards. Skills such as [Surprise Raid], [Heroic Bearing①], [Generous], [Cavalry Charge] and others can activate.",
+        "examples": [
+          {
+            "cn": "角色执行修正摸牌阶段的摸牌数的操作后，在执行技能的（下一个）效果前，须先按修正后的摸牌数摸牌。",
+            "en": "After a character modifies their Draw Phase draw count, they must draw the modified number of cards before proceeding to the next skill effect.",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "【摸牌阶段结束时】：角色摸牌后。能发动：【七星②】。",
+        "en": "At Draw Phase End: After the character has drawn. [Seven Stars②] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【摸牌阶段与出牌阶段间】：能发动：【神速②】、【巧变】、【放权】。",
+        "en": "Between Draw Phase and Action Phase: [Lightning Speed②], [Agile Maneuver], [Abdicate] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【出牌阶段开始时】：能发动：【司敌②】、【巧说】、【强识】、【献图】、【燕语】、【双刃】、【鸩毒】。",
+        "en": "At Action Phase Start: [Counter the Enemy②], [Clever Persuasion], [Photographic Memory], [Present the Map], [Swallow's Song], [Twin Blades], [Poison Wine] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【出牌阶段（的空闲时间点）】：进行游戏的主要阶段。能发动多种主动技能及使用除【闪】以外的基本牌、除【无懈可击】外的锦囊牌、所有装备牌。",
+        "en": "Action Phase (Idle Timing): The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except [Dodge]), Tool Cards (except [Nullification]), and all Equipment Cards.",
+        "examples": [
+          {
+            "cn": "发动时机为“出牌阶段”的技能必须在出牌阶段的空闲时间点才可以发动。如果在出牌阶段发生事件，须先插入进行该事件的结算，结算完毕后才可发动。",
+            "en": "Skills with a timing of \"Action Phase\" can only activate at an idle timing within the Action Phase. If an event occurs, that event's resolution must be inserted and completed first.",
+            "sub_examples": [
+              {
+                "cn": "装备【青龙偃月刀】的角色在出牌阶段使用的【杀】被【闪】抵消时：若该角色不发动【青龙偃月刀】，此时为空闲时间点，该角色可以对自己使用【酒】；若该角色发动【青龙偃月刀】，此时不可以使用【酒】，必须对相同目标使用【杀】。",
+                "en": "When a character's [Kill] is negated during the Action Phase (equipped with [Green Dragon Crescent Blade]): if they do not activate the weapon, it is an idle timing and they may use [Wine] on themselves; if they activate the weapon, it is not idle — they must use [Kill] on the same target."
+              }
+            ]
+          },
+          {
+            "cn": "出牌阶段有无数个空闲时间点。若技能说明“出牌阶段限一次”，则一个出牌阶段只能发动一次此技能。",
+            "en": "There are infinitely many idle timings in the Action Phase. If a skill specifies \"once per Action Phase,\" it can only be activated once per Action Phase regardless of how many idle timings occur.",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "【出牌阶段结束时】：能发动/执行：【精策】、【生息】、【献图】失去体力的效果、【暴凌】。",
+        "en": "At Action Phase End: [Refined Strategy], [Respite], [Present the Map] (lose HP effect), [Savage Oppression] can activate or execute.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【出牌阶段与弃牌阶段间】：能发动：【巧变】、【克己】。",
+        "en": "Between Action Phase and Discard Phase: [Agile Maneuver], [Self-Discipline] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【弃牌阶段开始时】：能发动：【星舞】、【庸肆②】。",
+        "en": "At Discard Phase Start: [Star Dance], [Debauched②] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【弃牌阶段】：若角色的手牌数大于其手牌上限，须弃置X张手牌（X为手牌数与手牌上限之差）。",
+        "en": "Discard Phase: If the character's hand card count exceeds their Hand Limit, they must discard X cards (X = hand count minus Hand Limit).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【弃牌阶段结束时】：能发动：【固政】、【旋风②】、【琴音】。",
+        "en": "At Discard Phase End: [Consolidate Authority], [Whirlwind②], [Zither Melody] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【弃牌阶段与结束阶段间】：暂时没有作用。",
+        "en": "Between Discard Phase and End Phase: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【结束阶段开始时】：能发动：【据守】、【骁果】、【护援】、【秘计】、【举荐】、【闭月】、【崩坏】、【绝策】、【狂风】、【大雾】等技能。",
+        "en": "At End Phase Start: Skills including [Steadfast Defense], [Valiant Drive], [Guard and Aid], [Secret Plan], [Commend], [Eclipse the Moon], [Collapse], [Decisive Stratagem], [Gale], [Great Fog] and others can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【结束阶段】：暂时没有作用。",
+        "en": "End Phase: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【结束阶段结束时】：暂时没有作用。",
+        "en": "At End Phase End: No effect at this time.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【回合结束时】：该角色的回合所有阶段均执行完毕，回合即将结束。能发动/执行：【横江②】、【放权】弃置手牌令他人额外行动的效果、【谦逊】获得所有“节”的效果、【窃听】、【咒缚】获得武将牌旁“咒”的效果。",
+        "en": "At Turn End: All phases of the turn have completed; the turn is about to end. Skills/effects that can activate: [Traverse the River②], [Abdicate] (discard to grant extra turn), [Humility] (gain all Restraint tokens), [Eavesdrop], [Curse Bind] (gain Curse tokens from General Card).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "【回合结束后】：该角色的回合已经结束。“该角色的回合外”即从此时机开始。能发动：【博图】、【化身②】、【戚乱】、【连破】。此时机过后，便是下个回合的“回合开始前”。",
+        "en": "After Turn End: The turn has ended. \"Outside this character's turn\" begins from this timing. [Broad Plans], [Shapeshifter②], [Tragic Chaos], [Supreme Advance] can activate. After this timing, the next character's \"Before Turn Start\" timing begins.",
+        "examples": []
+      },
+      {
+        "type": "caution",
+        "cn": "任何时候，一旦满足了游戏结束的条件，则终止一切结算，结束游戏，宣布胜利方。",
+        "en": "At any point, once the game-ending condition is met, all resolution is immediately terminated, the game ends, and the winning side is declared.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "回合 阶段 时机 准备 判定 摸牌 出牌 弃牌 结束 流程",
+    "search_text_en": "turn phase timing starting judgment draw action discard end flow"
+  },
+  {
+    "id": "flow_3_2_use_event",
+    "section_num": "3.2",
+    "section_title_cn": "使用事件的结算流程",
+    "section_title_en": "Use Event Resolution Flow",
+    "term_cn": "使用事件",
+    "term_en": "Use Event",
+    "badge": null,
+    "definition_cn": "角色在技能的发动时机满足发动条件时，声明技能名并同时选择目标（若有）、执行所有消耗（若有），消耗执行完毕即发动技能，须执行技能效果。",
+    "definition_en": "When a character meets a skill's activation conditions at the correct timing, they declare the skill name while simultaneously selecting targets (if any) and paying all costs (if any). Once all costs are paid, the skill is activated and its effects must be executed.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "使用结算前的六个时机（按顺序）：①选择目标时 ②使用牌时 ③指定目标时 ④成为目标时 ⑤指定目标后 ⑥成为目标后。",
+        "en": "The six timings before Use Resolution (in order): ① When selecting targets ② When using the card ③ When designating a target ④ When becoming a target ⑤ After designating a target ⑥ After becoming a target.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "使用结算中的五个时机（按顺序）：①使用结算开始时（检测有效性）②生效前（可响应）③生效时（确定将生效）④生效后（执行效果）⑤使用结算结束时。",
+        "en": "The five timings during Use Resolution (in order): ① At Use Resolution Start (validity check) ② Before taking effect (responses allowed) ③ When taking effect (confirmed to resolve) ④ After taking effect (effects execute) ⑤ At Use Resolution End.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "使用结算后的时机：使用结算结束后——将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆，然后结算【奔袭①】。",
+        "en": "After Use Resolution: all remaining physical cards in the Processing Zone corresponding to this card are placed into the Discard Pile, then [Lightning Raid①] is resolved.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "使用结算前，若此牌的目标数量在插入的结算中减为0，终止使用流程，将对应的实体牌置入弃牌堆。",
+        "en": "Before Use Resolution: if the number of targets drops to 0 during an inserted resolution, the Use Process is terminated and the physical card is placed into the Discard Pile.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "延时类锦囊牌在使用结算前若对应实体牌从原目标角色的判定区移动到另一区域，则终止使用流程。",
+        "en": "For Time-Delayed Tools: if the physical card moves out of the target's Judgment Zone before Use Resolution, the Use Process is terminated.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "一张牌有多个目标时，使用结算前对所有目标依次处理每一个时机；使用结算中对第一个目标处理完所有时机后，再处理下一个目标。",
+        "en": "When a card has multiple targets: before Use Resolution, all targets are processed through each timing together; during Use Resolution, all timings for each target are fully resolved before moving to the next target.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "使用事件 结算流程 目标 有效性 生效 响应",
+    "search_text_en": "use event resolution flow target validity effect response"
+  },
+  {
+    "id": "flow_3_3_play_event",
+    "section_num": "3.3",
+    "section_title_cn": "打出事件的结算流程",
+    "section_title_en": "Play Event Resolution Flow",
+    "term_cn": "打出事件",
+    "term_en": "Play Event",
+    "badge": null,
+    "definition_cn": "当角色需要打出牌时进行打出结算。打出结算中有两个时机：①声明打出的牌名时 ②打出牌时。结算完毕后将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆。",
+    "definition_en": "When a character needs to play a card out, Play Resolution is conducted. It has two timings: ① When declaring the card name to play ② When playing the card. After resolution, all remaining physical cards in the Processing Zone are placed into the Discard Pile.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①声明打出的牌名时：须声明牌名并展示对应实体牌以确定牌面信息，然后将实体牌置入处理区。能发动：【丈八蛇矛】、【武圣】、【龙胆】、【龙魂】等转化技能。",
+        "en": "① When declaring the card name: declare the name and reveal the physical card to confirm its face information, then place it into the Processing Zone. Skills such as [Serpent Spear], [Saint of War], [Dragon Soul] and other conversion skills can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②打出牌时：能发动：【涯角】、【雷击】等技能，以及装备技能【银月枪】。",
+        "en": "② When playing the card: [Edge of the Horizon], [Lightning Strike] and other skills, as well as the equipment skill [Moon Spear], can activate.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "角色一旦声明打出的牌名即视为已经响应成功。",
+        "en": "The moment a character declares the name of the card they are playing out, they are considered to have successfully responded.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "打出事件 结算流程 声明 响应",
+    "search_text_en": "play event resolution declare respond"
+  },
+  {
+    "id": "flow_3_4_point_duel_event",
+    "section_num": "3.4",
+    "section_title_cn": "拼点事件的结算流程",
+    "section_title_en": "Point Duel Event Resolution Flow",
+    "term_cn": "拼点事件",
+    "term_en": "Point Duel Event",
+    "badge": null,
+    "definition_cn": "拼点结算中有两个时机：①进行拼点时 ②赢/没赢后。双方同时将一张手牌扣置入处理区，再同时亮出，点数大者赢；点数相同则两方均没赢。结算完毕后将处理区里所有拼点的牌置入弃牌堆。",
+    "definition_en": "Point Duel Resolution has two timings: ① When conducting the duel ② After winning/not winning. Both parties simultaneously place one hand card face-down into the Processing Zone, then simultaneously reveal them. The higher rank wins; equal ranks means neither wins. After resolution, all dueling cards in the Processing Zone are placed into the Discard Pile.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①进行拼点时：拼点的发起者选择拼点的目标，双方同时将一张手牌扣置入处理区，再同时亮出，确定拼点结果。",
+        "en": "① When conducting the duel: the initiator selects the target; both simultaneously place a hand card face-down, then simultaneously reveal them to determine the result.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②赢/没赢后：能发动/执行多种与拼点结果相关的技能效果，如【纵适①】、【天义】的相关效果等。",
+        "en": "② After winning/not winning: various skills tied to the duel result can activate, such as [Follow the Win①], [Heaven's Justice] effects, and others.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "若拼点的两名角色中，有一名在双方亮出拼点的牌前死亡，则之后系统会亮出死亡角色拼点的牌来确定拼点的结果。",
+        "en": "If one of the two dueling characters dies before both cards are revealed, the system will still reveal that character's dueling card to determine the result.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "拼点事件 结算流程 点数 赢 没赢",
+    "search_text_en": "point duel event resolution rank win lose"
+  },
+  {
+    "id": "flow_3_5_card_movement",
+    "section_num": "3.5",
+    "section_title_cn": "牌移动的结算流程",
+    "section_title_en": "Card Movement Resolution Flow",
+    "term_cn": "牌移动",
+    "term_en": "Card Movement",
+    "badge": null,
+    "definition_cn": "因一种操作而改变一张牌所在的区域时进行移动结算。移动结算中有两个时机：①移动到目标区域前 ②移动到目标区域后。",
+    "definition_en": "Card Movement Resolution is conducted whenever a card changes its zone due to an operation. It has two timings: ① Before the card moves to the target zone ② After the card moves to the target zone.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①移动到目标区域前：此时此牌仍在原区域里。能发动：【章武②】、【纵玄】。",
+        "en": "① Before moving to the target zone: the card is still in its original zone. [Zhang Wu②], [Release the Esoteric] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②移动到目标区域后：此时此牌已在目标区域里。依次处理：Ⅰ.若牌堆空但弃牌堆有牌，系统将弃牌堆以随机顺序置入牌堆；Ⅱ.能发动多种武将技能（如【落英①②】、【伤逝】、【连营】、【奋激】等）及装备技能（如【白银狮子②】）。",
+        "en": "② After moving to the target zone: the card is now in the target zone. Process in order: Ⅰ. If the Draw Pile is empty but the Discard Pile has cards, the system shuffles the Discard Pile into the Draw Pile; Ⅱ. Various skills (such as [Fallen Blossoms①②], [Mourn the Fallen], [Linked Camps], [Valiant Drive], etc.) and equipment skills (such as [Silver Lion Helmet②]) can activate.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "一张牌因弃置而进行的移动结算结束之后，此牌即执行了弃置这个操作。即弃置的消耗在牌置入处理区后即已执行。",
+        "en": "Once the movement resolution caused by a discard is complete, that card is considered to have been discarded. The discard cost is considered paid once the card enters the Processing Zone.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "一张牌移动的目标区域的改变（如通过【纵玄】改变为牌堆顶）并不会令导致此次移动的操作改变（例如使用牌的操作依然是使用）。",
+        "en": "Changing a card's movement destination (e.g. redirecting to the top of the Draw Pile via a skill) does not change the nature of the operation that caused the movement (e.g. using a card is still treated as using a card).",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "牌移动 结算流程 弃置 获得 区域",
+    "search_text_en": "card movement resolution discard gain zone"
+  },
+  {
+    "id": "flow_3_6_card_state_change",
+    "section_num": "3.6",
+    "section_title_cn": "牌状态改变能发动的技能",
+    "section_title_en": "Skills Triggerable by Card State Changes",
+    "term_cn": "牌状态改变",
+    "term_en": "Card State Change",
+    "badge": null,
+    "definition_cn": "武将牌或游戏牌的状态发生改变时能发动的技能列表。",
+    "definition_en": "A reference list of skills that can activate when a General Card or Library Card changes state.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "翻面后：能发动【解围】、【法恩】。",
+        "en": "After being flipped over (General Card): [Break the Siege], [Grace of Law] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "横置后：能发动【法恩】。",
+        "en": "After being placed in horizontal position: [Grace of Law] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "武将牌明置后：能发动【闺秀①】。",
+        "en": "After a General Card is revealed (face-up): [Blushing Beauty①] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "武将牌移除后：能发动【闺秀②】。",
+        "en": "After a General Card is removed: [Blushing Beauty②] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "游戏牌亮出后：能发动【鹰扬】。",
+        "en": "After a Library Card is flipped/revealed permanently: [Eagle Supremacy] can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "牌状态改变 翻面 横置 明置 亮出",
+    "search_text_en": "card state change flip horizontal reveal"
+  },
+  {
+    "id": "flow_3_7_judgment_event",
+    "section_num": "3.7",
+    "section_title_cn": "判定事件的结算流程",
+    "section_title_en": "Judgment Event Resolution Flow",
+    "term_cn": "判定事件",
+    "term_en": "Judgment Event",
+    "badge": null,
+    "definition_cn": "判定结算中有三个时机：①判定时（确定判定牌）②判定牌生效前（可替换判定牌）③判定牌生效后（确定判定结果）。判定结算结束后将判定牌置入弃牌堆。",
+    "definition_en": "Judgment Resolution has three timings: ① When judging (the Judgment Card is determined) ② Before the Judgment Card takes effect (it can be replaced) ③ After the Judgment Card takes effect (the result is determined). After resolution, the Judgment Card is placed into the Discard Pile.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①判定时：确定判定牌。能执行：【咒缚】将“咒”作为判定牌的效果。",
+        "en": "① When judging: the Judgment Card is determined. [Curse Bind] (use the Curse token as the Judgment Card) can execute.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②判定牌生效前：判定牌等待生效。能发动：【鬼才】、【缓释】、【鬼道】等技能（可替换判定牌）。",
+        "en": "② Before the Judgment Card takes effect: the Judgment Card is waiting to take effect. Skills such as [Demonic Wit], [Delayed Release], [Ghost Path] (which can replace the Judgment Card) can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "③判定牌生效后：确定此次判定的结果。能发动：【天妒】、【颂威】、【屯田】将判定牌置于武将牌上的效果、【双雄】获得判定牌的效果。",
+        "en": "③ After the Judgment Card takes effect: the Judgment result is confirmed. [Heaven's Envy], [Laud Authority], [Field Farming] (place Judgment Card on General Card), [Twin Warriors] (gain the Judgment Card) can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "判定事件 结算流程 判定牌 替换 结果",
+    "search_text_en": "judgment event resolution judgment card replace result"
+  },
+  {
+    "id": "flow_3_8_damage_event",
+    "section_num": "3.8",
+    "section_title_cn": "伤害事件的结算流程",
+    "section_title_en": "Damage Event Resolution Flow",
+    "term_cn": "伤害事件",
+    "term_en": "Damage Event",
+    "badge": null,
+    "definition_cn": "伤害有三种方式：①因执行牌或技能的效果 ②因连环传导 ③因转移。每种方式对应的六要素（渠道、属性、来源、受伤角色、伤害值、是否为连环伤害）各有规定。",
+    "definition_en": "Damage can occur in three ways: ① From executing a card or skill's effect ② From chain propagation ③ From a transfer. Each method determines the six damage elements (channel, attribute, source, target character, damage value, whether it is Chain Damage).",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "伤害结算开始前：触发【绝情】（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。",
+        "en": "Before Damage Resolution: [Heartless] triggers (the character loses HP equal to the base damage value instead; no Damage Resolution is conducted).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "伤害结算中的六个时机（按顺序）：①伤害结算开始时 ②造成伤害时 ③受到伤害时 ④造成伤害后 ⑤受到伤害后 ⑥伤害结算结束时。",
+        "en": "The six timings during Damage Resolution (in order): ① At Damage Resolution Start ② When dealing damage ③ When receiving damage ④ After dealing damage ⑤ After receiving damage ⑥ At Damage Resolution End.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "①伤害结算开始时：能执行【狂风】、【大雾】的效果（防止伤害）。",
+        "en": "① At Damage Resolution Start: [Gale], [Great Fog] effects (which prevent damage) can execute.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②造成伤害时：能发动：【裸衣】伤害值+1的效果、【忠义②】、【暗箭】、【穿心】等武将技能，以及装备技能【麒麟弓】、【寒冰剑】、【古锭刀】。",
+        "en": "② When dealing damage: [Bare-Chested] (+1 damage), [Fathers' Legacy②], [Arrow from the Dark], [Piercing Heart] and other general skills, plus equipment skills [Kirin Bow], [Frost Blade], [Ancient Scimitar] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "③受到伤害时：能发动：【仁心】、【天香】、【骄矜】、【名士】等武将技能，以及装备技能【藤甲②】、【白银狮子①】、【太平要术①】。",
+        "en": "③ When receiving damage: [Benevolent Heart], [Celestial Fragrance], [Haughty Pride], [Noble Scholar] and other general skills, plus [Rattan Armour②], [Silver Lion Helmet①], [Talisman of Peace①] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "④造成伤害后：能发动：【忘隙】、【狂骨】、【烈刃】、【破军】等武将技能，以及装备技能【三尖两刃刀】。",
+        "en": "④ After dealing damage: [Set Aside Grudges], [Bloodthirst], [Blazing Blade], [Shatter the Army] and other general skills, plus [Three-Point Glaive] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "⑤受到伤害后：能发动：【奸雄】、【反馈】、【刚烈】、【遗计】、【节命】、【放逐】等多种武将技能。",
+        "en": "⑤ After receiving damage: [Treacherous Hero], [Retribution], [Unyielding], [Posthumous Plan], [Preserve Lives], [Exile] and many other general skills can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "⑥伤害结算结束时：执行【天香】摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。",
+        "en": "⑥ At Damage Resolution End: [Celestial Fragrance] draw effect executes; if the character is Chained and received elemental damage, they must Reset.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "伤害结算结束后，依次处理：Ⅰ.【酒诗②】；Ⅱ.触发连环。",
+        "en": "After Damage Resolution: process in order: Ⅰ. [Wine and Verse②]; Ⅱ. Trigger chain propagation (if applicable).",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "由于在“造成/受到伤害时”尚未确定最终的伤害值，此时发动的技能默认为每造成/受到一次伤害能发动一次。",
+        "en": "Since the final damage value has not been determined at the \"when dealing/receiving damage\" timing, skills that activate here default to triggering once per damage event regardless of the damage value.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "伤害减为0即防止全部点数的伤害。“受到/造成伤害后”默认表示一次伤害事件后（无论伤害值多少均为一次）。若伤害值为X点，发动时机为“造成/受到1点伤害后”的技能能发动X次。",
+        "en": "Damage reduced to 0 means all damage is prevented. \"After receiving/dealing damage\" defaults to once per damage event (regardless of value). If the damage value is X, skills with timing \"after dealing/receiving 1 damage\" can activate X times.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "伤害事件 结算流程 来源 属性 连环 造成伤害 受到伤害",
+    "search_text_en": "damage event resolution source attribute chain deal receive"
+  },
+  {
+    "id": "flow_3_9_lose_hp_event",
+    "section_num": "3.9",
+    "section_title_cn": "失去体力事件的结算流程",
+    "section_title_en": "Lose HP Event Resolution Flow",
+    "term_cn": "失去体力事件",
+    "term_en": "Lose HP Event",
+    "badge": null,
+    "definition_cn": "失去体力结算中有两个时机：①失去体力时 ②失去体力后。",
+    "definition_en": "Lose HP Resolution has two timings: ① When losing HP ② After losing HP.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①失去体力时：能发动：【黄巾天兵符②】（防止失去体力）。若防止失去体力，结算直接结束；否则进行扣减体力结算。",
+        "en": "① When losing HP: [Yellow Turban Talisman②] (to prevent the HP loss) can activate. If the HP loss is prevented, resolution ends immediately; otherwise, HP Reduction Resolution is conducted.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②失去体力后：能发动：【诈降】。",
+        "en": "② After losing HP: [Feigned Surrender] can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "失去体力事件 结算流程 防止 扣减",
+    "search_text_en": "lose hp event resolution prevent reduce"
+  },
+  {
+    "id": "flow_3_10_hp_reduction_event",
+    "section_num": "3.10",
+    "section_title_cn": "扣减体力事件的结算流程",
+    "section_title_en": "HP Reduction Event Resolution Flow",
+    "term_cn": "扣减体力事件",
+    "term_en": "HP Reduction Event",
+    "badge": null,
+    "definition_cn": "扣减体力结算中有三个时机：①扣减体力前 ②扣减体力时 ③扣减体力后。扣减体力事件有两种来源：在伤害事件中产生，或在失去体力事件中产生。",
+    "definition_en": "HP Reduction Resolution has three timings: ① Before HP is reduced ② When HP is reduced ③ After HP is reduced. It can originate from either a Damage Event or a Lose HP Event.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①扣减体力前（伤害事件中）：须检测【酒诗②】、【狂骨】、【暴虐】的发动条件，受到属性伤害的角色重置的条件，以及触发连环的条件。",
+        "en": "① Before HP reduction (in a Damage Event): check the activation conditions for [Wine and Verse②], [Bloodthirst], [Tyranny], the Reset condition for characters receiving elemental damage, and the chain propagation condition.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②扣减体力时：能发动：【不屈（旧风）】。然后按最终的伤害值/失去体力值扣减体力。若体力被扣减至0，则进行濒死结算。",
+        "en": "② When HP is reduced: [Indomitable] can activate. HP is then reduced by the final damage/HP loss value. If HP is reduced to 0, Verge of Death Resolution is conducted.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "③扣减体力后：能发动：【伤逝】。",
+        "en": "③ After HP is reduced: [Mourn the Fallen] can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "扣减体力事件 结算流程 伤害 失去体力 濒死",
+    "search_text_en": "hp reduction event resolution damage lose hp verge of death"
+  },
+  {
+    "id": "flow_3_11_recover_hp_event",
+    "section_num": "3.11",
+    "section_title_cn": "回复体力事件的结算流程",
+    "section_title_en": "Recover HP Event Resolution Flow",
+    "term_cn": "回复体力事件",
+    "term_en": "Recover HP Event",
+    "badge": null,
+    "definition_cn": "回复体力结算中有两个时机：①确定回复数值 ②回复体力后。",
+    "definition_en": "Recover HP Resolution has two timings: ① Determining the recovery amount ② After recovering HP.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①确定回复数值：能产生影响的技能：【救援】（修改回复数值）。然后角色按照此数值回复体力。",
+        "en": "① Determining the recovery amount: [Rescue] (which modifies the recovery amount) can influence this. The character then recovers HP by the determined amount.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②回复体力后：能发动：【伤逝】、【淑慎】、【恩怨（旧将）①】。",
+        "en": "② After recovering HP: [Mourn the Fallen], [Gentle Virtue], [Gratitude and Grudges①] can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "回复体力事件 结算流程 回复数值",
+    "search_text_en": "recover hp event resolution recovery amount"
+  },
+  {
+    "id": "flow_3_12_reduce_max_hp_event",
+    "section_num": "3.12",
+    "section_title_cn": "减体力上限事件的结算流程",
+    "section_title_en": "Reduce Max HP Event Resolution Flow",
+    "term_cn": "减体力上限事件",
+    "term_en": "Reduce Max HP Event",
+    "badge": null,
+    "definition_cn": "减体力上限结算中有两个时机：①减体力上限前 ②减体力上限后。",
+    "definition_en": "Reduce Max HP Resolution has two timings: ① Before Max HP is reduced ② After Max HP is reduced.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①减体力上限前：暂时没有作用。然后角色减体力上限。若该角色在减体力上限前的体力值等于其体力上限，则须将体力值同步调整至等同于减后的体力上限。",
+        "en": "① Before Max HP is reduced: no effect at this time. Max HP is then reduced. If the character's current HP Value equals their Max HP before the reduction, their HP Value is also adjusted down to match the new Max HP.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②减体力上限后：a.若体力上限大于0：能发动【伤逝】、【威重】。b.若体力上限为0：该角色死亡。",
+        "en": "② After Max HP is reduced: a. If Max HP is greater than 0: [Mourn the Fallen], [Imposing Presence] can activate. b. If Max HP equals 0: that character dies.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "减体力上限事件 结算流程 体力上限 死亡",
+    "search_text_en": "reduce max hp event resolution max hp death"
+  },
+  {
+    "id": "flow_3_13_increase_max_hp_event",
+    "section_num": "3.13",
+    "section_title_cn": "加体力上限事件的结算流程",
+    "section_title_en": "Increase Max HP Event Resolution Flow",
+    "term_cn": "加体力上限事件",
+    "term_en": "Increase Max HP Event",
+    "badge": null,
+    "definition_cn": "加体力上限结算中有两个时机：①加体力上限前 ②加体力上限后。",
+    "definition_en": "Increase Max HP Resolution has two timings: ① Before Max HP is increased ② After Max HP is increased.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①加体力上限前：暂时没有作用。然后角色加体力上限。",
+        "en": "① Before Max HP is increased: no effect at this time. Max HP is then increased.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②加体力上限后：能发动：【伤逝】、【威重】。",
+        "en": "② After Max HP is increased: [Mourn the Fallen], [Imposing Presence] can activate.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "加体力上限事件 结算流程 体力上限",
+    "search_text_en": "increase max hp event resolution max hp"
+  },
+  {
+    "id": "flow_3_14_verge_of_death_event",
+    "section_num": "3.14",
+    "section_title_cn": "濒死事件的结算流程",
+    "section_title_en": "Verge of Death Event Resolution Flow",
+    "term_cn": "濒死事件",
+    "term_en": "Verge of Death Event",
+    "badge": null,
+    "definition_cn": "濒死结算中有两个时机：①进入濒死状态时 ②处于濒死状态时。濒死结算结束后有一个时机：濒死结算结束后。",
+    "definition_en": "Verge of Death Resolution has two timings: ① When entering the Verge of Death State ② While in the Verge of Death State. There is one timing after resolution: After Verge of Death Resolution.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "①进入濒死状态时：若发动技能令处于濒死状态的A将体力值回复至1点，A存活，濒死结算完毕。能发动：【补益】、【随势①】。",
+        "en": "① When entering the Verge of Death State: if a skill is activated that recovers A's HP Value to 1, A survives and Verge of Death Resolution ends. [Supplement], [Follow the Situation①] can activate.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②处于濒死状态时：从当前回合角色开始按逆时针方向依次响应，直到A将体力值首次回复至1点或1点以上为止（A存活，结算完毕）；若当前回合角色的上家响应完毕后A的体力值依然为0，A死亡，插入进行死亡结算。能发动：【涅槃】、【不屈①】、【仁心（旧将）】等技能。能使用：【桃】、【酒】。",
+        "en": "② While in the Verge of Death State: starting from the current turn's character, going counter-clockwise, each character responds in sequence until A's HP Value is first brought to 1 or more (A survives, resolution ends). If A's HP is still 0 after the current turn character's Left Neighbor has responded, A dies and Death Resolution is inserted. Skills such as [Nirvana], [Unyielding①], [Benevolent Heart] can activate. Cards [Peach] and [Wine] can be used.",
+        "examples": [
+          {
+            "cn": "若B在轮到其响应时使用的牌结算完毕后，A回复过体力但未将体力值回复至1点，则A进入一个新的“处于濒死状态时”，前一个时机终止，从B开始按逆时针顺序继续响应。",
+            "en": "If, after B's response resolves, A has recovered some HP but has not yet reached 1, A enters a new \"While in the Verge of Death State\" timing. The previous timing terminates, and the sequence continues starting from B going counter-clockwise.",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "濒死结算结束后：能执行：【黩武】失去1点体力的效果。",
+        "en": "After Verge of Death Resolution: [Militarism] (lose 1 HP effect) can execute.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "此时机能发动的技能在发动一次后，于此次濒死结算结束之前无效（即每次濒死结算每种技能只能发动一次）。",
+        "en": "Skills that can activate at the \"While in the Verge of Death State\" timing become Nullified after activating once, until the current Verge of Death Resolution ends (i.e. each skill can only be used once per Verge of Death Resolution).",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "濒死事件 结算流程 体力值 回复 死亡 桃 酒",
+    "search_text_en": "verge of death event resolution hp value recover death peach wine"
+  },
+  {
+    "id": "flow_3_15_death_event",
+    "section_num": "3.15",
+    "section_title_cn": "死亡事件的结算流程",
+    "section_title_en": "Death Event Resolution Flow",
+    "term_cn": "死亡事件",
+    "term_en": "Death Event",
+    "badge": null,
+    "definition_cn": "死亡结算开始前：若死亡的是主公则游戏结束；否则若该角色是因受到有来源的伤害而死亡则视为来源杀死过该角色，若其是在自己的回合进行的事件结算中死亡则其回合结束。",
+    "definition_en": "Before Death Resolution: if the Lord dies, the game ends. Otherwise: if the character died from damage with a source, that source is treated as having killed them; if they died during a resolution in their own turn, their turn ends.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "死亡结算中有四个时机（按顺序）：①亮出身份牌前 ②亮出身份牌后（检测游戏结束条件）③死亡时 ④死亡后。",
+        "en": "Death Resolution has four timings (in order): ① Before revealing the Identity Card ② After revealing the Identity Card (check game-end condition) ③ At the time of death ④ After death.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "①亮出身份牌前：能发动：【焚心】。然后亮出身份牌。",
+        "en": "① Before revealing the Identity Card: [Burn the Heart] can activate. The Identity Card is then revealed.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "②亮出身份牌后：检测是否满足游戏结束的条件。",
+        "en": "② After revealing the Identity Card: check whether the game-ending condition has been met.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "③死亡时：能发动：【行殇】、【藏机】、【挥泪】、【追忆】、【断肠】、【随势②】、【延祸】、【武魂②】。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。",
+        "en": "③ At the time of death: [Reap the Fallen], [Hidden Scheme], [Shed Tears], [In Memoriam], [Heartbreak], [Follow the Situation②], [Spread Calamity], [War Soul②] can activate. Then process in order: Ⅰ. The system discards all cards in the dead character's zones and places cards on/beside their General Card into the Discard Pile; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all cards; any character kills Rebel: draw 3 cards).",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "④死亡后：能发动：武将技能【肃资】、【裂围】、【功獒】、【孝德】，以及装备技能【飞龙夺凤②】。",
+        "en": "④ After death: general skills [Consolidate Resources], [Break the Encirclement], [Meritorious Valor], [Filial Virtue], and equipment skill [Soaring Dragon Blade②] can activate.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "死亡角色于死亡结算中，不能发动任何于此结算流程中未列举的技能。",
+        "en": "During Death Resolution, the dying character cannot activate any skills not listed in this resolution flow.",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "角色在自己回合的事件结算中死亡，在死亡结算完毕后若须继续结算该事件，则在该事件结算完毕后才进入“回合结束后”（此段时间不属于任何角色的回合）。",
+        "en": "If a character dies during a resolution in their own turn, and that event's resolution must continue after Death Resolution, the character's \"After Turn End\" timing only occurs after that event is fully resolved. The intervening period does not belong to any character's turn.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "死亡事件 结算流程 身份牌 奖惩 杀死 反贼 忠臣",
+    "search_text_en": "death event resolution identity card reward penalty kill rebel loyalist"
+  },
+  {
+    "id": "flow_3_16_conditions_for_using_card",
+    "section_num": "3.16",
+    "section_title_cn": "专题一：使用一张牌的条件",
+    "section_title_en": "Topic 1: Conditions for Using a Card",
+    "term_cn": "使用牌的条件",
+    "term_en": "Conditions for Using a Card",
+    "badge": null,
+    "definition_cn": "当角色需要使用牌时，若不存在任何原因导致其无法使用此牌，其才能使用此牌或发动相应的技能来使用此牌。",
+    "definition_en": "When a character needs to use a card, they can only use it (or activate a skill to use it) if no conditions exist that prevent them from doing so.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "会导致无法使用牌的原因有三：①受到技能效果影响不能使用此牌（如【铁骑】、【鸡肋】、【完杀】等）；②使用此牌的次数达到上限（主要针对【杀】的使用次数限制）；③使用此牌的合法额定目标数为0。",
+        "en": "There are three reasons a character may be unable to use a card: ① A skill effect prevents them from using it (e.g. [Iron Cavalry], [Chicken Rib], [Total Annihilation]); ② The frequency limit for using this card has been reached (mainly applies to [Kill]); ③ There are no valid targets for the card's required targets.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "对于【杀】的次数限制：一名角色只有于出牌阶段空闲时间点使用【杀】才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的【杀】优先计入额定次数。",
+        "en": "Regarding [Kill] frequency limits: limits only apply when using [Kill] at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. [Kill] uses count toward the standard limit first.",
+        "examples": [
+          {
+            "cn": "（无次数限制）的技能：【诸葛连弩】、【咆哮】、【枪舞】、【陷阵】（拼点赢）。（额外次数上限+1）：【将驰②】、【虎啸】、【诈降】、【天义】（拼点赢）。（不计入限制的使用次数）：【龙吟】、【枪舞】。",
+            "en": "No frequency limit: [Repeating Crossbow], [Roar], [Spear Dance], [Charge the Phalanx] (win duel). Extra limit +1: [Cavalry Charge②], [Tiger's Roar], [Feigned Surrender], [Heaven's Justice] (win duel). Not counted against limits: [Dragon Chant], [Spear Dance].",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "cn": "合法性检测包括两部分：距离合法性检测（使用牌是否满足距离要求）和目标合法性检测（使用牌是否能选择该目标）。",
+        "en": "Legality checks consist of two parts: distance legality (whether using the card meets the distance requirement) and target legality (whether the card can designate that character as a target).",
+        "examples": []
+      },
+      {
+        "type": "note",
+        "cn": "角色使用实体牌，在检测合法性时视为此牌已经置入目标区域。",
+        "en": "When a character uses a physical card, for the purpose of the legality check, the card is treated as already having been placed into its target zone.",
+        "examples": [
+          {
+            "cn": "诸葛亮（标）使用最后一张手牌【借刀杀人】在检测合法性时视为此牌已置入处理区，因此会受到【空城】的影响不能选择对自己使用【杀】。",
+            "en": "When Zhuge Liang (Std) uses his last hand card [Proxy Attack], the legality check treats the card as already in the Processing Zone — meaning [Empty Fort] applies and he cannot designate himself as the target.",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "cn": "使用延时类锦囊牌有一条共同的合法性检测规则：判定区里有延时类锦囊牌的角色不是使用同名延时类锦囊牌的合法目标。",
+        "en": "There is a universal legality rule for using Time-Delayed Tools: a character who already has a Time-Delayed Tool of the same name in their Judgment Zone is not a valid target for another card of that same name.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "使用牌的条件 合法性 次数限制 杀 距离 目标",
+    "search_text_en": "conditions using card legality frequency limit kill distance target"
+  },
+  {
+    "id": "flow_3_17_virtual_physical_cards",
+    "section_num": "3.17",
+    "section_title_cn": "专题二：虚拟牌与实体牌",
+    "section_title_en": "Topic 2: Virtual Cards and Physical Cards",
+    "term_cn": "虚拟牌与实体牌",
+    "term_en": "Virtual Cards and Physical Cards",
+    "badge": null,
+    "definition_cn": "使用/打出/弃置牌是指操作虚拟牌。因使用/打出/弃置而移动的实体牌用于确定此虚拟牌的牌面信息，但使用/打出/弃置的是虚拟牌而非实体牌本身。",
+    "definition_en": "Using, playing out, or discarding a card refers to operating a virtual card. The physical card that moves as a result determines the virtual card's face information, but it is the virtual card — not the physical card itself — that is used, played, or discarded.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "虚拟牌与实体牌的对应关系分四种情况：①非通过“转化”或“视为”使用/打出牌：一张实体牌与一张虚拟牌形成唯一对应关系。②通过“视为”使用/打出牌：虚拟牌没有颜色、花色和点数，无对应实体牌。③通过“将一张A牌当B牌使用/打出”：一张A实体牌与B虚拟牌形成唯一对应关系。④通过“将多张A牌当B牌使用/打出”：多张A实体牌与B虚拟牌形成唯一对应关系。",
+        "en": "There are four cases for how virtual and physical cards correspond: ① Normal use/play (not via conversion or \"treated as\"): one physical card maps to one virtual card. ② Via \"treated as\" use/play: the virtual card has no color, suit, or rank, and has no corresponding physical card. ③ Via \"use card A as card B\": one physical A card maps to one virtual B card. ④ Via \"use multiple A cards as card B\": multiple physical A cards collectively map to one virtual B card.",
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "技能中操作一张虚拟牌默认是指操作此虚拟牌对应的实体牌：若对应多张实体牌，在执行效果的时机这些实体牌须全部在本该所在的区域里，否则无法执行该效果；若对应一张实体牌，该实体牌须在本该所在的区域里；若无对应实体牌，无法执行该效果。",
+        "en": "When a skill operates on a virtual card, it defaults to operating on that card's corresponding physical card(s). If it corresponds to multiple physical cards, all must be in their expected zone at the time of execution, otherwise the effect cannot execute. If it corresponds to one physical card, that card must be in its expected zone. If there is no corresponding physical card, the effect cannot execute.",
+        "examples": [
+          {
+            "cn": "夏侯渊发动【神速②】对曹操（标）使用【杀】，曹操（标）在受到此【杀】造成的伤害后，由于此【杀】并无对应的实体牌，曹操不能发动【奸雄】。",
+            "en": "Xiahou Yuan activates [Lightning Speed②] and uses a virtual [Kill] on Cao Cao (Std). After Cao Cao receives the damage, since this [Kill] has no corresponding physical card, Cao Cao cannot activate [Treacherous Hero].",
+            "sub_examples": []
+          }
+        ]
+      },
+      {
+        "type": "note",
+        "cn": "一些技能中提到的概念（如201c若此【杀】造成过伤害201d、造成伤害的牌、渠道等），以及201c使用/打出/弃置（过）牌201d等，都是指此虚拟牌。",
+        "en": "Concepts referenced in skills — such as \"if this [Kill] has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" — all refer to the virtual card.",
+        "examples": []
+      }
+    ],
+    "search_text_cn": "虚拟牌 实体牌 对应关系 视为 转化 渠道",
+    "search_text_en": "virtual card physical card correspondence treated as conversion channel"
+  }
+]

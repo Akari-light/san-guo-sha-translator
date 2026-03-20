@@ -1,7 +1,6 @@
 [
   {
     "id": "info_1_1_card_counts",
-    "chapter": "info",
     "section_num": "1.1",
     "section_title_cn": "身份局卡牌数量一览",
     "section_title_en": "Identity Mode Card Counts",
@@ -47,7 +46,6 @@
   },
   {
     "id": "info_1_1_basic_cards",
-    "chapter": "info",
     "section_num": "1.1",
     "section_title_cn": "身份局游戏牌一览 — 基本牌",
     "section_title_en": "Identity Mode Library Cards — Basic Cards",
@@ -105,7 +103,6 @@
   },
   {
     "id": "info_1_1_tool_cards",
-    "chapter": "info",
     "section_num": "1.1",
     "section_title_cn": "身份局游戏牌一览 — 锦囊牌",
     "section_title_en": "Identity Mode Library Cards — Tool Cards",
@@ -210,7 +207,6 @@
   },
   {
     "id": "info_1_1_equipment_cards",
-    "chapter": "info",
     "section_num": "1.1",
     "section_title_cn": "身份局游戏牌一览 — 装备牌",
     "section_title_en": "Identity Mode Library Cards — Equipment Cards",

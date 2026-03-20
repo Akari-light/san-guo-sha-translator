@@ -4824,20 +4824,6 @@
     "description_cn": "锁定技，因“联句”获得的牌称为“闾”；当你受到伤害后，你摸一张牌并称为“闾”。“闾”因弃置进入弃牌堆后，失去此牌的角色获得之。",
     "description_en": "Locked: Cards gained via 〖Linked Verses〗 are 「Lü」 cards. After you take damage, draw 1 card — it also becomes a 「Lü」 card. When a 「Lü」 card is placed into the Discard Pile via discarding, the character who lost it gains it back."
   },
-  "skill_catch_the_pig": {
-    "skill_type": "active",
-    "name_cn": "缚豕",
-    "name_en": "Catch the Pig",
-    "description_cn": "当一名角色使用【杀】后，若你与其距离1以内，你将之置于你的武将牌上。你可以将任意张“缚豕”牌置入弃牌堆并摸等量的牌，视为使用一张具有等量项效果的【杀】：1.目标数+1；2.对一个目标造成的伤害-1；3.对一个目标造成的伤害+1。若目标和选项皆相邻，此【杀】无次数限制。",
-    "description_en": "When a character within distance 1 of you Uses [Kill], place it on your character card. During your Action Phase, discard any number of 「Catch the Pig」 cards and draw the same number, then be treated as using 1 [Kill] with up to that many effects (each once): 1. Target count +1; 2. Damage to 1 target −1; 3. Damage to 1 target +1. If all targets and options are adjacent, no count restriction."
-  },
-  "skill_gracious_host": {
-    "skill_type": "convert",
-    "name_cn": "东道",
-    "name_en": "Gracious Host",
-    "description_cn": "转换技，阳：农民回合结束后，你可以令地主执行一个额外回合；阴：农民回合结束后，其可以执行一个额外回合。",
-    "description_en": "Convert Skill: Yang — after the Farmer's turn ends, the Landlord may take an extra turn. Yin — after the Farmer's turn ends, they may take an extra turn."
-  },
   "skill_overawe_and_pacify": {
     "skill_type": "active",
     "name_cn": "威抚",

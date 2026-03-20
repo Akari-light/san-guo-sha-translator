@@ -2198,32 +2198,6 @@
     ]
   },
   {
-    "id": "SP_QUN212",
-    "standard_id": "char_lvboshe",
-    "name_cn": "吕伯奢",
-    "name_en": "Lu Boshè",
-    "gender": "Male",
-    "faction": "Qun",
-    "health": 4,
-    "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "Simple"
-    ],
-    "expansion": "Other",
-    "faq": [],
-    "skills": [
-      "skill_catch_the_pig",
-      "skill_gracious_host"
-    ]
-  },
-  {
     "id": "SP_WEI136",
     "standard_id": "char_qianzhao",
     "name_cn": "牵招",

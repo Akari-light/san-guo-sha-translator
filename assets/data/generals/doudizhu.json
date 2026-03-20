@@ -10,7 +10,7 @@
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
     "skills": {
         "skill_1": {
@@ -32,121 +32,278 @@
   {
     "id": "DDZ_QUN217",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "石韬",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "钦英",
+            "name_en": "",
+            "description_cn": "出牌阶段限一次,你可以重铸任意张牌,视为使用一张 【决斗】。若如此做,此【决斗】结算过程中限次(X 为你以此法重铸的牌数),你或目标角色可以弃置区域 中的一张牌,视为打出一张普通【杀】。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "论雄",
+            "name_en": "",
+            "description_cn": "当你造成或受到伤害后,你可以展示手牌并弃置点数唯 一最大的手牌,然后你摸三张牌且你本局游戏以此法弃 置牌的点数须大于此牌。",
+            "description_en": ""
+        },
+        "skill_3": {
+            "skill_type": "",
+            "name_cn": "共砺",
+            "name_en": "",
+            "description_cn": "锁定技,游戏开始时,你令本局“钦英”减少个可用于 弃置的类别的牌(X为全场友武将数)。",
+            "description_en": ""
+        }      
+    }
   },
   {
     "id": "DDZ_QUN212",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0,
+    "standard_id": "char_lvboshe",
+    "name_cn": "吕伯奢",
+    "name_en": "Lu Boshe",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "缚豕",
+            "name_en": "",
+            "description_cn": "当一名角色使用【杀】结算结束后,若你与其距离以 内,你将之置于你的武将牌上,称为“缚家”。你可以移 去任意张“缚家”,摸等量的牌并视为使用一张【杀】, 然后选择等量项:1.额外选择一名角色为目标;2.此牌对其 中一名目标角色造成的伤害-1:3.此牌对其中一名目标角 色造成的伤害+1。若此牌的目标和你选择的选项均相邻, 则此【杀】不计入次数。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "东道",
+            "name_en": "",
+            "description_cn": "转换技,①农民回合结束后,你可以令地主执行一个额外 回合;②农民回合结束后,其可以执行一个额外回合。",
+            "description_en": ""
+        }        
+    }
   },
   {
     "id": "DDZ_QUN264",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "崔钧",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "顺逸",
+            "name_en": "",
+            "description_cn": "当你使用点数唯一最小的手牌时,若此牌的花色为红桃且点数大于X(X为你本回合发动此技能的次数),你可以展示 手牌并将此花色的所有手牌置于武将牌上直至当前回合结 束,然后你摸一张牌。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "鄙位",
+            "name_en": "",
+            "description_cn": "出牌阶段限一次,你可以展示牌并弃置一张点数唯一最 大的手牌,然后选择一名其他角色,令其展示手牌并弃置 所有点数大于等于此牌的手牌。若其未因此弃置牌,重置 此技能。",
+            "description_en": ""
+        },
+        "skill_3": {
+            "skill_type": "",
+            "name_cn": "共砺",
+            "name_en": "",
+            "description_cn": "锁定技,游戏开始时,你令本局“顺逸”添加个可触发 的花色(X为全场友武将数)。",
+            "description_en": ""
+        }          
+    }
   },
   {
     "id": "DDZ_QUN032",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "李儒",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "花拳",
+            "name_en": "",
+            "description_cn": "锁定技,你使用黑色牌指定其他角色为目标后,为此牌秘 密选择一个效果:1.重拳,造成的伤害+1;2.轻拳,使用后 你摸一张牌。然后你以外的目标角色依次猜测你选择的效 果。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "三殴",
+            "name_en": "",
+            "description_cn": "锁定技,其他角色受到你的伤害后或猜错“花拳”的效果 后,获得1枚击倒”标记。一名角色获得至少3枚“击 倒”标记后移除此标记并进入“击倒”状态。“击倒”状态 的角色始终跳过出牌阶段。若角色于“击倒”状态,当有十 张牌离开牌堆或进入弃牌堆后,其脱离“击倒”状态。",
+            "description_en": ""
+        }        
+    }
   },
   {
-    "id": "",
+    "id": "DDZ_WEI250",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "韓氏五虎",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
-  },          
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "玨玨",
+            "name_en": "",
+            "description_cn": "锁定技,你本局游戏首次使用【杀】/【闪】/【桃】/【酒】时,此牌伤害或回复值+1且不计入次数限制, 结算后,你获得此牌。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "披靡",
+            "name_en": "",
+            "description_cn": "你使用牌指定其他角色为唯一目标后,或成为其他角 色使用牌的唯一目标后,你可以弃置使用者一张牌, 令此牌伤害或回复值+1。然后若使用者的手牌最多或 最少,你摸一张牌且此技能本回合失效。",
+            "description_en": ""
+        }        
+    }
   },
   {
-    "id": "",
+    "id": "DDZ_WU010",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "孙策",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "双璧",
+            "name_en": "",
+            "description_cn": "出牌阶段限一次,你可以选择一项:1.摸X张牌,本 回合手牌上限+X;2.弃置至多张牌,分配并造成 等量火焰伤害:3.视为使用X张火【杀】或【火攻】 (X为存活角色数)。",
+            "description_en": ""
+        }    
+    }
   },
   {
-    "id": "",
+    "id": "DDZ_WEI131",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "夏侯恩",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Dou_Di_Zhu",
+    "faq": [],
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "引锋",
+            "name_en": "",
+            "description_cn": "锁定技,游戏开始时,你将游戏外的【赤血青锋】置入手 牌。【赤血青锋】因弃置进入弃牌堆后,你失去1点体力 并获得之。你的手牌被其他角色获得后,若你手牌中有 【赤血青锋】,你展示之并对其造成1点伤害;若其获得了【赤血青锋】,其展示之并对你造成1点伤害。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "负掳",
+            "name_en": "",
+            "description_cn": "你使用【杀结算后,你可以交给一名目标角色一张手 牌,然后获得其至多两张手牌。体力值小于你的角色使 用【杀】结算后,若你为此【杀】目标,其可以交给你 一张手牌,然后获得你至多两张手牌。",
+            "description_en": ""
+        }        
+    }
+  },
+  {
+    "id": "DDZ_WEI015",
+    "standard_id": "",
+    "name_cn": " 邓艾",
+    "name_en": "",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 0,
+    "traits_cn": [],
+    "traits_en": [],
+    "expansion": "Dou_Di_Zhu",
+    "faq": [],
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "讷言",
+            "name_en": "",
+            "description_cn": "转换技,锁定技,你使用非装备牌时,①须弃置一张同类别牌令此牌额外结算一次,否则此牌无效;②此牌无次数限制。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "潜曜",
+            "name_en": "",
+            "description_cn": "限定技回合开始时,你可以摸X张牌,视为使用一张 【杀】依次执行等量项:1.此【杀】目标数+1:2.此 【杀】伤害+1;3.此【杀】不可被响应(X为当前轮 数)。",
+            "description_en": ""
+        }        
+    }
+  },
+  {
+    "id": "DDZ_DiZhu",
+    "standard_id": "",
+    "name_cn": "地主技能",
+    "name_en": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Dou_Di_Zhu",
     "faq": [],
-    "skills": []
-  }          
+    "skills": {
+        "skill_1": {
+            "skill_type": "",
+            "name_cn": "飞扬",
+            "name_en": "",
+            "description_cn": "判定阶段开始时,若你的判定区有 牌,你可以弃置两张手牌并弃置自己 判定区的一张牌。每回合限一次。",
+            "description_en": ""
+        },
+        "skill_2": {
+            "skill_type": "",
+            "name_cn": "跋扈",
+            "name_en": "",
+            "description_cn": "锁定技,准备阶段开始时,你摸一张 牌你使用杀】的次数上限+1。",
+            "description_en": ""
+        }        
+    }
+  }
 ]
