@@ -1,20 +1,33 @@
 // lib/features/codex/presentation/widgets/codex_rule_block_widget.dart
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/services/resolver_service.dart';
+
+// ── Tap callback type ─────────────────────────────────────────────────────────
+//
+// Called when a [card] or [skill] segment is tapped.
+// [rawCn] is always the original Chinese bracket text (used for resolution),
+// [isChinese] reflects the display language so the sheet resolves correctly.
+typedef SegmentTapCallback = void Function(String rawCn, bool isChinese);
 
 // ── Public widget ─────────────────────────────────────────────────────────────
 
 class CodexRuleBlockWidget extends StatelessWidget {
   final CodexRuleBlock block;
 
-  /// Chapter key ('setup' | 'glossary' | 'flow' | 'rules') — used to tint
+  /// Chapter key ('setup' | 'glossary' | 'flow' | 'rules') — tints
   /// [label] and [number] segments with the chapter accent colour.
   final String chapter;
 
   final bool showChinese;
   final bool isDark;
+
+  /// Optional. When provided, [card] and [skill] segments become tappable.
+  /// The callback receives the original CN bracket text and the active language.
+  final SegmentTapCallback? onSegmentTap;
 
   const CodexRuleBlockWidget({
     super.key,
@@ -22,6 +35,7 @@ class CodexRuleBlockWidget extends StatelessWidget {
     required this.chapter,
     required this.showChinese,
     required this.isDark,
+    this.onSegmentTap,
   });
 
   @override
@@ -60,6 +74,7 @@ class CodexRuleBlockWidget extends StatelessWidget {
           chapter: chapter,
           showChinese: showChinese,
           isDark: isDark,
+          onSegmentTap: onSegmentTap,
         );
       case CodexRuleBlockType.note:
         return _NoteBlock(
@@ -67,6 +82,7 @@ class CodexRuleBlockWidget extends StatelessWidget {
           chapter: chapter,
           showChinese: showChinese,
           isDark: isDark,
+          onSegmentTap: onSegmentTap,
         );
       case CodexRuleBlockType.caution:
         return _CautionBlock(
@@ -74,32 +90,52 @@ class CodexRuleBlockWidget extends StatelessWidget {
           chapter: chapter,
           showChinese: showChinese,
           isDark: isDark,
+          onSegmentTap: onSegmentTap,
         );
     }
   }
 }
 
 // ── Segment rich-text builder ─────────────────────────────────────────────────
+//
+// [segments] must already have been localised via [_localised] before calling —
+// the builder always reads seg.cn as the display text.
+//
+// [originalSegments] carries the original (pre-localisation) segments so we
+// can read the true CN text for resolution even when displaying in EN.
+// When null (unmigrated JSON), tap recognition is skipped.
 
-/// Builds a [TextSpan] tree from [segments].
-/// Falls back to a single [TextSpan] wrapping the flat [fallback] string when
-/// the segment list is empty (backward-compatible with unmigrated JSON).
 TextSpan buildSegmentSpan({
   required List<CodexSegment> segments,
   required String fallback,
   required String chapter,
   required bool isDark,
   required TextStyle baseStyle,
+  List<CodexSegment>? originalSegments, // pre-localisation, for tap resolution
+  bool showChinese = true,
+  SegmentTapCallback? onSegmentTap,
 }) {
   if (segments.isEmpty) {
     return TextSpan(text: fallback, style: baseStyle);
   }
 
   final accentColor = AppTheme.codexChapterAccent(chapter, isDark);
+  final cardColor   = AppTheme.codexCardRef(isDark);
+  final skillColor  = AppTheme.codexSkillRef(isDark);
+  final tokenColor  = AppTheme.codexTokenRef(isDark);
 
   return TextSpan(
-    children: segments.map((seg) {
-      final text = seg.cn; // caller swaps cn/en before calling — see _textFor()
+    children: segments.asMap().entries.map((entry) {
+      final i   = entry.key;
+      final seg = entry.value;
+      final text = seg.cn; // already localised into display slot
+
+      // For tappable kinds: get the original CN text for ResolverService.
+      // originalSegments[i].cn is always the CN text regardless of display lang.
+      final rawCn = (originalSegments != null && i < originalSegments.length)
+          ? originalSegments[i].cn
+          : seg.cn;
+
       switch (seg.kind) {
         case CodexSegmentKind.label:
           return TextSpan(
@@ -109,6 +145,7 @@ TextSpan buildSegmentSpan({
               color: accentColor,
             ),
           );
+
         case CodexSegmentKind.number:
           return TextSpan(
             text: text,
@@ -117,30 +154,60 @@ TextSpan buildSegmentSpan({
               color: accentColor,
             ),
           );
+
         case CodexSegmentKind.card:
+          final tap = onSegmentTap;
+          // Only tappable if a tap handler is provided AND we know data exists.
+          // canResolve returns null before the cache is warm (first app load) —
+          // treat null as resolvable so taps still work during the brief warm-up.
+          final cardResolvable = tap != null &&
+              (ResolverService().canResolve(rawCn) != false);
           return TextSpan(
             text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.codexCardRef(isDark),
+              color: cardResolvable ? cardColor : baseStyle.color,
+              decoration: cardResolvable
+                  ? TextDecoration.underline
+                  : TextDecoration.none,
+              decorationColor: cardColor.withAlpha(120),
             ),
+            recognizer: cardResolvable
+                ? (TapGestureRecognizer()
+                  ..onTap = () => tap(rawCn, showChinese))
+                : null,
           );
+
         case CodexSegmentKind.skill:
+          final tap = onSegmentTap;
+          final skillResolvable = tap != null &&
+              (ResolverService().canResolve(rawCn) != false);
           return TextSpan(
             text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w500,
-              color: AppTheme.codexSkillRef(isDark),
+              color: skillResolvable ? skillColor : baseStyle.color,
+              decoration: skillResolvable
+                  ? TextDecoration.underline
+                  : TextDecoration.none,
+              decorationColor: skillColor.withAlpha(120),
             ),
+            recognizer: skillResolvable
+                ? (TapGestureRecognizer()
+                  ..onTap = () => tap(rawCn, showChinese))
+                : null,
           );
+
         case CodexSegmentKind.token:
+          // Tokens are game markers, not resolvable — not tappable.
           return TextSpan(
             text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w500,
-              color: AppTheme.codexTokenRef(isDark),
+              color: tokenColor,
             ),
           );
+
         case CodexSegmentKind.body:
           return TextSpan(text: text, style: baseStyle);
       }
@@ -148,10 +215,12 @@ TextSpan buildSegmentSpan({
   );
 }
 
-/// Returns the correct CN or EN text from a segment based on [showChinese].
+// ── Localisation helper ────────────────────────────────────────────────────────
+//
+// Returns segments with the display text in the `cn` slot so buildSegmentSpan
+// always reads seg.cn. The original list is preserved as [originalSegments].
+
 List<CodexSegment> _localised(List<CodexSegment> segments, bool showChinese) {
-  // Swap the `cn` field into the active slot so buildSegmentSpan always reads
-  // seg.cn — avoids a second branch inside the span builder.
   if (showChinese) return segments;
   return segments
       .map((s) => CodexSegment(kind: s.kind, cn: s.en, en: s.cn))
@@ -165,11 +234,14 @@ class _RuleBlock extends StatelessWidget {
   final String chapter;
   final bool showChinese;
   final bool isDark;
+  final SegmentTapCallback? onSegmentTap;
+
   const _RuleBlock({
     required this.block,
     required this.chapter,
     required this.showChinese,
     required this.isDark,
+    this.onSegmentTap,
   });
 
   @override
@@ -186,6 +258,9 @@ class _RuleBlock extends StatelessWidget {
       chapter: chapter,
       isDark: isDark,
       baseStyle: baseStyle,
+      originalSegments: block.segments,
+      showChinese: showChinese,
+      onSegmentTap: onSegmentTap,
     );
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,11 +286,14 @@ class _NoteBlock extends StatelessWidget {
   final String chapter;
   final bool showChinese;
   final bool isDark;
+  final SegmentTapCallback? onSegmentTap;
+
   const _NoteBlock({
     required this.block,
     required this.chapter,
     required this.showChinese,
     required this.isDark,
+    this.onSegmentTap,
   });
 
   @override
@@ -232,6 +310,9 @@ class _NoteBlock extends StatelessWidget {
       chapter: chapter,
       isDark: isDark,
       baseStyle: baseStyle,
+      originalSegments: block.segments,
+      showChinese: showChinese,
+      onSegmentTap: onSegmentTap,
     );
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
@@ -255,11 +336,14 @@ class _CautionBlock extends StatelessWidget {
   final String chapter;
   final bool showChinese;
   final bool isDark;
+  final SegmentTapCallback? onSegmentTap;
+
   const _CautionBlock({
     required this.block,
     required this.chapter,
     required this.showChinese,
     required this.isDark,
+    this.onSegmentTap,
   });
 
   @override
@@ -276,6 +360,9 @@ class _CautionBlock extends StatelessWidget {
       chapter: chapter,
       isDark: isDark,
       baseStyle: baseStyle,
+      originalSegments: block.segments,
+      showChinese: showChinese,
+      onSegmentTap: onSegmentTap,
     );
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),

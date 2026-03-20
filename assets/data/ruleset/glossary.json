@@ -734,7 +734,7 @@
             "en": "A to B may differ from B to A. "
           },
           {
-            "kind": "card",
+            "kind": "body",
             "cn": "【+1坐骑】",
             "en": "[+1 Mount]"
           },
@@ -744,7 +744,7 @@
             "en": " increases others' distance to you by 1. "
           },
           {
-            "kind": "card",
+            "kind": "body",
             "cn": "【-1坐骑】",
             "en": "[-1 Mount]"
           },

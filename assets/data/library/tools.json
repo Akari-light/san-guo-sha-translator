@@ -103,9 +103,7 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": [
-      "出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"
-    ],
+    "effect_cn": ["出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"],
     "effect_en": [
       "Action Phase: Use on all characters. Each character recovers 1 HP in sequence."
     ],
@@ -283,12 +281,8 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": [
-      "出牌阶段，对自己使用。你摸两张牌。"
-    ],
-    "effect_en": [
-      "Action Phase: Use on yourself. Draw 2 cards."
-    ],
+    "effect_cn": ["出牌阶段，对自己使用。你摸两张牌。"],
+    "effect_en": ["Action Phase: Use on yourself. Draw 2 cards."],
     "faq": []
   },
   {
@@ -386,9 +380,7 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-time delay",
-    "effect_cn": [
-      "出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"
-    ],
+    "effect_cn": ["出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"],
     "effect_en": [
       "Action Phase: Choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
@@ -521,6 +513,36 @@
     ],
     "effect_en": [
       "Action Phase: Use on all other characters. Each must discard 2 cards. If they do not, you deal 2 fire damage to them."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_besiege_the_city",
+    "name_cn": "兵臨城下",
+    "name_en": "Besiege the City",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "effect_cn": [
+      "出牌阶段，对一名其他角色使用。若如此做，你亮出牌堆顶四张牌并依次对目标角色使用其中的【杀】，结算结束后，将其余的牌置入弃牌堆。"
+    ],
+    "effect_en": [
+      "During your Action Phase, use this on one other character. Flip the top 4 cards of the Draw Pile face-up, then use each [Kill] among them on the target one at a time. After all resolutions are complete, place the remaining cards into the Discard Pile."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_season_with_salt_and_plum",
+    "name_cn": "調劑鹽梅",
+    "name_en": "Season with Salt and Plum",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "effect_cn": [
+      "出牌阶段，选择两名手牌数不同的角色并记录其各自手牌数，令手牌数多的角色弃置一张牌，手牌数少的角色摸一张牌。此牌结算结束时，若此两名角色手牌数相同，且执行此锦囊所弃的牌仍在弃牌堆中，你可以将此牌交给任一角色。",
+      "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
+    ],
+    "effect_en": [
+      "During your Action Phase, choose two characters with different hand card counts and note each count. The character with more hand cards discards 1 card; the character with fewer hand cards draws 1 card. When this card's resolution ends, if both chosen characters now have the same hand card count and the card discarded by executing this Tool is still in the Discard Pile, you may give that discarded card to any character.",
+      "Reforge: During your Action Phase, you may place this card into the Discard Pile, then draw 1 card."
     ],
     "faq": []
   },

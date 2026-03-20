@@ -76,8 +76,48 @@
           },
           {
             "kind": "body",
-            "cn": "进入该角色的回合。能发动：【笔伐】的效果、【当先】、【化身②】、【惴恐】。",
-            "en": "The character's turn begins. Skills that can activate: [Pen Denounce] effect, [Charge Ahead], [Shapeshifter②], [Trepidation]."
+            "cn": "进入该角色的回合。能发动：",
+            "en": "The character's turn begins. Skills that can activate: "
+          },
+          {
+            "kind": "skill",
+            "cn": "【笔伐】",
+            "en": "[Pen Denounce]"
+          },
+          {
+            "kind": "body",
+            "cn": "的效果、",
+            "en": " effect, "
+          },
+          {
+            "kind": "skill",
+            "cn": "【当先】",
+            "en": "[Charge Ahead]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【化身②】",
+            "en": "[Shapeshifter②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【惴恐】",
+            "en": "[Trepidation]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "."
           }
         ],
         "examples": []
@@ -94,8 +134,78 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【洛神】、【凿险】、【观星】、【志继】、【若愚】、【神智】、【英魂】等技能。",
-            "en": "Skills including [Goddess of the Luo], [Breach the Pass], [Read the Stars], [Inherit the Will], [Feign Foolishness], [Divine Mind], [Heroic Spirit] and others can activate."
+            "cn": "能发动",
+            "en": "Skills including "
+          },
+          {
+            "kind": "skill",
+            "cn": "【洛神】",
+            "en": "[Goddess of the Luo]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【凿险】",
+            "en": "[Breach the Pass]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【观星】",
+            "en": "[Read the Stars]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【志继】",
+            "en": "[Inherit the Will]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【若愚】",
+            "en": "[Feign Foolishness]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【神智】",
+            "en": "[Divine Mind]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【英魂】",
+            "en": "[Heroic Spirit]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。",
+            "en": " and others can activate."
           }
         ],
         "examples": []
@@ -148,8 +258,38 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【神速①】、【巧变】、【挫锐②】。",
-            "en": "[Lightning Speed①], [Agile Maneuver], [Agile Maneuver②] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【神速①】",
+            "en": "[Agile Maneuver]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【巧变】",
+            "en": "[Agile Maneuver②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【挫锐②】",
+            "en": "[挫锐②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -166,8 +306,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【勇略】。",
-            "en": "[Valiant Stratagem] can activate."
+            "cn": "能发动：",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【勇略】",
+            "en": "[勇略]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -220,8 +370,28 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【裸衣】、【巧变】。",
-            "en": "[Bare-Chested], [Agile Maneuver] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【裸衣】",
+            "en": "[Agile Maneuver]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【巧变】",
+            "en": "[巧变]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -238,8 +408,68 @@
           },
           {
             "kind": "body",
-            "cn": "角色进入摸牌阶段但还没有摸牌。能发动：【突袭（标）】、【遗计】获得「计」的效果、【恂恂】、【再起】、【眩惑】、【涉猎】等技能。",
-            "en": "Character enters the Draw Phase but has not yet drawn. Skills such as [Sudden Raid], [Posthumous Plan] (gain Stratagem), [Careful Survey], [Rise Again], [Beguile], [Wide Reading] and others can activate."
+            "cn": "角色进入摸牌阶段但还没有摸牌。能发动：",
+            "en": "Character enters the Draw Phase but has not yet drawn. Skills such as "
+          },
+          {
+            "kind": "skill",
+            "cn": "【突袭（标）】",
+            "en": "[Sudden Raid]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【遗计】",
+            "en": "[Posthumous Plan]"
+          },
+          {
+            "kind": "body",
+            "cn": "获得「计」的效果、",
+            "en": " (gain Stratagem), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【恂恂】",
+            "en": "[Careful Survey]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【再起】",
+            "en": "[Rise Again]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【眩惑】",
+            "en": "[Beguile]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【涉猎】",
+            "en": "[Wide Reading]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。",
+            "en": " and others can activate."
           }
         ],
         "examples": []
@@ -256,8 +486,48 @@
           },
           {
             "kind": "body",
-            "cn": "角色摸两张牌。能发动：【突袭】、【英姿①】、【好施】、【将驰】等技能。",
-            "en": "Character draws 2 cards. Skills such as [Surprise Raid], [Heroic Bearing①], [Generous], [Cavalry Charge] and others can activate."
+            "cn": "角色摸两张牌。能发动：",
+            "en": "Character draws 2 cards. Skills such as "
+          },
+          {
+            "kind": "skill",
+            "cn": "【突袭】",
+            "en": "[Surprise Raid]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【英姿①】",
+            "en": "[Heroic Bearing①]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【好施】",
+            "en": "[Generous]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【将驰】",
+            "en": "[Cavalry Charge]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。",
+            "en": " and others can activate."
           }
         ],
         "examples": [
@@ -280,8 +550,18 @@
           },
           {
             "kind": "body",
-            "cn": "角色摸牌后。能发动：【七星②】。",
-            "en": "After the character has drawn. [Seven Stars②] can activate."
+            "cn": "角色摸牌后。能发动：",
+            "en": "After the character has drawn. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【七星②】",
+            "en": "[Seven Stars②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -298,8 +578,38 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【神速②】、【巧变】、【放权】。",
-            "en": "[Lightning Speed②], [Agile Maneuver], [Abdicate] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【神速②】",
+            "en": "[Agile Maneuver]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【巧变】",
+            "en": "[Abdicate]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【放权】",
+            "en": "[放权]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -316,8 +626,78 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【司敌②】、【巧说】、【强识】、【献图】、【燕语】、【双刃】、【鸩毒】。",
-            "en": "[Counter the Enemy②], [Clever Persuasion], [Photographic Memory], [Present the Map], [Swallow's Song], [Twin Blades], [Poison Wine] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【司敌②】",
+            "en": "[Clever Persuasion]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【巧说】",
+            "en": "[Photographic Memory]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【强识】",
+            "en": "[Present the Map]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【献图】",
+            "en": "[Swallow's Song]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【燕语】",
+            "en": "[Twin Blades]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【双刃】",
+            "en": "[Poison Wine]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【鸩毒】",
+            "en": "[鸩毒]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -334,8 +714,28 @@
           },
           {
             "kind": "body",
-            "cn": "进行游戏的主要阶段。能发动多种主动技能及使用除【闪】以外的基本牌、除【无懈可击】外的锦囊牌、所有装备牌。",
-            "en": "The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except [Dodge]), Tool Cards (except [Nullification]), and all Equipment Cards."
+            "cn": "进行游戏的主要阶段。能发动多种主动技能及使用除",
+            "en": "The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except "
+          },
+          {
+            "kind": "card",
+            "cn": "【闪】",
+            "en": "[Dodge]"
+          },
+          {
+            "kind": "body",
+            "cn": "以外的基本牌、除",
+            "en": "), Tool Cards (except "
+          },
+          {
+            "kind": "card",
+            "cn": "【无懈可击】",
+            "en": "[Nullification]"
+          },
+          {
+            "kind": "body",
+            "cn": "外的锦囊牌、所有装备牌。",
+            "en": "), and all Equipment Cards."
           }
         ],
         "examples": [
@@ -368,8 +768,48 @@
           },
           {
             "kind": "body",
-            "cn": "能发动/执行：【精策】、【生息】、【献图】失去体力的效果、【暴凌】。",
-            "en": "[Refined Strategy], [Respite], [Present the Map] (lose HP effect), [Savage Oppression] can activate or execute."
+            "cn": "能发动/执行：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【精策】",
+            "en": "[Respite]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【生息】",
+            "en": "[Present the Map]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " (lose HP effect), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【献图】",
+            "en": "[Savage Oppression]"
+          },
+          {
+            "kind": "body",
+            "cn": "失去体力的效果、",
+            "en": " can activate or execute."
+          },
+          {
+            "kind": "skill",
+            "cn": "【暴凌】",
+            "en": "[暴凌]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -386,8 +826,28 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【巧变】、【克己】。",
-            "en": "[Agile Maneuver], [Self-Discipline] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【巧变】",
+            "en": "[Self-Discipline]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【克己】",
+            "en": "[克己]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -404,8 +864,28 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【星舞】、【庸肆②】。",
-            "en": "[Star Dance], [Debauched②] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【星舞】",
+            "en": "[Debauched②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【庸肆②】",
+            "en": "[庸肆②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -440,8 +920,38 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【固政】、【旋风②】、【琴音】。",
-            "en": "[Consolidate Authority], [Whirlwind②], [Zither Melody] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【固政】",
+            "en": "[Whirlwind②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【旋风②】",
+            "en": "[Zither Melody]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【琴音】",
+            "en": "[琴音]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -476,8 +986,108 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【据守】、【骁果】、【护援】、【秘计】、【举荐】、【闭月】、【崩坏】、【绝策】、【狂风】、【大雾】等技能。",
-            "en": "Skills including [Steadfast Defense], [Valiant Drive], [Guard and Aid], [Secret Plan], [Commend], [Eclipse the Moon], [Collapse], [Decisive Stratagem], [Gale], [Great Fog] and others can activate."
+            "cn": "能发动：",
+            "en": "Skills including "
+          },
+          {
+            "kind": "skill",
+            "cn": "【据守】",
+            "en": "[Steadfast Defense]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【骁果】",
+            "en": "[Valiant Drive]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【护援】",
+            "en": "[Guard and Aid]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【秘计】",
+            "en": "[Secret Plan]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【举荐】",
+            "en": "[Commend]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【闭月】",
+            "en": "[Eclipse the Moon]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【崩坏】",
+            "en": "[Collapse]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【绝策】",
+            "en": "[Decisive Stratagem]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【狂风】",
+            "en": "[Gale]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【大雾】",
+            "en": "[Great Fog]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。",
+            "en": " and others can activate."
           }
         ],
         "examples": []
@@ -530,8 +1140,58 @@
           },
           {
             "kind": "body",
-            "cn": "该角色的回合所有阶段均执行完毕，回合即将结束。能发动/执行：【横江②】、【放权】弃置手牌令他人额外行动的效果、【谦逊】获得所有「节」的效果、【窃听】、【咒缚】获得武将牌旁「咒」的效果。",
-            "en": "All phases have completed; the turn is about to end. Skills/effects that can activate: [Traverse the River②], [Abdicate] (discard to grant extra turn), [Humility] (gain all Restraint tokens), [Eavesdrop], [Curse Bind] (gain Curse tokens)."
+            "cn": "该角色的回合所有阶段均执行完毕，回合即将结束。能发动/执行：",
+            "en": "All phases have completed; the turn is about to end. Skills/effects that can activate: "
+          },
+          {
+            "kind": "skill",
+            "cn": "【横江②】",
+            "en": "[Traverse the River②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【放权】",
+            "en": "[Abdicate]"
+          },
+          {
+            "kind": "body",
+            "cn": "弃置手牌令他人额外行动的效果、",
+            "en": " (discard to grant extra turn), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【谦逊】",
+            "en": "[Humility]"
+          },
+          {
+            "kind": "body",
+            "cn": "获得所有「节」的效果、",
+            "en": " (gain all Restraint tokens), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【窃听】",
+            "en": "[Eavesdrop]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【咒缚】",
+            "en": "[Curse Bind]"
+          },
+          {
+            "kind": "body",
+            "cn": "获得武将牌旁「咒」的效果。",
+            "en": " (gain Curse tokens)."
           }
         ],
         "examples": []
@@ -548,8 +1208,48 @@
           },
           {
             "kind": "body",
-            "cn": "该角色的回合已经结束。「该角色的回合外」即从此时机开始。能发动：【博图】、【化身②】、【戚乱】、【连破】。",
-            "en": "The turn has ended. \"Outside this character's turn\" begins from this timing. [Broad Plans], [Shapeshifter②], [Tragic Chaos], [Supreme Advance] can activate."
+            "cn": "该角色的回合已经结束。「该角色的回合外」即从此时机开始。能发动：",
+            "en": "The turn has ended. \"Outside this character's turn\" begins from this timing. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【博图】",
+            "en": "[Broad Plans]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【化身②】",
+            "en": "[Shapeshifter②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【戚乱】",
+            "en": "[Tragic Chaos]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【连破】",
+            "en": "[Supreme Advance]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -724,8 +1424,18 @@
           },
           {
             "kind": "body",
-            "cn": "将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆，然后结算【奔袭①】。",
-            "en": "all remaining physical cards in the Processing Zone are placed into the Discard Pile, then [Lightning Raid①] is resolved."
+            "cn": "将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆，然后结算",
+            "en": "all remaining physical cards in the Processing Zone are placed into the Discard Pile, then "
+          },
+          {
+            "kind": "skill",
+            "cn": "【奔袭①】",
+            "en": "[Lightning Raid①]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " is resolved."
           }
         ],
         "examples": []
@@ -783,8 +1493,68 @@
           },
           {
             "kind": "body",
-            "cn": "声明牌名并展示实体牌。能发动：【丈八蛇矛】、【倾国】、【武圣】、【龙胆】、【蛊惑】、【龙魂】等技能。",
-            "en": "Declare card name and reveal physical card. Skills such as [Serpent Spear], [Fallen Country], [Saint of War], [Dragon Courage], [Bewitchment], [Dragon Soul] can activate."
+            "cn": "声明牌名并展示实体牌。能发动：",
+            "en": "Declare card name and reveal physical card. Skills such as "
+          },
+          {
+            "kind": "card",
+            "cn": "【丈八蛇矛】",
+            "en": "[Serpent Spear]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【倾国】",
+            "en": "[Fallen Country]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【武圣】",
+            "en": "[Saint of War]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【龙胆】",
+            "en": "[Dragon Courage]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【蛊惑】",
+            "en": "[Bewitchment]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【龙魂】",
+            "en": "[Dragon Soul]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -806,8 +1576,48 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【涯角】、【龙胆②（阵）】、【雷击】，以及装备技能【银月枪】。",
-            "en": "Skills [Far Reaches], [Dragon Courage②], [Thunder Strike], and [Moon Spear] can activate."
+            "cn": "能发动：",
+            "en": "Skills "
+          },
+          {
+            "kind": "skill",
+            "cn": "【涯角】",
+            "en": "[Far Reaches]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【龙胆②（阵）】",
+            "en": "[Dragon Courage②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【雷击】",
+            "en": "[Thunder Strike]"
+          },
+          {
+            "kind": "body",
+            "cn": "，以及装备技能",
+            "en": ", and "
+          },
+          {
+            "kind": "skill",
+            "cn": "【银月枪】",
+            "en": "[Moon Spear]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -919,8 +1729,28 @@
           },
           {
             "kind": "body",
-            "cn": "此时此牌仍在原区域里。能发动：【章武②】、【纵玄】。",
-            "en": "The card is still in its original zone. [Zhang Wu②], [Release the Esoteric] can activate."
+            "cn": "此时此牌仍在原区域里。能发动：",
+            "en": "The card is still in its original zone. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【章武②】",
+            "en": "[Zhang Wu②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【纵玄】",
+            "en": "[Release the Esoteric]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -942,8 +1772,48 @@
           },
           {
             "kind": "body",
-            "cn": "依次处理：Ⅰ.若牌堆空但弃牌堆有牌，系统将弃牌堆以随机顺序置入牌堆；Ⅱ.能发动多种武将技能（如【落英①②】、【伤逝】、【连营】等）及装备技能（如【白银狮子②】）。",
-            "en": "Process in order: Ⅰ. If Draw Pile empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; Ⅱ. Various skills (e.g. [Fallen Blossoms①②], [Mourn the Fallen], [Linked Camps]) and equipment skills (e.g. [Silver Lion Helmet②]) can activate."
+            "cn": "依次处理：Ⅰ.若牌堆空但弃牌堆有牌，系统将弃牌堆以随机顺序置入牌堆；Ⅱ.能发动多种武将技能（如",
+            "en": "Process in order: Ⅰ. If Draw Pile empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; Ⅱ. Various skills (e.g. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【落英①②】",
+            "en": "[Fallen Blossoms①②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【伤逝】",
+            "en": "[Mourn the Fallen]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【连营】",
+            "en": "[Linked Camps]"
+          },
+          {
+            "kind": "body",
+            "cn": "等）及装备技能（如",
+            "en": ") and equipment skills (e.g. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【白银狮子②】",
+            "en": "[Silver Lion Helmet②]"
+          },
+          {
+            "kind": "body",
+            "cn": "）。",
+            "en": ") can activate."
           }
         ],
         "examples": []
@@ -989,8 +1859,28 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【解围】、【法恩】。",
-            "en": "[Break the Siege], [Grace of Law] can activate."
+            "cn": "能发动",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【解围】",
+            "en": "[Grace of Law]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【法恩】",
+            "en": "[法恩]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1007,8 +1897,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【法恩】。",
-            "en": "[Grace of Law] can activate."
+            "cn": "能发动",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【法恩】",
+            "en": "[法恩]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1025,8 +1925,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【闺秀①】。",
-            "en": "[Blushing Beauty①] can activate."
+            "cn": "能发动",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【闺秀①】",
+            "en": "[闺秀①]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1043,8 +1953,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【闺秀②】。",
-            "en": "[Blushing Beauty②] can activate."
+            "cn": "能发动",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【闺秀②】",
+            "en": "[闺秀②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1061,8 +1981,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动【鹰扬】。",
-            "en": "[Eagle Supremacy] can activate."
+            "cn": "能发动",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【鹰扬】",
+            "en": "[鹰扬]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1099,8 +2029,18 @@
           },
           {
             "kind": "body",
-            "cn": "确定判定牌。能执行：【咒缚】将「咒」作为判定牌的效果。",
-            "en": "The Judgment Card is determined. [Curse Bind] (use Curse token as Judgment Card) can execute."
+            "cn": "确定判定牌。能执行：",
+            "en": "The Judgment Card is determined. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【咒缚】",
+            "en": "[Curse Bind]"
+          },
+          {
+            "kind": "body",
+            "cn": "将「咒」作为判定牌的效果。",
+            "en": " (use Curse token as Judgment Card) can execute."
           }
         ],
         "examples": []
@@ -1122,8 +2062,38 @@
           },
           {
             "kind": "body",
-            "cn": "判定牌等待生效。能发动：【鬼才】、【缓释】、【鬼道】等技能（可替换判定牌）。",
-            "en": "Card is waiting to take effect. Skills such as [Demonic Wit], [Delayed Release], [Ghost Path] (can replace the Judgment Card) can activate."
+            "cn": "判定牌等待生效。能发动：",
+            "en": "Card is waiting to take effect. Skills such as "
+          },
+          {
+            "kind": "skill",
+            "cn": "【鬼才】",
+            "en": "[Demonic Wit]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【缓释】",
+            "en": "[Delayed Release]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【鬼道】",
+            "en": "[Ghost Path]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能（可替换判定牌）。",
+            "en": " (can replace the Judgment Card) can activate."
           }
         ],
         "examples": []
@@ -1145,8 +2115,48 @@
           },
           {
             "kind": "body",
-            "cn": "确定此次判定的结果。能发动：【天妒】、【颂威】、【屯田】将判定牌置于武将牌上的效果、【双雄】获得判定牌的效果。",
-            "en": "Result is confirmed. [Heaven's Envy], [Laud Authority], [Field Farming] (place on General Card), [Twin Warriors] (gain Judgment Card) can activate."
+            "cn": "确定此次判定的结果。能发动：",
+            "en": "Result is confirmed. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【天妒】",
+            "en": "[Heaven's Envy]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【颂威】",
+            "en": "[Laud Authority]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【屯田】",
+            "en": "[Field Farming]"
+          },
+          {
+            "kind": "body",
+            "cn": "将判定牌置于武将牌上的效果、",
+            "en": " (place on General Card), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【双雄】",
+            "en": "[Twin Warriors]"
+          },
+          {
+            "kind": "body",
+            "cn": "获得判定牌的效果。",
+            "en": " (gain Judgment Card) can activate."
           }
         ],
         "examples": []
@@ -1178,8 +2188,18 @@
           },
           {
             "kind": "body",
-            "cn": "触发【绝情】（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。",
-            "en": "[Heartless] triggers — the character loses HP equal to the base damage value instead; no Damage Resolution is conducted."
+            "cn": "触发",
+            "en": " triggers — the character loses HP equal to the base damage value instead; no Damage Resolution is conducted."
+          },
+          {
+            "kind": "skill",
+            "cn": "【绝情】",
+            "en": "[绝情]"
+          },
+          {
+            "kind": "body",
+            "cn": "（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。",
+            "en": "（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。"
           }
         ],
         "examples": []
@@ -1274,8 +2294,28 @@
           },
           {
             "kind": "body",
-            "cn": "能执行【狂风】、【大雾】的效果（防止伤害）。",
-            "en": "[Gale], [Great Fog] effects (prevent damage) can execute."
+            "cn": "能执行",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【狂风】",
+            "en": "[Great Fog]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " effects (prevent damage) can execute."
+          },
+          {
+            "kind": "skill",
+            "cn": "【大雾】",
+            "en": "[大雾]"
+          },
+          {
+            "kind": "body",
+            "cn": "的效果（防止伤害）。",
+            "en": "的效果（防止伤害）。"
           }
         ],
         "examples": []
@@ -1297,8 +2337,78 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【裸衣】伤害值+1的效果、【忠义②】、【暗箭】、【穿心】等武将技能，以及装备技能【麒麟弓】、【寒冰剑】、【古锭刀】。",
-            "en": "[Bare-Chested] (+1 damage), [Fathers' Legacy②], [Arrow from the Dark], [Piercing Heart] and others, plus equipment skills [Kirin Bow], [Frost Blade], [Ancient Scimitar] can activate."
+            "cn": "能发动：",
+            "en": " (+1 damage), "
+          },
+          {
+            "kind": "skill",
+            "cn": "【裸衣】",
+            "en": "[Fathers' Legacy②]"
+          },
+          {
+            "kind": "body",
+            "cn": "伤害值+1的效果、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【忠义②】",
+            "en": "[Arrow from the Dark]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【暗箭】",
+            "en": "[Piercing Heart]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " and others, plus equipment skills "
+          },
+          {
+            "kind": "skill",
+            "cn": "【穿心】",
+            "en": "[Kirin Bow]"
+          },
+          {
+            "kind": "body",
+            "cn": "等武将技能，以及装备技能",
+            "en": ", "
+          },
+          {
+            "kind": "card",
+            "cn": "【麒麟弓】",
+            "en": "[Frost Blade]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "card",
+            "cn": "【寒冰剑】",
+            "en": "[Ancient Scimitar]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "card",
+            "cn": "【古锭刀】",
+            "en": "[古锭刀]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1320,8 +2430,78 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【仁心】、【天香】、【骄矜】、【名士】等武将技能，以及装备技能【藤甲②】、【白银狮子①】、【太平要术①】。",
-            "en": "[Benevolent Heart], [Celestial Fragrance], [Haughty Pride], [Noble Scholar] and others, plus [Rattan Armour②], [Silver Lion Helmet①], [Talisman of Peace①] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【仁心】",
+            "en": "[Celestial Fragrance]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【天香】",
+            "en": "[Haughty Pride]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【骄矜】",
+            "en": "[Noble Scholar]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " and others, plus "
+          },
+          {
+            "kind": "skill",
+            "cn": "【名士】",
+            "en": "[Rattan Armour②]"
+          },
+          {
+            "kind": "body",
+            "cn": "等武将技能，以及装备技能",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【藤甲②】",
+            "en": "[Silver Lion Helmet①]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【白银狮子①】",
+            "en": "[Talisman of Peace①]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【太平要术①】",
+            "en": "[太平要术①]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1343,8 +2523,58 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【忘隙】、【狂骨】、【烈刃】、【破军】等武将技能，以及装备技能【三尖两刃刀】。",
-            "en": "[Set Aside Grudges], [Bloodthirst], [Blazing Blade], [Shatter the Army] and others, plus [Three-Point Glaive] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【忘隙】",
+            "en": "[Bloodthirst]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【狂骨】",
+            "en": "[Blazing Blade]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【烈刃】",
+            "en": "[Shatter the Army]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " and others, plus "
+          },
+          {
+            "kind": "skill",
+            "cn": "【破军】",
+            "en": "[Three-Point Glaive]"
+          },
+          {
+            "kind": "body",
+            "cn": "等武将技能，以及装备技能",
+            "en": " can activate."
+          },
+          {
+            "kind": "card",
+            "cn": "【三尖两刃刀】",
+            "en": "[三尖两刃刀]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1366,8 +2596,68 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【奸雄】、【反馈】、【刚烈】、【遗计】、【节命】、【放逐】等多种武将技能。",
-            "en": "[Treacherous Hero], [Retribution], [Unyielding], [Posthumous Plan], [Preserve Lives], [Exile] and many others can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【奸雄】",
+            "en": "[Retribution]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【反馈】",
+            "en": "[Unyielding]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【刚烈】",
+            "en": "[Posthumous Plan]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【遗计】",
+            "en": "[Preserve Lives]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【节命】",
+            "en": "[Exile]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " and many others can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【放逐】",
+            "en": "[放逐]"
+          },
+          {
+            "kind": "body",
+            "cn": "等多种武将技能。",
+            "en": "等多种武将技能。"
           }
         ],
         "examples": []
@@ -1389,8 +2679,18 @@
           },
           {
             "kind": "body",
-            "cn": "执行【天香】摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。",
-            "en": "[Celestial Fragrance] draw effect executes; if the character was Chained and received elemental damage, they must Reset."
+            "cn": "执行",
+            "en": " draw effect executes; if the character was Chained and received elemental damage, they must Reset."
+          },
+          {
+            "kind": "skill",
+            "cn": "【天香】",
+            "en": "[天香]"
+          },
+          {
+            "kind": "body",
+            "cn": "摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。",
+            "en": "摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。"
           }
         ],
         "examples": []
@@ -1407,8 +2707,18 @@
           },
           {
             "kind": "body",
-            "cn": "依次处理：Ⅰ.【酒诗②】；Ⅱ.触发连环。",
-            "en": "Process in order: Ⅰ. [Wine and Verse②]; Ⅱ. Trigger chain propagation (if applicable)."
+            "cn": "依次处理：Ⅰ.",
+            "en": "Process in order: Ⅰ. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【酒诗②】",
+            "en": "[Wine and Verse②]"
+          },
+          {
+            "kind": "body",
+            "cn": "；Ⅱ.触发连环。",
+            "en": "; Ⅱ. Trigger chain propagation (if applicable)."
           }
         ],
         "examples": []
@@ -1459,8 +2769,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【黄巾天兵符②】（防止失去体力）。若防止，结算直接结束；否则进行扣减体力结算。",
-            "en": "[Yellow Turban Talisman②] (prevent HP loss) can activate. If prevented, resolution ends; otherwise HP Reduction Resolution is conducted."
+            "cn": "能发动：",
+            "en": " (prevent HP loss) can activate. If prevented, resolution ends; otherwise HP Reduction Resolution is conducted."
+          },
+          {
+            "kind": "skill",
+            "cn": "【黄巾天兵符②】",
+            "en": "[黄巾天兵符②]"
+          },
+          {
+            "kind": "body",
+            "cn": "（防止失去体力）。若防止，结算直接结束；否则进行扣减体力结算。",
+            "en": "（防止失去体力）。若防止，结算直接结束；否则进行扣减体力结算。"
           }
         ],
         "examples": []
@@ -1482,8 +2802,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【诈降】。",
-            "en": "[Feigned Surrender] can activate."
+            "cn": "能发动：",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【诈降】",
+            "en": "[诈降]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1520,8 +2850,38 @@
           },
           {
             "kind": "body",
-            "cn": "须检测【酒诗②】、【狂骨】、【暴虐】的发动条件，受到属性伤害的角色重置的条件，以及触发连环的条件。",
-            "en": "Check conditions for [Wine and Verse②], [Bloodthirst], [Tyranny], Reset condition for elemental damage, and chain propagation condition."
+            "cn": "须检测",
+            "en": "Check conditions for "
+          },
+          {
+            "kind": "skill",
+            "cn": "【酒诗②】",
+            "en": "[Wine and Verse②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【狂骨】",
+            "en": "[Bloodthirst]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【暴虐】",
+            "en": "[Tyranny]"
+          },
+          {
+            "kind": "body",
+            "cn": "的发动条件，受到属性伤害的角色重置的条件，以及触发连环的条件。",
+            "en": ", Reset condition for elemental damage, and chain propagation condition."
           }
         ],
         "examples": []
@@ -1543,8 +2903,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【不屈（旧风）】。然后按最终值扣减体力。若体力降至0，则进行濒死结算。",
-            "en": "[Indomitable] can activate. HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted."
+            "cn": "能发动：",
+            "en": " can activate. HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted."
+          },
+          {
+            "kind": "skill",
+            "cn": "【不屈（旧风）】",
+            "en": "[不屈（旧风）]"
+          },
+          {
+            "kind": "body",
+            "cn": "。然后按最终值扣减体力。若体力降至0，则进行濒死结算。",
+            "en": "。然后按最终值扣减体力。若体力降至0，则进行濒死结算。"
           }
         ],
         "examples": []
@@ -1566,8 +2936,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【伤逝】。",
-            "en": "[Mourn the Fallen] can activate."
+            "cn": "能发动：",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【伤逝】",
+            "en": "[伤逝]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1604,8 +2984,18 @@
           },
           {
             "kind": "body",
-            "cn": "能产生影响的技能：【救援】（修改回复数值）。然后角色按照此数值回复体力。",
-            "en": "[Rescue] (modifies recovery amount) can influence this. Character then recovers HP by the determined amount."
+            "cn": "能产生影响的技能：",
+            "en": " (modifies recovery amount) can influence this. Character then recovers HP by the determined amount."
+          },
+          {
+            "kind": "skill",
+            "cn": "【救援】",
+            "en": "[救援]"
+          },
+          {
+            "kind": "body",
+            "cn": "（修改回复数值）。然后角色按照此数值回复体力。",
+            "en": "（修改回复数值）。然后角色按照此数值回复体力。"
           }
         ],
         "examples": []
@@ -1627,8 +3017,38 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【伤逝】、【淑慎】、【恩怨（旧将）①】。",
-            "en": "[Mourn the Fallen], [Gentle Virtue], [Gratitude and Grudges①] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【伤逝】",
+            "en": "[Gentle Virtue]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【淑慎】",
+            "en": "[Gratitude and Grudges①]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【恩怨（旧将）①】",
+            "en": "[恩怨（旧将）①]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1688,8 +3108,28 @@
           },
           {
             "kind": "body",
-            "cn": "若体力上限>0：能发动【伤逝】、【威重】。若体力上限=0：该角色死亡。",
-            "en": "If Max HP > 0: [Mourn the Fallen], [Imposing Presence] can activate. If Max HP = 0: that character dies."
+            "cn": "若体力上限>0：能发动",
+            "en": "If Max HP > 0: "
+          },
+          {
+            "kind": "skill",
+            "cn": "【伤逝】",
+            "en": "[Mourn the Fallen]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【威重】",
+            "en": "[Imposing Presence]"
+          },
+          {
+            "kind": "body",
+            "cn": "。若体力上限=0：该角色死亡。",
+            "en": " can activate. If Max HP = 0: that character dies."
           }
         ],
         "examples": []
@@ -1749,8 +3189,28 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【伤逝】、【威重】。",
-            "en": "[Mourn the Fallen], [Imposing Presence] can activate."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【伤逝】",
+            "en": "[Imposing Presence]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate."
+          },
+          {
+            "kind": "skill",
+            "cn": "【威重】",
+            "en": "[威重]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
@@ -1787,8 +3247,28 @@
           },
           {
             "kind": "body",
-            "cn": "若发动技能令A将体力值回复至1点，A存活，濒死结算完毕。能发动：【补益】、【随势①】。",
-            "en": "If a skill recovers A's HP to 1, A survives and resolution ends. [Supplement], [Follow the Situation①] can activate."
+            "cn": "若发动技能令A将体力值回复至1点，A存活，濒死结算完毕。能发动：",
+            "en": "If a skill recovers A's HP to 1, A survives and resolution ends. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【补益】",
+            "en": "[Supplement]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【随势①】",
+            "en": "[Follow the Situation①]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -1810,8 +3290,58 @@
           },
           {
             "kind": "body",
-            "cn": "从当前回合角色开始按逆时针方向依次响应，直到A将体力值首次回复至1点或1点以上为止（A存活，结算完毕）；若当前回合角色的上家响应完毕后A的体力值依然为0，A死亡，插入进行死亡结算。能发动：【涅槃】、【不屈①】、【仁心（旧将）】等技能。能使用：【桃】、【酒】。",
-            "en": "Starting from current turn's character, counter-clockwise, each responds until A's HP first reaches 1+ (A survives). If A's HP is still 0 after the current turn character's Left Neighbor responds, A dies and Death Resolution is inserted. Skills such as [Nirvana], [Unyielding①], [Benevolent Heart] can activate. [Peach] and [Wine] can be used."
+            "cn": "从当前回合角色开始按逆时针方向依次响应，直到A将体力值首次回复至1点或1点以上为止（A存活，结算完毕）；若当前回合角色的上家响应完毕后A的体力值依然为0，A死亡，插入进行死亡结算。能发动：",
+            "en": "Starting from current turn's character, counter-clockwise, each responds until A's HP first reaches 1+ (A survives). If A's HP is still 0 after the current turn character's Left Neighbor responds, A dies and Death Resolution is inserted. Skills such as "
+          },
+          {
+            "kind": "skill",
+            "cn": "【涅槃】",
+            "en": "[Nirvana]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【不屈①】",
+            "en": "[Unyielding①]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【仁心（旧将）】",
+            "en": "[Benevolent Heart]"
+          },
+          {
+            "kind": "body",
+            "cn": "等技能。能使用：",
+            "en": " can activate. "
+          },
+          {
+            "kind": "card",
+            "cn": "【桃】",
+            "en": "[Peach]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " and "
+          },
+          {
+            "kind": "card",
+            "cn": "【酒】",
+            "en": "[Wine]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can be used."
           }
         ],
         "examples": [
@@ -1834,8 +3364,18 @@
           },
           {
             "kind": "body",
-            "cn": "能执行：【黩武】失去1点体力的效果。",
-            "en": "[Militarism] (lose 1 HP effect) can execute."
+            "cn": "能执行：",
+            "en": " (lose 1 HP effect) can execute."
+          },
+          {
+            "kind": "skill",
+            "cn": "【黩武】",
+            "en": "[黩武]"
+          },
+          {
+            "kind": "body",
+            "cn": "失去1点体力的效果。",
+            "en": "失去1点体力的效果。"
           }
         ],
         "examples": []
@@ -1932,8 +3472,18 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【焚心】。然后亮出身份牌。",
-            "en": "[Burn the Heart] can activate. Identity Card is then revealed."
+            "cn": "能发动：",
+            "en": " can activate. Identity Card is then revealed."
+          },
+          {
+            "kind": "skill",
+            "cn": "【焚心】",
+            "en": "[焚心]"
+          },
+          {
+            "kind": "body",
+            "cn": "。然后亮出身份牌。",
+            "en": "。然后亮出身份牌。"
           }
         ],
         "examples": []
@@ -1978,8 +3528,88 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：【行殇】、【藏机】、【挥泪】、【追忆】、【断肠】、【随势②】、【延祸】、【武魂②】。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。",
-            "en": "[Reap the Fallen], [Hidden Scheme], [Shed Tears], [In Memoriam], [Heartbreak], [Follow the Situation②], [Spread Calamity], [War Soul②] can activate. Then process: Ⅰ. System discards all cards in dead character's zones; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all; any kills Rebel: draw 3)."
+            "cn": "能发动：",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【行殇】",
+            "en": "[Hidden Scheme]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【藏机】",
+            "en": "[Shed Tears]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【挥泪】",
+            "en": "[In Memoriam]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【追忆】",
+            "en": "[Heartbreak]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【断肠】",
+            "en": "[Follow the Situation②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【随势②】",
+            "en": "[Spread Calamity]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【延祸】",
+            "en": "[War Soul②]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": " can activate. Then process: Ⅰ. System discards all cards in dead character's zones; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all; any kills Rebel: draw 3)."
+          },
+          {
+            "kind": "skill",
+            "cn": "【武魂②】",
+            "en": "[武魂②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。",
+            "en": "。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。"
           }
         ],
         "examples": []
@@ -2001,8 +3631,58 @@
           },
           {
             "kind": "body",
-            "cn": "能发动：武将技能【肃资】、【裂围】、【功獒】、【孝德】，以及装备技能【飞龙夺凤②】。",
-            "en": "General skills [Consolidate Resources], [Break the Encirclement], [Meritorious Valor], [Filial Virtue], and equipment skill [Soaring Dragon Blade②] can activate."
+            "cn": "能发动：武将技能",
+            "en": "General skills "
+          },
+          {
+            "kind": "skill",
+            "cn": "【肃资】",
+            "en": "[Consolidate Resources]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【裂围】",
+            "en": "[Break the Encirclement]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【功獒】",
+            "en": "[Meritorious Valor]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【孝德】",
+            "en": "[Filial Virtue]"
+          },
+          {
+            "kind": "body",
+            "cn": "，以及装备技能",
+            "en": ", and equipment skill "
+          },
+          {
+            "kind": "skill",
+            "cn": "【飞龙夺凤②】",
+            "en": "[Soaring Dragon Blade②]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": " can activate."
           }
         ],
         "examples": []
@@ -2053,8 +3733,38 @@
           },
           {
             "kind": "body",
-            "cn": "受到技能效果影响不能使用此牌（如【铁骑】、【鸡肋】、【完杀】等）；",
-            "en": "A skill effect prevents it (e.g. [Iron Cavalry], [Chicken Rib], [Total Annihilation]); "
+            "cn": "受到技能效果影响不能使用此牌（如",
+            "en": "A skill effect prevents it (e.g. "
+          },
+          {
+            "kind": "skill",
+            "cn": "【铁骑】",
+            "en": "[Iron Cavalry]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【鸡肋】",
+            "en": "[Chicken Rib]"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
+            "en": ", "
+          },
+          {
+            "kind": "skill",
+            "cn": "【完杀】",
+            "en": "[Total Annihilation]"
+          },
+          {
+            "kind": "body",
+            "cn": "等）；",
+            "en": "); "
           },
           {
             "kind": "number",
@@ -2063,8 +3773,18 @@
           },
           {
             "kind": "body",
-            "cn": "使用此牌的次数达到上限（主要针对【杀】的使用次数限制）；",
-            "en": "The frequency limit has been reached (mainly for [Kill]); "
+            "cn": "使用此牌的次数达到上限（主要针对",
+            "en": "The frequency limit has been reached (mainly for "
+          },
+          {
+            "kind": "card",
+            "cn": "【杀】",
+            "en": "[Kill]"
+          },
+          {
+            "kind": "body",
+            "cn": "的使用次数限制）；",
+            "en": "); "
           },
           {
             "kind": "number",
@@ -2083,7 +3803,43 @@
         "type": "rule",
         "cn": "对于【杀】的次数限制：一名角色只有于出牌阶段空闲时间点使用【杀】才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的【杀】优先计入额定次数。",
         "en": "Regarding [Kill] frequency limits: limits only apply when using [Kill] at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. [Kill] uses count toward the standard limit first.",
-        "segments": [],
+        "segments": [
+          {
+            "kind": "body",
+            "cn": "对于",
+            "en": "Regarding "
+          },
+          {
+            "kind": "card",
+            "cn": "【杀】",
+            "en": "[Kill]"
+          },
+          {
+            "kind": "body",
+            "cn": "的次数限制：一名角色只有于出牌阶段空闲时间点使用",
+            "en": " frequency limits: limits only apply when using "
+          },
+          {
+            "kind": "card",
+            "cn": "【杀】",
+            "en": "[Kill]"
+          },
+          {
+            "kind": "body",
+            "cn": "才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的",
+            "en": " at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. "
+          },
+          {
+            "kind": "card",
+            "cn": "【杀】",
+            "en": "[Kill]"
+          },
+          {
+            "kind": "body",
+            "cn": "优先计入额定次数。",
+            "en": " uses count toward the standard limit first."
+          }
+        ],
         "examples": [
           {
             "cn": "无次数限制的技能：【诸葛连弩】、【咆哮】、【枪舞】、【陷阵】（拼点赢）。额外次数上限+1：【将驰②】、【虎啸】、【诈降】、【天义】（拼点赢）。不计入限制：【龙吟】、【枪舞】。",
@@ -2204,7 +3960,23 @@
         "type": "note",
         "cn": "一些技能中提到的概念（如「若此【杀】造成过伤害」、造成伤害的牌、渠道等），以及「使用/打出/弃置（过）牌」等，都是指此虚拟牌。",
         "en": "Concepts in skills — such as \"if this [Kill] has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" — all refer to the virtual card.",
-        "segments": [],
+        "segments": [
+          {
+            "kind": "body",
+            "cn": "一些技能中提到的概念（如「若此",
+            "en": "Concepts in skills — such as \"if this "
+          },
+          {
+            "kind": "card",
+            "cn": "【杀】",
+            "en": "[Kill]"
+          },
+          {
+            "kind": "body",
+            "cn": "造成过伤害」、造成伤害的牌、渠道等），以及「使用/打出/弃置（过）牌」等，都是指此虚拟牌。",
+            "en": " has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" — all refer to the virtual card."
+          }
+        ],
         "examples": []
       }
     ],

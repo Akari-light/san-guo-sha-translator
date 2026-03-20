@@ -9,10 +9,14 @@ class CodexEntryScreen extends StatefulWidget {
   final CodexEntryDTO entry;
   final bool showChinese;
 
+  /// Optional. When provided, [card] and [skill] segments become tappable.
+  final SegmentTapCallback? onSegmentTap;
+
   const CodexEntryScreen({
     super.key,
     required this.entry,
     required this.showChinese,
+    this.onSegmentTap,
   });
 
   @override
@@ -188,6 +192,7 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
                           chapter: e.chapter,
                           showChinese: showCn,
                           isDark: isDark,
+                          onSegmentTap: widget.onSegmentTap,
                         ))
                     .toList(),
               ),

@@ -1,16 +1,26 @@
 // lib/features/codex/presentation/widgets/codex_entry_card.dart
+//
+// Displays a single Codex entry inline in the browse list.
+//
+// No card-level tap / InkWell — the entry detail screen has been removed since
+// all content is already visible in the expanded list. Tappable interactions
+// are handled entirely by segment recognizers inside CodexRuleBlockWidget
+// ([card] and [skill] spans show a bottom sheet via onSegmentTap).
 
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_rule_block_widget.dart';
 
-class CodexEntryCard extends StatefulWidget {
+class CodexEntryCard extends StatelessWidget {
   final CodexEntryDTO entry;
   final bool showChinese;
   final bool isDark;
   final bool showChapterBadge;
-  final VoidCallback onTap;
+
+  /// When provided, [card] and [skill] segments become tappable and show a
+  /// reference bottom sheet.
+  final SegmentTapCallback? onSegmentTap;
 
   const CodexEntryCard({
     super.key,
@@ -18,123 +28,112 @@ class CodexEntryCard extends StatefulWidget {
     required this.showChinese,
     required this.isDark,
     this.showChapterBadge = false,
-    required this.onTap,
+    this.onSegmentTap,
   });
 
   @override
-  State<CodexEntryCard> createState() => _CodexEntryCardState();
-}
-
-class _CodexEntryCardState extends State<CodexEntryCard> {
-  @override
   Widget build(BuildContext context) {
-    final e      = widget.entry;
-    final isDark = widget.isDark;
-    final showCn = widget.showChinese;
+    final e      = entry;
+    final showCn = showChinese;
 
-    final divider    = AppTheme.codexDivider(isDark);
-    final bgColor    = isDark ? AppTheme.codexSectionHeaderBgDark.withAlpha(0) : Colors.white;
-    final primaryTerm   = showCn ? e.termCn   : e.termEn;
-    final secondaryTerm = showCn ? e.termEn   : e.termCn;
-    final definition    = showCn ? e.definitionCn : e.definitionEn;
+    final divider        = AppTheme.codexDivider(isDark);
+    final primaryTerm    = showCn ? e.termCn : e.termEn;
+    final secondaryTerm  = showCn ? e.termEn : e.termCn;
+    final definition     = showCn ? e.definitionCn : e.definitionEn;
 
-    return InkWell(
-      onTap: widget.onTap,
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
-        decoration: BoxDecoration(
-          color: bgColor,
-          border: Border(bottom: BorderSide(color: divider, width: 0.5)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Term row
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        primaryTerm,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          height: 1.3,
-                          color: AppTheme.codexTerm(isDark),
-                        ),
-                      ),
-                      if (secondaryTerm.isNotEmpty &&
-                          secondaryTerm != primaryTerm)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3),
-                          child: Text(
-                            secondaryTerm,
-                            style: TextStyle(
-                              fontSize: 11.5,
-                              color: AppTheme.codexSecondaryText(isDark),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    if (e.badge != null)
-                      _SkillBadge(badge: e.badge!, isDark: isDark),
-                    if (widget.showChapterBadge) ...[
-                      if (e.badge != null) const SizedBox(height: 4),
-                      _ChapterBadge(chapter: e.chapter, isDark: isDark),
-                    ],
-                  ],
-                ),
-              ],
-            ),
-
-            // Definition
-            if (definition.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  definition,
-                  style: TextStyle(
-                    fontSize: 13,
-                    height: 1.9,
-                    color: AppTheme.codexDefinition(isDark),
-                  ),
-                ),
-              ),
-
-            // Rule blocks (◆ rules, notes, cautions — examples rendered inline within each block)
-            if (e.rules.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: divider, width: 0.5)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // ── Term row ──────────────────────────────────────────────────────
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: e.rules
-                      .map((b) => CodexRuleBlockWidget(
-                            block: b,
-                            chapter: e.chapter,
-                            showChinese: showCn,
-                            isDark: isDark,
-                          ))
-                      .toList(),
+                  children: [
+                    Text(
+                      primaryTerm,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        height: 1.3,
+                        color: AppTheme.codexTerm(isDark),
+                      ),
+                    ),
+                    if (secondaryTerm.isNotEmpty &&
+                        secondaryTerm != primaryTerm)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3),
+                        child: Text(
+                          secondaryTerm,
+                          style: TextStyle(
+                            fontSize: 11.5,
+                            color: AppTheme.codexSecondaryText(isDark),
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
               ),
-          ],
-        ),
+              const SizedBox(width: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  if (e.badge != null)
+                    _SkillBadge(badge: e.badge!, isDark: isDark),
+                  if (showChapterBadge) ...[
+                    if (e.badge != null) const SizedBox(height: 4),
+                    _ChapterBadge(chapter: e.chapter, isDark: isDark),
+                  ],
+                ],
+              ),
+            ],
+          ),
+
+          // ── Definition ────────────────────────────────────────────────────
+          if (definition.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                definition,
+                style: TextStyle(
+                  fontSize: 13,
+                  height: 1.9,
+                  color: AppTheme.codexDefinition(isDark),
+                ),
+              ),
+            ),
+
+          // ── Rule blocks ───────────────────────────────────────────────────
+          if (e.rules.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: e.rules
+                    .map((b) => CodexRuleBlockWidget(
+                          block: b,
+                          chapter: e.chapter,
+                          showChinese: showCn,
+                          isDark: isDark,
+                          onSegmentTap: onSegmentTap,
+                        ))
+                    .toList(),
+              ),
+            ),
+        ],
       ),
     );
   }
 }
 
-// ── Skill-type badge pill ─────────────────────────────────────────────────────
-// Maps badge string from glossary.json to AppTheme skill type colors.
+// ── Skill-type badge ──────────────────────────────────────────────────────────
 
 class _SkillBadge extends StatelessWidget {
   final String badge;
@@ -143,29 +142,31 @@ class _SkillBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Badge values: "locked" | "limited" | "awakening" | "lord"
-    // Re-use the existing AppTheme skill type color system.
     Color bg, text, border;
     switch (badge) {
       case 'locked':
-        bg = AppTheme.codexNumBg('glossary', isDark);
-        text = AppTheme.codexNumText('glossary', isDark);
+        bg     = AppTheme.codexNumBg('glossary', isDark);
+        text   = AppTheme.codexNumText('glossary', isDark);
         border = AppTheme.codexNumBorder('glossary', isDark);
       case 'limited':
-        bg = isDark ? const Color(0xFF260D06) : const Color(0xFFFAECE7);
-        text = isDark ? AppTheme.skillLimited : const Color(0xFF4A1B0C);
-        border = isDark ? AppTheme.skillLimited.withAlpha(100) : AppTheme.skillLimited.withAlpha(180);
+        bg     = isDark ? const Color(0xFF260D06) : const Color(0xFFFAECE7);
+        text   = isDark ? AppTheme.skillLimited : const Color(0xFF4A1B0C);
+        border = isDark
+            ? AppTheme.skillLimited.withAlpha(100)
+            : AppTheme.skillLimited.withAlpha(180);
       case 'awakening':
-        bg = isDark ? const Color(0xFF150F33) : const Color(0xFFEEEDFE);
-        text = isDark ? AppTheme.skillAwakening : const Color(0xFF3C3489);
-        border = isDark ? AppTheme.skillAwakening.withAlpha(100) : AppTheme.skillAwakening.withAlpha(180);
+        bg     = isDark ? const Color(0xFF150F33) : const Color(0xFFEEEDFE);
+        text   = isDark ? AppTheme.skillAwakening : const Color(0xFF3C3489);
+        border = isDark
+            ? AppTheme.skillAwakening.withAlpha(100)
+            : AppTheme.skillAwakening.withAlpha(180);
       case 'lord':
-        bg = AppTheme.codexNumBg('rules', isDark);
-        text = AppTheme.codexNumText('rules', isDark);
+        bg     = AppTheme.codexNumBg('rules', isDark);
+        text   = AppTheme.codexNumText('rules', isDark);
         border = AppTheme.codexNumBorder('rules', isDark);
       default:
-        bg = AppTheme.codexNumBg('setup', isDark);
-        text = AppTheme.codexNumText('setup', isDark);
+        bg     = AppTheme.codexNumBg('setup', isDark);
+        text   = AppTheme.codexNumText('setup', isDark);
         border = AppTheme.codexNumBorder('setup', isDark);
     }
     final label = badge[0].toUpperCase() + badge.substring(1);
@@ -190,7 +191,7 @@ class _SkillBadge extends StatelessWidget {
   }
 }
 
-// ── Chapter badge (search results only) ──────────────────────────────────────
+// ── Chapter badge (search results) ───────────────────────────────────────────
 
 class _ChapterBadge extends StatelessWidget {
   final String chapter;

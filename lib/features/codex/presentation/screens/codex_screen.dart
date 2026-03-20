@@ -2,13 +2,15 @@
 //
 // Codex tab body — NOT a Scaffold. Mounted by main.dart as:
 //   _screens[0] = CodexScreen(
-//     searchNotifier:   _codexSearchNotifier,
+//     searchNotifier:      _codexSearchNotifier,
 //     showChineseNotifier: _codexLangNotifier,
 //   )
 //
-// main.dart owns the AppBar (title TextField + search icon + lang toggle
-// action). This widget owns only the chapter tab bar and the content below it.
-// This is identical in structure to GeneralScreen and LibraryScreen.
+// main.dart owns the AppBar. This widget owns the chapter tab bar and the
+// content below it.
+//
+// No entry detail screen — all content is displayed inline in the list.
+// Segment taps ([card] and [skill] text) open a reference bottom sheet instead.
 
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
@@ -17,17 +19,12 @@ import '../codex_chapter_config.dart';
 import '../widgets/codex_section_tile.dart';
 import '../widgets/codex_entry_card.dart';
 import '../widgets/codex_flow_step_tile.dart';
-import 'codex_entry_screen.dart';
-import '../../../../core/navigation/app_router.dart';
+import '../widgets/codex_reference_sheet.dart';
+import '../widgets/codex_rule_block_widget.dart';
 import '../../../../core/theme/app_theme.dart';
 
 class CodexScreen extends StatefulWidget {
-  /// Live search query — updated by main.dart AppBar TextField.
-  /// Same pattern as GeneralScreen.searchNotifier.
   final ValueNotifier<String> searchNotifier;
-
-  /// Lang toggle state — updated by main.dart AppBar action button.
-  /// false = EN primary, true = 中文 primary.
   final ValueNotifier<bool> showChineseNotifier;
 
   const CodexScreen({
@@ -46,14 +43,12 @@ class _CodexScreenState extends State<CodexScreen>
   late final TabController _tabController;
   int _activeChapterIndex = 1; // default: Glossary
 
-  // Per-chapter data cache
-  final Map<String, List<CodexEntryDTO>> _data = {};
-  final Map<String, bool> _loading = {};
+  final Map<String, List<CodexEntryDTO>> _data    = {};
+  final Map<String, bool>                _loading = {};
 
-  // Search results (cross-chapter, driven by searchNotifier)
   List<CodexEntryDTO> _searchResults = [];
-  bool _searchLoading = false;
-  String _lastQuery = '';
+  bool   _searchLoading = false;
+  String _lastQuery     = '';
 
   @override
   void initState() {
@@ -114,40 +109,40 @@ class _CodexScreenState extends State<CodexScreen>
       return;
     }
 
-    // Eagerly load all chapters so search is complete
-    for (final ch in kCodexChapters) {
-      _loadChapter(ch.key);
-    }
+    for (final ch in kCodexChapters) { _loadChapter(ch.key); }
 
     if (mounted) setState(() => _searchLoading = true);
     CodexLoader.instance.search(query).then((results) {
       if (mounted && widget.searchNotifier.value == query) {
-        setState(() {
-          _searchResults  = results;
-          _searchLoading  = false;
-        });
+        setState(() { _searchResults = results; _searchLoading = false; });
       }
     });
   }
 
-  // ── Navigation ─────────────────────────────────────────────────────────────
+  // ── Reference sheet ────────────────────────────────────────────────────────
 
-  void _openEntry(CodexEntryDTO entry) {
-    Navigator.of(context).push(detailRoute(
-      CodexEntryScreen(
-        entry: entry,
-        showChinese: widget.showChineseNotifier.value,
-      ),
-    ));
+  void _showReferenceSheet(String rawCn, bool isChinese) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    CodexReferenceSheet.show(
+      context: context,
+      bracketText: rawCn,
+      // rawCn is always the original Chinese bracket text from the segment,
+      // so resolution must always use isChinese:true regardless of display lang.
+      // showChinese controls the sheet's display language only.
+      isChinese: true,
+      isDark: isDark,
+      showChinese: widget.showChineseNotifier.value,
+    );
   }
+
+  SegmentTapCallback get _segmentTap =>
+      (rawCn, isChinese) => _showReferenceSheet(rawCn, isChinese);
 
   // ── Section grouping ───────────────────────────────────────────────────────
 
   Map<String, List<CodexEntryDTO>> _groupBySection(List<CodexEntryDTO> entries) {
     final map = <String, List<CodexEntryDTO>>{};
     for (final e in entries) {
-      // Composite key: sectionNum|titleCn|titleEn prevents §1.1 entries with
-      // different section_title_en from collapsing into one group.
       final key = '${e.sectionNum}|${e.sectionTitleCn}|${e.sectionTitleEn}';
       map.putIfAbsent(key, () => []).add(e);
     }
@@ -169,20 +164,16 @@ class _CodexScreenState extends State<CodexScreen>
           builder: (context, showChinese, _) {
             return Column(
               children: [
-                // Chapter tab bar — hidden when searching (same as Generals
-                // hiding faction headers when a search query is active)
                 if (!isSearching)
                   _buildTabBar(isDark, showChinese),
-
-                // Content
                 Expanded(
                   child: isSearching
                       ? _buildSearchResults(isDark, showChinese, query)
                       : TabBarView(
                           controller: _tabController,
                           children: kCodexChapters
-                              .map((ch) =>
-                                  _buildChapterView(ch.key, isDark, showChinese))
+                              .map((ch) => _buildChapterView(
+                                    ch.key, isDark, showChinese))
                               .toList(),
                         ),
                 ),
@@ -202,9 +193,6 @@ class _CodexScreenState extends State<CodexScreen>
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // AnimatedBuilder on _tabController ensures the tab bar rebuilds on
-          // every animation frame while swiping/tapping, keeping the indicator
-          // color and active text weight correct at all times.
           AnimatedBuilder(
             animation: _tabController,
             builder: (context, _) {
@@ -247,10 +235,7 @@ class _CodexScreenState extends State<CodexScreen>
               );
             },
           ),
-          Divider(
-              height: 1,
-              thickness: 1,
-              color: AppTheme.codexDivider(isDark)),
+          Divider(height: 1, thickness: 1, color: AppTheme.codexDivider(isDark)),
         ],
       ),
     );
@@ -260,10 +245,7 @@ class _CodexScreenState extends State<CodexScreen>
 
   Widget _buildChapterView(String key, bool isDark, bool showChinese) {
     final entries = _data[key];
-    if (_loading[key] == true && entries == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-    if (entries == null || entries.isEmpty) {
+    if (entries == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
@@ -277,15 +259,15 @@ class _CodexScreenState extends State<CodexScreen>
         final sectionKey = grouped.keys.elementAt(i);
         final parts = sectionKey.split('|');
         return CodexSectionTile(
-          sectionNum: parts[0],
-          titleCn:    parts[1],
-          titleEn:    parts[2],
-          chapterKey: key,
+          sectionNum:  parts[0],
+          titleCn:     parts[1],
+          titleEn:     parts[2],
+          chapterKey:  key,
           showChinese: showChinese,
-          isDark: isDark,
-          entries: grouped[sectionKey]!,
-          onEntryTap: _openEntry,
-          isFlow: isFlow,
+          isDark:      isDark,
+          entries:     grouped[sectionKey]!,
+          isFlow:      isFlow,
+          onSegmentTap: _segmentTap,
         );
       },
     );
@@ -316,7 +298,7 @@ class _CodexScreenState extends State<CodexScreen>
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 6),
           child: Text(
             '${_searchResults.length} result'
-            '${_searchResults.length != 1 ? 's' : ''} for "$query"',
+            '${_searchResults.length != 1 ? "s" : ""} for "$query"',
             style: TextStyle(
               fontSize: 11.5,
               color: AppTheme.codexSecondaryText(isDark),
@@ -335,20 +317,21 @@ class _CodexScreenState extends State<CodexScreen>
                       .asMap()
                       .entries
                       .map((e) => CodexFlowStepTile(
-                            block: e.value,
-                            index: e.key,
-                            showChinese: showChinese,
-                            isDark: isDark,
+                            block:        e.value,
+                            index:        e.key,
+                            showChinese:  showChinese,
+                            isDark:       isDark,
+                            onSegmentTap: _segmentTap,
                           ))
                       .toList(),
                 );
               }
               return CodexEntryCard(
-                entry: entry,
-                showChinese: showChinese,
-                isDark: isDark,
+                entry:        entry,
+                showChinese:  showChinese,
+                isDark:       isDark,
                 showChapterBadge: true,
-                onTap: () => _openEntry(entry),
+                onSegmentTap: _segmentTap,
               );
             },
           ),

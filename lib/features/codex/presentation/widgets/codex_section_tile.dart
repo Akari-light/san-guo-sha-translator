@@ -5,6 +5,7 @@ import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_entry_card.dart';
 import 'codex_flow_step_tile.dart';
+import 'codex_rule_block_widget.dart'; // for SegmentTapCallback
 
 class CodexSectionTile extends StatefulWidget {
   final String sectionNum;
@@ -14,8 +15,11 @@ class CodexSectionTile extends StatefulWidget {
   final bool showChinese;
   final bool isDark;
   final List<CodexEntryDTO> entries;
-  final void Function(CodexEntryDTO) onEntryTap;
   final bool isFlow;
+
+  /// Forwarded to every [CodexEntryCard] and [CodexFlowStepTile] so that
+  /// [card] and [skill] segments are tappable in the browse view.
+  final SegmentTapCallback? onSegmentTap;
 
   const CodexSectionTile({
     super.key,
@@ -26,8 +30,8 @@ class CodexSectionTile extends StatefulWidget {
     required this.showChinese,
     required this.isDark,
     required this.entries,
-    required this.onEntryTap,
     this.isFlow = false,
+    this.onSegmentTap,
   });
 
   @override
@@ -40,7 +44,6 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
   @override
   void initState() {
     super.initState();
-    // First section of each chapter starts open; rest collapsed
     _open = widget.sectionNum.endsWith('.0') ||
         widget.sectionNum.endsWith('.1') ||
         widget.sectionNum == '1.1';
@@ -57,7 +60,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // ── Header ────────────────────────────────────────────────────────
+        // ── Section header ─────────────────────────────────────────────────
         InkWell(
           onTap: () => setState(() => _open = !_open),
           child: Container(
@@ -67,11 +70,13 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
               children: [
                 // Section number badge
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                   decoration: BoxDecoration(
                     color: AppTheme.codexNumBg(chapter, isDark),
                     border: Border.all(
-                        color: AppTheme.codexNumBorder(chapter, isDark), width: 1),
+                        color: AppTheme.codexNumBorder(chapter, isDark),
+                        width: 1),
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Text(
@@ -141,7 +146,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
         ),
         Divider(height: 0.5, thickness: 0.5, color: divider),
 
-        // ── Children ──────────────────────────────────────────────────────
+        // ── Children ───────────────────────────────────────────────────────
         if (_open)
           if (widget.isFlow)
             ...widget.entries
@@ -154,6 +159,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                       index: e.key,
                       showChinese: showCn,
                       isDark: isDark,
+                      onSegmentTap: widget.onSegmentTap,
                     ))
           else
             ...widget.entries.map((entry) => CodexEntryCard(
@@ -161,7 +167,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                   showChinese: showCn,
                   isDark: isDark,
                   showChapterBadge: false,
-                  onTap: () => widget.onEntryTap(entry),
+                  onSegmentTap: widget.onSegmentTap,
                 )),
       ],
     );

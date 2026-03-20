@@ -329,15 +329,15 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 runSpacing: 8,
                 children: refs.map((ref) {
                   if (ref.type == ReferenceType.libraryCard &&
-                      ref.libraryCard != null) {
+                      ref.id != null) {
                     return _RelatedCardChip(
                       label: _isEnglish
-                          ? ref.libraryCard!.nameEn
-                          : ref.libraryCard!.nameCn,
-                      category: ref.libraryCard!.categoryEn,
+                          ? ref.nameEn
+                          : ref.nameCn,
+                      category: ref.categoryEn ?? '',
                       isDark: isDark,
                       onTap: () =>
-                          widget.onLibraryCardTap?.call(ref.libraryCard!.id),
+                          widget.onLibraryCardTap?.call(ref.id!),
                     );
                   } else {
                     return _RelatedSkillChip(

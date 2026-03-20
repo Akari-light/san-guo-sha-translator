@@ -15,7 +15,7 @@ import 'features/library/presentation/screens/library_screen.dart';
 import 'features/library/presentation/screens/library_detail_screen.dart';
 import 'features/ai/presentation/screens/ai_screen.dart';
 import 'features/codex/presentation/screens/codex_screen.dart';
-import 'features/codex/presentation/screens/codex_entry_screen.dart';
+import 'features/codex/presentation/screens/codex_entry_screen.dart'; // LangToggle
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
