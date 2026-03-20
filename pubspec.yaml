@@ -25,6 +25,8 @@ flutter:
     - assets/data/
     - assets/data/generals/
     - assets/data/library/
+    - assets/data/ruleset/
     - assets/images/
     - assets/images/generals/
     - assets/images/library/
+    

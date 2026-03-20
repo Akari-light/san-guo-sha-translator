@@ -6,19 +6,22 @@
     "section_title_en": "Rules Guide",
     "term_cn": "规则总览",
     "term_en": "Rules Overview",
+    "badge": null,
     "definition_cn": "本部分是对结算的原则和技能的生效机制的阐述。规则是解决各种冲突性问题的依据。",
     "definition_en": "This section covers the principles of resolution and the mechanics of how skills take effect. The rules here are the basis for resolving all types of conflicting situations.",
     "rules": [
       {
         "type": "note",
-        "cn": "案例中提到“角色”，如无条件的说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
-        "en": "When an example refers to \"a character\" without additional qualification, it means the character's General Card skills and equipment skills are not considered — the character is treated as having no skills.",
+        "cn": "案例中提到「角色」，如无条件说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
+        "en": "When an example refers to \"a character\" without qualification, it means the character has no General Card skills or equipment skills — treated as a blank.",
+        "segments": [],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "本部分包含以下内容：结算的原则、技能的要素、专题三（锁定技与优先级）、专题四（技能与牌的分类）。",
-        "en": "This section covers: Principles of Resolution; Elements of Skills; Topic 3 (Locked Skills and Priority); Topic 4 (Classifying Skills and Cards).",
+        "cn": "本部分包含：结算原则（§4.1）、技能要素（§4.2）、专题三 锁定技与优先级（§4.3）、专题四 技能与牌的分类（§4.4）。",
+        "en": "This section covers: Resolution Principles (§4.1), Elements of Skills (§4.2), Topic 3: Locked Skills and Priority (§4.3), Topic 4: Classifying Skills and Cards (§4.4).",
+        "segments": [],
         "examples": []
       }
     ],
@@ -32,13 +35,26 @@
     "section_title_en": "Principles of Resolution",
     "term_cn": "结算原则",
     "term_en": "Resolution Principles",
-    "definition_cn": "解决效果冲突和结算顺序的基本原则，分为效果冲突原则、插入结算顺序原则、多角色结算顺序原则和单角色结算顺序原则。",
-    "definition_en": "The fundamental principles for resolving conflicting effects and determining resolution order. Divided into: conflict resolution principles, insertion order principles, multi-character order principles, and single-character order principles.",
+    "badge": null,
+    "definition_cn": "解决效果冲突和结算顺序问题的基本原则，分为两大类：效果冲突原则（当技能与规则冲突，或两个技能相互冲突时如何处理）和结算顺序原则（多角色、单角色的操作顺序）。",
+    "definition_en": "The fundamental principles for resolving conflicting effects and determining resolution order. Two categories: Conflict Principles (how to handle skill-vs-rule or skill-vs-skill conflicts) and Order Principles (how to sequence actions for multiple or single characters).",
     "rules": [
       {
         "type": "rule",
         "cn": "【效果冲突原则①】：当技能说明与游戏通则或用语操作规范冲突时，优先级为：技能的说明 ＞ 基本牌/锦囊牌的说明 ＞ 游戏通则或用语操作规范。",
         "en": "Conflict Principle ①: When a skill's description conflicts with a general rule or terminology standard, the priority is: Skill description > Basic/Tool card description > General rules or terminology standards.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "效果冲突原则①：",
+            "en": "Conflict Principle ①: "
+          },
+          {
+            "kind": "body",
+            "cn": "优先级：技能的说明 ＞ 基本牌/锦囊牌的说明 ＞ 游戏通则或用语操作规范。",
+            "en": "Priority: Skill description > Basic/Tool card description > General rules or terminology standards."
+          }
+        ],
         "examples": [
           {
             "cn": "张飞的【咆哮】与基本牌【杀】每个出牌阶段只能使用一张的说明矛盾，须遵循【咆哮】的技能说明。",
@@ -51,34 +67,70 @@
         "type": "rule",
         "cn": "【效果冲突原则②】：当两个技能的效果/操作冲突时，表示否定意思的效果/操作优先级高于表示肯定意思的效果/操作。",
         "en": "Conflict Principle ②: When two skills' effects or operations conflict, a negative effect (prohibition) takes priority over a positive effect (permission).",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "效果冲突原则②：",
+            "en": "Conflict Principle ②: "
+          },
+          {
+            "kind": "body",
+            "cn": "否定意思的效果/操作优先级高于肯定意思的效果/操作。",
+            "en": "A negative effect (prohibition) takes priority over a positive effect (permission)."
+          }
+        ],
         "examples": [
           {
-            "cn": "太史慈发动【天义】拼点赢后使用【杀】无距离限制。发动【陷嗣②】视为使用【杀】须检测距离。因否定优先，太史慈发动【天义】拼点赢后发动【陷嗣②】不需要检测距离合法性。",
-            "en": "After winning the duel with [Heaven's Justice], Tai Shi Ci's [Kill] has no distance restriction. [Entrap the Heir②] requires a distance check. Since the negative (no restriction) takes priority, no distance check is needed.",
+            "cn": "太史慈发动【天义】拼点赢后使用【杀】无距离限制（肯定）。发动【陷嗣②】须检测距离（否定）。因否定优先，太史慈发动【天义】拼点赢后发动【陷嗣②】不需要检测距离合法性。",
+            "en": "After winning with [Heaven's Justice], Tai Shi Ci's [Kill] has no distance restriction (positive). [Entrap the Heir②] requires a distance check (negative). Since negative takes priority, no distance check is needed.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "rule",
-        "cn": "【插入结算顺序原则】：所有结算都是事件在合理的时机插入发生后所进行的处理过程。凡是插入发生的事件都优先结算，即后发生的事件先结算。a时机发动的A技能在执行消耗或部分效果时出现了b时机，则发动时机为b的B技能能插入发动，B结算完毕后继续A的结算。",
-        "en": "Insertion Order Principle: All resolutions are processes triggered by events inserting themselves at valid timings. Any inserted event is resolved first — the most recently triggered event resolves first. If skill A (activated at timing a) produces timing b while executing its costs or effects, skill B (with timing b) may insert. After B's resolution completes, A continues.",
+        "cn": "【插入结算顺序原则】：凡是插入发生的事件都优先结算，即后发生的事件先结算。A技能在执行消耗或部分效果时出现了b时机，则发动时机为b的B技能能插入发动，B结算完毕后继续A的结算。",
+        "en": "Insertion Order Principle: Any inserted event is resolved first — the most recently triggered event resolves first. If skill A produces timing b while executing its costs or effects, skill B (with timing b) may insert. After B's resolution completes, A continues.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "插入结算顺序原则：",
+            "en": "Insertion Order Principle: "
+          },
+          {
+            "kind": "body",
+            "cn": "后发生的事件先结算。A技能在执行消耗或部分效果时出现了b时机，则发动时机为b的B技能能插入发动，B结算完毕后继续A的结算。",
+            "en": "The most recently triggered event resolves first. If skill A produces timing b while executing its costs or effects, skill B (with timing b) may insert and resolve first, then A continues."
+          }
+        ],
         "examples": [
           {
             "cn": "小乔在受到魏延对其造成的X点伤害时发动【天香】将伤害转移给魏延，魏延受到X点伤害后插入触发【狂骨】回复X点体力，然后魏延由于已损失的体力值为0，不需要执行【天香】摸牌的效果。",
-            "en": "Xiao Qiao activates [Celestial Fragrance] to transfer damage to Wei Yan. Wei Yan receives the damage and [Bloodthirst] inserts and triggers, recovering HP. Since Wei Yan's HP Lost is now 0, the [Celestial Fragrance] draw effect does not execute.",
+            "en": "Xiao Qiao activates [Celestial Fragrance] to transfer damage to Wei Yan. Wei Yan receives damage and [Bloodthirst] inserts, recovering HP. Since Wei Yan's HP Lost is now 0, the [Celestial Fragrance] draw effect does not execute.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "rule",
-        "cn": "【多角色结算顺序原则a】：同一张牌/同一个技能/同一个事件对多个目标进行结算时，应从当前回合角色开始按逆时针方向依次进行响应，且若无特别说明，每名角色只能响应一次。",
+        "cn": "【多角色结算顺序原则a】：同一张牌/技能/事件对多个目标进行结算时，从当前回合角色开始按逆时针方向依次响应，且若无特别说明，每名角色只能响应一次。",
         "en": "Multi-Character Order Principle a: When one card, skill, or event resolves against multiple targets, responses proceed counter-clockwise starting from the current turn's character. Unless otherwise specified, each character may respond only once.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "多角色顺序原则a：",
+            "en": "Multi-Character Order a: "
+          },
+          {
+            "kind": "body",
+            "cn": "对多个目标结算时，从当前回合角色开始按逆时针方向依次响应，每名角色只能响应一次（无特别说明时）。",
+            "en": "When resolving against multiple targets, proceed counter-clockwise from the current turn's character; each character may respond only once unless otherwise specified."
+          }
+        ],
         "examples": [
           {
             "cn": "张辽对两名目标角色发动【突袭】，应从张辽开始按逆时针方向依次获得每名目标角色的一张手牌。",
-            "en": "Zhang Liao activates [Sudden Raid] against two targets. He gains one hand card from each target proceeding counter-clockwise starting from himself.",
+            "en": "Zhang Liao activates [Sudden Raid] against two targets. He gains one hand card from each, proceeding counter-clockwise from himself.",
             "sub_examples": []
           }
         ]
@@ -87,10 +139,22 @@
         "type": "rule",
         "cn": "【多角色结算顺序原则b】：多名角色处于同一个时机且都有此时机的技能/技能效果时，从当前回合角色开始按逆时针方向依次触发/决定是否发动。",
         "en": "Multi-Character Order Principle b: When multiple characters share the same timing and all have skills/effects at that timing, they activate in counter-clockwise order starting from the current turn's character.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "多角色顺序原则b：",
+            "en": "Multi-Character Order b: "
+          },
+          {
+            "kind": "body",
+            "cn": "多名角色处于同一时机且都有此时机的技能时，从当前回合角色开始按逆时针方向依次触发/决定是否发动。",
+            "en": "When multiple characters share the same timing and all have skills at that timing, they activate in counter-clockwise order from the current turn's character."
+          }
+        ],
         "examples": [
           {
             "cn": "吴国太对凌统、孙尚香发动【甘露】，双方同时失去装备区里的所有牌，此时为【旋风①】、【枭姬】和【白银狮子②】的发动时机，从吴国太开始按逆时针方向，凌统和孙尚香依次决定是否发动各自的技能。",
-            "en": "Lady Wu uses [Sweet Dew] on Ling Tong and Sun Shangxiang, who simultaneously lose all equipment. The skills [Whirlwind①], [Fierce Lady], and [Silver Lion Helmet②] all share this timing. Starting from Lady Wu, Ling Tong and Sun Shangxiang decide in counter-clockwise order.",
+            "en": "Lady Wu uses [Sweet Dew] on Ling Tong and Sun Shangxiang, who simultaneously lose all equipment. [Whirlwind①], [Fierce Lady], and [Silver Lion Helmet②] all share this timing. Starting from Lady Wu, they decide in counter-clockwise order.",
             "sub_examples": []
           }
         ]
@@ -98,35 +162,83 @@
       {
         "type": "rule",
         "cn": "【多角色结算顺序原则c】：角色在使用牌指定多个目标时/后能发动按目标人次发动的技能，应从当前回合角色开始按逆时针方向依次对每个目标触发/决定是否发动。",
-        "en": "Multi-Character Order Principle c: When a skill can activate once per target when designating multiple targets, activation decisions are made counter-clockwise starting from the current turn's character, once for each target.",
+        "en": "Multi-Character Order Principle c: When a skill can activate once per target when designating multiple targets, activation decisions are made counter-clockwise from the current turn's character, once for each target.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "多角色顺序原则c：",
+            "en": "Multi-Character Order c: "
+          },
+          {
+            "kind": "body",
+            "cn": "按目标人次发动的技能，从当前回合角色开始按逆时针方向依次对每个目标触发/决定是否发动。",
+            "en": "Skills that activate once per target: decisions are made counter-clockwise from the current turn's character, once for each target."
+          }
+        ],
         "examples": [
           {
             "cn": "马超受到【方天画戟】的影响对三名目标使用最后一张手牌【杀】时，在指定目标后从当前回合角色开始按逆时针方向先对第一名目标决定是否发动【铁骑】，以此类推。",
-            "en": "Ma Chao uses his last card [Kill] on three targets (via [Sky Piercer]). After designating targets, starting from the current turn's character going counter-clockwise, he decides whether to activate [Iron Cavalry] for each target in order.",
+            "en": "Ma Chao uses [Kill] on three targets (via [Sky Piercer]). After designating targets, starting from the current turn's character counter-clockwise, he decides whether to activate [Iron Cavalry] for each target in order.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "rule",
-        "cn": "【多角色结算顺序原则d】：A角色发动时机为“每当有角色处于此时机”时，A应从当前回合角色开始按逆时针方向依次对相应角色触发/决定。发动条件的检测和消耗的执行，都是在轮到对相应角色触发/决定是否发动前进行的。",
-        "en": "Multi-Character Order Principle d: When skill A triggers \"whenever a character is at this timing,\" A resolves counter-clockwise starting from the current turn's character, once per applicable character. Condition checks and cost execution happen immediately before each decision.",
+        "cn": "【多角色结算顺序原则d】：A角色发动时机为「每当有角色处于此时机」时，A应从当前回合角色开始按逆时针方向依次对相应角色触发/决定。发动条件的检测和消耗的执行，都是在轮到对相应角色触发/决定是否发动前进行的。",
+        "en": "Multi-Character Order Principle d: When skill A triggers \"whenever a character is at this timing,\" A resolves counter-clockwise from the current turn's character, once per applicable character. Condition checks and cost execution happen immediately before each decision.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "多角色顺序原则d：",
+            "en": "Multi-Character Order d: "
+          },
+          {
+            "kind": "body",
+            "cn": "发动时机为「每当有角色处于此时机」的技能，从当前回合角色开始按逆时针方向依次对相应角色触发/决定。发动条件检测和消耗执行在轮到对相应角色触发/决定前进行。",
+            "en": "For skills that trigger \"whenever a character is at this timing,\" proceed counter-clockwise from the current turn's character, once per applicable character. Condition checks and cost execution happen immediately before each decision."
+          }
+        ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "【不属于任何角色的回合时的顺序】：一名角色在结算中因死亡而结束回合后，在死亡结算开始到“死亡时”期间，从该角色开始按逆时针方向；从“死亡时”之后到结算完毕及之后至下回合开始前，从其下家开始按逆时针方向。回合结束后若该角色存活从其开始，否则从其下家开始。回合开始前从该角色开始按逆时针方向。",
-        "en": "Order when no turn is active: When a character's turn ends due to death mid-resolution: from resolution start to \"At Death\" timing — counter-clockwise from that character; from after \"At Death\" until the next turn — counter-clockwise from their Right Neighbor. After a turn ends: if alive, from that character; if dead, from their Right Neighbor. Before a turn starts: counter-clockwise from that character.",
+        "cn": "【不属于任何角色的回合时的顺序】：一名角色在结算中因死亡而结束回合后，在死亡结算开始到「死亡时」期间，从该角色开始按逆时针方向；从「死亡时」之后到结算完毕及之后至下回合开始前，从其下家开始按逆时针方向。回合结束后若该角色存活从其开始，否则从其下家开始。回合开始前从该角色开始按逆时针方向。",
+        "en": "Order when no turn is active: When a character's turn ends due to death mid-resolution — from resolution start to \"At Death\": counter-clockwise from that character; from after \"At Death\" to the next turn: counter-clockwise from their Right Neighbor. After a turn ends: if alive, from that character; if dead, from their Right Neighbor. Before a turn starts: counter-clockwise from that character.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "无回合时的顺序：",
+            "en": "Order when no turn is active: "
+          },
+          {
+            "kind": "body",
+            "cn": "死亡结算开始到「死亡时」→ 从该角色按逆时针；「死亡时」之后至下回合 → 从其下家按逆时针。回合结束后存活 → 从其开始，死亡 → 从其下家开始。回合开始前 → 从该角色按逆时针。",
+            "en": "From resolution start to \"At Death\" → counter-clockwise from that character; after \"At Death\" to next turn → from their Right Neighbor. After turn ends: alive → from that character; dead → from Right Neighbor. Before turn starts → counter-clockwise from that character."
+          }
+        ],
         "examples": []
       },
       {
         "type": "rule",
         "cn": "【单角色结算顺序原则a】：一名角色在同一个时机能发动武将技能/执行武将技能效果、发动装备技能/执行装备技能效果和使用牌/执行牌的效果时，应先武将技能，再装备技能，最后使用牌/执行牌的效果。",
         "en": "Single-Character Order Principle a: When a character can activate general skills, equipment skills, and card effects at the same timing, the order is: General skill first → Equipment skill second → Card use/effect last.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "单角色顺序原则a：",
+            "en": "Single-Character Order a: "
+          },
+          {
+            "kind": "body",
+            "cn": "同一时机同时能发动武将技能、装备技能和使用牌效果时，顺序：武将技能 → 装备技能 → 牌的效果。",
+            "en": "When general skills, equipment skills, and card effects all share a timing: General skill → Equipment skill → Card effect."
+          }
+        ],
         "examples": [
           {
             "cn": "装备【八卦阵】的主公曹操需要使用【闪】时，可以先发动武将技能【护驾】，若没有魏势力角色打出【闪】，再发动装备技能【八卦阵】，若判定结果为黑色，最后可以使用一张手牌【闪】。",
-            "en": "When Lord Cao Cao (equipped with [Eight Trigrams Formation]) needs to use [Dodge]: he may first activate [Imperial Guard]; if no Wei character plays [Dodge], he may then activate [Eight Trigrams Formation]; if the result is black, he may finally use a hand card [Dodge].",
+            "en": "Lord Cao Cao (equipped with [Eight Trigrams Formation]) needs to use [Dodge]: first activate [Imperial Guard]; if no Wei character plays [Dodge], then activate [Eight Trigrams Formation]; if the result is black, finally use a hand card [Dodge].",
             "sub_examples": []
           }
         ]
@@ -134,10 +246,22 @@
       {
         "type": "rule",
         "cn": "【单角色结算顺序原则b】：一名角色在同一个时机能发动（多次）（不同的）武将技能或执行武将技能效果时，由其决定操作的顺序。发动条件的检测、目标合法性检测及消耗的执行，都是在触发/决定是否发动该次技能前进行的。",
-        "en": "Single-Character Order Principle b: When a character can activate multiple general skills (or activate the same skill multiple times) at the same timing, they choose the order. Condition checks, target legality checks, and cost execution all happen immediately before each individual activation decision.",
+        "en": "Single-Character Order Principle b: When a character can activate multiple general skills (or the same skill multiple times) at the same timing, they choose the order. Condition checks, target legality checks, and cost execution all happen immediately before each individual activation decision.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "单角色顺序原则b：",
+            "en": "Single-Character Order b: "
+          },
+          {
+            "kind": "body",
+            "cn": "同一时机能发动多个武将技能或执行武将技能效果时，由其决定顺序。发动条件检测、目标合法性检测及消耗的执行，都是在触发/决定是否发动该次技能前进行的。",
+            "en": "When multiple general skills share a timing, the character chooses the order. Condition checks, target legality, and cost execution all happen immediately before each individual activation decision."
+          }
+        ],
         "examples": [
           {
-            "cn": "触发【拜印】且没有“忍”标记的司马懿（神）受到1点伤害后，可以选择先触发【忍戒①】获得1枚“忍”标记，再弃该“忍”标记发动【放逐】。",
+            "cn": "触发【拜印】且没有「忍」标记的司马懿（神）受到1点伤害后，可以选择先触发【忍戒①】获得1枚「忍」标记，再弃该「忍」标记发动【放逐】。",
             "en": "God Sima Yi (who has triggered [Seal of Command] and has no Forbearance tokens) takes 1 damage. He can choose to first trigger [Forbearance①] to gain a token, then immediately spend it to activate [Exile].",
             "sub_examples": []
           }
@@ -147,9 +271,10 @@
         "type": "note",
         "cn": "同一个时机有多个技能可以发动，先发动的技能的效果可能会导致此时机结束，若如此则后面的技能就不能发动了。",
         "en": "When multiple skills can activate at the same timing, the first skill activated may cause that timing to end, preventing subsequent skills from activating.",
+        "segments": [],
         "examples": [
           {
-            "cn": "装备【寒冰剑】的马岱使用【杀】对目标角色造成伤害时，武将技能【潜袭】优先于装备技能【寒冰剑】发动，若发动【潜袭】则防止伤害，直接进入“伤害结算结束时”，【寒冰剑】就没有发动的时机了。",
+            "cn": "装备【寒冰剑】的马岱使用【杀】对目标角色造成伤害时，武将技能【潜袭】可以优先于装备技能【寒冰剑】发动，若发动【潜袭】则防止伤害，直接进入「伤害结算结束时」，【寒冰剑】就没有发动的时机了。",
             "en": "When Ma Dai (equipped with [Frost Blade]) uses [Kill] and deals damage, [Covert Strike] can activate before [Frost Blade]. If [Covert Strike] activates and prevents the damage, the game proceeds directly to \"At Damage Resolution End\" — [Frost Blade] no longer has a timing to activate.",
             "sub_examples": []
           }
@@ -159,6 +284,7 @@
         "type": "note",
         "cn": "角色在某一个时机若能发动一个技能，除非该技能与计数有关（如需要计算目标人次或伤害值点数的技能），否则若无特别说明，该角色只有一次机会决定是否发动该技能。",
         "en": "At any given timing, unless a skill is count-based (e.g. activates once per target or once per damage point), a character has exactly one opportunity to decide whether to activate it — unless otherwise specified.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -172,35 +298,167 @@
     "section_title_en": "Elements of Skills",
     "term_cn": "技能要素",
     "term_en": "Skill Elements",
-    "definition_cn": "技能按照是否有发动时机分为状态类技能（无发动时机）和非状态类技能（有发动时机）。非状态类技能由六个要素组成：发动角色、条件、时机、消耗、目标、效果。",
-    "definition_en": "Skills are divided into state skills (no activation timing) and non-state skills (have an activation timing). Non-state skills consist of six elements: activating character, condition, timing, cost, target, and effect.",
+    "badge": null,
+    "definition_cn": "技能按照是否有发动时机分为状态类技能（无发动时机，若能产生影响则必须产生影响）和非状态类技能（有发动时机）。非状态类技能由六个要素组成：发动角色、条件、时机、消耗、目标、效果。",
+    "definition_en": "Skills are divided into state skills (no activation timing; must produce their effect if they can) and non-state skills (have an activation timing). Non-state skills consist of six elements: activating character, condition, timing, cost, target, and effect.",
     "rules": [
       {
         "type": "rule",
         "cn": "发动技能的流程：发动角色在发动时机满足发动条件，声明技能名并同时选择合法目标、执行所有消耗。若有一个以上的消耗无法执行，则无法发动此技能且不可以执行其他消耗。所有消耗执行完毕后，须执行技能的效果。",
         "en": "Activation flow: At the activation timing, if the condition is met, declare the skill name while simultaneously selecting legal targets and paying all costs. If more than one cost cannot be paid, the skill cannot be activated and no costs may be paid. Once all costs are paid, the effects must be executed.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "发动技能的流程：",
+            "en": "Skill activation flow: "
+          },
+          {
+            "kind": "body",
+            "cn": "在发动时机满足发动条件，声明技能名并同时选择合法目标、执行所有消耗。若有一个以上的消耗无法执行，则无法发动此技能（且不可以执行其他消耗）。所有消耗执行完毕后，须执行技能的效果。",
+            "en": "At the activation timing, if the condition is met, declare the skill name while simultaneously selecting legal targets and paying all costs. If more than one cost cannot be paid, the skill cannot be activated and no costs may be paid. Once all costs are paid, the effects must be executed."
+          }
+        ],
         "examples": []
       },
       {
         "type": "rule",
         "cn": "技能的消耗类别：①移动牌（弃置、拼点、交给等）；②将武将牌上的牌置入弃牌堆；③弃标记；④翻面；⑤失去体力（体力值大于0即可执行失去任意点数体力的消耗）；⑥跳过阶段；⑦少摸牌；⑧放弃摸牌；⑨防止伤害；⑩展示手牌；⑪其他。",
         "en": "Cost categories: ① Moving cards (discard, Point Duel, give, etc.); ② Place cards from General Card into Discard Pile; ③ Remove tokens; ④ Flip over; ⑤ Lose HP (any amount, as long as current HP Value > 0); ⑥ Skip a phase; ⑦ Draw fewer cards; ⑧ Forfeit drawing; ⑨ Prevent damage; ⑩ Reveal hand cards; ⑪ Other.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "消耗类别：",
+            "en": "Cost categories: "
+          },
+          {
+            "kind": "number",
+            "cn": "①",
+            "en": "①"
+          },
+          {
+            "kind": "body",
+            "cn": "移动牌（弃置、拼点、交给等）；",
+            "en": "Moving cards (discard, Point Duel, give, etc.); "
+          },
+          {
+            "kind": "number",
+            "cn": "②",
+            "en": "②"
+          },
+          {
+            "kind": "body",
+            "cn": "将武将牌上的牌置入弃牌堆；",
+            "en": "Place cards from General Card into Discard Pile; "
+          },
+          {
+            "kind": "number",
+            "cn": "③",
+            "en": "③"
+          },
+          {
+            "kind": "body",
+            "cn": "弃标记；",
+            "en": "Remove tokens; "
+          },
+          {
+            "kind": "number",
+            "cn": "④",
+            "en": "④"
+          },
+          {
+            "kind": "body",
+            "cn": "翻面；",
+            "en": "Flip over; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑤",
+            "en": "⑤"
+          },
+          {
+            "kind": "body",
+            "cn": "失去体力（体力值大于0即可）；",
+            "en": "Lose HP (any amount, as long as current HP Value > 0); "
+          },
+          {
+            "kind": "number",
+            "cn": "⑥",
+            "en": "⑥"
+          },
+          {
+            "kind": "body",
+            "cn": "跳过阶段；",
+            "en": "Skip a phase; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑦",
+            "en": "⑦"
+          },
+          {
+            "kind": "body",
+            "cn": "少摸牌；",
+            "en": "Draw fewer cards; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑧",
+            "en": "⑧"
+          },
+          {
+            "kind": "body",
+            "cn": "放弃摸牌；",
+            "en": "Forfeit drawing; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑨",
+            "en": "⑨"
+          },
+          {
+            "kind": "body",
+            "cn": "防止伤害；",
+            "en": "Prevent damage; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑩",
+            "en": "⑩"
+          },
+          {
+            "kind": "body",
+            "cn": "展示手牌；",
+            "en": "Reveal hand cards; "
+          },
+          {
+            "kind": "number",
+            "cn": "⑪",
+            "en": "⑪"
+          },
+          {
+            "kind": "body",
+            "cn": "其他。",
+            "en": "Other."
+          }
+        ],
         "examples": []
       },
       {
         "type": "caution",
         "cn": "体力值为0的角色不可以执行失去体力的消耗来发动技能。",
         "en": "A character whose HP Value is 0 cannot pay a Lose HP cost to activate a skill.",
+        "segments": [],
         "examples": []
       },
       {
         "type": "caution",
         "cn": "若某事件的效果恰好与角色发动技能的消耗相同，不能视为该角色执行了消耗。",
         "en": "If an event's effect happens to match a skill's cost, it does not count as the character having paid that cost.",
+        "segments": [],
         "examples": [
           {
-            "cn": "夏侯渊进行【乐不思蜀】的判定，结果不为红桃须跳过出牌阶段，此时不可以发动【神速②】，因为跳过出牌阶段是发动【神速②】的消耗，而非外部事件代为执行。",
-            "en": "Xiahou Yuan's [Acedia] judgment fails and he must skip his Action Phase. He cannot activate [Lightning Speed②] because skipping the Action Phase is that skill's cost — the external effect skipping the phase does not count as paying the cost.",
+            "cn": "夏侯渊进行【乐不思蜀】的判定须跳过出牌阶段，此时不可以发动【神速②】，因为跳过出牌阶段是发动【神速②】的消耗，而非外部事件代为执行。",
+            "en": "Xiahou Yuan's [Acedia] judgment fails and he must skip his Action Phase. He cannot activate [Lightning Speed②] because skipping the Action Phase is that skill's cost — the external effect does not count as paying the cost.",
             "sub_examples": []
           }
         ]
@@ -209,6 +467,7 @@
         "type": "rule",
         "cn": "一个没有消耗的非状态类技能，只要有部分效果能执行，发动不受影响；但如果全部效果都不能执行，则不能发动。",
         "en": "A non-state skill with no cost can still be activated as long as at least one of its effects can execute. If none of its effects can execute, it cannot be activated.",
+        "segments": [],
         "examples": [
           {
             "cn": "所有其他角色都没有牌时，田丰不可以发动【死谏】。未受伤的魏延不会触发【狂骨】。",
@@ -221,6 +480,7 @@
         "type": "rule",
         "cn": "角色只有在发动技能的时机自己和目标都存活/存在时，才能发动技能。",
         "en": "A character can only activate a skill if both themselves and the target are alive/present at the activation timing.",
+        "segments": [],
         "examples": [
           {
             "cn": "角色使用【万箭齐发】，来源死亡后对司马懿进行结算，司马懿受到1点伤害后，由于来源已经死亡，没有发动【反馈】的目标，不可以发动【反馈】。",
@@ -233,6 +493,7 @@
         "type": "rule",
         "cn": "若技能执行的第一个效果是使用牌，则须提前选择该牌的合法额定目标作为技能的目标，并在执行效果时再次进行合法性检测。",
         "en": "If a skill's first effect is to use a card, the legal required targets for that card must be selected in advance as the skill's targets, and a second legality check is conducted when the effect actually executes.",
+        "segments": [],
         "examples": [
           {
             "cn": "夏侯渊发动【神速】的目标角色须为其使用【杀】的合法目标。",
@@ -245,10 +506,11 @@
         "type": "rule",
         "cn": "角色在某时机发动技能获得一个发动时机是在该时机的新技能，此时依然处于该时机，可以发动新技能。",
         "en": "If a character activates a skill and gains a new skill whose activation timing is the same timing, they are still within that timing and may immediately activate the new skill.",
+        "segments": [],
         "examples": [
           {
             "cn": "姜维在准备阶段开始时触发【志继】获得【观星】，可以继续发动【观星】。左慈在回合结束后发动【化身②】拥有【连破】，可以发动【连破】。",
-            "en": "Jiang Wei triggers [Inherit the Will] at Starting Phase Start and gains [Read the Stars] — he may immediately activate [Read the Stars]. Zuo Ci activates [Shapeshifter②] after his turn ends and gains [Supreme Advance] — he may immediately activate it.",
+            "en": "Jiang Wei triggers [Inherit the Will] at Starting Phase Start and gains [Read the Stars] — he may immediately activate it. Zuo Ci activates [Shapeshifter②] after his turn ends and gains [Supreme Advance] — he may immediately activate it.",
             "sub_examples": []
           }
         ]
@@ -264,13 +526,33 @@
     "section_title_en": "Topic 3: Locked Skills and Priority",
     "term_cn": "锁定技与优先级",
     "term_en": "Locked Skills and Priority",
-    "definition_cn": "锁定技与优先级毫无关系。“锁定技”是标签而非类型，表示技能是否必须发动。锁定技除了强制性外无任何特权，不会优先发动、提前发动，也不能覆盖另一个技能。",
-    "definition_en": "Locked Skills and priority have absolutely no relationship. \"Locked Skill\" is a label, not a type — it indicates whether a skill must activate. Locked Skills have no special privileges beyond being mandatory; they do not activate first, activate earlier, or override other skills.",
+    "badge": null,
+    "definition_cn": "锁定技与优先级毫无关系。「锁定技」是一个标签，表示技能是否必须发动，不赋予任何优先级或特权。",
+    "definition_en": "\"Locked Skill\" is just a label indicating that the skill is mandatory — it has absolutely no relationship with priority and grants no special privileges.",
     "rules": [
+      {
+        "type": "caution",
+        "cn": "「锁定技」只是一个标签，不是技能的类型。判断一个技能是否必须发动，应看技能描述中是否有「可以」二字，而非是否有「锁定技」三个字。没有「可以」= 必须发动。「锁定技」除了强制性外，不会优先发动、不会提前发动、也不能覆盖另一个技能。",
+        "en": "\"Locked Skill\" is just a label, not a type. Whether a skill is mandatory depends on whether the skill text contains \"may\" (可以), not on whether it says \"Locked Skill.\" No \"may\" = mandatory. Locked Skills do not activate first, do not activate earlier, and do not override other skills — their only special property is being mandatory.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "关键点：",
+            "en": "Key point: "
+          },
+          {
+            "kind": "body",
+            "cn": "「锁定技」只是标签，不是类型。判断是否必须发动：技能描述中没有「可以」= 必须发动。「锁定技」不会优先发动、不提前发动、不覆盖其他技能。唯一特殊性是「强制性」。",
+            "en": "\"Locked Skill\" is just a label. Whether mandatory: no \"may\" in skill text = mandatory. Does not activate first, does not activate earlier, does not override other skills. The only special property is being mandatory."
+          }
+        ],
+        "examples": []
+      },
       {
         "type": "rule",
         "cn": "状态类锁定技不需要触发，因此没有发动时机这个要素。若能产生影响则必须产生影响。",
         "en": "State Locked Skills do not need to be triggered and have no activation timing element. They must produce their effect whenever they can.",
+        "segments": [],
         "examples": [
           {
             "cn": "有手牌的诸葛亮（标）已成为【杀】或【决斗】的目标后，在使用结算过程中没有了手牌，不再受到【空城】的影响，【杀】或【决斗】依然正常进行使用结算。",
@@ -283,6 +565,7 @@
         "type": "rule",
         "cn": "非状态类锁定技于发动时机若能发动则必须发动，但不会优先发动、提前发动，或仅因检测发动条件满足就发动。",
         "en": "Non-state Locked Skills must activate at their timing if they can, but do not activate with higher priority, earlier, or merely because their condition is met before the timing arrives.",
+        "segments": [],
         "examples": [
           {
             "cn": "张春华（体力2，手牌1，装备【白银狮子】）使用手牌【八卦阵】，同时失去一张手牌和装备区里的【白银狮子】，此时武将技能【伤逝】优先于装备技能【白银狮子②】发动，即使【白银狮子②】是锁定技。",
@@ -295,6 +578,7 @@
         "type": "caution",
         "cn": "除了技能本身列出的发动条件外，已经生效的其他技能效果（无论是否为锁定技）也可能限制此技能的触发。",
         "en": "Beyond a skill's own listed conditions, the effects of other already-active skills (whether Locked or not) can also restrict that skill from triggering.",
+        "segments": [],
         "examples": [
           {
             "cn": "【青釭剑】和【陷阵】的效果都会限制【白银狮子①】的触发。",
@@ -307,6 +591,7 @@
         "type": "note",
         "cn": "锁定技的效果并非一定要执行，也需遵循专题四中关于效果执行的规则。",
         "en": "The effects of Locked Skills do not always have to execute — they are also subject to the rules in Topic 4 regarding effect execution.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -320,13 +605,15 @@
     "section_title_en": "Topic 4: Classifying Skills and Cards",
     "term_cn": "技能与牌的分类",
     "term_en": "Classifying Skills and Cards",
+    "badge": null,
     "definition_cn": "一个事件只要开始结算，就必须按规定流程进行，执行能执行的操作，不执行无法执行的操作。非状态类技能的效果分为状态类效果（无执行时机，若能产生影响则必须产生影响）和非状态类效果（有执行时机），其中非状态类效果又分为延时类效果和非延时类效果。",
-    "definition_en": "Once an event begins resolving, it must follow the prescribed flow: execute all executable operations, skip those that cannot execute. Non-state skill effects are divided into: state effects (no execution timing; must produce effect if they can) and non-state effects (have an execution timing), which are further divided into delayed effects and non-delayed effects.",
+    "definition_en": "Once an event begins resolving, it must follow the prescribed flow: execute all executable operations, skip those that cannot. Non-state skill effects are divided into: state effects (no execution timing; must produce their effect if they can) and non-state effects (have an execution timing), further divided into delayed and non-delayed effects.",
     "rules": [
       {
-        "type": "rule",
+        "type": "note",
         "cn": "当角色将要执行操作并非对所有角色可见的牌的效果时，若该角色能操作的牌数既小于须操作的牌数又小于牌的总数，须展示这些牌并操作其中能操作的牌。",
-        "en": "When a character must execute an effect on cards not visible to all characters, and the number of cards they can legally operate on is both less than the required number and less than the total available, they must reveal those cards and operate on all legally operable ones.",
+        "en": "When a character must execute an effect on cards not visible to all, and the number of cards they can legally operate on is both less than the required number and less than the total available, they must reveal those cards and operate on all legally operable ones.",
+        "segments": [],
         "examples": [
           {
             "cn": "杨修对角色发动【鸡肋】选择装备牌，该角色体力值为2，手牌为两张【闪】和三张装备牌。该角色于弃牌阶段须展示所有手牌并弃置其中两张【闪】。",
@@ -337,8 +624,20 @@
       },
       {
         "type": "rule",
-        "cn": "存活的角色失去武将技能时，其武将牌上/旁的牌以及所有标记的存在不受影响。状态类效果（如【鸡肋】、【完杀】）在技能失去后的持续情况取决于该效果是否与失去技能的角色有关：若与该角色有关（如【完杀】与贾诩有关），失去时效果消失；若与该角色无关（如【鸡肋】的限制作用于被鸡肋指定的角色，与杨修无关），失去时效果不消失。",
-        "en": "When a living character loses a general skill, cards on/beside their General Card and all tokens are unaffected. Whether a state effect persists after the skill is lost depends on whether it is tied to the character who lost the skill: if it is (e.g. [Total Annihilation] is tied to Jia Xu), it disappears; if it is not (e.g. [Chicken Rib]'s restriction applies to the designated character, not Yang Xiu), it persists.",
+        "cn": "存活的角色失去武将技能时，其武将牌上/旁的牌以及所有标记的存在不受影响。状态类效果在技能失去后是否继续：若与失去技能的角色有关（如【完杀】与贾诩有关），失去时效果消失；若与该角色无关（如【鸡肋】的限制作用于被指定的角色而非杨修），失去时效果不消失。",
+        "en": "When a living character loses a general skill, cards on/beside their General Card and all tokens are unaffected. Whether a state effect persists after the skill is lost depends on whether it is tied to the character who lost it: if tied (e.g. [Total Annihilation] is tied to Jia Xu), it disappears; if not tied (e.g. [Chicken Rib]'s restriction applies to the designated character, not Yang Xiu), it persists.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "失去技能后的状态类效果：",
+            "en": "State effects after losing a skill: "
+          },
+          {
+            "kind": "body",
+            "cn": "若效果与失去技能的角色有关 → 效果消失；若效果与该角色无关 → 效果不消失。",
+            "en": "If the effect is tied to the character who lost the skill → effect disappears; if not tied → effect persists."
+          }
+        ],
         "examples": [
           {
             "cn": "杨修在出牌阶段发动【鸡肋】后杀死蔡文姬，蔡文姬触发【断肠】，杨修失去其所有武将技能，但是【鸡肋】的效果不会消失。贾诩在自己回合杀死蔡文姬，失去其所有武将技能，【完杀】的效果随之终止。",
@@ -351,6 +650,18 @@
         "type": "rule",
         "cn": "非状态类效果（延时类效果）在角色失去技能或死亡后是否继续执行，取决于该效果是否与失去技能/死亡的角色有关：若与该角色有关（如【狂风】【大雾】与诸葛亮（神）有关），失去/死亡时效果消失；若与该角色无关（如【天香】的摸牌效果与小乔无关），失去/死亡时效果不消失。",
         "en": "Whether a non-state delayed effect continues after a character loses the skill or dies depends on whether the effect is tied to that character: if it is (e.g. [Gale]/[Great Fog] are tied to God Zhuge Liang), the effect ends; if it is not (e.g. [Celestial Fragrance]'s draw effect is not tied to Xiao Qiao), the effect persists.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "失去技能/死亡后的延时类效果：",
+            "en": "Delayed effects after losing skill/death: "
+          },
+          {
+            "kind": "body",
+            "cn": "若效果与该角色有关 → 效果消失；若效果与该角色无关 → 效果不消失。",
+            "en": "If the effect is tied to that character → effect disappears; if not tied → effect persists."
+          }
+        ],
         "examples": [
           {
             "cn": "诸葛亮（神）发动【狂风】/【大雾】后，在其下回合开始前死亡，【狂风】/【大雾】的效果消失。小乔发动【天香】转移伤害后死亡，【天香】摸牌的效果会继续执行。",
@@ -363,16 +674,28 @@
         "type": "rule",
         "cn": "非状态类效果（非延时类效果）一旦开始执行，即便该角色失去技能或死亡，技能发动成功后须依次执行各个能执行的效果。",
         "en": "Once a non-state non-delayed effect begins executing, all executable effects must be executed in sequence even if the character loses the skill or dies.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "非延时类效果一旦开始执行：",
+            "en": "Once a non-delayed effect begins executing: "
+          },
+          {
+            "kind": "body",
+            "cn": "即便该角色失去技能或死亡，技能发动成功后须依次执行各个能执行的效果。",
+            "en": "even if the character loses the skill or dies, all executable effects must execute in sequence."
+          }
+        ],
         "examples": [
           {
             "cn": "张角对邓艾发动【寒冰剑】弃置其第一张牌后，张角发动【鬼道】打出装备区里的【寒冰剑】失去此技能，但技能已发动成功，张角必须再弃置邓艾的第二张牌。吕布受到【方天画戟】影响对蔡文姬和A使用最后一张手牌【杀】，在指定目标后触发【无双①】，对蔡文姬结算时蔡文姬触发【断肠】，吕布失去所有技能，但对A进行结算时【无双①】的效果会继续执行。",
-            "en": "Zhang Jue uses [Frost Blade] to discard Deng Ai's first card, then plays [Frost Blade] out via [Ghost Path] — losing the skill — but since activation succeeded, he must still discard Deng Ai's second card. Lu Bu (with [Sky Piercer]) uses his last [Kill] on Cai Wenji and A; [Peerless①] triggers before Cai Wenji's resolution; Cai Wenji's [Heartbreak] causes Lu Bu to lose all skills, but [Peerless①] still executes when resolving against A.",
+            "en": "Zhang Jue uses [Frost Blade] to discard Deng Ai's first card, then plays [Frost Blade] out via [Ghost Path] — losing the skill — but since activation succeeded, he must still discard Deng Ai's second card. Lu Bu (with [Sky Piercer]) uses [Kill] on Cai Wenji and A; [Peerless①] triggers; Cai Wenji's [Heartbreak] causes Lu Bu to lose all skills, but [Peerless①] still executes when resolving against A.",
             "sub_examples": []
           }
         ]
       }
     ],
     "search_text_cn": "技能分类 牌分类 状态类效果 延时类效果 失去技能 死亡 效果是否继续",
-    "search_text_en": "skill classification card classification state effect delayed effect lose skill death effect persists"
+    "search_text_en": "skill classification state effect delayed effect lose skill death effect persists"
   }
 ]

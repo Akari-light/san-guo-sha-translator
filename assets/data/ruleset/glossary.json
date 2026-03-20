@@ -7,19 +7,21 @@
     "term_cn": "用语导引",
     "term_en": "Glossary Guide",
     "badge": null,
-    "definition_cn": "游戏中用到的特定术语及其相关的操作规范。技能表述由数个用语加上常规汉字构成，因此用语对于技能表述而言意义重大，只有使用规范的术语方能传递给玩家准确的牌面信息。",
-    "definition_en": "The specific terms used in the game and their associated procedural rules. Skill descriptions are composed of several glossary terms combined with ordinary characters, so precise terminology is essential for conveying accurate card information to players.",
+    "definition_cn": "游戏中用到的特定术语及其操作规范。技能描述由数个用语与常规文字构成，用语决定了技能的精确含义。",
+    "definition_en": "The specific terms used in the game and their procedural rules. Skill descriptions are built from these terms — understanding them precisely is essential for reading skill text correctly.",
     "rules": [
       {
         "type": "note",
         "cn": "部分用语带有其自身的操作规范，其地位等价于游戏通则。",
         "en": "Some terms carry their own procedural rules and have the same authority as the general game rules.",
+        "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "案例中提到“角色”，如无条件的说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
-        "en": "When an example refers to \"a character\" without additional qualification, it means the character's General Card skills and equipment skills are not considered — the character is treated as having no skills.",
+        "cn": "案例中提到「角色」，如无条件说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
+        "en": "When an example refers to \"a character\" without qualification, it means the character has no skills — treated as a blank.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -34,11 +36,11 @@
     "term_cn": "身份牌",
     "term_en": "Identity Card",
     "badge": null,
-    "definition_cn": "身份牌代表玩家在游戏里扮演的身份。身份决定玩家的游戏目标。除了主公外，一名角色的身份牌在其因死亡而亮出前对其他角色不可见。",
-    "definition_en": "An Identity Card represents the identity a player takes in the game. The identity determines the player's win condition. Except for the Lord, a character's Identity Card is not visible to other characters until it is revealed (flipped permanently face-up) upon that character's death.",
+    "definition_cn": "代表玩家在游戏里扮演的身份，决定其游戏目标。除主公外，所有角色的身份牌在死亡前对其他角色不可见。",
+    "definition_en": "Represents the role a player takes in the game and determines their win condition. Except for the Lord, all Identity Cards remain hidden until the character dies.",
     "rules": [],
     "search_text_cn": "身份牌 主公 忠臣 反贼 内奸 身份 目标",
-    "search_text_en": "identity card lord loyalist rebel spy identity win condition"
+    "search_text_en": "identity card lord loyalist rebel spy win condition hidden"
   },
   {
     "id": "glossary_2_1_general_card",
@@ -48,29 +50,19 @@
     "term_cn": "武将牌",
     "term_en": "General Card",
     "badge": null,
-    "definition_cn": "武将牌代表玩家操控的三国武将。武将牌上标识了势力、体力上限、技能、性别等属性。武将牌的技能专指武将牌左下角用白底的技能框圈起来的技能。",
-    "definition_en": "A General Card represents the Three Kingdoms general a player controls. It displays the character's faction, Max HP, skills, gender, and other attributes. \"Skills on a General Card\" refers specifically to the skills listed inside the white-background skill box at the bottom-left of the card.",
+    "definition_cn": "代表玩家操控的三国武将，显示势力、体力上限、技能、性别等属性。",
+    "definition_en": "Represents the Three Kingdoms general a player controls, showing their faction, Max HP, skills, gender, and other attributes.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "武将牌的技能专指武将牌左下角用白底的技能框圈起来的技能。",
-        "en": "\"Skills on a General Card\" refers specifically to the skills listed inside the white-background skill box at the bottom-left of the card.",
-        "examples": [
-          {
-            "cn": "左慈发动【化身②】不能声明邓艾的武将牌的文字里的【急袭】。",
-            "en": "When Zuo Ci activates [Shapeshifter②], he cannot declare [Sudden Raid] from the text on Deng Ai's General Card (since it appears outside the skill box).",
-            "sub_examples": []
-          },
-          {
-            "cn": "张飞杀死蔡文姬，蔡文姬触发【断肠】，张飞失去其当前的所有武将技能。然后在张飞死亡后，夏侯氏发动【孝德】依然可以拥有张飞的武将牌的【咆哮】。",
-            "en": "Zhang Fei kills Cai Wenji. Cai Wenji triggers [Heartbreak] and Zhang Fei loses all his current General Card skills. After Zhang Fei dies, Lady Xiahou activates [Filial Devotion] and can still obtain [Roar] from Zhang Fei's General Card.",
-            "sub_examples": []
-          }
-        ]
+        "type": "note",
+        "cn": "武将牌的技能专指武将牌左下角白底技能框内的技能，不包括牌面其他文字中提到的技能名称。",
+        "en": "\"Skills on a General Card\" refers only to the skills inside the white-background skill box at the bottom-left. Skill names mentioned elsewhere in the card text do not count.",
+        "segments": [],
+        "examples": []
       }
     ],
-    "search_text_cn": "武将牌 技能 势力 体力上限 性别 属性",
-    "search_text_en": "general card skill faction max hp gender attributes"
+    "search_text_cn": "武将牌 技能 势力 体力上限 性别 属性 技能框",
+    "search_text_en": "general card skill faction max hp gender skill box"
   },
   {
     "id": "glossary_2_1_library_card",
@@ -80,11 +72,11 @@
     "term_cn": "游戏牌",
     "term_en": "Library Card",
     "badge": null,
-    "definition_cn": "在游戏过程中所有角色共用的牌。游戏牌分为基本牌、锦囊牌和装备牌三个类别。每张游戏牌的左上角均标有花色和点数。",
-    "definition_en": "Cards shared by all characters during the game. Library Cards are divided into three categories: Basic Cards, Tool Cards, and Equipment Cards. Every Library Card has a suit and rank printed in its upper-left corner.",
+    "definition_cn": "游戏过程中所有角色共用的牌，分为基本牌、锦囊牌和装备牌三类。每张牌的左上角标有花色和点数。",
+    "definition_en": "Cards shared by all characters during the game, divided into three categories: Basic Cards, Tool Cards, and Equipment Cards. Every Library Card has a suit and rank in its upper-left corner.",
     "rules": [],
     "search_text_cn": "游戏牌 基本牌 锦囊牌 装备牌 花色 点数",
-    "search_text_en": "library card basic tool equipment suit rank shared"
+    "search_text_en": "library card basic tool equipment suit rank"
   },
   {
     "id": "glossary_2_1_basic_card",
@@ -94,8 +86,8 @@
     "term_cn": "基本牌",
     "term_en": "Basic Card",
     "badge": null,
-    "definition_cn": "基本牌上除花色和点数外，仅标识了牌的名称和插图。基本牌是数量占比最多的游戏牌，有最简单而实用的功能。",
-    "definition_en": "A Basic Card carries only its name and artwork beyond the suit and rank. Basic Cards are the most numerous card type and have the simplest, most versatile functions.",
+    "definition_cn": "除花色和点数外只有牌名和插图的牌。是数量最多的游戏牌，功能最简单也最实用。",
+    "definition_en": "Cards that only show a name and artwork beyond their suit and rank. The most numerous card type, with the simplest and most versatile functions.",
     "rules": [],
     "search_text_cn": "基本牌 杀 闪 桃 酒 毒",
     "search_text_en": "basic card kill dodge peach wine poison"
@@ -108,54 +100,45 @@
     "term_cn": "装备牌",
     "term_en": "Equipment Card",
     "badge": null,
-    "definition_cn": "装备牌分为武器牌、防具牌、坐骑牌和宝物牌。一名角色的装备区里只能放置一张武器/防具/【-1坐骑】/【+1坐骑】/宝物牌。",
-    "definition_en": "Equipment Cards are divided into Weapon Cards, Armor Cards, Mount Cards, and Treasure Cards. A character's Equipment Zone may hold at most one card in each slot: one weapon, one armor, one [-1 Mount], one [+1 Mount], and one treasure.",
+    "definition_cn": "分为武器牌、防具牌、坐骑牌和宝物牌。每名角色的装备区各类只能放置一张。",
+    "definition_en": "Divided into Weapon Cards, Armor Cards, Mount Cards, and Treasure Cards. A character's Equipment Zone holds at most one card of each type.",
     "rules": [
       {
         "type": "rule",
-        "cn": "当角色将武器牌/坐骑牌当其他牌使用，或弃置武器牌/坐骑牌作为发动技能的消耗时，不能同时用到该武器牌/坐骑牌提供的距离、攻击范围或技能。",
-        "en": "When a character uses a weapon or mount card as a substitute for another card, or discards a weapon or mount card as a skill cost, the distance modification, attack range, or skill provided by that card cannot simultaneously take effect.",
+        "cn": "将武器牌/坐骑牌当其他牌使用，或将其弃置为技能消耗时，不能同时享用该牌提供的距离修正、攻击范围或技能。",
+        "en": "When using a weapon or mount card as a substitute for another card, or discarding it as a skill cost, its distance modification, attack range, or skill cannot simultaneously take effect.",
+        "segments": [],
         "examples": [
           {
-            "cn": "对装备【麒麟弓】的关羽使用【借刀杀人】选择对距离为2以上的角色使用【杀】时，关羽不可以发动【武圣】将其装备区里的【麒麟弓】当【杀】对该角色使用进行响应。",
-            "en": "When [Proxy Attack] is used on Guan Yu (equipped with [Kirin Bow]) designating a target at distance 2 or more, Guan Yu cannot activate [Saint of War] to use [Kirin Bow] from his Equipment Zone as a [Kill] to respond — [Kirin Bow]'s range would no longer apply since it is being used as a substitute card.",
+            "cn": "关羽将装备区里的【麒麟弓】当【杀】使用后，该次【杀】不享用【麒麟弓】的技能效果。",
+            "en": "When Guan Yu uses [Kirin Bow] as a [Kill], that [Kill] does not benefit from [Kirin Bow]'s skill effect.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "rule",
-        "cn": "当角色用到一张装备牌提供的距离、攻击范围或技能时，不能以任何方式操作该装备牌。",
-        "en": "When a character is benefiting from a distance modification, attack range, or skill provided by an equipment card, that equipment card cannot be operated in any way.",
+        "cn": "正在享用一张装备牌提供的距离、攻击范围或技能时，不能以任何方式操作该装备牌。",
+        "en": "While benefiting from a distance modification, attack range, or skill provided by an equipment card, that card cannot be operated in any way.",
+        "segments": [],
         "examples": [
           {
-            "cn": "不可以通过弃置装备区里的【贯石斧】和另一张牌的方式发动【贯石斧】。",
+            "cn": "不可以通过弃置装备区里的【贯石斧】和另一张牌的方式来发动【贯石斧】。",
             "en": "A character cannot activate [Stonepiercer]'s skill by discarding [Stonepiercer] itself along with another card.",
             "sub_examples": []
           }
         ]
       },
       {
-        "type": "rule",
-        "cn": "装备技能的效果与武将技能的同类效果能叠加。",
-        "en": "The effects of equipment skills and General Card skills of the same type stack.",
-        "examples": [
-          {
-            "cn": "太史慈使用【杀】在选择目标时受到【天义】和【方天画戟】的影响，至多可以选择四个目标。",
-            "en": "When Tai Shi Ci uses [Kill] and selects targets, with both [Heaven's Justice] and [Sky Piercer] applying, he may select up to four targets in total.",
-            "sub_examples": []
-          }
-        ]
-      },
-      {
         "type": "note",
-        "cn": "角色使用装备牌的目标默认为该角色自己。",
-        "en": "The default target when a character uses an Equipment Card is that character themselves.",
+        "cn": "装备技能与武将技能的同类效果可以叠加。角色使用装备牌的默认目标为自己。",
+        "en": "Equipment skills and General Card skills of the same type stack. The default target when using an Equipment Card is the character themselves.",
+        "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "装备牌 武器牌 防具牌 坐骑牌 宝物牌 装备区 攻击范围 距离",
-    "search_text_en": "equipment card weapon armor mount treasure equipment zone attack range distance"
+    "search_text_cn": "装备牌 武器牌 防具牌 坐骑牌 宝物牌 装备区 攻击范围 距离 叠加",
+    "search_text_en": "equipment card weapon armor mount treasure equipment zone attack range distance stack"
   },
   {
     "id": "glossary_2_1_tool_card",
@@ -165,11 +148,40 @@
     "term_cn": "锦囊牌",
     "term_en": "Tool Card",
     "badge": null,
-    "definition_cn": "锦囊牌上带有“锦囊”标识。分为两类：带有沙漏标识的为“延时类锦囊牌”，没有沙漏标识的为“非延时类锦囊牌”。",
-    "definition_en": "A Tool Card bears the \"Tool\" label. They are divided into two types: those with an hourglass symbol are \"Time-Delayed Tools\"; those without are \"Non Time-Delay Tools\".",
-    "rules": [],
-    "search_text_cn": "锦囊牌 延时 非延时 沙漏 工具",
-    "search_text_en": "tool card time-delayed non-time-delay hourglass"
+    "definition_cn": "带有「锦囊」标识的牌。分为两类：带沙漏标识的为延时类锦囊牌，没有沙漏标识的为非延时类锦囊牌。",
+    "definition_en": "Cards bearing the \"Tool\" label. Two types: those with an hourglass symbol are Time-Delayed Tools; those without are Non Time-Delay Tools.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "非延时类锦囊牌使用后立即结算；延时类锦囊牌置于目标的判定区，在该角色的下一个判定阶段进行结算。",
+        "en": "Non Time-Delay Tools resolve immediately when used. Time-Delayed Tools are placed in the target's Judgment Zone and resolve during that character's next Judgment Phase.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "非延时类：",
+            "en": "Non Time-Delay: "
+          },
+          {
+            "kind": "body",
+            "cn": "使用后立即结算。",
+            "en": "resolves immediately when used. "
+          },
+          {
+            "kind": "label",
+            "cn": "延时类：",
+            "en": "Time-Delayed: "
+          },
+          {
+            "kind": "body",
+            "cn": "置于目标的判定区，在该角色的下一个判定阶段结算。",
+            "en": "placed in the target's Judgment Zone and resolves during their next Judgment Phase."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "锦囊牌 延时 非延时 沙漏 判定区",
+    "search_text_en": "tool card time-delayed non-time-delay hourglass judgment zone"
   },
   {
     "id": "glossary_2_2_card_info",
@@ -179,7 +191,7 @@
     "term_cn": "牌面信息",
     "term_en": "Card Information",
     "badge": null,
-    "definition_cn": "实体牌上的一切信息，如点数、花色、势力、性别、（【杀】的）属性等。",
+    "definition_cn": "实体牌上的一切信息，如点数、花色、势力、性别、【杀】的属性等。",
     "definition_en": "All information printed on a physical card, such as rank, suit, faction, gender, and the attribute of a [Kill].",
     "rules": [],
     "search_text_cn": "牌面信息 点数 花色 势力 性别 属性",
@@ -193,11 +205,40 @@
     "term_cn": "花色",
     "term_en": "Suit",
     "badge": null,
-    "definition_cn": "标识于游戏牌的左上角，分为红桃、方块、黑桃、梅花四种。",
-    "definition_en": "Marked in the upper-left corner of a Library Card. There are four suits: Hearts, Diamonds, Spades, and Clubs.",
-    "rules": [],
-    "search_text_cn": "花色 红桃 方块 黑桃 梅花",
-    "search_text_en": "suit hearts diamonds spades clubs"
+    "definition_cn": "标识于游戏牌左上角，分为红桃、方块、黑桃、梅花四种。",
+    "definition_en": "Marked in the upper-left corner of a Library Card. Four suits: Hearts, Diamonds, Spades, and Clubs.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "红桃/方块的牌为红色牌；黑桃/梅花的牌为黑色牌。",
+        "en": "Hearts/Diamonds cards are Red. Spades/Clubs cards are Black.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "红色：",
+            "en": "Red: "
+          },
+          {
+            "kind": "body",
+            "cn": "红桃、方块。",
+            "en": "Hearts, Diamonds. "
+          },
+          {
+            "kind": "label",
+            "cn": "黑色：",
+            "en": "Black: "
+          },
+          {
+            "kind": "body",
+            "cn": "黑桃、梅花。",
+            "en": "Spades, Clubs."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "花色 红桃 方块 黑桃 梅花 红色 黑色",
+    "search_text_en": "suit hearts diamonds spades clubs red black"
   },
   {
     "id": "glossary_2_2_color",
@@ -207,8 +248,8 @@
     "term_cn": "颜色",
     "term_en": "Color",
     "badge": null,
-    "definition_cn": "游戏牌按颜色分为红色、黑色两种。红桃/方块花色的牌的颜色为红色，黑桃/梅花花色的牌的颜色为黑色。",
-    "definition_en": "Library Cards are divided into two colors: Red and Black. Hearts and Diamonds cards are Red; Spades and Clubs cards are Black.",
+    "definition_cn": "游戏牌分为红色和黑色两种。红桃/方块为红色，黑桃/梅花为黑色。",
+    "definition_en": "Library Cards are either Red or Black. Hearts/Diamonds are Red; Spades/Clubs are Black.",
     "rules": [],
     "search_text_cn": "颜色 红色 黑色 红桃 方块 黑桃 梅花",
     "search_text_en": "color red black hearts diamonds spades clubs"
@@ -221,20 +262,26 @@
     "term_cn": "势力",
     "term_en": "Faction",
     "badge": null,
-    "definition_cn": "标识于武将牌的左上角，分为魏、蜀、吴、群、西、神六种，主色调分别为蓝、红、绿、银、紫、金。",
-    "definition_en": "Marked in the upper-left corner of a General Card. Six factions exist: Wei (blue), Shu (red), Wu (green), Qun (silver), Western (purple), and God (gold).",
+    "definition_cn": "标识于武将牌左上角，共六种：魏（蓝）、蜀（红）、吴（绿）、群（银）、西（紫）、神（金）。",
+    "definition_en": "Marked in the upper-left corner of a General Card. Six factions: Wei (blue), Shu (red), Wu (green), Qun (silver), Western (purple), and God (gold).",
     "rules": [
       {
         "type": "rule",
-        "cn": "神/西势力武将加入游戏时须改为魏、蜀、吴、群中的任意一种。",
-        "en": "When a God- or Western-faction general enters the game, their faction must be changed to one of: Wei, Shu, Wu, or Qun.",
-        "examples": [
+        "cn": "神/西势力武将加入游戏时须改为魏、蜀、吴、群中的任意一种。从主公开始按行动顺序依次决定。",
+        "en": "When a God- or Western-faction general enters the game, their faction must be changed to Wei, Shu, Wu, or Qun. Starting from the Lord, each player decides in turn order.",
+        "segments": [
           {
-            "cn": "神/西势力武将在游戏开始前须从主公开始按行动顺序依次决定自己属于魏、蜀、吴、群四种势力中的哪种。",
-            "en": "Before the game begins, starting from the Lord and proceeding in turn order, each God- or Western-faction general must choose which of the four factions (Wei, Shu, Wu, or Qun) they belong to.",
-            "sub_examples": []
+            "kind": "label",
+            "cn": "神/西势力：",
+            "en": "God/Western faction: "
+          },
+          {
+            "kind": "body",
+            "cn": "加入游戏时须改为魏、蜀、吴、群中的任意一种。从主公开始按行动顺序依次决定。",
+            "en": "must change to Wei, Shu, Wu, or Qun when entering the game. Starting from the Lord, each player decides in turn order."
           }
-        ]
+        ],
+        "examples": []
       }
     ],
     "search_text_cn": "势力 魏 蜀 吴 群 西 神 蓝 红 绿 银 紫 金",
@@ -248,9 +295,17 @@
     "term_cn": "技能",
     "term_en": "Skill",
     "badge": null,
-    "definition_cn": "角色于游戏规则和用语操作规范外拥有的能力或能进行的操作。角色同时或先后拥有两个同名的技能，则这两个技能相互独立。",
-    "definition_en": "An ability or action a character possesses beyond the standard game rules and procedural rules. If a character has two skills with the same name simultaneously or in sequence, those two skills are independent of each other.",
-    "rules": [],
+    "definition_cn": "角色在游戏规则和用语操作规范之外拥有的额外能力或操作。",
+    "definition_en": "An ability or action a character possesses beyond the standard game rules.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "角色同时或先后拥有两个同名技能，则这两个技能相互独立，各自可以发动。",
+        "en": "If a character has two skills with the same name simultaneously or in sequence, the two skills are independent of each other and can each be activated.",
+        "segments": [],
+        "examples": []
+      }
+    ],
     "search_text_cn": "技能 能力 操作 同名 独立",
     "search_text_en": "skill ability operation same name independent"
   },
@@ -266,7 +321,7 @@
     "definition_en": "A location where cards are placed.",
     "rules": [],
     "search_text_cn": "区域 场所 放置",
-    "search_text_en": "zone location place cards"
+    "search_text_en": "zone location place"
   },
   {
     "id": "glossary_2_3_draw_pile",
@@ -276,18 +331,30 @@
     "term_cn": "牌堆",
     "term_en": "Draw Pile",
     "badge": null,
-    "definition_cn": "分发起始手牌后，将剩余的游戏牌放在一起形成牌堆。牌堆里的牌须扣置（背面朝上）。",
-    "definition_en": "After dealing starting hands, the remaining Library Cards form the Draw Pile. Cards in the Draw Pile must be placed face-down.",
+    "definition_cn": "发完起始手牌后，剩余的游戏牌背面朝上叠放形成牌堆。",
+    "definition_en": "After starting hands are dealt, the remaining Library Cards are placed face-down to form the Draw Pile.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "每当一名角色需要操作牌堆里的牌时：若（牌堆里的牌数+弃牌堆里的牌数）＜X，游戏以平局结束；若0＜牌堆里的牌数＜X且（牌堆里的牌数+弃牌堆里的牌数）≥X，系统将弃牌堆里的所有牌以随机顺序置于牌堆底；若牌堆里的牌数=0且弃牌堆里的牌数≥X，系统将弃牌堆里的所有牌以随机顺序置入牌堆。（X为该角色需要操作的牌数）",
-        "en": "Whenever a character needs to operate on cards from the Draw Pile: if (Draw Pile count + Discard Pile count) < X, the game ends in a draw; if 0 < Draw Pile count < X and the combined total ≥ X, all Discard Pile cards are shuffled and placed at the bottom of the Draw Pile; if the Draw Pile count = 0 and the Discard Pile count ≥ X, all Discard Pile cards are shuffled into the Draw Pile. (X = the number of cards the character needs to operate on.)",
+        "type": "note",
+        "cn": "当需要从牌堆取X张牌时：若牌堆+弃牌堆合计不足X张，游戏以平局结束；若牌堆不足X张但合计足够，将弃牌堆随机洗入牌堆底；若牌堆为0且弃牌堆足够，将弃牌堆全部随机置入牌堆。",
+        "en": "When X cards are needed from the Draw Pile: combined total < X → game ends in a draw; Draw Pile insufficient but combined total sufficient → shuffle Discard Pile to Draw Pile bottom; Draw Pile empty and Discard Pile sufficient → shuffle all into the Draw Pile.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "补牌规则：",
+            "en": "Reshuffle rule: "
+          },
+          {
+            "kind": "body",
+            "cn": "合计不足X → 平局；牌堆不足但合计足够 → 弃牌堆洗入牌堆底；牌堆为0且弃牌堆足够 → 弃牌堆全部置入牌堆。",
+            "en": "total < X → draw; Draw Pile insufficient but total sufficient → shuffle Discard Pile to bottom; Draw Pile empty, Discard Pile sufficient → shuffle all into Draw Pile."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "牌堆 抽牌 扣置 背面朝上 剩余",
-    "search_text_en": "draw pile face-down remaining reshuffle discard pile"
+    "search_text_cn": "牌堆 扣置 背面朝上 洗牌 弃牌堆 补充",
+    "search_text_en": "draw pile face-down reshuffle discard pile refill"
   },
   {
     "id": "glossary_2_3_discard_pile",
@@ -297,8 +364,8 @@
     "term_cn": "弃牌堆",
     "term_en": "Discard Pile",
     "badge": null,
-    "definition_cn": "角色在游戏中以使用、打出或弃置等方式操作的牌最后都将放在一起形成弃牌堆。弃牌堆里的牌须正面朝上放置。",
-    "definition_en": "Cards that have been used, played out, or discarded during the game are placed here face-up. Cards in the Discard Pile must be placed face-up.",
+    "definition_cn": "所有被使用、打出或弃置的牌最终放置的区域。弃牌堆里的牌须正面朝上。",
+    "definition_en": "The zone where all used, played-out, or discarded cards are placed. Cards here must be face-up.",
     "rules": [],
     "search_text_cn": "弃牌堆 正面朝上 使用 打出 弃置",
     "search_text_en": "discard pile face-up used played discarded"
@@ -311,11 +378,11 @@
     "term_cn": "场上",
     "term_en": "On the Field",
     "badge": null,
-    "definition_cn": "所有角色的装备区和判定区。",
+    "definition_cn": "所有角色的装备区和判定区的总称。",
     "definition_en": "Refers collectively to all characters' Equipment Zones and Judgment Zones.",
     "rules": [],
     "search_text_cn": "场上 装备区 判定区",
-    "search_text_en": "on the field equipment zone judgment zone"
+    "search_text_en": "field equipment zone judgment zone"
   },
   {
     "id": "glossary_2_3_character_zone",
@@ -323,15 +390,16 @@
     "section_title_cn": "区域",
     "section_title_en": "Zones",
     "term_cn": "角色的区域",
-    "term_en": "Character's Zone",
+    "term_en": "Character Zone",
     "badge": null,
-    "definition_cn": "每名角色的区域包括手牌区、装备区和判定区。一名角色的判定区里不能有两张以上同名的牌。角色判定区里的牌不为任何角色所拥有。",
-    "definition_en": "Each character's zone includes their Hand Zone, Equipment Zone, and Judgment Zone. A character's Judgment Zone cannot contain two cards with the same name. Cards in a character's Judgment Zone are not owned by any character.",
+    "definition_cn": "每名角色的区域包括手牌区、装备区和判定区。",
+    "definition_en": "Each character's zone consists of their Hand Zone, Equipment Zone, and Judgment Zone.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "角色判定区里的方块牌视为【乐不思蜀】；角色判定区里的黑色基本牌/黑色装备牌视为【兵粮寸断】。",
-        "en": "A Diamonds card in a character's Judgment Zone is treated as [Acedia]. A black Basic Card or black Equipment Card in a character's Judgment Zone is treated as [Starvation].",
+        "type": "note",
+        "cn": "一名角色的判定区里不能有两张同名的牌。角色判定区里的牌不为任何角色所拥有。",
+        "en": "A character's Judgment Zone cannot contain two cards with the same name. Cards in the Judgment Zone are not owned by any character.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -346,8 +414,8 @@
     "term_cn": "处理区",
     "term_en": "Processing Zone",
     "badge": null,
-    "definition_cn": "大多数情况下处理游戏牌的区域。处理区里的牌须正面朝上放置。处理区里的牌不为任何角色所拥有。",
-    "definition_en": "The zone used to process Library Cards in most situations. Cards here must be placed face-up. Cards in the Processing Zone are not owned by any character.",
+    "definition_cn": "大多数情况下处理游戏牌的中间区域。处理区里的牌须正面朝上，不为任何角色所拥有。",
+    "definition_en": "The central zone used to process Library Cards in most situations. Cards here must be face-up and are not owned by any character.",
     "rules": [],
     "search_text_cn": "处理区 正面朝上 不属于",
     "search_text_en": "processing zone face-up not owned"
@@ -360,13 +428,35 @@
     "term_cn": "手牌区",
     "term_en": "Hand Zone",
     "badge": null,
-    "definition_cn": "玩家手里的牌（简称“手牌”）放置的区域。手牌区里的牌须扣置。角色的手牌对自己可见。",
-    "definition_en": "The zone where a player's hand cards are kept. Cards here must be placed face-down. A character can see their own hand cards.",
+    "definition_cn": "玩家手里的牌（手牌）放置的区域。手牌须扣置（背面朝上），只有该角色自己可见。",
+    "definition_en": "The zone where a player's hand cards are kept. Hand cards must be face-down and are only visible to their owner.",
     "rules": [
       {
         "type": "rule",
-        "cn": "若A执行弃置自己手牌的操作，则A须从所有手牌中选择；若A执行弃置B的手牌的操作，则A须随机弃置B的手牌。",
-        "en": "When a character discards their own hand cards, they choose which cards to discard. When a character discards another character's hand cards, the cards are discarded randomly.",
+        "cn": "A弃置自己的手牌：A自己选择弃哪些牌。A弃置B的手牌：A随机弃置B的手牌。",
+        "en": "When A discards their own hand cards, A chooses which to discard. When A discards B's hand cards, the cards are discarded randomly.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "弃自己的手牌：",
+            "en": "Discarding own hand cards: "
+          },
+          {
+            "kind": "body",
+            "cn": "自己选择。",
+            "en": "player chooses. "
+          },
+          {
+            "kind": "label",
+            "cn": "弃他人的手牌：",
+            "en": "Discarding another's hand cards: "
+          },
+          {
+            "kind": "body",
+            "cn": "随机弃置。",
+            "en": "discarded randomly."
+          }
+        ],
         "examples": []
       }
     ],
@@ -381,8 +471,8 @@
     "term_cn": "装备区",
     "term_en": "Equipment Zone",
     "badge": null,
-    "definition_cn": "角色使用的装备牌放置的区域。此区域里共有五个位置，分别放置武器牌、防具牌、【+1坐骑】、【-1坐骑】和宝物牌。装备区里的牌须正面朝上放置。",
-    "definition_en": "The zone where a character's equipped cards are placed. It has five slots: weapon, armor, [+1 Mount], [-1 Mount], and treasure. Cards in the Equipment Zone must be placed face-up.",
+    "definition_cn": "角色已装备的牌放置的区域。共有五个位置：武器、防具、+1坐骑、-1坐骑、宝物。装备区里的牌须正面朝上。",
+    "definition_en": "The zone where a character's equipped cards are placed. Five slots: weapon, armor, +1 mount, -1 mount, and treasure. Cards here must be face-up.",
     "rules": [],
     "search_text_cn": "装备区 武器 防具 坐骑 宝物 五个位置 正面朝上",
     "search_text_en": "equipment zone weapon armor mount treasure five slots face-up"
@@ -395,11 +485,45 @@
     "term_cn": "判定区",
     "term_en": "Judgment Zone",
     "badge": null,
-    "definition_cn": "角色成为延时类锦囊牌的目标后，此牌放置的区域。判定区里的牌须正面朝上放置。一名角色的判定区里不能有两张以上同名的牌。角色判定区里的牌不为任何角色所拥有。",
-    "definition_en": "The zone where a Time-Delayed Tool Card is placed after targeting a character. Cards here must be placed face-up. A character's Judgment Zone cannot contain two cards with the same name. Cards here are not owned by any character.",
-    "rules": [],
-    "search_text_cn": "判定区 延时锦囊 正面朝上 不属于",
-    "search_text_en": "judgment zone time-delayed tool face-up not owned"
+    "definition_cn": "角色成为延时类锦囊牌目标后，该牌放置的区域。牌须正面朝上，不为任何角色所拥有，且同名牌不能同时存在两张。",
+    "definition_en": "Where a Time-Delayed Tool Card is placed after targeting a character. Cards must be face-up, are not owned by anyone, and no two cards with the same name can coexist here.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "判定区里的方块牌视为[乐不思蜀]；判定区里的黑色基本牌/黑色装备牌视为[兵粮寸断]。",
+        "en": "A Diamonds card in the Judgment Zone is treated as [Acedia]. A black Basic or Equipment card is treated as [Starvation].",
+        "segments": [
+          {
+            "kind": "body",
+            "cn": "判定区里的方块牌视为",
+            "en": "A Diamonds card in the Judgment Zone is treated as "
+          },
+          {
+            "kind": "card",
+            "cn": "【乐不思蜀】",
+            "en": "[Acedia]"
+          },
+          {
+            "kind": "body",
+            "cn": "；判定区里的黑色基本牌/装备牌视为",
+            "en": ".\nA black Basic or Equipment card is treated as "
+          },
+          {
+            "kind": "card",
+            "cn": "【兵粮寸断】",
+            "en": "[Starvation]"
+          },
+          {
+            "kind": "body",
+            "cn": "。",
+            "en": "."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "判定区 延时锦囊 正面朝上 不属于 乐不思蜀 兵粮寸断",
+    "search_text_en": "judgment zone time-delayed face-up not owned acedia starvation"
   },
   {
     "id": "glossary_2_3_characters_cards",
@@ -409,30 +533,30 @@
     "term_cn": "角色的牌",
     "term_en": "A Character's Cards",
     "badge": null,
-    "definition_cn": "每名角色的牌包括其手牌、装备区里的牌和判定牌。每名角色拥有的牌包括其手牌和装备区里的牌。该角色的判定牌不为任何角色所拥有，其判定区里的牌既不是该角色的牌，也不为任何角色所拥有。",
-    "definition_en": "A character's cards include their hand cards, equipped cards, and judgment cards. A character's \"owned\" cards include only their hand cards and equipped cards. Their judgment cards are not owned by any character — cards in the Judgment Zone belong to neither the character nor anyone else.",
+    "definition_cn": "通常指该角色拥有的牌，即手牌和装备区里的牌。判定区里的牌不为任何人所拥有。",
+    "definition_en": "In most contexts, refers to the cards a character owns — their hand cards and equipped cards. Cards in the Judgment Zone are not owned by anyone.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "在牌面中，“角色拥有的牌”会简写成“角色的牌”。一般情况下，以任何形式操作角色的牌都是指操作角色拥有的牌，即角色的手牌和装备区里的牌。但“将角色的牌视为…”（如【红颜】）中的“角色的牌”包括该角色的判定牌。",
-        "en": "On card text, \"cards owned by a character\" is often shortened to \"a character's cards\". In general usage, operating on a character's cards means operating on the cards they own — their hand cards and equipped cards. However, the phrase \"treat a character's cards as …\" (e.g. [Blushing Beauty]) includes that character's judgment cards.",
-        "examples": [
+        "type": "caution",
+        "cn": "例外：技能文字中「将角色的牌视为…」时，「角色的牌」包括其判定牌。一般操作角色的牌（弃置、获得等）只针对其手牌和装备区里的牌。",
+        "en": "Exception: in the phrase \"treat a character's cards as …\" (in some skills), the character's cards include their Judgment Zone cards. All other operations apply only to hand cards and equipped cards.",
+        "segments": [
           {
-            "cn": "执行【寒冰剑】的效果不可以弃置目标角色判定区里的牌。",
-            "en": "When resolving [Frost Blade]'s effect, cards in the target's Judgment Zone cannot be discarded.",
-            "sub_examples": []
+            "kind": "label",
+            "cn": "例外：",
+            "en": "Exception: "
+          },
+          {
+            "kind": "body",
+            "cn": "技能文字「将角色的牌视为…」包括判定牌。其他情况（弃置/获得等）只包括手牌和装备区里的牌。",
+            "en": "\"Treat a character's cards as …\" includes Judgment Zone cards. All other operations apply only to hand cards and equipped cards."
           }
-        ]
-      },
-      {
-        "type": "rule",
-        "cn": "除因游戏流程要求的操作外，角色不能操作并非该角色拥有的牌。处理区里的牌不为任何角色所拥有。",
-        "en": "Except where required by game procedure, a character cannot operate on cards they do not own. Cards in the Processing Zone are not owned by any character.",
+        ],
         "examples": []
       }
     ],
     "search_text_cn": "角色的牌 拥有的牌 手牌 装备区 判定牌 判定区",
-    "search_text_en": "character cards owned cards hand equipped judgment cards judgment zone"
+    "search_text_en": "character cards owned cards hand equipped judgment zone"
   },
   {
     "id": "glossary_2_4_rank",
@@ -442,17 +566,18 @@
     "term_cn": "点数",
     "term_en": "Rank",
     "badge": null,
-    "definition_cn": "游戏牌的左上角的一个数字或字母，从A到K。A代表1点，J代表11点，Q代表12点，K代表13点。A是最小的点数，K是最大的点数。",
-    "definition_en": "A number or letter in the upper-left corner of a Library Card, ranging from A to K. A = 1, J = 11, Q = 12, K = 13. A is the minimum rank; K is the maximum.",
+    "definition_cn": "游戏牌左上角的数字或字母，范围从A到K。A=1，J=11，Q=12，K=13。A最小，K最大。",
+    "definition_en": "The number or letter in the upper-left corner of a Library Card, ranging from A to K. A=1, J=11, Q=12, K=13. A is the minimum; K is the maximum.",
     "rules": [
       {
         "type": "rule",
         "cn": "一张牌的点数若大于K则视为K，若小于A则视为A。",
         "en": "If a card's rank would exceed K, it is treated as K. If it would fall below A, it is treated as A.",
+        "segments": [],
         "examples": [
           {
-            "cn": "发动【丈八蛇矛】将一张点数为7的牌和一张点数为9的牌当【杀】使用，此【杀】的点数为13。",
-            "en": "When activating [Serpent Spear] to use a rank-7 card and a rank-9 card as a [Kill], the resulting [Kill]'s rank is 13 (capped at K).",
+            "cn": "发动【丈八蛇矛】将7点和9点的牌当【杀】使用，此【杀】点数为13（上限为K）。",
+            "en": "Activating [Serpent Spear] to use a rank-7 and rank-9 card as a [Kill] gives the [Kill] a rank of 13 (capped at K).",
             "sub_examples": []
           }
         ]
@@ -469,13 +594,14 @@
     "term_cn": "体力上限",
     "term_en": "Max HP",
     "badge": null,
-    "definition_cn": "武将牌上方的阴阳鱼个数，即体力的最大值。若游戏人数不小于5，主公的体力上限+1。",
-    "definition_en": "The number of yin-yang symbols on the General Card, representing the maximum possible HP. If the player count is 5 or more, the Lord's Max HP is increased by 1.",
+    "definition_cn": "武将牌上阴阳鱼的数量，代表该角色体力的最大值。游戏人数不少于5人时，主公体力上限+1。",
+    "definition_en": "The number of yin-yang symbols on a General Card, representing the maximum possible HP. When there are 5 or more players, the Lord's Max HP increases by 1.",
     "rules": [
       {
         "type": "rule",
-        "cn": "角色减体力上限后，若其体力值超过体力上限，其须将体力调整至等同于体力上限。",
-        "en": "If a character's current HP Value exceeds their Max HP after the Max HP is reduced, their HP must be adjusted down to match the new Max HP.",
+        "cn": "角色减少体力上限后，若其体力值超过新的体力上限，须将体力调整至等同于新的体力上限。",
+        "en": "If a character's HP Value exceeds their new Max HP after a Max HP reduction, their HP must be adjusted down to the new Max HP.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -490,9 +616,38 @@
     "term_cn": "体力",
     "term_en": "HP",
     "badge": null,
-    "definition_cn": "游戏开始时，每名角色均拥有等同于体力上限的体力，在游戏过程中此数值有可能发生变化。角色的体力有可能小于0。",
-    "definition_en": "At the start of the game, each character's HP equals their Max HP. This value may change during play. A character's HP can go below 0.",
-    "rules": [],
+    "definition_cn": "角色的当前生命值。游戏开始时等于体力上限，游戏过程中会变化。体力可以低于0。",
+    "definition_en": "A character's current life value. Starts equal to Max HP at game start and changes during play. HP can go below 0.",
+    "rules": [
+      {
+        "type": "caution",
+        "cn": "体力（HP概念）与体力值（数值参数）有所不同：体力用于事件描述（如「失去1点体力」）；体力值用于数值计算（如「等于你的体力值」）。两者在英文中都译为HP，但含义有别。",
+        "en": "HP (体力, the concept) and HP Value (体力值, the numeric parameter) are distinct. HP is used in event descriptions (e.g. \"lose 1 HP\"). HP Value is used as a numeric input in calculations (e.g. \"equal to your HP Value\"). Both translate to \"HP\" but are conceptually different.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "体力（概念）：",
+            "en": "HP (concept): "
+          },
+          {
+            "kind": "body",
+            "cn": "用于事件描述，如「失去1点体力」。",
+            "en": "used in event descriptions, e.g. \"lose 1 HP\". "
+          },
+          {
+            "kind": "label",
+            "cn": "体力值（参数）：",
+            "en": "HP Value (parameter): "
+          },
+          {
+            "kind": "body",
+            "cn": "用于数值计算，如「等于你的体力值」。",
+            "en": "used as a numeric input, e.g. \"equal to your HP Value\"."
+          }
+        ],
+        "examples": []
+      }
+    ],
     "search_text_cn": "体力 生命值 回复 伤害 扣减",
     "search_text_en": "hp health recover damage reduce"
   },
@@ -504,11 +659,11 @@
     "term_cn": "体力值",
     "term_en": "HP Value",
     "badge": null,
-    "definition_cn": "角色的体力牌上未被武将牌挡住的阴阳鱼个数，通常是作为游戏中所调用的一个参数被提到。当角色的体力降到0或更低时，其体力值为0。",
-    "definition_en": "The number of visible yin-yang symbols on a character's HP tracker, used as a numeric parameter in calculations. When a character's HP drops to 0 or lower, their HP Value is treated as 0.",
+    "definition_cn": "角色体力牌上未被武将牌遮住的阴阳鱼数量，作为数值参数参与计算。体力降至0或以下时，体力值为0。",
+    "definition_en": "The number of visible yin-yang symbols on a character's HP tracker, used as a numeric parameter in calculations. When HP drops to 0 or lower, the HP Value is treated as 0.",
     "rules": [],
     "search_text_cn": "体力值 参数 阴阳鱼 计算 数值",
-    "search_text_en": "hp value parameter calculation numeric"
+    "search_text_en": "hp value parameter calculation numeric yin-yang"
   },
   {
     "id": "glossary_2_4_hand_limit",
@@ -518,8 +673,8 @@
     "term_cn": "手牌上限",
     "term_en": "Hand Limit",
     "badge": null,
-    "definition_cn": "角色的手牌上限为其体力值。手牌上限通常只于角色的弃牌阶段提及，角色能保留的手牌数不能超过其手牌上限。手牌上限经过修正后最小值为0。",
-    "definition_en": "A character's Hand Limit equals their HP Value. The Hand Limit is normally relevant only during the Discard Phase: a character cannot keep more cards in hand than their Hand Limit. The minimum Hand Limit after modification is 0.",
+    "definition_cn": "角色能保留的最大手牌数，等于其体力值。主要在弃牌阶段生效。修正后最低为0。",
+    "definition_en": "The maximum number of cards a character can keep in hand, equal to their HP Value. Primarily relevant during the Discard Phase. Minimum of 0 after modification.",
     "rules": [],
     "search_text_cn": "手牌上限 体力值 弃牌阶段 保留 最小值",
     "search_text_en": "hand limit hp value discard phase keep minimum"
@@ -532,8 +687,8 @@
     "term_cn": "已损失的体力值",
     "term_en": "HP Lost",
     "badge": null,
-    "definition_cn": "此数值由角色的体力上限减去体力值得到。",
-    "definition_en": "Calculated as: Max HP minus current HP Value.",
+    "definition_cn": "体力上限减去当前体力值的差。",
+    "definition_en": "Calculated as Max HP minus current HP Value.",
     "rules": [],
     "search_text_cn": "已损失的体力值 体力上限 体力值 差值",
     "search_text_en": "hp lost max hp hp value difference"
@@ -546,8 +701,8 @@
     "term_cn": "伤害值基数",
     "term_en": "Base Damage Value",
     "badge": null,
-    "definition_cn": "牌或技能描述中，“造成/受到X点伤害”的X即此伤害的伤害值基数。",
-    "definition_en": "The X in a card or skill description that reads \"deal/receive X damage\". This is the starting damage amount before any modifications.",
+    "definition_cn": "技能或牌的描述中「造成/受到X点伤害」的X，即伤害在修正前的初始数值。",
+    "definition_en": "The X in \"deal/receive X damage\" — the starting damage amount before any modifications.",
     "rules": [],
     "search_text_cn": "伤害值基数 伤害 X 基础",
     "search_text_en": "base damage value X starting amount"
@@ -560,24 +715,50 @@
     "term_cn": "距离",
     "term_en": "Distance",
     "badge": null,
-    "definition_cn": "两名角色间相对的最短路径（顺时针或逆时针，计算最短箭头数）即为两名角色间的距离值。一名角色死亡则不再参与距离的计算。一名角色与其他角色间，最短距离为1。自己与自己的距离永远是0。",
-    "definition_en": "The shortest path between two characters (clockwise or counter-clockwise, counting the fewest steps). Dead characters are excluded from distance calculations. The minimum distance between any two different characters is 1. A character's distance to themselves is always 0.",
+    "definition_cn": "两名角色之间的最短路径步数（顺/逆时针取最短）。死亡的角色不计入距离计算。两名不同角色之间的最短距离为1。角色与自己的距离永远是0。",
+    "definition_en": "The shortest number of steps between two characters (clockwise or counter-clockwise). Dead characters are excluded. Minimum distance between two different characters is 1. Distance to oneself is always 0.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "“A与B的距离”和“B与A的距离”会因为受到不同坐骑牌的技能/武将技能的影响而不同。",
-        "en": "\"Distance from A to B\" and \"distance from B to A\" can differ due to mount card skills or general skills.",
-        "examples": [
+        "type": "caution",
+        "cn": "「A与B的距离」和「B与A的距离」可能不同。坐骑牌会影响距离的方向性：【+1坐骑】令其他角色到你的距离+1；【-1坐骑】令你到其他角色的距离-1。",
+        "en": "Distance from A to B and distance from B to A can differ. Mount cards affect distance directionally: [+1 Mount] increases the distance others measure to you by 1; [-1 Mount] reduces the distance you measure to others by 1.",
+        "segments": [
           {
-            "cn": "当D装备【+1坐骑】时，其他角色与D的距离+1，而D与其他角色的距离不变；当D装备【-1坐骑】时，D与其他角色的距离-1，而其他角色与D的距离不变。",
-            "en": "When D equips a [+1 Mount], the distance other characters measure to D increases by 1, while D's distance to others does not change. When D equips a [-1 Mount], D's distance to others decreases by 1, while others' distance to D does not change.",
-            "sub_examples": []
+            "kind": "label",
+            "cn": "距离是单向的：",
+            "en": "Distance is directional: "
+          },
+          {
+            "kind": "body",
+            "cn": "A到B与B到A可能不同。",
+            "en": "A to B may differ from B to A. "
+          },
+          {
+            "kind": "card",
+            "cn": "【+1坐骑】",
+            "en": "[+1 Mount]"
+          },
+          {
+            "kind": "body",
+            "cn": "令他人到你的距离+1；",
+            "en": " increases others' distance to you by 1. "
+          },
+          {
+            "kind": "card",
+            "cn": "【-1坐骑】",
+            "en": "[-1 Mount]"
+          },
+          {
+            "kind": "body",
+            "cn": "令你到他人的距离-1。",
+            "en": " reduces your distance to others by 1."
           }
-        ]
+        ],
+        "examples": []
       }
     ],
-    "search_text_cn": "距离 最短路径 逆时针 顺时针 坐骑 死亡",
-    "search_text_en": "distance shortest path clockwise counter-clockwise mount death"
+    "search_text_cn": "距离 最短路径 逆时针 顺时针 坐骑 死亡 单向",
+    "search_text_en": "distance shortest path clockwise mount death directional"
   },
   {
     "id": "glossary_2_4_attack_range",
@@ -587,8 +768,8 @@
     "term_cn": "攻击范围",
     "term_en": "Attack Range",
     "badge": null,
-    "definition_cn": "装备区里没有武器牌的角色的攻击范围为1；装备区里有武器牌的角色的攻击范围等同于此武器牌上标识的攻击范围。若A的攻击范围不小于A与B的距离，称为B在A的攻击范围内。",
-    "definition_en": "A character without a weapon equipped has an Attack Range of 1. A character with a weapon equipped has the Attack Range printed on that weapon. If A's Attack Range is greater than or equal to the distance from A to B, then B is within A's Attack Range.",
+    "definition_cn": "未装备武器的角色攻击范围为1；装备武器的角色攻击范围等于武器上标注的数值。若A的攻击范围不小于A到B的距离，则B在A的攻击范围内。",
+    "definition_en": "A character without a weapon has an Attack Range of 1. A character with a weapon has the Attack Range printed on that weapon. If A's Attack Range ≥ distance from A to B, then B is within A's Attack Range.",
     "rules": [],
     "search_text_cn": "攻击范围 武器 距离 目标",
     "search_text_en": "attack range weapon distance target"
@@ -601,8 +782,8 @@
     "term_cn": "X",
     "term_en": "X (Variable)",
     "badge": null,
-    "definition_cn": "X是一个自然数变量，数值会因条件的不同而改变。X可以为0。",
-    "definition_en": "X is a whole-number variable whose value changes depending on conditions. X can be 0.",
+    "definition_cn": "一个自然数变量，数值随条件不同而改变。X可以为0。",
+    "definition_en": "A whole-number variable whose value changes depending on conditions. X can be 0.",
     "rules": [],
     "search_text_cn": "X 变量 自然数 条件",
     "search_text_en": "X variable whole number condition zero"
@@ -612,21 +793,33 @@
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
-    "term_cn": "（一个游戏参数）为/视为（数值）",
+    "term_cn": "为 / 视为（数值）",
     "term_en": "\"Is\" (为) vs \"Is Treated As\" (视为)",
     "badge": null,
-    "definition_cn": "为此参数赋值。“为”表示此数值可以被修正，“视为”表示此参数无论经过怎样的修正最终都是被赋值为此数值。",
-    "definition_en": "Both assign a value to a parameter. \"为\" (is): the assigned value can still be modified by other effects. \"视为\" (is treated as): the assigned value overrides all other modifications — the parameter always ends up as this value regardless.",
+    "definition_cn": "两者都是为参数赋值。「为」：数值可被其他效果进一步修正；「视为」：数值被锁定，任何修正都无法改变最终结果。",
+    "definition_en": "\"Is\" (为): the assigned value can still be modified by other effects. \"Is treated as\" (视为): the value is locked — no modification can change the final result.",
     "rules": [
       {
         "type": "caution",
-        "cn": "A与B的距离视为1即无论A与B的距离本来是多少（或有经过坐骑牌的修正），最终都视为是1。",
-        "en": "\"The distance from A to B is treated as 1\" means that regardless of the actual distance (even after mount modifications), the final value is locked at 1.",
+        "cn": "「A与B的距离视为1」：无论实际距离是多少（含坐骑修正），最终结果锁定为1，无法被继续修正。",
+        "en": "\"The distance from A to B is treated as 1\": regardless of the actual distance (including mount modifications), the final value is locked at 1 and cannot be further modified.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "「视为」示例：",
+            "en": "\"Treated as\" example: "
+          },
+          {
+            "kind": "body",
+            "cn": "距离视为1 → 无论实际距离如何，最终锁定为1，无法继续修正。",
+            "en": "distance treated as 1 → regardless of actual distance, final value is locked at 1, cannot be further modified."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "为 视为 赋值 修正 参数 覆盖",
-    "search_text_en": "is treated as assign modify override parameter"
+    "search_text_cn": "为 视为 赋值 修正 参数 覆盖 锁定",
+    "search_text_en": "is treated as assign modify override parameter locked"
   },
   {
     "id": "glossary_2_4_difference",
@@ -636,11 +829,25 @@
     "term_cn": "差",
     "term_en": "Difference",
     "badge": null,
-    "definition_cn": "两个数值相减得到的数值的绝对值。",
+    "definition_cn": "两个数值相减所得结果的绝对值。",
     "definition_en": "The absolute value of the result of subtracting one value from another.",
     "rules": [],
     "search_text_cn": "差 绝对值 相减",
     "search_text_en": "difference absolute value subtract"
+  },
+  {
+    "id": "glossary_2_4_half",
+    "section_num": "2.4",
+    "section_title_cn": "数值",
+    "section_title_en": "Values",
+    "term_cn": "一半",
+    "term_en": "Half",
+    "badge": null,
+    "definition_cn": "若数值为奇数，取其一半时默认向下取整。",
+    "definition_en": "When halving an odd number, the result is always rounded down.",
+    "rules": [],
+    "search_text_cn": "一半 向下取整 奇数",
+    "search_text_en": "half round down odd number"
   },
   {
     "id": "glossary_2_4_count",
@@ -650,8 +857,8 @@
     "term_cn": "（全场）…数",
     "term_en": "Total Count (on the Field)",
     "badge": null,
-    "definition_cn": "这些数值在计算时都不考虑已经死亡的角色。",
-    "definition_en": "When calculating any such count, dead characters are not included.",
+    "definition_cn": "计算全场相关数量时，不计入已死亡的角色。",
+    "definition_en": "When calculating any field-wide count, dead characters are not included.",
     "rules": [],
     "search_text_cn": "全场 总数 死亡 不计",
     "search_text_en": "total count field dead excluded"
@@ -662,24 +869,24 @@
     "section_title_cn": "数值",
     "section_title_en": "Values",
     "term_cn": "（数值）最大/小",
-    "term_en": "Maximum / Minimum (Value)",
+    "term_en": "Maximum / Minimum",
     "badge": null,
-    "definition_cn": "允许有多名角色的该数值并列最大/小，即这些角色中的每一名都是该数值最大/小的。",
-    "definition_en": "Multiple characters can be tied for the maximum or minimum value. Each tied character is considered to have the maximum/minimum value.",
+    "definition_cn": "允许并列。多名角色并列最大/小时，每一名都被视为最大/小。",
+    "definition_en": "Ties are allowed. When multiple characters are tied for maximum or minimum, each tied character is considered to have that value.",
     "rules": [],
     "search_text_cn": "最大 最小 并列 数值",
     "search_text_en": "maximum minimum tied value"
   },
   {
-    "id": "glossary_2_4_most_fewest",
+    "id": "glossary_2_4_most_least",
     "section_num": "2.4",
     "section_title_cn": "数值",
     "section_title_en": "Values",
     "term_cn": "（某事物）最多/少",
     "term_en": "Most / Fewest (of Something)",
     "badge": null,
-    "definition_cn": "允许有多名角色的该事物并列最多/少。若所有角色都没有该事物，则不存在该事物最多的角色。",
-    "definition_en": "Multiple characters can be tied for the most or fewest of something. If no character has any of the thing in question, there is no character with the most.",
+    "definition_cn": "允许并列。若所有角色都没有该事物，则不存在最多的角色。",
+    "definition_en": "Ties are allowed. If no character has the relevant thing, there is no character with the most of it.",
     "rules": [],
     "search_text_cn": "最多 最少 并列 没有",
     "search_text_en": "most fewest tied none"
@@ -692,25 +899,11 @@
     "term_cn": "游戏人数",
     "term_en": "Player Count",
     "badge": null,
-    "definition_cn": "游戏开始时参与本局游戏的玩家数量。",
-    "definition_en": "The number of players participating in this game, determined at the start of the game.",
+    "definition_cn": "游戏开始时参与本局游戏的玩家数量，全局固定不变。",
+    "definition_en": "The number of players participating at the start of the game. This value is fixed for the entire game.",
     "rules": [],
-    "search_text_cn": "游戏人数 玩家 开始",
-    "search_text_en": "player count players start"
-  },
-  {
-    "id": "glossary_2_4_half",
-    "section_num": "2.4",
-    "section_title_cn": "数值",
-    "section_title_en": "Values",
-    "term_cn": "一半",
-    "term_en": "Half",
-    "badge": null,
-    "definition_cn": "一个数值若为奇数，则它的一半默认向下取整。",
-    "definition_en": "When halving an odd number, the result is always rounded down.",
-    "rules": [],
-    "search_text_cn": "一半 向下取整 奇数 偶数",
-    "search_text_en": "half round down odd even"
+    "search_text_cn": "游戏人数 玩家数量 开始",
+    "search_text_en": "player count number of players start"
   },
   {
     "id": "glossary_2_5_locked_skill",
@@ -720,18 +913,30 @@
     "term_cn": "锁定技",
     "term_en": "Locked Skill",
     "badge": "locked",
-    "definition_cn": "一种特殊的技能，其特点是：1.非状态类锁定技若能发动则必须发动（“必须发动”于此规则集内简称为“触发”）；2.状态类锁定技若能产生影响则必须产生影响。",
-    "definition_en": "A special type of skill with two defining traits: (1) A non-state Locked Skill must be activated whenever it can be activated (mandatory activation is abbreviated as \"triggers\" in this ruleset); (2) A state Locked Skill must produce its effect whenever it can.",
+    "definition_cn": "必须发动的技能。非状态类锁定技若能发动则必须发动；状态类锁定技若能产生影响则必须产生影响。",
+    "definition_en": "A skill that must be activated whenever it can be. Non-state Locked Skills must activate if able; state Locked Skills must produce their effect if able.",
     "rules": [
       {
         "type": "caution",
-        "cn": "拥有上述特点的技能未必是锁定技，亦即“锁定技”三个字只是表示一个标记，并非技能的类型。要想确定一个技能是否拥有上述特点，应看技能描述中是否有“可以”二字，而非去看是否有“锁定技”三个字。",
-        "en": "A skill with the above traits is not necessarily labeled \"Locked Skill\" — the label is just a marker, not a type classification. To determine whether a skill is mandatory, look for the word \"may\" (可以) in the description. A skill without the \"Locked Skill\" label can still be mandatory if it lacks \"may\".",
+        "cn": "判断一个技能是否必须发动，应看技能描述中是否有「可以」二字，而非是否有「锁定技」标签。没有「可以」= 必须发动。「锁定技」只是一个标签，本身不赋予技能任何优先级。",
+        "en": "To determine whether a skill is mandatory, check whether the skill text contains the word \"may\" (可以). No \"may\" = mandatory. The \"Locked Skill\" label does not grant any priority — it is just a marker.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "判断是否必须发动：",
+            "en": "How to tell if a skill is mandatory: "
+          },
+          {
+            "kind": "body",
+            "cn": "技能文字中没有「可以」= 必须发动。「锁定技」标签本身不赋予优先级，只是一个标记。",
+            "en": "No \"may\" (可以) in the skill text = mandatory. The \"Locked Skill\" label does not grant priority — it is just a marker."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "锁定技 触发 必须 强制 可以",
-    "search_text_en": "locked skill trigger must mandatory may"
+    "search_text_cn": "锁定技 必须 可以 强制 标签 优先级",
+    "search_text_en": "locked skill mandatory must may priority label"
   },
   {
     "id": "glossary_2_5_limited_skill",
@@ -741,10 +946,10 @@
     "term_cn": "限定技",
     "term_en": "Limited Skill",
     "badge": "limited",
-    "definition_cn": "于一局游戏内至多能发动一次的技能。",
+    "definition_cn": "一局游戏内至多发动一次的技能。",
     "definition_en": "A skill that can be activated at most once per game.",
     "rules": [],
-    "search_text_cn": "限定技 一次 每局",
+    "search_text_cn": "限定技 一次 游戏",
     "search_text_en": "limited skill once per game"
   },
   {
@@ -755,11 +960,19 @@
     "term_cn": "觉醒技",
     "term_en": "Awakening Skill",
     "badge": "awakening",
-    "definition_cn": "一种特殊的技能，其特点是：1.于其发动时机若能发动则必须发动；2.于一局游戏内只能发动一次。发动觉醒技通常会改变角色的某种状态（例如体力上限），然后让该角色获得新的技能或失去原有技能，此状态不可逆转。",
-    "definition_en": "A special skill with two defining traits: (1) it must activate whenever its trigger condition is met; (2) it can only activate once per game. Activating an Awakening Skill typically permanently alters the character's state (e.g. reduces Max HP), then grants new skills or removes existing ones. These changes are irreversible.",
-    "rules": [],
-    "search_text_cn": "觉醒技 必须 一次 不可逆 状态 获得 失去",
-    "search_text_en": "awakening skill must once irreversible state gain lose"
+    "definition_cn": "满足条件时自动且必须触发，一局游戏只能触发一次，效果不可逆转。",
+    "definition_en": "Triggers automatically and must activate when its condition is met. Can only trigger once per game. Its effects are permanent and irreversible.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "发动觉醒技通常会永久改变角色的某种状态（如减少体力上限），然后令该角色获得新技能或失去原有技能。",
+        "en": "Activating an Awakening Skill typically permanently alters the character's state (e.g. reduces Max HP), then grants new skills or removes existing ones. These changes cannot be undone.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "觉醒技 自动触发 一次 永久 不可逆",
+    "search_text_en": "awakening skill auto trigger once permanent irreversible"
   },
   {
     "id": "glossary_2_5_lord_skill",
@@ -769,25 +982,25 @@
     "term_cn": "主公技",
     "term_en": "Lord Skill",
     "badge": "lord",
-    "definition_cn": "只有该角色的身份是主公时才有效的技能。",
+    "definition_cn": "只有该角色身份为主公时才有效的技能。",
     "definition_en": "A skill that is only active when the character holding it is the Lord.",
     "rules": [],
-    "search_text_cn": "主公技 主公 身份 有效",
-    "search_text_en": "lord skill lord identity active"
+    "search_text_cn": "主公技 主公 身份",
+    "search_text_en": "lord skill lord identity"
   },
   {
-    "id": "glossary_2_5_characters_skills",
+    "id": "glossary_2_5_character_skills",
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
     "term_cn": "角色的技能",
     "term_en": "A Character's Skills",
     "badge": null,
-    "definition_cn": "仅指角色的武将技能。角色的装备技能是角色拥有的技能，但非角色的技能。",
-    "definition_en": "Refers only to a character's General Card skills. A character's equipment skills are skills \"owned by\" a character but are NOT \"the character's skills.\"",
+    "definition_cn": "仅指武将牌上的技能。装备技能是角色「拥有的技能」，但不是「角色的技能」。",
+    "definition_en": "Refers only to skills from the General Card. Equipment skills are skills a character \"owns\" but are not \"the character's skills\" — this distinction matters in skill text that references \"your skills.\"",
     "rules": [],
-    "search_text_cn": "角色的技能 武将技能 装备技能 区别",
-    "search_text_en": "character skills general card skills equipment skills distinction"
+    "search_text_cn": "角色的技能 武将技能 装备技能 区分",
+    "search_text_en": "character skills general skills equipment skills distinction"
   },
   {
     "id": "glossary_2_5_may",
@@ -795,13 +1008,13 @@
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
     "term_cn": "可以",
-    "term_en": "May",
+    "term_en": "May (可以)",
     "badge": null,
-    "definition_cn": "表示角色拥有选择权。",
-    "definition_en": "Indicates the character has a choice — the action is optional.",
+    "definition_cn": "表示角色有选择权，该操作是可选的，不是强制的。",
+    "definition_en": "Indicates the action is optional — the character has a choice and is not forced to act.",
     "rules": [],
-    "search_text_cn": "可以 选择 可选",
-    "search_text_en": "may optional choice"
+    "search_text_cn": "可以 选择 可选 非强制",
+    "search_text_en": "may optional choice not mandatory"
   },
   {
     "id": "glossary_2_5_any_number",
@@ -809,13 +1022,13 @@
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
     "term_cn": "任意数量",
-    "term_en": "Any Number",
+    "term_en": "Any Number Of",
     "badge": null,
     "definition_cn": "表示此数量可以为0。",
     "definition_en": "Indicates the quantity may be 0.",
     "rules": [],
-    "search_text_cn": "任意数量 零 数量",
-    "search_text_en": "any number zero quantity"
+    "search_text_cn": "任意数量 零 可以为0",
+    "search_text_en": "any number zero"
   },
   {
     "id": "glossary_2_5_transfer",
@@ -823,11 +1036,45 @@
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
     "term_cn": "转移",
-    "term_en": "Transfer / Redirect",
+    "term_en": "Transfer",
     "badge": null,
-    "definition_cn": "改变使用牌的目标或某种效应的承受者。将A受到的伤害转移给B，即先防止A受到的伤害，终止此伤害结算，进入“伤害结算结束时”，在此伤害结算完毕后，令B受到同来源、同渠道、同属性、伤害值基数为A于转移前受到的伤害值的伤害。",
-    "definition_en": "Changes the target of a card being used or the recipient of an effect. When damage dealt to A is transferred to B: first prevent A's damage and terminate that damage resolution (entering the \"damage resolution end\" timing); after that damage resolution fully completes, B receives damage with the same source, same channel, same attribute, and the same base damage value that A was about to receive.",
-    "rules": [],
+    "definition_cn": "改变使用牌的目标或某种效应的承受者。",
+    "definition_en": "Changes the target of a card being used or the recipient of an effect.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "将A受到的伤害转移给B：先防止A受到的伤害，终止该次伤害结算并进入「伤害结算结束时」；在该伤害结算完毕后，令B受到同来源、同渠道、同属性、伤害值基数相同的伤害。",
+        "en": "Transferring damage from A to B: first prevent A's damage and terminate that damage resolution (entering the \"damage resolution end\" timing); after that resolution completes, B receives damage with the same source, channel, attribute, and base damage value.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "伤害转移步骤：",
+            "en": "Damage transfer steps: "
+          },
+          {
+            "kind": "number",
+            "cn": "1. ",
+            "en": "1. "
+          },
+          {
+            "kind": "body",
+            "cn": "防止A受到的伤害，终止伤害结算，进入「伤害结算结束时」。",
+            "en": "Prevent A's damage, terminate damage resolution, enter \"damage resolution end\" timing. "
+          },
+          {
+            "kind": "number",
+            "cn": "2. ",
+            "en": "2. "
+          },
+          {
+            "kind": "body",
+            "cn": "该伤害结算完毕后，B受到同来源、同渠道、同属性、同伤害值的伤害。",
+            "en": "After that resolution completes, B receives damage with the same source, channel, attribute, and value."
+          }
+        ],
+        "examples": []
+      }
+    ],
     "search_text_cn": "转移 目标改变 伤害转移 来源 渠道 属性",
     "search_text_en": "transfer redirect damage source channel attribute"
   },
@@ -839,13 +1086,14 @@
     "term_cn": "依次…（操作）X张牌",
     "term_en": "One at a Time (依次)",
     "badge": null,
-    "definition_cn": "带有此关键词的操作均指一张一张操作，且每操作一张，须在相关结算完毕后立即操作下一张，中间没有空闲时间点；无此关键词的操作均指X张牌一次性同时操作。",
-    "definition_en": "When the keyword \"依次\" (one at a time / in sequence) is present, each card is operated individually — after one card's full resolution, the next card is operated immediately with no gap between them. Without this keyword, all X cards are operated simultaneously as a single action.",
+    "definition_cn": "带有「依次」的操作是一张一张进行的，每张结算完毕后立即操作下一张，中间没有间隙。不带「依次」时，X张牌同时操作。",
+    "definition_en": "When \"依次\" (one at a time) is present, cards are operated one by one — each card's full resolution completes before the next begins, with no gap. Without this keyword, all X cards are operated simultaneously.",
     "rules": [
       {
         "type": "rule",
-        "cn": "依次使用X张牌，则每使用一张都须进行一次使用结算。",
+        "cn": "依次使用X张牌时，每使用一张都须进行一次完整的使用结算。",
         "en": "When using X cards one at a time, each individual card use triggers a full Use Resolution.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -860,9 +1108,38 @@
     "term_cn": "需 / 须",
     "term_en": "Needs to (需) / Must (须)",
     "badge": null,
-    "definition_cn": "需：表示角色拥有如何进行响应的选择权。须：表示强制角色执行操作。",
-    "definition_en": "\"需\" (needs to): The character has a choice in how they respond. \"须\" (must): The character is forced to execute the action with no choice.",
-    "rules": [],
+    "definition_cn": "「需」：角色有选择权，可以决定如何响应。「须」：强制执行，角色没有选择。",
+    "definition_en": "\"Needs to\" (需): the character has a choice in how they respond. \"Must\" (须): the character is forced to act with no choice.",
+    "rules": [
+      {
+        "type": "caution",
+        "cn": "「需」（needs to）与「须」（must）不同：「需」有选择权；「须」强制执行，无法拒绝。",
+        "en": "\"Needs to\" (需) and \"must\" (须) are distinct: \"needs to\" grants a choice; \"must\" is mandatory and cannot be refused.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "需：",
+            "en": "Needs to: "
+          },
+          {
+            "kind": "body",
+            "cn": "有选择权。",
+            "en": "has a choice. "
+          },
+          {
+            "kind": "label",
+            "cn": "须：",
+            "en": "Must: "
+          },
+          {
+            "kind": "body",
+            "cn": "强制执行，无法拒绝。",
+            "en": "mandatory, cannot be refused."
+          }
+        ],
+        "examples": []
+      }
+    ],
     "search_text_cn": "需 须 选择 强制 响应",
     "search_text_en": "needs to must optional mandatory forced"
   },
@@ -874,8 +1151,8 @@
     "term_cn": "需要使用牌",
     "term_en": "Needs to Use a Card",
     "badge": null,
-    "definition_cn": "包含在此牌的使用时机和非使用时机使用此牌这两种情况。",
-    "definition_en": "Covers both using the card at its designated timing and using the card outside of its designated timing.",
+    "definition_cn": "包含在使用时机和非使用时机两种情况下使用此牌。",
+    "definition_en": "Covers both using the card at its designated timing and using it outside of that timing.",
     "rules": [],
     "search_text_cn": "需要使用牌 使用时机 非使用时机",
     "search_text_en": "needs to use card timing outside timing"
@@ -888,7 +1165,7 @@
     "term_cn": "（A）对B使用【杀】",
     "term_en": "A Uses [Kill] on B",
     "badge": null,
-    "definition_cn": "表示B为A使用此【杀】应选择的额定目标。",
+    "definition_cn": "表示B是A使用此【杀】时必须选择的额定目标。",
     "definition_en": "Indicates that B is the designated target A must select when using this [Kill].",
     "rules": [],
     "search_text_cn": "对B使用杀 目标 指定",
@@ -902,25 +1179,40 @@
     "term_cn": "然后",
     "term_en": "Then (然后)",
     "badge": null,
-    "definition_cn": "用于两个非延时类效果之间的连词，表示这两个效果执行的先后顺序。",
-    "definition_en": "A conjunction between two non-delayed effects indicating the first happens before the second.",
-    "rules": [],
-    "search_text_cn": "然后 顺序 先后 连词 效果",
-    "search_text_en": "then sequence order conjunction effect"
-  },
-  {
-    "id": "glossary_2_5_and",
-    "section_num": "2.5",
-    "section_title_cn": "技能描述",
-    "section_title_en": "Skill Descriptions",
-    "term_cn": "并",
-    "term_en": "And (并, simultaneously)",
-    "badge": null,
-    "definition_cn": "用于两个操作之间的连词，表示这两个操作是同时执行的。",
-    "definition_en": "A conjunction indicating two actions execute simultaneously.",
-    "rules": [],
-    "search_text_cn": "并 同时 连词 操作",
-    "search_text_en": "and simultaneously conjunction operation"
+    "definition_cn": "连接两个非延时类效果的连词，表示先执行前者，再执行后者。",
+    "definition_en": "A conjunction between two non-delayed effects indicating the first executes before the second.",
+    "rules": [
+      {
+        "type": "caution",
+        "cn": "「然后」（then，顺序）与「并」（simultaneously，同时）不同：然后 = 先后顺序；并 = 同时执行。",
+        "en": "\"Then\" (然后, sequential) and \"and\" (并, simultaneous) are distinct: 然后 = one after the other; 并 = both at the same time.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "然后：",
+            "en": "Then: "
+          },
+          {
+            "kind": "body",
+            "cn": "先后执行。",
+            "en": "one after the other. "
+          },
+          {
+            "kind": "label",
+            "cn": "并：",
+            "en": "And (并): "
+          },
+          {
+            "kind": "body",
+            "cn": "同时执行。",
+            "en": "both at the same time."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "然后 顺序 先后 并 同时 连词 效果",
+    "search_text_en": "then sequence order and simultaneously conjunction effect"
   },
   {
     "id": "glossary_2_5_hp_reduction",
@@ -930,13 +1222,35 @@
     "term_cn": "扣减体力",
     "term_en": "HP Reduction",
     "badge": null,
-    "definition_cn": "失去体力和受到伤害都会导致角色扣减体力。",
-    "definition_en": "Both \"losing HP\" and \"taking damage\" result in HP reduction.",
+    "definition_cn": "失去体力和受到伤害都会导致角色扣减体力，但两者在规则上有本质区别。",
+    "definition_en": "Both losing HP and taking damage result in HP reduction, but they are fundamentally different under the rules.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "失去体力与受到伤害不同：失去体力没有来源，不需要进行伤害结算，角色因失去体力死亡也没有角色需要执行奖惩；受到伤害会产生伤害事件，要进行伤害事件的结算，角色受到伤害死亡，需要对来源执行奖惩。",
-        "en": "Losing HP (失去体力) is different from taking damage (受到伤害): Losing HP has no source, requires no damage resolution, and when a character dies from losing HP, no rewards or penalties are awarded. Taking damage generates a damage event that requires damage resolution; when a character dies from damage, rewards and penalties must be applied to the source.",
+        "type": "caution",
+        "cn": "失去体力：无来源，不进行伤害结算，因此死亡无奖惩。受到伤害：有来源，产生伤害事件，须进行伤害结算，因此死亡需对来源执行奖惩。",
+        "en": "Lose HP (失去体力): has no source, no damage resolution, and no rewards/penalties on death. Take Damage (受到伤害): has a source, generates a damage event with full damage resolution, and rewards/penalties apply to the source on death.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "失去体力：",
+            "en": "Lose HP: "
+          },
+          {
+            "kind": "body",
+            "cn": "无来源，不进行伤害结算，死亡无奖惩。",
+            "en": "no source, no damage resolution, no rewards/penalties on death. "
+          },
+          {
+            "kind": "label",
+            "cn": "受到伤害：",
+            "en": "Take Damage: "
+          },
+          {
+            "kind": "body",
+            "cn": "有来源，产生伤害事件，须进行伤害结算，死亡需对来源执行奖惩。",
+            "en": "has a source, damage event occurs with full resolution, rewards/penalties apply to the source on death."
+          }
+        ],
         "examples": []
       }
     ],
@@ -951,8 +1265,8 @@
     "term_cn": "使用者",
     "term_en": "User (of a Card)",
     "badge": null,
-    "definition_cn": "一张牌的使用者即使用此牌的角色。若A使用的牌的使用者改为B，则之后进行的使用结算流程中，此牌都算作是B使用而非A使用的。另外，在这种情况下，A和B都使用过此牌。",
-    "definition_en": "The character who uses a card. If the User of A's card is changed to B, then from that point on in the resolution, the card is treated as used by B rather than A. In this case, both A and B are considered to have used the card.",
+    "definition_cn": "使用该牌的角色。若使用者被技能效果改为另一角色B，则结算中此牌视为由B使用，但A和B都被视为使用过此牌。",
+    "definition_en": "The character who uses the card. If the User is changed to B by a skill effect, the card is treated as used by B in the resolution — but both A and B are considered to have used the card.",
     "rules": [],
     "search_text_cn": "使用者 使用 角色 改变",
     "search_text_en": "user uses card change"
@@ -965,8 +1279,8 @@
     "term_cn": "来源",
     "term_en": "Source (of Damage)",
     "badge": null,
-    "definition_cn": "造成伤害的角色。伤害结算中若来源已经死亡则视为此伤害没有来源。使用牌造成伤害的来源受到技能的影响改变，不会改变牌的使用者。",
-    "definition_en": "The character responsible for causing the damage. If the source dies during damage resolution, the damage is treated as having no source. Changing the source of damage from a card does not change the card's User.",
+    "definition_cn": "造成伤害的角色。若来源在伤害结算中死亡，则视为此伤害无来源。改变伤害的来源不会改变牌的使用者。",
+    "definition_en": "The character responsible for causing the damage. If the source dies during damage resolution, the damage is treated as having no source. Changing the source does not change the card's User.",
     "rules": [],
     "search_text_cn": "来源 伤害 造成伤害 死亡 使用者",
     "search_text_en": "source damage deal damage death user"
@@ -979,9 +1293,48 @@
     "term_cn": "渠道",
     "term_en": "Channel (of Damage)",
     "badge": null,
-    "definition_cn": "因执行技能或牌的效果而造成伤害，此牌/技能为此伤害的渠道。确定渠道的方法：1.因执行牌或技能的效果而造成伤害，其渠道为此牌或此技能；2.因连环传导而造成伤害，其渠道与触发连环的伤害相同；3.因转移伤害而造成伤害，其渠道与被转移的伤害相同。",
-    "definition_en": "The card or skill through which damage is caused. Three rules for determining the channel: (1) Damage caused by a card/skill's effect — that card/skill is the channel. (2) Damage caused by chain propagation — the channel is the same as the damage that triggered the chain. (3) Damage caused by a transfer — the channel is the same as the original transferred damage.",
-    "rules": [],
+    "definition_cn": "造成伤害所经由的牌或技能。",
+    "definition_en": "The card or skill through which damage is caused.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "确定渠道的方法：(1) 因执行牌/技能效果造成的伤害，其渠道为该牌/技能；(2) 因连环传导造成的伤害，渠道与触发连环的伤害相同；(3) 因转移伤害造成的伤害，渠道与被转移的伤害相同。",
+        "en": "How to determine the channel: (1) damage from a card/skill's effect — that card/skill is the channel; (2) damage from chain propagation — same channel as the damage that triggered the chain; (3) damage from a transfer — same channel as the original transferred damage.",
+        "segments": [
+          {
+            "kind": "number",
+            "cn": "1. ",
+            "en": "1. "
+          },
+          {
+            "kind": "body",
+            "cn": "牌/技能效果造成 → 渠道为该牌/技能。",
+            "en": "Card/skill effect → that card/skill is the channel. "
+          },
+          {
+            "kind": "number",
+            "cn": "2. ",
+            "en": "2. "
+          },
+          {
+            "kind": "body",
+            "cn": "连环传导造成 → 同触发连环的伤害渠道。",
+            "en": "Chain propagation → same channel as the triggering damage. "
+          },
+          {
+            "kind": "number",
+            "cn": "3. ",
+            "en": "3. "
+          },
+          {
+            "kind": "body",
+            "cn": "转移伤害造成 → 同被转移的伤害渠道。",
+            "en": "Transfer → same channel as the original transferred damage."
+          }
+        ],
+        "examples": []
+      }
+    ],
     "search_text_cn": "渠道 伤害来源 连环 转移 技能 牌",
     "search_text_en": "channel damage source chain transfer skill card"
   },
@@ -993,8 +1346,8 @@
     "term_cn": "属性伤害",
     "term_en": "Elemental Damage",
     "badge": null,
-    "definition_cn": "具有火焰或雷电属性的伤害。游戏牌或技能的效果凡是表述为“造成…点伤害”，没有说明属性，都是指造成普通伤害。",
-    "definition_en": "Damage that has the Fire or Lightning attribute. Any card or skill text that reads \"deal X damage\" without specifying an attribute is normal damage.",
+    "definition_cn": "具有火焰或雷电属性的伤害。未指明属性时，默认为普通伤害。",
+    "definition_en": "Damage with the Fire or Lightning attribute. Damage text that does not specify an attribute is always normal damage.",
     "rules": [],
     "search_text_cn": "属性伤害 火焰 雷电 普通伤害 属性",
     "search_text_en": "elemental damage fire lightning normal damage attribute"
@@ -1007,8 +1360,8 @@
     "term_cn": "连环伤害",
     "term_en": "Chain Damage",
     "badge": null,
-    "definition_cn": "不会触发连环传导的属性伤害。判断方法：1.因连环传导而造成的伤害是连环伤害；2.因转移一个连环伤害而造成的伤害是连环伤害。除此之外的属性伤害都不是连环伤害。",
-    "definition_en": "Elemental damage that does not trigger further chain propagation. A damage instance is Chain Damage if: (1) it was caused by chain propagation, or (2) it was caused by transferring a Chain Damage. All other elemental damage is not Chain Damage.",
+    "definition_cn": "不会再次触发连环传导的属性伤害。满足以下任一条件即为连环伤害：(1) 因连环传导造成；(2) 因转移一个连环伤害造成。",
+    "definition_en": "Elemental damage that does not trigger further chain propagation. It is Chain Damage if: (1) caused by chain propagation, or (2) caused by transferring a Chain Damage.",
     "rules": [],
     "search_text_cn": "连环伤害 连环传导 属性伤害 不触发",
     "search_text_en": "chain damage chain propagation elemental does not trigger"
@@ -1018,11 +1371,11 @@
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
-    "term_cn": "受伤",
+    "term_cn": "受伤 / 未受伤",
     "term_en": "Wounded / Unwounded",
     "badge": null,
-    "definition_cn": "若一名角色的体力值小于其体力上限，称为该角色已受伤；若一名角色的体力值等于其体力上限，称为该角色未受伤。",
-    "definition_en": "A character is Wounded if their current HP Value is less than their Max HP. A character is Unwounded if their HP Value equals their Max HP.",
+    "definition_cn": "体力值小于体力上限 = 已受伤；体力值等于体力上限 = 未受伤。",
+    "definition_en": "HP Value less than Max HP = Wounded. HP Value equals Max HP = Unwounded.",
     "rules": [],
     "search_text_cn": "受伤 未受伤 体力值 体力上限",
     "search_text_en": "wounded unwounded hp value max hp"
@@ -1035,8 +1388,8 @@
     "term_cn": "回复",
     "term_en": "Recover (HP)",
     "badge": null,
-    "definition_cn": "在不超过体力上限的前提下增加体力的过程。未受伤的角色不能回复体力。体力上限为X的角色执行将体力值回复至Y点的效果，若Y>X，即该角色执行将体力值回复至X点的效果。",
-    "definition_en": "The process of increasing HP without exceeding Max HP. An Unwounded character cannot recover HP. If a skill would recover HP to Y but Y exceeds Max HP (X), the character instead recovers HP to X.",
+    "definition_cn": "在不超过体力上限的前提下增加体力。未受伤的角色不能回复体力。若效果将体力回复至Y点但Y超过体力上限X，则回复至X点。",
+    "definition_en": "Increase HP without exceeding Max HP. An Unwounded character cannot recover HP. If an effect would recover HP to Y but Y exceeds Max HP (X), the character recovers to X instead.",
     "rules": [],
     "search_text_cn": "回复 体力 未受伤 上限 恢复",
     "search_text_en": "recover hp unwounded max hp cap"
@@ -1049,8 +1402,8 @@
     "term_cn": "选择一项",
     "term_en": "Choose One Option",
     "badge": null,
-    "definition_cn": "拥有选择权的角色可以进行多选一。如果一个选项的所有效果都无法执行，该角色不能选择执行该项效果。",
-    "definition_en": "The character with the choice selects exactly one option. If all effects within one option cannot be executed, that option cannot be selected.",
+    "definition_cn": "拥有选择权的角色选择一项执行。若某选项的所有效果都无法执行，则该选项不可选。",
+    "definition_en": "The character selects exactly one option to execute. If all effects of an option cannot be executed, that option cannot be chosen.",
     "rules": [],
     "search_text_cn": "选择一项 多选一 无法执行 选项",
     "search_text_en": "choose one option select cannot execute"
@@ -1063,8 +1416,8 @@
     "term_cn": "性别",
     "term_en": "Gender",
     "badge": null,
-    "definition_cn": "牌面中提到的性别都是指玩家使用的武将的性别。",
-    "definition_en": "All references to \"gender\" in card or skill text refer to the gender of the general the player is controlling.",
+    "definition_cn": "牌面中提到的性别均指玩家当前使用的武将的性别。",
+    "definition_en": "All gender references in card or skill text refer to the gender of the general the player is currently controlling.",
     "rules": [],
     "search_text_cn": "性别 男 女 武将",
     "search_text_en": "gender male female general"
@@ -1077,7 +1430,7 @@
     "term_cn": "A令B",
     "term_en": "A Instructs B",
     "badge": null,
-    "definition_cn": "A令B执行某操作，即指令由A发出，动作由B执行。",
+    "definition_cn": "指令由A发出，动作由B执行。",
     "definition_en": "A issues the instruction; B carries out the action.",
     "rules": [],
     "search_text_cn": "A令B 指令 执行 发出",
@@ -1088,28 +1441,14 @@
     "section_num": "2.5",
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
-    "term_cn": "另一名角色",
-    "term_en": "Another Character (另一名角色)",
+    "term_cn": "另一名角色 / 其他角色",
+    "term_en": "Another Character / Other Characters",
     "badge": null,
-    "definition_cn": "区分于“一名角色”。",
-    "definition_en": "Distinguishes the character from a previously specified \"one character.\" Used when a second, different character must be selected.",
+    "definition_cn": "「另一名角色」：区别于之前提到的「一名角色」，指不同的另一位。「其他角色」：区别于「你（技能使用者）」，指除你以外的所有人。",
+    "definition_en": "\"Another character\" (另一名角色): distinguishes from a previously specified character — a different one. \"Other characters\" (其他角色): distinguishes from \"you\" (the skill user) — everyone else.",
     "rules": [],
-    "search_text_cn": "另一名角色 区分 一名角色",
-    "search_text_en": "another character different one character"
-  },
-  {
-    "id": "glossary_2_5_other_characters",
-    "section_num": "2.5",
-    "section_title_cn": "技能描述",
-    "section_title_en": "Skill Descriptions",
-    "term_cn": "其他角色",
-    "term_en": "Other Characters (其他角色)",
-    "badge": null,
-    "definition_cn": "区分于“你（即牌或技能的使用者）”。",
-    "definition_en": "Distinguishes from \"you\" (the card or skill user). Refers to all characters other than the one using the card or skill.",
-    "rules": [],
-    "search_text_cn": "其他角色 区分 你 使用者",
-    "search_text_en": "other characters you user distinction"
+    "search_text_cn": "另一名角色 其他角色 区分 你 使用者",
+    "search_text_en": "another character other characters you user distinction"
   },
   {
     "id": "glossary_2_5_target_character",
@@ -1119,8 +1458,8 @@
     "term_cn": "目标角色",
     "term_en": "Target Character",
     "badge": null,
-    "definition_cn": "在使用结算中，指使用的牌的使用目标；在使用牌造成的伤害结算中，并非是指此牌的使用目标，而是指此牌当前的结算目标。一张牌对目标角色造成伤害是指此牌当前的结算目标执行此牌的效果造成伤害。",
-    "definition_en": "In a Use Resolution: the intended target of the card being used. In a Damage Resolution caused by using a card: NOT the original use target, but the card's current resolution target (which may differ if effects have changed the target). \"A card dealing damage to the target character\" means the card's current resolution target receives damage from the card's effect.",
+    "definition_cn": "在使用结算中指牌的使用目标；在伤害结算中则指牌当前的结算目标（可能因效果改变而与使用目标不同）。",
+    "definition_en": "In Use Resolution: the intended target of the card. In Damage Resolution: the card's current resolution target (which may differ from the original use target if effects have changed it).",
     "rules": [],
     "search_text_cn": "目标角色 使用目标 结算目标 伤害",
     "search_text_en": "target character use target resolution target damage"
@@ -1133,7 +1472,7 @@
     "term_cn": "以此法",
     "term_en": "By This Method",
     "badge": null,
-    "definition_cn": "以此次发动的技能中表述的方法。",
+    "definition_cn": "以此次发动的技能中所描述的方法。",
     "definition_en": "By the method described in this particular activation of the skill.",
     "rules": [],
     "search_text_cn": "以此法 方法 发动",
@@ -1147,8 +1486,8 @@
     "term_cn": "（不）可见",
     "term_en": "(In)visible",
     "badge": null,
-    "definition_cn": "（不）可以观看。注意：一张牌可见或不可见与此牌是正面朝上放置还是背面朝上放置无关。",
-    "definition_en": "Whether a card can or cannot be seen. A card's visibility is independent of whether it is physically placed face-up or face-down.",
+    "definition_cn": "是否可以被观看。注意：牌的可见性与其正面朝上或背面朝上无关。",
+    "definition_en": "Whether a card can be seen. A card's visibility is independent of whether it is physically placed face-up or face-down.",
     "rules": [],
     "search_text_cn": "可见 不可见 观看 正面 背面",
     "search_text_en": "visible invisible see face-up face-down"
@@ -1161,32 +1500,33 @@
     "term_cn": "回合",
     "term_en": "Turn",
     "badge": null,
-    "definition_cn": "进行游戏时，由主公开始，按逆时针方向以回合的方式进行。每名角色有一个自己的回合，一名角色的回合结束后，其下家的回合开始。",
-    "definition_en": "The game proceeds starting with the Lord, moving counter-clockwise, turn by turn. Each character has one turn, and when a character's turn ends, their Right Neighbor's turn begins.",
+    "definition_cn": "游戏从主公开始，按逆时针方向轮流进行回合。每名角色有一个自己的回合，回合结束后下家的回合开始。",
+    "definition_en": "The game proceeds starting from the Lord, moving counter-clockwise, with each character taking turns. When a character's turn ends, their Right Neighbor's turn begins.",
     "rules": [
       {
         "type": "note",
-        "cn": "若在不属于任何角色的回合的时机发动一个技能，则此技能中“于…回合内”才有效的效果无效。",
-        "en": "If a skill is activated at a timing that does not belong to any character's turn, any effect in that skill that is only valid \"within [a character's] turn\" does not take effect.",
+        "cn": "获得额外回合时，该额外回合在当前回合结束后立即进行，然后按正常顺序继续。",
+        "en": "When a character gains an extra turn, that extra turn is taken immediately after the current turn ends, then the normal turn order resumes.",
+        "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "回合 逆时针 主公 下家 顺序",
-    "search_text_en": "turn counter-clockwise lord right neighbor order"
+    "search_text_cn": "回合 逆时针 轮流 主公 额外回合",
+    "search_text_en": "turn counter-clockwise lord extra turn"
   },
   {
     "id": "glossary_2_6_neighbors",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
-    "term_cn": "上家 / 下家",
-    "term_en": "Left Neighbor / Right Neighbor",
+    "term_cn": "上/下家",
+    "term_en": "Left / Right Neighbor",
     "badge": null,
-    "definition_cn": "对于一名角色来说，其左/右手边的角色即其上/下家。全场只有两名角色时，他们互为对方的上家且同时也互为对方的下家。",
-    "definition_en": "From a character's perspective, the character to their left is their Left Neighbor (上家), and the character to their right is their Right Neighbor (下家). When only two characters remain, each is simultaneously the other's Left and Right Neighbor.",
+    "definition_cn": "对于一名角色来说，其左手边的角色为上家，右手边的角色为下家。只剩两名角色时，互为对方的上家和下家。",
+    "definition_en": "From a character's perspective, the character to their left is their Left Neighbor (上家) and the character to their right is their Right Neighbor (下家). When only two characters remain, each is simultaneously the other's Left and Right Neighbor.",
     "rules": [],
-    "search_text_cn": "上家 下家 左 右 相邻",
-    "search_text_en": "left neighbor right neighbor adjacent"
+    "search_text_cn": "上家 下家 左 右 邻居",
+    "search_text_en": "left neighbor right neighbor"
   },
   {
     "id": "glossary_2_6_phase",
@@ -1196,46 +1536,36 @@
     "term_cn": "阶段",
     "term_en": "Phase",
     "badge": null,
-    "definition_cn": "每名角色的回合分为六个阶段：准备阶段、判定阶段、摸牌阶段、出牌阶段、弃牌阶段、结束阶段。",
-    "definition_en": "Each character's turn is divided into six Phases: Starting Phase, Judgment Phase, Draw Phase, Action Phase, Discard Phase, and End Phase.",
+    "definition_cn": "每名角色的回合分为六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。",
+    "definition_en": "Each character's turn is divided into six phases: Starting Phase → Judgment Phase → Draw Phase → Action Phase → Discard Phase → End Phase.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "牌面中的“…阶段”若没有写明是哪名角色的哪个回合的“…阶段”，若与技能的发动时机有关，则默认指技能的拥有者的回合的所有“…阶段”，否则默认是指发动此技能的回合的所有“…阶段”。",
-        "en": "When a card's \"[Phase]\" text does not specify which character's turn: if it relates to the skill's activation timing, it defaults to all instances of that phase in the skill owner's turn; otherwise it defaults to all instances of that phase in the turn in which the skill is activated.",
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "“…阶段内”即从“…阶段开始时”到“…阶段结束时”的时间段。",
-        "en": "\"Within [a phase]\" means the time interval from \"when [that phase] starts\" to \"when [that phase] ends.\"",
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "在一个时机发动一个技能执行“执行一个额外的…阶段”的效果，此额外的…阶段并非插入到游戏流程中执行，而是作为即时的效果执行，即此额外的…阶段无“…阶段开始前”和“…阶段结束后”。",
-        "en": "When a skill grants \"an extra [phase]\" at a timing, that extra phase is not inserted into the game flow — it executes as an immediate effect. As a result, that extra phase has no \"before [phase] starts\" or \"after [phase] ends\" timing.",
+        "type": "note",
+        "cn": "技能描述中「…阶段」若未指明哪名角色的哪个回合，默认指技能拥有者的回合的该阶段。「…阶段内」指从「…阶段开始时」到「…阶段结束时」的时间段。",
+        "en": "In skill text, if \"...Phase\" does not specify whose turn, it defaults to the skill owner's turn. \"Within ...Phase\" refers to the duration from when the phase starts to when it ends.",
+        "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "阶段 准备阶段 判定阶段 摸牌阶段 出牌阶段 弃牌阶段 结束阶段 六个",
-    "search_text_en": "phase starting judgment draw action discard end six"
+    "search_text_cn": "阶段 准备 判定 摸牌 出牌 弃牌 结束",
+    "search_text_en": "phase starting judgment draw action discard end"
   },
   {
     "id": "glossary_2_6_skip",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
-    "term_cn": "跳过…阶段/回合",
-    "term_en": "Skip [Phase / Turn]",
+    "term_cn": "跳过阶段/回合",
+    "term_en": "Skip Phase / Turn",
     "badge": null,
-    "definition_cn": "即失去此阶段/回合，不执行此阶段/回合内的任何细节。角色跳过某个阶段，则不能于此回合内再次跳过此阶段。角色跳过一个回合，“此回合结束后”也被跳过，直接进入下回合的“回合开始前”。",
-    "definition_en": "To lose a Phase or Turn entirely — none of its steps are executed. A character cannot skip the same Phase twice in one turn. When a character skips an entire turn, the \"after this turn ends\" timing is also skipped; the game proceeds directly to the next turn's \"before the turn starts\" timing.",
+    "definition_cn": "失去该阶段/回合，不执行其中任何内容。同一阶段在一个回合内只能被跳过一次。",
+    "definition_en": "To lose a Phase or Turn entirely — none of its steps are executed. The same Phase cannot be skipped twice in the same turn.",
     "rules": [
       {
         "type": "rule",
-        "cn": "角色跳过A阶段，“A阶段与下阶段间”依然存在；角色一次性跳过A阶段和B阶段，若A阶段与B阶段是相连的两个阶段，则“A阶段与B阶段间”也被跳过。",
-        "en": "When a character skips Phase A, the timing \"between Phase A and the next phase\" still exists. When a character skips both Phase A and Phase B at once, if A and B are consecutive phases, then the timing \"between Phase A and Phase B\" is also skipped.",
+        "cn": "跳过A阶段时，「A阶段与下阶段间」的时机依然存在。若同时跳过连续的A和B阶段，则「A与B阶段间」也被跳过。跳过整个回合时，「回合结束后」也被跳过。",
+        "en": "Skipping Phase A: the timing \"between Phase A and the next phase\" still exists. Skipping consecutive Phase A and B at once: the \"between A and B\" timing is also skipped. Skipping an entire turn: the \"after turn ends\" timing is also skipped.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -1250,18 +1580,19 @@
     "term_cn": "濒死状态",
     "term_en": "Verge of Death State",
     "badge": null,
-    "definition_cn": "一名角色的体力值被扣减后，若该角色的体力值为0，则其进入濒死状态，须进行濒死结算。处于濒死状态的角色并不会立即死亡，须进行濒死结算。不可能有两名以上的角色同时处于濒死状态。",
-    "definition_en": "When a character's HP is reduced to 0, they enter the Verge of Death State and a Verge of Death Resolution must be performed. A character in the Verge of Death State does not immediately die. No more than one character can be in the Verge of Death State at the same time.",
+    "definition_cn": "体力值降至0时角色进入濒死状态，须进行濒死结算。处于濒死状态不会立即死亡。全场同时只能有一名角色处于濒死状态。",
+    "definition_en": "A character whose HP reaches 0 enters the Verge of Death State and a Verge of Death Resolution must be performed. They do not die immediately. Only one character can be in the Verge of Death State at a time.",
     "rules": [
       {
         "type": "rule",
-        "cn": "若B在A的濒死结算中进入濒死状态，则插入进行B的濒死结算，在B的濒死结算过程中A视为不处于濒死状态，直到B的濒死结算完毕继续进行A的濒死结算。若在B的濒死结算过程中，A的体力值被扣减，A不进入濒死状态，继续正常进行B的濒死结算。",
-        "en": "If B enters the Verge of Death State during A's Verge of Death Resolution, B's Verge of Death Resolution is inserted and processed first. During B's resolution, A is not considered to be in the Verge of Death State. Once B's resolution completes, A's resolution continues. If A's HP is reduced during B's resolution, A does not re-enter the Verge of Death State — B's resolution continues normally.",
+        "cn": "若B在A的濒死结算中进入濒死状态，则插入进行B的濒死结算，其间A视为不处于濒死状态。B的结算完毕后继续进行A的结算。",
+        "en": "If B enters the Verge of Death State during A's Verge of Death Resolution, B's resolution is inserted first. During B's resolution, A is not considered in the Verge of Death State. Once B's resolution completes, A's continues.",
+        "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "濒死状态 体力值 0 濒死结算 挽救",
-    "search_text_en": "verge of death state hp zero resolution saved"
+    "search_text_cn": "濒死状态 体力值 0 濒死结算 挽救 同时只有一名",
+    "search_text_en": "verge of death state hp zero resolution saved one at a time"
   },
   {
     "id": "glossary_2_6_death",
@@ -1271,29 +1602,41 @@
     "term_cn": "死亡",
     "term_en": "Death",
     "badge": null,
-    "definition_cn": "处于濒死状态的角色在濒死结算中未被挽救，或角色的体力上限减为0，则死亡。当角色的体力上限减为0时，其体力值调整为0，但不会进入濒死状态，不能进行濒死结算，而是直接死亡。",
-    "definition_en": "A character dies if: (1) they are in the Verge of Death State and are not saved during Verge of Death Resolution, or (2) their Max HP is reduced to 0. When Max HP is reduced to 0, the character's HP Value is adjusted to 0 but they do NOT enter the Verge of Death State — they die directly and cannot be saved.",
+    "definition_cn": "濒死结算中未被挽救，或体力上限减至0，则死亡。体力上限为0时直接死亡，不能进行濒死结算。",
+    "definition_en": "A character dies if they are not saved during Verge of Death Resolution, or if their Max HP is reduced to 0. When Max HP reaches 0, the character dies directly — no Verge of Death Resolution is performed.",
     "rules": [
       {
-        "type": "rule",
-        "cn": "体力值大于0的角色死亡，其体力值不会变化。已经死亡的角色的体力不会变化。",
-        "en": "When a character with HP Value greater than 0 dies, their HP Value does not change. A dead character's HP does not change.",
+        "type": "caution",
+        "cn": "体力上限减至0 → 直接死亡，不进入濒死状态，不能被挽救（例如不能发动【涅槃】）。",
+        "en": "Max HP reduced to 0 → direct death. The character does not enter the Verge of Death State and cannot be saved (e.g. cannot activate [Nirvana]).",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "体力上限归零：",
+            "en": "Max HP reaches 0: "
+          },
+          {
+            "kind": "body",
+            "cn": "直接死亡，不进入濒死状态，不能被挽救。",
+            "en": "direct death, no Verge of Death State, cannot be saved."
+          }
+        ],
         "examples": []
       }
     ],
     "search_text_cn": "死亡 濒死 体力上限 0 直接死亡 不能挽救",
-    "search_text_en": "death verge of death max hp zero directly cannot be saved"
+    "search_text_en": "death verge of death max hp zero direct cannot be saved"
   },
   {
-    "id": "glossary_2_6_kill",
+    "id": "glossary_2_6_kill_character",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
     "section_title_en": "Game Flow",
     "term_cn": "杀死",
     "term_en": "Kill (a Character)",
     "badge": null,
-    "definition_cn": "当目标角色因受到一个来源对其造成的伤害而进行濒死结算且未于此次濒死结算中被挽救，则此来源杀死了目标角色。",
-    "definition_en": "A source \"kills\" a target character when the target undergoes Verge of Death Resolution due to damage from that source, and is not saved during that resolution.",
+    "definition_cn": "一个来源对角色造成伤害导致其进入濒死结算，且该角色在该次濒死结算中未被挽救，则该来源杀死了该角色。",
+    "definition_en": "A source kills a character when the character enters Verge of Death Resolution due to damage from that source and is not saved during that resolution.",
     "rules": [],
     "search_text_cn": "杀死 来源 濒死结算 未被挽救",
     "search_text_en": "kill source verge of death resolution not saved"
@@ -1306,8 +1649,8 @@
     "term_cn": "事件",
     "term_en": "Event",
     "badge": null,
-    "definition_cn": "角色使用或打出牌、发动技能或处于某些状态时，都是在发生一个事件。事件是若干个相关的结算过程的总和，可能被其他事件响应。",
-    "definition_en": "Whenever a character uses or plays out a card, activates a skill, or enters certain states, an Event occurs. An Event is the sum of several related resolution processes and can be responded to by other Events.",
+    "definition_cn": "角色使用或打出牌、发动技能或处于某些状态时，都是在发生一个事件。事件是若干相关结算过程的总和，可以被其他事件响应。",
+    "definition_en": "Whenever a character uses or plays out a card, activates a skill, or enters certain states, an Event occurs. An Event is the sum of related resolution processes and can be responded to by other Events.",
     "rules": [],
     "search_text_cn": "事件 使用 打出 发动 状态 响应",
     "search_text_en": "event use play activate state response"
@@ -1335,7 +1678,7 @@
     "term_en": "Resolution",
     "badge": null,
     "definition_cn": "处理一个事件的过程。",
-    "definition_en": "The process of handling/resolving an Event.",
+    "definition_en": "The process of handling an Event.",
     "rules": [],
     "search_text_cn": "结算 处理 事件 过程",
     "search_text_en": "resolution process event handle"
@@ -1348,8 +1691,8 @@
     "term_cn": "时机",
     "term_en": "Timing",
     "badge": null,
-    "definition_cn": "时机是一个瞬间，一个事件发生时会产生若干个时机。所有结算都是事件在合理的时机插入发生后所进行的处理过程，因此凡是插入发生的事件都会导致正在进行的结算暂停，先进行插入的事件的结算。",
-    "definition_en": "A Timing is an instant. When an Event occurs, it generates several Timings. All Resolutions are the processing of Events inserted at valid Timings. Any inserted Event causes the current ongoing Resolution to pause while the inserted Event is fully resolved first.",
+    "definition_cn": "一个瞬间。事件发生时产生若干时机。所有插入的事件都会导致当前结算暂停，先处理插入的事件。",
+    "definition_en": "An instant. When an Event occurs, it generates several Timings. Any Event that inserts itself causes the current Resolution to pause while the inserted Event is fully resolved first.",
     "rules": [],
     "search_text_cn": "时机 瞬间 插入 暂停 结算",
     "search_text_en": "timing instant insert pause resolution"
@@ -1362,7 +1705,7 @@
     "term_cn": "效果",
     "term_en": "Effect",
     "badge": null,
-    "definition_cn": "牌/武将技能的文字描述里能产生的具体影响。",
+    "definition_cn": "牌或武将技能的文字描述里能产生的具体影响。",
     "definition_en": "The specific concrete impact described in a card's or general skill's text.",
     "rules": [],
     "search_text_cn": "效果 影响 描述 技能 牌",
@@ -1376,13 +1719,14 @@
     "term_cn": "无效",
     "term_en": "Nullified",
     "badge": null,
-    "definition_cn": "一般用于两种情况：1.一张牌对使用目标无效，即终止对该目标的结算；2.一个技能无效，即非状态类技能不能发动，状态类技能不能产生影响。",
-    "definition_en": "Used in two contexts: (1) A card is Nullified against its target: the resolution of that card for that specific target is terminated. (2) A skill is Nullified: a non-state skill cannot be activated; a state skill cannot produce its effects.",
+    "definition_cn": "两种含义：(1) 一张牌对某目标无效：终止对该目标的结算；(2) 一个技能无效：该技能不能被发动（非状态类）或不能产生影响（状态类）。",
+    "definition_en": "Two meanings: (1) A card is Nullified against a target: the resolution for that target is terminated. (2) A skill is Nullified: it cannot be activated (non-state) or cannot produce its effects (state).",
     "rules": [
       {
         "type": "note",
-        "cn": "一张牌对角色无效，该角色依然可以被选择为此牌的使用目标。例如，可以对装备【仁王盾】的角色使用黑色的【杀】，但是该角色不能使用【闪】进行响应。虽然此【杀】无效，但是依然会计入出牌阶段使用【杀】的次数限制。",
-        "en": "When a card is Nullified against a character, that character can still be selected as the card's target. For example, you can use a black [Kill] on a character equipped with [Vajra Shield], but they cannot play [Dodge] to respond. Even though the [Kill] is Nullified, it still counts toward the Action Phase [Kill] frequency limit.",
+        "cn": "牌对角色无效，该角色依然可以被选为目标。无效的牌依然计入出牌阶段的使用次数。",
+        "en": "A card being Nullified against a character does not prevent them from being selected as the target. A Nullified card still counts toward the Action Phase use frequency limit.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -1397,8 +1741,8 @@
     "term_cn": "无视",
     "term_en": "Ignore",
     "badge": null,
-    "definition_cn": "A无视与B的距离，即A检测B是否为合法目标时不需要检测距离；A无视B的防具，即在A的相关结算过程中，B的防具技能无效。但在这些过程中插入的除A外的角色的结算中，B的防具技能有效。角色无视的防具依然是存在的。",
-    "definition_en": "A ignores distance to B: distance is not checked when A determines whether B is a valid target. A ignores B's armor: during A's resolution against B (including A's skill resolution and damage with source A), B's armor skill is Nullified. However, within that same process, if another character (not A) resolves against B, B's armor is valid again. The armor itself still physically exists even when ignored.",
+    "definition_cn": "A无视与B的距离：A检测合法目标时不检测距离。A无视B的防具：在A对B的结算过程中，B的防具技能无效。但在这些过程中插入的其他角色的结算中，B的防具依然有效。被无视的防具牌本身依然存在。",
+    "definition_en": "A ignores distance to B: distance is not checked when A determines if B is a valid target. A ignores B's armor: during A's resolution against B, B's armor skill is Nullified. However, in any other character's resolution inserted within the same process, B's armor is valid. The armor card itself still physically exists.",
     "rules": [],
     "search_text_cn": "无视 距离 防具 无效 忽略",
     "search_text_en": "ignore distance armor nullified exist"
@@ -1411,8 +1755,8 @@
     "term_cn": "抵消",
     "term_en": "Negate",
     "badge": null,
-    "definition_cn": "在一张牌对一个目标的结算过程中抵消此牌，即此牌对该目标不生效。",
-    "definition_en": "To negate a card mid-resolution against one target, causing the card to not take effect for that target.",
+    "definition_cn": "在一张牌对某目标的结算过程中抵消此牌，即该牌对该目标不生效。",
+    "definition_en": "To negate a card mid-resolution against a target, causing it to not take effect for that target.",
     "rules": [],
     "search_text_cn": "抵消 不生效 结算 目标",
     "search_text_en": "negate not take effect resolution target"
@@ -1425,18 +1769,40 @@
     "term_cn": "取消",
     "term_en": "Remove (a Target)",
     "badge": null,
-    "definition_cn": "在一张牌的使用流程中取消一名目标角色，即令其不再是此牌的目标。若将其取消后，此牌仍有其他目标，则继续对其他目标进行结算；若此牌仅有的目标被取消，则终止此牌的使用流程。",
-    "definition_en": "To remove a character from a card's target list during the Use Process. If other targets remain, resolution continues for them. If the only target is removed, the Use Process is terminated entirely.",
+    "definition_cn": "在使用流程中将某角色从目标列表中移除。若仍有其他目标，继续对其余目标结算；若唯一目标被取消，则终止使用流程。",
+    "definition_en": "Remove a character from the target list during the Use Process. If other targets remain, resolution continues for them. If the only target is removed, the Use Process is terminated entirely.",
     "rules": [
       {
         "type": "caution",
-        "cn": "抵消（Negate）与取消（Remove target）不同：抵消是指牌已经开始对目标进行结算但不生效；取消是指在使用流程中该角色不再是目标，相当于从未被选为目标。",
-        "en": "Negate and Remove Target are distinct: Negate means the card's resolution has begun for the target but does not take effect. Remove Target means the character is no longer a target during the Use Process — as if they were never selected.",
+        "cn": "抵消（Negate）与取消（Remove Target）不同：抵消 = 结算已开始但不生效；取消 = 目标在结算开始前就被移除，相当于从未被选中。",
+        "en": "Negate and Remove Target are distinct: Negate = resolution has started but the card does not take effect. Remove Target = the character is removed before resolution begins, as if never selected.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "抵消：",
+            "en": "Negate: "
+          },
+          {
+            "kind": "body",
+            "cn": "结算已开始，但不生效。",
+            "en": "resolution has started but the card does not take effect. "
+          },
+          {
+            "kind": "label",
+            "cn": "取消：",
+            "en": "Remove Target: "
+          },
+          {
+            "kind": "body",
+            "cn": "结算开始前移除目标，等同于从未被选中。",
+            "en": "target removed before resolution begins, as if never selected."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "取消 目标 不再是 使用流程 终止",
-    "search_text_en": "remove target no longer use process terminate"
+    "search_text_cn": "取消 目标 不再是 使用流程 终止 抵消",
+    "search_text_en": "remove target no longer use process terminate negate"
   },
   {
     "id": "glossary_2_8_move",
@@ -1460,7 +1826,7 @@
     "term_cn": "使用",
     "term_en": "Use (a Card)",
     "badge": null,
-    "definition_cn": "角色令一张牌/一个技能产生效果。角色一次只能使用一张牌。",
+    "definition_cn": "角色令一张牌或一个技能产生效果。角色一次只能使用一张牌。",
     "definition_en": "A character causes a card or skill to produce its effect. A character can only use one card at a time.",
     "rules": [],
     "search_text_cn": "使用 效果 一张 产生",
@@ -1474,13 +1840,35 @@
     "term_cn": "打出",
     "term_en": "Play Out (a Card)",
     "badge": null,
-    "definition_cn": "声明一张牌，然后将之置入处理区，最后将之置入弃牌堆。",
-    "definition_en": "Declare a card, place it into the Processing Zone, then place it into the Discard Pile.",
+    "definition_cn": "声明一张牌，将之置入处理区，然后置入弃牌堆。",
+    "definition_en": "Declare a card, place it into the Processing Zone, then into the Discard Pile.",
     "rules": [
       {
         "type": "caution",
-        "cn": "使用（Use）与打出（Play out）不同：使用触发完整的使用结算流程；打出仅包括声明、置入处理区、置入弃牌堆，不触发使用结算。",
-        "en": "Use and Play out are distinct: Use triggers the full Use Resolution with all its steps. Play out only involves declaring, placing into the Processing Zone, and placing into the Discard Pile — it does not trigger a Use Resolution.",
+        "cn": "使用（Use）与打出（Play Out）不同：使用触发完整的使用结算；打出仅完成声明→处理区→弃牌堆，不触发使用结算。",
+        "en": "Use and Play Out are distinct: Use triggers the full Use Resolution. Play Out only involves declaring, moving to the Processing Zone, then to the Discard Pile — no Use Resolution is triggered.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "使用：",
+            "en": "Use: "
+          },
+          {
+            "kind": "body",
+            "cn": "触发完整的使用结算。",
+            "en": "triggers full Use Resolution. "
+          },
+          {
+            "kind": "label",
+            "cn": "打出：",
+            "en": "Play Out: "
+          },
+          {
+            "kind": "body",
+            "cn": "声明→处理区→弃牌堆，不触发使用结算。",
+            "en": "declare → Processing Zone → Discard Pile; no Use Resolution."
+          }
+        ],
         "examples": []
       }
     ],
@@ -1495,8 +1883,8 @@
     "term_cn": "重铸",
     "term_en": "Reforge",
     "badge": null,
-    "definition_cn": "角色在出牌阶段的空闲时间点可以重铸一张带有“重铸”标识的牌，即声明此牌并将之置入处理区，然后将之置入弃牌堆，最后摸一张牌。",
-    "definition_en": "During the Action Phase at an idle timing, a character may Reforge a card bearing the \"Reforge\" label: declare it, place it into the Processing Zone, then into the Discard Pile, then draw 1 card.",
+    "definition_cn": "在出牌阶段的空闲时间点，可以重铸带有「重铸」标识的牌：声明→置入处理区→置入弃牌堆→摸一张牌。",
+    "definition_en": "During an idle timing in the Action Phase, a character may Reforge a card bearing the \"Reforge\" label: declare → Processing Zone → Discard Pile → draw 1 card.",
     "rules": [],
     "search_text_cn": "重铸 出牌阶段 标识 摸一张牌",
     "search_text_en": "reforge action phase label draw one card"
@@ -1507,10 +1895,10 @@
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "置于/置入",
-    "term_en": "Place Into / Place In",
+    "term_en": "Place Into",
     "badge": null,
-    "definition_cn": "将牌移动到目标区域。将一张装备牌置入装备区须根据此装备牌的类别置于装备区里的相应空位。“置入弃牌堆”有两个含义：1.角色将牌移动到弃牌堆的操作（表示效果或消耗）；2.执行某操作的结果是将牌移动到弃牌堆（表示条件或时机）。",
-    "definition_en": "Move a card to the target zone. When placing an Equipment Card into the Equipment Zone, it must go into the appropriate slot for its category. \"Place into the Discard Pile\" has two meanings: (1) the action of moving a card to the Discard Pile (expressing an effect or cost); (2) the result of an operation being that the card moves to the Discard Pile (expressing a condition or timing).",
+    "definition_cn": "将牌移动到目标区域。装备牌须置于装备区的对应位置。「置入弃牌堆」有两种含义：(1) 主动操作（效果/消耗）；(2) 某操作的结果（条件/时机）。",
+    "definition_en": "Move a card to the target zone. Equipment Cards must go into the appropriate slot. \"Place into the Discard Pile\" has two meanings: (1) an active operation (effect or cost); (2) the result of an operation (condition or timing).",
     "rules": [],
     "search_text_cn": "置于 置入 移动 装备区 弃牌堆 空位",
     "search_text_en": "place into move equipment zone discard pile slot"
@@ -1537,8 +1925,8 @@
     "term_cn": "移出游戏",
     "term_en": "Removed from the Game",
     "badge": null,
-    "definition_cn": "移出游戏的牌不为任何角色所拥有。移出游戏的牌须正面朝上放置。（扣）置于武将牌上/旁的牌都是移出游戏的牌。",
-    "definition_en": "Cards removed from the game are not owned by any character and must be placed face-up. Cards placed (face-down or face-up) on or beside a General Card are considered removed from the game.",
+    "definition_cn": "移出游戏的牌不属于任何角色，须正面朝上放置。置于武将牌上/旁的牌均视为移出游戏。",
+    "definition_en": "Cards removed from the game are not owned by any character and must be face-up. Cards placed on or beside a General Card are considered removed from the game.",
     "rules": [],
     "search_text_cn": "移出游戏 不属于 武将牌 正面朝上",
     "search_text_en": "removed from game not owned general card face-up"
@@ -1551,67 +1939,82 @@
     "term_cn": "弃置",
     "term_en": "Discard",
     "badge": null,
-    "definition_cn": "将一名角色区域里的牌置入处理区，然后将之置入弃牌堆。A令B弃置牌，由B自己选择被弃置的牌；A弃置B的牌，由A选择被弃置的牌。角色执行一次弃置X张牌的技能效果时，若该角色拥有的牌数小于X，则全部弃置。",
-    "definition_en": "Take a card from a character's zone, place it into the Processing Zone, then into the Discard Pile. When A instructs B to discard: B chooses which cards to discard. When A discards B's cards: A chooses which cards to discard. If a skill requires discarding X cards but the character owns fewer than X, all owned cards are discarded.",
-    "rules": [],
-    "search_text_cn": "弃置 选择 处理区 弃牌堆 A令B",
-    "search_text_en": "discard choose processing zone discard pile instructs"
+    "definition_cn": "将角色区域里的牌置入处理区，然后置入弃牌堆。",
+    "definition_en": "Take a card from a character's zone, place it into the Processing Zone, then into the Discard Pile.",
+    "rules": [
+      {
+        "type": "rule",
+        "cn": "A令B弃置牌：由B选择弃哪些牌。A弃置B的牌：由A选择弃哪些牌。若须弃置X张但拥有的牌不足X张，则全部弃置。",
+        "en": "A instructs B to discard: B chooses which cards to discard. A discards B's cards: A chooses which cards to discard. If X cards must be discarded but the character owns fewer, all owned cards are discarded.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "A令B弃置：",
+            "en": "A instructs B to discard: "
+          },
+          {
+            "kind": "body",
+            "cn": "B选择。",
+            "en": "B chooses. "
+          },
+          {
+            "kind": "label",
+            "cn": "A弃置B的牌：",
+            "en": "A discards B's cards: "
+          },
+          {
+            "kind": "body",
+            "cn": "A选择。不足X张时全部弃置。",
+            "en": "A chooses. If fewer than X, discard all."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "弃置 处理区 弃牌堆 选择 令",
+    "search_text_en": "discard processing zone discard pile choose instruct"
   },
   {
-    "id": "glossary_2_8_treat_card_as",
+    "id": "glossary_2_8_treat_as",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "将…牌当A牌操作",
     "term_en": "Treat [Card] as [Card Name]",
     "badge": null,
-    "definition_cn": "操作的牌的牌面信息中的牌名与A牌相同。若将一张B牌当A牌操作，B牌的牌面信息并未改变；操作的牌除牌名外的牌面信息与B牌相同。若A牌的牌名为【杀】，默认是指普通【杀】；若A牌的牌名为【无懈可击】，默认是指普通【无懈可击】。",
-    "definition_en": "The card name becomes A's name, but all other card face information (suit, rank, color) remains that of the original B card. When the target card name is [Kill], it defaults to a plain [Kill]. When the target is [Nullification], it defaults to plain [Nullification].",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "将多张牌当A牌使用/打出，若这些牌的颜色均相同，使用/打出的虚拟牌的颜色为此颜色但没有花色，否则既没有颜色也没有花色。将多张牌当一张牌使用/打出，此虚拟牌的点数为这些牌的点数相加之和。",
-        "en": "When treating multiple cards as one card: if all source cards share the same color, the virtual card has that color but no suit; otherwise it has neither color nor suit. The virtual card's rank equals the sum of all source cards' ranks (capped at K).",
-        "examples": []
-      }
-    ],
-    "search_text_cn": "当A牌 牌名 花色 点数 普通杀 转化",
-    "search_text_en": "treat as card name suit rank normal kill conversion"
+    "definition_cn": "操作时牌名变为A，其余牌面信息（花色、点数、颜色）保持原牌不变。若A为【杀】，默认为普通【杀】；若A为【无懈可击】，默认为普通【无懈可击】。",
+    "definition_en": "The card's name becomes A, but all other face information (suit, rank, color) remains that of the original card. If A is [Kill], it defaults to a plain [Kill]. If A is [Nullification], it defaults to plain [Nullification].",
+    "rules": [],
+    "search_text_cn": "当牌使用 牌名 花色 点数 颜色 杀 无懈可击",
+    "search_text_en": "treat as card name suit rank color kill nullification"
   },
   {
     "id": "glossary_2_8_treated_as",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
-    "term_cn": "视为",
-    "term_en": "Treated As (视为, for operations)",
+    "term_cn": "视为（操作）",
+    "term_en": "Treated as (Performing an Action)",
     "badge": null,
-    "definition_cn": "看作执行某操作和拥有某状态。角色视为使用/打出的牌不为任何角色所拥有。若角色执行某操作视为使用牌，即使用虚拟牌，此虚拟牌没有颜色、花色和点数。特别地：若一名角色视为使用【杀】，则其使用的此虚拟【杀】是一张没有颜色、花色和点数的普通【杀】且其使用此虚拟【杀】无距离限制。",
-    "definition_en": "Regarded as performing an action or holding a state. A card \"treated as used/played\" belongs to no character. When a character is \"treated as using a card,\" they use a virtual card with no color, no suit, and no rank. Specifically: a virtual [Kill] produced this way is a plain [Kill] with no distance restriction.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "角色拥有的技能既能被使用，也能失去；角色视为拥有的技能只能被使用，无法失去。",
-        "en": "Skills a character actually owns can be both activated and lost. Skills a character is \"treated as having\" can only be activated — they cannot be lost.",
-        "examples": []
-      }
-    ],
-    "search_text_cn": "视为 虚拟牌 无距离 普通杀 状态",
-    "search_text_en": "treated as virtual card no distance plain kill state"
+    "definition_cn": "视为执行某操作或处于某状态。角色视为使用的牌不属于任何角色。视为使用牌时，使用的是虚拟牌，没有花色、点数和颜色；视为使用【杀】时，是一张无花色/点数/颜色的普通【杀】，且无距离限制。",
+    "definition_en": "Regarded as performing an action or being in a state. A card \"treated as used\" belongs to no character. When treated as using a card, a virtual card is created with no suit, rank, or color. When treated as using [Kill], it is a plain [Kill] with no suit/rank/color and no distance restriction.",
+    "rules": [],
+    "search_text_cn": "视为 虚拟牌 无花色 无距离 杀",
+    "search_text_en": "treated as virtual card no suit no distance kill"
   },
   {
-    "id": "glossary_2_8_give",
+    "id": "glossary_2_8_give_card",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "将…牌交给A",
     "term_en": "Give [Cards] to A",
     "badge": null,
-    "definition_cn": "将不是A拥有的牌移动到A的手牌。",
-    "definition_en": "Move cards not owned by A into A's hand.",
+    "definition_cn": "将不属于A的牌移动到A的手牌区。",
+    "definition_en": "Move cards that are not owned by A into A's Hand Zone.",
     "rules": [],
-    "search_text_cn": "交给 移动 手牌 给予",
-    "search_text_en": "give move hand"
+    "search_text_cn": "交给 手牌区 移动",
+    "search_text_en": "give hand zone move"
   },
   {
     "id": "glossary_2_8_point_duel",
@@ -1621,11 +2024,11 @@
     "term_cn": "拼点",
     "term_en": "Point Duel",
     "badge": null,
-    "definition_cn": "两名有手牌的角色各以一张手牌进行点数大小的比较，然后根据结果执行相应效果的操作。",
-    "definition_en": "Two characters each reveal one hand card; the ranks are compared, and effects are applied based on the result.",
+    "definition_cn": "两名有手牌的角色各出一张手牌，比较点数大小，根据结果执行相应效果。点数相同时两人均未赢。",
+    "definition_en": "Two characters each reveal one hand card; the ranks are compared and effects applied based on the result. If ranks are equal, neither player wins.",
     "rules": [],
-    "search_text_cn": "拼点 比较 点数 手牌 结果",
-    "search_text_en": "point duel compare rank hand card result"
+    "search_text_cn": "拼点 点数 比较 赢 手牌",
+    "search_text_en": "point duel rank compare win hand card"
   },
   {
     "id": "glossary_2_8_draw",
@@ -1635,11 +2038,11 @@
     "term_cn": "摸X张牌",
     "term_en": "Draw X Cards",
     "badge": null,
-    "definition_cn": "获得牌堆顶的X张牌。",
+    "definition_cn": "取牌堆顶的X张牌加入手牌。",
     "definition_en": "Take the top X cards from the Draw Pile and add them to your hand.",
     "rules": [],
-    "search_text_cn": "摸牌 摸X张 牌堆顶",
-    "search_text_en": "draw cards top draw pile"
+    "search_text_cn": "摸牌 牌堆顶 手牌",
+    "search_text_en": "draw cards draw pile hand"
   },
   {
     "id": "glossary_2_8_replenish",
@@ -1647,48 +2050,56 @@
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "将…牌补至X张",
-    "term_en": "Replenish to X Cards",
+    "term_en": "Replenish [Cards] to X",
     "badge": null,
-    "definition_cn": "若该角色的…牌数小于X，则摸（X－该角色的…牌数）张牌；若该角色的…牌数不小于X，则不执行此操作。",
-    "definition_en": "If the character has fewer than X of the specified cards, they draw (X minus their current count) cards. If they already have X or more, this operation is not performed.",
+    "definition_cn": "若该角色相关的牌数小于X，则补充至X张；若已达到X张，则不执行。",
+    "definition_en": "If the character has fewer than X of the relevant cards, draw until they have X. If they already have X or more, do nothing.",
     "rules": [],
-    "search_text_cn": "补至 X张 摸牌 不执行",
-    "search_text_en": "replenish X cards draw not performed"
+    "search_text_cn": "补至 摸牌 不足",
+    "search_text_en": "replenish draw insufficient"
   },
   {
     "id": "glossary_2_8_substitute",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
-    "term_cn": "代替",
-    "term_en": "Substitute (代替)",
+    "term_cn": "代替 / 替换",
+    "term_en": "Substitute (代替) / Exchange (替换)",
     "badge": null,
-    "definition_cn": "角色用/打出A牌代替B牌即将A牌置入B牌所在区域同时将B牌置入弃牌堆。",
-    "definition_en": "Use/play A card to substitute for B card: A goes into B's zone; B goes into the Discard Pile.",
-    "rules": [],
-    "search_text_cn": "代替 替换 弃牌堆 置入",
-    "search_text_en": "substitute replace discard pile place into"
-  },
-  {
-    "id": "glossary_2_8_exchange",
-    "section_num": "2.8",
-    "section_title_cn": "游戏牌的操作",
-    "section_title_en": "Card Operations",
-    "term_cn": "替换",
-    "term_en": "Exchange / Swap (替换)",
-    "badge": null,
-    "definition_cn": "角色用/打出A牌替换B牌即将A牌置入B牌所在区域同时获得B牌。",
-    "definition_en": "Use/play A card to replace B card: A goes into B's zone; B goes into your hand (you keep it).",
+    "definition_cn": "「代替」：A牌置入B牌所在区域，B牌置入弃牌堆。「替换」：A牌置入B牌所在区域，同时获得B牌（加入手牌）。",
+    "definition_en": "Substitute (代替): A goes into B's zone; B goes into the Discard Pile. Exchange (替换): A goes into B's zone; B goes into the character's hand (they keep it).",
     "rules": [
       {
         "type": "caution",
-        "cn": "代替（Substitute）与替换（Exchange）不同：代替时旧牌进弃牌堆；替换时旧牌归获得者的手牌。",
-        "en": "Substitute and Exchange are distinct: when Substituting, the original card goes to the Discard Pile; when Exchanging, the original card goes to the new owner's hand.",
+        "cn": "代替（Substitute）：旧牌进弃牌堆。替换（Exchange）：旧牌回到手牌。",
+        "en": "Substitute (代替): the old card goes to the Discard Pile. Exchange (替换): the old card goes to the character's hand.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "代替：",
+            "en": "Substitute: "
+          },
+          {
+            "kind": "body",
+            "cn": "旧牌进弃牌堆。",
+            "en": "old card to Discard Pile. "
+          },
+          {
+            "kind": "label",
+            "cn": "替换：",
+            "en": "Exchange: "
+          },
+          {
+            "kind": "body",
+            "cn": "旧牌回手牌（保留）。",
+            "en": "old card to hand (kept)."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "替换 代替 获得 置入 手牌",
-    "search_text_en": "exchange swap substitute gain hand"
+    "search_text_cn": "代替 替换 弃牌堆 获得 手牌",
+    "search_text_en": "substitute exchange discard pile gain hand"
   },
   {
     "id": "glossary_2_8_look_at",
@@ -1698,11 +2109,11 @@
     "term_cn": "观看",
     "term_en": "Look At",
     "badge": null,
-    "definition_cn": "你观看相应的牌时，不能让其他玩家看见这些牌且这些牌并没有移动。观看一名角色的手牌默认观看其所有手牌。",
-    "definition_en": "Look at the cards privately — no other player may see them and the cards do not change location. Looking at a character's hand cards defaults to viewing all of them.",
+    "definition_cn": "秘密观看相应的牌，不让其他玩家看见，且牌不移动。观看角色的手牌默认观看其全部手牌。",
+    "definition_en": "Privately look at the relevant cards without letting other players see them. The cards do not move. Looking at a character's hand cards defaults to viewing all of them.",
     "rules": [],
-    "search_text_cn": "观看 私下 不移动 手牌",
-    "search_text_en": "look at privately not move hand cards"
+    "search_text_cn": "观看 秘密 不移动",
+    "search_text_en": "look at private not move"
   },
   {
     "id": "glossary_2_8_reveal_temp",
@@ -1712,39 +2123,54 @@
     "term_cn": "展示",
     "term_en": "Reveal Temporarily (展示)",
     "badge": null,
-    "definition_cn": "将背面朝上的牌翻转至正面朝上的动作，然后须翻转至背面朝上。展示角色的手牌时，此牌依然为该角色的手牌，并未失去。",
-    "definition_en": "Flip a face-down card face-up (so everyone sees it), then flip it back face-down. The card is not lost — it remains in the character's hand.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "在某牌或技能的使用结算中，一名角色的一张手牌被展示，若后续效果中须对此牌进行操作，则不能将此牌翻转至背面朝上。",
-        "en": "In a Use Resolution, if a character's hand card is revealed and a subsequent effect requires operating on that card, the card cannot be flipped face-down until the operation is complete.",
-        "examples": []
-      }
-    ],
-    "search_text_cn": "展示 正面朝上 背面朝上 翻转 手牌",
-    "search_text_en": "reveal temporarily face-up face-down flip hand card"
+    "definition_cn": "将背面朝上的牌翻至正面朝上给所有人查看，然后翻回背面朝上。展示的手牌仍属于该角色。",
+    "definition_en": "Flip a face-down card face-up for everyone to see, then flip it face-down again. A revealed hand card remains in the character's hand.",
+    "rules": [],
+    "search_text_cn": "展示 翻转 正面朝上 背面朝上 手牌",
+    "search_text_en": "reveal temporarily flip face-up face-down hand card"
   },
   {
-    "id": "glossary_2_8_flip_permanent",
+    "id": "glossary_2_8_reveal_perm",
     "section_num": "2.8",
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "亮出",
-    "term_en": "Flip / Reveal Permanently (亮出)",
+    "term_en": "Flip Permanently (亮出)",
     "badge": null,
-    "definition_cn": "将背面朝上的牌翻转至正面朝上。从牌堆顶亮出的牌须置入处理区。",
+    "definition_cn": "将背面朝上的牌永久翻至正面朝上。从牌堆顶亮出的牌须置入处理区。",
     "definition_en": "Flip a face-down card face-up permanently. A card flipped from the top of the Draw Pile must be placed into the Processing Zone.",
     "rules": [
       {
         "type": "caution",
-        "cn": "展示（Reveal temporarily）与亮出（Flip/Reveal permanently）不同：展示后须翻回背面朝上；亮出则永久正面朝上，从牌堆顶亮出的须置入处理区。",
-        "en": "\"Reveal temporarily\" (展示) and \"Flip permanently\" (亮出) are distinct: after 展示 the card is flipped face-down again; after 亮出 the card stays face-up, and if flipped from the Draw Pile, it goes to the Processing Zone.",
+        "cn": "展示（Reveal Temporarily）：翻开查看后翻回。亮出（Flip Permanently）：永久正面朝上，从牌堆顶亮出的须置入处理区。",
+        "en": "Reveal Temporarily (展示): flip open then flip back. Flip Permanently (亮出): stays face-up; from the Draw Pile it goes to the Processing Zone.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "展示：",
+            "en": "Reveal Temporarily: "
+          },
+          {
+            "kind": "body",
+            "cn": "翻开后翻回。",
+            "en": "flip open then flip back. "
+          },
+          {
+            "kind": "label",
+            "cn": "亮出：",
+            "en": "Flip Permanently: "
+          },
+          {
+            "kind": "body",
+            "cn": "永久正面朝上；从牌堆顶亮出须置入处理区。",
+            "en": "stays face-up; from Draw Pile goes to Processing Zone."
+          }
+        ],
         "examples": []
       }
     ],
-    "search_text_cn": "亮出 正面朝上 处理区 牌堆顶 永久",
-    "search_text_en": "flip permanently face-up processing zone draw pile"
+    "search_text_cn": "亮出 正面朝上 处理区 牌堆顶 永久 展示",
+    "search_text_en": "flip permanently face-up processing zone draw pile reveal"
   },
   {
     "id": "glossary_2_8_card_exchange",
@@ -1752,13 +2178,13 @@
     "section_title_cn": "游戏牌的操作",
     "section_title_en": "Card Operations",
     "term_cn": "交换",
-    "term_en": "Exchange (Cards Between Two Parties)",
+    "term_en": "Exchange (Between Two Parties)",
     "badge": null,
-    "definition_cn": "交换的双方先同时将自己的所有手牌/装备区里的牌移动到处理区，然后同时将原本为对方所拥有的牌从处理区移动到自己的手牌/装备区里。交换手牌/身份牌时须背面朝上交换。交换的其中一方可以没有指定交换的牌（此情况依然视为执行了交换的效果）。",
-    "definition_en": "Both parties simultaneously move their cards (hand/equipment) to the Processing Zone, then simultaneously receive the other party's cards into their own hand/equipment zone. Hand cards and Identity Cards are exchanged face-down. One party may have no cards to exchange — the exchange is still considered executed.",
+    "definition_cn": "双方同时将各自的手牌/装备牌移入处理区，然后同时将原属对方的牌移入自己的对应区域。手牌背面朝上交换。一方可以没有牌，交换依然算执行了。",
+    "definition_en": "Both parties simultaneously move their cards to the Processing Zone, then simultaneously receive each other's cards. Hand cards are exchanged face-down. One party may have no cards — the exchange is still considered executed.",
     "rules": [],
-    "search_text_cn": "交换 同时 处理区 手牌 装备区 身份牌",
-    "search_text_en": "exchange simultaneously processing zone hand equipment identity"
+    "search_text_cn": "交换 同时 处理区 手牌 装备区",
+    "search_text_en": "exchange simultaneously processing zone hand equipment"
   },
   {
     "id": "glossary_2_8_gain_card",
@@ -1768,8 +2194,8 @@
     "term_cn": "获得（牌）",
     "term_en": "Gain (a Card)",
     "badge": null,
-    "definition_cn": "角色将一张牌移动到其手牌区的操作（表示效果/原因），或一张牌移动到角色的手牌区这一结果（表示条件/时机）。当角色执行获得一名其他角色区域里的一张牌的效果时，若此区域不可见（手牌），则随机获得；若此区域可见（装备区或判定区），则任意获得。",
-    "definition_en": "Either the action of a character moving a card into their Hand Zone (expressing an effect or cause), or the result of a card moving into a character's Hand Zone (expressing a condition or timing). When gaining a card from another character's zone: if the zone is not visible (hand), one card is gained randomly; if visible (equipment/judgment), any card may be chosen.",
+    "definition_cn": "将一张牌移入手牌区（作为效果/原因），或牌移入手牌区这一结果（作为条件/时机）。从他人区域获得牌时：手牌区（不可见）→ 随机获得；装备区/判定区（可见）→ 任意获得。",
+    "definition_en": "Moving a card into the Hand Zone (as an effect/cause) or a card ending up in the Hand Zone (as a condition/timing). When gaining from another character: Hand Zone (not visible) → gained randomly; Equipment/Judgment Zone (visible) → any card may be chosen.",
     "rules": [],
     "search_text_cn": "获得 手牌区 随机 任意 可见",
     "search_text_en": "gain hand zone random any visible"
@@ -1782,13 +2208,14 @@
     "term_cn": "失去牌/手牌/装备区里的牌",
     "term_en": "Lose Cards / Lose Hand Cards / Lose Equipped Cards",
     "badge": null,
-    "definition_cn": "一名角色拥有的牌移动到除该角色的手牌区和装备区外的区域，即该角色失去此牌；一名角色的手牌移动，即该角色失去此手牌；一名角色装备区里的牌移动，即该角色失去装备区里的此牌。",
-    "definition_en": "Lose a card (失去牌): A card the character owns moves out of both their Hand Zone and Equipment Zone. Lose a hand card (失去手牌): Any movement of a hand card. Lose an equipped card (失去装备区里的牌): Any movement of a card from the Equipment Zone.",
+    "definition_cn": "失去牌：拥有的牌移出手牌区和装备区。失去手牌：手牌发生任何移动。失去装备区里的牌：装备区的牌发生任何移动。",
+    "definition_en": "Lose a card: owned cards move out of both Hand Zone and Equipment Zone. Lose a hand card: any movement of a hand card. Lose an equipped card: any movement of a card from the Equipment Zone.",
     "rules": [
       {
         "type": "note",
-        "cn": "“失去（过）…牌”中的“…”是指此牌在失去前的牌面信息。",
-        "en": "In \"lost [type] cards,\" the type refers to the card's face information at the time it was lost, not afterward.",
+        "cn": "「失去…牌」中的「…」指该牌在失去前的牌面信息，而非失去后的状态。",
+        "en": "In \"lost [type] cards,\" the type refers to the card's face information at the time it was lost.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -1803,8 +2230,8 @@
     "term_cn": "判定",
     "term_en": "Judgment",
     "badge": null,
-    "definition_cn": "判断技能或效果起到何种作用的动作，执行的方法是亮出牌堆顶的一张牌（称为“判定牌”），等待生效。生效后的判定牌的花色、点数、名称等信息即为此次判定的结果。当判定牌生效后须将之置入弃牌堆。你进行判定亮出的牌堆顶的一张牌称为“你的判定牌”，但此牌并不是你拥有的牌。",
-    "definition_en": "An action to determine how a skill or effect applies: flip the top card of the Draw Pile (the \"Judgment Card\") and wait for it to take effect. Its suit, rank, and name determine the Judgment result. Once the Judgment Card takes effect, it is placed into the Discard Pile. The card you flip is \"your Judgment Card\" but it is not a card you own.",
+    "definition_cn": "亮出牌堆顶的一张牌（判定牌），等待其生效。生效后其花色、点数、名称即为判定结果，然后将判定牌置入弃牌堆。判定牌不属于任何角色。",
+    "definition_en": "Flip the top card of the Draw Pile (the Judgment Card) and wait for it to take effect. Its suit, rank, and name determine the Judgment result; the card is then placed into the Discard Pile. The Judgment Card is not owned by any character.",
     "rules": [],
     "search_text_cn": "判定 判定牌 亮出 牌堆顶 结果 生效",
     "search_text_en": "judgment judgment card flip draw pile result take effect"
@@ -1817,8 +2244,8 @@
     "term_cn": "A操作…所有…牌",
     "term_en": "A Operates on All [Cards]",
     "badge": null,
-    "definition_cn": "若A没有这样的牌，视为A未执行此操作。",
-    "definition_en": "If A has no such cards, this operation is treated as not having been executed.",
+    "definition_cn": "若A没有符合条件的牌，视为A未执行此操作。",
+    "definition_en": "If A has no such cards, the operation is treated as not having been executed.",
     "rules": [],
     "search_text_cn": "所有牌 没有 视为 未执行",
     "search_text_en": "all cards none treated as not executed"
@@ -1831,11 +2258,11 @@
     "term_cn": "横置",
     "term_en": "Horizontal Position",
     "badge": null,
-    "definition_cn": "武将牌竖放的角色将其武将牌横放的操作。",
-    "definition_en": "The action of rotating a character's General Card from vertical to horizontal position.",
+    "definition_cn": "将竖放的武将牌横放的操作。横放的角色即处于连环状态。",
+    "definition_en": "Rotating a character's General Card from vertical to horizontal. A character in horizontal position is in the Chain State.",
     "rules": [],
-    "search_text_cn": "横置 横放 竖放 武将牌",
-    "search_text_en": "horizontal position rotate general card vertical"
+    "search_text_cn": "横置 横放 竖放 武将牌 连环状态",
+    "search_text_en": "horizontal position rotate general card chain state"
   },
   {
     "id": "glossary_2_9_reset",
@@ -1845,11 +2272,11 @@
     "term_cn": "重置",
     "term_en": "Reset",
     "badge": null,
-    "definition_cn": "武将牌横放的角色将其武将牌竖放的操作。",
-    "definition_en": "The action of rotating a character's General Card from horizontal back to vertical position.",
+    "definition_cn": "将横放的武将牌竖放的操作。重置即解除连环状态。",
+    "definition_en": "Rotating a character's General Card from horizontal back to vertical. Resetting removes the Chain State.",
     "rules": [],
-    "search_text_cn": "重置 竖放 横放 武将牌",
-    "search_text_en": "reset vertical horizontal general card"
+    "search_text_cn": "重置 竖放 横放 武将牌 连环状态",
+    "search_text_en": "reset vertical horizontal general card chain state"
   },
   {
     "id": "glossary_2_9_chain_state",
@@ -1859,13 +2286,32 @@
     "term_cn": "连环状态",
     "term_en": "Chain State (Chained)",
     "badge": null,
-    "definition_cn": "武将牌横放的角色即处于“连环状态”，处于连环状态的角色重置即解除连环状态。一名处于连环状态的角色受到并非连环伤害的属性伤害，当此伤害结算结束时，若其存活，其须重置；此伤害结算结束后，若全场还有其他处于连环状态的角色，都会触发连环，须从当前回合角色开始按逆时针方向，依次对所有角色进行：检测角色是否处于连环状态，若处于则受到与此属性伤害同来源、同渠道、同属性、同伤害值的伤害。",
-    "definition_en": "A character whose General Card is in horizontal position is in the \"Chain State.\" Resetting a chained character removes the Chain State. When a Chained character takes elemental damage that is NOT Chain Damage: at the end of that damage resolution, if they survive, they must Reset. After that resolution, if any other Chained characters remain, chain propagation triggers — starting from the current turn's character, going counter-clockwise, each character is checked: if Chained, they receive damage with the same source, channel, attribute, and damage value.",
+    "definition_cn": "武将牌横放的角色处于连环状态。处于连环状态的角色受到非连环属性伤害时，伤害结算结束时若其存活须重置，并触发连环传导。",
+    "definition_en": "A character whose General Card is horizontal is Chained. When a Chained character takes elemental damage that is not Chain Damage: at the end of that damage resolution, if they survive, they must Reset; then chain propagation triggers for all other Chained characters.",
     "rules": [
       {
+        "type": "note",
+        "cn": "连环传导：从当前回合角色开始，按逆时针方向依次检测每名角色是否处于连环状态，若处于则受到同来源、同渠道、同属性、同伤害值的伤害。",
+        "en": "Chain propagation: starting from the current turn's character, going counter-clockwise, each character is checked — if Chained, they receive damage with the same source, channel, attribute, and damage value.",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "连环传导顺序：",
+            "en": "Chain propagation order: "
+          },
+          {
+            "kind": "body",
+            "cn": "从当前回合角色开始，按逆时针方向依次检测，处于连环状态则受到同来源/渠道/属性/伤害值的伤害。",
+            "en": "starting from current turn's character, counter-clockwise — if Chained, receive damage with same source, channel, attribute, and value."
+          }
+        ],
+        "examples": []
+      },
+      {
         "type": "rule",
-        "cn": "受到属性伤害的角色在此伤害结算结束时是否重置是根据其在扣减体力前是否处于连环状态来判断的。属性伤害结算结束后是否触发连环的其中一个判断条件为：受到此属性伤害的角色在扣减体力前是否处于连环状态。",
-        "en": "Whether a character Resets at the end of elemental damage resolution is determined by whether they were in the Chain State before their HP was reduced. One condition for chain propagation triggering is also whether the character was Chained before their HP was reduced.",
+        "cn": "是否触发重置和连环传导，取决于该角色在扣减体力前是否处于连环状态。",
+        "en": "Whether Reset and chain propagation trigger is determined by whether the character was Chained before their HP was reduced.",
+        "segments": [],
         "examples": []
       }
     ],
@@ -1880,10 +2326,10 @@
     "term_cn": "翻面",
     "term_en": "Flip Over (General Card)",
     "badge": null,
-    "definition_cn": "一名角色将其正/背面朝上的武将牌翻转至背/正面朝上的操作。",
-    "definition_en": "A character flips their General Card from face-up to face-down, or from face-down to face-up.",
+    "definition_cn": "将武将牌从正面朝上翻至背面朝上，或从背面朝上翻至正面朝上的操作。背面朝上的武将牌在回合开始前翻面，然后跳过该回合。",
+    "definition_en": "Flip a character's General Card from face-up to face-down, or vice versa. A face-down General Card is flipped face-up at the start of the character's turn, and that turn is skipped.",
     "rules": [],
-    "search_text_cn": "翻面 武将牌 正面 背面 翻转",
-    "search_text_en": "flip over general card face-up face-down"
+    "search_text_cn": "翻面 武将牌 正面 背面 翻转 跳过",
+    "search_text_en": "flip over general card face-up face-down skip turn"
   }
 ]

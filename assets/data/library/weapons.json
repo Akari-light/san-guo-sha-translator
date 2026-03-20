@@ -1274,5 +1274,35 @@
       "Locked: [Kill] cards you play out against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
     ],
     "faq": []
-  }
+  },
+{
+  "id": "weapon_ink_brush",
+  "name_cn": "藏锋",
+  "name_en": "Ink Brush",
+  "category_cn": "武器牌",
+  "category_en": "Weapon",
+  "range": 2,
+  "effect_cn": ["结束阶段，你可以视为使用一张【杀】，此【杀】无距离限制且仅能被场上角色使用的【无懈可击】抵消。"],
+  "effect_en": ["During your End Phase, you may be treated as using a [Kill]. This [Kill] has no distance restriction and can only be Negated by [Nullification] used by characters on the field."],
+  "faq": [
+    {
+      "q_cn": "【藏锋】是什么类型的牌？它如何占用装备栏？",
+      "a_cn": "【藏锋】是游戏中第一张“双副类别装备牌”，同时视为武器牌和宝物牌。处于装备区时，同时占用武器栏和宝物栏。",
+      "q_en": "What type of card is [Ink Brush], and how does it occupy Equipment Zone slots?",
+      "a_en": "[Ink Brush] is the first 'dual sub-category equipment card' in the game. It is simultaneously treated as both a Weapon Card and a Treasure Card, and occupies both the Weapon slot and the Treasure slot of the Equipment Zone at the same time."
+    },
+    {
+      "q_cn": "将【藏锋】置入装备区时，会替换什么？",
+      "a_cn": "将【藏锋】置入一名角色的装备区时，同时替换该角色装备区中的武器牌和宝物牌（若有）。",
+      "q_en": "When [Ink Brush] is placed into a character's Equipment Zone, what does it replace?",
+      "a_en": "When [Ink Brush] is placed into a character's Equipment Zone, it simultaneously replaces both their equipped Weapon Card and their equipped Treasure Card, if any."
+    },
+    {
+      "q_cn": "已装备【藏锋】的角色使用武器牌或宝物牌时，会发生什么？",
+      "a_cn": "当已装备【藏锋】的角色使用武器牌或宝物牌时，该武器牌或宝物牌会替换【藏锋】。",
+      "q_en": "What happens when a character equipped with [Ink Brush] uses a Weapon Card or Treasure Card?",
+      "a_en": "When a character equipped with [Ink Brush] uses a Weapon Card or Treasure Card, that card replaces [Ink Brush] in their Equipment Zone."
+    }
+  ]
+}
 ]

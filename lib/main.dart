@@ -14,21 +14,23 @@ import 'features/generals/presentation/screens/general_detail_screen.dart';
 import 'features/library/presentation/screens/library_screen.dart';
 import 'features/library/presentation/screens/library_detail_screen.dart';
 import 'features/ai/presentation/screens/ai_screen.dart';
+import 'features/codex/presentation/screens/codex_screen.dart';
+import 'features/codex/presentation/screens/codex_entry_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   final prefs = await SharedPreferences.getInstance();
   final savedTheme = prefs.getString('theme_mode') ?? 'system';
-  
+
   runApp(MainApp(initialTheme: _parseTheme(savedTheme)));
 }
 
 ThemeMode _parseTheme(String theme) {
   switch (theme) {
     case 'light': return ThemeMode.light;
-    case 'dark': return ThemeMode.dark;
-    default: return ThemeMode.system;
+    case 'dark':  return ThemeMode.dark;
+    default:      return ThemeMode.system;
   }
 }
 
@@ -88,13 +90,21 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 4;
 
-  // ── Search state — ValueNotifiers so screens update without being rebuilt
-  bool _isSearching = false;
+  // ── Generals search
   bool _isSearchingGenerals = false;
-  final ValueNotifier<String> _librarySearchNotifier = ValueNotifier('');
   final ValueNotifier<String> _generalsSearchNotifier = ValueNotifier('');
-  final TextEditingController _searchController = TextEditingController();
   final TextEditingController _generalsSearchController = TextEditingController();
+
+  // ── Library search
+  bool _isSearching = false;
+  final ValueNotifier<String> _librarySearchNotifier = ValueNotifier('');
+  final TextEditingController _searchController = TextEditingController();
+
+  // ── Codex search + lang — same ValueNotifier pattern as Generals/Library
+  bool _isSearchingCodex = false;
+  final ValueNotifier<String> _codexSearchNotifier = ValueNotifier('');
+  final TextEditingController _codexSearchController = TextEditingController();
+  final ValueNotifier<bool> _codexLangNotifier = ValueNotifier(false); // false=EN
 
   // ── Filter state
   bool _generalsFilterActive = false;
@@ -102,14 +112,17 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   bool _libraryFilterActive = false;
   VoidCallback? _openLibraryFilter;
 
-  // ── Screen list — built once in initState, never recreated
+  // ── Screen list — built once, never recreated
   late final List<Widget> _screens;
 
   @override
   void initState() {
     super.initState();
     _screens = [
-      const Center(child: Text('More (TBC)')),
+      CodexScreen(
+        searchNotifier:      _codexSearchNotifier,
+        showChineseNotifier: _codexLangNotifier,
+      ),
       GeneralScreen(
         searchNotifier: _generalsSearchNotifier,
         onFilterStateChanged: (isActive) =>
@@ -137,13 +150,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   void dispose() {
     _librarySearchNotifier.dispose();
     _generalsSearchNotifier.dispose();
+    _codexSearchNotifier.dispose();
+    _codexLangNotifier.dispose();
     _searchController.dispose();
     _generalsSearchController.dispose();
+    _codexSearchController.dispose();
     super.dispose();
   }
 
-  /// Unified handler — resolves id+type to the correct detail screen,
-  /// records the view, then pushes. Used by all five screens and AiScreen.
   Future<void> _pushCard(String id, RecordType type) async {
     if (type == RecordType.general) {
       final card = await HomeService.instance.findGeneralById(id);
@@ -163,35 +177,95 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     }
   }
 
+  // ── AppBar title — TextField when searching, plain Text otherwise ──────────
+
+  Widget _buildAppBarTitle() {
+    // Codex search
+    if (_selectedIndex == 0 && _isSearchingCodex) {
+      return TextField(
+        controller: _codexSearchController,
+        autofocus: true,
+        style: const TextStyle(color: AppTheme.searchTextColor),
+        decoration: const InputDecoration(
+          hintText: 'Search Codex…  搜索图鉴…',
+          border: InputBorder.none,
+          hintStyle: TextStyle(color: AppTheme.searchHintColor),
+        ),
+        onChanged: (v) => _codexSearchNotifier.value = v,
+      );
+    }
+    // Generals search
+    if (_selectedIndex == 1 && _isSearchingGenerals) {
+      return TextField(
+        controller: _generalsSearchController,
+        autofocus: true,
+        style: const TextStyle(color: AppTheme.searchTextColor),
+        decoration: const InputDecoration(
+          hintText: 'Search generals...',
+          border: InputBorder.none,
+          hintStyle: TextStyle(color: AppTheme.searchHintColor),
+        ),
+        onChanged: (v) => _generalsSearchNotifier.value = v,
+      );
+    }
+    // Library search
+    if (_selectedIndex == 2 && _isSearching) {
+      return TextField(
+        controller: _searchController,
+        autofocus: true,
+        style: const TextStyle(color: AppTheme.searchTextColor),
+        decoration: const InputDecoration(
+          hintText: 'Search cards...',
+          border: InputBorder.none,
+          hintStyle: TextStyle(color: AppTheme.searchHintColor),
+        ),
+        onChanged: (v) => _librarySearchNotifier.value = v,
+      );
+    }
+    return Text(_getAppBarTitle());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: (_isSearching || _isSearchingGenerals)
-            ? TextField(
-                controller: _isSearchingGenerals
-                    ? _generalsSearchController
-                    : _searchController,
-                autofocus: true,
-                style: const TextStyle(color: AppTheme.searchTextColor),
-                decoration: InputDecoration(
-                  hintText: _isSearchingGenerals
-                      ? 'Search generals...'
-                      : 'Search cards...',
-                  border: InputBorder.none,
-                  hintStyle: const TextStyle(color: AppTheme.searchHintColor),
-                ),
-                onChanged: (value) {
-                  if (_isSearchingGenerals) {
-                    _generalsSearchNotifier.value = value;
-                  } else {
-                    _librarySearchNotifier.value = value;
-                  }
-                },
-              )
-            : Text(_getAppBarTitle()),
+        title: _buildAppBarTitle(),
         actions: [
-          // ── Search (Generals tab) 
+          // ── Codex: search icon
+          if (_selectedIndex == 0)
+            IconButton(
+              icon: Icon(_isSearchingCodex ? Icons.close : Icons.search),
+              onPressed: () {
+                setState(() {
+                  _isSearchingCodex = !_isSearchingCodex;
+                  if (!_isSearchingCodex) {
+                    _codexSearchNotifier.value = '';
+                    _codexSearchController.clear();
+                  }
+                });
+              },
+            ),
+
+          // ── Codex: lang toggle
+          if (_selectedIndex == 0)
+            ValueListenableBuilder<bool>(
+              valueListenable: _codexLangNotifier,
+              builder: (context, showChinese, _) {
+                final isDark =
+                    Theme.of(context).brightness == Brightness.dark;
+                return Padding(
+                  padding: const EdgeInsets.only(right: 4),
+                  child: LangToggle(
+                    showChinese: showChinese,
+                    isDark: isDark,
+                    onToggle: () =>
+                        _codexLangNotifier.value = !_codexLangNotifier.value,
+                  ),
+                );
+              },
+            ),
+
+          // ── Generals: search
           if (_selectedIndex == 1)
             IconButton(
               icon: Icon(_isSearchingGenerals ? Icons.close : Icons.search),
@@ -206,7 +280,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               },
             ),
 
-          // ── Search (Library tab) 
+          // ── Library: search
           if (_selectedIndex == 2)
             IconButton(
               icon: Icon(_isSearching ? Icons.close : Icons.search),
@@ -221,7 +295,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               },
             ),
 
-          // ── Filter (Generals tab) 
+          // ── Generals: filter
           if (_selectedIndex == 1)
             IconButton(
               icon: Icon(
@@ -231,7 +305,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               onPressed: () => _openGeneralsFilter?.call(),
             ),
 
-          // ── Filter (Library tab) 
+          // ── Library: filter
           if (_selectedIndex == 2)
             IconButton(
               icon: Icon(
@@ -241,30 +315,30 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               onPressed: () => _openLibraryFilter?.call(),
             ),
 
-          // ── Theme menu 
+          // ── Theme menu (all tabs)
           PopupMenuButton<ThemeMode>(
             icon: Icon(_getThemeIcon(widget.currentMode)),
-            onSelected: (ThemeMode mode) => widget.onThemeChanged(mode),
-            itemBuilder: (context) => [
+            onSelected: (mode) => widget.onThemeChanged(mode),
+            itemBuilder: (_) => [
               const PopupMenuItem(
                 value: ThemeMode.system,
                 child: ListTile(
                   leading: Icon(Icons.brightness_auto),
-                  title: Text("System"),
+                  title: Text('System'),
                 ),
               ),
               const PopupMenuItem(
                 value: ThemeMode.light,
                 child: ListTile(
                   leading: Icon(Icons.light_mode),
-                  title: Text("Light"),
+                  title: Text('Light'),
                 ),
               ),
               const PopupMenuItem(
                 value: ThemeMode.dark,
                 child: ListTile(
                   leading: Icon(Icons.dark_mode),
-                  title: Text("Dark"),
+                  title: Text('Dark'),
                 ),
               ),
             ],
@@ -284,21 +358,54 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               return;
             }
             setState(() {
-              _selectedIndex = index;
-              _isSearching = false;
+              _selectedIndex       = index;
+              _isSearching         = false;
               _isSearchingGenerals = false;
-              _librarySearchNotifier.value = '';
+              _isSearchingCodex    = false;
+              _librarySearchNotifier.value  = '';
               _generalsSearchNotifier.value = '';
+              _codexSearchNotifier.value    = '';
               _searchController.clear();
               _generalsSearchController.clear();
+              _codexSearchController.clear();
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.more_horiz),),label: 'Codex',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.person),),label: 'Generals',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.menu_book),),label: 'Library',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.travel_explore),),label: 'Discover',),
-            BottomNavigationBarItem(icon: Padding(padding: EdgeInsets.only(bottom: 4),child: Icon(Icons.info_outline),),label: 'Home',),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 4),
+                child: Icon(Icons.more_horiz),
+              ),
+              label: 'Codex',
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 4),
+                child: Icon(Icons.person),
+              ),
+              label: 'Generals',
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 4),
+                child: Icon(Icons.menu_book),
+              ),
+              label: 'Library',
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 4),
+                child: Icon(Icons.travel_explore),
+              ),
+              label: 'Discover',
+            ),
+            BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(bottom: 4),
+                child: Icon(Icons.info_outline),
+              ),
+              label: 'Home',
+            ),
           ],
         ),
       ),
@@ -307,8 +414,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   IconData _getThemeIcon(ThemeMode mode) {
     switch (mode) {
-      case ThemeMode.light: return Icons.light_mode;
-      case ThemeMode.dark: return Icons.dark_mode;
+      case ThemeMode.light:  return Icons.light_mode;
+      case ThemeMode.dark:   return Icons.dark_mode;
       case ThemeMode.system: return Icons.brightness_auto;
     }
   }

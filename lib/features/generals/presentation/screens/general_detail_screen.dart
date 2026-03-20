@@ -460,38 +460,34 @@ class _IdentityColumn extends StatelessWidget {
         const SizedBox(height: 14),
 
         // Health
-        if (card.health > 0) ...[
-          _MicroLabel(label: isEnglish ? 'Health' : '体力'),
-          const SizedBox(height: 6),
-          _HealthPips(health: card.health),
-          const SizedBox(height: 12),
-        ],
+        _MicroLabel(label: isEnglish ? 'Health' : '体力'),
+        const SizedBox(height: 6),
+        _HealthPips(health: card.health),
+
+        const SizedBox(height: 12),
 
         // Power
-        if (card.powerIndex > 0) ...[
-          _MicroLabel(label: isEnglish ? 'Power' : '战力'),
-          const SizedBox(height: 6),
-          _PowerStars(value: card.powerIndex),
-          const SizedBox(height: 12),
-        ],
+        _MicroLabel(label: isEnglish ? 'Power' : '战力'),
+        const SizedBox(height: 6),
+        _PowerStars(value: card.powerIndex),
+
+        const SizedBox(height: 12),
 
         // Gender
-        if (card.gender == 'Female' || card.gender == 'Male') ...[
-          Text(
-            card.gender == 'Female'
-                ? (isEnglish ? '♀  Female' : '♀  女')
-                : (isEnglish ? '♂  Male' : '♂  男'),
-            style: TextStyle(
-              fontSize: 12,
-              letterSpacing: 1,
-              color: card.gender == 'Female'
-                  ? const Color(0xFFF9A8D4)
-                  : const Color(0xFF93C5FD),
-              fontWeight: FontWeight.w600,
-            ),
+        Text(
+          card.gender == 'Female'
+              ? (isEnglish ? '♀  Female' : '♀  女')
+              : (isEnglish ? '♂  Male' : '♂  男'),
+          style: TextStyle(
+            fontSize: 12,
+            letterSpacing: 1,
+            color: card.gender == 'Female'
+                ? const Color(0xFFF9A8D4)
+                : const Color(0xFF93C5FD),
+            fontWeight: FontWeight.w600,
           ),
-        ],
-        
+        ),
+
         // Skin thumbnail strip — hidden when no skins exist
         if (hasSkins) ...[
           const SizedBox(height: 10),
@@ -963,24 +959,31 @@ class _VersionSegment extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 5),
-                        // Dots = number of within-expansion variants.
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: List.generate(dotCount, (i) {
-                            return Container(
-                              width: 4,
-                              height: 4,
-                              margin: const EdgeInsets.only(right: 2),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: isActive
-                                    ? tabEc
-                                    : tabEc.withValues(alpha: 0.3),
+                        // Dots = within-expansion variant count.
+                        // Only shown when there are multiple variants; capped at 5.
+                        if (dotCount > 1)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                              dotCount.clamp(1, 5),
+                              (i) => Container(
+                                width: 4,
+                                height: 4,
+                                margin: const EdgeInsets.only(right: 2),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: isActive
+                                      ? tabEc
+                                      : tabEc.withValues(alpha: 0.3),
+                                ),
                               ),
-                            );
-                          }),
-                        ),
+                            ),
+                          )
+                        else
+                          // Single variant — render invisible dot to keep
+                          // tab height consistent across all tabs.
+                          const SizedBox(height: 4),
                       ],
                     ),
                   ),
@@ -992,13 +995,37 @@ class _VersionSegment extends StatelessWidget {
 
         // ── Sub-variant step rail ──────────────────────────────────────────
         // Only rendered when the active expansion has >1 variant.
+        // Siblings reversed so base card is rightmost.
+        // Uses a LayoutBuilder so nodes spread across the full container width
+        // (matching the version tab row above). Only scrolls if > 5 variants.
         if (hasSubVariants) ...[
           const SizedBox(height: 10),
-          _SubVariantRail(
-            siblings: siblings,
-            activeId: activeId,
-            expansionColor: ec,
-            onSelect: onSelect,
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final containerWidth = constraints.maxWidth;
+              final n = siblings.length;
+              // Minimum gap between node edges before we switch to scrolling.
+              const minGap = 16.0;
+              const nodeSize = _SubVariantRail.nodeSize;
+              final naturalSpacing = (containerWidth - nodeSize) / (n - 1);
+              final needsScroll = naturalSpacing < nodeSize + minGap;
+
+              final rail = _SubVariantRail(
+                siblings: siblings.reversed.toList(),
+                activeId: activeId,
+                expansionColor: ec,
+                onSelect: onSelect,
+                fixedWidth: needsScroll ? null : containerWidth,
+              );
+
+              if (needsScroll) {
+                return SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: rail,
+                );
+              }
+              return rail;
+            },
           ),
         ],
 
@@ -1050,218 +1077,221 @@ class _VersionSegment extends StatelessWidget {
 // Otherwise use the full name.
 // Animated step-rail sub-selector for within-expansion variants.
 //
-// Each node shows the card's portrait image inside a circle.
-// The active node has an expansion-coloured border ring; inactive nodes
-// are dimmed. A continuous rail line runs behind all nodes; an animated
-// filled segment slides from the previously active node to the newly
-// selected one, giving a smooth left-to-right (or right-to-left) feel.
-// Only the card ID is shown below each node — no name label.
-class _SubVariantRail extends StatefulWidget {
+/// Sub-variant step rail.
+///
+/// Visual design:
+/// • One static full-span background rail (dim colour) drawn first (lowest z).
+/// • Per-gap overlay segments drawn on top of the background:
+///     - Gap touching the active node → gradient fade (expansion colour at
+///       the active end, transparent at the far end).
+///     - All other gaps → transparent (background rail shows through).
+/// • Nodes drawn last (highest z) so they always sit solidly on the rail.
+///     - Active node: full-opacity image, expansion-colour border ring,
+///       solid expansion-colour circle background behind the image.
+///     - Inactive nodes: dimmed image, dim border.
+class _SubVariantRail extends StatelessWidget {
   final List<GeneralCard> siblings;
   final String activeId;
   final Color expansionColor;
   final ValueChanged<GeneralCard> onSelect;
+  /// When non-null, nodes are spread to fill this exact width (matches the
+  /// version tab row). When null, fixed scroll-mode gap is used.
+  final double? fixedWidth;
+
+  static const double nodeSize      = 54.0;   // was 46 — larger for readability
+  static const double _railHeight   = 2.5;
+  static const double _scrollGap    = 28.0;
 
   const _SubVariantRail({
     required this.siblings,
     required this.activeId,
     required this.expansionColor,
     required this.onSelect,
+    this.fixedWidth,
   });
 
-  @override
-  State<_SubVariantRail> createState() => _SubVariantRailState();
-}
-
-class _SubVariantRailState extends State<_SubVariantRail>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _ctrl;
-  late Animation<double> _progress;
-
-  // Fraction along the rail [0..1] that the filled segment travels to.
-  // 0.0 = first node, 1.0 = last node.
-  double _targetFraction = 0.0;
-  double _prevFraction   = 0.0;
-
-  // Node dimensions
-  static const double _nodeSize   = 46.0;
-  static const double _railHeight = 2.5;
-
-  @override
-  void initState() {
-    super.initState();
-    _ctrl = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 380),
-    );
-    _progress = _ctrl;
-    _targetFraction = _fractionFor(widget.activeId);
-    _prevFraction   = _targetFraction;
-    _ctrl.value = 1.0; // already at target on first build
-  }
-
-  @override
-  void didUpdateWidget(_SubVariantRail old) {
-    super.didUpdateWidget(old);
-    if (old.activeId != widget.activeId) {
-      _prevFraction   = _fractionFor(old.activeId);
-      _targetFraction = _fractionFor(widget.activeId);
-      _progress = Tween<double>(
-        begin: _prevFraction,
-        end: _targetFraction,
-      ).animate(CurvedAnimation(parent: _ctrl, curve: Curves.easeInOut));
-      _ctrl.forward(from: 0);
+  // Left edge of node i.
+  double _nodeLeft(int i, int n) {
+    if (fixedWidth != null) {
+      return (i + 0.5) / n * fixedWidth! - nodeSize / 2;
     }
+    return i * (nodeSize + _scrollGap);
   }
 
-  @override
-  void dispose() {
-    _ctrl.dispose();
-    super.dispose();
-  }
-
-  double _fractionFor(String id) {
-    final idx = widget.siblings.indexWhere((s) => s.id == id);
-    if (widget.siblings.length <= 1) return 0.0;
-    return idx / (widget.siblings.length - 1).toDouble();
-  }
-
+  // Horizontal centre of node i.
   @override
   Widget build(BuildContext context) {
     final theme      = Theme.of(context);
     final isDark     = theme.brightness == Brightness.dark;
-    final ec         = widget.expansionColor;
-    final trackColor = theme.colorScheme.outlineVariant
-        .withValues(alpha: isDark ? 0.3 : 0.35);
+    final ec         = expansionColor;
+    final dimColor   = theme.colorScheme.outlineVariant
+        .withValues(alpha: isDark ? 0.25 : 0.30);
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final totalWidth = constraints.maxWidth;
+    final n          = siblings.length;
+    final activeIdx  = siblings.indexWhere((s) => s.id == activeId);
+    final stackWidth = fixedWidth
+        ?? (n * nodeSize + (n - 1) * _scrollGap);
+    final railTop    = (nodeSize - _railHeight) / 2;
 
-        // Node centres are evenly spaced across the full width.
-        // First node centre = nodeSize/2, last = totalWidth - nodeSize/2.
-        final n         = widget.siblings.length;
-        final spacing   = (totalWidth - _nodeSize) / (n - 1);
-        // Rail track runs between the first and last node centres.
-        final railLeft  = _nodeSize / 2;
-        final railWidth = totalWidth - _nodeSize;
+    // Rail runs from the RIGHT edge of node 0 to the LEFT edge of node n-1.
+    // This means the line is only ever visible in the gaps between nodes —
+    // it never overlaps any circle.
+    final railLeft  = _nodeLeft(0, n) + nodeSize;          // right edge of first node
+    final railRight = _nodeLeft(n - 1, n);                 // left edge of last node
+    final railWidth = (railRight - railLeft).clamp(0.0, double.infinity);
 
-        return SizedBox(
-          // Height = node + gap + ID label (up to 2 lines at 9px × 1.4 lh ≈ 26px)
-          height: _nodeSize + 6 + 26,
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              // ── Track background line (transparent — rail only shows as
-              //    the filled segment grows, so there is no persistent grey line)
-              Positioned(
-                left:  railLeft,
-                width: railWidth,
-                top:   (_nodeSize - _railHeight) / 2,
-                height: _railHeight,
-                child: const SizedBox.shrink(),
+    // Helper: right edge of node i
+    double rightEdge(int i) => _nodeLeft(i, n) + nodeSize;
+    // Helper: left edge of node i
+    double leftEdge(int i)  => _nodeLeft(i, n);
+
+    return SizedBox(
+      width:  stackWidth,
+      height: nodeSize + 6 + 30,   // +30 for larger label
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+
+          // ── 1. Background rail — edge-to-edge, dim, lowest z
+          //       Starts at right edge of node 0, ends at left edge of node n-1.
+          //       Never overlaps any node circle.
+          Positioned(
+            left:   railLeft,
+            width:  railWidth,
+            top:    railTop,
+            height: _railHeight,
+            child: Container(
+              decoration: BoxDecoration(
+                color: dimColor,
+                borderRadius: BorderRadius.circular(_railHeight / 2),
               ),
+            ),
+          ),
 
-              // ── Animated filled segment
-              AnimatedBuilder(
-                animation: _progress,
-                builder: (context, _) {
-                  final frac = (_progress.value).clamp(0.0, 1.0);
-                  final filledWidth = railWidth * frac;
-                  return Positioned(
-                    left:   railLeft,
-                    width:  filledWidth,
-                    top:    (_nodeSize - _railHeight) / 2,
-                    height: _railHeight,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: ec,
-                        borderRadius: BorderRadius.circular(_railHeight / 2),
-                      ),
-                    ),
-                  );
-                },
-              ),
+          // ── 2. Gradient overlay segments adjacent to the active node
+          //       Each gradient also runs edge-to-edge between the two nodes.
+          //       Left gap: right edge of (activeIdx-1) → left edge of activeIdx
+          //       Right gap: right edge of activeIdx → left edge of (activeIdx+1)
+          if (activeIdx > 0)
+            _gradientSegment(
+              left:      rightEdge(activeIdx - 1),
+              right:     leftEdge(activeIdx),
+              top:       railTop,
+              fromColor: dimColor,
+              toColor:   ec,
+            ),
+          if (activeIdx < n - 1)
+            _gradientSegment(
+              left:      rightEdge(activeIdx),
+              right:     leftEdge(activeIdx + 1),
+              top:       railTop,
+              fromColor: ec,
+              toColor:   dimColor,
+            ),
 
-              // ── Nodes
-              ...widget.siblings.asMap().entries.map((entry) {
-                final idx      = entry.key;
-                final sibling  = entry.value;
-                final isActive = sibling.id == widget.activeId;
-                final nodeLeft = idx * spacing;
+          // ── 3. Nodes — highest z, fully opaque background so rail never shows through
+          ...siblings.asMap().entries.map((entry) {
+            final idx      = entry.key;
+            final sibling  = entry.value;
+            final isActive = sibling.id == activeId;
 
-                return Positioned(
-                  left: nodeLeft,
-                  top:  0,
-                  child: GestureDetector(
-                    onTap: () => widget.onSelect(sibling),
-                    behavior: HitTestBehavior.opaque,
-                    child: SizedBox(
-                      width: _nodeSize,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // Node image circle
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 260),
-                            curve: Curves.easeInOut,
-                            width:  _nodeSize,
-                            height: _nodeSize,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
+            return Positioned(
+              left: _nodeLeft(idx, n),
+              top:  0,
+              child: GestureDetector(
+                onTap: () => onSelect(sibling),
+                behavior: HitTestBehavior.opaque,
+                child: SizedBox(
+                  width: nodeSize,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 220),
+                        curve: Curves.easeInOut,
+                        width:  nodeSize,
+                        height: nodeSize,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          // Solid scaffold colour behind the image prevents
+                          // the rail from ever bleeding through the circle.
+                          color: theme.scaffoldBackgroundColor,
+                          border: Border.all(
+                            color: isActive ? ec : dimColor,
+                            width: isActive ? 2.5 : 1.5,
+                          ),
+                        ),
+                        child: ClipOval(
+                          child: AnimatedOpacity(
+                            opacity: isActive ? 1.0 : 0.45,
+                            duration: const Duration(milliseconds: 220),
+                            child: Image.asset(
+                              sibling.imagePath,
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, _, _) => Container(
                                 color: isActive
-                                    ? ec
-                                    : trackColor,
-                                width: isActive ? 2.5 : 1.5,
-                              ),
-                            ),
-                            child: ClipOval(
-                              child: AnimatedOpacity(
-                                opacity: isActive ? 1.0 : 0.45,
-                                duration: const Duration(milliseconds: 260),
-                                child: Image.asset(
-                                  sibling.imagePath,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (_, _, _) => Container(
-                                    color: ec.withValues(alpha: 0.15),
-                                    child: Icon(
-                                      Icons.person_outline_rounded,
-                                      size: 20,
-                                      color: ec.withValues(alpha: 0.5),
-                                    ),
-                                  ),
+                                    ? ec.withValues(alpha: 0.25)
+                                    : dimColor.withValues(alpha: 0.15),
+                                child: Icon(
+                                  Icons.person_outline_rounded,
+                                  size: 24,
+                                  color: (isActive ? ec : dimColor)
+                                      .withValues(alpha: 0.6),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(height: 6),
-                          // Card ID only — no truncation, wraps if needed
-                          Text(
-                            sibling.id,
-                            style: TextStyle(
-                              fontSize: 9,
-                              letterSpacing: 0.4,
-                              fontWeight: isActive
-                                  ? FontWeight.w700
-                                  : FontWeight.w400,
-                              color: isActive
-                                  ? ec
-                                  : theme.hintColor
-                                      .withValues(alpha: 0.4),
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 5),
+                      Text(
+                        sibling.id,
+                        style: TextStyle(
+                          fontSize: 10,         // was 9
+                          letterSpacing: 0.3,
+                          fontWeight: isActive
+                              ? FontWeight.w700
+                              : FontWeight.w400,
+                          color: isActive
+                              ? ec
+                              : theme.hintColor.withValues(alpha: 0.4),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
                   ),
-                );
-              }),
-            ],
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+
+  /// A horizontal gradient segment running from [left] centre to [right] centre.
+  Widget _gradientSegment({
+    required double left,
+    required double right,
+    required double top,
+    required Color fromColor,
+    required Color toColor,
+  }) {
+    return Positioned(
+      left:   left,
+      width:  right - left,
+      top:    top,
+      height: _railHeight,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(_railHeight / 2),
+          gradient: LinearGradient(
+            colors: [fromColor, toColor],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
