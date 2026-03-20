@@ -26,8 +26,9 @@ class GeneralLoader {
     'assets/data/generals/heroes_soul.json',       // Uncomment when skill_type filled
     // 'assets/data/generals/art_of_war.json',        // File not yet created
     'assets/data/generals/strategic_assault.json', // File not yet created
-    // 'assets/data/generals/doudizhu.json',          // File not yet created
+    'assets/data/generals/doudizhu.json',          // File not yet created
     'assets/data/generals/others.json',            // Uncomment when IDs/name_en filled
+    'assets/data/generals/utilities.json',         // Tokens, markers, identity cards, HP cards
   ];
 
 

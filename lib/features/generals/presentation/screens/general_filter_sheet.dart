@@ -130,7 +130,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   late GeneralFilterState _state;
   late TabController _tabController;
 
-  static const List<String> _factions = ['Shu', 'Wei', 'Wu', 'Qun', 'God'];
+  static const List<String> _factions = ['Shu', 'Wei', 'Wu', 'Qun', 'God', 'Utilities'];
 
   @override
   void initState() {

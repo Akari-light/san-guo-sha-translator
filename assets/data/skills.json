@@ -5677,5 +5677,152 @@
     "name_en": "Internal War",
     "description_cn": "出牌阶段开始时，你可以摸两张牌或获得场上的一张牌，然后弃置一张牌。若弃置的牌:为基本牌，本回合你不能使用锦囊牌和装备牌且【杀】的使用次数+X且目标+1；为非基本牌，本回合你不能使用基本牌，且使用的普通锦囊牌的目标+1或-1，本回合前两次使用装备牌时摸张牌(X为手牌中因此技能不能使用的牌且至多为5)。",
     "description_en": "Action Phase start: draw 2 or take 1 field card, then discard 1. If Basic: cannot use Tool/Equipment this turn; [Kill] count +X and targets +1 (X = unusable hand cards, max 5). If non-Basic: cannot use Basic this turn; Non Time-Delay Tools +1 or −1 target; first 2 Equipment uses this turn draw X cards."
+  },
+  "skill_ddz_confuse_and_disrupt": {
+    "skill_type": "active",
+    "name_cn": "惑乱",
+    "name_en": "Confuse and Disrupt",
+    "description_cn": "出牌阶段限一次，你可以选择至多两名其他角色与你拼点，拼点牌亮出前，你可将拼点牌更改为任意点数；点数唯一最小者视为被其余角色各使用一张【杀】；点数唯一最大者摸等同于其体力值的牌，若你两者皆不符，此技能视为未发动过。",
+    "description_en": "Once per Action Phase, you may choose up to two other characters to compete in a Point Duel with you. Before the dueling cards are revealed, you may change your card's rank to any rank. The character with the uniquely lowest rank is treated as receiving a [Kill] from each other participant. The character with the uniquely highest rank draws cards equal to their HP Value. If you qualify for neither condition, this skill is treated as not having been activated."
+  },
+  "skill_ddz_lone_star": {
+    "skill_type": "limited",
+    "name_cn": "孤星",
+    "name_en": "Lone Star",
+    "description_cn": "限定技，回合开始时，你可以亮出牌堆顶的九张牌并依次执行项（X为当前轮数）：1.获得其中任意张牌名相同的牌；2.获得其中任意张花色相同的牌；3.获得其中任意张类别相同的牌。",
+    "description_en": "Limited: At the start of your turn, you may flip the top nine cards of the Draw Pile and execute the following steps in sequence (X equals the current round number): 1. Gain any cards among them that share the same name; 2. Gain any cards among them that share the same suit; 3. Gain any cards among them that share the same category."
+  },
+  "skill_ddz_admire_the_valiant": {
+    "skill_type": "active",
+    "name_cn": "钦英",
+    "name_en": "Admire the Valiant",
+    "description_cn": "出牌阶段限一次，你可以重铸任意张牌，视为使用一张【决斗】。若如此做，此【决斗】结算过程中限次（X为你以此法重铸的牌数），你或目标角色可以弃置区域中的一张牌，视为打出一张普通【杀】。",
+    "description_en": "Once per Action Phase, you may Reforge any number of cards to be treated as using a [Duel]. If you do, during this [Duel]'s resolution, up to X times (X equals the number of cards Reforged), you or the target character may discard one card from any zone to be treated as playing a normal [Kill]."
+  },
+  "skill_ddz_discourse_on_heroes": {
+    "skill_type": "active",
+    "name_cn": "论雄",
+    "name_en": "Discourse on Heroes",
+    "description_cn": "当你造成或受到伤害后，你可以展示手牌并弃置点数唯一最大的手牌，然后你摸三张牌且你本局游戏以此法弃置牌的点数须大于此牌。",
+    "description_en": "After you deal or receive damage, you may reveal your hand and discard the hand card with the uniquely highest rank, then draw 3 cards. Each card discarded this way for the rest of the game must have a rank higher than the previously discarded card."
+  },
+  "skill_ddz_honed_together_admire_the_valiant": {
+    "skill_type": "locked",
+    "name_cn": "共砺",
+    "name_en": "Honed Together",
+    "description_cn": "锁定技，游戏开始时，你令本局「钦英」减少X个可用于弃置的类别的牌（X为全场友武将数）。",
+    "description_en": "Locked: At the start of the game, [Admire the Valiant] loses X card categories that can be used as discards, where X equals the number of allied generals on the field."
+  },
+  "skill_ddz_catch_the_pig": {
+    "skill_type": "active",
+    "name_cn": "缚豕",
+    "name_en": "Catch the Pig",
+    "description_cn": "当一名角色使用【杀】结算结束后，若你与其距离以内，你将之置于你的武将牌上，称为「缚家」。你可以移去任意张「缚家」，摸等量的牌并视为使用一张【杀】，然后选择等量项：1.额外选择一名角色为目标；2.此牌对其中一名目标角色造成的伤害-1；3.此牌对其中一名目标角色造成的伤害+1。若此牌的目标和你选择的选项均相邻，则此【杀】不计入次数。",
+    "description_en": "After a character uses [Kill] and it finishes resolving, if that character is within a certain distance of you, place that [Kill] card on your General Card as a 「Bound Pig」 token. You may remove any number of 「Bound Pig」 tokens to draw that many cards and be treated as using a [Kill], then choose the same number of options: 1. Designate one additional target; 2. This [Kill] deals 1 less damage to one target; 3. This [Kill] deals 1 more damage to one target. If all targets and all chosen options are adjacent to each other, this [Kill] does not count toward your frequency limit."
+  },
+  "skill_ddz_gracious_host": {
+    "skill_type": "active",
+    "name_cn": "东道",
+    "name_en": "Gracious Host",
+    "description_cn": "转换技，①农民回合结束后，你可以令地主执行一个额外回合；②农民回合结束后，其可以执行一个额外回合。",
+    "description_en": "Convert Skill: Yang — After a Peasant's turn ends, you may have the Landlord take an extra turn. Yin — After a Peasant's turn ends, that Peasant may take an extra turn."
+  },
+  "skill_ddz_riding_the_flow": {
+    "skill_type": "active",
+    "name_cn": "顺逸",
+    "name_en": "Riding the Flow",
+    "description_cn": "当你使用点数唯一最小的手牌时，若此牌的花色为红桃且点数大于X（X为你本回合发动此技能的次数），你可以展示手牌并将此花色的所有手牌置于武将牌上直至当前回合结束，然后你摸一张牌。",
+    "description_en": "When you use the hand card with the uniquely lowest rank, if that card is Hearts and its rank is greater than X (X equals the number of times you have activated this skill this turn), you may reveal your hand and place all Hearts hand cards on your General Card until the end of your current turn, then draw 1 card."
+  },
+  "skill_ddz_demote": {
+    "skill_type": "active",
+    "name_cn": "鄙位",
+    "name_en": "Demote",
+    "description_cn": "出牌阶段限一次，你可以展示牌并弃置一张点数唯一最大的手牌，然后选择一名其他角色，令其展示手牌并弃置所有点数大于等于此牌的手牌。若其未因此弃置牌，重置此技能。",
+    "description_en": "Once per Action Phase, you may reveal your hand and discard the hand card with the uniquely highest rank, then choose another character — that character reveals their hand and discards all hand cards whose rank is greater than or equal to the discarded card's rank. If that character does not discard any cards this way, Reset this skill."
+  },
+  "skill_ddz_honed_together_riding_the_flow": {
+    "skill_type": "locked",
+    "name_cn": "共砺",
+    "name_en": "Honed Together",
+    "description_cn": "锁定技，游戏开始时，你令本局「顺逸」添加X个可触发的花色（X为全场友武将数）。",
+    "description_en": "Locked: At the start of the game, [Riding the Flow] gains X additional suits that can trigger it, where X equals the number of allied generals on the field."
+  },
+  "skill_ddz_ornamental_fist": {
+    "skill_type": "locked",
+    "name_cn": "花拳",
+    "name_en": "Ornamental Fist",
+    "description_cn": "锁定技，你使用黑色牌指定其他角色为目标后，为此牌秘密选择一个效果：1.重拳，造成的伤害+1；2.轻拳，使用后你摸一张牌。然后你以外的目标角色依次猜测你选择的效果。",
+    "description_en": "Locked: After you use a black card and designate another character as a target, secretly choose one effect for that card: 1. Heavy Blow — damage dealt is increased by 1; 2. Light Blow — after resolving, draw 1 card. The target characters other than you then guess in sequence which effect you chose."
+  },
+  "skill_ddz_triple_strike": {
+    "skill_type": "locked",
+    "name_cn": "三殴",
+    "name_en": "Triple Strike",
+    "description_cn": "锁定技，其他角色受到你的伤害后或猜错「花拳」的效果后，获得1枚「击倒」标记。一名角色获得至少3枚「击倒」标记后移除此标记并进入「击倒」状态。「击倒」状态的角色始终跳过出牌阶段。若角色于「击倒」状态，当有十张牌离开牌堆或进入弃牌堆后，其脱离「击倒」状态。",
+    "description_en": "Locked: After another character receives damage from you, or after a character guesses [Ornamental Fist]'s effect incorrectly, that character gains 1 「Knocked Down」 token. Once a character has 3 or more 「Knocked Down」 tokens, remove all tokens and that character enters the 「Knocked Down」 state. A character in the 「Knocked Down」 state always skips their Action Phase. A character exits the 「Knocked Down」 state after ten cards leave the Draw Pile or enter the Discard Pile."
+  },
+  "skill_ddz_twin_jade": {
+    "skill_type": "locked",
+    "name_cn": "玨玨",
+    "name_en": "Twin Jade",
+    "description_cn": "锁定技，你本局游戏首次使用【杀】/【闪】/【桃】/【酒】时，此牌伤害或回复值+1且不计入次数限制，结算后，你获得此牌。",
+    "description_en": "Locked: The first time you use [Kill], [Dodge], [Peach], or [Wine] in this game, that card's damage or HP recovery value is increased by 1 and does not count toward your frequency limit. After it resolves, you gain that card."
+  },
+  "skill_ddz_sweep_all_before": {
+    "skill_type": "active",
+    "name_cn": "披靡",
+    "name_en": "Sweep All Before",
+    "description_cn": "你使用牌指定其他角色为唯一目标后，或成为其他角色使用牌的唯一目标后，你可以弃置使用者一张牌，令此牌伤害或回复值+1。然后若使用者的手牌最多或最少，你摸一张牌且此技能本回合失效。",
+    "description_en": "After you designate another character as the sole target of a card you use, or after you become the sole target of a card another character uses, you may discard one card from the User's zone — that card's damage or HP recovery value is increased by 1. If the User has the most or fewest hand cards on the field, you then draw 1 card and this skill cannot activate again this turn."
+  },
+  "skill_ddz_twin_jade_discs": {
+    "skill_type": "active",
+    "name_cn": "双璧",
+    "name_en": "Twin Jade Discs",
+    "description_cn": "出牌阶段限一次，你可以选择一项：1.摸X张牌，本回合手牌上限+X；2.弃置至多X张牌，分配并造成等量火焰伤害；3.视为使用X张火【杀】或【火攻】（X为存活角色数）。",
+    "description_en": "Once per Action Phase, choose one: 1. Draw X cards and increase your Hand Limit by X this turn; 2. Discard up to X cards and distribute equal fire damage among characters; 3. Be treated as using X fire [Kill]s or [Incendiary]s (X equals the number of surviving characters)."
+  },
+  "skill_ddz_draw_the_blade": {
+    "skill_type": "locked",
+    "name_cn": "引锋",
+    "name_en": "Draw the Blade",
+    "description_cn": "锁定技，游戏开始时，你将游戏外的【赤血青锋】置入手牌。【赤血青锋】因弃置进入弃牌堆后，你失去1点体力并获得之。你的手牌被其他角色获得后，若你手牌中有【赤血青锋】，你展示之并对其造成1点伤害；若其获得了【赤血青锋】，其展示之并对你造成1点伤害。",
+    "description_en": "Locked: At the start of the game, take [Crimson Edge] from outside the game into your hand. When [Crimson Edge] enters the Discard Pile via discarding, you lose 1 HP then regain it. After another character gains cards from your hand: if [Crimson Edge] remains in your hand, reveal it and deal 1 damage to that character; if they gained [Crimson Edge], they reveal it and deal 1 damage to you."
+  },
+  "skill_ddz_prisoner_s_burden": {
+    "skill_type": "active",
+    "name_cn": "负掳",
+    "name_en": "Prisoner's Burden",
+    "description_cn": "你使用【杀】结算后，你可以交给一名目标角色一张手牌，然后获得其至多两张手牌。体力值小于你的角色使用【杀】结算后，若你为此【杀】目标，其可以交给你一张手牌，然后获得你至多两张手牌。",
+    "description_en": "After your [Kill] finishes resolving, you may give one hand card to a target of that [Kill], then gain up to two of their hand cards. After a character with fewer HP than you uses [Kill] and it finishes resolving, if you are a target of that [Kill], they may give you one hand card, then gain up to two of your hand cards."
+  },
+  "skill_ddz_halting_speech": {
+    "skill_type": "active",
+    "name_cn": "讷言",
+    "name_en": "Halting Speech",
+    "description_cn": "转换技，锁定技，你使用非装备牌时，①须弃置一张同类别牌令此牌额外结算一次，否则此牌无效；②此牌无次数限制。",
+    "description_en": "Convert Locked Skill: Yang — When you use a non-equipment card, you must discard a card of the same category to have it resolve an additional time; otherwise that card is Nullified. Yin — Cards you use have no frequency limit."
+  },
+  "skill_ddz_hidden_radiance": {
+    "skill_type": "limited",
+    "name_cn": "潜曜",
+    "name_en": "Hidden Radiance",
+    "description_cn": "限定技，回合开始时，你可以摸X张牌，视为使用一张【杀】并依次执行等量项：1.此【杀】目标数+1；2.此【杀】伤害+1；3.此【杀】不可被响应（X为当前轮数）。",
+    "description_en": "Limited: At the start of your turn, you may draw X cards (X equals the current round number), then be treated as using a [Kill] and execute X of the following in sequence: 1. This [Kill] may target 1 additional character; 2. This [Kill]'s damage is increased by 1; 3. This [Kill] cannot be responded to."
+  },
+  "skill_ddz_soar": {
+    "skill_type": "active",
+    "name_cn": "飞扬",
+    "name_en": "Soar",
+    "description_cn": "判定阶段开始时，若你的判定区有牌，你可以弃置两张手牌并弃置自己判定区的一张牌。每回合限一次。",
+    "description_en": "At the start of your Judgment Phase, if you have cards in your Judgment Zone, you may discard 2 hand cards and discard one card from your own Judgment Zone. Once per turn."
+  },
+  "skill_ddz_domineering": {
+    "skill_type": "locked",
+    "name_cn": "跋扈",
+    "name_en": "Domineering",
+    "description_cn": "锁定技，准备阶段开始时，你摸一张牌，你使用【杀】的次数上限+1。",
+    "description_en": "Locked: At the start of your Starting Phase, draw 1 card and increase your [Kill] frequency limit by 1."
   }
 }

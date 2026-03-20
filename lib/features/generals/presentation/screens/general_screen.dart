@@ -47,7 +47,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
   GeneralFilterState _filterState = const GeneralFilterState();
 
   static const List<String> _factionOrder = [
-    'Shu', 'Wei', 'Wu', 'Qun', 'God',
+    'Shu', 'Wei', 'Wu', 'Qun', 'God', 'Utilities',
   ];
 
   @override

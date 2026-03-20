@@ -460,34 +460,38 @@ class _IdentityColumn extends StatelessWidget {
         const SizedBox(height: 14),
 
         // Health
-        _MicroLabel(label: isEnglish ? 'Health' : '体力'),
-        const SizedBox(height: 6),
-        _HealthPips(health: card.health),
-
-        const SizedBox(height: 12),
+        if (card.health > 0) ...[
+          _MicroLabel(label: isEnglish ? 'Health' : '体力'),
+          const SizedBox(height: 6),
+          _HealthPips(health: card.health),
+          const SizedBox(height: 12),
+        ],
 
         // Power
-        _MicroLabel(label: isEnglish ? 'Power' : '战力'),
-        const SizedBox(height: 6),
-        _PowerStars(value: card.powerIndex),
-
-        const SizedBox(height: 12),
+        if (card.powerIndex > 0) ...[
+          _MicroLabel(label: isEnglish ? 'Power' : '战力'),
+          const SizedBox(height: 6),
+          _PowerStars(value: card.powerIndex),
+          const SizedBox(height: 12),
+        ],
 
         // Gender
-        Text(
-          card.gender == 'Female'
-              ? (isEnglish ? '♀  Female' : '♀  女')
-              : (isEnglish ? '♂  Male' : '♂  男'),
-          style: TextStyle(
-            fontSize: 12,
-            letterSpacing: 1,
-            color: card.gender == 'Female'
-                ? const Color(0xFFF9A8D4)
-                : const Color(0xFF93C5FD),
-            fontWeight: FontWeight.w600,
+        if (card.gender == 'Female' || card.gender == 'Male') ...[
+          Text(
+            card.gender == 'Female'
+                ? (isEnglish ? '♀  Female' : '♀  女')
+                : (isEnglish ? '♂  Male' : '♂  男'),
+            style: TextStyle(
+              fontSize: 12,
+              letterSpacing: 1,
+              color: card.gender == 'Female'
+                  ? const Color(0xFFF9A8D4)
+                  : const Color(0xFF93C5FD),
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-
+        ],
+        
         // Skin thumbnail strip — hidden when no skins exist
         if (hasSkins) ...[
           const SizedBox(height: 10),

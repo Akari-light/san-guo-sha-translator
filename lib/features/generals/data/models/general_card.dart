@@ -2,30 +2,6 @@ import '../../../../core/models/skill_dto.dart';
 import '../../../../core/models/expansion.dart';
 import '../../../../core/services/search_service.dart';
 
-/// Example JSON entry (from limit_break.json):
-/// {
-///   "id": "JX_SHU001",
-///   "standard_id": "char_liubei",
-///   "name_cn": "界刘备",
-///   "name_en": "Liu Bei",
-///   "gender": "Male",
-///   "faction": "Shu",
-///   "health": 4,
-///   "power_index": 3.0,
-///   "traits_cn": ["进攻", "辅助", "回复"],
-///   "traits_en": ["Aggressive", "Support", "Recovery"],
-///   "expansion": "Limit Break",
-///   "skills": [
-///     {
-///       "skill_type": "active",
-///       "name_cn": "仁德",
-///       "name_en": "Benevolence",
-///       "description_cn": "...",
-///       "description_en": "..."
-///     }
-///   ]
-/// }
-
 class GeneralCard {
   final String id;
   final String standardId;
@@ -122,12 +98,13 @@ class GeneralCard {
   // ── Faction
   String get factionCn {
     switch (faction) {
-      case 'Shu':  return '蜀';
-      case 'Wei':  return '魏';
-      case 'Wu':   return '吴';
-      case 'Qun':  return '群';
-      case 'God':  return '神';
-      default:     return faction;
+      case 'Shu':       return '蜀';
+      case 'Wei':       return '魏';
+      case 'Wu':        return '吴';
+      case 'Qun':       return '群';
+      case 'God':       return '神';
+      case 'Utilities': return '工具';
+      default:          return faction;
     }
   }
 
