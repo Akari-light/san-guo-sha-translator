@@ -4,6 +4,9 @@ import '../../../../core/services/recently_viewed_service.dart';
 import '../../../../core/services/scanner_service.dart';
 import '../../../../core/constants/app_assets.dart';
 
+// MatchCandidate is defined in scanner_service.dart — imported above.
+// RecordType is defined in recently_viewed_service.dart — imported above.
+
 /// Discover tab — card image scanner + (future) vector search.
 ///
 /// Flow:
@@ -31,34 +34,6 @@ class _AiScreenState extends State<AiScreen> with WidgetsBindingObserver {
 
   // Dev debug log (most-recent first, capped at 20 lines)
   final List<String> _log = [];
-
-  // ── Mock candidates — replace with real ScannerResult data when vectors land
-  static const List<MatchCandidate> _mockCandidates = [
-    MatchCandidate(
-      cardId: 'jx.SHU001',
-      recordType: RecordType.general,
-      nameCn: '界刘备',
-      nameEn: 'Liu Bei (Limit Break)',
-      imagePath: 'assets/images/generals/jx.SHU001.webp',
-      confidence: 0.91,
-    ),
-    MatchCandidate(
-      cardId: 'jx.WEI001',
-      recordType: RecordType.general,
-      nameCn: '界曹操',
-      nameEn: 'Cao Cao (Limit Break)',
-      imagePath: 'assets/images/generals/jx.WEI001.webp',
-      confidence: 0.74,
-    ),
-    MatchCandidate(
-      cardId: 'weapon_qing_gang_sword',
-      recordType: RecordType.library,
-      nameCn: '青釭剑',
-      nameEn: 'Qing Gang Sword',
-      imagePath: 'assets/images/library/weapons/weapon_qing_gang_sword.webp',
-      confidence: 0.52,
-    ),
-  ];
 
   // ─────────────────────────────────────────────────────────────────────────
 
@@ -133,9 +108,9 @@ class _AiScreenState extends State<AiScreen> with WidgetsBindingObserver {
       _addLog(result.debugMessage);
       if (!mounted) return;
       setState(() => _scanning = false);
-      // Stub: always show mock candidates.
-      // Real: build from result.candidates when vectors are ready.
-      await _showResults(_mockCandidates);
+      if (result.hasMatch) {
+        await _showResults(result.candidates);
+      }
     } catch (e) {
       if (!mounted) return;
       setState(() => _scanning = false);
@@ -323,28 +298,6 @@ class _AiScreenState extends State<AiScreen> with WidgetsBindingObserver {
       ),
     );
   }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Data model — one candidate in the results sheet
-// ─────────────────────────────────────────────────────────────────────────────
-
-class MatchCandidate {
-  final String cardId;
-  final RecordType recordType;
-  final String nameCn;
-  final String nameEn;
-  final String imagePath;
-  final double confidence;
-
-  const MatchCandidate({
-    required this.cardId,
-    required this.recordType,
-    required this.nameCn,
-    required this.nameEn,
-    required this.imagePath,
-    required this.confidence,
-  });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

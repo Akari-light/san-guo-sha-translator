@@ -1,33 +1,19 @@
+// lib/core/services/scanner_service.dart
+//
+// Core scanning service — no feature imports.
+// MatchCandidate is the canonical definition; ai_screen.dart imports it from here.
+// RecordType is imported from recently_viewed_service.dart (already a core service).
+
 import 'dart:typed_data';
+import 'recently_viewed_service.dart'; // for RecordType
 
-/// Result returned by [ScannerService.match].
-class ScannerResult {
-  /// Matched card ID or null if no match found.
-  final String? cardId;
+// ── MatchCandidate ─────────────────────────────────────────────────────────────
+// Single canonical definition. ai_screen.dart imports this; it no longer
+// defines its own MatchCandidate.
 
-  /// 'general' | 'library' — null when [cardId] is null.
-  final String? recordType;
-
-  /// Confidence score 0.0–1.0. Always 0.0 while stub.
-  final double confidence;
-
-  /// Human-readable status for the dev debug panel.
-  final String debugMessage;
-
-  const ScannerResult({
-    this.cardId,
-    this.recordType,
-    this.confidence = 0.0,
-    required this.debugMessage,
-  });
-
-  bool get hasMatch => cardId != null;
-}
-
-/// One entry in the match candidates bottom sheet.
 class MatchCandidate {
   final String cardId;
-  final String recordType; // 'general' | 'library'
+  final RecordType recordType; // RecordType enum — not a raw string
   final String nameCn;
   final String nameEn;
   final String imagePath;
@@ -43,11 +29,30 @@ class MatchCandidate {
   });
 }
 
-/// Card image matching service.
-///
-/// Stub — [match] always returns no candidates.
-/// When vector matching is ready: replace [_runMatching] only.
-/// [AiScreen] API contract stays unchanged.
+// ── ScannerResult ──────────────────────────────────────────────────────────────
+
+class ScannerResult {
+  /// Ranked match candidates (empty when no match found).
+  /// Replaces the old single-match cardId/recordType/confidence fields.
+  final List<MatchCandidate> candidates;
+
+  /// Human-readable status for logging.
+  final String debugMessage;
+
+  const ScannerResult({
+    this.candidates = const [],
+    required this.debugMessage,
+  });
+
+  bool get hasMatch => candidates.isNotEmpty;
+}
+
+// ── ScannerService ─────────────────────────────────────────────────────────────
+//
+// Stub — match() always returns empty candidates.
+// When vector matching is ready: replace _runMatching() body only.
+// The public match() API and ScannerResult shape are locked.
+
 class ScannerService {
   ScannerService._();
   static final ScannerService instance = ScannerService._();
@@ -61,6 +66,8 @@ class ScannerService {
   }
 
   ScannerResult _runMatching(Uint8List bytes, String sourceLabel) {
+    // Replace this body when vectors are ready.
+    // Return a ScannerResult with a populated candidates list.
     return ScannerResult(
       debugMessage:
           '[STUB] match() called — $sourceLabel, ${bytes.lengthInBytes} bytes. '
