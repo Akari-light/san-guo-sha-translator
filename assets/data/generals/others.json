@@ -124,7 +124,7 @@
   {
     "id": "SP_QUN041",
     "standard_id": "char_lingju",
-    "name_cn": "灵雎",
+    "name_cn": "靈雎",
     "name_en": "Ling Ju",
     "gender": "Female",
     "faction": "Qun",
@@ -132,18 +132,16 @@
     "power_index": 2.0,
     "traits_cn": [
       "进攻",
-      "防御",
-      "困难"
+      "防御"
     ],
     "traits_en": [
       "Aggressive",
-      "Defensive",
-      "High Difficulty"
+      "Defensive"
     ],
     "expansion": "Other",
     "faq": [],
     "skills": [
-      "skill_drain_karma",
+      "skill_fated_end",
       "skill_burn_the_heart"
     ]
   },
@@ -1593,32 +1591,6 @@
     ]
   },
   {
-    "id": "SP_WU093",
-    "standard_id": "char_ruiji",
-    "name_cn": "芮姬",
-    "name_en": "Rui Ji",
-    "gender": "Female",
-    "faction": "Wu",
-    "health": 3,
-    "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
-    "expansion": "Other",
-    "faq": [],
-    "skills": [
-      "skill_clever_force",
-      "skill_pure_radiance"
-    ]
-  },
-  {
     "id": "SP_SHU051",
     "standard_id": "char_yiji",
     "name_cn": "伊籍",
@@ -2615,7 +2587,7 @@
     ]
   },
   {
-    "id": "SP_QUNXXX",
+    "id": "SP_QUN999",
     "standard_id": "char_kongshu",
     "name_cn": "孔淑",
     "name_en": "Kong Shu",
@@ -2669,7 +2641,7 @@
     ]
   },
   {
-    "id": "SP_WEIXXXX",
+    "id": "SP_WEI999",
     "standard_id": "char_huanshujun",
     "name_cn": "环淑君",
     "name_en": "Huan Shujun",
@@ -3737,6 +3709,1144 @@
     "faq": [],
     "skills": [
       "skill_internal_war"
+    ]
+  },
+  {
+    "id": "SP_SHU170",
+    "standard_id": "char_wenyuan",
+    "name_cn": "文鸳",
+    "name_en": "Wen Yuan",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_resonance",
+      "skill_exhausting_drive",
+      "skill_mortal_resolve",
+      "skill_unyielding_drive"
+    ]
+  },
+  {
+    "id": "SP_SHU098",
+    "standard_id": "char_malingli",
+    "name_cn": "马伶俐",
+    "name_en": "Ma Lingli",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "进攻",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Aggressive",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_sun_the_steeds",
+      "skill_fuse_the_trail",
+      "skill_fireworks"
+    ]
+  },
+  {
+    "id": "SP_SHU123",
+    "standard_id": "char_liuyao",
+    "name_cn": "柳婒",
+    "name_en": "Liu Yao",
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Control",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_lingering_note",
+      "skill_delayed_step"
+    ]
+  },
+  {
+    "id": "SP_SHU001",
+    "standard_id": "char_liubei",
+    "name_cn": "刘备",
+    "name_en": "Liu Bei",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_fierce_gallop",
+      "skill_benevolent_valley"
+    ]
+  },
+  {
+    "id": "SP_SHU999",
+    "standard_id": "char_muniuliumma",
+    "name_cn": "木牛流马",
+    "name_en": "Wooden Ox",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "发育",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_commandeer",
+      "skill_reconfigure"
+    ]
+  },
+  {
+    "id": "SP_WEI175",
+    "standard_id": "char_tianshangyi",
+    "name_cn": "田尚衣",
+    "name_en": "Tian Shangyi",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_swaying_dance",
+      "skill_silk_blade"
+    ]
+  },
+  {
+    "id": "SP_WEI064",
+    "standard_id": "char_xinxianying",
+    "name_cn": "辛宪英",
+    "name_en": "Xin Xianying",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "过牌",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_xin_loyal_discernment",
+      "skill_xin_gifted_insight"
+    ]
+  },
+  {
+    "id": "SP_WEI176",
+    "standard_id": "char_moqiongshu",
+    "name_cn": "莫琼树",
+    "name_en": "Mo Qiongshu",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_graceful_cicada",
+      "skill_crimson_lip"
+    ]
+  },
+  {
+    "id": "SP_WEI120-2",
+    "standard_id": "char_xuelingyun",
+    "name_cn": "薛灵芸",
+    "name_en": "Xue Lingyun",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_rosy_tears",
+      "skill_hidden_weave"
+    ]
+  },
+  {
+    "id": "SP_WEI998",
+    "standard_id": "char_guotiying",
+    "name_cn": "郭缇萦",
+    "name_en": "Guo Tiying",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [
+      {
+        "q_cn": "郭缇萦的〖堪舆〗和张角的〖鬼道〗同时作用于同一次判定时，谁拥有最终的判定牌控制权？",
+        "a_cn": "张角拥有最终控制权。〖堪舆〗是在判定牌亮出前通过预设牌堆顶的方式影响判定，而〖鬼道〗是在判定牌亮出后进行替换。根据结算顺序，替换技能生效晚于预设技能，因此张角可以替换掉郭缇萦预设的判定牌。",
+        "q_en": "When Guo Tiying's 〖Geomancy〗 and Zhang Jue's 〖Ghost Path〗 both affect the same Judgment, who has final control over the Judgment Card?",
+        "a_en": "Zhang Jue has final control. 〖Geomancy〗 operates before the Judgment Card is flipped by presetting the top of the Draw Pile, while 〖Ghost Path〗 operates after the Judgment Card is flipped by substituting it. Since substitution resolves later than presetting, Zhang Jue can replace the card Guo Tiying has preset."
+      }
+    ],
+    "skills": [
+      "skill_geomancy",
+      "skill_curse_of_exile"
+    ]
+  },
+  {
+    "id": "SP_WEI997",
+    "standard_id": "char_xuwu",
+    "name_cn": "徐妏",
+    "name_en": "Xu Wu",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_painted_verse",
+      "skill_tomb_portrait"
+    ]
+  },
+  {
+    "id": "SP_WEI996",
+    "standard_id": "char_suyue",
+    "name_cn": "苏越",
+    "name_en": "Su Yue",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_palace_map",
+      "skill_lay_the_foundation"
+    ]
+  },
+  {
+    "id": "SP_WEI995",
+    "standard_id": "char_cuilingyi",
+    "name_cn": "崔令仪",
+    "name_en": "Cui Lingyi",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [
+      {
+        "q_cn": "以〖华裳〗置入装备区的牌，在离开装备区时如何处理？",
+        "a_cn": "以〖华裳〗置入装备区的牌将于离开你的装备区时置入弃牌堆。",
+        "q_en": "How are cards placed into the Equipment Zone via 〖Ornate Garb〗 handled when they leave?",
+        "a_en": "Cards placed into your Equipment Zone via 〖Ornate Garb〗 are placed into the Discard Pile when they leave your Equipment Zone."
+      },
+      {
+        "q_cn": "〖逾制〗中弃置装备区里的牌视为使用【闪】的效果，在什么时机生效？",
+        "a_cn": "【闪】只应当在【杀】对目标进行使用结算中使用。随意在过早的时机使用【闪】的设计存在问题，因此〖逾制〗的弃置装备视为【闪】的效果，仅在【杀】对你进行结算的正确时机内生效。",
+        "q_en": "At what timing does 〖Exceed Protocol〗's effect of discarding an equipped card to be treated as [Dodge] apply?",
+        "a_en": "[Dodge] should only be used during the resolution of a [Kill] against its target. Using [Dodge] at an earlier timing would be problematic, so the discard-as-[Dodge] effect of 〖Exceed Protocol〗 only applies during the correct timing window in which a [Kill] is resolving against you."
+      }
+    ],
+    "skills": [
+      "skill_ornate_garb",
+      "skill_exceed_protocol"
+    ]
+  },
+  {
+    "id": "SP_WEI062-2",
+    "standard_id": "char_liuye",
+    "name_cn": "刘晔",
+    "name_en": "Liu Ye",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_level_ground",
+      "skill_anticipate_intent"
+    ]
+  },
+  {
+    "id": "SP_WEI994",
+    "standard_id": "char_huanjie",
+    "name_cn": "桓阶",
+    "name_en": "Huan Jie",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_counsel_and_establish",
+      "skill_pure_governance"
+    ]
+  },
+  {
+    "id": "SP_WEI170",
+    "standard_id": "char_baijingyun",
+    "name_cn": "柏灵筠",
+    "name_en": "Bai Jingyun",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_keen_insight",
+      "skill_shrewd_scheme",
+      "skill_sovereign_heart"
+    ]
+  },
+  {
+    "id": "SP_WEI150",
+    "standard_id": "char_caoxian",
+    "name_cn": "曹宪",
+    "name_en": "Cao Xian",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "发育",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_kindred_spirit",
+      "skill_know_or_not"
+    ]
+  },
+  {
+    "id": "SP_WEI149",
+    "standard_id": "char_zhugeyuexue",
+    "name_cn": "诸葛若雪",
+    "name_en": "Zhuge Ruoxue",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_jade_hero",
+      "skill_warm_favor"
+    ]
+  },
+  {
+    "id": "SP_WEI148",
+    "standard_id": "char_zhugemenxue",
+    "name_cn": "诸葛梦雪",
+    "name_en": "Zhuge Mengxue",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_spring_offering",
+      "skill_winter_bloom"
+    ]
+  },
+  {
+    "id": "SP_WEI144",
+    "standard_id": "char_duanqiaoxiao",
+    "name_cn": "段巧笑",
+    "name_en": "Duan Qiaoxiao",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "简单"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Scaling",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_painted_face",
+      "skill_splendid_attire"
+    ]
+  },
+  {
+    "id": "SP_WEI110",
+    "standard_id": "char_caojinyu",
+    "name_cn": "曹金玉",
+    "name_en": "Cao Jinyu",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "辅助",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [
+      {
+        "q_cn": "当〖隅泣〗所有数值均提升至上限时，该技能的完整描述是什么？",
+        "a_cn": "当所有数值均提升至最大后，〖隅泣〗的描述为：每回合限两次，当你距离5以内的一名角色受到伤害后，你可以观看牌堆顶的5张牌，将其中至多5张牌交给受伤角色并获得至多5张牌，其余牌置于牌堆顶。",
+        "q_en": "What does 〖Mourning Vigil〗 look like when all of its values have been raised to the maximum?",
+        "a_en": "When fully upgraded, 〖Mourning Vigil〗 reads: Twice per turn, after a character within distance 5 of you receives damage, you may look at the top 5 cards of the Draw Pile, give up to 5 of them to the damaged character and gain up to 5 of them, then place the remaining cards on top of the Draw Pile."
+      }
+    ],
+    "skills": [
+      "skill_mourning_vigil",
+      "skill_self_preservation_vigil",
+      "skill_tranquil_grace_vigil"
+    ]
+  },
+  {
+    "id": "SP_WEI107",
+    "standard_id": "char_caohua",
+    "name_cn": "曹华",
+    "name_en": "Cao Hua",
+    "gender": "Female",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_colorful_wings",
+      "skill_return_and_part"
+    ]
+  },
+  {
+    "id": "SP_WEI085",
+    "standard_id": "char_tianyu",
+    "name_cn": "田豫",
+    "name_en": "Tian Yu",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [
+      {
+        "q_cn": "什么是「背水」？",
+        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
+        "q_en": "What is the \"Last Resort\" ?",
+        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+      }
+    ],
+    "skills": [
+      "skill_thunderstrike_raid",
+      "skill_raise_the_standard"
+    ]
+  },
+  {
+    "id": "SP_WEI044",
+    "standard_id": "char_chengyu",
+    "name_cn": "程昱",
+    "name_en": "Cheng Yu",
+    "gender": "Male",
+    "faction": "Wei",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_detect_deception",
+      "skill_stern_counsel"
+    ]
+  },
+  {
+    "id": "SP_WU999",
+    "standard_id": "char_taohuang",
+    "name_cn": "陶璜",
+    "name_en": "Tao Huang",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_total_severance",
+      "skill_guard_and_connect"
+    ]
+  },
+  {
+    "id": "SP_WU128",
+    "standard_id": "char_zhanghuai",
+    "name_cn": "张怀",
+    "name_en": "Zhang Huai",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_parting_swallows",
+      "skill_parting_words"
+    ]
+  },
+  {
+    "id": "SP_WU093",
+    "standard_id": "char_ruiji",
+    "name_cn": "芮姬",
+    "name_en": "Rui Ji",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_wandering_fate",
+      "skill_bell_chime",
+      "skill_quick_shadow"
+    ]
+  },
+  {
+    "id": "SP_WU056",
+    "standard_id": "char_zhangxuan",
+    "name_cn": "张嫙",
+    "name_en": "Zhang Xuan",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_equal_rites",
+      "skill_lavish_burial"
+    ]
+  },
+  {
+    "id": "SP_WU031",
+    "standard_id": "char_zhuran",
+    "name_cn": "朱然",
+    "name_en": "Zhu Ran",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_steadfast_guard_zhu",
+      "skill_cut_off_the_path"
+    ]
+  },
+  {
+    "id": "SP_WU025",
+    "standard_id": "char_sunyi",
+    "name_cn": "孙翊",
+    "name_en": "Sun Yi",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 5,
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_fierce_peak",
+      "skill_ominous_doubt",
+      "skill_spirit_awakening",
+      "skill_jx_heroic_bearing",
+      "skill_heroic_spirit"
+    ]
+  },
+  {
+    "id": "SP_WU008",
+    "standard_id": "char_sunshangxiang",
+    "name_cn": "孙尚香",
+    "name_en": "Sun Shangxiang",
+    "gender": "Female",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_virtuous_charge",
+      "skill_valiant_spirit"
+    ]
+  },
+  {
+    "id": "SP_QUN998",
+    "standard_id": "char_xunyu",
+    "name_cn": "荀彧",
+    "name_en": "Xun Yu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_stabilize_and_secure",
+      "skill_pacify_and_settle_xun",
+      "skill_uphold_the_code"
+    ]
+  },
+  {
+    "id": "SP_QUN997",
+    "standard_id": "char_dongxu",
+    "name_cn": "董絮",
+    "name_en": "Dong Xu",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_cold_clarity",
+      "skill_brew_poison"
+    ]
+  },
+  {
+    "id": "SP_QUN124",
+    "standard_id": "char_dongyuan",
+    "name_cn": "董予安",
+    "name_en": "Dong Yuan",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "辅助",
+      "简单"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Support",
+      "Simple"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_warm_sunshine",
+      "skill_radiant_grace",
+      "skill_receive_favor"
+    ]
+  },
+  {
+    "id": "SP_QUN996",
+    "standard_id": "char_cuilie",
+    "name_cn": "崔烈",
+    "name_en": "Cui Lie",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_buy_a_title",
+      "skill_intercept_and_deflect"
+    ]
+  },
+  {
+    "id": "SP_QUN279",
+    "standard_id": "char_caoyuan",
+    "name_cn": "曹媛",
+    "name_en": "Cao Yuan",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "进攻",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Aggressive",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_captivating_beauty",
+      "skill_possessive_desire"
+    ]
+  },
+  {
+    "id": "SP_QUN234",
+    "standard_id": "char_liuyijun",
+    "name_cn": "刘懿君",
+    "name_en": "Liu Yijun",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_jealous_slaughter",
+      "skill_self_binding"
+    ]
+  },
+  {
+    "id": "SP_QUN141",
+    "standard_id": "char_laiyinger",
+    "name_cn": "来莺儿",
+    "name_en": "Lai Yinger",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_silk_dance",
+      "skill_transform_to_duckweed",
+      "skill_sand_dance"
+    ]
+  },
+  {
+    "id": "SP_QUN091-2",
+    "standard_id": "char_fengyu",
+    "name_cn": "冯妤",
+    "name_en": "Feng Yu",
+    "gender": "Female",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_tearful_lament",
+      "skill_precious_comb"
+    ]
+  },
+  {
+    "id": "SP_QUN084",
+    "standard_id": "char_chunyuqiong",
+    "name_cn": "淳于琼",
+    "name_en": "Chunyu Qiong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 5,
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "强命"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Sturdy"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_lead_the_garrison",
+      "skill_stubborn_resistance"
+    ]
+  },
+  {
+    "id": "SP_QUN066",
+    "standard_id": "char_xuyou",
+    "name_cn": "许攸",
+    "name_en": "Xu You",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 3,
+    "power_index": 3.0,
+    "traits_cn": [
+      "过牌",
+      "困难",
+      "爆发"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "High Difficulty",
+      "Burst"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_grand_strategy",
+      "skill_arrogant_pride"
+    ]
+  },
+  {
+    "id": "SP_QUN026",
+    "standard_id": "char_gongsunzan",
+    "name_cn": "公孙瓒",
+    "name_en": "Gongsun Zan",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_launch_raid",
+      "skill_relentless_pursuit"
     ]
   }
 ]

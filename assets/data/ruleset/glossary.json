@@ -2331,5 +2331,126 @@
     "rules": [],
     "search_text_cn": "翻面 武将牌 正面 背面 翻转 跳过",
     "search_text_en": "flip over general card face-up face-down skip turn"
+  },
+  {
+    "id": "glossary_2_5_convert_skill",
+    "section_num": "2.5",
+    "section_title_cn": "技能描述",
+    "section_title_en": "Skill Descriptions",
+    "term_cn": "转换技",
+    "term_en": "Convert Skill",
+    "badge": "convert",
+    "definition_cn": "拥有「阳」和「阴」两种状态的特殊技能。游戏开始时默认处于「阳」状态。每次发动后，状态在「阳」与「阴」之间交替切换——必须在当前状态下执行后方可切换至另一种状态。",
+    "definition_en": "A special skill that alternates between two modes: Yang (阳) and Yin (阴). The skill begins in Yang mode at the start of the game. Each activation switches the mode — you must fully execute the current mode before switching to the other.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "转换技的描述固定格式为：转换技，阳：……阴：……",
+        "en": "Convert Skill descriptions always follow the format: Convert Skill: Yang — … Yin — …",
+        "segments": [
+          {
+            "kind": "label",
+            "cn": "格式：",
+            "en": "Format: "
+          },
+          {
+            "kind": "body",
+            "cn": "转换技，阳：[阳效果] 阴：[阴效果]。每次发动后状态自动切换。",
+            "en": "Convert Skill: Yang — [Yang effect] Yin — [Yin effect]. Mode switches automatically after each activation."
+          }
+        ],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "转换技 阳 阴 切换 状态",
+    "search_text_en": "convert skill yang yin toggle mode switch"
+  },
+  {
+    "id": "glossary_2_5_mission_skill",
+    "section_num": "2.5",
+    "section_title_cn": "技能描述",
+    "section_title_en": "Skill Descriptions",
+    "term_cn": "使命技",
+    "term_en": "Mission Skill",
+    "badge": "mission",
+    "definition_cn": "要求武将在游戏过程中达成特定条件（使命成功）或满足特定条件而失败（使命失败）的技能。使命成功或失败后，该技能失效，通常替换为新的技能或获得一次性收益。属于一次性、阶段性的强力机制。",
+    "definition_en": "A skill that requires the character to fulfill a specific condition during the game (Mission Success) or triggers a failure state upon meeting a different condition (Mission Failure). After the mission succeeds or fails, the skill deactivates and is typically replaced by a new skill or a one-time benefit. It is a one-time, phase-based powerful mechanic.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "使命技的「使命成功」和「使命失败」是互斥的，每局游戏只会发生一次。发动后通常会永久改变角色的技能构成。",
+        "en": "A Mission Skill's \"Mission Success\" and \"Mission Failure\" conditions are mutually exclusive — only one can occur per game. Once triggered, the character's skill set is typically permanently altered.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "使命技 使命成功 使命失败 任务 目标",
+    "search_text_en": "mission skill success failure objective condition one-time"
+  },
+  {
+    "id": "glossary_2_5_combo_skill",
+    "section_num": "2.5",
+    "section_title_cn": "技能描述",
+    "section_title_en": "Skill Descriptions",
+    "term_cn": "连招技",
+    "term_en": "Combo Skill",
+    "badge": "combo",
+    "definition_cn": "需按特定顺序使用牌才能触发后续效果的技能。例如：连招技（A＋B）表示：当你使用B类别的牌时，若你上一张使用的牌属于类别A且使用该牌时未发动此技能，则你可以发动此技能的后续效果。",
+    "definition_en": "A skill that requires cards to be used in a specific sequence to trigger its follow-up effect. For example: Combo Skill (A + B) means — when you use a card of category B, if the previous card you used was category A and that card did not activate this skill, you may activate the follow-up effect.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "连招技的触发条件是「上一张使用的牌」属于指定类别，且使用该牌时未发动过此技能。",
+        "en": "The trigger condition for a Combo Skill is that the previous card used belongs to the specified category and that card did not itself activate this skill.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "连招技 连招 顺序 组合 连续",
+    "search_text_en": "combo skill sequence chain consecutive order combination"
+  },
+  {
+    "id": "glossary_2_5_clan_skill",
+    "section_num": "2.5",
+    "section_title_cn": "技能描述",
+    "section_title_en": "Skill Descriptions",
+    "term_cn": "宗族技",
+    "term_en": "Clan Skill",
+    "badge": "clan",
+    "definition_cn": "属于同一宗族的武将共享的技能标签。宗族技通常允许宗族成员之间进行特殊互动。「同一宗族」由史实决定，与该武将是否拥有宗族技无关——例如，荀族武将可通过宗族技将锦囊牌交给没有宗族技的荀彧。",
+    "definition_en": "A skill label shared by characters belonging to the same clan. Clan Skills typically enable special interactions between clan members. \"Same clan\" is determined by historical lineage, not by whether a character has a Clan Skill — for example, a Xun-clan character can use a Clan Skill to give a Tool Card to Xun Yu even if Xun Yu has no Clan Skill.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "宗族技仅为标签，表示该技能与宗族互动有关。实际效果由技能描述决定。宗族技通常与其他技能类型共存，如「宗族技，锁定技」。",
+        "en": "Clan Skill is a label indicating the skill involves clan-based interactions. The actual effect is determined by the skill description. Clan Skills commonly co-exist with other skill types, such as \"Clan Skill. Locked.\"",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "宗族技 宗族 家族 同族 互动",
+    "search_text_en": "clan skill clan family lineage interaction same clan"
+  },
+  {
+    "id": "glossary_2_5_charge_skill",
+    "section_num": "2.5",
+    "section_title_cn": "技能描述",
+    "section_title_en": "Skill Descriptions",
+    "term_cn": "蓄力技",
+    "term_en": "Charge Skill",
+    "badge": "charge",
+    "definition_cn": "通过累积特殊标记（蓄力点数）来增强技能效果的机制。武将通常在回合内通过弃置特定牌来获得蓄力标记（上限一般为4个），标记越多技能效果越强。部分蓄力技在使用时会消耗标记。",
+    "definition_en": "A mechanism that enhances skill effects by accumulating special tokens (Charge Points). Characters typically gain Charge tokens by discarding specific cards during their turn (usually capped at 4). The more tokens accumulated, the stronger the effect. Some Charge Skills consume tokens upon activation.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "蓄力技的标记数量通常有上限（多为4个），具体上限以技能描述为准。标记积累越多，技能威力越大，需要玩家预判时机合理运用。",
+        "en": "Charge tokens have a cap (usually 4); refer to the skill description for the specific limit. More tokens yield stronger effects, requiring players to judge timing carefully.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "蓄力技 蓄力 蓄力点数 积累 标记 增强",
+    "search_text_en": "charge skill charge points accumulate tokens enhance stack"
   }
 ]

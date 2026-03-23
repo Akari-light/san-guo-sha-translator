@@ -348,12 +348,16 @@ class AppTheme {
   }
 
   // ── Skill type accent colors
-  static const Color skillLord      = Color(0xFFF0A820);
-  static const Color skillLimited   = Color(0xFFF25C5C);
-  static const Color skillAwakening = Color(0xFFB47FEC);
-  static const Color skillLocked    = Color(0xFF5BA4F5);
-  static const Color skillActive    = Color(0x2EFFFFFF);
-  static const Color skillMission   = Color(0xFF26A99A);
+  static const Color skillLord      = Color(0xFFF0A820); // Amber/Gold
+  static const Color skillLimited   = Color(0xFFF25C5C); // Red
+  static const Color skillAwakening = Color(0xFFB47FEC); // Purple
+  static const Color skillLocked    = Color(0xFF5BA4F5); // Blue
+  static const Color skillActive    = Color(0x2EFFFFFF); // (no badge)
+  static const Color skillMission   = Color(0xFF26A99A); // Teal
+  static const Color skillConvert   = Color(0xFF78C8E6); // Sky blue
+  static const Color skillCombo     = Color(0xFFE8A44A); // Warm orange
+  static const Color skillClan      = Color(0xFF85C285); // Muted green
+  static const Color skillCharge    = Color(0xFFFF8C69); // Coral
 
   static Color skillTypeColor(SkillType type) {
     switch (type) {
@@ -362,6 +366,10 @@ class AppTheme {
       case SkillType.awakening: return skillAwakening;
       case SkillType.locked:    return skillLocked;
       case SkillType.mission:   return skillMission;
+      case SkillType.convert:   return skillConvert;
+      case SkillType.combo:     return skillCombo;
+      case SkillType.clan:      return skillClan;
+      case SkillType.charge:    return skillCharge;
       case SkillType.active:    return skillActive;
     }
   }

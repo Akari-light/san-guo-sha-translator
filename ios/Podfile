@@ -1,0 +1,66 @@
+# Podfile for sgs_sha — generated for Flutter + Google MLKit Chinese Text Recognition
+#
+# iOS minimum: 15.5
+#   — Required by google_mlkit_text_recognition (MLKit does not support < 15.5)
+#   — ML Kit does not support 32-bit architectures (i386, armv7). 64-bit only.
+#
+# After placing this file at ios/Podfile, run:
+#   cd ios && pod install
+# Then open ios/Runner.xcworkspace (NOT Runner.xcodeproj) in Xcode.
+
+platform :ios, '15.5'
+
+# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig and running flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  # Chinese script model for google_mlkit_text_recognition.
+  # Bundles the OCR model into the app so it works offline from first launch.
+  pod 'GoogleMLKit/TextRecognitionChinese', '~> 9.0.0'
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+
+    # Required for MLKit — it does not support armv7 (32-bit).
+    # This ensures the build only targets 64-bit architectures.
+    target.build_configurations.each do |config|
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'i386'
+      # Ensure deployment target is consistent across all pods
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.5'
+    end
+  end
+end
