@@ -1,1052 +1,652 @@
 [
   {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
+    "id": "SHU055",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "花鬘",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "象阵",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,【南蛮入侵】对你无效【南蛮入侵】结算结束后, 若此牌造成过伤害,你与伤害来源各摸一张牌。",
         "description_en": ""
       },
       "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "芳踪",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,出牌阶段,你使用伤害类的牌不能指定你攻击范围 内的角色为目标。攻击范围内含有你的其他角色使用伤害类 的牌不能指定你为目标。结束阶段,你将手牌摸至X 张(X 为场上存活人数)。",
         "description_en": ""
       },
-      "skill_2": {
+      "skill_3": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "嬉战",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,其他角色回合开始时,你弃置一张牌并令你本回合 芳踪”失效,或失去1点体力。若你以此法弃置了牌,则 根据此牌的花色执行对应的效果：黑桃，其视为使用一张 【酒】；红桃，你视为使用一张【无中生有】；梅花，你视为对其使用一张【铁索连环】;方块，你视为对其使用一张无距离限 制的火【杀】",
         "description_en": ""
-      }      
+      }    
     }
   },
   {
-    "id": "",
+    "id": "SHU021",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "糜夫人",
     "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
+    "gender": "Female",
+    "faction": "Shu",
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "闺秀",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，结束阶段，若你的体力值为：奇数，你摸一张牌；偶数，你回复1点体力。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "清玉",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，使命技，当你受到伤害时，你弃置两张牌并防止此伤害。成功：准备阶段，若你未受伤且没有手牌，你获得〖悬存〗。失败：你成功达成使命前，进入濒死状态时，你减1点体力上限。",
         "description_en": ""
-      }      
+      },
+      "skill_3": {
+        "skill_type": "",
+        "name_cn": "悬存",
+        "name_en": "",
+        "description_cn": "其他角色的回合结束后，若你的体力值大于手牌数，你可以令其摸X张牌（X为你的体力值减手牌数，且至多为2）。",
+        "description_en": ""
+      }        
     }
   },
   {
-    "id": "",
+    "id": "SHU094",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "王甫&赵累",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
-        "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "殉义",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "游戏开始时，你令一名其他角色获得“义”。当你或有“义”的角色造成/受到1点伤害后，若受伤角色/伤害来源不为另一方，另一方摸一张牌/弃置一张牌。当有“义”的角色死亡时，你可以移动“义”。",
         "description_en": ""
-      }      
+      }
     }
   },
   {
-    "id": "",
+    "id": "SHU086",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "刘巴",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "统度",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每回合限一次,你成为其他角色使用牌的唯一目 标时,你可以令一名角色重铸一张牌。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "锻币",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "限定技,出牌阶段,若所有角色手牌数之和大于场上角色数的两倍,你可以令所有其他角色弃置X张手牌(X为手牌数的一半,向下取整且至多为 3),然后你可以将随机三张弃置牌交给一名角色",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "SHU078",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "宗预",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
-    "faq": [],
+    "expansion": "Arts of War",
+    "faq": [
+      {
+        "q_cn": "什么是「背水」？",
+        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
+        "q_en": "What is the \"Last Resort\" ?",
+        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+      }      
+    ],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "直辩",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "准备阶段,你可以与一名角色拼点,若你赢,则你可以 选择一项:1.将其场上的一张牌移至你的对应区域: 2.回复1点体力;背水:跳过你的下个摸牌阶段。若你没赢,你失去1点体力。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "御严",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,当你成为体力值大于你的角色使用非转化、非 虚拟【杀】的标时,其选择一项:1.交给你一张点数 大于此【杀】的牌:2.取消之。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "SHU074",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "陈震",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
-        "name_en": "",
-        "description_cn": "",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "",
+        "name_cn": "歃盟",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次，你可以弃置两张颜色相同的手牌并选择一名其他角色，其摸两张牌，然后你摸三张牌。",
         "description_en": ""
-      }      
+      }  
     }
   },
   {
-    "id": "",
+    "id": "SHU053",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "许靖",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "博名",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限两次,你可以交给一名其他角色一张牌; 当你给出本阶段的第二张“博名”牌时,你于本回合 的结束阶段摸一张牌。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "恶荐",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,每名ù色限一次,当你交给其他角色“博 名”牌时,若其有与“博名”牌类别相同的牌,其选择 一项:1.受到1点伤害;2.展示所有手牌,然后弃置 所有与“博名”牌类别相同的牌。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "SHU025",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "向宠",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "固营",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技,每回合限一次,当你于回合外因使用、打出或 弃置而一次性仅失去一张牌后,当前回合角色须选择: 1.随机交给你一张牌;2.你获得此牌(若为装备则使 用之)。准备阶段,你须弃置X张牌(X为此前此技能 发动过的次数),然后置此技能发动次数",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "睦阵",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段各限一次,你可以选择一项:1.交给一名装 备区里有牌的其他角色两张牌,然后获得其装备区里 的一张牌;2.将一张装备牌置入其他角色的装备区, 然后获得其一张手牌。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "SHU018A",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "蒋琬",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
-    "faq": [],
+    "expansion": "Arts of War",
+    "faq": [
+      {
+        "q_cn": "什么是「背水」？",
+        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
+        "q_en": "What is the \"Last Resort\" ?",
+        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+      }      
+    ],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "镇庭",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每回合限一次，当你或你攻击范围内的一名角色成为【杀】或延时锦囊牌的目标时，若你不是此牌使用者，你可以选择一项：1.弃置此牌使用者一张手牌；2.摸一张牌；背水：你代替其成为此牌的目标。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "尽瘁",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "限定技，出牌阶段，你可以与一名其他角色交换位置，然后你失去X点体力（X为你的体力值-〖镇庭〗本局游戏发动次数）。若你未因此失去体力，你加1点体力上限并失去〖镇庭〗中的背水选项。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "SHU018B",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "费祎",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "谏喻",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每轮限一次，出牌阶段，你可以选择两名角色，直至你的下个回合开始时：当其中一名角色于其出牌阶段内指定另一名角色为其使用牌的目标后，你令另一名角色摸一张牌。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "生息",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "准备阶段，你可以从游戏外或牌堆中获得一张【调剂盐梅】。结束阶段，若你于此回合使用过牌且未造成过伤害，你可以从牌堆中获得一张智囊或摸一张牌。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI098",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "袁涣",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "请决",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每轮限一次，当一名其他角色使用牌指定一名体力值小于其且不处于濒死状态的另一名其他角色为唯一目标时，你可以摸一张牌并与其拼点，若你：赢，取消之；没赢，你代替成为此牌的目标。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "奉节",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，准备阶段，你选择一名其他角色（直到你的下个回合开始）。一名角色的结束阶段，若你选择的角色存活，你将手牌摸至（至多摸至四张）或弃置至与其体力值相同。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI097",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "蔡贞姬",
     "name_en": "",
-    "gender": "",
+    "gender": "Female",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "舍裔",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每轮限一次，当一名其他角色受到伤害时，若其体力值小于你，你可以将至少X张牌交给其（X为你的体力值）。若如此做，你防止此伤害。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "天音",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，结束阶段，你从牌堆中获得你本回合未使用过的类别的牌各一张。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI096",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "王粲",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "七哀",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次，你可以将一张非基本牌交给一名其他角色，其选择令你摸两张牌或回复1点体力。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "善檄",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段开始时，你可以令一名其他角色获得“檄”标记（场上已有则移动）。有“檄”的角色回复体力后，若其不处于濒死状态，其选择交给你两张牌或失去1点体力。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI094",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "王凌",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "星启",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "当你使用一张除延时锦囊牌外的牌时，若你没有同牌名的“备”，你获得1枚“备”并记录为此牌的牌名。结束阶段，你可以弃1枚“备”，从牌堆中获得一张记录牌名的牌。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "自缚",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，出牌阶段结束时，若你本阶段未使用牌，你本回合手牌上限-1，弃所有“备”。",
         "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
+      },
+      "skill_3": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "秘备",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，使命技，游戏开始时，你获得使命“秘备”；\n成功：当你使用一张牌结算结束后，若你拥有记录为每种类别的“备”各2枚，你从牌堆获得每种类别的牌各一张，然后获得〖谋立〗。\n失败：你成功达成使命前，若你于本回合的准备阶段和弃牌阶段结束时均没有“备”，你减1点体力上限。",
         "description_en": ""
       },
-      "skill_2": {
+      "skill_4": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "谋立",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次，你可以选择一名其他角色，其弃1枚你的“备”，然后从牌堆中获得一张记录牌名的牌。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI084",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "华歆",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
-    "faq": [],
+    "expansion": "Arts of War",
+    "faq": [
+"仁区是一个存于场上，用于存放牌的公共区域。",
+"游戏中，可以通过某些技能效果，置入或弃置仁区中的牌。",
+"仁区的规则：1.仁区中的牌上限为6张。2.当仁区中的牌超过6张时，最先置入仁区中的牌将置入弃牌堆。"   
+    ],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "渊清",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，出牌阶段结束时，你随机将弃牌堆中你本回合因使用而置入弃牌堆的牌中的每种类别各一张牌置入“仁”区。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "疏陈",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，当一名角色进入濒死状态时，若“仁”牌数至少为4，你获得所有“仁”牌，然后令其回复1点体力。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI078",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "王雙",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "异勇",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "当你受到其他角色使用【杀】造成的伤害后，若你的装备区里有武器牌，你可以获得此【杀】，然后将此牌当无距离限制且不计入次数的【杀】对其使用，若其装备区里没有武器牌，此【杀】对其造成的伤害+1。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "擅械",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次，你可以获得牌堆中的一张武器牌（若牌堆中没有武器牌，则改为随机获得一名其他角色装备区里的武器牌）。其他角色需使用点数大于你攻击范围两倍的【闪】才能抵消你使用的【杀】。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI076",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "张昌蒲",
     "name_en": "",
-    "gender": "",
+    "gender": "Female",
     "faction": "",
-    "health": 0,
+    "health": 3,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "抵诽",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，每回合限一次，当你受到伤害后，你摸一张牌或弃置一张手牌，然后展示所有手牌，若对你造成伤害的牌无花色或你没有与对你造成伤害的牌花色相同的手牌，你回复1点体力。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "严教",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "出牌阶段限一次，你可以将手牌中一种花色的所有牌（至少一张）交给一名其他角色，然后对其造成1点伤害，若如此做，你的下个回合开始时，你摸X张牌（X为你以此法给出的牌数）。",
         "description_en": ""
       }      
     }
   },
   {
-    "id": "",
+    "id": "WEI074",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "文鸯",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
-    "faq": [],
+    "expansion": "Arts of War",
+    "faq": [
+      {
+        "q_cn": "什么是「背水」？",
+        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
+        "q_en": "What is the \"Last Resort\" ?",
+        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+      },
+      {
+        "a_cn" : "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。"
+      }      
+    ],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "却敌",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1.获得其一张手牌；2.弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水[4]：减1点体力上限。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "椎锋",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
         "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
+      },
+      "skill_3": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "冲坚",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "吴势力技，你可以将一张装备牌当【酒】或无距离限制且无视防具的任意一种【杀】使用。当你使用此【杀】造成伤害后，你获得目标角色装备区里的X张牌（X为此【杀】对其造成的伤害值）。",
         "description_en": ""
       },
-      "skill_2": {
+      "skill_4": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "仇决",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发动一次〖却敌〗。",
         "description_en": ""
-      }      
+      }           
     }
   },
   {
-    "id": "",
+    "id": "WU074",
     "standard_id": "",
-    "name_cn": "",
+    "name_cn": "文鸯",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
-    "health": 0,
+    "health": 4,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
-    "faq": [],
+    "expansion": "Arts of War",
+    "faq": [
+      {
+        "q_cn": "什么是「背水」？",
+        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
+        "q_en": "What is the \"Last Resort\" ?",
+        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+      },
+      {
+        "a_cn" : "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。"
+      }      
+    ],
     "skills": {
       "skill_1": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "却敌",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1.获得其一张手牌；2.弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水：减1点体力上限。",
         "description_en": ""
       },
       "skill_2": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "仇决",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发动一次〖却敌〗。",
         "description_en": ""
-      }      
-    }
-  },
-  {
-    "id": "",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
-    "gender": "",
-    "faction": "",
-    "health": 0,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "",
-    "faq": [],
-    "skills": {
-      "skill_1": {
+      }  ,
+      "skill_3": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "椎锋",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
         "description_en": ""
       },
-      "skill_2": {
+      "skill_4": {
         "skill_type": "",
-        "name_cn": "",
+        "name_cn": "冲坚",
         "name_en": "",
-        "description_cn": "",
+        "description_cn": "吴势力技，你可以将一张装备牌当【酒】或无距离限制且无视防具的任意一种【杀】使用。当你使用此【杀】造成伤害后，你获得目标角色装备区里的X张牌（X为此【杀】对其造成的伤害值）。",
         "description_en": ""
-      }      
+      }         
     }
   },
   {
@@ -1054,13 +654,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1084,13 +684,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1114,13 +714,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1144,13 +744,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1174,13 +774,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1204,13 +804,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1234,13 +834,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1264,13 +864,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1294,13 +894,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1324,13 +924,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1354,13 +954,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1384,13 +984,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1414,13 +1014,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1444,13 +1044,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1474,13 +1074,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1504,13 +1104,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1534,13 +1134,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1564,13 +1164,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1594,13 +1194,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1624,13 +1224,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1654,13 +1254,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1684,13 +1284,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1714,13 +1314,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1744,13 +1344,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1774,13 +1374,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1804,13 +1404,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1834,13 +1434,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1864,13 +1464,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1894,13 +1494,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1924,13 +1524,13 @@
     "standard_id": "",
     "name_cn": "",
     "name_en": "",
-    "gender": "",
+    "gender": "Male",
     "faction": "",
     "health": 0,
     "power_index": 0.0,
     "traits_cn": [],
     "traits_en": [],
-    "expansion": "",
+    "expansion": "Arts of War",
     "faq": [],
     "skills": {
       "skill_1": {
@@ -1948,5 +1548,5 @@
         "description_en": ""
       }      
     }
-  }   
+  }
 ]

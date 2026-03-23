@@ -1,35 +1,59 @@
 // lib/core/services/scanner_service.dart
 //
-// Card image matching service.
-// Two-stage pipeline — both stages are fully on-device, no network calls.
+// Two-stage card matching pipeline — optimised for speed and accuracy.
 //
-// Stage 1 — OCR text matching (~200ms)
-//   google_mlkit_text_recognition reads the camera frame.
-//   TextNormaliser converts any traditional chars to simplified.
-//   Extracted tokens are matched against name_cn of every general, skill,
-//   and library card using the already-cached loader data.
-//   Scoring: +2 for card name match, +1 per matching skill name.
-//   If a single card scores ≥2 with no other card at ≥1, returns immediately.
+// ── Optimisations vs the original version ──────────────────────────────────
 //
-// Stage 2 — pHash image similarity (~10ms)
-//   The top-60% artwork region of the camera frame is cropped and hashed.
-//   The hash is compared against the reference .webp for each shortlist candidate.
-//   Candidates below 0.6 similarity are dropped.
-//   Remaining candidates are returned sorted by descending similarity.
+// 1. OCR eliminated from ScannerService entirely.
+//    scanner_screen.dart already runs OCR once for the bounding-box overlay.
+//    The RecognizedText is passed directly to match() so MLKit never runs twice.
+//    The temp-file write / getTemporaryDirectory() call is also gone.
 //
-// Architecture rules:
-//   - No feature/* imports — core only.
-//   - GeneralLoader and LibraryLoader are accessed by type name only;
-//     they are singletons and their caches will already be warm.
-//   - MatchCandidate is the canonical definition — ai_screen.dart imports it here.
-//   - RecordType comes from recently_viewed_service.dart (already core).
-
-import 'dart:io';
+// 2. Warmup cache (warmup()).
+//    Every general and library card is pre-processed into a flat _CardEntry
+//    struct at startup: normalised ID, normalised name, skill name list.
+//    Built once, reused every scan. The hot path does zero JSON parsing,
+//    zero SkillDTO iteration, and zero TextNormaliser calls per scan.
+//    Both buckets warm up in parallel via Future.wait().
+//
+// 3. Card-type detection before searching.
+//    OCR tokens contain definitive signals for General vs Library cards.
+//    General: 锁定技 / 限定技 / 觉醒技 / 主公技 / 体力上限 / JX / YJ / SP
+//    Library: 锦囊 / 武器 / 防具 / 坐骑 / 宝物 / 攻击范围 / 重铸
+//    When one type is detected the other bucket is skipped entirely.
+//    Ambiguous = both buckets searched (safe fallback).
+//
+// 4. Card serial ID matching (+3 score).
+//    OCR reads the printed serial reliably (e.g. "SPSHU170" from "SP_SHU170").
+//    _idMatches() strips non-alphanumeric chars from each token and compares.
+//    Minimum token length 4 prevents bare "170" matching unrelated cards.
+//    Score +3 > name match +2, so a serial hit drives the fast-path alone.
+//
+// 5. Strategy 3 (single shared CJK char) removed.
+//    Common chars like '张' in '张牌' matched every Zhang-surnamed general.
+//    Only Strategy 1 (direct substring) and Strategy 2 (CJK bigram on
+//    short tokens ≤8 chars) remain.
+//
+// 6. Separate _nameMatchesLibrary().
+//    Library name matching restricted to short tokens (≤8 chars) for BOTH
+//    strategies. Long OCR tokens are description sentences that contain
+//    library card names — e.g. "锁定技南蛮入侵对你无效" contains "南蛮入侵".
+//    Short tokens are serial fragments, skill labels, or card names — safe.
+//
+// 7. Library minimum score = 3 when hint is unknown.
+//    A library card with only a name match (+2) during an ambiguous scan is
+//    caused by the library card name appearing in skill description text.
+//    Require serial ID match (+3) to show library cards in ambiguous mode.
+//
+// 8. pHash uses 100% of the image — no crop.
+//    img.decodeImage() removed; hashFromBytes() accepts raw JPEG directly.
+//
+// Architecture: core/services only. No feature/*/presentation imports.
+// GeneralLoader + LibraryLoader: core→feature/data — permitted.
 
 import 'package:flutter/foundation.dart';
-import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
-import 'package:image/image.dart' as img;
-import 'package:path_provider/path_provider.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart'
+    show RecognizedText;
 
 import 'recently_viewed_service.dart';
 import 'text_normaliser.dart';
@@ -37,8 +61,7 @@ import 'image_hash_matcher.dart';
 import '../../../features/generals/data/repository/general_loader.dart';
 import '../../../features/library/data/repository/library_loader.dart';
 
-// ── MatchCandidate ─────────────────────────────────────────────────────────
-// Canonical definition — ai_screen.dart imports this.
+// ── Public types ───────────────────────────────────────────────────────────
 
 class MatchCandidate {
   final String cardId;
@@ -58,13 +81,8 @@ class MatchCandidate {
   });
 }
 
-// ── ScannerResult ──────────────────────────────────────────────────────────
-
 class ScannerResult {
-  /// Ranked match candidates (empty when no match found).
   final List<MatchCandidate> candidates;
-
-  /// Human-readable status for logging / debug.
   final String debugMessage;
 
   const ScannerResult({
@@ -75,23 +93,40 @@ class ScannerResult {
   bool get hasMatch => candidates.isNotEmpty;
 }
 
-// ── _ScoredCandidate — internal scoring model ──────────────────────────────
+// ── Card-type hint ─────────────────────────────────────────────────────────
 
-class _ScoredCandidate {
+enum _CardTypeHint { general, library, unknown }
+
+// ── Warmup cache entry ─────────────────────────────────────────────────────
+
+class _CardEntry {
   final String cardId;
   final RecordType recordType;
   final String nameCn;
   final String nameEn;
   final String imagePath;
-  int score = 0;
+  final String normId;
+  final String normName;
+  final List<String> skillNames;
 
-  _ScoredCandidate({
+  const _CardEntry({
     required this.cardId,
     required this.recordType,
     required this.nameCn,
     required this.nameEn,
     required this.imagePath,
+    required this.normId,
+    required this.normName,
+    required this.skillNames,
   });
+}
+
+// ── _ScoredCandidate ───────────────────────────────────────────────────────
+
+class _ScoredCandidate {
+  final _CardEntry entry;
+  int score = 0;
+  _ScoredCandidate(this.entry);
 }
 
 // ── ScannerService ─────────────────────────────────────────────────────────
@@ -100,263 +135,372 @@ class ScannerService {
   ScannerService._();
   static final ScannerService instance = ScannerService._();
 
-  // MLKit recogniser — created once, reused across scans.
-  // TextRecognitionScript.chinese recognises both traditional and simplified.
-  final TextRecognizer _recogniser = TextRecognizer(
-    script: TextRecognitionScript.chinese,
-  );
+  List<_CardEntry>? _generalEntries;
+  List<_CardEntry>? _libraryEntries;
+  bool _warmingUp = false;
 
-  bool _disposed = false;
+  static const _generalSignals = <String>[
+    '锁定技', '限定技', '觉醒技', '主公技', '使命技', '转换技',
+    '体力上限', '体力值',
+    'JXSHU', 'JXWEI', 'JXWU', 'JXQUN',
+    'YJSHU', 'YJWEI', 'YJWU', 'YJQUN',
+    'MGSHU', 'MGWEI', 'MGWU', 'MGQUN',
+    'MOSHU', 'MOWEI', 'MOWU', 'MOQUN',
+    'SPSHU', 'SPWEI', 'SPWU', 'SPQUN',
+  ];
+
+  static const _librarySignals = <String>[
+    '锦囊', '武器', '防具', '坐骑', '宝物',
+    '攻击范围', '装备区', '重铸',
+    '基本牌', '锦囊牌', '武器牌', '防具牌', '坐骑牌', '宝物牌',
+  ];
 
   // ── Public API ────────────────────────────────────────────────────────────
 
-  /// Runs the two-stage matching pipeline on [bytes] (JPEG from the camera).
-  ///
-  /// Returns a [ScannerResult] with up to 5 ranked [MatchCandidate]s.
-  /// Returns an empty candidates list if no match is found.
-  Future<ScannerResult> match(
-    Uint8List bytes, {
-    String sourceLabel = 'camera',
-  }) async {
-    return _runMatching(bytes, sourceLabel);
-  }
-
-  /// Releases the MLKit text recogniser. Call when the scanner is permanently
-  /// torn down (e.g. when AiScreen is disposed and will not be revisited).
-  void dispose() {
-    if (!_disposed) {
-      _recogniser.close();
-      _disposed = true;
+  Future<void> warmup() async {
+    if (_generalEntries != null || _warmingUp) return;
+    _warmingUp = true;
+    try {
+      await Future.wait([_warmupGenerals(), _warmupLibrary()]);
+      debugPrint('[Scanner] Warmup complete: '
+          '${_generalEntries!.length} generals, '
+          '${_libraryEntries!.length} library cards.');
+    } finally {
+      _warmingUp = false;
     }
   }
 
-  // ── Matching pipeline ─────────────────────────────────────────────────────
+  Future<ScannerResult> match(
+    Uint8List bytes, {
+    RecognizedText? recognisedText,
+    String sourceLabel = 'camera',
+  }) async {
+    return _runMatching(bytes, recognisedText, sourceLabel);
+  }
+
+  void dispose() {
+    // No TextRecognizer to close — OCR lives in scanner_screen.dart.
+  }
+
+  // ── Warmup ────────────────────────────────────────────────────────────────
+
+  Future<void> _warmupGenerals() async {
+    final generals = await GeneralLoader().getGenerals();
+    _generalEntries = generals.map((g) {
+      final skillNames = g.skills
+          .map((s) => TextNormaliser.normalise(s.nameCn))
+          .where((n) => n.length >= 2)
+          .toList();
+      return _CardEntry(
+        cardId:     g.id,
+        recordType: RecordType.general,
+        nameCn:     g.nameCn,
+        nameEn:     g.nameEn,
+        imagePath:  g.imagePath,
+        normId:     _normaliseId(g.id),
+        normName:   TextNormaliser.normalise(g.nameCn),
+        skillNames: skillNames,
+      );
+    }).toList();
+  }
+
+  Future<void> _warmupLibrary() async {
+    final cards = await LibraryLoader().getCards();
+    _libraryEntries = cards.map((c) {
+      return _CardEntry(
+        cardId:     c.id,
+        recordType: RecordType.library,
+        nameCn:     c.nameCn,
+        nameEn:     c.nameEn,
+        imagePath:  c.imagePath,
+        normId:     _normaliseId(c.id),
+        normName:   TextNormaliser.normalise(c.nameCn),
+        skillNames: const [],
+      );
+    }).toList();
+  }
+
+  // ── Pipeline ──────────────────────────────────────────────────────────────
 
   Future<ScannerResult> _runMatching(
     Uint8List bytes,
+    RecognizedText? recognisedText,
     String sourceLabel,
   ) async {
-    final stopwatch = Stopwatch()..start();
+    final sw = Stopwatch()..start();
+
+    if (_generalEntries == null || _libraryEntries == null) {
+      await warmup();
+    }
 
     try {
-      // ── Stage 1: OCR text matching ────────────────────────────────────────
-      final ocrTokens = await _extractOcrTokens(bytes);
-      debugPrint('[Scanner] OCR tokens: $ocrTokens');
+      final ocrTokens = recognisedText != null
+          ? _extractTokens(recognisedText)
+          : <String>{};
+
+      debugPrint('[Scanner] OCR tokens (${ocrTokens.length}): $ocrTokens');
 
       if (ocrTokens.isEmpty) {
-        return ScannerResult(
-          debugMessage: '[Scanner] No text detected in frame.',
-        );
+        return ScannerResult(debugMessage: '[Scanner] No text tokens provided.');
       }
 
-      final shortlist = await _buildShortlist(ocrTokens);
-      debugPrint('[Scanner] Stage 1 shortlist: ${shortlist.length} candidates');
+      final hint = _classifyCardType(ocrTokens);
+      debugPrint('[Scanner] Card-type hint: ${hint.name}');
+
+      final shortlist = _buildShortlist(ocrTokens, hint);
+      debugPrint('[Scanner] Stage 1: ${shortlist.length} candidates'
+          '${shortlist.isNotEmpty ? " top=${shortlist.first.entry.cardId}(${shortlist.first.score})" : ""}');
 
       if (shortlist.isEmpty) {
+        return ScannerResult(debugMessage: '[Scanner] No match found.');
+      }
+
+      final top = shortlist.first;
+      final gap = shortlist.length > 1 ? top.score - shortlist[1].score : top.score;
+
+      if (top.score >= 2 && gap >= 2) {
+        debugPrint('[Scanner] Fast-path: ${top.entry.cardId} '
+            'score=${top.score} gap=$gap in ${sw.elapsedMilliseconds}ms');
         return ScannerResult(
-          debugMessage: '[Scanner] OCR tokens found but no card matched.',
+          candidates: [_toCandidate(top, confidence: 1.0)],
+          debugMessage: '[Scanner] Fast-path in ${sw.elapsedMilliseconds}ms.',
         );
       }
 
-      // Fast path: single confident name match — skip pHash
-      if (shortlist.length == 1 && shortlist.first.score >= 2) {
-        final c = shortlist.first;
-        debugPrint('[Scanner] Fast path match: ${c.cardId} in ${stopwatch.elapsedMilliseconds}ms');
+      final ranked = await _rankByImageHash(bytes, shortlist);
+      debugPrint('[Scanner] Stage 2: ${ranked.length} passed threshold');
+
+      if (ranked.isEmpty) {
         return ScannerResult(
-          candidates: [
-            MatchCandidate(
-              cardId: c.cardId,
-              recordType: c.recordType,
-              nameCn: c.nameCn,
-              nameEn: c.nameEn,
-              imagePath: c.imagePath,
-              confidence: 1.0,
-            ),
-          ],
-          debugMessage: '[Scanner] Stage 1 fast-path match in ${stopwatch.elapsedMilliseconds}ms.',
+          candidates: shortlist.take(3).map((c) =>
+              _toCandidate(c, confidence: c.score / (top.score + 1.0))
+          ).toList(),
+          debugMessage:
+              '[Scanner] Stage 1 fallback in ${sw.elapsedMilliseconds}ms.',
         );
       }
 
-      // ── Stage 2: pHash image similarity ───────────────────────────────────
-      final candidates = await _rankByImageHash(bytes, shortlist);
-      debugPrint('[Scanner] Stage 2 candidates: ${candidates.length} passed threshold');
-
-      stopwatch.stop();
+      sw.stop();
       return ScannerResult(
-        candidates: candidates,
-        debugMessage: candidates.isEmpty
-            ? '[Scanner] No candidates passed pHash threshold (${stopwatch.elapsedMilliseconds}ms).'
-            : '[Scanner] ${candidates.length} match(es) in ${stopwatch.elapsedMilliseconds}ms.',
+        candidates: ranked,
+        debugMessage:
+            '[Scanner] ${ranked.length} match(es) in ${sw.elapsedMilliseconds}ms.',
       );
     } catch (e, stack) {
       debugPrint('[Scanner] Error: $e\n$stack');
-      return ScannerResult(
-        debugMessage: '[Scanner] Error during matching: $e',
-      );
+      return ScannerResult(debugMessage: '[Scanner] Error: $e');
     }
   }
 
-  // ── Stage 1 helpers ───────────────────────────────────────────────────────
+  // ── Token extraction ──────────────────────────────────────────────────────
 
-  /// Runs MLKit OCR on [bytes], normalises each text block to simplified
-  /// Chinese, and returns a deduplicated set of non-trivial tokens.
-  Future<Set<String>> _extractOcrTokens(Uint8List bytes) async {
-    // Write bytes to a temp file — InputImage.fromFilePath is the most
-    // reliable cross-platform approach for in-memory JPEG bytes.
-    final dir = await getTemporaryDirectory();
-    final tmpFile = File('${dir.path}/scanner_frame.jpg');
-    await tmpFile.writeAsBytes(bytes);
-    final inputImage = InputImage.fromFilePath(tmpFile.path);
-
-    final recognised = await _recogniser.processImage(inputImage);
+  Set<String> _extractTokens(RecognizedText recognised) {
     final tokens = <String>{};
-
     for (final block in recognised.blocks) {
       for (final line in block.lines) {
         final raw = line.text.trim();
         if (raw.isEmpty) continue;
-        // Normalise: traditional → simplified
         final normalised = TextNormaliser.normalise(raw);
-        // Split by whitespace and common punctuation
         final parts = normalised.split(
-          RegExp(r'[\s·•·\-—\u3000\uff0c\u3001\uff0e\u300c\u300d]+'),
+          RegExp(r'[\s·•\-—\u3000\uff0c\u3001\uff0e]+'),
         );
         for (final part in parts) {
-          // Keep only CJK characters + alphanumerics, min length 2
           final clean = part.replaceAll(
-            RegExp(r'[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9]'),
-            '',
-          );
+            RegExp(r'[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9]'), '');
           if (clean.length >= 2) tokens.add(clean);
         }
+        final fullClean = normalised.replaceAll(
+          RegExp(r'[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9]'), '');
+        if (fullClean.length >= 4) tokens.add(fullClean);
       }
     }
     return tokens;
   }
 
-  /// Scores every card in the cached loaders against [ocrTokens].
-  /// Returns a shortlist of up to 5 candidates with score ≥ 1,
-  /// sorted by descending score.
-  Future<List<_ScoredCandidate>> _buildShortlist(
-    Set<String> ocrTokens,
-  ) async {
-    final scores = <String, _ScoredCandidate>{};
+  // ── Card-type classification ──────────────────────────────────────────────
 
-    // ── Score generals ────────────────────────────────────────────────────
-    final generals = await GeneralLoader().getGenerals();
+  _CardTypeHint _classifyCardType(Set<String> tokens) {
+    final allText  = tokens.join('');
+    final allUpper = allText.toUpperCase();
 
-    for (final general in generals) {
-      final nameCn = TextNormaliser.normalise(general.nameCn);
+    bool hasGeneral = false;
+    bool hasLibrary = false;
 
-      // +2 for card name match
-      if (ocrTokens.any((t) => nameCn.contains(t) || t.contains(nameCn))) {
-        _addScore(
-          scores, general.id, RecordType.general,
-          general.nameCn, general.nameEn, general.imagePath, 2,
-        );
+    for (final sig in _generalSignals) {
+      if (allText.contains(sig) || allUpper.contains(sig)) {
+        hasGeneral = true;
+        break;
       }
-
-      // +1 per matching skill name
-      for (final skill in general.skills) {
-        final skillNameCn = TextNormaliser.normalise(skill.nameCn);
-        if (ocrTokens.any((t) => skillNameCn == t || t.contains(skillNameCn))) {
-          _addScore(
-            scores, general.id, RecordType.general,
-            general.nameCn, general.nameEn, general.imagePath, 1,
-          );
+    }
+    if (!hasGeneral) {
+      for (final t in tokens) {
+        final u = t.toUpperCase();
+        if (u.startsWith('JX') || u.startsWith('YJ') || u.startsWith('MG') ||
+            u.startsWith('MO') || u.startsWith('LE') || u.startsWith('SP')) {
+          hasGeneral = true;
+          break;
         }
       }
     }
-
-    // ── Score library cards ───────────────────────────────────────────────
-    final libraryCards = await LibraryLoader().getCards();
-
-    for (final card in libraryCards) {
-      final nameCn = TextNormaliser.normalise(card.nameCn);
-      if (ocrTokens.any((t) => nameCn.contains(t) || t.contains(nameCn))) {
-        _addScore(
-          scores, card.id, RecordType.library,
-          card.nameCn, card.nameEn, card.imagePath, 2,
-        );
+    for (final sig in _librarySignals) {
+      if (allText.contains(sig)) {
+        hasLibrary = true;
+        break;
       }
     }
 
+    if (hasGeneral && !hasLibrary) return _CardTypeHint.general;
+    if (hasLibrary && !hasGeneral) return _CardTypeHint.library;
+    return _CardTypeHint.unknown;
+  }
+
+  // ── Scoring ───────────────────────────────────────────────────────────────
+
+  List<_ScoredCandidate> _buildShortlist(
+    Set<String> ocrTokens,
+    _CardTypeHint hint,
+  ) {
+    final scores = <String, _ScoredCandidate>{};
+
+    final searchGenerals = hint != _CardTypeHint.library;
+    final searchLibrary  = hint != _CardTypeHint.general;
+
+    if (searchGenerals) {
+      for (final entry in _generalEntries!) {
+        var s = 0;
+        if (_idMatches(entry.normId, ocrTokens)) s += 3;
+        if (_nameMatches(entry.normName, ocrTokens)) s += 2;
+        for (final skillName in entry.skillNames) {
+          if (ocrTokens.any((t) => skillName == t || t.contains(skillName))) {
+            s += 1;
+          }
+        }
+        if (s >= 1) scores[entry.cardId] = _ScoredCandidate(entry)..score = s;
+      }
+    }
+
+    if (searchLibrary) {
+      for (final entry in _libraryEntries!) {
+        var s = 0;
+        if (_idMatches(entry.normId, ocrTokens)) s += 3;
+        if (_nameMatchesLibrary(entry.normName, ocrTokens)) s += 2;
+        if (s >= 1) scores[entry.cardId] = _ScoredCandidate(entry)..score = s;
+      }
+    }
+
+    // When hint is unknown, library cards must have a serial ID match to
+    // appear — name-only matches come from skill description text (noise).
+    final libraryMinScore = (hint == _CardTypeHint.unknown) ? 3 : 1;
+
     final shortlist = scores.values
-        .where((c) => c.score >= 1)
+        .where((c) {
+          if (c.entry.recordType == RecordType.library) {
+            return c.score >= libraryMinScore;
+          }
+          return c.score >= 1;
+        })
         .toList()
       ..sort((a, b) => b.score.compareTo(a.score));
 
     return shortlist.take(5).toList();
   }
 
-  void _addScore(
-    Map<String, _ScoredCandidate> scores,
-    String id,
-    RecordType type,
-    String nameCn,
-    String nameEn,
-    String imagePath,
-    int points,
-  ) {
-    scores.putIfAbsent(
-      id,
-      () => _ScoredCandidate(
-        cardId: id,
-        recordType: type,
-        nameCn: nameCn,
-        nameEn: nameEn,
-        imagePath: imagePath,
-      ),
-    ).score += points;
+  // ── Name matching — Generals ──────────────────────────────────────────────
+
+  bool _nameMatches(String normName, Set<String> ocrTokens) {
+    for (final token in ocrTokens) {
+      if (normName.contains(token) || token.contains(normName)) return true;
+      if (token.length >= 2 && token.length <= 8 && normName.length >= 2) {
+        for (var i = 0; i <= token.length - 2; i++) {
+          final b = token.substring(i, i + 2);
+          if (_isCjk(b[0]) && _isCjk(b[1]) && normName.contains(b)) return true;
+        }
+      }
+    }
+    return false;
   }
 
-  // ── Stage 2 helpers ───────────────────────────────────────────────────────
+  // ── Name matching — Library (strict short-token only) ─────────────────────
 
-  /// Crops the top 60% of [bytes] (artwork region), hashes it with pHash,
-  /// compares against each candidate's reference asset, and returns candidates
-  /// with similarity ≥ 0.6 sorted by descending similarity.
+  bool _nameMatchesLibrary(String normName, Set<String> ocrTokens) {
+    for (final token in ocrTokens) {
+      if (token.length < 2 || token.length > 8) continue;
+      if (normName.contains(token) || token.contains(normName)) return true;
+      if (normName.length >= 2) {
+        for (var i = 0; i <= token.length - 2; i++) {
+          final b = token.substring(i, i + 2);
+          if (_isCjk(b[0]) && _isCjk(b[1]) && normName.contains(b)) return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  // ── ID matching ───────────────────────────────────────────────────────────
+
+  bool _idMatches(String normId, Set<String> ocrTokens) {
+    for (final token in ocrTokens) {
+      final clean = token.replaceAll(RegExp(r'[^A-Za-z0-9]'), '').toUpperCase();
+      if (clean.length < 4) continue;
+      if (clean == normId) return true;
+      if (normId.contains(clean) && clean.length >= normId.length - 2) return true;
+    }
+    return false;
+  }
+
+  String _normaliseId(String id) =>
+      id.replaceAll(RegExp(r'[^A-Za-z0-9]'), '').toUpperCase();
+
+  bool _isCjk(String ch) {
+    final cp = ch.codeUnitAt(0);
+    return (cp >= 0x4e00 && cp <= 0x9fff) || (cp >= 0x3400 && cp <= 0x4dbf);
+  }
+
+  // ── Stage 2: pHash tie-breaker (100% image, no crop) ─────────────────────
+
   Future<List<MatchCandidate>> _rankByImageHash(
     Uint8List bytes,
     List<_ScoredCandidate> shortlist,
   ) async {
-    final source = img.decodeImage(bytes);
-    if (source == null) return [];
-
-    // Crop top 60% — artwork region only, avoids text area at the bottom
-    final cropHeight = (source.height * 0.60).round();
-    final cropped = img.copyCrop(
-      source,
-      x: 0,
-      y: 0,
-      width: source.width,
-      height: cropHeight,
-    );
-    final croppedBytes = Uint8List.fromList(img.encodeJpg(cropped));
-    final queryHash = ImageHashMatcher.instance.hashFromBytes(croppedBytes);
+    final queryHash = ImageHashMatcher.instance.hashFromBytes(bytes);
     if (queryHash == null) return [];
 
     final results = <MatchCandidate>[];
 
     for (final candidate in shortlist) {
-      final refHash = await ImageHashMatcher.instance.hashFromAsset(
-        candidate.imagePath,
-      );
-      if (refHash == null) continue;
+      final refHash = await ImageHashMatcher.instance
+          .hashFromAsset(candidate.entry.imagePath);
+
+      if (refHash == null) {
+        results.add(_toCandidate(
+          candidate,
+          confidence: candidate.score / (shortlist.first.score + 1.0),
+        ));
+        continue;
+      }
 
       final sim = ImageHashMatcher.instance.similarity(queryHash, refHash);
-      if (sim >= 0.6) {
-        results.add(MatchCandidate(
-          cardId: candidate.cardId,
-          recordType: candidate.recordType,
-          nameCn: candidate.nameCn,
-          nameEn: candidate.nameEn,
-          imagePath: candidate.imagePath,
-          confidence: sim,
-        ));
+      if (sim >= 0.35) {
+        results.add(_toCandidate(candidate, confidence: sim));
       }
     }
 
     results.sort((a, b) => b.confidence.compareTo(a.confidence));
     return results.take(5).toList();
   }
+
+  // ── Utility ───────────────────────────────────────────────────────────────
+
+  MatchCandidate _toCandidate(
+    _ScoredCandidate c, {
+    required double confidence,
+  }) =>
+      MatchCandidate(
+        cardId:     c.entry.cardId,
+        recordType: c.entry.recordType,
+        nameCn:     c.entry.nameCn,
+        nameEn:     c.entry.nameEn,
+        imagePath:  c.entry.imagePath,
+        confidence: confidence,
+      );
 }
