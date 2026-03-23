@@ -1770,7 +1770,7 @@
     "expansion": "Other",
     "faq": [],
     "skills": [
-      "skill_pacify_and_settle",
+      "skill_measured_comfort",
       "skill_uphold_discipline"
     ]
   },
@@ -3892,8 +3892,8 @@
     "expansion": "Other",
     "faq": [],
     "skills": [
-      "skill_xin_loyal_discernment",
-      "skill_xin_gifted_insight"
+      "skill_sp_loyal_discernment",
+      "skill_sp_gifted_insight"
     ]
   },
   {
@@ -4583,7 +4583,7 @@
     "faq": [],
     "skills": [
       "skill_stabilize_and_secure",
-      "skill_pacify_and_settle_xun",
+      "skill_nurturing_grace",
       "skill_uphold_the_code"
     ]
   },

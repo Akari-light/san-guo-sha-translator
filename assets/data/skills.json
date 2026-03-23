@@ -2844,7 +2844,7 @@
     "name_cn": "龙怒",
     "name_en": "Dragon Fury",
     "description_cn": "转换技，锁定技，出牌阶段开始时，阳：你失去1点体力并摸一张牌，然后本阶段你的红色手牌均视为火【杀】且无距离限制；阴：你减少1点体力上限并摸一张牌，然后本阶段你的锦囊牌均视为雷【杀】且无次数限制。",
-    "description_en": "Convert/Locked: At the start of your Action Phase -- Yang: lose 1 HP and draw 1 card; your red hand cards are treated as [Fire Kill] with no distance limit this phase. Yin: reduce max HP by 1 and draw 1 card; your Tool cards are treated as [Lightning Kill] with no frequency limit this phase.",
+    "description_en": "Convert Skill — Locked: At the start of your Action Phase — Yang — lose 1 HP and draw 1 card; your red hand cards are treated as fire [Kill] with no distance limit this phase. Yin — reduce your Max HP by 1 and draw 1 card; your Tool Cards are treated as lightning [Kill] with no frequency limit this phase.",
     "skill_type_secondary": "locked"
   },
   "skill_entrenched_camp": {
@@ -3104,8 +3104,8 @@
     "skill_type": "convert",
     "name_cn": "持纲",
     "name_en": "Uphold Order",
-    "description_cn": "转换技，锁定技，阴：你的判定阶段改为出牌阶段。；阳：你的判定阶段改为摸牌阶段",
-    "description_en": "Convert/Locked — Yin: Your Judgment Phase becomes an Action Phase. Yang: Your Judgment Phase becomes a Draw Phase.",
+    "description_cn": "转换技，锁定技，阴：你的判定阶段改为出牌阶段；阳：你的判定阶段改为摸牌阶段。",
+    "description_en": "Convert Skill — Locked: Yin — Your Judgment Phase becomes an Action Phase. Yang — Your Judgment Phase becomes a Draw Phase.",
     "skill_type_secondary": "locked"
   },
   "skill_heavens_aid": {
@@ -3413,8 +3413,8 @@
     "skill_type": "convert",
     "name_cn": "凤燎",
     "name_en": "Phoenix Blaze",
-    "description_cn": "锁定技,转换技,当你使用牌指定唯一目标 后,阳:你令其摸一张牌;阴:你对其造成1 点火属性伤害。",
-    "description_en": "Convert/Locked: When you use a card targeting only one character — Yang: they draw 1 card; Yin: you deal them 1 Fire damage.",
+    "description_cn": "转换技，锁定技，当你使用牌指定唯一目标后，阳：你令其摸一张牌；阴：你对其造成1点火焰伤害。",
+    "description_en": "Convert Skill — Locked: When you use a card targeting exactly one character — Yang — they draw 1 card; Yin — you deal them 1 fire damage.",
     "skill_type_secondary": "locked"
   },
   "skill_kunpeng_rebirth": {
@@ -4346,7 +4346,7 @@
     "name_cn": "游龙",
     "name_en": "Soaring Dragon",
     "description_cn": "转换技，每轮各限一次，你可以废除一个装备栏并视为使用一张，阳：普通锦囊牌；阴：基本牌。(每种牌名限一次)",
-    "description_en": "Convert Skill: Once per mode per round: Abolish 1 Equipment slot, then be treated as using 1 card not yet used this way via 〖Soaring Dragon〗 — Yang: a Non Time-Delay Tool; Yin: a Basic card."
+    "description_en": "Convert Skill: Once per mode per round: Abolish 1 Equipment Zone slot, then be treated as using 1 card not yet used this way this round — Yang — a Non Time-Delay Tool; Yin — a Basic Card. (Limited to once per card name.)"
   },
   "skill_phoenixs_wing": {
     "skill_type": "limited",
@@ -4558,12 +4558,12 @@
     "description_cn": "游戏开始时，你获得牌堆中两张副类别不同的装备牌并置入你的装备区；摸牌阶段，你可以少摸一张牌，并获得牌堆或弃牌堆中一张任意副类别的装备牌",
     "description_en": "Game start: take 2 Equipment cards of different sub-types from the deck and equip them. Draw Phase: you may draw 1 fewer card and instead take any 1 Equipment from the deck or Discard Pile."
   },
-  "skill_pacify_and_settle": {
+  "skill_measured_comfort": {
     "skill_type": "active",
     "name_cn": "抚宁",
-    "name_en": "Pacify and Settle",
+    "name_en": "Measured Comfort",
     "description_cn": "当你使用牌时，你可以摸两张牌，然后弃置张牌 (X为你本回合发动“抚宁”的次数)。",
-    "description_en": "When you Use a card, you may draw 2 cards then discard X cards (X = times 〖Pacify and Settle〗 has activated this turn)."
+    "description_en": "When you Use a card, you may draw 2 cards then discard X cards (X = times 〖Measured Comfort〗 has activated this turn)."
   },
   "skill_uphold_discipline": {
     "skill_type": "active",
@@ -5151,7 +5151,7 @@
     "name_cn": "评骘",
     "name_en": "Assess and Rebuke",
     "description_cn": "转换技，出牌阶段限一次，你可以观看一名角色的手牌并展示其中一张，阳：你弃置此牌，其视为对你使用一张【火攻】，若此牌未造成过伤害，此技能视为未发动过；阴：其使用此牌，若此牌造成过伤害，此技能视为未发动过。",
-    "description_en": "Convert Skill: Once per Action Phase: Look at a character's hand and reveal 1 card. Yang: you discard that card and they are treated as using [Incendiary] on you — if the card has never dealt damage, this skill is treated as not activated. Yin: they Use that card — if it has dealt damage before, this skill is treated as not activated."
+    "description_en": "Convert Skill: Once per Action Phase: Look at a character's hand and reveal 1 card. Yang — you discard that card and they are treated as using [Incendiary] on you; if the card has never dealt damage, this skill is treated as not having been activated. Yin — they use that card; if the card has dealt damage before, this skill is treated as not having been activated."
   },
   "skill_stern_simplicity": {
     "skill_type": "locked",
@@ -5707,10 +5707,10 @@
     "description_en": "After a character uses [Kill] and it finishes resolving, if that character is within a certain distance of you, place that [Kill] card on your General Card as a 「Bound Pig」 token. You may remove any number of 「Bound Pig」 tokens to draw that many cards and be treated as using a [Kill], then choose the same number of options: 1. Designate one additional target; 2. This [Kill] deals 1 less damage to one target; 3. This [Kill] deals 1 more damage to one target. If all targets and all chosen options are adjacent to each other, this [Kill] does not count toward your frequency limit."
   },
   "skill_ddz_gracious_host": {
-    "skill_type": "active",
+    "skill_type": "convert",
     "name_cn": "东道",
     "name_en": "Gracious Host",
-    "description_cn": "转换技，①农民回合结束后，你可以令地主执行一个额外回合；②农民回合结束后，其可以执行一个额外回合。",
+    "description_cn": "转换技，阳：农民回合结束后，你可以令地主执行一个额外回合；阴：农民回合结束后，其可以执行一个额外回合。",
     "description_en": "Convert Skill: Yang — After a Peasant's turn ends, you may have the Landlord take an extra turn. Yin — After a Peasant's turn ends, that Peasant may take an extra turn."
   },
   "skill_ddz_riding_the_flow": {
@@ -5784,11 +5784,12 @@
     "description_en": "After your [Kill] finishes resolving, you may give one hand card to a target of that [Kill], then gain up to two of their hand cards. After a character with fewer HP than you uses [Kill] and it finishes resolving, if you are a target of that [Kill], they may give you one hand card, then gain up to two of your hand cards."
   },
   "skill_ddz_halting_speech": {
-    "skill_type": "active",
+    "skill_type": "convert",
     "name_cn": "讷言",
     "name_en": "Halting Speech",
-    "description_cn": "转换技，锁定技，你使用非装备牌时，①须弃置一张同类别牌令此牌额外结算一次，否则此牌无效；②此牌无次数限制。",
-    "description_en": "Convert Locked Skill: Yang — When you use a non-equipment card, you must discard a card of the same category to have it resolve an additional time; otherwise that card is Nullified. Yin — Cards you use have no frequency limit."
+    "description_cn": "转换技，锁定技，你使用非装备牌时，阳：须弃置一张同类别牌令此牌额外结算一次，否则此牌无效；阴：此牌无次数限制。",
+    "description_en": "Convert Skill — Locked: When you use a non-Equipment Card — Yang — you must discard a card of the same category to have it resolve an additional time; otherwise that card is Nullified. Yin — cards you use have no frequency limit.",
+    "skill_type_secondary": "locked"
   },
   "skill_ddz_hidden_radiance": {
     "skill_type": "limited",
@@ -6294,10 +6295,10 @@
     "description_cn": "锁定技，当一种牌名的牌每回合第二次被使用后，若本回合没有角色进入过濒死状态，你与一名不为此牌目标的角色各摸一张牌（每回合每名角色限一次）。然后你选择一项，令一名手牌最多的其他角色：1. 受到你造成的1点伤害；2. 弃置其随机一种最多牌名的手牌。",
     "description_en": "Locked: When a card of the same name is used for the second time in a turn, if no character has entered the Verge of Death State this turn, you and one character who is not a target of that card each draw 1 card (once per character per turn). Then choose one — the other character with the most hand cards: 1. Receives 1 damage from you; 2. Discards all their hand cards of whichever name they have the most of."
   },
-  "skill_pacify_and_settle_xun": {
+  "skill_nurturing_grace": {
     "skill_type": "active",
     "name_cn": "抚宁",
-    "name_en": "Pacify and Settle",
+    "name_en": "Nurturing Grace",
     "description_cn": "当你的体力值每轮首次变化后，你可以将至少X张牌交给一名角色（X为你已损失的体力值）。若这些牌：颜色均相同，你回复1点体力；数量大于本回合受到过伤害的角色数，你将手牌调整至体力上限。",
     "description_en": "After your HP Value changes for the first time each round, you may give at least X cards to one character (X = your HP Lost). If all given cards share the same color, recover 1 HP. If the number of cards given exceeds the number of characters who have received damage this turn, adjust your hand card count to your Max HP."
   },
