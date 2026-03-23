@@ -130,5 +130,23 @@
     "base_id": "SP_WU110",
     "name_cn": "潘淑·皮肤",
     "name_en": "Pan Shu · Skin"
+  },
+  {
+    "id": "WM_SHU002_skin1",
+    "base_id": "WM_SHU002",
+    "name_cn": "武关羽·皮肤",
+    "name_en": "Martial Guan Yu · Skin"
+  },
+  {
+    "id": "WM_SHU004_skin1",
+    "base_id": "WM_SHU004",
+    "name_cn": "武诸葛亮·皮肤",
+    "name_en": "Martial Zhuge Liang · Skin"
+  },
+  {
+    "id": "WM_WU007_skin1",
+    "base_id": "WM_WU007",
+    "name_cn": "武陆逊·皮肤",
+    "name_en": "Martial Lu Xun· Skin"
   }
 ]
