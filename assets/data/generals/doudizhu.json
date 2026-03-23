@@ -1,6 +1,6 @@
 [
   {
-    "id": "DDZ_SHU012",
+    "id": "DZ_SHU012",
     "standard_id": "char_jiangwei",
     "name_cn": "姜维",
     "name_en": "Jiang Wei",
@@ -21,12 +21,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_confuse_and_disrupt",
-      "skill_ddz_lone_star"
+      "skill_dz_confuse_and_disrupt",
+      "skill_dz_lone_star"
     ]
   },
   {
-    "id": "DDZ_QUN217",
+    "id": "DZ_QUN217",
     "standard_id": "char_shitao",
     "name_cn": "石韬",
     "name_en": "Shi Tao",
@@ -47,13 +47,13 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_admire_the_valiant",
-      "skill_ddz_discourse_on_heroes",
-      "skill_ddz_honed_together_admire_the_valiant"
+      "skill_dz_admire_the_valiant",
+      "skill_dz_discourse_on_heroes",
+      "skill_dz_honed_together_admire_the_valiant"
     ]
   },
   {
-    "id": "DDZ_QUN212",
+    "id": "DZ_QUN212",
     "standard_id": "char_lvboshe",
     "name_cn": "吕伯奢",
     "name_en": "Lü Boshe",
@@ -74,12 +74,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_catch_the_pig",
-      "skill_ddz_gracious_host"
+      "skill_dz_catch_the_pig",
+      "skill_dz_gracious_host"
     ]
   },
   {
-    "id": "DDZ_QUN264",
+    "id": "DZ_QUN264",
     "standard_id": "char_cuijun",
     "name_cn": "崔钧",
     "name_en": "Cui Jun",
@@ -100,13 +100,13 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_riding_the_flow",
-      "skill_ddz_demote",
-      "skill_ddz_honed_together_riding_the_flow"
+      "skill_dz_riding_the_flow",
+      "skill_dz_demote",
+      "skill_dz_honed_together_riding_the_flow"
     ]
   },
   {
-    "id": "DDZ_QUN032",
+    "id": "DZ_QUN032",
     "standard_id": "char_liru",
     "name_cn": "李儒",
     "name_en": "Li Ru",
@@ -127,12 +127,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_ornamental_fist",
-      "skill_ddz_triple_strike"
+      "skill_dz_ornamental_fist",
+      "skill_dz_triple_strike"
     ]
   },
   {
-    "id": "DDZ_WEI250",
+    "id": "DZ_WEI250",
     "standard_id": "char_hanshiwuhu",
     "name_cn": "韩氏五虎",
     "name_en": "Five Tigers of Clan Han",
@@ -153,12 +153,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_twin_jade",
-      "skill_ddz_sweep_all_before"
+      "skill_dz_twin_jade",
+      "skill_dz_sweep_all_before"
     ]
   },
   {
-    "id": "DDZ_WU010",
+    "id": "DZ_WU010",
     "standard_id": "char_sunce",
     "name_cn": "孙策",
     "name_en": "Sun Ce",
@@ -179,11 +179,11 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_twin_jade_discs"
+      "skill_dz_twin_jade_discs"
     ]
   },
   {
-    "id": "DDZ_WEI131",
+    "id": "DZ_WEI131",
     "standard_id": "char_xiahouen",
     "name_cn": "夏侯恩",
     "name_en": "Xiahou En",
@@ -204,12 +204,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_draw_the_blade",
-      "skill_ddz_prisoner_s_burden"
+      "skill_dz_draw_the_blade",
+      "skill_dz_prisoner_s_burden"
     ]
   },
   {
-    "id": "DDZ_WEI015",
+    "id": "DZ_WEI015",
     "standard_id": "char_dengai",
     "name_cn": "邓艾",
     "name_en": "Deng Ai",
@@ -230,12 +230,12 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_halting_speech",
-      "skill_ddz_hidden_radiance"
+      "skill_dz_halting_speech",
+      "skill_dz_hidden_radiance"
     ]
   },
   {
-    "id": "DDZ_DiZhu",
+    "id": "DZ_DiZhu",
     "standard_id": "",
     "name_cn": "地主技能",
     "name_en": "Landlord Skills",
@@ -248,8 +248,34 @@
     "expansion": "Doudizhu",
     "faq": [],
     "skills": [
-      "skill_ddz_soar",
-      "skill_ddz_domineering"
+      "skill_dz_soar",
+      "skill_dz_domineering"
+    ]
+  },
+  {
+    "id": "DZ_QUN021",
+    "standard_id": "char_yuanshu",
+    "name_cn": "袁术",
+    "name_en": "Yuan Shu",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Doudizhu",
+    "faq": [],
+    "skills": [
+      "skill_hoard_nectar",
+      "skill_escalating_claims"
     ]
   }
 ]

@@ -402,7 +402,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["锁定技，与你势力相同的其他角色攻击范围+1。"],
+    "effect_cn": [
+      "锁定技，与你势力相同的其他角色攻击范围+1。"
+    ],
     "effect_en": [
       "Locked: All other characters of the same faction as you gain +1 attack range."
     ],
@@ -428,7 +430,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你可以将两张手牌当【杀】使用或打出。"],
+    "effect_cn": [
+      "你可以将两张手牌当【杀】使用或打出。"
+    ],
     "effect_en": [
       "You may treat any two hand cards as a [Kill] to use or play."
     ],
@@ -478,7 +482,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 1,
-    "effect_cn": ["锁定技，你使用【杀】无次数限制。"],
+    "effect_cn": [
+      "锁定技，你使用【杀】无次数限制。"
+    ],
     "effect_en": [
       "Locked: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
     ],
@@ -504,7 +510,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["当你使用普通【杀】时，你可以将此【杀】改为火【杀】。"],
+    "effect_cn": [
+      "当你使用普通【杀】时，你可以将此【杀】改为火【杀】。"
+    ],
     "effect_en": [
       "When you use a normal [Kill], you may convert it into a fire [Kill]."
     ],
@@ -560,7 +568,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["锁定技，当你使用【杀】指定目标后，你令其横置。"],
+    "effect_cn": [
+      "锁定技，当你使用【杀】指定目标后，你令其横置。"
+    ],
     "effect_en": [
       "Locked: After you use [Kill] and designate a target, place that character's General Card in horizontal position."
     ],
@@ -678,8 +688,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["锁定技，你使用的红色【杀】不能被响应。"],
-    "effect_en": ["Locked: Red [Kill] cards you use cannot be responded to."],
+    "effect_cn": [
+      "锁定技，你使用的红色【杀】不能被响应。"
+    ],
+    "effect_en": [
+      "Locked: Red [Kill] cards you use cannot be responded to."
+    ],
     "faq": []
   },
   {
@@ -747,7 +761,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你使用的属性【杀】可以视为任意属性。"],
+    "effect_cn": [
+      "你使用的属性【杀】可以视为任意属性。"
+    ],
     "effect_en": [
       "Elemental [Kill] cards you use may be treated as any elemental type."
     ],
@@ -809,8 +825,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你的牌均可视为红桃花色。"],
-    "effect_en": ["All your cards may be treated as having the Hearts suit."],
+    "effect_cn": [
+      "你的牌均可视为红桃花色。"
+    ],
+    "effect_en": [
+      "All your cards may be treated as having the Hearts suit."
+    ],
     "faq": []
   },
   {
@@ -820,8 +840,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"],
-    "effect_en": ["You may use any normal [Kill] as a lightning [Kill]."],
+    "effect_cn": [
+      "你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"
+    ],
+    "effect_en": [
+      "You may use any normal [Kill] as a lightning [Kill]."
+    ],
     "faq": []
   },
   {
@@ -883,8 +907,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["锁定技，你的一张【杀】最多可以制定2个目标"],
-    "effect_en": ["Locked: Your [Kill] may designate up to 2 targets."],
+    "effect_cn": [
+      "锁定技，你的一张【杀】最多可以制定2个目标"
+    ],
+    "effect_en": [
+      "Locked: Your [Kill] may designate up to 2 targets."
+    ],
     "faq": []
   },
   {
@@ -894,7 +922,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["任何时候,你每打出一张【杀】，则立即摸1张手牌。"],
+    "effect_cn": [
+      "任何时候,你每打出一张【杀】，则立即摸1张手牌。"
+    ],
     "effect_en": [
       "At any time, whenever you play out a [Kill], immediately draw 1 card."
     ],
@@ -907,8 +937,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你可将黑桃花色的【杀】当做【单挑】使用。"],
-    "effect_en": ["You may use a Spades [Kill] as a [Duel]."],
+    "effect_cn": [
+      "你可将黑桃花色的【杀】当做【单挑】使用。"
+    ],
+    "effect_en": [
+      "You may use a Spades [Kill] as a [Duel]."
+    ],
     "faq": []
   },
   {
@@ -918,7 +952,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 1,
-    "effect_cn": ["在任意角色的判定牌生效前,你可以打出一张手牌代替之。"],
+    "effect_cn": [
+      "在任意角色的判定牌生效前,你可以打出一张手牌代替之。"
+    ],
     "effect_en": [
       "Before any character's Judgment Card takes effect, you may play out a hand card to substitute for it."
     ],
@@ -946,7 +982,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["你所指定【决斗】的角色均不能出【杀】抵御。"],
+    "effect_cn": [
+      "你所指定【决斗】的角色均不能出【杀】抵御。"
+    ],
     "effect_en": [
       "Characters you target with [Duel] cannot play out [Kill] to respond."
     ],
@@ -959,8 +997,12 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你可将【闪】当做雷属性的【杀】使用。"],
-    "effect_en": ["You may use a [Dodge] as a thunder [Kill]."],
+    "effect_cn": [
+      "你可将【闪】当做雷属性的【杀】使用。"
+    ],
+    "effect_en": [
+      "You may use a [Dodge] as a thunder [Kill]."
+    ],
     "faq": []
   },
   {
@@ -970,7 +1012,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 3,
-    "effect_cn": ["你所打出红色的【杀】均需要2张【闪】才能闪避。"],
+    "effect_cn": [
+      "你所打出红色的【杀】均需要2张【闪】才能闪避。"
+    ],
     "effect_en": [
       "Red [Kill] cards you use require the target to play out 2 [Dodge] cards to negate them."
     ],
@@ -983,7 +1027,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 4,
-    "effect_cn": ["你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"],
+    "effect_cn": [
+      "你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"
+    ],
     "effect_en": [
       "When you play out a [Kill], you may discard 2 hand cards to increase that [Kill]'s damage by 1."
     ],
@@ -1103,7 +1149,9 @@
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
-    "effect_cn": ["锁定技，使用【杀】造成伤害后，目标扣减1点体力上限。"],
+    "effect_cn": [
+      "锁定技，使用【杀】造成伤害后，目标扣减1点体力上限。"
+    ],
     "effect_en": [
       "Locked: After your [Kill] deals damage, the target character's Max HP is reduced by 1."
     ],
@@ -1258,6 +1306,21 @@
     ],
     "effect_en": [
       "Locked: [Kill] cards you play out against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_luoyang_spade",
+    "name_cn": "洛阳铲",
+    "name_en": "Luoyang Spade",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 2,
+    "effect_cn": [
+      "出牌阶段限一次，你可以弃置一张黑色牌，然后将所有手牌置入弃牌堆并摸等量的牌。"
+    ],
+    "effect_en": [
+      "Once per Action Phase, you may discard one black card, then place all your hand cards into the Discard Pile and draw an equal number of cards."
     ],
     "faq": []
   }

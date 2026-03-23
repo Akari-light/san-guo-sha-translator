@@ -3,120 +3,132 @@
     "id": "MO_QUN003_skin1",
     "base_id": "MO_QUN003",
     "name_cn": "魔貂蝉·皮肤",
-    "name_en": "Demon Diao Chan · Alt"
+    "name_en": "Demon Diao Chan · Skin"
   },
   {
     "id": "MO_WEI002_skin1",
     "base_id": "MO_WEI002",
     "name_cn": "魔司马懿·皮肤",
-    "name_en": "Demon Si Ma Yi · Alt"
+    "name_en": "Demon Si Ma Yi · Skin"
   },
   {
     "id": "MO_WEI001_skin1",
     "base_id": "MO_WEI001",
     "name_cn": "魔曹操·皮肤",
-    "name_en": "Demon Cao Cao · Alt"
+    "name_en": "Demon Cao Cao · Skin"
   },
   {
     "id": "LE018_skin1",
     "base_id": "LE018",
     "name_cn": "神孙权·皮肤",
-    "name_en": "God Sun Quan · Alt"
+    "name_en": "God Sun Quan · Skin"
   },
   {
     "id": "LE008_skin1",
     "base_id": "LE008",
     "name_cn": "神司马懿·皮肤",
-    "name_en": "God Sima Yi · Alt"
+    "name_en": "God Sima Yi · Skin"
   },
   {
     "id": "LE007_skin1",
     "base_id": "LE007",
     "name_cn": "神赵云·皮肤",
-    "name_en": "God Zhao Yun · Alt"
+    "name_en": "God Zhao Yun · Skin"
   },
   {
     "id": "LE005_skin2",
     "base_id": "LE005",
     "name_cn": "神曹操·皮肤2",
-    "name_en": "God Cao Cao · Alt 2"
+    "name_en": "God Cao Cao · Skin 2"
   },
   {
     "id": "LE005_skin1",
     "base_id": "LE005",
     "name_cn": "神曹操·皮肤",
-    "name_en": "God Cao Cao · Alt"
+    "name_en": "God Cao Cao · Skin"
   },
   {
     "id": "LE002_skin1",
     "base_id": "LE002",
     "name_cn": "神吕蒙·皮肤",
-    "name_en": "God Lu Meng · Alt"
+    "name_en": "God Lu Meng · Skin"
   },
   {
     "id": "SP_QUN089_skin1",
     "base_id": "SP_QUN089",
     "name_cn": "吕玲绮·皮肤",
-    "name_en": "Lu Ling Qi · Alt"
+    "name_en": "Lu Ling Qi · Skin"
   },
   {
     "id": "SP_QUN089_skin2",
     "base_id": "SP_QUN089",
     "name_cn": "吕玲绮·皮肤2",
-    "name_en": "Lu Ling Qi · Alt 2"
+    "name_en": "Lu Ling Qi · Skin 2"
   },
   {
     "id": "SP_QUN091_skin1",
     "base_id": "SP_QUN091",
     "name_cn": "冯方女·皮肤",
-    "name_en": "Feng Fangnu · Alt"
+    "name_en": "Feng Fangnu · Skin"
   },
   {
     "id": "SP_QUN091_skin2",
     "base_id": "SP_QUN091",
     "name_cn": "冯方女·皮肤2",
-    "name_en": "Feng Fangnu · Alt 2"
+    "name_en": "Feng Fangnu · Skin 2"
   },
   {
     "id": "SP_QUN193_skin1",
     "base_id": "SP_QUN193",
     "name_cn": "华雌·皮肤",
-    "name_en": "Hua Ci · Alt"
+    "name_en": "Hua Ci · Skin"
   },
   {
     "id": "SP_QUN193_skin2",
     "base_id": "SP_QUN193",
     "name_cn": "华雌·皮肤",
-    "name_en": "Hua Ci · Alt"
+    "name_en": "Hua Ci · Skin"
   },
   {
     "id": "SP_SHU059_skin1",
     "base_id": "SP_SHU059",
     "name_cn": "蒲元·皮肤",
-    "name_en": "Pu Yuan · Alt"
+    "name_en": "Pu Yuan · Skin"
   },
   {
     "id": "SP_WEI062_skin1",
     "base_id": "SP_WEI062",
     "name_cn": "劉曄·皮肤",
-    "name_en": "Liu Ye · Alt"
+    "name_en": "Liu Ye · Skin"
   },
   {
     "id": "SP_WEI070_skin1",
     "base_id": "SP_WEI070",
     "name_cn": "曹婴·皮肤",
-    "name_en": "Cao Ying · Alt"
+    "name_en": "Cao Ying · Skin"
+  },
+  {
+    "id": "SP_WU008_skin1",
+    "base_id": "SP_WSP_WU008",
+    "name_cn": "孙尚香·皮肤",
+    "name_en": "Sun Shang Xiang · Skin"
   },
   {
     "id": "SP_WU055_skin1",
     "base_id": "SP_WU055",
     "name_cn": "張奮·皮肤",
-    "name_en": "Zhang Fen · Alt"
+    "name_en": "Zhang Fen · Skin"
+  },
+  {
+    "id": "SP_WU056_skin1",
+    "base_id": "SP_WU056",
+    "name_cn": "张嫙·皮肤",
+    "name_en": "Zhang Xuan · Skin"
   },
   {
     "id": "SP_WU110_skin1",
     "base_id": "SP_WU110",
     "name_cn": "潘淑·皮肤",
-    "name_en": "Pan Shu · Alt"
+    "name_en": "Pan Shu · Skin"
   }
 ]
