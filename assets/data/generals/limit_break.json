@@ -2329,5 +2329,23 @@
       "skill_gradual_encampment",
       "skill_loyal_to_a_fault"
     ]
-  }
+  },
+  {
+  "id": "JX_QUN064",
+  "standard_id": "char_caojie",
+  "name_cn": "界曹节",
+  "name_en": "Cao Jie",
+  "gender": "Female",
+  "faction": "Wei",
+  "health": 3,
+  "power_index": 3.0,
+  "traits_cn": ["防御", "辅助", "困难"],
+  "traits_en": ["Defensive", "Support", "High Difficulty"],
+  "expansion": "Limit Break",
+  "faq": [],
+  "skills": [
+    "skill_jx_guard_the_seal",
+    "skill_jx_benefit_the_people"
+  ]
+}
 ]

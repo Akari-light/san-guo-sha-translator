@@ -2601,6 +2601,20 @@
     "description_cn": "当你使用非转化锦囊牌时，你可以摸一张牌，若此牌是基本牌，你可以弃置此牌令你本回合手牌上限+1。",
     "description_en": "When you Use a non-converted Tool card, you may draw 1 card. If that drawn card is a Basic card, you may discard it to increase your Hand Limit by 1 for this turn."
   },
+  "skill_jx_guard_the_seal": {
+    "skill_type": "active",
+    "name_cn": "守玺",
+    "name_en": "Guard the Seal",
+    "description_cn": "每名角色的回合限一次，当你成为【杀】的目标后，你可以弃置至少一张【杀】，对使用者造成1点伤害。然后若此【杀】未对你造成伤害，你将手牌摸至手牌上限（至多摸至五张）。",
+    "description_en": "Once per character's turn: After you become the target of a [Kill], you may discard at least one [Kill] to deal 1 damage to the User. Then, if that [Kill] dealt no damage to you, draw cards up to your Hand Limit (maximum 5)."
+  },
+  "skill_jx_benefit_the_people": {
+    "skill_type": "active",
+    "name_cn": "惠民",
+    "name_en": "Benefit the People",
+    "description_cn": "出牌阶段限一次，你可以令任意名手牌数小于等于体力值的角色各摸一张牌，然后你的手牌上限+X直到你的下回合开始（X为这些角色中手牌数大于体力值的角色数）。",
+    "description_en": "Once per Action Phase, you may have any number of characters whose hand count is less than or equal to their HP Value each draw 1 card. Then your Hand Limit increases by X until the start of your next turn (X = the number of those characters whose hand count now exceeds their HP Value)."
+  },
   "skill_war_god": {
     "skill_type": "locked",
     "name_cn": "武神",
