@@ -164,6 +164,36 @@ class _SkillBadge extends StatelessWidget {
         bg     = AppTheme.codexNumBg('rules', isDark);
         text   = AppTheme.codexNumText('rules', isDark);
         border = AppTheme.codexNumBorder('rules', isDark);
+      case 'mission':
+        bg     = isDark ? const Color(0xFF071A19) : const Color(0xFFE3F5F3);
+        text   = isDark ? AppTheme.skillMission : const Color(0xFF0B3B36);
+        border = isDark
+            ? AppTheme.skillMission.withAlpha(100)
+            : AppTheme.skillMission.withAlpha(180);
+      case 'convert':
+        bg     = isDark ? const Color(0xFF061C22) : const Color(0xFFE4F4FA);
+        text   = isDark ? AppTheme.skillConvert : const Color(0xFF0B3444);
+        border = isDark
+            ? AppTheme.skillConvert.withAlpha(100)
+            : AppTheme.skillConvert.withAlpha(180);
+      case 'combo':
+        bg     = isDark ? const Color(0xFF221708) : const Color(0xFFFAF1E3);
+        text   = isDark ? AppTheme.skillCombo : const Color(0xFF4A2F04);
+        border = isDark
+            ? AppTheme.skillCombo.withAlpha(100)
+            : AppTheme.skillCombo.withAlpha(180);
+      case 'clan':
+        bg     = isDark ? const Color(0xFF0D1F0D) : const Color(0xFFEAF4EA);
+        text   = isDark ? AppTheme.skillClan : const Color(0xFF1B3D1B);
+        border = isDark
+            ? AppTheme.skillClan.withAlpha(100)
+            : AppTheme.skillClan.withAlpha(180);
+      case 'charge':
+        bg     = isDark ? const Color(0xFF220F08) : const Color(0xFFFAEDE8);
+        text   = isDark ? AppTheme.skillCharge : const Color(0xFF4A1A0A);
+        border = isDark
+            ? AppTheme.skillCharge.withAlpha(100)
+            : AppTheme.skillCharge.withAlpha(180);
       default:
         bg     = AppTheme.codexNumBg('setup', isDark);
         text   = AppTheme.codexNumText('setup', isDark);
