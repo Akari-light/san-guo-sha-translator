@@ -8,16 +8,8 @@
     "faction": "Qun",
     "health": 6,
     "power_index": 3.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -36,21 +28,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_scheme_and_rout"
-    ]
+    "skills": ["skill_scheme_and_rout"]
   },
   {
     "id": "SP_QUN040",
@@ -61,16 +43,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -116,10 +90,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_mandate_of_heaven",
-      "skill_secret_edict"
-    ]
+    "skills": ["skill_mandate_of_heaven", "skill_secret_edict"]
   },
   {
     "id": "SP_QUN041",
@@ -130,20 +101,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "防御"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive"
-    ],
+    "traits_cn": ["进攻", "防御"],
+    "traits_en": ["Aggressive", "Defensive"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_fated_end",
-      "skill_burn_the_heart"
-    ]
+    "skills": ["skill_fated_end", "skill_burn_the_heart"]
   },
   {
     "id": "SP_SHU040",
@@ -154,16 +116,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "回复"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Recovery"
-    ],
+    "traits_cn": ["辅助", "过牌", "回复"],
+    "traits_en": ["Support", "Card Flow", "Recovery"],
     "expansion": "Other",
     "faq": [
       {
@@ -185,11 +139,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_good_aid",
-      "skill_return_home",
-      "skill_fierce_lady"
-    ]
+    "skills": ["skill_good_aid", "skill_return_home", "skill_fierce_lady"]
   },
   {
     "id": "SP_WEI046",
@@ -200,16 +150,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "过牌", "困难"],
+    "traits_en": ["Support", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -279,10 +221,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_poignant_plea",
-      "skill_silent_memory"
-    ]
+    "skills": ["skill_poignant_plea", "skill_silent_memory"]
   },
   {
     "id": "SP_SHU039",
@@ -293,16 +232,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Burst"
-    ],
+    "traits_cn": ["进攻", "控制", "爆发"],
+    "traits_en": ["Aggressive", "Control", "Burst"],
     "expansion": "Other",
     "faq": [
       {
@@ -357,16 +288,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -400,10 +323,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_arrogant_talent",
-      "skill_militarism"
-    ]
+    "skills": ["skill_arrogant_talent", "skill_militarism"]
   },
   {
     "id": "SP_WEI016",
@@ -414,16 +334,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [
       {
@@ -433,9 +345,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_valiant_drive"
-    ]
+    "skills": ["skill_valiant_drive"]
   },
   {
     "id": "SP_WEI049",
@@ -446,21 +356,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["防御", "辅助", "简单"],
+    "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_resolute_sacrifice"
-    ]
+    "skills": ["skill_resolute_sacrifice"]
   },
   {
     "id": "SP_WU018",
@@ -471,16 +371,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -498,16 +390,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": [
-      "进攻",
-      "简单",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Simple",
-      "Sturdy"
-    ],
+    "traits_cn": ["进攻", "简单", "强命"],
+    "traits_en": ["Aggressive", "Simple", "Sturdy"],
     "expansion": "Other",
     "faq": [
       {
@@ -529,10 +413,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_close_quarters",
-      "skill_swift_advance"
-    ]
+    "skills": ["skill_close_quarters", "skill_swift_advance"]
   },
   {
     "id": "SP_QUN020",
@@ -543,16 +424,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "过牌", "困难"],
+    "traits_en": ["Aggressive", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -658,10 +531,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_poison_wine",
-      "skill_tragic_chaos"
-    ]
+    "skills": ["skill_poison_wine", "skill_tragic_chaos"]
   },
   {
     "id": "SP_WU043",
@@ -672,23 +542,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_alluring_step",
-      "skill_tranquil_grace",
-      "skill_pause"
-    ]
+    "skills": ["skill_alluring_step", "skill_tranquil_grace", "skill_pause"]
   },
   {
     "id": "SP_WU045",
@@ -699,23 +557,11 @@
     "faction": "Wu",
     "health": 5,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "主公技",
-      "卖血"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Lord Skill",
-      "Glass Cannon"
-    ],
+    "traits_cn": ["过牌", "主公技", "卖血"],
+    "traits_en": ["Card Flow", "Lord Skill", "Glass Cannon"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_erode",
-      "skill_sea_of_hatred",
-      "skill_submit_to_fate"
-    ]
+    "skills": ["skill_erode", "skill_sea_of_hatred", "skill_submit_to_fate"]
   },
   {
     "id": "SP_QUN103",
@@ -726,16 +572,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "爆发",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Burst",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "爆发", "困难"],
+    "traits_en": ["Card Flow", "Burst", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -753,22 +591,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_horsemanship",
-      "skill_phoenix_soul"
-    ]
+    "skills": ["skill_horsemanship", "skill_phoenix_soul"]
   },
   {
     "id": "SP_SHU070",
@@ -779,16 +606,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -806,16 +625,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "发育"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Scaling"
-    ],
+    "traits_cn": ["控制", "过牌", "发育"],
+    "traits_en": ["Control", "Card Flow", "Scaling"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -834,16 +645,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "回复",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Recovery",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "回复", "简单"],
+    "traits_en": ["Support", "Recovery", "Simple"],
     "expansion": "Other",
     "faq": [
       {
@@ -877,10 +680,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_county_troops",
-      "skill_remove_affliction"
-    ]
+    "skills": ["skill_county_troops", "skill_remove_affliction"]
   },
   {
     "id": "SP_QUN046",
@@ -891,16 +691,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "控制"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Control"
-    ],
+    "traits_cn": ["防御", "过牌", "控制"],
+    "traits_en": ["Defensive", "Card Flow", "Control"],
     "expansion": "Other",
     "faq": [
       {
@@ -931,16 +723,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "发育",
-      "爆发",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Burst",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "爆发", "困难"],
+    "traits_en": ["Scaling", "Burst", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -958,16 +742,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Other",
     "faq": [
       {
@@ -995,10 +771,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_upright_service",
-      "skill_decline_the_feast"
-    ]
+    "skills": ["skill_upright_service", "skill_decline_the_feast"]
   },
   {
     "id": "SP_SHU061",
@@ -1009,22 +782,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "控制", "困难"],
+    "traits_en": ["Card Flow", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_pray_and_pacify",
-      "skill_transcend"
-    ]
+    "skills": ["skill_pray_and_pacify", "skill_transcend"]
   },
   {
     "id": "SP_WEI055",
@@ -1035,16 +797,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "卖血"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Glass Cannon"
-    ],
+    "traits_cn": ["控制", "辅助", "卖血"],
+    "traits_en": ["Control", "Support", "Glass Cannon"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1062,16 +816,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -1111,10 +857,7 @@
         "a_en": ""
       }
     ],
-    "skills": [
-      "skill_modest_elegance",
-      "skill_sp_forge_alliance"
-    ]
+    "skills": ["skill_modest_elegance", "skill_sp_forge_alliance"]
   },
   {
     "id": "SP_QUN058",
@@ -1125,16 +868,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "发育"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Scaling"
-    ],
+    "traits_cn": ["控制", "过牌", "发育"],
+    "traits_en": ["Control", "Card Flow", "Scaling"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1153,22 +888,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "发育"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Scaling"
-    ],
+    "traits_cn": ["进攻", "控制", "发育"],
+    "traits_en": ["Aggressive", "Control", "Scaling"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_savage_cauldron",
-      "skill_kill_without_mercy"
-    ]
+    "skills": ["skill_savage_cauldron", "skill_kill_without_mercy"]
   },
   {
     "id": "SP_QUN073",
@@ -1179,23 +903,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sacred_talisman",
-      "skill_true_ritual",
-      "skill_illuminate"
-    ]
+    "skills": ["skill_sacred_talisman", "skill_true_ritual", "skill_illuminate"]
   },
   {
     "id": "SP_WEI061",
@@ -1206,21 +918,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "多刀"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Multi-Strike"
-    ],
+    "traits_cn": ["进攻", "过牌", "多刀"],
+    "traits_en": ["Aggressive", "Card Flow", "Multi-Strike"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sp_repair_the_armor"
-    ]
+    "skills": ["skill_sp_repair_the_armor"]
   },
   {
     "id": "SP_WU051",
@@ -1231,16 +933,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "发育"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Scaling"
-    ],
+    "traits_cn": ["控制", "辅助", "发育"],
+    "traits_en": ["Control", "Support", "Scaling"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1258,21 +952,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "Sturdy"
-    ],
+    "traits_cn": ["进攻", "发育", "强命"],
+    "traits_en": ["Aggressive", "Scaling", "Sturdy"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_caltrop"
-    ]
+    "skills": ["skill_caltrop"]
   },
   {
     "id": "SP_SHU055",
@@ -1283,16 +967,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1312,22 +988,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "过牌"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Card Flow"
-    ],
+    "traits_cn": ["防御", "辅助", "过牌"],
+    "traits_en": ["Defensive", "Support", "Card Flow"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_salvage_from_crisis",
-      "skill_frugal_restraint"
-    ]
+    "skills": ["skill_salvage_from_crisis", "skill_frugal_restraint"]
   },
   {
     "id": "SP_QUN100",
@@ -1338,22 +1003,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_tiger_cavalry",
-      "skill_bestow_the_talisman"
-    ]
+    "skills": ["skill_tiger_cavalry", "skill_bestow_the_talisman"]
   },
   {
     "id": "SP_WU052",
@@ -1364,22 +1018,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "辅助", "困难"],
+    "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_read_the_tide",
-      "skill_yield_to_the_worthy"
-    ]
+    "skills": ["skill_read_the_tide", "skill_yield_to_the_worthy"]
   },
   {
     "id": "SP_SHU110",
@@ -1390,22 +1033,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_soaring_dragon",
-      "skill_phoenixs_wing"
-    ]
+    "skills": ["skill_soaring_dragon", "skill_phoenixs_wing"]
   },
   {
     "id": "SP_WU110",
@@ -1416,22 +1048,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["防御", "辅助", "简单"],
+    "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_dignified_bearing",
-      "skill_silken_weave"
-    ]
+    "skills": ["skill_dignified_bearing", "skill_silken_weave"]
   },
   {
     "id": "SP_QUN102",
@@ -1442,16 +1063,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "主公技",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Lord Skill",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "主公技", "困难"],
+    "traits_en": ["Defensive", "Lord Skill", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1469,22 +1082,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_petty_spite",
-      "skill_steady_the_course"
-    ]
+    "skills": ["skill_petty_spite", "skill_steady_the_course"]
   },
   {
     "id": "SP_QUN091",
@@ -1495,22 +1097,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_adorned_comb",
-      "skill_tearful_offering"
-    ]
+    "skills": ["skill_adorned_comb", "skill_tearful_offering"]
   },
   {
     "id": "SP_WEI093",
@@ -1521,22 +1112,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 4.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "卖血"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Glass Cannon"
-    ],
+    "traits_cn": ["进攻", "控制", "卖血"],
+    "traits_en": ["Aggressive", "Control", "Glass Cannon"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_slander_and_frame",
-      "skill_eldest_princess"
-    ]
+    "skills": ["skill_slander_and_frame", "skill_eldest_princess"]
   },
   {
     "id": "SP_WU090",
@@ -1547,22 +1127,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_fall_from_favour",
-      "skill_mournful_dust"
-    ]
+    "skills": ["skill_fall_from_favour", "skill_mournful_dust"]
   },
   {
     "id": "SP_QUN108",
@@ -1573,22 +1142,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "辅助"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Support"
-    ],
+    "traits_cn": ["防御", "控制", "辅助"],
+    "traits_en": ["Defensive", "Control", "Support"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_provide_resources",
-      "skill_fierce_integrity"
-    ]
+    "skills": ["skill_provide_resources", "skill_fierce_integrity"]
   },
   {
     "id": "SP_SHU051",
@@ -1599,22 +1157,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "控制", "简单"],
+    "traits_en": ["Support", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_quick_wit",
-      "skill_emergency_aid"
-    ]
+    "skills": ["skill_quick_wit", "skill_emergency_aid"]
   },
   {
     "id": "SP_QUN104",
@@ -1625,22 +1172,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "回复",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Recovery",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "回复", "困难"],
+    "traits_en": ["Support", "Recovery", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_defiant_song",
-      "skill_steadfast_honour"
-    ]
+    "skills": ["skill_defiant_song", "skill_steadfast_honour"]
   },
   {
     "id": "SP_QUN111",
@@ -1651,22 +1187,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "回复",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Recovery",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "回复", "困难"],
+    "traits_en": ["Aggressive", "Recovery", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_barbarian_king",
-      "skill_rebel_invasion"
-    ]
+    "skills": ["skill_barbarian_king", "skill_rebel_invasion"]
   },
   {
     "id": "SP_QUN170",
@@ -1677,16 +1202,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "发育"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "Scaling"
-    ],
+    "traits_cn": ["过牌", "辅助", "发育"],
+    "traits_en": ["Card Flow", "Support", "Scaling"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1705,22 +1222,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "发育", "困难"],
+    "traits_en": ["Aggressive", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_master_craftsman",
-      "skill_forge_the_blade"
-    ]
+    "skills": ["skill_master_craftsman", "skill_forge_the_blade"]
   },
   {
     "id": "SP_SHU059-1",
@@ -1731,22 +1237,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "发育", "困难"],
+    "traits_en": ["Aggressive", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_divine_craft",
-      "skill_inspired_design"
-    ]
+    "skills": ["skill_divine_craft", "skill_inspired_design"]
   },
   {
     "id": "SP_WEI087",
@@ -1757,22 +1252,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_measured_comfort",
-      "skill_uphold_discipline"
-    ]
+    "skills": ["skill_measured_comfort", "skill_uphold_discipline"]
   },
   {
     "id": "SP_SHU090",
@@ -1783,22 +1267,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lone_chokehold",
-      "skill_await_and_strike"
-    ]
+    "skills": ["skill_lone_chokehold", "skill_await_and_strike"]
   },
   {
     "id": "SP_WEI091",
@@ -1809,16 +1282,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1836,22 +1301,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "防御", "控制"],
+    "traits_en": ["Aggressive", "Defensive", "Control"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_righteous_vendetta",
-      "skill_aid_the_garrison"
-    ]
+    "skills": ["skill_righteous_vendetta", "skill_aid_the_garrison"]
   },
   {
     "id": "SP_WEI116",
@@ -1862,21 +1316,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Burst"
-    ],
+    "traits_cn": ["进攻", "辅助", "爆发"],
+    "traits_en": ["Aggressive", "Support", "Burst"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_radiant_cloud"
-    ]
+    "skills": ["skill_radiant_cloud"]
   },
   {
     "id": "SP_WU083",
@@ -1887,22 +1331,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_blunt_remonstrance",
-      "skill_prostrate_in_remorse"
-    ]
+    "skills": ["skill_blunt_remonstrance", "skill_prostrate_in_remorse"]
   },
   {
     "id": "SP_QUN175",
@@ -1913,22 +1346,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "回复"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Recovery"
-    ],
+    "traits_cn": ["控制", "辅助", "回复"],
+    "traits_en": ["Control", "Support", "Recovery"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_preserve_youth",
-      "skill_lightning_calamity"
-    ]
+    "skills": ["skill_preserve_youth", "skill_lightning_calamity"]
   },
   {
     "id": "SP_SHU083",
@@ -1939,22 +1361,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_know_ones_fate",
-      "skill_star_divination"
-    ]
+    "skills": ["skill_know_ones_fate", "skill_star_divination"]
   },
   {
     "id": "SP_SHU056",
@@ -1965,16 +1376,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -1995,21 +1398,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "发育", "困难"],
+    "traits_en": ["Control", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_opportunistic_gain"
-    ]
+    "skills": ["skill_opportunistic_gain"]
   },
   {
     "id": "SP_WU078",
@@ -2020,22 +1413,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "过牌"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "Card Flow"
-    ],
+    "traits_cn": ["防御", "控制", "过牌"],
+    "traits_en": ["Defensive", "Control", "Card Flow"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_conceal_the_heart",
-      "skill_gentle_subtlety"
-    ]
+    "skills": ["skill_conceal_the_heart", "skill_gentle_subtlety"]
   },
   {
     "id": "SP_SHU018B",
@@ -2046,22 +1428,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "过牌",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "控制", "困难"],
+    "traits_en": ["Card Flow", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_tranquil_ease",
-      "skill_harmonious_accord"
-    ]
+    "skills": ["skill_tranquil_ease", "skill_harmonious_accord"]
   },
   {
     "id": "SP_WEI080",
@@ -2072,16 +1443,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "Burst"
-    ],
+    "traits_cn": ["进攻", "发育", "爆发"],
+    "traits_en": ["Aggressive", "Scaling", "Burst"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2099,16 +1462,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2126,22 +1481,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_unruffled_calm",
-      "skill_store_the_hair"
-    ]
+    "skills": ["skill_unruffled_calm", "skill_store_the_hair"]
   },
   {
     "id": "SP_WEI119",
@@ -2152,22 +1496,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "过牌"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Card Flow"
-    ],
+    "traits_cn": ["防御", "辅助", "过牌"],
+    "traits_en": ["Defensive", "Support", "Card Flow"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_linked_verses",
-      "skill_longing_for_home"
-    ]
+    "skills": ["skill_linked_verses", "skill_longing_for_home"]
   },
   {
     "id": "SP_WEI136",
@@ -2178,22 +1511,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_overawe_and_pacify",
-      "skill_appease_the_frontier"
-    ]
+    "skills": ["skill_overawe_and_pacify", "skill_appease_the_frontier"]
   },
   {
     "id": "SP_WU084",
@@ -2204,22 +1526,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_profound_notes",
-      "skill_sp_blunt_remonstrance"
-    ]
+    "skills": ["skill_profound_notes", "skill_sp_blunt_remonstrance"]
   },
   {
     "id": "SP_QUN194",
@@ -2230,21 +1541,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_retire_the_blade"
-    ]
+    "skills": ["skill_retire_the_blade"]
   },
   {
     "id": "SP_SHU063",
@@ -2255,22 +1556,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_light_karma",
-      "skill_mirror_self"
-    ]
+    "skills": ["skill_light_karma", "skill_mirror_self"]
   },
   {
     "id": "SP_WEI166",
@@ -2281,16 +1571,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "回复"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "Recovery"
-    ],
+    "traits_cn": ["过牌", "辅助", "回复"],
+    "traits_en": ["Card Flow", "Support", "Recovery"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2308,21 +1590,11 @@
     "faction": "Wu",
     "health": 5,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "卖血"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "Glass Cannon"
-    ],
+    "traits_cn": ["进攻", "发育", "卖血"],
+    "traits_en": ["Aggressive", "Scaling", "Glass Cannon"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lone_edge"
-    ]
+    "skills": ["skill_lone_edge"]
   },
   {
     "id": "SP_QUN140",
@@ -2333,21 +1605,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "过牌", "简单"],
+    "traits_en": ["Control", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_change_the_stronghold"
-    ]
+    "skills": ["skill_change_the_stronghold"]
   },
   {
     "id": "SP_WU060",
@@ -2358,22 +1620,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_keep_the_household",
-      "skill_console_and_encourage"
-    ]
+    "skills": ["skill_keep_the_household", "skill_console_and_encourage"]
   },
   {
     "id": "SP_QUN068",
@@ -2384,22 +1635,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "回复"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Recovery"
-    ],
+    "traits_cn": ["进攻", "过牌", "回复"],
+    "traits_en": ["Aggressive", "Card Flow", "Recovery"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_chart_and_strike",
-      "skill_sp_claim_the_province"
-    ]
+    "skills": ["skill_chart_and_strike", "skill_sp_claim_the_province"]
   },
   {
     "id": "SP_QUN055",
@@ -2410,16 +1650,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "控制"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Control"
-    ],
+    "traits_cn": ["进攻", "过牌", "控制"],
+    "traits_en": ["Aggressive", "Card Flow", "Control"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2437,22 +1669,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "发育"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Scaling"
-    ],
+    "traits_cn": ["防御", "过牌", "发育"],
+    "traits_en": ["Defensive", "Card Flow", "Scaling"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_restrain_the_baggage",
-      "skill_timid_defense"
-    ]
+    "skills": ["skill_restrain_the_baggage", "skill_timid_defense"]
   },
   {
     "id": "SP_WU073",
@@ -2463,16 +1684,8 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "发育"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Scaling"
-    ],
+    "traits_cn": ["控制", "辅助", "发育"],
+    "traits_en": ["Control", "Support", "Scaling"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2490,22 +1703,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "辅助"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Support"
-    ],
+    "traits_cn": ["防御", "过牌", "辅助"],
+    "traits_en": ["Defensive", "Card Flow", "Support"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_weeping_thoughts",
-      "skill_skilled_weaving"
-    ]
+    "skills": ["skill_weeping_thoughts", "skill_skilled_weaving"]
   },
   {
     "id": "SP_QUN179",
@@ -2516,16 +1718,8 @@
     "faction": "Qun",
     "health": 5,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "回复"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Recovery"
-    ],
+    "traits_cn": ["进攻", "过牌", "回复"],
+    "traits_en": ["Aggressive", "Card Flow", "Recovery"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2543,22 +1737,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "过牌", "简单"],
+    "traits_en": ["Control", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sharp_observation",
-      "skill_deep_respect"
-    ]
+    "skills": ["skill_sharp_observation", "skill_deep_respect"]
   },
   {
     "id": "SP_QUN158",
@@ -2569,22 +1752,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "发育",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Scaling",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "发育", "简单"],
+    "traits_en": ["Control", "Scaling", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_chariot_wheel",
-      "skill_qiang_chieftain"
-    ]
+    "skills": ["skill_chariot_wheel", "skill_qiang_chieftain"]
   },
   {
     "id": "SP_QUN999",
@@ -2595,22 +1767,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_stack_of_eggs",
-      "skill_overturn_the_nest"
-    ]
+    "skills": ["skill_stack_of_eggs", "skill_overturn_the_nest"]
   },
   {
     "id": "SP_QUN089",
@@ -2621,16 +1782,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "过牌"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Card Flow"
-    ],
+    "traits_cn": ["进攻", "防御", "过牌"],
+    "traits_en": ["Aggressive", "Defensive", "Card Flow"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2649,16 +1802,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "回复",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Recovery",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "回复", "简单"],
+    "traits_en": ["Support", "Recovery", "Simple"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2676,22 +1821,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "辅助", "困难"],
+    "traits_en": ["Support", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_wise_counsel",
-      "skill_gentle_virtue"
-    ]
+    "skills": ["skill_wise_counsel", "skill_gentle_virtue"]
   },
   {
     "id": "SP_SHU043",
@@ -2702,22 +1836,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "过牌", "简单"],
+    "traits_en": ["Support", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_rally_support",
-      "skill_self_scribe"
-    ]
+    "skills": ["skill_rally_support", "skill_self_scribe"]
   },
   {
     "id": "SP_SHU042",
@@ -2728,22 +1851,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "防御", "简单"],
+    "traits_en": ["Aggressive", "Defensive", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_virtuously_wise",
-      "skill_spear_dance"
-    ]
+    "skills": ["skill_virtuously_wise", "skill_spear_dance"]
   },
   {
     "id": "SP_SHU057",
@@ -2754,21 +1866,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lure_into_battle"
-    ]
+    "skills": ["skill_lure_into_battle"]
   },
   {
     "id": "SP_SHU146",
@@ -2779,22 +1881,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_assess_and_rebuke",
-      "skill_stern_simplicity"
-    ]
+    "skills": ["skill_assess_and_rebuke", "skill_stern_simplicity"]
   },
   {
     "id": "SP_SHU127",
@@ -2805,16 +1896,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -2833,21 +1916,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "过牌", "简单"],
+    "traits_en": ["Support", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_uphold_righteousness"
-    ]
+    "skills": ["skill_uphold_righteousness"]
   },
   {
     "id": "SP_WU054",
@@ -2858,22 +1931,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_praise_of_shu",
-      "skill_thoughtful_debate"
-    ]
+    "skills": ["skill_praise_of_shu", "skill_thoughtful_debate"]
   },
   {
     "id": "SP_WU094",
@@ -2884,22 +1946,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["防御", "辅助", "简单"],
+    "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_benevolent_rule",
-      "skill_submit_counsel"
-    ]
+    "skills": ["skill_benevolent_rule", "skill_submit_counsel"]
   },
   {
     "id": "SP_WU062",
@@ -2910,22 +1961,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "爆发"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Burst"
-    ],
+    "traits_cn": ["进攻", "过牌", "爆发"],
+    "traits_en": ["Aggressive", "Card Flow", "Burst"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_battle_cry",
-      "skill_force_surge"
-    ]
+    "skills": ["skill_battle_cry", "skill_force_surge"]
   },
   {
     "id": "SP_WU098",
@@ -2936,22 +1976,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "辅助", "困难"],
+    "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_present_views",
-      "skill_pure_beauty"
-    ]
+    "skills": ["skill_present_views", "skill_pure_beauty"]
   },
   {
     "id": "SP_WU123",
@@ -2962,22 +1991,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "控制", "简单"],
+    "traits_en": ["Support", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_know_the_ways",
-      "skill_aid_the_state"
-    ]
+    "skills": ["skill_know_the_ways", "skill_aid_the_state"]
   },
   {
     "id": "SP_WU122",
@@ -2988,22 +2006,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_fortify_oneself",
-      "skill_exercise_authority"
-    ]
+    "skills": ["skill_fortify_oneself", "skill_exercise_authority"]
   },
   {
     "id": "SP_WU121",
@@ -3014,22 +2021,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sp_punish_the_wicked",
-      "skill_reckless_seizure"
-    ]
+    "skills": ["skill_sp_punish_the_wicked", "skill_reckless_seizure"]
   },
   {
     "id": "WU001-1",
@@ -3040,22 +2036,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_balance_power",
-      "skill_command_the_banner"
-    ]
+    "skills": ["skill_balance_power", "skill_command_the_banner"]
   },
   {
     "id": "SP_WEI171",
@@ -3066,22 +2051,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 1.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "回复"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Recovery"
-    ],
+    "traits_cn": ["辅助", "过牌", "回复"],
+    "traits_en": ["Support", "Card Flow", "Recovery"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_shield_the_clan",
-      "skill_without_coercion"
-    ]
+    "skills": ["skill_shield_the_clan", "skill_without_coercion"]
   },
   {
     "id": "SP_WEI169",
@@ -3092,22 +2066,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sp_remonstrate",
-      "skill_hidden_counsel"
-    ]
+    "skills": ["skill_sp_remonstrate", "skill_hidden_counsel"]
   },
   {
     "id": "SP_WEI160",
@@ -3118,21 +2081,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_blunted_strike"
-    ]
+    "skills": ["skill_blunted_strike"]
   },
   {
     "id": "SP_WEI158",
@@ -3143,22 +2096,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_counsel_the_state",
-      "skill_exploit_the_momentum"
-    ]
+    "skills": ["skill_counsel_the_state", "skill_exploit_the_momentum"]
   },
   {
     "id": "SP_WEI155",
@@ -3169,22 +2111,11 @@
     "faction": "Wei",
     "health": 6,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_pierce_to_the_bone",
-      "skill_wild_cry"
-    ]
+    "skills": ["skill_pierce_to_the_bone", "skill_wild_cry"]
   },
   {
     "id": "SP_WEI140",
@@ -3195,22 +2126,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "主公技",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Lord Skill",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "主公技", "困难"],
+    "traits_en": ["Card Flow", "Lord Skill", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_settle_the_people",
-      "skill_refuse_counsel"
-    ]
+    "skills": ["skill_settle_the_people", "skill_refuse_counsel"]
   },
   {
     "id": "SP_WEI135",
@@ -3221,22 +2141,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "过牌", "简单"],
+    "traits_en": ["Support", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_firm_standoff",
-      "skill_clear_the_fields"
-    ]
+    "skills": ["skill_firm_standoff", "skill_clear_the_fields"]
   },
   {
     "id": "SP_WEI124",
@@ -3247,22 +2156,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "回复",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Recovery",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "回复", "困难"],
+    "traits_en": ["Support", "Recovery", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_expansive_grace",
-      "skill_urge_enfeoffment"
-    ]
+    "skills": ["skill_expansive_grace", "skill_urge_enfeoffment"]
   },
   {
     "id": "SP_WEI118",
@@ -3273,22 +2171,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "过牌", "困难"],
+    "traits_en": ["Support", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sp_loyal_service",
-      "skill_steadfast_guard"
-    ]
+    "skills": ["skill_sp_loyal_service", "skill_steadfast_guard"]
   },
   {
     "id": "SP_WEI082",
@@ -3299,16 +2186,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "辅助", "困难"],
+    "traits_en": ["Defensive", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3327,22 +2206,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "辅助", "简单"],
+    "traits_en": ["Aggressive", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_recruit_and_punish",
-      "skill_resolute_counsel"
-    ]
+    "skills": ["skill_recruit_and_punish", "skill_resolute_counsel"]
   },
   {
     "id": "SP_QUN172",
@@ -3353,22 +2221,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_brutal_excess",
-      "skill_buddhist_teaching"
-    ]
+    "skills": ["skill_brutal_excess", "skill_buddhist_teaching"]
   },
   {
     "id": "SP_QUN168",
@@ -3379,22 +2236,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "爆发",
-      "卖血"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Burst",
-      "Glass Cannon"
-    ],
+    "traits_cn": ["进攻", "爆发", "卖血"],
+    "traits_en": ["Aggressive", "Burst", "Glass Cannon"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lone_ferocity",
-      "skill_defiant_rampage"
-    ]
+    "skills": ["skill_lone_ferocity", "skill_defiant_rampage"]
   },
   {
     "id": "SP_QUN162",
@@ -3405,21 +2251,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "过牌", "简单"],
+    "traits_en": ["Control", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_enforce_discipline"
-    ]
+    "skills": ["skill_enforce_discipline"]
   },
   {
     "id": "SP_QUN160",
@@ -3430,22 +2266,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "防御",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["防御", "辅助", "简单"],
+    "traits_en": ["Defensive", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_self_restraint",
-      "skill_beneficent_aid"
-    ]
+    "skills": ["skill_self_restraint", "skill_beneficent_aid"]
   },
   {
     "id": "SP_QUN146",
@@ -3456,22 +2281,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_shoot_from_afar",
-      "skill_brocade_sail"
-    ]
+    "skills": ["skill_shoot_from_afar", "skill_brocade_sail"]
   },
   {
     "id": "SP_QUN133",
@@ -3482,22 +2296,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.0,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_slander_and_rebel",
-      "skill_conceal_and_lie"
-    ]
+    "skills": ["skill_slander_and_rebel", "skill_conceal_and_lie"]
   },
   {
     "id": "SP_QUN006",
@@ -3508,16 +2311,8 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "过牌"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Card Flow"
-    ],
+    "traits_cn": ["进攻", "控制", "过牌"],
+    "traits_en": ["Aggressive", "Control", "Card Flow"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3535,22 +2330,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_cyclical_battle",
-      "skill_decisive_strike"
-    ]
+    "skills": ["skill_cyclical_battle", "skill_decisive_strike"]
   },
   {
     "id": "SP_WEI062",
@@ -3561,22 +2345,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_breach_the_wall",
-      "skill_craft_strategies"
-    ]
+    "skills": ["skill_breach_the_wall", "skill_craft_strategies"]
   },
   {
     "id": "SP_WU055",
@@ -3587,16 +2360,8 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "强命"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "Sturdy"
-    ],
+    "traits_cn": ["进攻", "发育", "强命"],
+    "traits_en": ["Aggressive", "Scaling", "Sturdy"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3614,16 +2379,8 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "控制", "简单"],
+    "traits_en": ["Aggressive", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3643,22 +2400,11 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_entrust_the_heir",
-      "skill_usurp_authority"
-    ]
+    "skills": ["skill_entrust_the_heir", "skill_usurp_authority"]
   },
   {
     "id": "SP_WEI102",
@@ -3669,22 +2415,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_pepper_encounter",
-      "skill_inner_instruction"
-    ]
+    "skills": ["skill_pepper_encounter", "skill_inner_instruction"]
   },
   {
     "id": "SP_QUN062",
@@ -3695,21 +2430,11 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_internal_war"
-    ]
+    "skills": ["skill_internal_war"]
   },
   {
     "id": "SP_SHU170",
@@ -3720,16 +2445,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "发育", "困难"],
+    "traits_en": ["Aggressive", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3748,16 +2465,8 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -3775,22 +2484,11 @@
     "faction": "Shu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "控制",
-      "简单"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Control",
-      "Simple"
-    ],
+    "traits_cn": ["过牌", "控制", "简单"],
+    "traits_en": ["Card Flow", "Control", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lingering_note",
-      "skill_delayed_step"
-    ]
+    "skills": ["skill_lingering_note", "skill_delayed_step"]
   },
   {
     "id": "SP_SHU001",
@@ -3801,22 +2499,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "辅助", "困难"],
+    "traits_en": ["Aggressive", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_fierce_gallop",
-      "skill_benevolent_valley"
-    ]
+    "skills": ["skill_fierce_gallop", "skill_benevolent_valley"]
   },
   {
     "id": "SP_SHU999",
@@ -3827,22 +2514,11 @@
     "faction": "Shu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "发育",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "控制", "困难"],
+    "traits_en": ["Scaling", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_commandeer",
-      "skill_reconfigure"
-    ]
+    "skills": ["skill_commandeer", "skill_reconfigure"]
   },
   {
     "id": "SP_WEI175",
@@ -3853,22 +2529,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_swaying_dance",
-      "skill_silk_blade"
-    ]
+    "skills": ["skill_swaying_dance", "skill_silk_blade"]
   },
   {
     "id": "SP_WEI064",
@@ -3879,22 +2544,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "过牌",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "控制", "困难"],
+    "traits_en": ["Card Flow", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_sp_loyal_discernment",
-      "skill_sp_gifted_insight"
-    ]
+    "skills": ["skill_sp_loyal_discernment", "skill_sp_gifted_insight"]
   },
   {
     "id": "SP_WEI176",
@@ -3905,22 +2559,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_graceful_cicada",
-      "skill_crimson_lip"
-    ]
+    "skills": ["skill_graceful_cicada", "skill_crimson_lip"]
   },
   {
     "id": "SP_WEI120-2",
@@ -3931,22 +2574,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "辅助", "困难"],
+    "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_rosy_tears",
-      "skill_hidden_weave"
-    ]
+    "skills": ["skill_rosy_tears", "skill_hidden_weave"]
   },
   {
     "id": "SP_WEI998",
@@ -3957,16 +2589,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -3976,10 +2600,7 @@
         "a_en": "Zhang Jue has final control. 〖Geomancy〗 operates before the Judgment Card is flipped by presetting the top of the Draw Pile, while 〖Ghost Path〗 operates after the Judgment Card is flipped by substituting it. Since substitution resolves later than presetting, Zhang Jue can replace the card Guo Tiying has preset."
       }
     ],
-    "skills": [
-      "skill_geomancy",
-      "skill_curse_of_exile"
-    ]
+    "skills": ["skill_geomancy", "skill_curse_of_exile"]
   },
   {
     "id": "SP_WEI997",
@@ -3990,22 +2611,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "控制", "困难"],
+    "traits_en": ["Card Flow", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_painted_verse",
-      "skill_tomb_portrait"
-    ]
+    "skills": ["skill_painted_verse", "skill_tomb_portrait"]
   },
   {
     "id": "SP_WEI996",
@@ -4016,22 +2626,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "发育", "困难"],
+    "traits_en": ["Control", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_palace_map",
-      "skill_lay_the_foundation"
-    ]
+    "skills": ["skill_palace_map", "skill_lay_the_foundation"]
   },
   {
     "id": "SP_WEI995",
@@ -4042,16 +2641,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -4067,10 +2658,7 @@
         "a_en": "[Dodge] should only be used during the resolution of a [Kill] against its target. Using [Dodge] at an earlier timing would be problematic, so the discard-as-[Dodge] effect of 〖Exceed Protocol〗 only applies during the correct timing window in which a [Kill] is resolving against you."
       }
     ],
-    "skills": [
-      "skill_ornate_garb",
-      "skill_exceed_protocol"
-    ]
+    "skills": ["skill_ornate_garb", "skill_exceed_protocol"]
   },
   {
     "id": "SP_WEI062-2",
@@ -4081,22 +2669,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_level_ground",
-      "skill_anticipate_intent"
-    ]
+    "skills": ["skill_level_ground", "skill_anticipate_intent"]
   },
   {
     "id": "SP_WEI994",
@@ -4107,22 +2684,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_counsel_and_establish",
-      "skill_pure_governance"
-    ]
+    "skills": ["skill_counsel_and_establish", "skill_pure_governance"]
   },
   {
     "id": "SP_WEI170",
@@ -4133,16 +2699,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -4160,22 +2718,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "发育",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Scaling",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["发育", "控制", "困难"],
+    "traits_en": ["Scaling", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_kindred_spirit",
-      "skill_know_or_not"
-    ]
+    "skills": ["skill_kindred_spirit", "skill_know_or_not"]
   },
   {
     "id": "SP_WEI149",
@@ -4186,22 +2733,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "过牌", "简单"],
+    "traits_en": ["Control", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_jade_hero",
-      "skill_warm_favor"
-    ]
+    "skills": ["skill_jade_hero", "skill_warm_favor"]
   },
   {
     "id": "SP_WEI148",
@@ -4212,22 +2748,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Control",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["控制", "辅助", "简单"],
+    "traits_en": ["Control", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_spring_offering",
-      "skill_winter_bloom"
-    ]
+    "skills": ["skill_spring_offering", "skill_winter_bloom"]
   },
   {
     "id": "SP_WEI144",
@@ -4238,22 +2763,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "发育",
-      "简单"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Scaling",
-      "Simple"
-    ],
+    "traits_cn": ["过牌", "发育", "简单"],
+    "traits_en": ["Card Flow", "Scaling", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_painted_face",
-      "skill_splendid_attire"
-    ]
+    "skills": ["skill_painted_face", "skill_splendid_attire"]
   },
   {
     "id": "SP_WEI110",
@@ -4264,16 +2778,8 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "辅助",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "发育", "困难"],
+    "traits_en": ["Support", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -4298,22 +2804,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_colorful_wings",
-      "skill_return_and_part"
-    ]
+    "skills": ["skill_colorful_wings", "skill_return_and_part"]
   },
   {
     "id": "SP_WEI085",
@@ -4324,16 +2819,8 @@
     "faction": "Wei",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [
       {
@@ -4343,10 +2830,7 @@
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
       }
     ],
-    "skills": [
-      "skill_thunderstrike_raid",
-      "skill_raise_the_standard"
-    ]
+    "skills": ["skill_thunderstrike_raid", "skill_raise_the_standard"]
   },
   {
     "id": "SP_WEI044",
@@ -4357,22 +2841,11 @@
     "faction": "Wei",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_detect_deception",
-      "skill_stern_counsel"
-    ]
+    "skills": ["skill_detect_deception", "skill_stern_counsel"]
   },
   {
     "id": "SP_WU999",
@@ -4383,22 +2856,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 3.0,
-    "traits_cn": [
-      "进攻",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["进攻", "过牌", "简单"],
+    "traits_en": ["Aggressive", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_total_severance",
-      "skill_guard_and_connect"
-    ]
+    "skills": ["skill_total_severance", "skill_guard_and_connect"]
   },
   {
     "id": "SP_WU128",
@@ -4409,22 +2871,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["防御", "过牌", "困难"],
+    "traits_en": ["Defensive", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_parting_swallows",
-      "skill_parting_words"
-    ]
+    "skills": ["skill_parting_swallows", "skill_parting_words"]
   },
   {
     "id": "SP_WU093",
@@ -4435,23 +2886,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "困难"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "High Difficulty"
-    ],
+    "traits_cn": ["过牌", "辅助", "困难"],
+    "traits_en": ["Card Flow", "Support", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_wandering_fate",
-      "skill_bell_chime",
-      "skill_quick_shadow"
-    ]
+    "skills": ["skill_wandering_fate", "skill_bell_chime", "skill_quick_shadow"]
   },
   {
     "id": "SP_WU056",
@@ -4462,22 +2901,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "简单"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "Simple"
-    ],
+    "traits_cn": ["辅助", "过牌", "简单"],
+    "traits_en": ["Support", "Card Flow", "Simple"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_equal_rites",
-      "skill_lavish_burial"
-    ]
+    "skills": ["skill_equal_rites", "skill_lavish_burial"]
   },
   {
     "id": "SP_WU031",
@@ -4488,22 +2916,11 @@
     "faction": "Wu",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "防御",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Defensive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "防御", "困难"],
+    "traits_en": ["Control", "Defensive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_steadfast_guard_zhu",
-      "skill_cut_off_the_path"
-    ]
+    "skills": ["skill_steadfast_guard_zhu", "skill_cut_off_the_path"]
   },
   {
     "id": "SP_WU025",
@@ -4514,16 +2931,8 @@
     "faction": "Wu",
     "health": 5,
     "power_index": 3.5,
-    "traits_cn": [
-      "进攻",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "发育", "困难"],
+    "traits_en": ["Aggressive", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -4543,22 +2952,11 @@
     "faction": "Wu",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "防御",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Defensive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "防御", "困难"],
+    "traits_en": ["Aggressive", "Defensive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_virtuous_charge",
-      "skill_valiant_spirit"
-    ]
+    "skills": ["skill_virtuous_charge", "skill_valiant_spirit"]
   },
   {
     "id": "SP_QUN998",
@@ -4569,16 +2967,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "控制", "困难"],
+    "traits_en": ["Support", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -4596,22 +2986,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_cold_clarity",
-      "skill_brew_poison"
-    ]
+    "skills": ["skill_cold_clarity", "skill_brew_poison"]
   },
   {
     "id": "SP_QUN124",
@@ -4622,16 +3001,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "过牌",
-      "辅助",
-      "简单"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "Support",
-      "Simple"
-    ],
+    "traits_cn": ["过牌", "辅助", "简单"],
+    "traits_en": ["Card Flow", "Support", "Simple"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -4649,22 +3020,26 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "防御",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Defensive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "防御", "困难"],
+    "traits_en": ["Control", "Defensive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_buy_a_title",
-      "skill_intercept_and_deflect"
-    ]
+    "skills": ["skill_buy_a_title", "skill_intercept_and_deflect"]
+  },
+  {
+    "id": "SP_QUN995",
+    "standard_id": "char_zanghong",
+    "name_cn": "臧洪",
+    "name_en": "Zang Hong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": ["卖血", "防御", "简单"],
+    "traits_en": ["Glass Cannon", "Defensive", "Simple"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": ["skill_fierce_will", "skill_lone_stand"]
   },
   {
     "id": "SP_QUN279",
@@ -4675,22 +3050,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "进攻",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Aggressive",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "进攻", "困难"],
+    "traits_en": ["Control", "Aggressive", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_captivating_beauty",
-      "skill_possessive_desire"
-    ]
+    "skills": ["skill_captivating_beauty", "skill_possessive_desire"]
   },
   {
     "id": "SP_QUN234",
@@ -4701,22 +3065,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "控制",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_jealous_slaughter",
-      "skill_self_binding"
-    ]
+    "skills": ["skill_jealous_slaughter", "skill_self_binding"]
   },
   {
     "id": "SP_QUN141",
@@ -4727,16 +3080,8 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "控制",
-      "发育",
-      "困难"
-    ],
-    "traits_en": [
-      "Control",
-      "Scaling",
-      "High Difficulty"
-    ],
+    "traits_cn": ["控制", "发育", "困难"],
+    "traits_en": ["Control", "Scaling", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
     "skills": [
@@ -4754,22 +3099,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 2.5,
-    "traits_cn": [
-      "辅助",
-      "过牌",
-      "困难"
-    ],
-    "traits_en": [
-      "Support",
-      "Card Flow",
-      "High Difficulty"
-    ],
+    "traits_cn": ["辅助", "过牌", "困难"],
+    "traits_en": ["Support", "Card Flow", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_tearful_lament",
-      "skill_precious_comb"
-    ]
+    "skills": ["skill_tearful_lament", "skill_precious_comb"]
   },
   {
     "id": "SP_QUN084",
@@ -4780,22 +3114,11 @@
     "faction": "Qun",
     "health": 5,
     "power_index": 2.5,
-    "traits_cn": [
-      "防御",
-      "过牌",
-      "强命"
-    ],
-    "traits_en": [
-      "Defensive",
-      "Card Flow",
-      "Sturdy"
-    ],
+    "traits_cn": ["防御", "过牌", "强命"],
+    "traits_en": ["Defensive", "Card Flow", "Sturdy"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_lead_the_garrison",
-      "skill_stubborn_resistance"
-    ]
+    "skills": ["skill_lead_the_garrison", "skill_stubborn_resistance"]
   },
   {
     "id": "SP_QUN066",
@@ -4806,22 +3129,11 @@
     "faction": "Qun",
     "health": 3,
     "power_index": 3.0,
-    "traits_cn": [
-      "过牌",
-      "困难",
-      "爆发"
-    ],
-    "traits_en": [
-      "Card Flow",
-      "High Difficulty",
-      "Burst"
-    ],
+    "traits_cn": ["过牌", "困难", "爆发"],
+    "traits_en": ["Card Flow", "High Difficulty", "Burst"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_grand_strategy",
-      "skill_arrogant_pride"
-    ]
+    "skills": ["skill_grand_strategy", "skill_arrogant_pride"]
   },
   {
     "id": "SP_QUN026",
@@ -4832,21 +3144,10 @@
     "faction": "Qun",
     "health": 4,
     "power_index": 2.5,
-    "traits_cn": [
-      "进攻",
-      "控制",
-      "困难"
-    ],
-    "traits_en": [
-      "Aggressive",
-      "Control",
-      "High Difficulty"
-    ],
+    "traits_cn": ["进攻", "控制", "困难"],
+    "traits_en": ["Aggressive", "Control", "High Difficulty"],
     "expansion": "Other",
     "faq": [],
-    "skills": [
-      "skill_launch_raid",
-      "skill_relentless_pursuit"
-    ]
+    "skills": ["skill_launch_raid", "skill_relentless_pursuit"]
   }
 ]

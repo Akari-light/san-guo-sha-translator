@@ -6477,5 +6477,19 @@
     "name_en": "Relentless Pursuit",
     "description_cn": "连招技（黑色牌+伤害牌），你可以选择一名本回合未以此法选择过的其他角色并摸两张牌，然后你本回合：计算与其的距离视为1；对其使用牌结算后，可以弃置其至多X张牌（X为此牌满足的条件数：黑色牌、伤害牌）。",
     "description_en": "Combo Skill (black card + damage card): You may choose another character who has not been chosen this way this turn and draw 2 cards. This turn: the distance between you and that character is treated as 1; after a card you use against them finishes resolving, you may discard up to X of their cards (X = the number of conditions the combo cards satisfied: black card, damage card)."
+  },
+  "skill_fierce_will": {
+    "skill_type": "active",
+    "name_cn": "烈志",
+    "name_en": "Fierce Will",
+    "description_cn": "每名角色的回合限一次，你可以减1点体力上限，视为使用一张【桃】或不计入次数的【酒】。",
+    "description_en": "Once per character's turn, you may reduce your Max HP by 1 to be treated as using a [Peach] or a [Wine] that does not count toward your frequency limit."
+  },
+  "skill_lone_stand": {
+    "skill_type": "active",
+    "name_cn": "据孤",
+    "name_en": "Lone Stand",
+    "description_cn": "当你成为牌的目标后，若你未受伤，你可以摸两张牌然后弃置X张牌（X为本回合此技能发动次数）。",
+    "description_en": "After you become the target of a card, if you are Unwounded, you may draw 2 cards then discard X cards (X = the number of times this skill has been activated this turn)."
   }
 }
