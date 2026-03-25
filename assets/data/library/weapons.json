@@ -1310,9 +1310,9 @@
     "faq": []
   },
   {
-    "id": "weapon_luoyang_spade",
+    "id": "weapon_luoyang_shovel",
     "name_cn": "洛阳铲",
-    "name_en": "Luoyang Spade",
+    "name_en": "Luoyang Shovel",
     "category_cn": "武器牌",
     "category_en": "Weapon",
     "range": 2,
