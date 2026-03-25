@@ -4617,7 +4617,7 @@
     "id": "SP_QUN124",
     "standard_id": "char_dongyuan",
     "name_cn": "董予安",
-    "name_en": "Dong Yuan",
+    "name_en": "Dong Yu An",
     "gender": "Female",
     "faction": "Qun",
     "health": 3,
@@ -4958,7 +4958,7 @@
   },
   {
     "id": "WEI018",
-    "standard_id": "",
+    "standard_id": "char_caohong",
     "name_cn": "曹洪",
     "name_en": "Cao Hong",
     "gender": "Male",
@@ -5062,7 +5062,7 @@
   },
   {
     "id": "SP_QUN054",
-    "standard_id": "",
+    "standard_id": "char_huangfusong",
     "name_cn": "皇甫嵩",
     "name_en": "Huangfu Song",
     "gender": "Male",
@@ -5295,7 +5295,7 @@
   },
   {
     "id": "WEI086",
-    "standard_id": "",
+    "standard_id": "char_dongzhao",
     "name_cn": "董昭",
     "name_en": "Dong Zhao",
     "gender": "Male",
@@ -5459,7 +5459,7 @@
   },
   {
     "id": "WM_QUN054",
-    "standard_id": "",
+    "standard_id": "char_huangfusong",
     "name_cn": "武皇甫嵩",
     "name_en": "Martial · Huangfu Song",
     "gender": "Male",
