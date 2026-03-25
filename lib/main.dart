@@ -461,25 +461,89 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 _codexSearchController.clear();
               });
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.more_horiz),
+                  child: Icon(Icons.menu_book),
                 ),
                 label: 'Codex',
               ),
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.person),
+                  child: SizedBox(
+                    width: 28,
+                    height: 28,
+                    child: Center(
+                      child: Text(
+                        '將',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF858585),
+                          height: 1.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: EdgeInsets.only(bottom: 4),
+                  child: SizedBox(
+                    width: 28,
+                    height: 28,
+                    child: Center(
+                      child: Text(
+                        '將',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF007ACC),
+                          height: 1.0,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 label: 'Generals',
               ),
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.menu_book),
+                  child: SizedBox(
+                    width: 28,
+                    height: 28,
+                    child: Center(
+                      child: Text(
+                        '牌',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF858585),
+                          height: 1.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: EdgeInsets.only(bottom: 4),
+                  child: SizedBox(
+                    width: 28,
+                    height: 28,
+                    child: Center(
+                      child: Text(
+                        '牌',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF007ACC),
+                          height: 1.0,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
                 label: 'Library',
               ),
@@ -493,7 +557,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               BottomNavigationBarItem(
                 icon: Padding(
                   padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.info_outline),
+                  child: Icon(Icons.home_rounded),
                 ),
                 label: 'Home',
               ),
