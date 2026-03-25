@@ -92,6 +92,11 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 4;
+  int _previousIndex = 4; // restored when user taps back from scanner
+
+  // true while ScannerScreen is in search mode — nav bars visible
+  // false while in scan mode — bottom nav hidden, scanner fills screen
+  bool _scannerShowsNavBar = false;
 
   // ── Double-back-to-exit
   DateTime? _lastBackPress;
@@ -151,7 +156,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
         onCardTap: _pushCard,
       ),
-      ScannerScreen(key: _scannerScreenKey, onCardTap: _pushCard),
+      ScannerScreen(
+        key: _scannerScreenKey,
+        onCardTap: _pushCard,
+        onBack: () => setState(() => _selectedIndex = _previousIndex),
+        onNavBarVisibilityChanged: (visible) =>
+            setState(() => _scannerShowsNavBar = visible),
+      ),
       HomeScreen(
         onGeneralTap: (id) => _pushCard(id, RecordType.general),
         onLibraryTap: (id) => _pushCard(id, RecordType.library),
@@ -245,14 +256,46 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      // Never let the system handle the back press automatically — we handle it
       canPop: false,
       onPopInvokedWithResult: (_, _) {
+        // ── Scanner tab: check state directly via GlobalKey.
+        // If the scanner is in reviewing state, its own inner PopScope handler
+        // will call _returnToLive(). We must do nothing here — checking
+        // isReviewing is synchronous and races no one.
+        if (_selectedIndex == 3) {
+          final scannerState = _scannerScreenKey.currentState;
+          if (scannerState != null && scannerState.isReviewing) {
+            // Inner PopScope handles it — do not navigate away.
+            return;
+          }
+          // Scanner is in live state — return to previous tab.
+          setState(() => _selectedIndex = _previousIndex);
+          return;
+        }
+
+        // ── All other tabs: back navigates to Home (tab 4) first.
+        if (_selectedIndex != 4) {
+          setState(() {
+            _previousIndex = _selectedIndex;
+            _selectedIndex = 4;
+            _isSearching = false;
+            _isSearchingGenerals = false;
+            _isSearchingCodex = false;
+            _librarySearchNotifier.value = '';
+            _generalsSearchNotifier.value = '';
+            _codexSearchNotifier.value = '';
+            _searchController.clear();
+            _generalsSearchController.clear();
+            _codexSearchController.clear();
+          });
+          return;
+        }
+
+        // ── Already on Home — double-back to exit
         final now = DateTime.now();
         final lastPress = _lastBackPress;
         if (lastPress == null ||
             now.difference(lastPress) > const Duration(seconds: 2)) {
-          // First press — show toast and record time
           _lastBackPress = now;
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -262,14 +305,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             ),
           );
         } else {
-          // Second press within 2 s — actually exit
-          // SystemNavigator.pop() exits the Flutter activity cleanly on Android
           // ignore: deprecated_member_use
           Navigator.of(context).pop();
         }
       },
       child: Scaffold(
-        appBar: AppBar(
+        appBar: (_selectedIndex == 3 && !_scannerShowsNavBar) ? null : AppBar(
           title: _buildAppBarTitle(),
           actions: [
             // ── Codex: search icon
@@ -387,7 +428,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ],
         ),
         body: IndexedStack(index: _selectedIndex, children: _screens),
-        bottomNavigationBar: SizedBox(
+        bottomNavigationBar: (_selectedIndex == 3 && !_scannerShowsNavBar)
+            ? null
+            : SizedBox(
           height: 90,
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
@@ -404,7 +447,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 _scannerScreenKey.currentState?.resetSession();
               }
               setState(() {
+                _previousIndex = _selectedIndex; // remember where we came from
                 _selectedIndex = index;
+                _scannerShowsNavBar = false; // reset — scanner starts in scan mode
                 _isSearching = false;
                 _isSearchingGenerals = false;
                 _isSearchingCodex = false;

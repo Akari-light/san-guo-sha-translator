@@ -1,10 +1,9 @@
 // lib/features/ai/presentation/screens/scanner_results_sheet.dart
 //
 // Results DraggableScrollableSheet for the Discover tab scanner.
-// Extracted from scanner_screen.dart so the file stays manageable — same
-// pattern as general_filter_sheet.dart and library_filter_sheet.dart.
+// Extracted from scanner_screen.dart — same pattern as general_filter_sheet.dart.
 //
-// Shown as a Positioned.fill child inside ai_screen's scan-mode Stack.
+// Shown as a Positioned.fill child inside the scan-mode Stack.
 // The parent gives it bounded height so DraggableScrollableSheet works.
 //
 // Displays:
@@ -36,52 +35,49 @@ class ScannerResultsSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
+    final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final bg     = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final bg = isDark ? const Color(0xFF1E1E1E) : Colors.white;
 
     return Stack(
       children: [
-        // ── Transparent backdrop ─────────────────────────────────────────────
-        // Covers the frozen image area ABOVE the sheet so a tap there dismisses.
-        // Uses AbsorbPointer inside to let the sheet's own drag gestures through.
-        Positioned.fill(
-          child: GestureDetector(
-            onTap: onDismiss,
-            // opaque so taps on the frozen image area are captured
-            behavior: HitTestBehavior.opaque,
-            child: const ColoredBox(color: Colors.transparent),
+          // ── Transparent backdrop ───────────────────────────────────────────
+          // Covers the frozen image area above the sheet; tap dismisses.
+          Positioned.fill(
+            child: GestureDetector(
+              onTap: onDismiss,
+              behavior: HitTestBehavior.opaque,
+              child: const ColoredBox(color: Colors.transparent),
+            ),
           ),
-        ),
 
-        // ── DraggableScrollableSheet ─────────────────────────────────────────
-        // expand: true — required when inside a bounded Positioned.fill parent.
-        // Three snap points: peek (38%) → half (60%) → full (85%).
-        DraggableScrollableSheet(
-          expand: true,
-          initialChildSize: 0.38,
-          minChildSize: 0.18,
-          maxChildSize: 0.85,
-          snap: true,
-          snapSizes: const [0.38, 0.60, 0.85],
-          builder: (context, scrollController) {
-            return _SheetBody(
-              candidates:       candidates,
-              onSelect:         onSelect,
-              onDismiss:        onDismiss,
-              scrollController: scrollController,
-              bg:               bg,
-            );
-          },
-        ),
-      ],
+          // ── DraggableScrollableSheet ───────────────────────────────────────
+          // expand: true — required inside a bounded Positioned.fill parent.
+          // Three snap points: peek (38%) → half (60%) → full (85%).
+          DraggableScrollableSheet(
+            expand: true,
+            initialChildSize: 0.38,
+            minChildSize: 0.18,
+            maxChildSize: 0.85,
+            snap: true,
+            snapSizes: const [0.38, 0.60, 0.85],
+            builder: (context, scrollController) {
+              return _SheetBody(
+                candidates: candidates,
+                onSelect: onSelect,
+                onDismiss: onDismiss,
+                scrollController: scrollController,
+                bg: bg,
+              );
+            },
+          ),
+        ],
     );
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Sheet body — separated from the sheet scaffold so the GestureDetector
-// on the handle area doesn't interfere with the drag recogniser.
+// Sheet body
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _SheetBody extends StatelessWidget {
@@ -115,13 +111,10 @@ class _SheetBody extends StatelessWidget {
           ),
         ],
       ),
-      // Wrap everything in a ListView so the whole sheet scrolls together,
-      // including the header. This ensures drag gestures anywhere on the
-      // sheet body — not just the list area — move the sheet.
       child: CustomScrollView(
         controller: scrollController,
         slivers: [
-          // ── Handle + header ────────────────────────────────────────────────
+          // ── Handle + header ──────────────────────────────────────────────
           SliverToBoxAdapter(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -130,7 +123,8 @@ class _SheetBody extends StatelessWidget {
                 Center(
                   child: Container(
                     margin: const EdgeInsets.only(top: 10, bottom: 14),
-                    width: 40, height: 4,
+                    width: 40,
+                    height: 4,
                     decoration: BoxDecoration(
                       color: theme.hintColor.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(2),
@@ -160,7 +154,7 @@ class _SheetBody extends StatelessWidget {
             ),
           ),
 
-          // ── Top candidate ──────────────────────────────────────────────────
+          // ── Top candidate ────────────────────────────────────────────────
           SliverToBoxAdapter(
             child: _TopCandidateCard(
               candidate: candidates.first,
@@ -168,7 +162,7 @@ class _SheetBody extends StatelessWidget {
             ),
           ),
 
-          // ── Other candidates ───────────────────────────────────────────────
+          // ── Other candidates ─────────────────────────────────────────────
           if (candidates.length > 1) ...[
             SliverToBoxAdapter(
               child: Padding(
@@ -192,7 +186,7 @@ class _SheetBody extends StatelessWidget {
             ),
           ],
 
-          // ── Bottom padding ─────────────────────────────────────────────────
+          // ── Bottom padding ───────────────────────────────────────────────
           SliverToBoxAdapter(
             child: SizedBox(
               height: MediaQuery.of(context).padding.bottom + 16,
@@ -215,7 +209,7 @@ class _TopCandidateCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme     = Theme.of(context);
+    final theme = Theme.of(context);
     final isGeneral = candidate.recordType == RecordType.general;
     final placeholder =
         isGeneral ? AppAssets.generalPlaceholder : AppAssets.libraryPlaceholder;
@@ -230,9 +224,15 @@ class _TopCandidateCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 candidate.imagePath,
-                width: 60, height: 82, fit: BoxFit.cover,
-                errorBuilder: (_, _, _) =>
-                    Image.asset(placeholder, width: 60, height: 82, fit: BoxFit.cover),
+                width: 60,
+                height: 82,
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) => Image.asset(
+                  placeholder,
+                  width: 60,
+                  height: 82,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(width: 16),
@@ -242,7 +242,8 @@ class _TopCandidateCard extends StatelessWidget {
                 children: [
                   Text(
                     candidate.nameCn,
-                    style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w800, fontSize: 18),
                   ),
                   const SizedBox(height: 3),
                   Text(
@@ -284,9 +285,10 @@ class _CandidateTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme     = Theme.of(context);
-    final pct       = (candidate.confidence * 100).toStringAsFixed(0);
-    final confColor = candidate.confidence >= 0.80 ? Colors.green : Colors.orange;
+    final theme = Theme.of(context);
+    final pct = (candidate.confidence * 100).toStringAsFixed(0);
+    final confColor =
+        candidate.confidence >= 0.80 ? Colors.green : Colors.orange;
     final isGeneral = candidate.recordType == RecordType.general;
     final placeholder =
         isGeneral ? AppAssets.generalPlaceholder : AppAssets.libraryPlaceholder;
@@ -301,9 +303,15 @@ class _CandidateTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(7),
               child: Image.asset(
                 candidate.imagePath,
-                width: 40, height: 55, fit: BoxFit.cover,
-                errorBuilder: (_, _, _) =>
-                    Image.asset(placeholder, width: 40, height: 55, fit: BoxFit.cover),
+                width: 40,
+                height: 55,
+                fit: BoxFit.cover,
+                errorBuilder: (_, _, _) => Image.asset(
+                  placeholder,
+                  width: 40,
+                  height: 55,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(width: 14),
@@ -311,19 +319,28 @@ class _CandidateTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(candidate.nameCn,
-                      style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
+                  Text(
+                    candidate.nameCn,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w600, fontSize: 14),
+                  ),
                   const SizedBox(height: 2),
-                  Text(candidate.nameEn,
-                      style: TextStyle(fontSize: 12, color: theme.hintColor)),
+                  Text(
+                    candidate.nameEn,
+                    style: TextStyle(fontSize: 12, color: theme.hintColor),
+                  ),
                   const SizedBox(height: 4),
                   _TypeBadge(isGeneral: isGeneral),
                 ],
               ),
             ),
-            Text('$pct%',
-                style: TextStyle(
-                    color: confColor, fontWeight: FontWeight.w700, fontSize: 14)),
+            Text(
+              '$pct%',
+              style: TextStyle(
+                  color: confColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14),
+            ),
             const SizedBox(width: 4),
             Icon(Icons.chevron_right, size: 16, color: theme.hintColor),
           ],
@@ -334,7 +351,7 @@ class _CandidateTile extends StatelessWidget {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Small shared widgets (used only within this file)
+// Small shared widgets
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _ConfidenceBadge extends StatelessWidget {
@@ -343,7 +360,7 @@ class _ConfidenceBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pct   = (confidence * 100).toStringAsFixed(0);
+    final pct = (confidence * 100).toStringAsFixed(0);
     final color = confidence >= 0.80 ? Colors.green : Colors.orange;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -354,7 +371,8 @@ class _ConfidenceBadge extends StatelessWidget {
       ),
       child: Text(
         '$pct% match',
-        style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w600),
+        style: TextStyle(
+            color: color, fontSize: 12, fontWeight: FontWeight.w600),
       ),
     );
   }
