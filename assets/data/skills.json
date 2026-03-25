@@ -6876,5 +6876,666 @@
     "name_en": "Escalating Claims",
     "description_cn": "锁定技，当你使用牌后，若此牌：造成伤害，你本回合下次使用的伤害牌牌名字数须大于此牌；未造成伤害，你获得一张目标角色的起始手牌（每回合限两次）。",
     "description_en": "Locked: After you use a card, if that card: dealt damage — the next damage card you use this turn must have a name with more characters than this card; did not deal damage — you gain one of the target character's starting hand cards (twice per turn)."
+  },
+  "skill_elephant_formation": {
+    "skill_type": "locked",
+    "name_cn": "象阵",
+    "name_en": "Elephant Formation",
+    "description_cn": "锁定技，【南蛮入侵】对你无效。【南蛮入侵】结算结束后，若此牌造成过伤害，你与伤害来源各摸一张牌。",
+    "description_en": "Locked: [Barbarians] has no effect on you. After [Barbarians] finishes resolving, if it dealt any damage, you and the damage source each draw 1 card."
+  },
+  "skill_elusive_trace": {
+    "skill_type": "locked",
+    "name_cn": "芳踪",
+    "name_en": "Elusive Trace",
+    "description_cn": "锁定技，出牌阶段，你使用伤害类的牌不能指定你攻击范围内的角色为目标。攻击范围内含有你的其他角色使用伤害类的牌不能指定你为目标。结束阶段，你将手牌摸至X张（X为场上存活人数）。",
+    "description_en": "Locked: During your Action Phase, damage cards you use cannot target characters within your Attack Range. Other characters whose Attack Range includes you cannot target you with damage cards. During your End Phase, draw cards until your hand equals X (X = the number of surviving characters on the field)."
+  },
+  "skill_playful_battle": {
+    "skill_type": "locked",
+    "name_cn": "嬉战",
+    "name_en": "Playful Battle",
+    "description_cn": "锁定技，其他角色回合开始时，你弃置一张牌并令你本回合〖芳踪〗失效，或失去1点体力。若你以此法弃置了牌，则根据此牌的花色执行对应的效果：Spades — 其视为使用一张【酒】；Hearts — 你视为使用一张【无中生有】；Clubs — 你视为对其使用一张【铁索连环】；Diamonds — 你视为对其使用一张无距离限制的火【杀】。",
+    "description_en": "Locked: At the start of another character's turn, you must either discard 1 card and have 〖Elusive Trace〗 become invalid this turn, or lose 1 HP. If you discarded a card this way, apply the effect corresponding to that card's suit: Spades — they are treated as using a [Wine]; Hearts — you are treated as using a [Resupply]; Clubs — you are treated as using an [Iron Shackles] on them; Diamonds — you are treated as using a fire [Kill] with no distance restriction on them."
+  },
+  "skill_boudoir_grace": {
+    "skill_type": "locked",
+    "name_cn": "闺秀",
+    "name_en": "Boudoir Grace",
+    "description_cn": "锁定技，结束阶段，若你的体力值为：奇数，你摸一张牌；偶数，你回复1点体力。",
+    "description_en": "Locked: During your End Phase, if your HP Value is: odd — draw 1 card; even — recover 1 HP."
+  },
+  "skill_pure_jade": {
+    "skill_type": "mission",
+    "name_cn": "清玉",
+    "name_en": "Pure Jade",
+    "description_cn": "锁定技，使命技，当你受到伤害时，你弃置两张牌并防止此伤害。成功：准备阶段，若你未受伤且没有手牌，你获得〖悬存〗。失败：你成功达成使命前，进入濒死状态时，你减1点体力上限。",
+    "description_en": "Locked. Mission Skill: When you receive damage, discard 2 cards and prevent that damage. Success: During your Starting Phase, if you are Unwounded and have no hand cards, gain 〖Suspended Presence〗. Failure: Before you succeed, whenever you enter the Verge of Death State, reduce your Max HP by 1.",
+    "skill_type_secondary": "locked"
+  },
+  "skill_suspended_presence": {
+    "skill_type": "active",
+    "name_cn": "悬存",
+    "name_en": "Suspended Presence",
+    "description_cn": "其他角色的回合结束后，若你的体力值大于手牌数，你可以令其摸X张牌（X为你的体力值减手牌数，且至多为2）。",
+    "description_en": "After another character's turn ends, if your HP Value is greater than your hand card count, you may have them draw X cards (X = your HP Value minus your hand card count, maximum 2)."
+  },
+  "skill_oath_unto_death": {
+    "skill_type": "active",
+    "name_cn": "殉义",
+    "name_en": "Oath unto Death",
+    "description_cn": "游戏开始时，你令一名其他角色获得「义」。当你或有「义」的角色造成或受到1点伤害后，若受伤角色或伤害来源不为另一方，另一方摸一张牌或弃置一张牌。当有「义」的角色死亡时，你可以移动「义」。",
+    "description_en": "At the start of the game, have one other character gain 「Oath」. After you or a character with 「Oath」 deals or receives 1 damage, if the damaged character or damage source is not the other party, the other party draws 1 card or discards 1 card. When a character with 「Oath」 dies, you may transfer 「Oath」."
+  },
+  "skill_fiscal_governance": {
+    "skill_type": "active",
+    "name_cn": "统度",
+    "name_en": "Fiscal Governance",
+    "description_cn": "每回合限一次，你成为其他角色使用牌的唯一目标时，你可以令一名角色重铸一张牌。",
+    "description_en": "Once per turn: When you become the sole target of a card another character uses, you may have one character Reforge 1 card."
+  },
+  "skill_melt_the_coins": {
+    "skill_type": "limited",
+    "name_cn": "锻币",
+    "name_en": "Melt the Coins",
+    "description_cn": "限定技，出牌阶段，若所有角色手牌数之和大于场上角色数的两倍，你可以令所有其他角色弃置X张手牌（X为其手牌数的一半，向下取整且至多为3），然后你可以将随机三张弃置牌交给一名角色。",
+    "description_en": "Limited: During your Action Phase, if the total number of all characters' hand cards exceeds twice the number of characters on the field, you may have all other characters discard X hand cards (X = half their hand card count, rounded down, maximum 3). You may then give 3 randomly chosen discarded cards to one character."
+  },
+  "skill_aow_direct_debate": {
+    "skill_type": "active",
+    "name_cn": "直辩",
+    "name_en": "Direct Debate",
+    "description_cn": "准备阶段，你可以与一名角色拼点，若你赢，则你可以选择一项：1. 将其场上的一张牌移至你的对应区域；2. 回复1点体力；背水：跳过你的下个摸牌阶段。若你没赢，你失去1点体力。",
+    "description_en": "During your Starting Phase, you may conduct a Point Duel with one character. If you win, choose one: 1. Move one of their cards on the field to your corresponding zone; 2. Recover 1 HP. Last Resort: Skip your next Draw Phase. If you do not win, lose 1 HP."
+  },
+  "skill_aow_ward_off_the_strict": {
+    "skill_type": "locked",
+    "name_cn": "御严",
+    "name_en": "Ward Off the Strict",
+    "description_cn": "锁定技，当你成为体力值大于你的角色使用非转化、非虚拟【杀】的目标时，其选择一项：1. 交给你一张点数大于此【杀】的牌；2. 取消之。",
+    "description_en": "Locked: When you become the target of a non-substitute, non-virtual [Kill] used by a character whose HP Value is greater than yours, that character must choose one: 1. Give you a card with a rank higher than that [Kill]; 2. Remove you as a target."
+  },
+  "skill_blood_pact": {
+    "skill_type": "active",
+    "name_cn": "歃盟",
+    "name_en": "Blood Pact",
+    "description_cn": "出牌阶段限一次，你可以弃置两张颜色相同的手牌并选择一名其他角色，其摸两张牌，然后你摸三张牌。",
+    "description_en": "Once per Action Phase, you may discard 2 hand cards of the same color and choose one other character — they draw 2 cards, then you draw 3 cards."
+  },
+  "skill_court_fame": {
+    "skill_type": "active",
+    "name_cn": "博名",
+    "name_en": "Court Fame",
+    "description_cn": "出牌阶段限两次，你可以交给一名其他角色一张牌；当你给出本阶段的第二张「博名」牌时，你于本回合的结束阶段摸一张牌。",
+    "description_en": "Twice per Action Phase, you may give one other character 1 card. When you give out the second 「Court Fame」 card this phase, you draw 1 card during your End Phase this turn."
+  },
+  "skill_harsh_recommendation": {
+    "skill_type": "locked",
+    "name_cn": "恶荐",
+    "name_en": "Harsh Recommendation",
+    "description_cn": "锁定技，每名角色限一次，当你交给其他角色「博名」牌时，若其有与「博名」牌类别相同的牌，其选择一项：1. 受到1点伤害；2. 展示所有手牌，然后弃置所有与「博名」牌类别相同的牌。",
+    "description_en": "Locked: Once per character: When you give another character a 「Court Fame」 card, if they have a card of the same category as that 「Court Fame」 card, they must choose one: 1. Receive 1 damage; 2. Reveal all hand cards, then discard all cards of the same category as the 「Court Fame」 card."
+  },
+  "skill_hold_the_camp": {
+    "skill_type": "locked",
+    "name_cn": "固营",
+    "name_en": "Hold the Camp",
+    "description_cn": "锁定技，每回合限一次，当你于回合外因使用、打出或弃置而一次性仅失去一张牌后，当前回合角色须选择：1. 随机交给你一张牌；2. 你获得此牌（若为装备则使用之）。准备阶段，你须弃置X张牌（X为此前此技能发动过的次数），然后置此技能发动次数为零。",
+    "description_en": "Locked: Once per turn: After you lose exactly 1 card outside your turn by using, playing out, or discarding it, the current turn's character must choose: 1. Randomly give you 1 card; 2. You gain that card (if it is an Equipment Card, use it instead). During your Starting Phase, you must discard X cards (X = the number of times this skill has activated previously), then reset this skill's activation count to zero."
+  },
+  "skill_harmonize_formations": {
+    "skill_type": "active",
+    "name_cn": "睦阵",
+    "name_en": "Harmonize Formations",
+    "description_cn": "出牌阶段各限一次，你可以选择一项：1. 交给一名装备区里有牌的其他角色两张牌，然后获得其装备区里的一张牌；2. 将一张装备牌置入其他角色的装备区，然后获得其一张手牌。",
+    "description_en": "Once per option per Action Phase, you may choose one: 1. Give 2 cards to another character who has cards in their Equipment Zone, then gain 1 card from their Equipment Zone; 2. Place 1 Equipment Card into another character's Equipment Zone, then gain 1 of their hand cards."
+  },
+  "skill_aow_steady_the_court": {
+    "skill_type": "active",
+    "name_cn": "镇庭",
+    "name_en": "Steady the Court",
+    "description_cn": "每回合限一次，当你或你攻击范围内的一名角色成为【杀】或延时锦囊牌的目标时，若你不是此牌使用者，你可以选择一项：1. 弃置此牌使用者一张手牌；2. 摸一张牌；背水：你代替其成为此牌的目标。",
+    "description_en": "Once per turn: When you or a character within your Attack Range becomes the target of a [Kill] or a Time-Delayed Tool Card, and you are not the User of that card, you may choose one: 1. Discard 1 hand card from that card's User; 2. Draw 1 card. Last Resort: You replace them as the target of that card."
+  },
+  "skill_selfless_devotion": {
+    "skill_type": "limited",
+    "name_cn": "尽瘁",
+    "name_en": "Selfless Devotion",
+    "description_cn": "限定技，出牌阶段，你可以与一名其他角色交换位置，然后你失去X点体力（X为你的体力值减〖镇庭〗本局游戏发动次数）。若你未因此失去体力，你加1点体力上限并失去〖镇庭〗中的背水选项。",
+    "description_en": "Limited: During your Action Phase, you may swap positions with one other character, then lose X HP (X = your HP Value minus the number of times 〖Steady the Court〗 has activated this game). If you do not lose HP this way, increase your Max HP by 1 and remove the Last Resort option from 〖Steady the Court〗."
+  },
+  "skill_admonish_with_wisdom": {
+    "skill_type": "active",
+    "name_cn": "谏喻",
+    "name_en": "Admonish with Wisdom",
+    "description_cn": "每轮限一次，出牌阶段，你可以选择两名角色，直至你的下个回合开始时：当其中一名角色于其出牌阶段内指定另一名角色为其使用牌的目标后，你令另一名角色摸一张牌。",
+    "description_en": "Once per round: During your Action Phase, you may choose two characters. Until the start of your next turn: whenever one of those characters targets the other with a card during their Action Phase, have the targeted character draw 1 card."
+  },
+  "skill_nurture_recovery": {
+    "skill_type": "active",
+    "name_cn": "生息",
+    "name_en": "Nurture Recovery",
+    "description_cn": "准备阶段，你可以从游戏外或牌堆中获得一张【调剂盐梅】。结束阶段，若你于此回合使用过牌且未造成过伤害，你可以从牌堆中获得一张智囊或摸一张牌。",
+    "description_en": "During your Starting Phase, you may gain one [Mediation] from outside the game or from the Draw Pile. During your End Phase, if you used cards this turn but dealt no damage, you may gain one Wisdom Card from the Draw Pile or draw 1 card."
+  },
+  "skill_petition_for_justice": {
+    "skill_type": "active",
+    "name_cn": "请决",
+    "name_en": "Petition for Justice",
+    "description_cn": "每轮限一次，当一名其他角色使用牌指定一名体力值小于其且不处于濒死状态的另一名其他角色为唯一目标时，你可以摸一张牌并与其拼点，若你：赢，取消之；没赢，你代替成为此牌的目标。",
+    "description_en": "Once per round: When one other character uses a card targeting another character whose HP Value is less than theirs and who is not in the Verge of Death State, as the sole target, you may draw 1 card and conduct a Point Duel with the User. If you win, Remove that character as the target. If you do not win, you replace them as the target."
+  },
+  "skill_honor_the_mandate": {
+    "skill_type": "locked",
+    "name_cn": "奉节",
+    "name_en": "Honor the Mandate",
+    "description_cn": "锁定技，准备阶段，你选择一名其他角色（直到你的下个回合开始）。一名角色的结束阶段，若你选择的角色存活，你将手牌摸至（至多摸至四张）或弃置至与其体力值相同。",
+    "description_en": "Locked: During your Starting Phase, choose one other character (until the start of your next turn). During a character's End Phase, if your chosen character is alive, adjust your hand card count — drawing up to 4 cards or discarding — until it equals that character's HP Value."
+  },
+  "skill_shield_the_line": {
+    "skill_type": "active",
+    "name_cn": "舍裔",
+    "name_en": "Shield the Line",
+    "description_cn": "每轮限一次，当一名其他角色受到伤害时，若其体力值小于你，你可以将至少X张牌交给其（X为你的体力值）。若如此做，你防止此伤害。",
+    "description_en": "Once per round: When another character receives damage, if their HP Value is less than yours, you may give them at least X cards (X = your HP Value). If you do, prevent that damage."
+  },
+  "skill_celestial_melody": {
+    "skill_type": "locked",
+    "name_cn": "天音",
+    "name_en": "Celestial Melody",
+    "description_cn": "锁定技，结束阶段，你从牌堆中获得你本回合未使用过的类别的牌各一张。",
+    "description_en": "Locked: During your End Phase, gain one card of each category from the Draw Pile that you have not used this turn."
+  },
+  "skill_seven_sorrows": {
+    "skill_type": "active",
+    "name_cn": "七哀",
+    "name_en": "Seven Sorrows",
+    "description_cn": "出牌阶段限一次，你可以将一张非基本牌交给一名其他角色，其选择令你摸两张牌或回复1点体力。",
+    "description_en": "Once per Action Phase, you may give one other character a non-Basic Card. They choose to either have you draw 2 cards or recover 1 HP."
+  },
+  "skill_the_call_to_arms": {
+    "skill_type": "active",
+    "name_cn": "善檄",
+    "name_en": "The Call to Arms",
+    "description_cn": "出牌阶段开始时，你可以令一名其他角色获得「檄」标记（场上已有则移动）。有「檄」的角色回复体力后，若其不处于濒死状态，其选择交给你两张牌或失去1点体力。",
+    "description_en": "At the start of your Action Phase, you may have one other character gain a 「Proclamation」 token (if one is already on the field, move it instead). After a character with 「Proclamation」 recovers HP, if they are not in the Verge of Death State, they must choose to either give you 2 cards or lose 1 HP."
+  },
+  "skill_star_preparation": {
+    "skill_type": "active",
+    "name_cn": "星启",
+    "name_en": "Star Preparation",
+    "description_cn": "当你使用一张除延时锦囊牌外的牌时，若你没有同牌名的「备」，你获得1枚「备」并记录为此牌的牌名。结束阶段，你可以弃1枚「备」，从牌堆中获得一张记录牌名的牌。",
+    "description_en": "When you use a card other than a Time-Delayed Tool, if you have no 「Reserve」 token with the same name, gain 1 「Reserve」 token and record that card's name. During your End Phase, you may remove 1 「Reserve」 token to gain a card with the recorded name from the Draw Pile."
+  },
+  "skill_bound_by_inaction": {
+    "skill_type": "locked",
+    "name_cn": "自缚",
+    "name_en": "Bound by Inaction",
+    "description_cn": "锁定技，出牌阶段结束时，若你本阶段未使用牌，你本回合手牌上限-1，弃所有「备」。",
+    "description_en": "Locked: At the end of your Action Phase, if you did not use any cards this phase, your Hand Limit decreases by 1 this turn and remove all 「Reserve」 tokens."
+  },
+  "skill_secret_reserve": {
+    "skill_type": "mission",
+    "name_cn": "秘备",
+    "name_en": "Secret Reserve",
+    "description_cn": "锁定技，使命技，游戏开始时，你获得使命「秘备」。成功：当你使用一张牌结算结束后，若你拥有记录为每种类别的「备」各2枚，你从牌堆获得每种类别的牌各一张，然后获得〖谋立〗。失败：你成功达成使命前，若你于本回合的准备阶段和弃牌阶段结束时均没有「备」，你减1点体力上限。",
+    "description_en": "Locked. Mission Skill: At the start of the game, you receive the mission 「Secret Reserve」. Success: After a card you use finishes resolving, if you have 2 「Reserve」 tokens recorded for each card category, gain one card of each category from the Draw Pile, then gain 〖Strategic Foundation〗. Failure: Before you succeed, if you have no 「Reserve」 tokens at the end of both your Starting Phase and Discard Phase in the same turn, reduce your Max HP by 1.",
+    "skill_type_secondary": "locked"
+  },
+  "skill_strategic_foundation": {
+    "skill_type": "active",
+    "name_cn": "谋立",
+    "name_en": "Strategic Foundation",
+    "description_cn": "出牌阶段限一次，你可以选择一名其他角色，其弃1枚你的「备」，然后从牌堆中获得一张记录牌名的牌。",
+    "description_en": "Once per Action Phase, you may choose one other character — they remove 1 of your 「Reserve」 tokens and gain a card with the recorded name from the Draw Pile."
+  },
+  "skill_deep_clarity": {
+    "skill_type": "locked",
+    "name_cn": "渊清",
+    "name_en": "Deep Clarity",
+    "description_cn": "锁定技，出牌阶段结束时，你随机将弃牌堆中你本回合因使用而置入弃牌堆的牌中的每种类别各一张牌置入「仁」区。",
+    "description_en": "Locked: At the end of your Action Phase, randomly place one card of each category from among the cards you placed into the Discard Pile this turn by using them into the 「Ren」 Zone."
+  },
+  "skill_clear_the_obstruction": {
+    "skill_type": "locked",
+    "name_cn": "疏陈",
+    "name_en": "Clear the Obstruction",
+    "description_cn": "锁定技，当一名角色进入濒死状态时，若「仁」牌数至少为4，你获得所有「仁」牌，然后令其回复1点体力。",
+    "description_en": "Locked: When a character enters the Verge of Death State, if the 「Ren」 Zone contains at least 4 cards, you gain all 「Ren」 cards, then have that character recover 1 HP."
+  },
+  "skill_extraordinary_valor": {
+    "skill_type": "active",
+    "name_cn": "异勇",
+    "name_en": "Extraordinary Valor",
+    "description_cn": "当你受到其他角色使用【杀】造成的伤害后，若你的装备区里有武器牌，你可以获得此【杀】，然后将此牌当无距离限制且不计入次数的【杀】对其使用，若其装备区里没有武器牌，此【杀】对其造成的伤害+1。",
+    "description_en": "After you receive damage from a [Kill] used by another character, if you have a Weapon Card in your Equipment Zone, you may gain that [Kill] and use it against them as a [Kill] with no distance restriction and not counting toward your frequency limit. If they have no Weapon Card in their Equipment Zone, that [Kill] deals +1 damage to them."
+  },
+  "skill_weapon_mastery": {
+    "skill_type": "active",
+    "name_cn": "擅械",
+    "name_en": "Weapon Mastery",
+    "description_cn": "出牌阶段限一次，你可以获得牌堆中的一张武器牌（若牌堆中没有武器牌，则改为随机获得一名其他角色装备区里的武器牌）。其他角色需使用点数大于你攻击范围两倍的【闪】才能抵消你使用的【杀】。",
+    "description_en": "Once per Action Phase, you may gain a Weapon Card from the Draw Pile (if none exist there, randomly gain a Weapon Card from another character's Equipment Zone instead). Other characters must use a [Dodge] with a rank greater than twice your Attack Range to negate your [Kill]."
+  },
+  "skill_refute_slander": {
+    "skill_type": "locked",
+    "name_cn": "抵诽",
+    "name_en": "Refute Slander",
+    "description_cn": "锁定技，每回合限一次，当你受到伤害后，你摸一张牌或弃置一张手牌，然后展示所有手牌，若对你造成伤害的牌无花色或你没有与对你造成伤害的牌花色相同的手牌，你回复1点体力。",
+    "description_en": "Locked: Once per turn, after you receive damage, draw 1 card or discard 1 hand card, then reveal all your hand cards. If the card that dealt damage to you has no suit, or you have no hand card of the same suit as that card, recover 1 HP."
+  },
+  "skill_strict_instruction": {
+    "skill_type": "active",
+    "name_cn": "严教",
+    "name_en": "Strict Instruction",
+    "description_cn": "出牌阶段限一次，你可以将手牌中一种花色的所有牌（至少一张）交给一名其他角色，然后对其造成1点伤害。若如此做，你的下个回合开始时，你摸X张牌（X为你以此法给出的牌数）。",
+    "description_en": "Once per Action Phase, you may give one other character all cards of one suit from your hand (at least 1), then deal 1 damage to them. If you do, at the start of your next turn, draw X cards (X = the number of cards you gave this way)."
+  },
+  "skill_repel_the_foe": {
+    "skill_type": "active",
+    "name_cn": "却敌",
+    "name_en": "Repel the Foe",
+    "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1. 获得其一张手牌；2. 弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水[4]：减1点体力上限。",
+    "description_en": "Once per turn: After you use [Kill] or [Duel] targeting exactly one character, you may choose one: 1. Gain 1 of their hand cards; 2. Discard 1 Basic Card, then increase that [Kill] or [Duel]'s damage by 1. Last Resort [4]: Reduce your Max HP by 1."
+  },
+  "skill_wei_vanguard_thrust": {
+    "skill_type": "active",
+    "name_cn": "椎锋",
+    "name_en": "Vanguard Thrust",
+    "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
+    "description_en": "Wei Faction Skill. Twice per Action Phase, you may lose 1 HP and be treated as using a [Duel]. When you receive damage from this [Duel], prevent that damage and this skill cannot activate again this phase."
+  },
+  "skill_bitter_resolve": {
+    "skill_type": "locked",
+    "name_cn": "仇决",
+    "name_en": "Bitter Resolve",
+    "description_cn": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发动一次〖却敌〗。",
+    "description_en": "Locked: After you kill another character, increase your Max HP by 1, draw 2 cards, then you may activate 〖Repel the Foe〗 one additional time this turn."
+  },
+  "skill_wu_vanguard_thrust": {
+    "skill_type": "active",
+    "name_cn": "椎锋",
+    "name_en": "Vanguard Thrust",
+    "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
+    "description_en": "Wei Faction Skill. Twice per Action Phase, you may lose 1 HP and be treated as using a [Duel]. When you receive damage from this [Duel], prevent that damage and this skill cannot activate again this phase."
+  },
+  "skill_pierce_the_line": {
+    "skill_type": "active",
+    "name_cn": "冲坚",
+    "name_en": "Pierce the Line",
+    "description_cn": "吴势力技，你可以将一张装备牌当【酒】或无距离限制且无视防具的任意一种【杀】使用。当你使用此【杀】造成伤害后，你获得目标角色装备区里的X张牌（X为此【杀】对其造成的伤害值）。",
+    "description_en": "Wu Faction Skill. You may use an Equipment Card as [Wine] or as any type of [Kill] with no distance restriction that ignores Armor. After this [Kill] deals damage, gain X cards from the target character's Equipment Zone (X = the damage dealt to them by this [Kill])."
+  },
+  "skill_aow_repel_the_foe": {
+    "skill_type": "active",
+    "name_cn": "却敌",
+    "name_en": "Repel the Foe",
+    "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1. 获得其一张手牌；2. 弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水：减1点体力上限。",
+    "description_en": "Once per turn: After you use [Kill] or [Duel] targeting exactly one character, you may choose one: 1. Gain 1 of their hand cards; 2. Discard 1 Basic Card, then increase that [Kill] or [Duel]'s damage by 1. Last Resort: Reduce your Max HP by 1."
+  },
+  "skill_grasp_the_robe": {
+    "skill_type": "active",
+    "name_cn": "引裾",
+    "name_en": "Grasp the Robe",
+    "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1. 其下回合的准备阶段，跳过其接下来的出牌阶段和弃牌阶段；2. 对你使用一张无距离限制的【杀】。",
+    "description_en": "Once per Action Phase, you may have one other character choose one: 1. During their next Starting Phase, skip their upcoming Action Phase and Discard Phase; 2. Use a [Kill] on you with no distance restriction."
+  },
+  "skill_hold_the_commission": {
+    "skill_type": "active",
+    "name_cn": "持节",
+    "name_en": "Hold the Commission",
+    "description_cn": "每回合限一次，当你成为其他角色使用牌的唯一目标时，你可以进行判定，若判定结果点数大于6，取消之。",
+    "description_en": "Once per turn: When you become the sole target of a card another character uses, you may perform a Judgment. If the Judgment result's rank is greater than 6, Remove you as the target."
+  },
+  "skill_rescue_the_fallen": {
+    "skill_type": "active",
+    "name_cn": "挽危",
+    "name_en": "Rescue the Fallen",
+    "description_cn": "每轮限一次，当一名其他角色进入濒死状态时，或出牌阶段内你可以选择一名其他角色，你可以令其回复X+1点体力（若不足使其脱离濒死，改为回复至1点体力），然后你失去X点体力（X为你的体力值）。",
+    "description_en": "Once per round: When another character enters the Verge of Death State, or during your Action Phase you may choose another character, you may have them recover X+1 HP (if that is not enough to leave the Verge of Death State, recover to 1 HP instead), then you lose X HP (X = your HP Value)."
+  },
+  "skill_austere_living": {
+    "skill_type": "active",
+    "name_cn": "约俭",
+    "name_en": "Austere Living",
+    "description_cn": "你的手牌上限等于体力上限。当你进入濒死状态时，你可以弃置两张牌并回复1点体力。",
+    "description_en": "Your Hand Limit equals your Max HP. When you enter the Verge of Death State, you may discard 2 cards and recover 1 HP."
+  },
+  "skill_elegant_brilliance": {
+    "skill_type": "active",
+    "name_cn": "雅俊",
+    "name_en": "Elegant Brilliance",
+    "description_cn": "摸牌阶段，你多摸一张牌。出牌阶段开始时，你可以用本回合获得的一张牌与一名其他角色进行拼点，若你：赢，你可以将其中一张拼点牌置于牌堆顶；没赢，你本回合手牌上限-1。",
+    "description_en": "During your Draw Phase, draw 1 additional card. At the start of your Action Phase, you may use a card you gained this turn to conduct a Point Duel with one other character. If you win, you may place one of the Point Duel cards on top of the Draw Pile. If you do not win, your Hand Limit decreases by 1 this turn."
+  },
+  "skill_honor_the_heir": {
+    "skill_type": "active",
+    "name_cn": "尊嫡",
+    "name_en": "Honor the Heir",
+    "description_cn": "出牌阶段限一次，你可以弃置一张手牌并选择一名角色，然后你进行判定：黑色，其摸三张牌；红色，其可以移动场上一张牌。",
+    "description_en": "Once per Action Phase, you may discard 1 hand card and choose one character, then perform a Judgment. If the result is black, they draw 3 cards. If red, they may move one card on the field."
+  },
+  "skill_diligent_governance": {
+    "skill_type": "locked",
+    "name_cn": "勤政",
+    "name_en": "Diligent Governance",
+    "description_cn": "锁定技，当你使用或打出三张牌时，随机获得牌堆中的一张【杀】或【闪】；当你使用或打出五张牌时，随机获得牌堆中的一张【桃】或【酒】；当你使用或打出八张牌时，随机获得牌堆中的一张【无中生有】或【决斗】。",
+    "description_en": "Locked: When you use or play out 3 cards, randomly gain a [Kill] or [Dodge] from the Draw Pile. When you use or play out 5 cards, randomly gain a [Peach] or [Wine]. When you use or play out 8 cards, randomly gain a [Resupply] or [Duel]."
+  },
+  "skill_establish_protocol": {
+    "skill_type": "locked",
+    "name_cn": "定仪",
+    "name_en": "Establish Protocol",
+    "description_cn": "锁定技，游戏开始时，你选择一项，效果对全场角色均生效：1. 摸牌阶段的额定摸牌数+1；2. 手牌上限+2；3. 攻击范围+1；4. 脱离濒死状态时回复1点体力。",
+    "description_en": "Locked: At the start of the game, choose one option — the effect applies to all characters on the field: 1. Draw count during Draw Phase increases by 1; 2. Hand Limit increases by 2; 3. Attack Range increases by 1; 4. Recover 1 HP when leaving the Verge of Death State."
+  },
+  "skill_censure_for_crimes": {
+    "skill_type": "active",
+    "name_cn": "罪辞",
+    "name_en": "Censure for Crimes",
+    "description_cn": "当你受到受〖定仪〗影响的角色造成的伤害后，你可以令其失去〖定仪〗效果，然后其从牌堆中获得你选择的一张智囊牌。",
+    "description_en": "After you receive damage dealt by a character affected by 〖Establish Protocol〗, you may have them lose the 〖Establish Protocol〗 effect, then they gain a Wisdom Card of your choice from the Draw Pile."
+  },
+  "skill_reinforce_the_rites": {
+    "skill_type": "active",
+    "name_cn": "辅弼",
+    "name_en": "Reinforce the Rites",
+    "description_cn": "每轮限一次，出牌阶段，你可以选择一名角色并选择一项：1. 更换其拥有的〖定仪〗效果；2. 弃置一张牌，令其拥有的〖定仪〗效果翻倍（直到下一轮的你的下一个回合开始）。",
+    "description_en": "Once per round: During your Action Phase, choose one character and one option: 1. Replace the 〖Establish Protocol〗 effect they have; 2. Discard 1 card to double the 〖Establish Protocol〗 effect they have (until the start of your next turn in the next round)."
+  },
+  "skill_combined_strike": {
+    "skill_type": "active",
+    "name_cn": "合击",
+    "name_en": "Combined Strike",
+    "description_cn": "当一名角色对其他角色使用仅指定唯一目标的【决斗】或红色【杀】结算结束后，你可以对该目标角色使用一张无距离与次数限制的【杀】或【决斗】，然后若你使用的牌不为转化牌，你随机获得一张红色牌。",
+    "description_en": "After a character uses a [Duel] or red [Kill] targeting exactly one other character and it finishes resolving, you may use a [Kill] or [Duel] with no distance or frequency restrictions against that target. If the card you used was not a substitute card, randomly gain 1 red card."
+  },
+  "skill_roving_troops": {
+    "skill_type": "locked",
+    "name_cn": "流兵",
+    "name_en": "Roving Troops",
+    "description_cn": "锁定技，你于出牌阶段内使用的第一张非虚拟【杀】的花色视为Diamonds。其他角色于出牌阶段使用的非转化黑色【杀】结算结束后，若此牌未造成伤害，你获得之。",
+    "description_en": "Locked: The first non-virtual [Kill] you use during your Action Phase is treated as having the Diamonds suit. After another character uses a non-substitute black [Kill] during their Action Phase and it finishes resolving, if it dealt no damage, you gain that card."
+  },
+  "skill_hidden_gems": {
+    "skill_type": "active",
+    "name_cn": "遗珠",
+    "name_en": "Hidden Gems",
+    "description_cn": "结束阶段，你摸两张牌，然后选择两张牌作为「遗珠」牌并记录牌名，随机洗入牌堆顶前X张牌中（X为存活角色数的两倍）。其他角色使用「遗珠」牌指定唯一目标时，你可以取消之，然后你将此牌从记录中移除。",
+    "description_en": "During your End Phase, draw 2 cards, then choose 2 cards as 「Hidden Gem」 cards and record their names, shuffling them randomly into the top X cards of the Draw Pile (X = twice the number of surviving characters). When another character uses a 「Hidden Gem」 card targeting exactly one character, you may Remove that target, then remove that card from your records."
+  },
+  "skill_matchmaker": {
+    "skill_type": "active",
+    "name_cn": "鸾俦",
+    "name_en": "Matchmaker",
+    "description_cn": "出牌阶段限一次，你可以移除场上所有「姻」标记并选择两名角色，令其获得「姻」标记。拥有「姻」标记的角色视为拥有技能〖共患〗。",
+    "description_en": "Once per Action Phase, you may remove all 「Bond」 tokens from the field and choose two characters to gain 「Bond」 tokens. Characters with 「Bond」 tokens are treated as having the skill 〖Shared Peril〗."
+  },
+  "skill_shared_peril": {
+    "skill_type": "locked",
+    "name_cn": "共患",
+    "name_en": "Shared Peril",
+    "description_cn": "锁定技，每回合限一次，当另一名拥有「姻」标记的角色受到伤害时，若其体力值小于你，则将此伤害转移给你，然后移走双方的「姻」标记。",
+    "description_en": "Locked: Once per turn: When another character with a 「Bond」 token receives damage, if their HP Value is less than yours, Transfer that damage to you, then remove both characters' 「Bond」 tokens."
+  },
+  "skill_tribute_cloth": {
+    "skill_type": "locked",
+    "name_cn": "戈帛",
+    "name_en": "Tribute of Cloth",
+    "description_cn": "锁定技，一名角色回复体力后，你将牌堆顶的一张牌置入「仁」区。",
+    "description_en": "Locked: After a character recovers HP, place the top card of the Draw Pile into the 「Ren」 Zone."
+  },
+  "skill_laud_shu": {
+    "skill_type": "active",
+    "name_cn": "颂蜀",
+    "name_en": "Laud Shu",
+    "description_cn": "一名体力值大于你的其他角色的摸牌阶段开始时，若「仁」区有牌，你可以令其放弃摸牌，然后获得X张「仁」（X为你的体力值且至多为5）。若如此做，本回合其使用牌不能指定其他角色为目标。",
+    "description_en": "At the start of another character's Draw Phase whose HP Value is greater than yours, if the 「Ren」 Zone has cards, you may have them skip drawing cards, then gain X 「Ren」 cards (X = your HP Value, maximum 5). If you do, that character cannot target other characters with cards they use this turn."
+  },
+  "skill_village_menace": {
+    "skill_type": "locked",
+    "name_cn": "乡害",
+    "name_en": "Village Menace",
+    "description_cn": "锁定技，其他角色的手牌上限-1，你手牌中的装备牌均只能当【酒】使用。",
+    "description_en": "Locked: All other characters' Hand Limits are reduced by 1. Equipment Cards in your hand can only be used as [Wine]."
+  },
+  "skill_eliminate_the_evil": {
+    "skill_type": "mission",
+    "name_cn": "除害",
+    "name_en": "Eliminate the Evil",
+    "description_cn": "使命技，出牌阶段限一次，你可以摸一张牌，并与一名其他角色拼点，此次你的拼点牌点数+X（X为4减你装备区里的牌数）。若你赢：你观看其手牌，从牌堆或弃牌堆中随机获得其手牌中拥有的类别的牌各一张；当你于此阶段对其造成伤害后，将牌堆或弃牌堆中随机一张装备牌置入你对应的空置装备栏。成功：当一张装备牌进入你的装备区后，若你的装备区里的牌数不小于3，你获得〖彰名〗，失去〖乡害〗，将体力回复至上限。失败：若你于使命达成前，你发动〖除害〗拼点没赢，且你的拼点牌的点数不大于6，使命失败。",
+    "description_en": "Mission Skill. Once per Action Phase, you may draw 1 card and conduct a Point Duel with one other character; your Point Duel card's rank increases by X (X = 4 minus the number of cards in your Equipment Zone). If you win: look at their hand cards and randomly gain one card of each category from among those in your hand from the Draw Pile or Discard Pile. When you deal damage to them this phase, randomly place one Equipment Card from the Draw Pile or Discard Pile into a corresponding empty equipment slot. Success: After an Equipment Card enters your Equipment Zone, if your Equipment Zone contains at least 3 cards, gain 〖Renowned Name〗, lose 〖Village Menace〗, and recover HP to your Max HP. Failure: Before you succeed, if you conduct a Point Duel via 〖Eliminate the Evil〗 and do not win with a Point Duel card of rank 6 or lower, the mission fails."
+  },
+  "skill_renowned_name": {
+    "skill_type": "locked",
+    "name_cn": "彰名",
+    "name_en": "Renowned Name",
+    "description_cn": "锁定技，你使用Clubs牌不能被响应。每回合限一次，当你对其他角色造成伤害后，其随机弃置一张手牌，然后你从牌堆或弃牌堆中获得与其弃置牌类别不同的牌各一张（若其无法弃置手牌，改为你从牌堆或弃牌堆中获得所有类别的牌各一张），以此法获得的牌不计入本回合手牌上限。",
+    "description_en": "Locked: Clubs cards you use cannot be responded to. Once per turn: After you deal damage to another character, they randomly discard 1 hand card, then you gain one card of each category different from the discarded card's category from the Draw Pile or Discard Pile (if they cannot discard, you instead gain one card of every category from the Draw Pile or Discard Pile). Cards gained this way do not count toward your Hand Limit this turn."
+  },
+  "skill_restless_ferocity": {
+    "skill_type": "locked",
+    "name_cn": "躁厉",
+    "name_en": "Restless Ferocity",
+    "description_cn": "锁定技，出牌阶段，你只能使用或打出本回合获得的手牌。当你使用或打出手牌时，若你的「厉」数小于4，你获得1枚「厉」。回合开始时，若你有「厉」，你弃所有「厉」并弃置任意张牌（若没有可弃置的牌则跳过），摸X张牌（X为你弃的「厉」数与弃置牌数之和）。若你弃的「厉」数大于2，你失去1点体力。",
+    "description_en": "Locked: During your Action Phase, you may only use or play out hand cards you gained this turn. When you use or play out a hand card, if your 「Ferocity」 count is less than 4, gain 1 「Ferocity」 token. At the start of your turn, if you have any 「Ferocity」 tokens, remove all of them and discard any number of cards (skip if none available), then draw X cards (X = the total of 「Ferocity」 tokens removed plus cards discarded). If you removed more than 2 「Ferocity」 tokens, lose 1 HP."
+  },
+  "skill_resolute_valor": {
+    "skill_type": "active",
+    "name_cn": "毅烈",
+    "name_en": "Resolute Valor",
+    "description_cn": "出牌阶段开始时，你可以选择一项：1. 你于此阶段内使用【杀】的次数上限+1；2. 当你使用的【杀】于此回合内被抵消后，你摸一张牌；背水：你失去1点体力。",
+    "description_en": "At the start of your Action Phase, you may choose one: 1. Your [Kill] frequency limit this phase increases by 1; 2. Whenever a [Kill] you use is Negated this turn, draw 1 card. Last Resort: You lose 1 HP."
+  },
+  "skill_charge_with_life": {
+    "skill_type": "active",
+    "name_cn": "奋命",
+    "name_en": "Charge with Life",
+    "description_cn": "出牌阶段限一次，你可以选择一项：1. 令一名体力值不大于你的角色横置；2. 获得一名体力值不大于你且已横置的其他角色的一张牌。",
+    "description_en": "Once per Action Phase, choose one: 1. Place one character whose HP Value is no greater than yours in horizontal position; 2. Gain 1 card from another character whose HP Value is no greater than yours and who is currently in horizontal position."
+  },
+  "skill_troop_deployment": {
+    "skill_type": "active",
+    "name_cn": "调度",
+    "name_en": "Troop Deployment",
+    "description_cn": "准备阶段，你可以将一名角色装备区里的一张牌移动至另一名角色的装备区，然后第一名角色摸一张牌。",
+    "description_en": "During your Starting Phase, you may move one card from one character's Equipment Zone to another character's Equipment Zone, then the first character draws 1 card."
+  },
+  "skill_manage_the_treasury": {
+    "skill_type": "active",
+    "name_cn": "典财",
+    "name_en": "Manage the Treasury",
+    "description_cn": "其他角色的出牌阶段结束时，若你于此阶段失去的牌数不小于X（X为你的体力值），你可以将手牌摸至体力上限。",
+    "description_en": "At the end of another character's Action Phase, if the number of cards you lost during that phase is no less than X (X = your HP Value), you may draw cards until your hand equals your Max HP."
+  },
+  "skill_drill_enforcement": {
+    "skill_type": "active",
+    "name_cn": "严纪",
+    "name_en": "Drill Enforcement",
+    "description_cn": "出牌阶段开始时，你可以开始一次「整肃」。若如此做，弃牌阶段结束后，若你整肃未失败，你获得整肃奖励。",
+    "description_en": "At the start of your Action Phase, you may begin a 「Drill」. If you do, after your Discard Phase ends, if your Drill has not failed, you gain a Drill Reward."
+  },
+  "skill_frugal_attire": {
+    "skill_type": "locked",
+    "name_cn": "俭衣",
+    "name_en": "Frugal Attire",
+    "description_cn": "锁定技，其他角色的回合结束后，若本回合有防具牌被弃置，且此牌仍在弃牌堆中，则你选择其中一张获得之。",
+    "description_en": "Locked: After another character's turn ends, if any Armor Card was discarded this turn and is still in the Discard Pile, you may choose one such card to gain."
+  },
+  "skill_righteous_exchange": {
+    "skill_type": "active",
+    "name_cn": "尚义",
+    "name_en": "Righteous Exchange",
+    "description_cn": "出牌阶段限一次，你可以弃置一张牌并选择一名有手牌的其他角色，令其查看你的手牌，然后你查看其手牌并获得其中一张。",
+    "description_en": "Once per Action Phase, you may discard 1 card and choose one other character who has hand cards. They look at your hand, then you look at their hand and gain 1 card from it."
+  },
+  "skill_armory": {
+    "skill_type": "locked",
+    "name_cn": "武库",
+    "name_en": "Armory",
+    "description_cn": "锁定技，当一名角色使用装备牌时，你获得1枚「武库」标记（「武库」标记至多为3）。",
+    "description_en": "Locked: When a character uses an Equipment Card, gain 1 「Armory」 token (maximum 3)."
+  },
+  "skill_three_proclamations": {
+    "skill_type": "awakening",
+    "name_cn": "三陈",
+    "name_en": "Three Proclamations",
+    "description_cn": "觉醒技，结束阶段，若你已有3枚「武库」，你增加1点体力上限，回复1点体力，然后获得技能〖灭吴〗。",
+    "description_en": "Awakening: During your End Phase, if you have 3 「Armory」 tokens, increase your Max HP by 1, recover 1 HP, then gain the skill 〖Conquer Wu〗."
+  },
+  "skill_conquer_wu": {
+    "skill_type": "active",
+    "name_cn": "灭吴",
+    "name_en": "Conquer Wu",
+    "description_cn": "每回合限一次，你可以弃置1枚「武库」标记，将一张牌当做任意一张基本牌、普通锦囊牌或延时锦囊牌使用或打出，然后你摸一张牌。",
+    "description_en": "Once per turn, you may remove 1 「Armory」 token to use or play out 1 card as any Basic Card, Non Time-Delay Tool Card, or Time-Delayed Tool Card, then draw 1 card."
+  },
+  "skill_display_strength": {
+    "skill_type": "active",
+    "name_cn": "明伐",
+    "name_en": "Display Strength",
+    "description_cn": "结束阶段，你可以展示一张牌，然后你下回合的出牌阶段开始时，你可以用此牌与一名角色拼点，若你：赢，你获得其一张牌，并随机从牌堆获得一张点数比此牌牌面点数小1点的牌；没赢，本回合你使用牌不能指定其他角色为目标。当你拼点的牌亮出后，你令此牌的点数+2。",
+    "description_en": "During your End Phase, you may reveal 1 card. At the start of your next Action Phase, you may use that card to conduct a Point Duel with one character. If you win, gain 1 of their cards and randomly gain a card from the Draw Pile whose rank is 1 lower than that card's rank. If you do not win, you cannot target other characters with cards you use this turn. When your Point Duel card is flipped, increase its rank by 2."
+  },
+  "skill_arm_the_troops": {
+    "skill_type": "limited",
+    "name_cn": "戎备",
+    "name_en": "Arm the Troops",
+    "description_cn": "限定技，出牌阶段，你可以选择一名有空置的装备栏的角色，令其为其每个空置的装备栏随机使用一张装备牌。",
+    "description_en": "Limited: During your Action Phase, you may choose one character who has empty equipment slots — they randomly use one Equipment Card for each empty slot."
+  },
+  "skill_remedy_the_age": {
+    "skill_type": "locked",
+    "name_cn": "济世",
+    "name_en": "Remedy the Age",
+    "description_cn": "锁定技，你使用牌结算结束后，若此牌没有造成伤害，且此牌仍在弃牌堆中，则将其置于「仁」区中；当「仁」牌非因「仁」区溢出而离开「仁」区时，你摸一张牌。",
+    "description_en": "Locked: After a card you use finishes resolving, if it dealt no damage and is still in the Discard Pile, place it into the 「Ren」 Zone. When a 「Ren」 card leaves the 「Ren」 Zone for any reason other than overflow, draw 1 card."
+  },
+  "skill_cure_the_plague": {
+    "skill_type": "active",
+    "name_cn": "疗疫",
+    "name_en": "Cure the Plague",
+    "description_cn": "其他角色回合开始时，若其手牌数小于体力值且场上「仁」数量不小于X，则你可以令其获得场上X张「仁」；若其手牌数大于体力值，则可以令其将X张牌置于「仁」中（X为其手牌数与体力值差值，且至多为4）。",
+    "description_en": "At the start of another character's turn: if their hand card count is less than their HP Value and the 「Ren」 Zone has at least X cards, you may have them gain X 「Ren」 cards from the field. If their hand card count is greater than their HP Value, you may have them place X cards into the 「Ren」 Zone (X = the absolute difference between their hand card count and HP Value, maximum 4)."
+  },
+  "skill_discourse_on_illness": {
+    "skill_type": "active",
+    "name_cn": "病论",
+    "name_en": "Discourse on Illness",
+    "description_cn": "出牌阶段限一次，你可以选择一名角色并弃置一张「仁」牌，令其选择：1. 摸一张牌；2. 于其回合结束后回复1点体力。",
+    "description_en": "Once per Action Phase, you may choose one character and discard 1 「Ren」 card. They choose: 1. Draw 1 card; 2. Recover 1 HP after their turn ends."
+  },
+  "skill_hold_the_territory": {
+    "skill_type": "locked",
+    "name_cn": "据土",
+    "name_en": "Hold the Territory",
+    "description_cn": "锁定技，准备阶段，你获得你武将牌上的所有「生」，然后摸X+1张牌，并将X张牌置于你的武将牌上，称为「生」（X为你〖邀虎〗选择势力的角色数）。",
+    "description_en": "Locked: During your Starting Phase, gain all 「Vitality」 cards from your General Card, then draw X+1 cards and place X of them face-up on your General Card as 「Vitality」 cards (X = the number of characters belonging to the faction chosen by 〖Summon the Tiger〗)."
+  },
+  "skill_summon_the_tiger": {
+    "skill_type": "active",
+    "name_cn": "邀虎",
+    "name_en": "Summon the Tiger",
+    "description_cn": "每轮限一次，回合开始时，你须选择场上的一个势力。你选择势力的其他角色出牌阶段开始时，其获得你的一张「生」，然后其须选择一项：1. 对你指定的一名其攻击范围内的其他角色使用一张【杀】（此【杀】不计入使用次数）；2. 直到本阶段结束时，其使用伤害类牌指定你为目标时，需交给你两张牌，否则取消之。",
+    "description_en": "Once per round: At the start of your turn, you must choose one faction on the field. At the start of each other character of that faction's Action Phase, they gain 1 of your 「Vitality」 cards and must choose one: 1. Use a [Kill] on a character of your choice within their Attack Range (this [Kill] does not count toward their frequency limit); 2. Until the end of this phase, whenever they target you with a damage card, they must give you 2 cards first — otherwise Remove you as the target."
+  },
+  "skill_treasure_the_jade": {
+    "skill_type": "lord",
+    "name_cn": "怀璧",
+    "name_en": "Treasure the Jade",
+    "description_cn": "主公技，锁定技，你的手牌上限+X（X为你〖邀虎〗选择势力的角色数）。",
+    "description_en": "Lord Skill. Locked: Your Hand Limit increases by X (X = the number of characters belonging to the faction chosen by 〖Summon the Tiger〗).",
+    "skill_type_secondary": "locked"
+  },
+  "skill_feign_surrender": {
+    "skill_type": "active",
+    "name_cn": "佯解",
+    "name_en": "Feign Surrender",
+    "description_cn": "出牌阶段限一次，你可以与一名角色拼点。若你没赢，你可以令另一名其他角色视为对与你拼点的角色使用一张无距离限制的火【杀】。",
+    "description_en": "Once per Action Phase, you may conduct a Point Duel with one character. If you do not win, you may have another character be treated as using a fire [Kill] with no distance restriction on the character you dueled."
+  },
+  "skill_refuse_to_yield": {
+    "skill_type": "limited",
+    "name_cn": "拒降",
+    "name_en": "Refuse to Yield",
+    "description_cn": "限定技，当其他角色脱离濒死状态后，你可以对其造成1点伤害。",
+    "description_en": "Limited: After another character leaves the Verge of Death State, you may deal 1 damage to them."
+  },
+  "skill_generous_reward": {
+    "skill_type": "active",
+    "name_cn": "厚俸",
+    "name_en": "Generous Reward",
+    "description_cn": "每轮限一次，你攻击范围内一名角色出牌阶段开始时，你可以令其开始一次「整肃」，若如此做，其弃牌阶段结束后，若其「整肃」未失败，你与其获得「整肃」奖励。",
+    "description_en": "Once per round: At the start of a character's Action Phase who is within your Attack Range, you may have them begin a 「Drill」. If you do, after their Discard Phase ends, if their Drill has not failed, both you and that character gain a Drill Reward."
+  },
+  "skill_fierce_assault": {
+    "skill_type": "active",
+    "name_cn": "峻攻",
+    "name_en": "Fierce Assault",
+    "description_cn": "出牌阶段，你可以弃置X张牌或失去X点体力，视为使用一张无距离与次数限制的【杀】（X为你本阶段此前发动过此技能的次数+1），然后当此【杀】造成伤害后，此技能本回合失效。",
+    "description_en": "During your Action Phase, you may discard X cards or lose X HP and be treated as using a [Kill] with no distance or frequency restrictions (X = the number of times this skill has activated this phase + 1). After this [Kill] deals damage, this skill cannot activate again this turn."
+  },
+  "skill_matched_strength": {
+    "skill_type": "active",
+    "name_cn": "等力",
+    "name_en": "Matched Strength",
+    "description_cn": "当你使用【杀】指定一名角色为目标后，或当你成为其他角色使用【杀】的目标后，若你与其体力值相等，你可以摸一张牌。",
+    "description_en": "After you use [Kill] and designate one character as a target, or after you become the target of a [Kill] another character uses, if your HP Value equals theirs, you may draw 1 card."
+  },
+  "skill_coercive_pressure": {
+    "skill_type": "active",
+    "name_cn": "危迫",
+    "name_en": "Coercive Pressure",
+    "description_cn": "每回合限一次，出牌阶段，你可以选择一名角色并指定一张「兵临城下」或智囊的牌名，令其获得一个记录此牌名的「危迫」标记。拥有「危迫」标记的角色在其出牌阶段，其可以移去一个「危迫」标记，并弃置一张【杀】，然后从游戏外或牌堆中随机获得一张此标记记录牌名的牌。回合开始时，你移去场上所有「危迫」标记。",
+    "description_en": "Once per turn during your Action Phase, you may choose one character and name a card — either a 「Troops at the Gates」 or a Wisdom Card. That character gains a 「Coercion」 token recording that card name. During that character's Action Phase, they may remove a 「Coercion」 token and discard 1 [Kill] to randomly gain a card with the recorded name from outside the game or from the Draw Pile. At the start of your turn, remove all 「Coercion」 tokens from the field."
+  },
+  "skill_array_the_forces": {
+    "skill_type": "active",
+    "name_cn": "陈势",
+    "name_en": "Array the Forces",
+    "description_cn": "当其他角色使用「兵临城下」指定目标后，其可以交给你一张牌，然后将牌堆顶三张牌中不为【杀】的牌置入弃牌堆；当其他角色成为「兵临城下」的目标后，其可以交给你一张牌，然后将牌堆顶三张牌中的【杀】置入弃牌堆。",
+    "description_en": "After another character uses 「Troops at the Gates」 and designates a target, they may give you 1 card, then place all non-[Kill] cards from the top 3 cards of the Draw Pile into the Discard Pile. After another character becomes the target of 「Troops at the Gates」, they may give you 1 card, then place all [Kill] cards from the top 3 cards of the Draw Pile into the Discard Pile."
+  },
+  "skill_strategic_insight": {
+    "skill_type": "locked",
+    "name_cn": "谋识",
+    "name_en": "Strategic Insight",
+    "description_cn": "锁定技，当你受到伤害时，若造成伤害的牌与上次对你造成伤害的牌花色相同，你防止此伤害。",
+    "description_en": "Locked: When you receive damage, if the card that dealt this damage has the same suit as the card that last dealt damage to you, prevent this damage."
+  },
+  "skill_suppress_the_chaos": {
+    "skill_type": "active",
+    "name_cn": "讨乱",
+    "name_en": "Suppress the Chaos",
+    "description_cn": "每回合限一次，当判定牌生效时，若结果为Spades，你可以终止此次判定，然后选择一项：1. 获得此判定牌；2. 若进行判定的角色不为你，你视为对其使用一张无距离和次数限制的火【杀】。",
+    "description_en": "Once per turn: When a Judgment Card takes effect, if the result has the Spades suit, you may end this Judgment, then choose one: 1. Gain the Judgment Card; 2. If the character performing the Judgment is not you, be treated as using a fire [Kill] with no distance or frequency restrictions against them."
+  },
+  "skill_momentum_strike": {
+    "skill_type": "active",
+    "name_cn": "势击",
+    "name_en": "Momentum Strike",
+    "description_cn": "当你对其他角色造成属性伤害时，若你的手牌数不为全场唯一最多，你可以观看其手牌并弃置其中所有的红色牌，然后你摸等量的牌。",
+    "description_en": "When you deal Elemental Damage to another character, if your hand card count is not uniquely the highest on the field, you may look at their hand cards and discard all red cards among them, then draw an equal number of cards."
+  },
+  "skill_marshal_the_army": {
+    "skill_type": "active",
+    "name_cn": "整军",
+    "name_en": "Marshal the Army",
+    "description_cn": "出牌阶段开始时，你可以进行一次「整肃」，若如此做，弃牌阶段结束后，若你「整肃」未失败，你获得「整肃」奖励，并可以令一名其他角色也获得「整肃」奖励。",
+    "description_en": "At the start of your Action Phase, you may begin a 「Drill」. If you do, after your Discard Phase ends, if your Drill has not failed, you gain a Drill Reward and may have one other character also gain a Drill Reward."
+  },
+  "skill_renowned_scholar": {
+    "skill_type": "locked",
+    "name_cn": "名仕",
+    "name_en": "Renowned Scholar",
+    "description_cn": "锁定技，当你受到伤害后，若你有「谦」，伤害来源弃置其区域内的一张牌，若此牌为：黑色，你获得之；红色，你回复1点体力。",
+    "description_en": "Locked: After you receive damage, if you have 「Modesty」, the damage source discards 1 card from their zone. If that card is: black — you gain it; red — you recover 1 HP."
+  },
+  "skill_humble_deference": {
+    "skill_type": "active",
+    "name_cn": "礼让",
+    "name_en": "Humble Deference",
+    "description_cn": "其他角色的摸牌阶段开始时，若你没有「谦」，你可以令其多摸两张牌，然后获得「谦」。若如此做：其弃牌阶段结束时，你获得其弃置的至多两张牌；准备阶段，你跳过下个摸牌阶段，然后弃「谦」。",
+    "description_en": "At the start of another character's Draw Phase, if you have no 「Modesty」, you may have them draw 2 additional cards, then gain 「Modesty」. If you do: at the end of their Discard Phase, you gain up to 2 of the cards they discarded; during your Starting Phase, skip your next Draw Phase, then remove 「Modesty」."
   }
 }

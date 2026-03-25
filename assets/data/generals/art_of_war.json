@@ -1,1397 +1,1177 @@
 [
   {
     "id": "SHU055",
-    "standard_id": "",
+    "standard_id": "char_huaman",
     "name_cn": "花鬘",
-    "name_en": "",
+    "name_en": "Hua Man",
     "gender": "Female",
     "faction": "Shu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "象阵",
-        "name_en": "",
-        "description_cn": "锁定技,【南蛮入侵】对你无效【南蛮入侵】结算结束后, 若此牌造成过伤害,你与伤害来源各摸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "芳踪",
-        "name_en": "",
-        "description_cn": "锁定技,出牌阶段,你使用伤害类的牌不能指定你攻击范围 内的角色为目标。攻击范围内含有你的其他角色使用伤害类 的牌不能指定你为目标。结束阶段,你将手牌摸至X 张(X 为场上存活人数)。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "嬉战",
-        "name_en": "",
-        "description_cn": "锁定技,其他角色回合开始时,你弃置一张牌并令你本回合 芳踪”失效,或失去1点体力。若你以此法弃置了牌,则 根据此牌的花色执行对应的效果：黑桃，其视为使用一张 【酒】；红桃，你视为使用一张【无中生有】；梅花，你视为对其使用一张【铁索连环】;方块，你视为对其使用一张无距离限 制的火【杀】",
-        "description_en": ""
-      }    
-    }
+    "skills": [
+      "skill_elephant_formation",
+      "skill_elusive_trace",
+      "skill_playful_battle"
+    ]
   },
   {
     "id": "SHU021",
-    "standard_id": "",
+    "standard_id": "char_mifuren",
     "name_cn": "糜夫人",
-    "name_en": "",
+    "name_en": "Lady Mi",
     "gender": "Female",
     "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Recovery",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "闺秀",
-        "name_en": "",
-        "description_cn": "锁定技，结束阶段，若你的体力值为：奇数，你摸一张牌；偶数，你回复1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "清玉",
-        "name_en": "",
-        "description_cn": "锁定技，使命技，当你受到伤害时，你弃置两张牌并防止此伤害。成功：准备阶段，若你未受伤且没有手牌，你获得〖悬存〗。失败：你成功达成使命前，进入濒死状态时，你减1点体力上限。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "悬存",
-        "name_en": "",
-        "description_cn": "其他角色的回合结束后，若你的体力值大于手牌数，你可以令其摸X张牌（X为你的体力值减手牌数，且至多为2）。",
-        "description_en": ""
-      }        
-    }
+    "skills": [
+      "skill_boudoir_grace",
+      "skill_pure_jade",
+      "skill_suspended_presence"
+    ]
   },
   {
     "id": "SHU094",
-    "standard_id": "",
+    "standard_id": "char_wangfu&zhaolei",
     "name_cn": "王甫&赵累",
-    "name_en": "",
+    "name_en": "Wang Fu & Zhao Lei",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "殉义",
-        "name_en": "",
-        "description_cn": "游戏开始时，你令一名其他角色获得“义”。当你或有“义”的角色造成/受到1点伤害后，若受伤角色/伤害来源不为另一方，另一方摸一张牌/弃置一张牌。当有“义”的角色死亡时，你可以移动“义”。",
-        "description_en": ""
-      }
-    }
+    "skills": [
+      "skill_oath_unto_death"
+    ]
   },
   {
     "id": "SHU086",
-    "standard_id": "",
+    "standard_id": "char_liuba",
     "name_cn": "刘巴",
-    "name_en": "",
+    "name_en": "Liu Ba",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "统度",
-        "name_en": "",
-        "description_cn": "每回合限一次,你成为其他角色使用牌的唯一目 标时,你可以令一名角色重铸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "锻币",
-        "name_en": "",
-        "description_cn": "限定技,出牌阶段,若所有角色手牌数之和大于场上角色数的两倍,你可以令所有其他角色弃置X张手牌(X为手牌数的一半,向下取整且至多为 3),然后你可以将随机三张弃置牌交给一名角色",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_fiscal_governance",
+      "skill_melt_the_coins"
+    ]
   },
   {
     "id": "SHU078",
-    "standard_id": "",
+    "standard_id": "char_zongyu",
     "name_cn": "宗预",
-    "name_en": "",
+    "name_en": "Zong Yu",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [
       {
         "q_cn": "什么是「背水」？",
         "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
+        "q_en": "What is \"Last Resort\"?",
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
-      }      
+      }
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "直辩",
-        "name_en": "",
-        "description_cn": "准备阶段,你可以与一名角色拼点,若你赢,则你可以 选择一项:1.将其场上的一张牌移至你的对应区域: 2.回复1点体力;背水:跳过你的下个摸牌阶段。若你没赢,你失去1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "御严",
-        "name_en": "",
-        "description_cn": "锁定技,当你成为体力值大于你的角色使用非转化、非 虚拟【杀】的标时,其选择一项:1.交给你一张点数 大于此【杀】的牌:2.取消之。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_aow_direct_debate",
+      "skill_aow_ward_off_the_strict"
+    ]
   },
   {
     "id": "SHU074",
-    "standard_id": "",
+    "standard_id": "char_chenzhen",
     "name_cn": "陈震",
-    "name_en": "",
+    "name_en": "Chen Zhen",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.0,
+    "traits_cn": [
+      "辅助",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "歃盟",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以弃置两张颜色相同的手牌并选择一名其他角色，其摸两张牌，然后你摸三张牌。",
-        "description_en": ""
-      }  
-    }
+    "skills": [
+      "skill_blood_pact"
+    ]
   },
   {
     "id": "SHU053",
-    "standard_id": "",
+    "standard_id": "char_xujing",
     "name_cn": "许靖",
-    "name_en": "",
+    "name_en": "Xu Jing",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.0,
+    "traits_cn": [
+      "辅助",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "博名",
-        "name_en": "",
-        "description_cn": "出牌阶段限两次,你可以交给一名其他角色一张牌; 当你给出本阶段的第二张“博名”牌时,你于本回合 的结束阶段摸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "恶荐",
-        "name_en": "",
-        "description_cn": "锁定技,每名ù色限一次,当你交给其他角色“博 名”牌时,若其有与“博名”牌类别相同的牌,其选择 一项:1.受到1点伤害;2.展示所有手牌,然后弃置 所有与“博名”牌类别相同的牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_court_fame",
+      "skill_harsh_recommendation"
+    ]
   },
   {
     "id": "SHU025",
-    "standard_id": "",
+    "standard_id": "char_xiangchong",
     "name_cn": "向宠",
-    "name_en": "",
+    "name_en": "Xiang Chong",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "固营",
-        "name_en": "",
-        "description_cn": "锁定技,每回合限一次,当你于回合外因使用、打出或 弃置而一次性仅失去一张牌后,当前回合角色须选择: 1.随机交给你一张牌;2.你获得此牌(若为装备则使 用之)。准备阶段,你须弃置X张牌(X为此前此技能 发动过的次数),然后置此技能发动次数",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "睦阵",
-        "name_en": "",
-        "description_cn": "出牌阶段各限一次,你可以选择一项:1.交给一名装 备区里有牌的其他角色两张牌,然后获得其装备区里 的一张牌;2.将一张装备牌置入其他角色的装备区, 然后获得其一张手牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_hold_the_camp",
+      "skill_harmonize_formations"
+    ]
   },
   {
     "id": "SHU018A",
-    "standard_id": "",
+    "standard_id": "char_jiangwan",
     "name_cn": "蒋琬",
-    "name_en": "",
+    "name_en": "Jiang Wan",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.0,
+    "traits_cn": [
+      "防御",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [
       {
         "q_cn": "什么是「背水」？",
         "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
+        "q_en": "What is \"Last Resort\"?",
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
-      }      
+      }
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "镇庭",
-        "name_en": "",
-        "description_cn": "每回合限一次，当你或你攻击范围内的一名角色成为【杀】或延时锦囊牌的目标时，若你不是此牌使用者，你可以选择一项：1.弃置此牌使用者一张手牌；2.摸一张牌；背水：你代替其成为此牌的目标。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "尽瘁",
-        "name_en": "",
-        "description_cn": "限定技，出牌阶段，你可以与一名其他角色交换位置，然后你失去X点体力（X为你的体力值-〖镇庭〗本局游戏发动次数）。若你未因此失去体力，你加1点体力上限并失去〖镇庭〗中的背水选项。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_aow_steady_the_court",
+      "skill_selfless_devotion"
+    ]
   },
   {
     "id": "SHU018B",
-    "standard_id": "",
+    "standard_id": "char_feiyi",
     "name_cn": "费祎",
-    "name_en": "",
+    "name_en": "Fei Yi",
     "gender": "Male",
-    "faction": "",
+    "faction": "Shu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "谏喻",
-        "name_en": "",
-        "description_cn": "每轮限一次，出牌阶段，你可以选择两名角色，直至你的下个回合开始时：当其中一名角色于其出牌阶段内指定另一名角色为其使用牌的目标后，你令另一名角色摸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "生息",
-        "name_en": "",
-        "description_cn": "准备阶段，你可以从游戏外或牌堆中获得一张【调剂盐梅】。结束阶段，若你于此回合使用过牌且未造成过伤害，你可以从牌堆中获得一张智囊或摸一张牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_admonish_with_wisdom",
+      "skill_nurture_recovery"
+    ]
   },
   {
     "id": "WEI098",
-    "standard_id": "",
+    "standard_id": "char_yuanhuan",
     "name_cn": "袁涣",
-    "name_en": "",
+    "name_en": "Yuan Huan",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "请决",
-        "name_en": "",
-        "description_cn": "每轮限一次，当一名其他角色使用牌指定一名体力值小于其且不处于濒死状态的另一名其他角色为唯一目标时，你可以摸一张牌并与其拼点，若你：赢，取消之；没赢，你代替成为此牌的目标。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "奉节",
-        "name_en": "",
-        "description_cn": "锁定技，准备阶段，你选择一名其他角色（直到你的下个回合开始）。一名角色的结束阶段，若你选择的角色存活，你将手牌摸至（至多摸至四张）或弃置至与其体力值相同。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_petition_for_justice",
+      "skill_honor_the_mandate"
+    ]
   },
   {
     "id": "WEI097",
-    "standard_id": "",
+    "standard_id": "char_caizhenji",
     "name_cn": "蔡贞姬",
-    "name_en": "",
+    "name_en": "Cai Zhenji",
     "gender": "Female",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "防御",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Defensive",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "舍裔",
-        "name_en": "",
-        "description_cn": "每轮限一次，当一名其他角色受到伤害时，若其体力值小于你，你可以将至少X张牌交给其（X为你的体力值）。若如此做，你防止此伤害。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "天音",
-        "name_en": "",
-        "description_cn": "锁定技，结束阶段，你从牌堆中获得你本回合未使用过的类别的牌各一张。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_shield_the_line",
+      "skill_celestial_melody"
+    ]
   },
   {
     "id": "WEI096",
-    "standard_id": "",
+    "standard_id": "char_wangcan",
     "name_cn": "王粲",
-    "name_en": "",
+    "name_en": "Wang Can",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "简单"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "七哀",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以将一张非基本牌交给一名其他角色，其选择令你摸两张牌或回复1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "善檄",
-        "name_en": "",
-        "description_cn": "出牌阶段开始时，你可以令一名其他角色获得“檄”标记（场上已有则移动）。有“檄”的角色回复体力后，若其不处于濒死状态，其选择交给你两张牌或失去1点体力。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_seven_sorrows",
+      "skill_the_call_to_arms"
+    ]
   },
   {
     "id": "WEI094",
-    "standard_id": "",
+    "standard_id": "char_wangling",
     "name_cn": "王凌",
-    "name_en": "",
+    "name_en": "Wang Ling",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.5,
+    "traits_cn": [
+      "发育",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "星启",
-        "name_en": "",
-        "description_cn": "当你使用一张除延时锦囊牌外的牌时，若你没有同牌名的“备”，你获得1枚“备”并记录为此牌的牌名。结束阶段，你可以弃1枚“备”，从牌堆中获得一张记录牌名的牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "自缚",
-        "name_en": "",
-        "description_cn": "锁定技，出牌阶段结束时，若你本阶段未使用牌，你本回合手牌上限-1，弃所有“备”。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "秘备",
-        "name_en": "",
-        "description_cn": "锁定技，使命技，游戏开始时，你获得使命“秘备”；\n成功：当你使用一张牌结算结束后，若你拥有记录为每种类别的“备”各2枚，你从牌堆获得每种类别的牌各一张，然后获得〖谋立〗。\n失败：你成功达成使命前，若你于本回合的准备阶段和弃牌阶段结束时均没有“备”，你减1点体力上限。",
-        "description_en": ""
-      },
-      "skill_4": {
-        "skill_type": "",
-        "name_cn": "谋立",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以选择一名其他角色，其弃1枚你的“备”，然后从牌堆中获得一张记录牌名的牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_star_preparation",
+      "skill_bound_by_inaction",
+      "skill_secret_reserve",
+      "skill_strategic_foundation"
+    ]
   },
   {
     "id": "WEI084",
-    "standard_id": "",
+    "standard_id": "char_huaxin",
     "name_cn": "华歆",
-    "name_en": "",
+    "name_en": "Hua Xin",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-"仁区是一个存于场上，用于存放牌的公共区域。",
-"游戏中，可以通过某些技能效果，置入或弃置仁区中的牌。",
-"仁区的规则：1.仁区中的牌上限为6张。2.当仁区中的牌超过6张时，最先置入仁区中的牌将置入弃牌堆。"   
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "渊清",
-        "name_en": "",
-        "description_cn": "锁定技，出牌阶段结束时，你随机将弃牌堆中你本回合因使用而置入弃牌堆的牌中的每种类别各一张牌置入“仁”区。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "疏陈",
-        "name_en": "",
-        "description_cn": "锁定技，当一名角色进入濒死状态时，若“仁”牌数至少为4，你获得所有“仁”牌，然后令其回复1点体力。",
-        "description_en": ""
-      }      
-    }
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「仁」区？",
+        "a_cn": "「仁」区是一个存于场上，用于存放牌的公共区域。游戏中，可以通过某些技能效果置入或弃置「仁」区中的牌。「仁」区中的牌上限为6张；当「仁」区中的牌超过6张时，最先置入的牌将置入弃牌堆。",
+        "q_en": "What is the 「Ren」 Zone?",
+        "a_en": "The 「Ren」 Zone is a shared public zone on the field used to store cards. Cards can be placed into or removed from the 「Ren」 Zone through certain skill effects. The 「Ren」 Zone holds a maximum of 6 cards; when the total exceeds 6, the card placed there first is moved to the Discard Pile."
+      }
+    ],
+    "skills": [
+      "skill_deep_clarity",
+      "skill_clear_the_obstruction"
+    ]
   },
   {
     "id": "WEI078",
-    "standard_id": "",
+    "standard_id": "char_wangshuang",
     "name_cn": "王雙",
-    "name_en": "",
+    "name_en": "Wang Shuang",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "异勇",
-        "name_en": "",
-        "description_cn": "当你受到其他角色使用【杀】造成的伤害后，若你的装备区里有武器牌，你可以获得此【杀】，然后将此牌当无距离限制且不计入次数的【杀】对其使用，若其装备区里没有武器牌，此【杀】对其造成的伤害+1。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "擅械",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以获得牌堆中的一张武器牌（若牌堆中没有武器牌，则改为随机获得一名其他角色装备区里的武器牌）。其他角色需使用点数大于你攻击范围两倍的【闪】才能抵消你使用的【杀】。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_extraordinary_valor",
+      "skill_weapon_mastery"
+    ]
   },
   {
     "id": "WEI076",
-    "standard_id": "",
+    "standard_id": "char_zhangchangpu",
     "name_cn": "张昌蒲",
-    "name_en": "",
+    "name_en": "Zhang Changpu",
     "gender": "Female",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "抵诽",
-        "name_en": "",
-        "description_cn": "锁定技，每回合限一次，当你受到伤害后，你摸一张牌或弃置一张手牌，然后展示所有手牌，若对你造成伤害的牌无花色或你没有与对你造成伤害的牌花色相同的手牌，你回复1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "严教",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以将手牌中一种花色的所有牌（至少一张）交给一名其他角色，然后对其造成1点伤害，若如此做，你的下个回合开始时，你摸X张牌（X为你以此法给出的牌数）。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_refute_slander",
+      "skill_strict_instruction"
+    ]
   },
   {
     "id": "WEI074",
-    "standard_id": "",
+    "standard_id": "char_wenyang",
     "name_cn": "文鸯",
-    "name_en": "",
+    "name_en": "Wen Yuan (Wei)",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "爆发",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Burst",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [
       {
         "q_cn": "什么是「背水」？",
         "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
+        "q_en": "What is \"Last Resort\"?",
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
       },
       {
-        "a_cn" : "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。"
-      }      
+        "q_cn": "什么是势力技？",
+        "a_cn": "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。",
+        "q_en": "What is a Faction Skill?",
+        "a_en": "A Faction Skill is a special skill type. A general with Faction Skills must choose one of the factions shown on their General Card as their faction before entering the game. They then gain the Faction Skill corresponding to their chosen faction."
+      }
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "却敌",
-        "name_en": "",
-        "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1.获得其一张手牌；2.弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水[4]：减1点体力上限。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "椎锋",
-        "name_en": "",
-        "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "冲坚",
-        "name_en": "",
-        "description_cn": "吴势力技，你可以将一张装备牌当【酒】或无距离限制且无视防具的任意一种【杀】使用。当你使用此【杀】造成伤害后，你获得目标角色装备区里的X张牌（X为此【杀】对其造成的伤害值）。",
-        "description_en": ""
-      },
-      "skill_4": {
-        "skill_type": "",
-        "name_cn": "仇决",
-        "name_en": "",
-        "description_cn": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发动一次〖却敌〗。",
-        "description_en": ""
-      }           
-    }
+    "skills": [
+      "skill_repel_the_foe",
+      "skill_wei_vanguard_thrust",
+      "skill_bitter_resolve"
+    ]
   },
   {
     "id": "WU074",
-    "standard_id": "",
+    "standard_id": "char_wenyang",
     "name_cn": "文鸯",
-    "name_en": "",
+    "name_en": "Wen Yuan (Wu)",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "爆发",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Burst",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [
       {
         "q_cn": "什么是「背水」？",
         "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
+        "q_en": "What is \"Last Resort\"?",
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
       },
       {
-        "a_cn" : "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。"
-      }      
+        "q_cn": "什么是势力技？",
+        "a_cn": "势力技是一种特殊的技能。拥有势力技的武将需要在登场前选择武将牌上的一个势力作为自己在游戏中的势力。你拥有与你选择的势力相对应的势力技。",
+        "q_en": "What is a Faction Skill?",
+        "a_en": "A Faction Skill is a special skill type. A general with Faction Skills must choose one of the factions shown on their General Card as their faction before entering the game. They then gain the Faction Skill corresponding to their chosen faction."
+      }
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "却敌",
-        "name_en": "",
-        "description_cn": "每回合限一次，当你使用【杀】或【决斗】指定唯一目标后，你可以选择一项：1.获得其一张手牌；2.弃置一张基本牌，然后此【杀】或【决斗】伤害+1；背水：减1点体力上限。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "仇决",
-        "name_en": "",
-        "description_cn": "锁定技，当你杀死其他角色后，你加1点体力上限，摸两张牌，然后本回合可以多发动一次〖却敌〗。",
-        "description_en": ""
-      }  ,
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "椎锋",
-        "name_en": "",
-        "description_cn": "魏势力技，出牌阶段限两次，你可以失去1点体力，然后视为使用一张【决斗】。当你受到此【决斗】的伤害时，你防止此伤害，此技能于此阶段内无效。",
-        "description_en": ""
-      },
-      "skill_4": {
-        "skill_type": "",
-        "name_cn": "冲坚",
-        "name_en": "",
-        "description_cn": "吴势力技，你可以将一张装备牌当【酒】或无距离限制且无视防具的任意一种【杀】使用。当你使用此【杀】造成伤害后，你获得目标角色装备区里的X张牌（X为此【杀】对其造成的伤害值）。",
-        "description_en": ""
-      }         
-    }
+    "skills": [
+      "skill_bitter_resolve",
+      "skill_wu_vanguard_thrust",
+      "skill_pierce_the_line",
+      "skill_aow_repel_the_foe"
+    ]
   },
   {
     "id": "WEI073",
-    "standard_id": "",
+    "standard_id": "char_xinpi",
     "name_cn": "辛毗",
-    "name_en": "",
+    "name_en": "Xin Pi",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "引裾",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以令一名其他角色选择一项：1.其下回合的准备阶段，跳过其接下来的出牌阶段和弃牌阶段；2.对你使用一张无距离限制的【杀】。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "持节",
-        "name_en": "",
-        "description_cn": "每回合限一次，当你成为其他角色使用牌的唯一目标时，你可以进行判定，若判定结果点数大于6，取消之。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_grasp_the_robe",
+      "skill_hold_the_commission"
+    ]
   },
   {
     "id": "WEI022",
-    "standard_id": "",
+    "standard_id": "char_bianfuren",
     "name_cn": "卞夫人",
-    "name_en": "",
+    "name_en": "Lady Bian",
     "gender": "Female",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "回复",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Recovery",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "挽危",
-        "name_en": "",
-        "description_cn": "每轮限一次,当一名其他角色进入濒死状态时,或出牌 阶段内你可以选择一名其他角色,你可以令其回复 X+1点体力(若不足使其脱离濒死,改为回复至1点 体力),然后你失去点体力(X为你的体力值)。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "约俭",
-        "name_en": "",
-        "description_cn": "你的手牌上限等于体力上限。当你进入濒死状态时，你可以弃置两张牌并回复1点体力。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_rescue_the_fallen",
+      "skill_austere_living"
+    ]
   },
   {
     "id": "WEI021A",
-    "standard_id": "",
+    "standard_id": "char_cuiyan",
     "name_cn": "崔琰",
-    "name_en": "",
+    "name_en": "Cui Yan",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wei",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "雅俊",
-        "name_en": "",
-        "description_cn": "摸牌阶段，你多摸一张牌。出牌阶段开始时，你可以用本回合获得的一张牌与一名其他角色进行拼点，若你：赢，你可以将其中一张拼点牌置于牌堆顶；没赢，你本回合手牌上限-1。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "尊嫡",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以弃置一张手牌并选择一名角色，然后你进行判定：黑色，其摸三张牌；红色，其可以移动场上一张牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_elegant_brilliance",
+      "skill_honor_the_heir"
+    ]
   },
   {
     "id": "WU094",
-    "standard_id": "",
+    "standard_id": "char_luotong",
     "name_cn": "骆统",
-    "name_en": "",
+    "name_en": "Luo Tong",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "过牌",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Card Flow",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "勤政",
-        "name_en": "",
-        "description_cn": "锁定技,当你使用或打出三张牌时,随机获得牌堆 中的一张【杀】或【闪】;当你使用或打出五张牌 时,随机获得牌准中的一张【桃】或【酒】:当你使 用或打出八张牌时,随机获得牌堆中的一张【无中 生有】或【决斗】。",
-        "description_en": ""
-      }     
-    }
+    "skills": [
+      "skill_diligent_governance"
+    ]
   },
   {
     "id": "WU091",
-    "standard_id": "",
+    "standard_id": "char_sunshao",
     "name_cn": "孙邵",
-    "name_en": "",
+    "name_en": "Sun Shao",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-      "智囊指三种普通锦囊牌名。分别为：【无中生有】，【过河拆桥】，【无懈可击】。"
+    "power_index": 3.0,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "定仪",
-        "name_en": "",
-        "description_cn": "锁定技，游戏开始时，你选择一项，效果对全场角色均生效：1.摸牌阶段的额定摸牌数+1；2.手牌上限+2；3.攻击范围+1；4.脱离濒死状态时回复1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "罪辞",
-        "name_en": "",
-        "description_cn": "当你受到受〖定仪〗影响的角色造成的伤害后，你可以令其失去〖定仪〗效果，然后其从牌堆中获得你选择的一张智囊牌。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "辅弼",
-        "name_en": "",
-        "description_cn": "每轮限一次，出牌阶段，你可以选择一名角色并选择一项：1.更换其拥有的〖定仪〗效果；2.弃置一张牌，令其拥有的〖定仪〗效果翻倍（直到下一轮的你的下一个回合开始）。",
-        "description_en": ""
-      }        
-    }
+    "traits_en": [
+      "Control",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「智囊」？",
+        "a_cn": "「智囊」指三种普通锦囊牌名，分别为：【无中生有】、【过河拆桥】、【无懈可击】。",
+        "q_en": "What are \"Wisdom Cards\"?",
+        "a_en": "\"Wisdom Cards\" refer to three Non Time-Delay Tool Card names: [Resupply], [Dismantle], and [Nullification]."
+      }
+    ],
+    "skills": [
+      "skill_establish_protocol",
+      "skill_censure_for_crimes",
+      "skill_reinforce_the_rites"
+    ]
   },
   {
     "id": "WU086",
-    "standard_id": "",
+    "standard_id": "char_wujing",
     "name_cn": "吴景",
-    "name_en": "",
+    "name_en": "Wu Jing",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "合击",
-        "name_en": "",
-        "description_cn": "当一名角色对其他角色使用仅指定唯一目标的【决斗】 或红色【杀】结算结束后,你可以对该目标角色使用一 张无距离与次数限制的【杀】或【决斗】,然后若你使用 的牌不为转化牌,你随机获得一张红色牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "流兵",
-        "name_en": "",
-        "description_cn": "锁定技,你于出牌阶段内使用的第一张非虚拟【杀】的 花色视为方块。其他角色于出牌阶段使用的非转化黑色 【杀】结算结束后,若此牌未造成伤害,你获得之。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_combined_strike",
+      "skill_roving_troops"
+    ]
   },
   {
     "id": "WU063",
-    "standard_id": "",
+    "standard_id": "char_qiaogong",
     "name_cn": "桥公",
-    "name_en": "",
+    "name_en": "Lord Qiao",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "遗珠",
-        "name_en": "",
-        "description_cn": "结束阶段,你摸两张牌,然后选择两张牌作为“遗珠” 牌并记录牌名,随机洗入牌堆顶前张牌中(X为存活 角色数的两倍),其他角色使用“遗珠”牌指定唯一目 标时,你可以取消之,然后你将此牌从记录中移除。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "鸾俦",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次,你可以移除场上所有“姻”标记并 选择两名角色,令其获得“姻”标记。拥有“姻”标记 的角色视为拥有技能“共患”。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "共患",
-        "name_en": "",
-        "description_cn": "锁定技,每回合限一次,当另一名拥有“姻”标记的角色 受到伤害时,若其体力值小于你,则将此伤害转移给你,然 后移方的“姻”标记。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_hidden_gems",
+      "skill_matchmaker",
+      "skill_shared_peril"
+    ]
   },
   {
     "id": "WU054",
-    "standard_id": "",
+    "standard_id": "char_zhangwen",
     "name_cn": "张温",
-    "name_en": "",
+    "name_en": "Zhang Wen",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-      "仁区是一个存于场上，用于存放牌的公共区域。游戏中，可以通过某些技能效果，置入或弃置仁区中的牌。仁区的规则：1.仁区中的牌上限为6张。2.当仁区中的牌超过6张时，最先置入仁区中的牌将置入弃牌堆。"
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "辅助",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "戈帛",
-        "name_en": "",
-        "description_cn": "锁定技，一名角色回复体力后，你将牌堆顶的一张牌置入“仁”区。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "颂蜀",
-        "name_en": "",
-        "description_cn": "一名体力值大于你的其他角色的摸牌阶段开始时，若“仁”区有牌，你可以令其放弃摸牌，然后获得X张“仁”（X为你的体力值且至多为5）。若如此做，本回合其使用牌不能指定其他角色为目标。",
-        "description_en": ""
-      }      
-    }
+    "traits_en": [
+      "Control",
+      "Support",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「仁」区？",
+        "a_cn": "「仁」区是一个存于场上，用于存放牌的公共区域。游戏中，可以通过某些技能效果置入或弃置「仁」区中的牌。「仁」区中的牌上限为6张；当「仁」区中的牌超过6张时，最先置入的牌将置入弃牌堆。",
+        "q_en": "What is the 「Ren」 Zone?",
+        "a_en": "The 「Ren」 Zone is a shared public zone on the field used to store cards. Cards can be placed into or removed from the 「Ren」 Zone through certain skill effects. The 「Ren」 Zone holds a maximum of 6 cards; when the total exceeds 6, the card placed there first is moved to the Discard Pile."
+      }
+    ],
+    "skills": [
+      "skill_tribute_cloth",
+      "skill_laud_shu"
+    ]
   },
   {
     "id": "WU046",
-    "standard_id": "",
+    "standard_id": "char_zhouchu",
     "name_cn": "周处",
-    "name_en": "",
+    "name_en": "Zhou Chu",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "使命",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Mission",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "乡害",
-        "name_en": "",
-        "description_cn": "锁定技，其他角色的手牌上限-1，你手牌中的装备牌均只能当【酒】使用。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "除害",
-        "name_en": "",
-        "description_cn": "使命技，出牌阶段限一次，你可以摸一张牌，并与一名其他角色拼点，此次你的拼点牌点数+X（X为4-你装备区里的牌数）。若你赢：你观看其手牌，从牌堆或弃牌堆中随机获得其手牌中拥有的类别的牌各一张；当你于此阶段对其造成伤害后，将牌堆或弃牌堆中随机一张装备牌置入你对应的空置装备栏。\n成功：当一张装备牌进入你的装备区后，若你的装备区里的牌数不小于3，你获得〖彰名〗，失去〖乡害〗，将体力回复至上限。\n失败：若你于使命达成前，你发动〖除害〗拼点没赢，且你的拼点牌的点数不大于6，使命失败。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "彰名",
-        "name_en": "",
-        "description_cn": "锁定技，你使用梅花牌不能被响应。每回合限一次，当你对其他角色造成伤害后，其随机弃置一张手牌，然后你从牌堆或弃牌堆中获得与其弃置牌类别不同的牌各一张（若其无法弃置手牌，改为你从牌堆或弃牌堆中获得所有类别的牌各一张），以此法获得的牌不计入本回合手牌上限。",
-        "description_en": ""
-      }       
-    }
+    "skills": [
+      "skill_village_menace",
+      "skill_eliminate_the_evil",
+      "skill_renowned_name"
+    ]
   },
   {
     "id": "WU025",
-    "standard_id": "",
+    "standard_id": "char_sunyi",
     "name_cn": "孙翊",
-    "name_en": "",
+    "name_en": "Sun Yi",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.0,
+    "traits_cn": [
+      "进攻",
+      "过牌",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "躁厉",
-        "name_en": "",
-        "description_cn": "锁定技，出牌阶段，你只能使用或打出本回合获得的手牌。当你使用或打出手牌时，若你的“厉”数小于4，你获得1枚“厉”。回合开始时，若你有“厉”，你弃所有“厉”并弃置任意张牌（若没有可弃置的牌则跳过），摸X张牌（X为你弃的“厉”数与弃置牌数之和）。若你弃的“厉”数大于2，你失去1点体力。",
-        "description_en": ""
-      }     
-    }
+    "skills": [
+      "skill_restless_ferocity"
+    ]
   },
   {
     "id": "WU023",
-    "standard_id": "",
+    "standard_id": "char_chenwu&dongxi",
     "name_cn": "陈武&董袭",
-    "name_en": "",
+    "name_en": "Chen Wu & Dong Xi",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [
       {
         "q_cn": "什么是「背水」？",
         "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
+        "q_en": "What is \"Last Resort\"?",
         "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
-      }      
+      }
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "毅烈",
-        "name_en": "",
-        "description_cn": "出牌阶段开始时，你可以选择一项：1.你于此阶段内使用【杀】的次数上限+1；2.当你使用的【杀】于此回合内被抵消后，你摸一张牌；背水：你失去1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "奋命",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以选择一项：1.令一名体力值不大于你的角色横置；2.获得一名体力值不大于你且已横置的其他角色的一张牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_resolute_valor",
+      "skill_charge_with_life"
+    ]
   },
   {
     "id": "WU022",
-    "standard_id": "",
-    "name_cn": "",
-    "name_en": "",
+    "standard_id": "char_wuyi",
+    "name_cn": "吴懿",
+    "name_en": "Wu Yi",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-      "技能发动者从擂进、变阵、鸣止中选择一项令目标执行，若其于其回合内弃牌阶段结束后未整肃失败，则选择“整肃奖励”。整肃奖励：选择一项：1.摸两张牌；2.回复1点体力。",
-      "擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。",
-      "变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。",
-      "鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。"
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "调度",
-        "name_en": "",
-        "description_cn": "准备阶段，你可以将一名角色装备区里的一张牌移动至另一名角色的装备区，然后第一名角色摸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "典财",
-        "name_en": "",
-        "description_cn": "其他角色的出牌阶段结束时，若你于此阶段失去的牌数不小于X（X为你的体力值），你可以将手牌摸至体力上限。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "严纪",
-        "name_en": "",
-        "description_cn": "出牌阶段开始时，你可以开始一次“整肃”。若如此做，弃牌阶段结束后，若你整肃未失败，你获得整肃奖励。",
-        "description_en": ""
-      }        
-    }
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「整肃」？",
+        "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
+        "q_en": "What is \"Drill\"?",
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
+      }
+    ],
+    "skills": [
+      "skill_troop_deployment",
+      "skill_manage_the_treasury",
+      "skill_drill_enforcement"
+    ]
   },
   {
     "id": "WU017",
-    "standard_id": "",
+    "standard_id": "char_jiangqin",
     "name_cn": "蒋钦",
-    "name_en": "",
+    "name_en": "Jiang Qin",
     "gender": "Male",
-    "faction": "",
+    "faction": "Wu",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.0,
+    "traits_cn": [
+      "防御",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Defensive",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "俭衣",
-        "name_en": "",
-        "description_cn": "锁定技,其他角色的回合结束后,若本回合有防具 牌被弃置,且此牌仍在弃牌堆中,则你选择其中一 张获得之。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "尚义",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次,你可以弃置一张牌并选择一名 有手牌的其他角色,令其查看你的手牌,然后你查 看其手牌并获得其中一张。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_frugal_attire",
+      "skill_righteous_exchange"
+    ]
   },
   {
     "id": "QUN110",
-    "standard_id": "",
+    "standard_id": "char_duyu",
     "name_cn": "杜预",
-    "name_en": "",
+    "name_en": "Du Yu",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 3.0,
+    "traits_cn": [
+      "发育",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Scaling",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "武库",
-        "name_en": "",
-        "description_cn": "锁定技,当一名角色使用装备时,你获得1枚“武 库”标记(“武库”标记至多为3)。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "三陈",
-        "name_en": "",
-        "description_cn": "觉醒技,结束阶段,若你已有3枚“武库”,你增 加1点体力上限,回复1点体力,然后获得技能 “灭吴”。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "灭吴",
-        "name_en": "",
-        "description_cn": "每回合限一次,你可以弃置1枚“武库”标记,将一 张牌当做任意一张基本牌、普通锦囊牌或延时锦囊牌 使用或打出,然后你摸一张牌。",
-        "description_en": ""
-      }        
-    }
+    "skills": [
+      "skill_armory",
+      "skill_three_proclamations",
+      "skill_conquer_wu"
+    ]
   },
   {
     "id": "QUN109",
-    "standard_id": "",
+    "standard_id": "char_yanghu",
     "name_cn": "羊祜",
-    "name_en": "",
+    "name_en": "Yang Hu",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "过牌",
+      "简单"
+    ],
+    "traits_en": [
+      "Control",
+      "Card Flow",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "明伐",
-        "name_en": "",
-        "description_cn": "结束阶段，你可以展示一张牌，然后你下回合的出牌阶段开始时，你可以用此牌与一名角色拼点，若你：赢，你获得其一张牌，并随机从牌堆获得一张点数比此牌牌面点数小1点的牌；没赢，本回合你使用牌不能指定其他角色为目标。当你拼点的牌亮出后，你令此牌的点数+2。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "戎备",
-        "name_en": "",
-        "description_cn": "限定技，出牌阶段，你可以选择一名有空置的装备栏的角色，令其为其每个空置的装备栏随机使用一张装备牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_display_strength",
+      "skill_arm_the_troops"
+    ]
   },
   {
     "id": "QUN106",
-    "standard_id": "",
+    "standard_id": "char_zhangzhongjing",
     "name_cn": "张仲景",
-    "name_en": "",
+    "name_en": "Zhang Zhongjing",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-"仁区是一个存于场上，用于存放牌的公共区域。",
-"游戏中，可以通过某些技能效果，置入或弃置仁区中的牌。",
-"仁区的规则：1.仁区中的牌上限为6张。2.当仁区中的牌超过6张时，最先置入仁区中的牌将置入弃牌堆。"         
+    "power_index": 3.0,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "济世",
-        "name_en": "",
-        "description_cn": "锁定技，你使用牌结算结束后，若此牌没有造成伤害，且此牌仍在弃牌堆中，则将其置于“仁”区中；当“仁”牌非因“仁”区溢出而离开“仁”区时，你摸一张牌。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "疗疫",
-        "name_en": "",
-        "description_cn": "其他角色回合开始时，若其手牌数小于体力值且场上“仁”数量不小于X，则你可以令其获得场上X张“仁”；若其手牌数大于体力值，则可以令其将X张牌置于“仁”中（X为其手牌数与体力值差值，且至多为4）。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "病论",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以选择一名角色并弃置一张“仁”牌，令其选择：1.摸一张牌；2.于其回合结束后回复1点体力。",
-        "description_en": ""
-      }      
-    }
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「仁」区？",
+        "a_cn": "「仁」区是一个存于场上，用于存放牌的公共区域。游戏中，可以通过某些技能效果置入或弃置「仁」区中的牌。「仁」区中的牌上限为6张；当「仁」区中的牌超过6张时，最先置入的牌将置入弃牌堆。",
+        "q_en": "What is the 「Ren」 Zone?",
+        "a_en": "The 「Ren」 Zone is a shared public zone on the field used to store cards. Cards can be placed into or removed from the 「Ren」 Zone through certain skill effects. The 「Ren」 Zone holds a maximum of 6 cards; when the total exceeds 6, the card placed there first is moved to the Discard Pile."
+      }
+    ],
+    "skills": [
+      "skill_remedy_the_age",
+      "skill_cure_the_plague",
+      "skill_discourse_on_illness"
+    ]
   },
   {
     "id": "QUN094",
-    "standard_id": "",
+    "standard_id": "char_liuzhang",
     "name_cn": "刘璋",
-    "name_en": "",
+    "name_en": "Liu Zhang",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "发育",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Scaling",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "据土",
-        "name_en": "",
-        "description_cn": "锁定技，准备阶段，你获得你武将牌上的所有“生”，然后摸X+1张牌，并将X张牌置于你的武将牌上，称为“生”（X为你〖邀虎〗选择势力的角色数）。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "邀虎",
-        "name_en": "",
-        "description_cn": "每轮限一次，回合开始时，你须选择场上的一个势力。你选择势力的其他角色出牌阶段开始时，其获得你的一张“生”，然后其须选择一项：1.对你指定的一名其攻击范围内的其他角色使用一张【杀】（此【杀】不计入使用次数）；2.直到本阶段结束时，其使用伤害类牌指定你为目标时，需交给你两张牌，否则取消之。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "怀璧",
-        "name_en": "",
-        "description_cn": "主公技，锁定技，你的手牌上限+X（X为你〖邀虎〗选择势力的角色数）。",
-        "description_en": ""
-      }        
-    }
+    "skills": [
+      "skill_hold_the_territory",
+      "skill_summon_the_tiger",
+      "skill_treasure_the_jade"
+    ]
   },
   {
     "id": "QUN083",
-    "standard_id": "",
+    "standard_id": "char_zhujun",
     "name_cn": "朱儁",
-    "name_en": "",
+    "name_en": "Zhu Jun",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-      "技能发动者从擂进、变阵、鸣止中选择一项令目标执行，若其于其回合内弃牌阶段结束后未整肃失败，则选择“整肃奖励”。整肃奖励：选择一项：1.摸两张牌；2.回复1点体力。",
-      "擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。",
-      "变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。",
-      "鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。"
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "佯解",
-        "name_en": "",
-        "description_cn": "出牌阶段限一次，你可以与一名角色拼点。若你没赢，你可以令另一名其他角色视为对与你拼点的角色使用一张无距离限制的火【杀】。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "拒降",
-        "name_en": "",
-        "description_cn": "限定技，当其他角色脱离濒死状态后，你可以对其造成1点伤害。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "厚俸",
-        "name_en": "",
-        "description_cn": "每轮限一次，你攻击范围内一名角色出牌阶段开始时，你可以令其开始一次“整肃”，若如此做，其弃牌阶段结束后，若其“整肃”未失败，你与其获得“整肃”奖励。",
-        "description_en": ""
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「整肃」？",
+        "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
+        "q_en": "What is \"Drill\"?",
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
       }
-    }
+    ],
+    "skills": [
+      "skill_feign_surrender",
+      "skill_refuse_to_yield",
+      "skill_generous_reward"
+    ]
   },
   {
     "id": "QUN079",
-    "standard_id": "",
+    "standard_id": "char_gaolan",
     "name_cn": "高覽",
-    "name_en": "",
+    "name_en": "Gao Lan",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "简单"
+    ],
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "Simple"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "峻攻",
-        "name_en": "",
-        "description_cn": "出牌阶段，你可以弃置X张牌或失去X点体力，视为使用一张无距离与次数限制的【杀】（X为你本阶段此前发动过此技能的次数+1），然后当此【杀】造成伤害后，此技能本回合失效。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "等力",
-        "name_en": "",
-        "description_cn": "当你使用【杀】指定一名角色为目标后，或当你成为其他角色使用【杀】的目标后，若你与其体力值相等，你可以摸一张牌。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_fierce_assault",
+      "skill_matched_strength"
+    ]
   },
   {
     "id": "QUN078",
-    "standard_id": "",
+    "standard_id": "char_xunchen",
     "name_cn": "荀諶",
-    "name_en": "",
+    "name_en": "Xun Chen",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "控制",
+      "防御",
+      "困难"
+    ],
+    "traits_en": [
+      "Control",
+      "Defensive",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "危迫",
-        "name_en": "",
-        "description_cn": "每回合限一次,出牌阶段,你可以选择一名角色并指定一张 【兵临城下】或智囊的牌名,令其获得一个记录此牌名的“危 迫”标记。拥有“危迫”标记的角色在其出牌阶段,其可以 移去一个“危迫”标记,并弃置一张【杀】,然后从游戏外 或牌堆中随机获得一张此标记记录牌名的牌。回合开始时, 你移去场上所有“危迫”标记。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "陈势",
-        "name_en": "",
-        "description_cn": "当其他角色使用【兵临城下】指定目标后,其可以交给你一 张牌,然后将牌堆顶三张牌中不为【杀】的牌置入弃牌堆; 当其他角色成为【兵临城下】的目标后,其可以交给你一张 牌,然后将牌堆顶三张牌中的【杀】置入弃牌堆。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "谋识",
-        "name_en": "",
-        "description_cn": "锁定技,当你受到伤害时,若造成伤害的牌与上次对你造成 伤害的牌花色相同,你防止此伤害。",
-        "description_en": ""
-      }      
-    }
+    "skills": [
+      "skill_coercive_pressure",
+      "skill_array_the_forces",
+      "skill_strategic_insight"
+    ]
   },
   {
     "id": "QUN054",
-    "standard_id": "",
+    "standard_id": "char_huangfusong",
     "name_cn": "皇甫嵩",
-    "name_en": "",
+    "name_en": "Huangfu Song",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 4,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
-    "faq": [
-      "技能发动者从擂进、变阵、鸣止中选择一项令目标执行，若其于其回合内弃牌阶段结束后未整肃失败，则选择“整肃奖励”。整肃奖励：选择一项：1.摸两张牌；2.回复1点体力。",
-      "擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。",
-      "变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。",
-      "鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。"
+    "power_index": 3.5,
+    "traits_cn": [
+      "进攻",
+      "控制",
+      "困难"
     ],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "讨乱",
-        "name_en": "",
-        "description_cn": "每回合限一次，当判定牌生效时，若结果为黑桃，你可以终止此次判定，然后选择一项：1.获得此判定牌；2.若进行判定的角色不为你，你视为对其使用一张无距离和次数限制的火【杀】。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "势击",
-        "name_en": "",
-        "description_cn": "当你对其他角色造成属性伤害时，若你的手牌数不为全场唯一最多，你可以观看其手牌并弃置其中所有的红色牌，然后你摸等量的牌。",
-        "description_en": ""
-      },
-      "skill_3": {
-        "skill_type": "",
-        "name_cn": "整军",
-        "name_en": "",
-        "description_cn": "出牌阶段开始时，你可以进行一次“整肃”，若如此做，弃牌阶段结束后，若你“整肃”未失败，你获得“整肃”奖励，并可以令一名其他角色也获得“整肃”奖励。",
-        "description_en": ""
-      }       
-    }
+    "traits_en": [
+      "Aggressive",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
+    "faq": [
+      {
+        "q_cn": "什么是「整肃」？",
+        "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
+        "q_en": "What is \"Drill\"?",
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
+      }
+    ],
+    "skills": [
+      "skill_suppress_the_chaos",
+      "skill_momentum_strike",
+      "skill_marshal_the_army"
+    ]
   },
   {
     "id": "QUN014",
-    "standard_id": "",
+    "standard_id": "char_kongrong",
     "name_cn": "孔融",
-    "name_en": "",
+    "name_en": "Kong Rong",
     "gender": "Male",
-    "faction": "",
+    "faction": "Qun",
     "health": 3,
-    "power_index": 0.0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Arts of War",
+    "power_index": 2.5,
+    "traits_cn": [
+      "辅助",
+      "控制",
+      "困难"
+    ],
+    "traits_en": [
+      "Support",
+      "Control",
+      "High Difficulty"
+    ],
+    "expansion": "Art of War",
     "faq": [],
-    "skills": {
-      "skill_1": {
-        "skill_type": "",
-        "name_cn": "名仕",
-        "name_en": "",
-        "description_cn": "锁定技，当你受到伤害后，若你有“谦”，伤害来源弃置其区域内的一张牌，若此牌为：黑色，你获得之；红色，你回复1点体力。",
-        "description_en": ""
-      },
-      "skill_2": {
-        "skill_type": "",
-        "name_cn": "礼让",
-        "name_en": "",
-        "description_cn": "其他角色的摸牌阶段开始时，若你没有“谦”，你可以令其多摸两张牌，然后获得“谦”。若如此做：其弃牌阶段结束时，你获得其弃置的至多两张牌；准备阶段，你跳过下个摸牌阶段，然后弃“谦”。",
-        "description_en": ""
-      }      
-    }
-  }]
+    "skills": [
+      "skill_renowned_scholar",
+      "skill_humble_deference"
+    ]
+  }
+]
