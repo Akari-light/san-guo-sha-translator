@@ -1,19 +1,48 @@
 // lib/features/ai/presentation/screens/scanner_screen.dart
 //
-// Discover tab — card scanner only.
-// Search mode has been extracted to discover_search_screen.dart.
+// Discover tab — card scanner with Interactive Region Selection (Pillar 6).
 //
-// Two explicit screen states:
-//   _ScannerState.live      — live camera feed, shutter/gallery/mode pill visible
+// Three explicit screen states (upgraded from two in v1.0):
+//   _ScannerState.live      — live camera feed, shutter/gallery/mode pill
 //   _ScannerState.reviewing — frozen still + OCR overlay + ScannerResultsSheet
+//   _ScannerState.selecting — frozen still dimmed + region selection overlay
 //
-// Pressing the shutter transitions live → reviewing.
-// Pressing back (hardware or back arrow) in reviewing transitions back → live.
-// Pressing back in live calls onBack (returns to previous tab).
+// State transitions:
+//   live → reviewing         (shutter press or gallery pick)
+//   reviewing → selecting    ("Select Region" from results sheet)
+//   selecting → reviewing    ("Re-scan" on selected region)
+//   selecting → reviewing    (back press — restore original results)
+//   reviewing → live         (back press or tap-dismiss)
 //
-// Top bar (scan mode only, no AppBar):
-//   ← (back)   ✗ (flash)   Discover   [spacer to balance left icons]
-//   Mirrors Google Lens layout exactly.
+// Pillar 6 Coordinate Transformation (spec §4 Pillar 6.3):
+//
+//   The frozen preview uses Image.memory(..., fit: BoxFit.cover) which scales
+//   the camera buffer to fill the widget and crops the overflow. The user
+//   draws a Rect in widget coordinates; we must transform it to buffer pixel
+//   coordinates before cropping.
+//
+//   GIVEN:
+//     buffer_w, buffer_h  = raw JPEG dimensions
+//     widget_w, widget_h  = LayoutBuilder constraints
+//     user_rect           = Rect drawn by user (widget coords)
+//
+//   STEP 1: BoxFit.cover inverse
+//     scale = max(widget_w/buffer_w, widget_h/buffer_h)
+//     rendered_w = buffer_w * scale
+//     rendered_h = buffer_h * scale
+//     crop_x = (rendered_w - widget_w) / 2   (horizontal overflow)
+//     crop_y = (rendered_h - widget_h) / 2   (vertical overflow)
+//
+//   STEP 2: Widget → rendered-image coordinates
+//     rendered_rect = user_rect.translate(crop_x, crop_y)
+//
+//   STEP 3: Rendered-image → buffer pixel coordinates
+//     buffer_rect = Rect(
+//       rendered_rect.left / scale,
+//       rendered_rect.top / scale,
+//       rendered_rect.right / scale,
+//       rendered_rect.bottom / scale,
+//     ).clamped to buffer dimensions
 //
 // Architecture:
 //   - No feature/* presentation imports — navigation via onCardTap / onBack
@@ -21,11 +50,14 @@
 //   - onNavBarVisibilityChanged: false in scan mode, true in search mode
 
 import 'dart:io';
+import 'dart:math' as math;
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
+import 'package:image/image.dart' as img;
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/services/recently_viewed_service.dart';
@@ -41,13 +73,17 @@ enum _FlashMode { off, auto, on }
 
 enum _DiscoverMode { scan, search }
 
-/// The two explicit scanner screen states.
+/// Three explicit scanner screen states (v2.0 — added [selecting]).
 enum _ScannerState {
   /// Live camera feed is active. Shutter/gallery/mode controls visible.
   live,
 
   /// Frozen still is showing, OCR running or complete, results sheet visible.
   reviewing,
+
+  /// Frozen still dimmed. User is drawing a selection rectangle to isolate
+  /// a single card in a multi-card frame. Re-scan button visible.
+  selecting,
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -89,30 +125,42 @@ class ScannerScreenState extends State<ScannerScreen>
   double _maxZoom = 8.0;
   double _baseZoom = 1.0;
 
-  // ── Screen state (the two explicit states)
+  // ── Screen state
   _ScannerState _state = _ScannerState.live;
 
-  /// True when the scanner is showing a frozen still + results sheet.
+  /// True when the scanner is in reviewing OR selecting state.
   /// Read by main.dart's outer PopScope to skip tab navigation while the
   /// scanner is handling the back press internally.
-  bool get isReviewing => _state == _ScannerState.reviewing;
+  bool get isReviewing =>
+      _state == _ScannerState.reviewing || _state == _ScannerState.selecting;
 
   // ── Captured still — set before any setState to prevent blank frame
   File? _capturedFile;
   Uint8List? _capturedImageBytes;
 
-  // ── Processing flag — true while OCR/matching is running in reviewing state
+  // ── Processing flag — true while OCR/matching is running
   bool _processing = false;
 
   // ── Results
   List<MatchCandidate> _candidates = [];
   List<TextBlock> _ocrBlocks = [];
 
+  // ── Region selection (Pillar 6)
+  Rect? _selectionRect;           // in widget coordinates
+  Offset? _selectionStart;        // drag start point
+  bool _regionScanProcessing = false;
+
+  // ── Preserved results — original results before region re-scan
+  List<MatchCandidate>? _originalCandidates;
+
   // ── Mode
   _DiscoverMode _mode = _DiscoverMode.scan;
 
   // ── Gallery picker
   final ImagePicker _imagePicker = ImagePicker();
+
+  // ── Widget size cache (set by LayoutBuilder, used by coordinate transform)
+  Size _widgetSize = Size.zero;
 
   // ─────────────────────────────────────────────────────────────────────────
 
@@ -190,7 +238,7 @@ class ScannerScreenState extends State<ScannerScreen>
     setState(() { _cameraError = msg; _initialising = false; });
   }
 
-  // ── Scan ──────────────────────────────────────────────────────────────────
+  // ── Scan (full frame) ────────────────────────────────────────────────────
 
   Future<void> _scan() async {
     final ctrl = _controller;
@@ -203,24 +251,21 @@ class ScannerScreenState extends State<ScannerScreen>
       final xFile = await ctrl.takePicture();
       final bytes = await File(xFile.path).readAsBytes();
 
-      // ── Critical: assign bytes BEFORE setState so the widget tree already
-      // has the image data when it first rebuilds for the reviewing state.
-      // This prevents any intermediate blank/black frame.
       _capturedFile = File(xFile.path);
       _capturedImageBytes = bytes;
 
-      // Single setState: live → reviewing. The frozen image is already loaded.
       if (!mounted) return;
       setState(() {
         _state = _ScannerState.reviewing;
         _processing = true;
         _candidates = [];
         _ocrBlocks = [];
+        _originalCandidates = null;
+        _selectionRect = null;
       });
 
       ctrl.setFocusMode(FocusMode.auto).ignore();
 
-      // OCR + matching run in the background while the frozen image is shown
       final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
       final inputImage = InputImage.fromFilePath(xFile.path);
       final recognised = await recogniser.processImage(inputImage);
@@ -229,6 +274,7 @@ class ScannerScreenState extends State<ScannerScreen>
       final result = await ScannerService.instance.match(
         bytes,
         recognisedText: recognised,
+        source: ScanSource.camera,
       );
 
       if (!mounted) return;
@@ -239,23 +285,14 @@ class ScannerScreenState extends State<ScannerScreen>
       });
 
       if (result.candidates.isEmpty) {
-        if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Card not recognised — try again'),
-            behavior: SnackBarBehavior.floating,
-            duration: Duration(seconds: 2),
-          ),
-        );
+        _showSnack('Card not recognised — try again');
         _returnToLive();
       }
     } catch (e) {
       if (!mounted) return;
       setState(() { _processing = false; _capturedImageBytes = null; });
       _returnToLive();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Scan failed: $e'), behavior: SnackBarBehavior.floating),
-      );
+      _showSnack('Scan failed: $e');
     }
   }
 
@@ -268,7 +305,6 @@ class ScannerScreenState extends State<ScannerScreen>
     if (picked == null || !mounted) return;
 
     final bytes = await picked.readAsBytes();
-
     _capturedImageBytes = bytes;
 
     if (!mounted) return;
@@ -277,6 +313,8 @@ class ScannerScreenState extends State<ScannerScreen>
       _processing = true;
       _candidates = [];
       _ocrBlocks = [];
+      _originalCandidates = null;
+      _selectionRect = null;
     });
 
     try {
@@ -285,7 +323,11 @@ class ScannerScreenState extends State<ScannerScreen>
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      final result = await ScannerService.instance.match(bytes, recognisedText: recognised);
+      final result = await ScannerService.instance.match(
+        bytes,
+        recognisedText: recognised,
+        source: ScanSource.gallery,
+      );
 
       if (!mounted) return;
       setState(() {
@@ -295,29 +337,193 @@ class ScannerScreenState extends State<ScannerScreen>
       });
 
       if (result.candidates.isEmpty) {
-        if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Card not recognised — try again'),
-            behavior: SnackBarBehavior.floating,
-            duration: Duration(seconds: 2),
-          ),
-        );
+        _showSnack('Card not recognised — try again');
         _returnToLive();
       }
     } catch (e) {
       if (!mounted) return;
       setState(() { _processing = false; _capturedImageBytes = null; });
       _returnToLive();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Scan failed: $e'), behavior: SnackBarBehavior.floating),
+      _showSnack('Scan failed: $e');
+    }
+  }
+
+  // ═════════════════════════════════════════════════════════════════════════
+  // PILLAR 6 — INTERACTIVE REGION SELECTION
+  // ═════════════════════════════════════════════════════════════════════════
+
+  /// Enters region selection mode. Called from the results sheet's
+  /// "Select Region" button.
+  void _enterSelectionMode() {
+    _originalCandidates ??= List.of(_candidates);
+    setState(() {
+      _state = _ScannerState.selecting;
+      _selectionRect = null;
+      _selectionStart = null;
+    });
+  }
+
+  /// Exits region selection without re-scanning. Restores original results.
+  void _exitSelectionMode() {
+    setState(() {
+      _state = _ScannerState.reviewing;
+      _selectionRect = null;
+      _selectionStart = null;
+      if (_originalCandidates != null) {
+        _candidates = _originalCandidates!;
+      }
+    });
+  }
+
+  /// Handles pan start for drawing the selection rectangle.
+  void _onSelectionPanStart(DragStartDetails details) {
+    setState(() {
+      _selectionStart = details.localPosition;
+      _selectionRect = Rect.fromPoints(
+        details.localPosition,
+        details.localPosition,
       );
+    });
+  }
+
+  /// Handles pan update — expands the selection rectangle.
+  void _onSelectionPanUpdate(DragUpdateDetails details) {
+    if (_selectionStart == null) return;
+    setState(() {
+      _selectionRect = Rect.fromPoints(
+        _selectionStart!,
+        details.localPosition,
+      );
+    });
+  }
+
+  /// Re-scans using only the selected region.
+  ///
+  /// This is the core Pillar 6 flow:
+  ///   1. Transform widget Rect → buffer pixel Rect
+  ///   2. Crop the JPEG buffer to the selected region
+  ///   3. Re-run MLKit OCR on the cropped image
+  ///   4. Pass cropped bytes + new OCR to ScannerService.match()
+  ///   5. Update results
+  Future<void> _rescanSelectedRegion() async {
+    final bytes = _capturedImageBytes;
+    final rect = _selectionRect;
+    if (bytes == null || rect == null || _regionScanProcessing) return;
+
+    // Minimum selection size — prevent accidental tiny taps
+    if (rect.width < 40 || rect.height < 40) {
+      _showSnack('Selection too small — draw a larger rectangle');
+      return;
+    }
+
+    setState(() { _regionScanProcessing = true; });
+
+    try {
+      // ── Step 1: Decode to get buffer dimensions ──────────────────────
+      final decoded = img.decodeImage(bytes);
+      if (decoded == null) {
+        _showSnack('Failed to decode image');
+        setState(() { _regionScanProcessing = false; });
+        return;
+      }
+
+      final bufferW = decoded.width.toDouble();
+      final bufferH = decoded.height.toDouble();
+      final widgetW = _widgetSize.width;
+      final widgetH = _widgetSize.height;
+
+      if (widgetW <= 0 || widgetH <= 0) {
+        setState(() { _regionScanProcessing = false; });
+        return;
+      }
+
+      // ── Step 2: BoxFit.cover inverse transform ───────────────────────
+      //
+      // BoxFit.cover scales the buffer to FILL the widget, then crops
+      // the overflow. We reverse this to map widget coords back to
+      // buffer pixel coords.
+      //
+      // scale = whichever axis needs more scaling to fill
+      // rendered = buffer × scale (one axis matches widget, other overflows)
+      // crop = (rendered - widget) / 2 (symmetric overflow on both sides)
+
+      final scale = math.max(widgetW / bufferW, widgetH / bufferH);
+      final renderedW = bufferW * scale;
+      final renderedH = bufferH * scale;
+      final cropX = (renderedW - widgetW) / 2.0;
+      final cropY = (renderedH - widgetH) / 2.0;
+
+      // ── Step 3: Widget rect → buffer rect ────────────────────────────
+      //
+      // Add the crop offset (translates from the visible widget origin to
+      // the rendered-image origin), then divide by scale to get buffer px.
+
+      final bLeft   = ((rect.left   + cropX) / scale).round().clamp(0, decoded.width);
+      final bTop    = ((rect.top    + cropY) / scale).round().clamp(0, decoded.height);
+      final bRight  = ((rect.right  + cropX) / scale).round().clamp(0, decoded.width);
+      final bBottom = ((rect.bottom + cropY) / scale).round().clamp(0, decoded.height);
+
+      final bWidth  = bRight - bLeft;
+      final bHeight = bBottom - bTop;
+
+      if (bWidth < 20 || bHeight < 20) {
+        _showSnack('Selected region too small after transform');
+        setState(() { _regionScanProcessing = false; });
+        return;
+      }
+
+      // ── Step 4: Crop the buffer ──────────────────────────────────────
+      final cropped = img.copyCrop(
+        decoded,
+        x: bLeft,
+        y: bTop,
+        width: bWidth,
+        height: bHeight,
+      );
+      final croppedJpeg = Uint8List.fromList(img.encodeJpg(cropped, quality: 90));
+
+      // ── Step 5: Write temp file for MLKit (requires file path) ───────
+      final tempDir = await Directory.systemTemp.createTemp('sha_crop_');
+      final tempFile = File('${tempDir.path}/crop.jpg');
+      await tempFile.writeAsBytes(croppedJpeg);
+
+      // ── Step 6: Re-run OCR on cropped region ─────────────────────────
+      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
+      final inputImage = InputImage.fromFilePath(tempFile.path);
+      final recognised = await recogniser.processImage(inputImage);
+      await recogniser.close();
+
+      // ── Step 7: Run fusion pipeline with userCrop source ─────────────
+      final result = await ScannerService.instance.match(
+        croppedJpeg,
+        recognisedText: recognised,
+        source: ScanSource.userCrop,
+      );
+
+      // Clean up temp file
+      tempFile.delete().ignore();
+      tempDir.delete().ignore();
+
+      if (!mounted) return;
+      setState(() {
+        _regionScanProcessing = false;
+        _state = _ScannerState.reviewing;
+        _candidates = result.candidates;
+        // Keep _ocrBlocks from original scan for overlay consistency
+      });
+
+      if (result.candidates.isEmpty) {
+        _showSnack('No match in selected region — try a different area');
+      }
+    } catch (e) {
+      if (!mounted) return;
+      setState(() { _regionScanProcessing = false; });
+      _showSnack('Region scan failed: $e');
     }
   }
 
   // ── State transitions ─────────────────────────────────────────────────────
 
-  /// reviewing → live. Discards captured image and resumes live feed.
   void _returnToLive() {
     _deleteCapturedFile();
     _controller?.setFocusMode(FocusMode.auto).ignore();
@@ -331,6 +537,10 @@ class ScannerScreenState extends State<ScannerScreen>
       _ocrBlocks = [];
       _capturedImageBytes = null;
       _currentZoom = 1.0;
+      _selectionRect = null;
+      _selectionStart = null;
+      _originalCandidates = null;
+      _regionScanProcessing = false;
     });
   }
 
@@ -342,12 +552,22 @@ class ScannerScreenState extends State<ScannerScreen>
     }
   }
 
-  /// Called by main.dart via GlobalKey on tab re-entry.
   void resetSession() {
     _returnToLive();
     _controller?.dispose();
     _controller = null;
     _initCamera();
+  }
+
+  void _showSnack(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 2),
+      ),
+    );
   }
 
   // ── Flash ─────────────────────────────────────────────────────────────────
@@ -436,9 +656,9 @@ class ScannerScreenState extends State<ScannerScreen>
     }
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // Build
-  // ─────────────────────────────────────────────────────────────────────────
+  // ═════════════════════════════════════════════════════════════════════════
+  // BUILD
+  // ═════════════════════════════════════════════════════════════════════════
 
   @override
   Widget build(BuildContext context) {
@@ -457,149 +677,149 @@ class ScannerScreenState extends State<ScannerScreen>
 
   Widget _buildScanMode() {
     return PopScope(
-      // Always intercept — never let this bubble to main.dart's PopScope.
-      // main.dart reads isReviewing directly to decide what to do.
       canPop: false,
       onPopInvokedWithResult: (_, _) {
-        if (_state == _ScannerState.reviewing) {
+        if (_state == _ScannerState.selecting) {
+          _exitSelectionMode();
+        } else if (_state == _ScannerState.reviewing) {
           _returnToLive();
         } else {
-          // Live state: delegate to onBack (tap-driven; main.dart handles
-          // hardware back via the outer PopScope + isReviewing check).
           widget.onBack();
         }
       },
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          // ── 1. Camera feed (always present as base layer) ─────────────────
-          // Live feed stays in the tree even in reviewing state so there is
-          // no rebuild cost when returning to live. The frozen image sits on
-          // top of it in reviewing state.
-          Positioned.fill(child: _buildLiveFeed()),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Cache widget size for Pillar 6 coordinate transform
+          _widgetSize = Size(constraints.maxWidth, constraints.maxHeight);
 
-          // ── 2. Frozen still — fades in instantly when reviewing ───────────
-          if (_capturedImageBytes != null)
-            Positioned.fill(
-              child: Image.memory(
-                _capturedImageBytes!,
-                fit: BoxFit.cover,
-                gaplessPlayback: true,
-              ),
-            ),
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              // ── 1. Camera feed (always present as base layer) ─────────
+              Positioned.fill(child: _buildLiveFeed()),
 
-          // ── 3. OCR highlight overlay ──────────────────────────────────────
-          if (_state == _ScannerState.reviewing && _ocrBlocks.isNotEmpty)
-            Positioned.fill(child: _OcrHighlightOverlay(blocks: _ocrBlocks)),
-
-          // ── 4. Top bar — explicitly anchored to top ───────────────────────
-          Positioned(top: 0, left: 0, right: 0, child: _buildTopBar()),
-
-          // ── 5. Bottom controls (live state only) ──────────────────────────
-          if (_state == _ScannerState.live)
-            _buildBottomControls(),
-
-          // ── 6. Processing spinner (reviewing, still waiting for results) ──
-          if (_state == _ScannerState.reviewing && _processing)
-            const Positioned(
-              bottom: 120,
-              left: 0, right: 0,
-              child: Center(
-                child: SizedBox(
-                  width: 36, height: 36,
-                  child: CircularProgressIndicator(
-                    color: Colors.white,
-                    strokeWidth: 3,
+              // ── 2. Frozen still — shown in reviewing/selecting ────────
+              if (_capturedImageBytes != null)
+                Positioned.fill(
+                  child: Image.memory(
+                    _capturedImageBytes!,
+                    fit: BoxFit.cover,
+                    gaplessPlayback: true,
                   ),
                 ),
-              ),
-            ),
 
-          // ── 7. Results sheet ──────────────────────────────────────────────
-          if (_state == _ScannerState.reviewing && _candidates.isNotEmpty)
-            Positioned.fill(
-              child: ScannerResultsSheet(
-                candidates: _candidates,
-                onSelect: (c) {
-                  _returnToLive();
-                  widget.onCardTap(c.cardId, c.recordType);
-                },
-                onDismiss: _returnToLive,
-              ),
-            ),
-        ],
+              // ── 3. Dim overlay for selecting state ────────────────────
+              if (_state == _ScannerState.selecting)
+                Positioned.fill(
+                  child: ColoredBox(
+                    color: Colors.black.withValues(alpha: 0.55),
+                  ),
+                ),
+
+              // ── 4. OCR highlight overlay ──────────────────────────────
+              if (_state == _ScannerState.reviewing && _ocrBlocks.isNotEmpty)
+                Positioned.fill(child: _OcrHighlightOverlay(blocks: _ocrBlocks)),
+
+              // ── 5. Region selection overlay (Pillar 6) ────────────────
+              if (_state == _ScannerState.selecting)
+                Positioned.fill(
+                  child: _RegionSelectionOverlay(
+                    selectionRect:   _selectionRect,
+                    capturedBytes:   _capturedImageBytes,
+                    onPanStart:      _onSelectionPanStart,
+                    onPanUpdate:     _onSelectionPanUpdate,
+                    onPanEnd:        (_) {}, // rect stays after finger lifts
+                    onRescan:        _selectionRect != null ? () => _rescanSelectedRegion() : null,
+                    onCancel:        _exitSelectionMode,
+                    isProcessing:    _regionScanProcessing,
+                  ),
+                ),
+
+              // ── 6. Top bar ────────────────────────────────────────────
+              Positioned(top: 0, left: 0, right: 0, child: _buildTopBar()),
+
+              // ── 7. Bottom controls (live state only) ──────────────────
+              if (_state == _ScannerState.live)
+                _buildBottomControls(),
+
+              // ── 8. Processing spinner ─────────────────────────────────
+              if (_state == _ScannerState.reviewing && _processing)
+                const Positioned(
+                  bottom: 120,
+                  left: 0, right: 0,
+                  child: Center(
+                    child: SizedBox(
+                      width: 36, height: 36,
+                      child: CircularProgressIndicator(
+                        color: Colors.white,
+                        strokeWidth: 3,
+                      ),
+                    ),
+                  ),
+                ),
+
+              // ── 9. Results sheet ──────────────────────────────────────
+              if (_state == _ScannerState.reviewing && _candidates.isNotEmpty)
+                Positioned.fill(
+                  child: ScannerResultsSheet(
+                    candidates: _candidates,
+                    onSelect: (c) {
+                      _returnToLive();
+                      widget.onCardTap(c.cardId, c.recordType);
+                    },
+                    onDismiss: _returnToLive,
+                    onSelectRegion: _enterSelectionMode,
+                  ),
+                ),
+            ],
+          );
+        },
       ),
     );
   }
 
   // ── Top bar ───────────────────────────────────────────────────────────────
-  // Matches Google Lens layout:
-  //   [← back] [flash icon]   Discover   [right spacer]
-  // Back and flash are anchored left; title is centred across full width.
 
   Widget _buildTopBar() {
+    final isSelecting = _state == _ScannerState.selecting;
     return SafeArea(
       child: SizedBox(
         height: 56,
         child: Stack(
           children: [
             // Centred title
-            const Center(
+            Center(
               child: Text(
-                'Discover',
+                isSelecting ? 'Select Card Region' : 'Discover',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  shadows: [Shadow(color: Colors.black54, blurRadius: 8)],
+                  fontSize: isSelecting ? 15 : 17,
+                  fontWeight: FontWeight.w600,
+                  shadows: const [Shadow(color: Colors.black54, blurRadius: 8)],
                 ),
               ),
             ),
-
-            // Left: back arrow + flash
+            // Left icons
             Positioned(
-              left: 12,
-              top: 0, bottom: 0,
+              left: 4, top: 0, bottom: 0,
               child: Row(
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Back arrow
-                  GestureDetector(
-                    onTap: () {
-                      if (_state == _ScannerState.reviewing) {
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.white, size: 22),
+                    onPressed: () {
+                      if (_state == _ScannerState.selecting) {
+                        _exitSelectionMode();
+                      } else if (_state == _ScannerState.reviewing) {
                         _returnToLive();
                       } else {
                         widget.onBack();
                       }
                     },
-                    child: const Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                        size: 24,
-                        shadows: [Shadow(color: Colors.black54, blurRadius: 8)],
-                      ),
-                    ),
                   ),
-
-                  const SizedBox(width: 4),
-
-                  // Flash — only relevant in live state
-                  if (_controller?.value.isInitialized == true)
-                    GestureDetector(
-                      onTap: _state == _ScannerState.live ? () => _cycleFlash() : null,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Icon(
-                          _flashIcon(),
-                          color: _state == _ScannerState.live
-                              ? Colors.white
-                              : Colors.white38,
-                          size: 26,
-                          shadows: const [Shadow(color: Colors.black54, blurRadius: 8)],
-                        ),
-                      ),
+                  if (_state == _ScannerState.live)
+                    IconButton(
+                      icon: Icon(_flashIcon(), color: Colors.white, size: 22),
+                      onPressed: () => _cycleFlash(),
                     ),
                 ],
               ),
@@ -685,7 +905,6 @@ class ScannerScreenState extends State<ScannerScreen>
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Button row: [gallery] [shutter] [mirror spacer]
           Padding(
             padding: const EdgeInsets.fromLTRB(32, 0, 32, 16),
             child: Row(
@@ -727,7 +946,7 @@ class ScannerScreenState extends State<ScannerScreen>
                         )
                       ] : [],
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.document_scanner,
                       color: Colors.black87,
                       size: 30,
@@ -749,7 +968,7 @@ class ScannerScreenState extends State<ScannerScreen>
             child: _ModePill(
               onSwitchToSearch: () {
                 _returnToLive();
-                setState(() => _mode = _DiscoverMode.search);
+                setState(() => _mode = _DiscoverMode.scan);
                 widget.onNavBarVisibilityChanged(true);
               },
             ),
@@ -760,9 +979,215 @@ class ScannerScreenState extends State<ScannerScreen>
   }
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// PILLAR 6 — REGION SELECTION OVERLAY
+// ═══════════════════════════════════════════════════════════════════════════════
+//
+// Displays:
+//   • A GestureDetector surface for drawing a selection rectangle
+//   • The selected region rendered via CustomPainter (bright cutout in dim bg)
+//   • A floating action bar with "Re-scan" and "Cancel" buttons
+//   • A processing spinner during region re-scan
+
+class _RegionSelectionOverlay extends StatelessWidget {
+  final Rect? selectionRect;
+  final Uint8List? capturedBytes;
+  final GestureDragStartCallback onPanStart;
+  final GestureDragUpdateCallback onPanUpdate;
+  final GestureDragEndCallback onPanEnd;
+  final VoidCallback? onRescan;
+  final VoidCallback onCancel;
+  final bool isProcessing;
+
+  const _RegionSelectionOverlay({
+    required this.selectionRect,
+    required this.capturedBytes,
+    required this.onPanStart,
+    required this.onPanUpdate,
+    required this.onPanEnd,
+    required this.onRescan,
+    required this.onCancel,
+    required this.isProcessing,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        // ── Draw surface ──────────────────────────────────────────────
+        GestureDetector(
+          onPanStart: onPanStart,
+          onPanUpdate: onPanUpdate,
+          onPanEnd: onPanEnd,
+          behavior: HitTestBehavior.opaque,
+          child: CustomPaint(
+            painter: _RegionSelectionPainter(selectionRect: selectionRect),
+            child: const SizedBox.expand(),
+          ),
+        ),
+
+        // ── Instruction text ──────────────────────────────────────────
+        if (selectionRect == null)
+          const Positioned(
+            left: 40, right: 40,
+            bottom: 140,
+            child: Text(
+              'Draw a rectangle around the card you want to scan',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                shadows: [Shadow(color: Colors.black54, blurRadius: 6)],
+              ),
+            ),
+          ),
+
+        // ── Action buttons ────────────────────────────────────────────
+        if (selectionRect != null)
+          Positioned(
+            left: 0, right: 0, bottom: 60,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Cancel
+                _SelectionActionButton(
+                  icon: Icons.close,
+                  label: 'Cancel',
+                  onTap: onCancel,
+                  isPrimary: false,
+                ),
+                const SizedBox(width: 24),
+                // Re-scan
+                if (isProcessing)
+                  const SizedBox(
+                    width: 48, height: 48,
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                      strokeWidth: 3,
+                    ),
+                  )
+                else
+                  _SelectionActionButton(
+                    icon: Icons.crop_free,
+                    label: 'Re-scan',
+                    onTap: onRescan,
+                    isPrimary: true,
+                  ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
-// Mode pill
+// Region selection painter — renders the dragged rectangle as a bright cutout
 // ─────────────────────────────────────────────────────────────────────────────
+
+class _RegionSelectionPainter extends CustomPainter {
+  final Rect? selectionRect;
+  const _RegionSelectionPainter({required this.selectionRect});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (selectionRect == null) return;
+
+    final rect = selectionRect!;
+
+    // Bright cutout: clear the dim overlay inside the selection rect
+    // by painting the selected region with a white semi-transparent fill.
+    final cutoutPaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.35)
+      ..style = PaintingStyle.fill;
+    canvas.drawRect(rect, cutoutPaint);
+
+    // Border: animated-feel dashed border approximation via solid + corners
+    final borderPaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
+    canvas.drawRect(rect, borderPaint);
+
+    // Corner brackets — visual affordance showing the selection corners
+    const arm = 18.0;
+    final cornerPaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3.5
+      ..strokeCap = StrokeCap.round;
+
+    void drawCorner(double cx, double cy, double dx, double dy) {
+      canvas.drawLine(Offset(cx, cy), Offset(cx + arm * dx, cy), cornerPaint);
+      canvas.drawLine(Offset(cx, cy), Offset(cx, cy + arm * dy), cornerPaint);
+    }
+
+    drawCorner(rect.left,  rect.top,     1,  1);
+    drawCorner(rect.right, rect.top,    -1,  1);
+    drawCorner(rect.left,  rect.bottom,  1, -1);
+    drawCorner(rect.right, rect.bottom, -1, -1);
+  }
+
+  @override
+  bool shouldRepaint(_RegionSelectionPainter old) =>
+      old.selectionRect != selectionRect;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Selection action button
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _SelectionActionButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback? onTap;
+  final bool isPrimary;
+
+  const _SelectionActionButton({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+    required this.isPrimary,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        decoration: BoxDecoration(
+          color: isPrimary ? Colors.white : Colors.black54,
+          borderRadius: BorderRadius.circular(28),
+          border: isPrimary ? null : Border.all(color: Colors.white30),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 18, color: isPrimary ? Colors.black87 : Colors.white),
+            const SizedBox(width: 8),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: isPrimary ? Colors.black87 : Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// EXISTING WIDGETS (unchanged from v1.0)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// ── Mode pill ───────────────────────────────────────────────────────────────
 
 class _ModePill extends StatelessWidget {
   final VoidCallback onSwitchToSearch;
@@ -825,9 +1250,7 @@ class _PillItem extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// OCR highlight overlay
-// ─────────────────────────────────────────────────────────────────────────────
+// ── OCR highlight overlay ───────────────────────────────────────────────────
 
 class _OcrHighlightOverlay extends StatefulWidget {
   final List<TextBlock> blocks;
@@ -892,9 +1315,7 @@ class _OcrHighlightPainter extends CustomPainter {
   bool shouldRepaint(_OcrHighlightPainter old) => old.blocks != blocks;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Camera error widget
-// ─────────────────────────────────────────────────────────────────────────────
+// ── Camera error widget ─────────────────────────────────────────────────────
 
 class _CameraError extends StatelessWidget {
   final String error;
@@ -927,9 +1348,7 @@ class _CameraError extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Zoom badge
-// ─────────────────────────────────────────────────────────────────────────────
+// ── Zoom badge ──────────────────────────────────────────────────────────────
 
 class _ZoomBadge extends StatelessWidget {
   final double zoom;
@@ -946,9 +1365,7 @@ class _ZoomBadge extends StatelessWidget {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Focus square
-// ─────────────────────────────────────────────────────────────────────────────
+// ── Focus square ────────────────────────────────────────────────────────────
 
 class _FocusSquare extends StatefulWidget {
   final Offset position;

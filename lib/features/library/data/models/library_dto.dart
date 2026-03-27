@@ -1,4 +1,4 @@
-import '../../../../core/services/search_service.dart';
+import '../../../../core/services/fuzzy_matcher.dart';
 
 class LibraryDTO {
   final String id;
@@ -53,13 +53,13 @@ class LibraryDTO {
 
   // ── Search
   /// Fuzzy matches against English name, Chinese name, and category.
-  /// Pinyin conversion in SearchService means Chinese targets are also
+  /// Pinyin conversion in FuzzyMatcher means Chinese targets are also
   /// searchable by pinyin — "nan man" finds 南蛮入侵, "sha" finds 杀.
   bool matchesQuery(String query) {
     if (query.isEmpty) { return true; }
-    if (SearchService.fuzzyMatch(query, nameEn))     { return true; }
-    if (SearchService.fuzzyMatch(query, nameCn))     { return true; }
-    if (SearchService.fuzzyMatch(query, categoryEn)) { return true; }
+    if (FuzzyMatcher.fuzzyMatch(query, nameEn))     { return true; }
+    if (FuzzyMatcher.fuzzyMatch(query, nameCn))     { return true; }
+    if (FuzzyMatcher.fuzzyMatch(query, categoryEn)) { return true; }
     return false;
   }
 

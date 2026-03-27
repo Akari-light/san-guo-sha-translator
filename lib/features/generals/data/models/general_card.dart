@@ -1,6 +1,6 @@
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/models/expansion.dart';
-import '../../../../core/services/search_service.dart';
+import '../../../../core/services/fuzzy_matcher.dart';
 
 class GeneralCard {
   final String id;
@@ -82,10 +82,10 @@ class GeneralCard {
   /// and partial matches ("liu bei", "luu bei", "benev") all resolve.
   bool matchesQuery(String query) {
     if (query.isEmpty) return true;
-    if (SearchService.fuzzyMatch(query, nameEn)) return true;
-    if (SearchService.fuzzyMatch(query, nameCn)) return true;
-    if (SearchService.fuzzyMatch(query, id))     return true;
-    if (skills.any((s) => SearchService.fuzzyMatch(query, s.nameEn) ||  SearchService.fuzzyMatch(query, s.nameCn))) return true;
+    if (FuzzyMatcher.fuzzyMatch(query, nameEn)) return true;
+    if (FuzzyMatcher.fuzzyMatch(query, nameCn)) return true;
+    if (FuzzyMatcher.fuzzyMatch(query, id))     return true;
+    if (skills.any((s) => FuzzyMatcher.fuzzyMatch(query, s.nameEn) ||  FuzzyMatcher.fuzzyMatch(query, s.nameCn))) return true;
     return false;
   }
 
