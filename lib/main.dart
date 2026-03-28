@@ -92,18 +92,15 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 4;
-  int _previousIndex = 4; // restored when user taps back from scanner
+  int _previousIndex = 4;
 
-  // true while ScannerScreen is in search mode — nav bars visible
-  // false while in scan mode — bottom nav hidden, scanner fills screen
   bool _scannerShowsNavBar = false;
 
   // ── Double-back-to-exit
   DateTime? _lastBackPress;
 
-  // ── ScannerScreen key — used to reset the scanner session when re-entering the tab
-  final GlobalKey<ScannerScreenState> _scannerScreenKey =
-      GlobalKey<ScannerScreenState>();
+  // ── Discover tab index constant — single source of truth.
+  static const int _discoverTabIndex = 3;
 
   // ── Generals search
   bool _isSearchingGenerals = false;
@@ -116,13 +113,11 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   final ValueNotifier<String> _librarySearchNotifier = ValueNotifier('');
   final TextEditingController _searchController = TextEditingController();
 
-  // ── Codex search + lang — same ValueNotifier pattern as Generals/Library
+  // ── Codex search + lang
   bool _isSearchingCodex = false;
   final ValueNotifier<String> _codexSearchNotifier = ValueNotifier('');
   final TextEditingController _codexSearchController = TextEditingController();
-  final ValueNotifier<bool> _codexLangNotifier = ValueNotifier(
-    false,
-  ); // false=EN
+  final ValueNotifier<bool> _codexLangNotifier = ValueNotifier(false); // false=EN
 
   // ── Filter state
   bool _generalsFilterActive = false;
@@ -131,12 +126,26 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   VoidCallback? _openLibraryFilter;
 
   // ── Screen list — built once, never recreated
-  late final List<Widget> _screens;
+  late final List<Widget> _staticScreens;
+
+  List<Widget> _buildScreens() => [
+    _staticScreens[0], // Codex
+    _staticScreens[1], // Generals
+    _staticScreens[2], // Library
+    ScannerScreen(
+      onCardTap: _pushCard,
+      onBack: () => setState(() => _selectedIndex = _previousIndex),
+      onNavBarVisibilityChanged: (visible) =>
+          setState(() => _scannerShowsNavBar = visible),
+      isActive: _selectedIndex == _discoverTabIndex,
+    ),
+    _staticScreens[3], // Home
+  ];
 
   @override
   void initState() {
     super.initState();
-    _screens = [
+    _staticScreens = [
       CodexScreen(
         searchNotifier: _codexSearchNotifier,
         showChineseNotifier: _codexLangNotifier,
@@ -156,18 +165,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onRegisterSheetOpener: (opener) => _openLibraryFilter = opener,
         onCardTap: _pushCard,
       ),
-      ScannerScreen(
-        key: _scannerScreenKey,
-        onCardTap: _pushCard,
-        onBack: () => setState(() => _selectedIndex = _previousIndex),
-        onNavBarVisibilityChanged: (visible) =>
-            setState(() => _scannerShowsNavBar = visible),
-      ),
       HomeScreen(
         onGeneralTap: (id) => _pushCard(id, RecordType.general),
         onLibraryTap: (id) => _pushCard(id, RecordType.library),
       ),
     ];
+    // App starts on Home (index 4). Scanner receives isActive: false
+    // via _buildScreens() and stays dormant until the Discover tab is selected.
   }
 
   @override
@@ -180,6 +184,31 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     _generalsSearchController.dispose();
     _codexSearchController.dispose();
     super.dispose();
+  }
+
+  /// Switches to [index]. Scanner camera starts/stops automatically
+  /// via its isActive parameter reacting to _selectedIndex changes.
+  void _switchTab(int index) {
+    if (index == _selectedIndex) {
+      if (index == 1) _openGeneralsFilter?.call();
+      if (index == 2) _openLibraryFilter?.call();
+      return;
+    }
+
+    setState(() {
+      _previousIndex = _selectedIndex;
+      _selectedIndex = index;
+      _scannerShowsNavBar = false;
+      _isSearching = false;
+      _isSearchingGenerals = false;
+      _isSearchingCodex = false;
+      _librarySearchNotifier.value = '';
+      _generalsSearchNotifier.value = '';
+      _codexSearchNotifier.value = '';
+      _searchController.clear();
+      _generalsSearchController.clear();
+      _codexSearchController.clear();
+    });
   }
 
   Future<void> _pushCard(String id, RecordType type) async {
@@ -205,10 +234,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     }
   }
 
-  // ── AppBar title — TextField when searching, plain Text otherwise ──────────
+  // ── AppBar title ──────────────────────────────────────────────────────────
 
   Widget _buildAppBarTitle() {
-    // Codex search
     if (_selectedIndex == 0 && _isSearchingCodex) {
       return TextField(
         controller: _codexSearchController,
@@ -222,7 +250,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onChanged: (v) => _codexSearchNotifier.value = v,
       );
     }
-    // Generals search
     if (_selectedIndex == 1 && _isSearchingGenerals) {
       return TextField(
         controller: _generalsSearchController,
@@ -236,7 +263,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onChanged: (v) => _generalsSearchNotifier.value = v,
       );
     }
-    // Library search
     if (_selectedIndex == 2 && _isSearching) {
       return TextField(
         controller: _searchController,
@@ -258,22 +284,15 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (_, _) {
-        // ── Scanner tab: check state directly via GlobalKey.
-        // If the scanner is in reviewing state, its own inner PopScope handler
-        // will call _returnToLive(). We must do nothing here — checking
-        // isReviewing is synchronous and races no one.
-        if (_selectedIndex == 3) {
-          final scannerState = _scannerScreenKey.currentState;
-          if (scannerState != null && scannerState.isReviewing) {
-            // Inner PopScope handles it — do not navigate away.
-            return;
-          }
-          // Scanner is in live state — return to previous tab.
-          setState(() => _selectedIndex = _previousIndex);
+        // Scanner tab: scanner's inner PopScope (canPop: false) handles
+        // everything — adjusting→live or live→onBack(). Both PopScopes fire
+        // on a back press, but the scanner's onBack callback already switches
+        // the tab via setState, so we just return here to avoid double-handling.
+        if (_selectedIndex == _discoverTabIndex) {
           return;
         }
 
-        // ── All other tabs: back navigates to Home (tab 4) first.
+        // All other tabs: back navigates to Home first.
         if (_selectedIndex != 4) {
           setState(() {
             _previousIndex = _selectedIndex;
@@ -291,7 +310,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           return;
         }
 
-        // ── Already on Home — double-back to exit
+        // Already on Home — double-back to exit.
         final now = DateTime.now();
         final lastPress = _lastBackPress;
         if (lastPress == null ||
@@ -310,289 +329,215 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         }
       },
       child: Scaffold(
-        appBar: (_selectedIndex == 3 && !_scannerShowsNavBar) ? null : AppBar(
-          title: _buildAppBarTitle(),
-          actions: [
-            // ── Codex: search icon
-            if (_selectedIndex == 0)
-              IconButton(
-                icon: Icon(_isSearchingCodex ? Icons.close : Icons.search),
-                onPressed: () {
-                  setState(() {
-                    _isSearchingCodex = !_isSearchingCodex;
-                    if (!_isSearchingCodex) {
-                      _codexSearchNotifier.value = '';
-                      _codexSearchController.clear();
-                    }
-                  });
-                },
-              ),
-
-            // ── Codex: lang toggle
-            if (_selectedIndex == 0)
-              ValueListenableBuilder<bool>(
-                valueListenable: _codexLangNotifier,
-                builder: (context, showChinese, _) {
-                  final isDark =
-                      Theme.of(context).brightness == Brightness.dark;
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 4),
-                    child: LangToggle(
-                      showChinese: showChinese,
-                      isDark: isDark,
-                      onToggle: () =>
-                          _codexLangNotifier.value = !_codexLangNotifier.value,
-                    ),
-                  );
-                },
-              ),
-
-            // ── Generals: search
-            if (_selectedIndex == 1)
-              IconButton(
-                icon: Icon(_isSearchingGenerals ? Icons.close : Icons.search),
-                onPressed: () {
-                  setState(() {
-                    _isSearchingGenerals = !_isSearchingGenerals;
-                    if (!_isSearchingGenerals) {
-                      _generalsSearchNotifier.value = '';
-                      _generalsSearchController.clear();
-                    }
-                  });
-                },
-              ),
-
-            // ── Library: search
-            if (_selectedIndex == 2)
-              IconButton(
-                icon: Icon(_isSearching ? Icons.close : Icons.search),
-                onPressed: () {
-                  setState(() {
-                    _isSearching = !_isSearching;
-                    if (!_isSearching) {
-                      _librarySearchNotifier.value = '';
-                      _searchController.clear();
-                    }
-                  });
-                },
-              ),
-
-            // ── Generals: filter
-            if (_selectedIndex == 1)
-              IconButton(
-                icon: Icon(
-                  Icons.filter_list,
-                  color: _generalsFilterActive ? Colors.orange : null,
-                ),
-                onPressed: () => _openGeneralsFilter?.call(),
-              ),
-
-            // ── Library: filter
-            if (_selectedIndex == 2)
-              IconButton(
-                icon: Icon(
-                  Icons.filter_list,
-                  color: _libraryFilterActive ? Colors.orange : null,
-                ),
-                onPressed: () => _openLibraryFilter?.call(),
-              ),
-
-            // ── Theme menu (all tabs)
-            PopupMenuButton<ThemeMode>(
-              icon: Icon(_getThemeIcon(widget.currentMode)),
-              onSelected: (mode) => widget.onThemeChanged(mode),
-              itemBuilder: (_) => [
-                const PopupMenuItem(
-                  value: ThemeMode.system,
-                  child: ListTile(
-                    leading: Icon(Icons.brightness_auto),
-                    title: Text('System'),
-                  ),
-                ),
-                const PopupMenuItem(
-                  value: ThemeMode.light,
-                  child: ListTile(
-                    leading: Icon(Icons.light_mode),
-                    title: Text('Light'),
-                  ),
-                ),
-                const PopupMenuItem(
-                  value: ThemeMode.dark,
-                  child: ListTile(
-                    leading: Icon(Icons.dark_mode),
-                    title: Text('Dark'),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        body: IndexedStack(index: _selectedIndex, children: _screens),
-        bottomNavigationBar: (_selectedIndex == 3 && !_scannerShowsNavBar)
+        appBar: (_selectedIndex == _discoverTabIndex && !_scannerShowsNavBar)
             ? null
-            : SizedBox(
-          height: 90,
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            currentIndex: _selectedIndex,
-            onTap: (index) {
-              if (index == _selectedIndex) {
-                if (index == 1) _openGeneralsFilter?.call();
-                if (index == 2) _openLibraryFilter?.call();
-                return;
-              }
-              // Reset the scanner session whenever the user leaves and
-              // re-enters the Discover tab (index 3)
-              if (index == 3 && _selectedIndex != 3) {
-                _scannerScreenKey.currentState?.resetSession();
-              }
-              setState(() {
-                _previousIndex = _selectedIndex; // remember where we came from
-                _selectedIndex = index;
-                _scannerShowsNavBar = false; // reset — scanner starts in scan mode
-                _isSearching = false;
-                _isSearchingGenerals = false;
-                _isSearchingCodex = false;
-                _librarySearchNotifier.value = '';
-                _generalsSearchNotifier.value = '';
-                _codexSearchNotifier.value = '';
-                _searchController.clear();
-                _generalsSearchController.clear();
-                _codexSearchController.clear();
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.menu_book),
-                ),
-                label: 'Codex',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: SizedBox(
-                    width: 28,
-                    height: 28,
-                    child: Center(
-                      child: Text(
-                        '將',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF858585),
-                          height: 1.0,
-                        ),
+            : AppBar(
+                title: _buildAppBarTitle(),
+                actions: [
+                  // ── Codex: search icon
+                  if (_selectedIndex == 0)
+                    IconButton(
+                      icon: Icon(_isSearchingCodex ? Icons.close : Icons.search),
+                      onPressed: () {
+                        setState(() {
+                          _isSearchingCodex = !_isSearchingCodex;
+                          if (!_isSearchingCodex) {
+                            _codexSearchNotifier.value = '';
+                            _codexSearchController.clear();
+                          }
+                        });
+                      },
+                    ),
+
+                  // ── Codex: lang toggle
+                  if (_selectedIndex == 0)
+                    ValueListenableBuilder<bool>(
+                      valueListenable: _codexLangNotifier,
+                      builder: (context, showChinese, _) {
+                        final isDark =
+                            Theme.of(context).brightness == Brightness.dark;
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 4),
+                          child: LangToggle(
+                            showChinese: showChinese,
+                            isDark: isDark,
+                            onToggle: () =>
+                                _codexLangNotifier.value = !_codexLangNotifier.value,
+                          ),
+                        );
+                      },
+                    ),
+
+                  // ── Generals: search
+                  if (_selectedIndex == 1)
+                    IconButton(
+                      icon: Icon(_isSearchingGenerals ? Icons.close : Icons.search),
+                      onPressed: () {
+                        setState(() {
+                          _isSearchingGenerals = !_isSearchingGenerals;
+                          if (!_isSearchingGenerals) {
+                            _generalsSearchNotifier.value = '';
+                            _generalsSearchController.clear();
+                          }
+                        });
+                      },
+                    ),
+
+                  // ── Library: search
+                  if (_selectedIndex == 2)
+                    IconButton(
+                      icon: Icon(_isSearching ? Icons.close : Icons.search),
+                      onPressed: () {
+                        setState(() {
+                          _isSearching = !_isSearching;
+                          if (!_isSearching) {
+                            _librarySearchNotifier.value = '';
+                            _searchController.clear();
+                          }
+                        });
+                      },
+                    ),
+
+                  // ── Generals: filter
+                  if (_selectedIndex == 1)
+                    IconButton(
+                      icon: Icon(Icons.filter_list,
+                          color: _generalsFilterActive ? Colors.orange : null),
+                      onPressed: () => _openGeneralsFilter?.call(),
+                    ),
+
+                  // ── Library: filter
+                  if (_selectedIndex == 2)
+                    IconButton(
+                      icon: Icon(Icons.filter_list,
+                          color: _libraryFilterActive ? Colors.orange : null),
+                      onPressed: () => _openLibraryFilter?.call(),
+                    ),
+
+                  // ── Theme menu (all tabs)
+                  PopupMenuButton<ThemeMode>(
+                    icon: Icon(_getThemeIcon(widget.currentMode)),
+                    onSelected: (mode) => widget.onThemeChanged(mode),
+                    itemBuilder: (_) => [
+                      const PopupMenuItem(
+                        value: ThemeMode.system,
+                        child: ListTile(leading: Icon(Icons.brightness_auto), title: Text('System')),
                       ),
+                      const PopupMenuItem(
+                        value: ThemeMode.light,
+                        child: ListTile(leading: Icon(Icons.light_mode), title: Text('Light')),
+                      ),
+                      const PopupMenuItem(
+                        value: ThemeMode.dark,
+                        child: ListTile(leading: Icon(Icons.dark_mode), title: Text('Dark')),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+        body: IndexedStack(index: _selectedIndex, children: _buildScreens()),
+        bottomNavigationBar:
+            (_selectedIndex == _discoverTabIndex && !_scannerShowsNavBar)
+                ? null
+                : SizedBox(
+                    height: 90,
+                    child: BottomNavigationBar(
+                      type: BottomNavigationBarType.fixed,
+                      currentIndex: _selectedIndex,
+                      // ── KEY FIX: all tab switches go through _switchTab()
+                      // which correctly calls pause()/resume() on the scanner.
+                      onTap: _switchTab,
+                      items: [
+                        BottomNavigationBarItem(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: const Icon(Icons.menu_book),
+                          ),
+                          label: 'Codex',
+                        ),
+                        BottomNavigationBarItem(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: SizedBox(
+                              width: 28, height: 28,
+                              child: Center(child: Text('將',
+                                  style: const TextStyle(fontSize: 22,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF858585), height: 1.0))),
+                            ),
+                          ),
+                          activeIcon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: SizedBox(
+                              width: 28, height: 28,
+                              child: Center(child: Text('將',
+                                  style: const TextStyle(fontSize: 22,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF007ACC), height: 1.0))),
+                            ),
+                          ),
+                          label: 'Generals',
+                        ),
+                        BottomNavigationBarItem(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: SizedBox(
+                              width: 28, height: 28,
+                              child: Center(child: Text('牌',
+                                  style: const TextStyle(fontSize: 22,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF858585), height: 1.0))),
+                            ),
+                          ),
+                          activeIcon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: SizedBox(
+                              width: 28, height: 28,
+                              child: Center(child: Text('牌',
+                                  style: const TextStyle(fontSize: 22,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF007ACC), height: 1.0))),
+                            ),
+                          ),
+                          label: 'Library',
+                        ),
+                        BottomNavigationBarItem(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: const Icon(Icons.travel_explore),
+                          ),
+                          label: 'Discover',
+                        ),
+                        BottomNavigationBarItem(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: const Icon(Icons.home_rounded),
+                          ),
+                          label: 'Home',
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                activeIcon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: SizedBox(
-                    width: 28,
-                    height: 28,
-                    child: Center(
-                      child: Text(
-                        '將',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF007ACC),
-                          height: 1.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                label: 'Generals',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: SizedBox(
-                    width: 28,
-                    height: 28,
-                    child: Center(
-                      child: Text(
-                        '牌',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF858585),
-                          height: 1.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                activeIcon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: SizedBox(
-                    width: 28,
-                    height: 28,
-                    child: Center(
-                      child: Text(
-                        '牌',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF007ACC),
-                          height: 1.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                label: 'Library',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.travel_explore),
-                ),
-                label: 'Discover',
-              ),
-              BottomNavigationBarItem(
-                icon: Padding(
-                  padding: EdgeInsets.only(bottom: 4),
-                  child: Icon(Icons.home_rounded),
-                ),
-                label: 'Home',
-              ),
-            ],
-          ),
-        ),
       ),
-    ); // Scaffold
-  } // build()
+    );
+  }
 
   IconData _getThemeIcon(ThemeMode mode) {
     switch (mode) {
-      case ThemeMode.light:
-        return Icons.light_mode;
-      case ThemeMode.dark:
-        return Icons.dark_mode;
-      case ThemeMode.system:
-        return Icons.brightness_auto;
+      case ThemeMode.light:  return Icons.light_mode;
+      case ThemeMode.dark:   return Icons.dark_mode;
+      case ThemeMode.system: return Icons.brightness_auto;
     }
   }
 
   String _getAppBarTitle() {
     switch (_selectedIndex) {
-      case 0:
-        return 'Codex';
-      case 1:
-        return 'Generals';
-      case 2:
-        return 'Library';
-      case 3:
-        return 'Discover';
-      case 4:
-        return '殺 - Stop Hesitating, Attack!';
-      default:
-        return '殺';
+      case 0:  return 'Codex';
+      case 1:  return 'Generals';
+      case 2:  return 'Library';
+      case 3:  return 'Discover';
+      case 4:  return '殺 - Stop Hesitating, Attack!';
+      default: return '殺';
     }
   }
 }

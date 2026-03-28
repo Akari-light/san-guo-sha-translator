@@ -25,7 +25,6 @@
 //
 // No external dependencies beyond the `image` package.
 
-import 'dart:math' as math;
 import 'dart:typed_data';
 import 'dart:ui' show Offset;
 
@@ -138,27 +137,29 @@ class PerspectiveWarper {
   // ═══════════════════════════════════════════════════════════════════════════
 
   /// Computes the 8-parameter homography matrix that maps points from
-  /// [src] to [dst].
+  /// `src` to `dst`.
   ///
-  /// Given 4 point correspondences (src[i] → dst[i]), we solve the system:
+  /// Given 4 point correspondences (`src[i]` -> `dst[i]`), we solve the system:
   ///
+  /// ```
   ///   [ x'_i ]   [ h0  h1  h2 ] [ x_i ]
   ///   [ y'_i ] = [ h3  h4  h5 ] [ y_i ]
   ///   [ w'_i ]   [ h6  h7  1  ] [  1  ]
+  /// ```
   ///
-  /// Where x_dst = x'/w' and y_dst = y'/w'.
+  /// Where `x_dst = x'/w'` and `y_dst = y'/w'`.
   ///
-  /// This yields 8 linear equations in 8 unknowns (h0..h7, with h8=1).
+  /// This yields 8 linear equations in 8 unknowns (`h0`..`h7`, with `h8=1`).
   /// We solve using Gaussian elimination with partial pivoting.
   ///
-  /// Returns a List<double> of length 8: [h0, h1, h2, h3, h4, h5, h6, h7].
+  /// Returns a `List<double>` of length 8: `[h0, h1, h2, h3, h4, h5, h6, h7]`.
   static List<double> _computeHomography(
     List<Offset> src,
     List<Offset> dst,
   ) {
-    // Build the 8×9 augmented matrix (Ah = b → [A|b])
+    // Build the 8x9 augmented matrix (Ah = b, i.e. [A|b])
     //
-    // For each point correspondence (x, y) → (u, v):
+    // For each point correspondence (x, y) -> (u, v):
     //   x*h0 + y*h1 + h2 - x*u*h6 - y*u*h7 = u
     //   x*h3 + y*h4 + h5 - x*v*h6 - y*v*h7 = v
 
@@ -248,7 +249,7 @@ class PerspectiveWarper {
   // BILINEAR INTERPOLATION
   // ═══════════════════════════════════════════════════════════════════════════
 
-  /// Samples a pixel from [source] at fractional coordinates (sx, sy) using
+  /// Samples a pixel from [source] at fractional coordinates (`sx`, `sy`) using
   /// bilinear interpolation. Returns black for out-of-bounds coordinates.
   static img.Color _bilinearSample(
     img.Image source,

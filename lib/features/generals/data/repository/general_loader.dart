@@ -28,7 +28,7 @@ class GeneralLoader {
     'assets/data/generals/strategic_assault.json', // File not yet created
     'assets/data/generals/doudizhu.json',          // File not yet created
     'assets/data/generals/others.json',            // Uncomment when IDs/name_en filled
-    'assets/data/generals/utilities.json',         // Tokens, markers, identity cards, HP cards
+    // 'assets/data/generals/utilities.json',         // Tokens, markers, identity cards, HP cards
   ];
 
 

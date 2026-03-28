@@ -1,29 +1,39 @@
 // lib/core/services/scanner_service.dart
 //
-// Multimodal Fusion Engine — v3.0 (spec: scanner_spec_v3.md)
+// Multimodal Fusion Engine — Phase 5 (Accuracy Diagnostics & Fixes)
 //
-// Phase 2 additions over v2.0:
+// 4 root causes diagnosed from real-world scan samples:
 //
-//   1. ScanSource.straightened — new source mode for perspective-warped scans.
-//      Triggers 0.50/0.50 weight split (text and visual equally trustworthy
-//      after card has been flattened and background removed).
+//   CAUSE 1: Skill description text matches short library card names.
+//     A general's skill text "...对处于濒死状态的角色使用一张【桃】..."
+//     contains "桃" → FuzzyMatcher returns 1.0 for library card "桃"
+//     via substring containment. With body zone weight 0.5, the library
+//     card gets sText ≈ 0.167, enough to beat threshold with neutral sVisual.
+//     FIX: _nameMatchScore() — when candidate is a library card with a
+//     short name (≤4 chars) and the OCR token is much longer, discount
+//     the score by 90%.
 //
-//   2. Faction colour detection — _detectFaction() samples the top-left 5%
-//      of a straightened image to detect the kingdom emblem colour. Feeds
-//      into the boost term: +0.05 for matching faction candidates.
+//   CAUSE 2: Domain classifier misses general signals.
+//     Skill type labels (锁定技/限定技/主公技) are embedded in long lines
+//     and the old +0.15 weight was too weak. Even when detected, the
+//     margin might not exceed the 0.10 threshold.
+//     FIX: Skill type keywords weighted at +0.40 (near-definitive signal).
 //
-//   3. Art-zone pHash — when source is .straightened, the query hash is
-//      computed from the art zone (15–65% height) of the warped image,
-//      not the full frame. Dramatically improves Hamming distance accuracy
-//      because the reference images in assets/ are art-only.
+//   CAUSE 3: Reference image hashes never pre-cached.
+//     getCachedHash() returns null for every candidate → sVisual stuck at
+//     0.5 (neutral) → pHash contributes ZERO discriminating signal.
+//     FIX: Pre-cache ALL reference hashes during warmup().
 //
-// Architecture: core/services only. No feature/*/presentation imports.
+//   CAUSE 4: Insufficient debug logging.
+//     FIX: Comprehensive per-phase console logging of every token, domain
+//     classification scores, top-5 candidates with full score breakdown.
 
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart'
-    show RecognizedText, TextBlock, TextLine;
+    show RecognizedText, TextLine;
 import 'package:image/image.dart' as img;
 
 import 'recently_viewed_service.dart';
@@ -70,16 +80,10 @@ class ScannerResult {
   bool get hasMatch => candidates.isNotEmpty;
 }
 
-/// Source mode affects adaptive weight selection.
-enum ScanSource {
-  camera,       // Phase 1 — raw frame from camera
-  gallery,      // Phase 1 — image picked from gallery
-  userCrop,     // Phase 1 — rectangular crop (legacy, kept for compat)
-  straightened, // Phase 2 — perspective-warped card
-}
+enum ScanSource { camera, gallery, userCrop, straightened }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// ZONED TOKEN (Pillar 4)
+// ZONED TOKEN
 // ═══════════════════════════════════════════════════════════════════════════════
 
 enum CardZone { name, id, type, body, unknown }
@@ -109,6 +113,7 @@ class _CardEntry {
   final String normName;
   final List<String> skillNames;
   final String? faction;
+  final String? expansionLabel;
 
   const _CardEntry({
     required this.cardId,
@@ -120,6 +125,7 @@ class _CardEntry {
     required this.normName,
     required this.skillNames,
     this.faction,
+    this.expansionLabel,
   });
 }
 
@@ -146,13 +152,28 @@ class _ScoredFusionCandidate {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const _zoneWeights = <CardZone, double>{
-  CardZone.name:    3.0,
-  CardZone.id:      2.5,
-  CardZone.type:    2.0,
-  CardZone.body:    0.5,
+  CardZone.name: 3.0,
+  CardZone.id: 2.5,
+  CardZone.type: 2.0,
+  CardZone.body: 0.5,
   CardZone.unknown: 1.0,
 };
 const _maxZoneWeight = 3.0;
+
+const _expansionPrefixToLabel = <String, String>{
+  'JX': 'Limit Break',
+  'YJ': "Hero's Soul",
+  'MG': 'Strategic Assault',
+  'MO': 'Demon',
+  'LE': 'God',
+  'SP': 'Other',
+};
+
+/// Skill type keywords that appear ONLY on general cards, never on library
+/// cards. A single detection is near-definitive evidence of a general.
+const _skillTypeKeywords = <String>{
+  '锁定技', '限定技', '觉醒技', '主公技', '使命技', '转换技',
+};
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SCANNER SERVICE
@@ -170,16 +191,12 @@ class ScannerService {
     '锁定技', '限定技', '觉醒技', '主公技', '使命技', '转换技',
     '体力上限', '体力值',
   ];
-
   static const _libraryKeywords = <String>[
-    '锦囊', '武器', '防具', '坐骑', '宝物',
-    '攻击范围', '装备区', '重铸',
+    '锦囊', '武器', '防具', '坐骑', '宝物', '攻击范围', '装备区', '重铸',
     '基本牌', '锦囊牌', '武器牌', '防具牌', '坐骑牌', '宝物牌',
   ];
-
   static final _expansionPrefixRe =
       RegExp(r'^(JX|YJ|MG|MO|LE|SP)', caseSensitive: false);
-
   static final _suitRankRe = RegExp(
     r'^[A2-9JQK10]{1,2}[♠♥♦♣\u2660\u2665\u2666\u2663]?$',
     caseSensitive: false,
@@ -189,27 +206,28 @@ class ScannerService {
   // PUBLIC API
   // ═════════════════════════════════════════════════════════════════════════
 
+  /// CAUSE 3 FIX: warmup now pre-caches ALL reference image hashes.
   Future<void> warmup() async {
-    if (_generalEntries != null || _warmingUp) return;
+    if (_generalEntries != null || _warmingUp) { return; }
     _warmingUp = true;
     try {
       await Future.wait([_warmupGenerals(), _warmupLibrary()]);
-      debugPrint('[Scanner] Warmup complete: '
-          '${_generalEntries!.length} generals, '
-          '${_libraryEntries!.length} library cards.');
+      debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals, '
+          '${_libraryEntries!.length} library cards');
+
+      // Pre-cache reference image hashes so getCachedHash() returns
+      // non-null during scoring. Without this, sVisual is always 0.5.
+      int cached = 0;
+      for (final e in [..._generalEntries!, ..._libraryEntries!]) {
+        final h = await ImageHashMatcher.instance.hashFromAsset(e.imagePath);
+        if (h != null) { cached++; }
+      }
+      debugPrint('[Scanner] Pre-cached $cached reference hashes');
     } finally {
       _warmingUp = false;
     }
   }
 
-  /// Main entry point — runs the Multimodal Fusion pipeline.
-  ///
-  /// [bytes]: raw JPEG of the full frame, user crop, or straightened card.
-  /// [recognisedText]: MLKit RecognizedText.
-  /// [source]: affects adaptive weight selection and art-zone extraction.
-  /// [straightenedImage]: when [source] is .straightened, pass the decoded
-  ///   warped img.Image directly to avoid re-decoding. Used for art-zone
-  ///   pHash and faction detection.
   Future<ScannerResult> match(
     Uint8List bytes, {
     RecognizedText? recognisedText,
@@ -227,39 +245,35 @@ class ScannerService {
 
   Future<void> _warmupGenerals() async {
     final generals = await GeneralLoader().getGenerals();
-    _generalEntries = generals.map((g) {
-      final skillNames = g.skills
+    _generalEntries = generals.map((g) => _CardEntry(
+      cardId: g.id,
+      recordType: RecordType.general,
+      nameCn: g.nameCn,
+      nameEn: g.nameEn,
+      imagePath: g.imagePath,
+      normId: _normaliseId(g.id),
+      normName: TextNormaliser.normalise(g.nameCn),
+      skillNames: g.skills
           .map((s) => TextNormaliser.normalise(s.nameCn))
           .where((n) => n.length >= 2)
-          .toList();
-      return _CardEntry(
-        cardId:     g.id,
-        recordType: RecordType.general,
-        nameCn:     g.nameCn,
-        nameEn:     g.nameEn,
-        imagePath:  g.imagePath,
-        normId:     _normaliseId(g.id),
-        normName:   TextNormaliser.normalise(g.nameCn),
-        skillNames: skillNames,
-        faction:    g.faction,
-      );
-    }).toList();
+          .toList(),
+      faction: g.faction,
+      expansionLabel: g.expansion.labelEn,
+    )).toList();
   }
 
   Future<void> _warmupLibrary() async {
     final cards = await LibraryLoader().getCards();
-    _libraryEntries = cards.map((c) {
-      return _CardEntry(
-        cardId:     c.id,
-        recordType: RecordType.library,
-        nameCn:     c.nameCn,
-        nameEn:     c.nameEn,
-        imagePath:  c.imagePath,
-        normId:     _normaliseId(c.id),
-        normName:   TextNormaliser.normalise(c.nameCn),
-        skillNames: const [],
-      );
-    }).toList();
+    _libraryEntries = cards.map((c) => _CardEntry(
+      cardId: c.id,
+      recordType: RecordType.library,
+      nameCn: c.nameCn,
+      nameEn: c.nameEn,
+      imagePath: c.imagePath,
+      normId: _normaliseId(c.id),
+      normName: TextNormaliser.normalise(c.nameCn),
+      skillNames: const [],
+    )).toList();
   }
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -273,122 +287,152 @@ class ScannerService {
     img.Image? straightenedImage,
   ) async {
     final sw = Stopwatch()..start();
-
     if (_generalEntries == null || _libraryEntries == null) {
       await warmup();
     }
 
     try {
-      // ── Phase A: Input conditioning ────────────────────────────────────
+      if (source == ScanSource.straightened && straightenedImage != null) {
+        straightenedImage = img.normalize(straightenedImage, min: 0, max: 255);
+      }
 
       final zonedTokens = recognisedText != null
           ? _extractZonedTokens(recognisedText)
           : <ZonedToken>[];
 
-      debugPrint('[Scanner] ${zonedTokens.length} zoned tokens');
+      final bool ocrEmpty = zonedTokens.isEmpty;
 
-      if (zonedTokens.isEmpty) {
-        return ScannerResult(
-          debugMessage: '[Scanner] No text tokens from OCR.',
-        );
+      // ── DEBUG: Phase A — Input ────────────────────────────────────────
+      debugPrint('╔═══════════════════════════════════════════════════');
+      debugPrint('║ [Scanner] PHASE A — INPUT');
+      debugPrint('║ Source: ${source.name} | Tokens: ${zonedTokens.length}');
+      for (var i = 0; i < zonedTokens.length; i++) {
+        debugPrint('║   [$i] "${zonedTokens[i].text}" → ${zonedTokens[i].zone.name}');
       }
 
       // ── Phase B: Signal extraction ─────────────────────────────────────
 
-      final domain = _classifyDomain(zonedTokens);
-      debugPrint('[Scanner] Domain: ${domain.name}');
+      final domain = ocrEmpty
+          ? _DomainType.unknown
+          : _classifyDomain(zonedTokens);
 
-      // Visual hash: art-zone for straightened, full frame otherwise
       int? queryHash;
       if (source == ScanSource.straightened && straightenedImage != null) {
         final artZone = PerspectiveWarper.extractArtZone(straightenedImage);
         queryHash = ImageHashMatcher.instance.hashFromImage(artZone);
-        debugPrint('[Scanner] Art-zone pHash computed');
       } else {
         queryHash = ImageHashMatcher.instance.hashFromBytes(bytes);
       }
 
-      // Faction colour detection (straightened only)
       String? detectedFaction;
       if (source == ScanSource.straightened && straightenedImage != null) {
         detectedFaction = _detectFaction(straightenedImage);
-        if (detectedFaction != null) {
-          debugPrint('[Scanner] Detected faction: $detectedFaction');
+      }
+
+      String? detectedExpansion;
+      for (final token in zonedTokens) {
+        if (token.zone != CardZone.id && token.zone != CardZone.name) {
+          continue;
+        }
+        final m = _expansionPrefixRe.firstMatch(token.text.toUpperCase());
+        if (m != null) {
+          detectedExpansion = _expansionPrefixToLabel[m.group(1)!];
+          break;
         }
       }
 
-      final (wText, wVisual) = _adaptiveWeights(
-        tokenCount: zonedTokens.length,
-        hasVisual:  queryHash != null,
-        source:     source,
-      );
-      debugPrint('[Scanner] Weights: text=$wText visual=$wVisual');
+      double baseWT;
+      double baseWV;
+      if (ocrEmpty) {
+        baseWT = 0.0;
+        baseWV = 1.0;
+      } else {
+        final weights = _adaptiveWeights(
+          tokenCount: zonedTokens.length,
+          hasVisual: queryHash != null,
+          source: source,
+        );
+        baseWT = weights.$1;
+        baseWV = weights.$2;
+      }
+
+      // ── DEBUG: Phase B — Signals ──────────────────────────────────────
+      debugPrint('║ [Scanner] PHASE B — SIGNALS');
+      debugPrint('║ Domain: ${domain.name} | W_text=$baseWT W_visual=$baseWV');
+      debugPrint('║ Hash: ${queryHash != null ? "OK" : "NULL"} | '
+          'Faction: $detectedFaction | Expansion: $detectedExpansion');
 
       // ── Phase C: Candidate scoring ─────────────────────────────────────
 
-      final searchGenerals = domain != _DomainType.library;
-      final searchLibrary  = domain != _DomainType.general;
+      final searchGen = domain != _DomainType.library;
+      final searchLib = domain != _DomainType.general;
       final scored = <_ScoredFusionCandidate>[];
 
-      if (searchGenerals) {
-        for (final entry in _generalEntries!) {
+      if (searchGen) {
+        for (final e in _generalEntries!) {
           final r = _scoreCandidate(
-            entry, zonedTokens, queryHash, domain,
-            wText, wVisual, detectedFaction,
+            e, zonedTokens, queryHash, domain,
+            baseWT, baseWV, detectedFaction, detectedExpansion,
           );
-          if (r != null) scored.add(r);
+          if (r != null) { scored.add(r); }
         }
       }
-      if (searchLibrary) {
-        for (final entry in _libraryEntries!) {
+      if (searchLib) {
+        for (final e in _libraryEntries!) {
           final r = _scoreCandidate(
-            entry, zonedTokens, queryHash, domain,
-            wText, wVisual, detectedFaction,
+            e, zonedTokens, queryHash, domain,
+            baseWT, baseWV, detectedFaction, detectedExpansion,
           );
-          if (r != null) scored.add(r);
+          if (r != null) { scored.add(r); }
         }
       }
 
       scored.sort((a, b) => b.finalScore.compareTo(a.finalScore));
 
+      // ── DEBUG: Phase D — Results ──────────────────────────────────────
+      debugPrint('║ [Scanner] PHASE D — TOP 5 of ${scored.length}');
+      for (var i = 0; i < math.min(5, scored.length); i++) {
+        final s = scored[i];
+        final tag = s.entry.recordType == RecordType.general ? 'GEN' : 'LIB';
+        debugPrint('║   #$i [$tag] ${s.entry.cardId} "${s.entry.nameCn}" '
+            'sT=${s.sText.toStringAsFixed(3)} sV=${s.sVisual.toStringAsFixed(3)} '
+            'dg=${s.domainGate.toStringAsFixed(2)} boost=${s.boost.toStringAsFixed(2)} '
+            '→ FINAL=${s.finalScore.toStringAsFixed(3)}');
+      }
+      debugPrint('╚═══════════════════════════════════════════════════');
+
       if (scored.isEmpty) {
         sw.stop();
         return ScannerResult(
-          debugMessage: '[Scanner] No candidates above threshold '
-              'in ${sw.elapsedMilliseconds}ms.',
+          debugMessage: '[Scanner] No candidates in ${sw.elapsedMilliseconds}ms.',
         );
       }
-
-      // ── Phase D: Output ────────────────────────────────────────────────
 
       final top = scored.first;
       final gap = scored.length >= 2
           ? top.finalScore - scored[1].finalScore
           : top.finalScore;
-      final isFastPath = top.finalScore >= 0.75 && gap >= 0.20;
+      final fast = top.finalScore >= 0.75 && gap >= 0.20;
 
-      final candidates = (isFastPath ? [top] : scored.take(5))
+      if (top.finalScore > 0.85) {
+        HapticFeedback.mediumImpact();
+      }
+
+      final candidates = (fast ? [top] : scored.take(5))
           .map((s) => MatchCandidate(
-                cardId:     s.entry.cardId,
+                cardId: s.entry.cardId,
                 recordType: s.entry.recordType,
-                nameCn:     s.entry.nameCn,
-                nameEn:     s.entry.nameEn,
-                imagePath:  s.entry.imagePath,
+                nameCn: s.entry.nameCn,
+                nameEn: s.entry.nameEn,
+                imagePath: s.entry.imagePath,
                 confidence: s.finalScore,
               ))
           .toList();
 
       sw.stop();
-      debugPrint('[Scanner] ${candidates.length} result(s) '
-          '${isFastPath ? "(fast-path) " : ""}'
-          'top=${top.entry.cardId}(${top.finalScore.toStringAsFixed(3)}) '
-          'sT=${top.sText.toStringAsFixed(2)} sV=${top.sVisual.toStringAsFixed(2)} '
-          'dom=${top.domainGate.toStringAsFixed(1)} boost=${top.boost.toStringAsFixed(2)} '
-          'in ${sw.elapsedMilliseconds}ms');
-
       return ScannerResult(
         candidates: candidates,
-        fastPath:   isFastPath,
+        fastPath: fast,
         debugMessage: '[Scanner] ${candidates.length} match(es) '
             'in ${sw.elapsedMilliseconds}ms.',
       );
@@ -403,19 +447,17 @@ class ScannerService {
   // ═════════════════════════════════════════════════════════════════════════
 
   List<ZonedToken> _extractZonedTokens(RecognizedText recognised) {
-    double minY = double.infinity, maxY = 0;
-    double minX = double.infinity, maxX = 0;
+    double minY = double.infinity, maxY = 0, minX = double.infinity, maxX = 0;
     for (final block in recognised.blocks) {
       for (final pt in block.cornerPoints) {
-        if (pt.x < minX) minX = pt.x.toDouble();
-        if (pt.x > maxX) maxX = pt.x.toDouble();
-        if (pt.y < minY) minY = pt.y.toDouble();
-        if (pt.y > maxY) maxY = pt.y.toDouble();
+        if (pt.x < minX) { minX = pt.x.toDouble(); }
+        if (pt.x > maxX) { maxX = pt.x.toDouble(); }
+        if (pt.y < minY) { minY = pt.y.toDouble(); }
+        if (pt.y > maxY) { maxY = pt.y.toDouble(); }
       }
     }
     final cardH = maxY - minY;
     final cardW = maxX - minX;
-
     final tokens = <ZonedToken>[];
     final splitRe = RegExp(r'[\s·•\-—\u3000\uff0c\u3001\uff0e]+');
     final cleanRe = RegExp(r'[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9]');
@@ -423,64 +465,61 @@ class ScannerService {
     for (final block in recognised.blocks) {
       for (final line in block.lines) {
         final raw = line.text.trim();
-        if (raw.isEmpty) continue;
+        if (raw.isEmpty) { continue; }
         final zone = _assignZone(line, minX, minY, cardW, cardH);
-        final normalised = TextNormaliser.normalise(raw);
-
-        for (final part in normalised.split(splitRe)) {
-          final clean = part.replaceAll(cleanRe, '');
-          if (clean.length >= 2) {
-            tokens.add(ZonedToken(text: clean, zone: zone));
-          }
+        final norm = TextNormaliser.normalise(raw);
+        for (final part in norm.split(splitRe)) {
+          final c = part.replaceAll(cleanRe, '');
+          if (c.length >= 2) { tokens.add(ZonedToken(text: c, zone: zone)); }
         }
-        final fullClean = normalised.replaceAll(cleanRe, '');
-        if (fullClean.length >= 4) {
-          tokens.add(ZonedToken(text: fullClean, zone: zone));
-        }
+        final full = norm.replaceAll(cleanRe, '');
+        if (full.length >= 4) { tokens.add(ZonedToken(text: full, zone: zone)); }
       }
     }
     return tokens;
   }
 
-  CardZone _assignZone(
-    TextLine line,
-    double cardLeft, double cardTop,
-    double cardWidth, double cardHeight,
-  ) {
-    if (cardHeight <= 0 || cardWidth <= 0) return CardZone.unknown;
+  CardZone _assignZone(TextLine line, double cL, double cT, double cW, double cH) {
+    if (cH <= 0 || cW <= 0) { return CardZone.unknown; }
     final pts = line.cornerPoints;
-    if (pts.isEmpty) return CardZone.unknown;
-
+    if (pts.isEmpty) { return CardZone.unknown; }
     final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
     final cy = pts.map((p) => p.y).reduce((a, b) => a + b) / pts.length;
-    final relY = (cy - cardTop) / cardHeight;
-    final relX = (cx - cardLeft) / cardWidth;
-
-    if (relY < 0.25 && relX < 0.15) return CardZone.id;
-    if (relY > 0.80 && relX > 0.60) return CardZone.id;
-    if (relY < 0.25) return CardZone.name;
-    if (relY > 0.85) return CardZone.type;
+    final rY = (cy - cT) / cH;
+    final rX = (cx - cL) / cW;
+    if (rY < 0.25 && rX < 0.15) { return CardZone.id; }
+    if (rY > 0.80 && rX > 0.60) { return CardZone.id; }
+    if (rY < 0.25) { return CardZone.name; }
+    if (rY > 0.85) { return CardZone.type; }
     return CardZone.body;
   }
 
   // ═════════════════════════════════════════════════════════════════════════
-  // DOMAIN CLASSIFIER
+  // DOMAIN CLASSIFIER (CAUSE 2 FIX)
   // ═════════════════════════════════════════════════════════════════════════
 
   _DomainType _classifyDomain(List<ZonedToken> tokens) {
     double gs = 0.0, ls = 0.0;
+
     for (final token in tokens) {
       final t = token.text;
       final upper = t.toUpperCase();
 
       if ((token.zone == CardZone.id || token.zone == CardZone.name) &&
           _suitRankRe.hasMatch(t)) {
-        ls += 0.35; continue;
+        ls += 0.35;
+        continue;
       }
-      if (token.zone == CardZone.name && (t.contains('【') || t.contains('】'))) {
+
+      if (token.zone == CardZone.name &&
+          (t.contains('【') || t.contains('】'))) {
         ls += 0.15;
       }
-      if (_expansionPrefixRe.hasMatch(upper)) { gs += 0.30; continue; }
+
+      if (_expansionPrefixRe.hasMatch(upper)) {
+        gs += 0.30;
+        continue;
+      }
 
       for (final kw in _libraryKeywords) {
         if (t.contains(kw)) {
@@ -488,52 +527,68 @@ class ScannerService {
           break;
         }
       }
+
+      // CAUSE 2 FIX: Skill type keywords (锁定技/限定技/觉醒技/主公技/
+      // 使命技/转换技) appear on EVERY general card, NEVER on library cards.
+      // A single detection is near-definitive. Weight at +0.40.
+      // Other general keywords (体力上限/体力值) are weaker at +0.15.
       for (final kw in _generalKeywords) {
-        if (t.contains(kw)) { gs += 0.15; break; }
+        if (t.contains(kw)) {
+          gs += _skillTypeKeywords.contains(kw) ? 0.40 : 0.15;
+          break;
+        }
       }
     }
-    if (gs > ls + 0.10) return _DomainType.general;
-    if (ls > gs + 0.10) return _DomainType.library;
+
+    debugPrint('[Scanner] Domain scores: general=$gs library=$ls');
+
+    if (gs > ls + 0.10) { return _DomainType.general; }
+    if (ls > gs + 0.10) { return _DomainType.library; }
     return _DomainType.unknown;
   }
 
   // ═════════════════════════════════════════════════════════════════════════
-  // FACTION COLOUR DETECTION (Phase 2 — Pillar 7)
+  // FACTION DETECTION
   // ═════════════════════════════════════════════════════════════════════════
 
-  /// Samples the top-left 5% region of a straightened card to detect the
-  /// kingdom faction emblem colour.
-  ///
-  /// Returns "Wei"/"Shu"/"Wu"/"Qun"/"God" or null if ambiguous.
   String? _detectFaction(img.Image straightened) {
-    final w = straightened.width;
-    final h = straightened.height;
+    final w = straightened.width, h = straightened.height;
+    final pL = (w * 0.30).round(), pT = (h * 0.45).round();
+    final pW = math.max(4, (w * 0.10).round());
+    final pH = math.max(4, (h * 0.10).round());
+    int pR = 0, pG = 0, pB = 0, pN = 0;
+    for (var y = pT; y < pT + pH && y < h; y++) {
+      for (var x = pL; x < pL + pW && x < w; x++) {
+        final px = straightened.getPixel(x, y);
+        pR += px.r.toInt(); pG += px.g.toInt(); pB += px.b.toInt(); pN++;
+      }
+    }
+    const rR = 210.0, rG = 190.0, rB = 160.0;
+    double cR = 1.0, cG = 1.0, cB = 1.0;
+    if (pN > 0) {
+      final sR = pR / pN, sG = pG / pN, sB = pB / pN;
+      if (sR > 80 && sR < 250 && sG > 60 && sG < 250 && sB > 40 && sB < 250) {
+        cR = rR / sR; cG = rG / sG; cB = rB / sB;
+      }
+    }
     final sW = math.max(4, (w * 0.05).round());
     final sH = math.max(4, (h * 0.05).round());
-
-    int tR = 0, tG = 0, tB = 0, count = 0;
+    int tR = 0, tG = 0, tB = 0, cnt = 0;
     for (var y = 0; y < sH && y < h; y++) {
       for (var x = 0; x < sW && x < w; x++) {
         final px = straightened.getPixel(x, y);
-        tR += px.r.toInt();
-        tG += px.g.toInt();
-        tB += px.b.toInt();
-        count++;
+        tR += px.r.toInt(); tG += px.g.toInt(); tB += px.b.toInt(); cnt++;
       }
     }
-    if (count == 0) return null;
-
-    final aR = tR / count, aG = tG / count, aB = tB / count;
-
-    if (aB > 120 && aR < 100 && aB > aG) return 'Wei';
-    if (aR > 150 && aB < 100 && aR > aG) return 'Shu';
-    if (aG > 120 && aR < 100 && aB < 100) return 'Wu';
-    if (aR > 180 && aG > 150 && aB < 100) return 'God';
-
+    if (cnt == 0) { return null; }
+    final aR = (tR / cnt) * cR, aG = (tG / cnt) * cG, aB = (tB / cnt) * cB;
+    if (aB > 120 && aR < 100 && aB > aG) { return 'Wei'; }
+    if (aR > 150 && aB < 100 && aR > aG) { return 'Shu'; }
+    if (aG > 120 && aR < 100 && aB < 100) { return 'Wu'; }
+    if (aR > 180 && aG > 150 && aB < 100) { return 'God'; }
     final maxC = math.max(aR, math.max(aG, aB));
     final minC = math.min(aR, math.min(aG, aB));
-    if (maxC - minC < 30 && minC > 120) return 'Qun';
-
+    if (maxC - minC < 30 && minC > 120) { return 'Qun'; }
     return null;
   }
 
@@ -546,10 +601,10 @@ class ScannerService {
     required bool hasVisual,
     required ScanSource source,
   }) {
-    if (!hasVisual) return (1.0, 0.0);
-    if (source == ScanSource.straightened) return (0.50, 0.50);
-    if (source == ScanSource.userCrop) return (0.55, 0.45);
-    if (tokenCount < 3) return (0.40, 0.60);
+    if (!hasVisual) { return (1.0, 0.0); }
+    if (source == ScanSource.straightened) { return (0.50, 0.50); }
+    if (source == ScanSource.userCrop) { return (0.55, 0.45); }
+    if (tokenCount < 3) { return (0.40, 0.60); }
     return (0.70, 0.30);
   }
 
@@ -562,51 +617,69 @@ class ScannerService {
     List<ZonedToken> tokens,
     int? queryHash,
     _DomainType domain,
-    double wText,
-    double wVisual,
+    double baseWT,
+    double baseWV,
     String? detectedFaction,
+    String? detectedExpansion,
   ) {
-    double bestTextScore = 0.0;
-
+    double best = 0.0;
     for (final token in tokens) {
       final zw = _zoneWeights[token.zone] ?? 1.0;
 
-      final nq = FuzzyMatcher.scannerFuzzyScore(token.text, entry.normName);
-      if (nq > 0) bestTextScore = math.max(bestTextScore, zw * nq);
+      // CAUSE 1 FIX: Use length-aware name matching
+      final nq = _nameMatchScore(token.text, entry.normName, entry.recordType);
+      if (nq > 0) {
+        best = math.max(best, zw * nq);
+      }
 
-      final idClean = token.text.replaceAll(RegExp(r'[^A-Za-z0-9]'), '').toUpperCase();
-      if (idClean.length >= 4 && entry.normId.isNotEmpty) {
-        if (idClean == entry.normId ||
-            (entry.normId.contains(idClean) && idClean.length >= entry.normId.length - 2)) {
-          bestTextScore = math.max(bestTextScore, _zoneWeights[CardZone.id]!);
-        }
+      final idClean = token.text
+          .replaceAll(RegExp(r'[^A-Za-z0-9]'), '')
+          .toUpperCase();
+      if (idClean.length >= 4 &&
+          entry.normId.isNotEmpty &&
+          (idClean == entry.normId ||
+              (entry.normId.contains(idClean) &&
+                  idClean.length >= entry.normId.length - 2))) {
+        best = math.max(best, _zoneWeights[CardZone.id]!);
       }
 
       if (entry.recordType == RecordType.general) {
         for (final sk in entry.skillNames) {
           if (token.text == sk || token.text.contains(sk)) {
-            bestTextScore = math.max(bestTextScore, _zoneWeights[CardZone.body]! * 0.3);
+            best = math.max(best, _zoneWeights[CardZone.body]! * 0.3);
             break;
           }
         }
       }
     }
-
-    final sText = (bestTextScore / _maxZoneWeight).clamp(0.0, 1.0);
+    final sText = (best / _maxZoneWeight).clamp(0.0, 1.0);
 
     double sVisual = 0.5;
     if (queryHash != null) {
       final rh = ImageHashMatcher.instance.getCachedHash(entry.imagePath);
-      if (rh != null) sVisual = ImageHashMatcher.instance.similarity(queryHash, rh);
+      if (rh != null) {
+        sVisual = ImageHashMatcher.instance.similarity(queryHash, rh);
+      }
     }
 
-    final entryType = entry.recordType == RecordType.general
-        ? _DomainType.general : _DomainType.library;
+    double wT = baseWT;
+    double wV = baseWV;
+    if (sText < 0.20 && sVisual > 0.80 && baseWV < 0.80) {
+      wT = 0.15;
+      wV = 0.85;
+    }
+
+    final eType = entry.recordType == RecordType.general
+        ? _DomainType.general
+        : _DomainType.library;
     final double dg;
-    if (domain == entryType) { dg = 1.0; }
-    else if (domain == _DomainType.unknown) { dg = 0.8; }
-    else { dg = 0.0; }
-    if (dg == 0.0) return null;
+    if (domain == eType) {
+      dg = 1.0;
+    } else if (domain == _DomainType.unknown) {
+      dg = 0.85;
+    } else {
+      dg = 0.3;
+    }
 
     double boost = 0.0;
     if (detectedFaction != null &&
@@ -614,14 +687,58 @@ class ScannerService {
         entry.faction == detectedFaction) {
       boost += 0.05;
     }
+    if (detectedExpansion != null &&
+        entry.recordType == RecordType.general &&
+        entry.expansionLabel == detectedExpansion) {
+      boost += 0.03;
+    }
 
-    final fs = (wText * sText + wVisual * sVisual) * dg + boost;
-    if (fs < 0.35) return null;
+    final rawScore = wT * sText + wV * sVisual;
+    final finalScore = rawScore * dg + boost;
+
+    if (finalScore < 0.25) { return null; }
 
     return _ScoredFusionCandidate(
-      entry: entry, sText: sText, sVisual: sVisual,
-      domainGate: dg, boost: boost, finalScore: fs,
+      entry: entry,
+      sText: sText,
+      sVisual: sVisual,
+      domainGate: dg,
+      boost: boost,
+      finalScore: finalScore,
     );
+  }
+
+  // ═════════════════════════════════════════════════════════════════════════
+  // NAME MATCH SCORING (CAUSE 1 FIX)
+  // ═════════════════════════════════════════════════════════════════════════
+
+  /// CAUSE 1 FIX: Prevents long skill-description tokens from matching
+  /// short library card names via substring containment.
+  ///
+  /// Example: OCR token "对处于濒死状态的角色使用一张桃" (20 chars) would
+  /// match library card "桃" (1 char) with score 1.0 via `q.contains(t)`.
+  /// This caused Image 4's 蔡文姬 → 桃 misidentification.
+  ///
+  /// Fix: When the candidate is a library card with a short name (≤4 chars)
+  /// and the OCR token is much longer (> candidate + 2 chars), discount
+  /// the match by 90%. This eliminates false positives from skill text
+  /// while preserving legitimate short-token matches.
+  double _nameMatchScore(
+    String ocrToken,
+    String candidateName,
+    RecordType candidateType,
+  ) {
+    final score = FuzzyMatcher.scannerFuzzyScore(ocrToken, candidateName);
+    if (score <= 0) { return 0.0; }
+
+    if (candidateType == RecordType.library && candidateName.length <= 4) {
+      final lenDiff = ocrToken.length - candidateName.length;
+      if (lenDiff > 2) {
+        return score * 0.1;
+      }
+    }
+
+    return score;
   }
 
   String _normaliseId(String id) =>

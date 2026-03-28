@@ -1,31 +1,17 @@
 // lib/features/ai/presentation/screens/scanner_screen.dart
 //
-// Discover tab — card scanner with Document Scanner workflow (Phase 2).
+// Discover tab — card scanner with live-cropping workflow.
 //
-// State machine (v3.0 — .selecting replaced by .adjusting):
+// State machine (v5.2):
 //   _ScannerState.live      — live camera feed
-//   _ScannerState.adjusting — frozen still + quadrilateral handle overlay
-//   _ScannerState.reviewing — frozen still + results sheet
+//   _ScannerState.adjusting — frozen still + live-cropping rect overlay
+//                              Results sheet shows when _candidates is non-empty.
+//                              Drag start dismisses the sheet; release re-processes.
 //
-// Document Scanner flow:
-//   1. Shutter → capture + OCR in background
-//   2. Auto-edge detection estimates card quad from OCR TextBlock corners
-//   3. State → .adjusting — 4 draggable corner handles appear
-//   4. User refines corners (magnifier bubble provides precision)
-//   5. "Scan" → perspective warp → re-OCR on straightened → fusion pipeline
-//   6. Or "Skip" → full-frame fusion (Phase 1 path, no warp)
-//
-// Coordinate Transformation (Widget → Buffer):
-//   Same BoxFit.cover inverse as Phase 1 (spec v3.0 §Pillar 6.2).
-//   For each corner point p in widget coords:
-//     scale  = max(widget_w / buffer_w, widget_h / buffer_h)
-//     crop_x = (buffer_w * scale - widget_w) / 2
-//     crop_y = (buffer_h * scale - widget_h) / 2
-//     p_buffer = Offset((p.dx + crop_x) / scale, (p.dy + crop_y) / scale)
-//
-// Architecture:
-//   - No feature/* presentation imports — navigation via onCardTap / onBack
-//   - Search mode delegated to DiscoverSearchScreen
+// Camera lifecycle (fully self-contained):
+//   Parent passes [isActive] — true when this tab is selected.
+//   didUpdateWidget reacts to isActive changes to start/stop camera.
+//   No public API — parent has zero knowledge of camera internals.
 
 import 'dart:io';
 import 'dart:math' as math;
@@ -33,6 +19,7 @@ import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image/image.dart' as img;
 import 'package:image_picker/image_picker.dart';
@@ -51,11 +38,9 @@ enum _FlashMode { off, auto, on }
 
 enum _DiscoverMode { scan, search }
 
-/// v3.0 state machine: .selecting removed, .adjusting added.
 enum _ScannerState {
   live,       // Camera feed active
-  adjusting,  // Frozen still + quad-handle overlay (Document Scanner)
-  reviewing,  // Frozen still + results sheet
+  adjusting,  // Frozen still + rect overlay + optional results sheet
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -66,24 +51,26 @@ class ScannerScreen extends StatefulWidget {
   final void Function(String id, RecordType type) onCardTap;
   final VoidCallback onBack;
   final void Function(bool visible) onNavBarVisibilityChanged;
+  final bool isActive;
 
   const ScannerScreen({
     super.key,
     required this.onCardTap,
     required this.onBack,
     required this.onNavBarVisibilityChanged,
+    required this.isActive,
   });
 
   @override
-  State<ScannerScreen> createState() => ScannerScreenState();
+  State<ScannerScreen> createState() => _ScannerScreenState();
 }
 
-class ScannerScreenState extends State<ScannerScreen>
+class _ScannerScreenState extends State<ScannerScreen>
     with WidgetsBindingObserver {
   // ── Camera
   CameraController? _controller;
   String? _cameraError;
-  bool _initialising = true;
+  bool _initialising = false;
   _FlashMode _flashMode = _FlashMode.off;
 
   // ── Focus indicator
@@ -99,9 +86,6 @@ class ScannerScreenState extends State<ScannerScreen>
   // ── Screen state
   _ScannerState _state = _ScannerState.live;
 
-  bool get isReviewing =>
-      _state == _ScannerState.reviewing || _state == _ScannerState.adjusting;
-
   // ── Captured image
   File? _capturedFile;
   Uint8List? _capturedImageBytes;
@@ -111,14 +95,11 @@ class ScannerScreenState extends State<ScannerScreen>
 
   // ── Results
   List<MatchCandidate> _candidates = [];
-  List<TextBlock> _ocrBlocks = [];
 
-  // ── Quad handles (4 corners in widget coordinates, clockwise from top-left)
-  List<Offset> _quadCorners = [];
-
-  // ── Active drag state for magnifier
+  // ── Adjustable rectangle overlay
+  Rect _adjustRect = Rect.zero;
+  bool _rectReady = false; // Prevents showing _defaultRect() flash
   int? _activeDragIndex;
-  Offset? _activeDragPosition;
 
   // ── Mode
   _DiscoverMode _mode = _DiscoverMode.scan;
@@ -126,11 +107,18 @@ class ScannerScreenState extends State<ScannerScreen>
   // ── Gallery
   final ImagePicker _imagePicker = ImagePicker();
 
-  // ── Widget size
+  // ── Widget size (set on every build from LayoutBuilder)
   Size _widgetSize = Size.zero;
 
-  // ── OCR result retained for re-use during adjusting → scan
-  RecognizedText? _lastRecognisedText;
+  // ── Live anchor dots
+  List<Offset> _liveAnchorPoints = [];
+  bool _liveOcrRunning = false;
+
+  // ── Serialises all takePicture() calls
+  bool _captureLock = false;
+
+  // ── Tab-active gate (driven by widget.isActive via didUpdateWidget)
+  bool _tabActive = false;
 
   // ─────────────────────────────────────────────────────────────────────────
 
@@ -138,7 +126,6 @@ class ScannerScreenState extends State<ScannerScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    _initCamera();
   }
 
   @override
@@ -152,21 +139,44 @@ class ScannerScreenState extends State<ScannerScreen>
   }
 
   @override
+  void didUpdateWidget(covariant ScannerScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.isActive && !oldWidget.isActive) {
+      _tabActive = true;
+      if (_controller == null && !_initialising) { _initCamera(); }
+      else if (_state == _ScannerState.live) { _startLiveOcrStream(); }
+    } else if (!widget.isActive && oldWidget.isActive) {
+      _tabActive = false;
+      _stopCamera();
+    }
+  }
+
+  @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.inactive || state == AppLifecycleState.paused) {
+      _stopCamera();
+    } else if (state == AppLifecycleState.resumed) {
+      if (widget.isActive) {
+        _tabActive = true;
+        _initCamera();
+      }
+    }
+  }
+
+  void _stopCamera() {
     final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized) return;
-    if (state == AppLifecycleState.inactive) {
+    if (ctrl != null && ctrl.value.isInitialized) {
       ctrl.dispose();
       _controller = null;
-    } else if (state == AppLifecycleState.resumed) {
-      _initCamera();
     }
+    if (mounted) { setState(() => _liveAnchorPoints = []); }
   }
 
   // ── Camera init ───────────────────────────────────────────────────────────
 
   Future<void> _initCamera() async {
-    setState(() { _initialising = true; _cameraError = null; });
+    if (!_tabActive) { return; }
+    if (mounted) { setState(() { _initialising = true; _cameraError = null; }); }
     try {
       final cameras = await availableCameras();
       if (cameras.isEmpty) { _setError('No cameras found.'); return; }
@@ -174,15 +184,32 @@ class ScannerScreenState extends State<ScannerScreen>
         (c) => c.lensDirection == CameraLensDirection.back,
         orElse: () => cameras.first,
       );
-      final ctrl = CameraController(back, ResolutionPreset.high,
-          enableAudio: false, imageFormatGroup: ImageFormatGroup.jpeg);
+      final ctrl = CameraController(
+        back, ResolutionPreset.high,
+        enableAudio: false, imageFormatGroup: ImageFormatGroup.jpeg,
+      );
       await ctrl.initialize();
+
+      if (!_tabActive) {
+        ctrl.dispose();
+        if (mounted) { setState(() => _initialising = false); }
+        return;
+      }
+
       await ctrl.setFocusMode(FocusMode.auto);
       await ctrl.setExposureMode(ExposureMode.auto);
-      await ctrl.setFlashMode(_flashModeToCamera(_flashMode));
+      // Flash stays off during preview/live-OCR. User's flash preference
+      // is only applied momentarily during _scan() and tap-to-focus.
+      await ctrl.setFlashMode(FlashMode.off);
       final minZ = await ctrl.getMinZoomLevel();
       final maxZ = await ctrl.getMaxZoomLevel();
-      if (!mounted) return;
+
+      if (!mounted || !_tabActive) {
+        ctrl.dispose();
+        if (mounted) { setState(() => _initialising = false); }
+        return;
+      }
+
       setState(() {
         _controller = ctrl;
         _initialising = false;
@@ -190,12 +217,72 @@ class ScannerScreenState extends State<ScannerScreen>
         _maxZoom = maxZ.clamp(1.0, 8.0);
         _currentZoom = 1.0;
       });
+
       ScannerService.instance.warmup();
-    } catch (e) { _setError(e.toString()); }
+      _startLiveOcrStream();
+    } catch (e) {
+      _setError(e.toString());
+    }
+  }
+
+  // ── Live OCR stream for anchor dots ──────────────────────────────────────
+
+  void _startLiveOcrStream() {
+    Future.doWhile(() async {
+      await Future.delayed(const Duration(milliseconds: 400));
+      if (!mounted || _state != _ScannerState.live || !_tabActive) {
+        if (mounted) { setState(() => _liveAnchorPoints = []); }
+        return false;
+      }
+      await _runLiveOcrPass();
+      return mounted && _state == _ScannerState.live && _tabActive;
+    });
+  }
+
+  Future<void> _runLiveOcrPass() async {
+    final ctrl = _controller;
+    if (ctrl == null || !ctrl.value.isInitialized || _liveOcrRunning) { return; }
+    if (_state != _ScannerState.live || !_tabActive) { return; }
+    if (_captureLock) { return; }
+
+    _liveOcrRunning = true;
+    _captureLock = true;
+    try {
+      final xFile = await ctrl.takePicture();
+
+      if (!mounted || _state != _ScannerState.live || !_tabActive) {
+        File(xFile.path).delete().ignore();
+        return;
+      }
+
+      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
+      final inputImage = InputImage.fromFilePath(xFile.path);
+      final recognised = await recogniser.processImage(inputImage);
+      await recogniser.close();
+      File(xFile.path).delete().ignore();
+
+      if (!mounted || _state != _ScannerState.live || !_tabActive) { return; }
+
+      final points = <Offset>[];
+      for (final block in recognised.blocks) {
+        final pts = block.cornerPoints;
+        if (pts.length < 4) { continue; }
+        final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
+        final cy = pts.map((p) => p.y).reduce((a, b) => a + b) / pts.length;
+        points.add(Offset(cx.toDouble(), cy.toDouble()));
+      }
+
+      if (mounted) { setState(() => _liveAnchorPoints = points); }
+    } catch (_) {
+      // Silently ignore
+    } finally {
+      _captureLock = false;
+      _liveOcrRunning = false;
+    }
   }
 
   void _setError(String msg) {
-    if (!mounted) return;
+    if (!mounted) { return; }
     setState(() { _cameraError = msg; _initialising = false; });
   }
 
@@ -205,48 +292,59 @@ class ScannerScreenState extends State<ScannerScreen>
 
   Future<void> _scan() async {
     final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized || _processing) return;
-    if (_state != _ScannerState.live) return;
+    if (ctrl == null || !ctrl.value.isInitialized || _processing) { return; }
+    if (_state != _ScannerState.live) { return; }
+
+    while (_captureLock) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      if (!mounted || _state != _ScannerState.live) { return; }
+    }
+    _captureLock = true;
 
     try {
       try { await ctrl.setFocusMode(FocusMode.locked); } catch (_) {}
 
+      // Apply user's flash preference only for the shutter capture.
+      await ctrl.setFlashMode(_flashModeToCamera(_flashMode));
       final xFile = await ctrl.takePicture();
+      // Reset flash to off so live-OCR doesn't trigger it.
+      ctrl.setFlashMode(FlashMode.off).ignore();
+      _captureLock = false;
+
       final bytes = await File(xFile.path).readAsBytes();
       _capturedFile = File(xFile.path);
       _capturedImageBytes = bytes;
 
-      if (!mounted) return;
+      if (!mounted) { return; }
       setState(() {
         _state = _ScannerState.adjusting;
         _processing = true;
         _candidates = [];
-        _ocrBlocks = [];
-        _quadCorners = _defaultQuad(); // fallback until OCR finishes
+        _rectReady = false;
+        _adjustRect = Rect.zero;
       });
 
       ctrl.setFocusMode(FocusMode.auto).ignore();
 
-      // Run OCR in background to get text block corners for auto-edge hint
       final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
       final inputImage = InputImage.fromFilePath(xFile.path);
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      if (!mounted) return;
+      if (!mounted) { return; }
 
-      _lastRecognisedText = recognised;
-      _ocrBlocks = recognised.blocks;
-
-      // Auto-edge detection: convex hull of OCR corners + 5% margin
-      final autoQuad = _estimateCardQuad(recognised);
+      final autoRect = _estimateCardRect(recognised);
 
       setState(() {
         _processing = false;
-        _quadCorners = autoQuad;
+        _adjustRect = autoRect;
+        _rectReady = true;
       });
+
+      _confirmAndWarp();
     } catch (e) {
-      if (!mounted) return;
+      _captureLock = false;
+      if (!mounted) { return; }
       setState(() { _processing = false; _capturedImageBytes = null; });
       _returnToLive();
       _showSnack('Scan failed: $e');
@@ -254,21 +352,21 @@ class ScannerScreenState extends State<ScannerScreen>
   }
 
   Future<void> _scanFromGallery() async {
-    if (_processing || _state != _ScannerState.live) return;
+    if (_processing || _state != _ScannerState.live) { return; }
 
     final picked = await _imagePicker.pickImage(source: ImageSource.gallery);
-    if (picked == null || !mounted) return;
+    if (picked == null || !mounted) { return; }
 
     final bytes = await picked.readAsBytes();
     _capturedImageBytes = bytes;
 
-    if (!mounted) return;
+    if (!mounted) { return; }
     setState(() {
       _state = _ScannerState.adjusting;
       _processing = true;
       _candidates = [];
-      _ocrBlocks = [];
-      _quadCorners = _defaultQuad();
+      _rectReady = false;
+      _adjustRect = Rect.zero;
     });
 
     try {
@@ -277,94 +375,87 @@ class ScannerScreenState extends State<ScannerScreen>
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      if (!mounted) return;
-      _lastRecognisedText = recognised;
-      _ocrBlocks = recognised.blocks;
+      if (!mounted) { return; }
       setState(() {
         _processing = false;
-        _quadCorners = _estimateCardQuad(recognised);
+        _adjustRect = _estimateCardRect(recognised);
+        _rectReady = true;
       });
+
+      _confirmAndWarp();
     } catch (e) {
-      if (!mounted) return;
+      if (!mounted) { return; }
       setState(() { _processing = false; _capturedImageBytes = null; });
       _returnToLive();
       _showSnack('Scan failed: $e');
     }
   }
 
-  /// Default quad: 70% × 85% centered rectangle (fallback before OCR completes)
-  List<Offset> _defaultQuad() {
+  Rect _defaultRect() {
     final w = _widgetSize.width;
     final h = _widgetSize.height;
-    final l = w * 0.15, r = w * 0.85;
-    final t = h * 0.075, b = h * 0.925;
-    return [Offset(l, t), Offset(r, t), Offset(r, b), Offset(l, b)];
+    return Rect.fromLTRB(w * 0.15, h * 0.075, w * 0.85, h * 0.925);
   }
 
-  /// Estimates card quadrilateral from OCR text block bounding corners.
-  /// Returns 4 Offset points in widget coordinates, clockwise from top-left.
-  List<Offset> _estimateCardQuad(RecognizedText recognised) {
-    if (recognised.blocks.isEmpty) return _defaultQuad();
+  /// Estimates a full card bounding rectangle from OCR text blocks.
+  /// SGS cards: ~0.63 W:H aspect ratio, text at bottom ~30%.
+  Rect _estimateCardRect(RecognizedText recognised) {
+    if (recognised.blocks.isEmpty) { return _defaultRect(); }
 
-    // Collect all corner points in buffer pixel space
     double minX = double.infinity, minY = double.infinity;
     double maxX = 0, maxY = 0;
     for (final block in recognised.blocks) {
       for (final pt in block.cornerPoints) {
-        if (pt.x < minX) minX = pt.x.toDouble();
-        if (pt.x > maxX) maxX = pt.x.toDouble();
-        if (pt.y < minY) minY = pt.y.toDouble();
-        if (pt.y > maxY) maxY = pt.y.toDouble();
+        if (pt.x < minX) { minX = pt.x.toDouble(); }
+        if (pt.x > maxX) { maxX = pt.x.toDouble(); }
+        if (pt.y < minY) { minY = pt.y.toDouble(); }
+        if (pt.y > maxY) { maxY = pt.y.toDouble(); }
       }
     }
 
-    // Add 5% margin
-    final rangeX = maxX - minX;
-    final rangeY = maxY - minY;
-    minX = (minX - rangeX * 0.05).clamp(0, double.infinity);
-    minY = (minY - rangeY * 0.05).clamp(0, double.infinity);
-    maxX += rangeX * 0.05;
-    maxY += rangeY * 0.05;
+    final textW = maxX - minX;
+    final textH = maxY - minY;
+    if (textW < 50 || textH < 10) { return _defaultRect(); }
 
-    // Transform buffer coords → widget coords (inverse of the BoxFit.cover)
+    const cardAspect = 0.63;
+    final estimatedCardH = textW / cardAspect;
+    final cardBottom = maxY + estimatedCardH * 0.03;
+    final cardTop = cardBottom - estimatedCardH;
+    final hPad = textW * 0.05;
+    final cardLeft = minX - hPad;
+    final cardRight = maxX + hPad;
+
     final bytes = _capturedImageBytes;
-    if (bytes == null || _widgetSize == Size.zero) return _defaultQuad();
+    if (bytes == null || _widgetSize == Size.zero) { return _defaultRect(); }
 
     final decoded = img.decodeImage(bytes);
-    if (decoded == null) return _defaultQuad();
+    if (decoded == null) { return _defaultRect(); }
 
     final bufW = decoded.width.toDouble();
     final bufH = decoded.height.toDouble();
     final wW = _widgetSize.width;
     final wH = _widgetSize.height;
-
     final scale = math.max(wW / bufW, wH / bufH);
     final cropX = (bufW * scale - wW) / 2.0;
     final cropY = (bufH * scale - wH) / 2.0;
 
-    Offset bufToWidget(double bx, double by) {
-      return Offset(
-        (bx * scale - cropX).clamp(0, wW),
-        (by * scale - cropY).clamp(0, wH),
-      );
-    }
+    // Buffer → widget coordinate transform
+    final wLeft   = (cardLeft * scale - cropX).clamp(0.0, wW);
+    final wTop    = (cardTop * scale - cropY).clamp(0.0, wH);
+    final wRight  = (cardRight * scale - cropX).clamp(0.0, wW);
+    final wBottom = (cardBottom * scale - cropY).clamp(0.0, wH);
 
-    return [
-      bufToWidget(minX, minY), // top-left
-      bufToWidget(maxX, minY), // top-right
-      bufToWidget(maxX, maxY), // bottom-right
-      bufToWidget(minX, maxY), // bottom-left
-    ];
+    return Rect.fromLTRB(wLeft, wTop, wRight, wBottom);
   }
 
   // ═════════════════════════════════════════════════════════════════════════
   // ADJUSTING → PERSPECTIVE WARP → FUSION
   // ═════════════════════════════════════════════════════════════════════════
 
-  /// "Scan" button: warp the card, re-OCR, run fusion with straightened mode.
   Future<void> _confirmAndWarp() async {
     final bytes = _capturedImageBytes;
-    if (bytes == null || _processing) return;
+    if (bytes == null || _processing) { return; }
+    if (_state != _ScannerState.adjusting) { return; }
 
     setState(() { _processing = true; });
 
@@ -376,7 +467,7 @@ class ScannerScreenState extends State<ScannerScreen>
         return;
       }
 
-      // ── Transform 4 widget-space corners → buffer pixel space ──────────
+      // ── Widget Rect → buffer pixel Rect (BoxFit.cover inverse) ─────────
       final bufW = decoded.width.toDouble();
       final bufH = decoded.height.toDouble();
       final wW = _widgetSize.width;
@@ -385,31 +476,35 @@ class ScannerScreenState extends State<ScannerScreen>
       final cropX = (bufW * scale - wW) / 2.0;
       final cropY = (bufH * scale - wH) / 2.0;
 
-      final bufferCorners = _quadCorners.map((p) {
+      Offset widgetToBuf(double wx, double wy) {
         return Offset(
-          ((p.dx + cropX) / scale).clamp(0, bufW),
-          ((p.dy + cropY) / scale).clamp(0, bufH),
+          ((wx + cropX) / scale).clamp(0, bufW),
+          ((wy + cropY) / scale).clamp(0, bufH),
         );
-      }).toList();
+      }
 
-      // ── Perspective warp → straightened card image ─────────────────────
+      // Convert the Rect's 4 corners to Offsets for PerspectiveWarper
+      // (clockwise from top-left as required by warp()).
+      final r = _adjustRect;
+      final bufferCorners = [
+        widgetToBuf(r.left, r.top),     // TL
+        widgetToBuf(r.right, r.top),    // TR
+        widgetToBuf(r.right, r.bottom), // BR
+        widgetToBuf(r.left, r.bottom),  // BL
+      ];
+
       final straightened = PerspectiveWarper.warp(decoded, bufferCorners);
-
-      // ── Encode to JPEG for MLKit + ScannerService ──────────────────────
       final straightenedJpeg = PerspectiveWarper.encodeJpeg(straightened);
 
-      // ── Write temp file for MLKit (requires file path) ─────────────────
       final tempDir = await Directory.systemTemp.createTemp('sha_warp_');
       final tempFile = File('${tempDir.path}/warped.jpg');
       await tempFile.writeAsBytes(straightenedJpeg);
 
-      // ── Re-run OCR on the straightened image ───────────────────────────
       final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
       final inputImage = InputImage.fromFilePath(tempFile.path);
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      // ── Run fusion pipeline with straightened source + decoded image ────
       final result = await ScannerService.instance.match(
         straightenedJpeg,
         recognisedText: recognised,
@@ -417,57 +512,22 @@ class ScannerScreenState extends State<ScannerScreen>
         straightenedImage: straightened,
       );
 
-      // Cleanup
       tempFile.delete().ignore();
       tempDir.delete().ignore();
 
-      if (!mounted) return;
+      if (!mounted) { return; }
+
       setState(() {
         _processing = false;
-        _state = _ScannerState.reviewing;
         _candidates = result.candidates;
       });
 
       if (result.candidates.isEmpty) {
-        _showSnack('Card not recognised — try adjusting corners');
+        _showSnack('No match — adjust the crop and release');
       }
     } catch (e) {
-      if (!mounted) return;
+      if (!mounted) { return; }
       setState(() { _processing = false; });
-      _showSnack('Warp failed: $e');
-    }
-  }
-
-  /// "Skip" button: run fusion on the full frame without perspective warp.
-  Future<void> _skipWarp() async {
-    final bytes = _capturedImageBytes;
-    final recognised = _lastRecognisedText;
-    if (bytes == null || recognised == null) { _returnToLive(); return; }
-
-    setState(() { _processing = true; });
-
-    try {
-      final result = await ScannerService.instance.match(
-        bytes,
-        recognisedText: recognised,
-        source: ScanSource.camera,
-      );
-
-      if (!mounted) return;
-      setState(() {
-        _processing = false;
-        _state = _ScannerState.reviewing;
-        _candidates = result.candidates;
-      });
-
-      if (result.candidates.isEmpty) {
-        _showSnack('Card not recognised — try again');
-        _returnToLive();
-      }
-    } catch (e) {
-      if (!mounted) return;
-      setState(() { _processing = false; });
-      _returnToLive();
       _showSnack('Scan failed: $e');
     }
   }
@@ -478,20 +538,21 @@ class ScannerScreenState extends State<ScannerScreen>
 
   void _returnToLive() {
     _deleteCapturedFile();
+    _captureLock = false;
     _controller?.setFocusMode(FocusMode.auto).ignore();
-    if (_currentZoom != 1.0) _controller?.setZoomLevel(1.0).ignore();
+    if (_currentZoom != 1.0) { _controller?.setZoomLevel(1.0).ignore(); }
     setState(() {
       _state = _ScannerState.live;
       _processing = false;
       _candidates = [];
-      _ocrBlocks = [];
       _capturedImageBytes = null;
       _currentZoom = 1.0;
-      _quadCorners = [];
+      _adjustRect = Rect.zero;
+      _rectReady = false;
       _activeDragIndex = null;
-      _activeDragPosition = null;
-      _lastRecognisedText = null;
+      _liveAnchorPoints = [];
     });
+    if (_tabActive) { _startLiveOcrStream(); }
   }
 
   void _deleteCapturedFile() {
@@ -502,33 +563,27 @@ class ScannerScreenState extends State<ScannerScreen>
     }
   }
 
-  void resetSession() {
-    _returnToLive();
-    _controller?.dispose();
-    _controller = null;
-    _initCamera();
-  }
-
   void _showSnack(String message) {
-    if (!mounted) return;
+    if (!mounted) { return; }
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message), behavior: SnackBarBehavior.floating,
           duration: const Duration(seconds: 2)),
     );
   }
 
-  // ── Flash / Zoom / Focus (unchanged from Phase 1) ─────────────────────
+  // ── Flash / Zoom / Focus ──────────────────────────────────────────────────
 
   Future<void> _cycleFlash() async {
     final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized) return;
+    if (ctrl == null || !ctrl.value.isInitialized) { return; }
     final next = switch (_flashMode) {
       _FlashMode.off  => _FlashMode.auto,
       _FlashMode.auto => _FlashMode.on,
       _FlashMode.on   => _FlashMode.off,
     };
+    // Only update the UI indicator. The actual flash mode is applied
+    // momentarily in _scan() and _onViewfinderTap() — not persistently.
     setState(() => _flashMode = next);
-    await ctrl.setFlashMode(_flashModeToCamera(next));
   }
 
   FlashMode _flashModeToCamera(_FlashMode m) => switch (m) {
@@ -547,16 +602,16 @@ class ScannerScreenState extends State<ScannerScreen>
 
   Future<void> _onScaleUpdate(ScaleUpdateDetails details) async {
     final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized || _state != _ScannerState.live) return;
+    if (ctrl == null || !ctrl.value.isInitialized || _state != _ScannerState.live) { return; }
     final newZoom = (_baseZoom * details.scale).clamp(_minZoom, _maxZoom);
-    if ((newZoom - _currentZoom).abs() < 0.01) return;
+    if ((newZoom - _currentZoom).abs() < 0.01) { return; }
     setState(() => _currentZoom = newZoom);
     await ctrl.setZoomLevel(newZoom);
   }
 
   Future<void> _onViewfinderTap(TapDownDetails details, BoxConstraints box) async {
     final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized || _state != _ScannerState.live) return;
+    if (ctrl == null || !ctrl.value.isInitialized || _state != _ScannerState.live) { return; }
 
     final widgetW = box.maxWidth;
     final widgetH = box.maxHeight;
@@ -566,6 +621,12 @@ class ScannerScreenState extends State<ScannerScreen>
     });
 
     try {
+      // Flash assist for tap-to-focus: briefly enable flash if user has it on.
+      final needsFlash = _flashMode != _FlashMode.off;
+      if (needsFlash) {
+        await ctrl.setFlashMode(_flashModeToCamera(_flashMode));
+      }
+
       final previewSize = ctrl.value.previewSize!;
       final sensorW = previewSize.height;
       final sensorH = previewSize.width;
@@ -588,11 +649,17 @@ class ScannerScreenState extends State<ScannerScreen>
       await ctrl.setFocusPoint(Offset(sensorX.clamp(0, 1), sensorY.clamp(0, 1)));
       await ctrl.setExposurePoint(Offset(sensorX.clamp(0, 1), sensorY.clamp(0, 1)));
       await Future.delayed(const Duration(milliseconds: 700));
-      if (mounted) setState(() => _focusAcquired = true);
+      if (mounted) { setState(() => _focusAcquired = true); }
+
+      // Turn flash back off after focus assist.
+      if (needsFlash) {
+        ctrl.setFlashMode(FlashMode.off).ignore();
+      }
+
       await Future.delayed(const Duration(milliseconds: 1500));
-      if (mounted) setState(() => _focusPoint = null);
+      if (mounted) { setState(() => _focusPoint = null); }
     } catch (_) {
-      if (mounted) setState(() => _focusPoint = null);
+      if (mounted) { setState(() => _focusPoint = null); }
     }
   }
 
@@ -615,15 +682,22 @@ class ScannerScreenState extends State<ScannerScreen>
 
   Widget _buildScanMode() {
     return PopScope(
+      // Always block pop — scanner handles all back navigation internally.
+      // Adjusting → _returnToLive(). Live → widget.onBack() (main.dart switches tab).
+      // This prevents main.dart's outer PopScope from firing simultaneously.
       canPop: false,
       onPopInvokedWithResult: (_, _) {
-        if (_state == _ScannerState.adjusting) { _returnToLive(); }
-        else if (_state == _ScannerState.reviewing) { _returnToLive(); }
-        else { widget.onBack(); }
+        if (_state == _ScannerState.adjusting) {
+          _returnToLive();
+        } else {
+          widget.onBack();
+        }
       },
       child: LayoutBuilder(
         builder: (context, constraints) {
           _widgetSize = Size(constraints.maxWidth, constraints.maxHeight);
+          final isAdj = _state == _ScannerState.adjusting;
+          final hasResults = isAdj && _candidates.isNotEmpty;
           return Stack(
             fit: StackFit.expand,
             children: [
@@ -631,72 +705,54 @@ class ScannerScreenState extends State<ScannerScreen>
               Positioned.fill(child: _buildLiveFeed()),
 
               // 2. Frozen still
-              if (_capturedImageBytes != null)
+              if (_capturedImageBytes != null && isAdj)
                 Positioned.fill(
                   child: Image.memory(_capturedImageBytes!,
-                      fit: BoxFit.cover, gaplessPlayback: true),
+                    fit: BoxFit.cover, gaplessPlayback: true),
                 ),
 
-              // 3. Quad-handle overlay (adjusting state)
-              if (_state == _ScannerState.adjusting && _quadCorners.length == 4)
+              // 3. Rect-handle overlay — only after OCR computes the real rect
+              if (isAdj && _rectReady)
                 Positioned.fill(
-                  child: _QuadHandleOverlay(
-                    corners: _quadCorners,
+                  child: _RectHandleOverlay(
+                    rect: _adjustRect,
                     activeIndex: _activeDragIndex,
-                    activePosition: _activeDragPosition,
-                    capturedBytes: _capturedImageBytes,
                     widgetSize: _widgetSize,
-                    onCornerDragStart: (index, pos) {
+                    processing: _processing,
+                    onCornerDragStart: (index) {
+                      HapticFeedback.selectionClick();
                       setState(() {
                         _activeDragIndex = index;
-                        _activeDragPosition = pos;
+                        _candidates = []; // Dismiss results while re-cropping
                       });
                     },
-                    onCornerDragUpdate: (index, pos) {
-                      setState(() {
-                        _quadCorners[index] = pos;
-                        _activeDragPosition = pos;
-                      });
+                    onRectChanged: (newRect) {
+                      setState(() { _adjustRect = newRect; });
                     },
                     onCornerDragEnd: () {
-                      setState(() {
-                        _activeDragIndex = null;
-                        _activeDragPosition = null;
-                      });
+                      HapticFeedback.lightImpact();
+                      setState(() { _activeDragIndex = null; });
+                      _confirmAndWarp();
                     },
                   ),
                 ),
 
-              // 4. Adjusting action bar
-              if (_state == _ScannerState.adjusting && !_processing)
-                Positioned(
-                  left: 0, right: 0, bottom: 40,
-                  child: _AdjustingActionBar(
-                    onScan: () => _confirmAndWarp(),
-                    onSkip: () => _skipWarp(),
-                  ),
-                ),
-
-              // 5. OCR overlay (reviewing only)
-              if (_state == _ScannerState.reviewing && _ocrBlocks.isNotEmpty)
-                Positioned.fill(child: _OcrHighlightOverlay(blocks: _ocrBlocks)),
-
-              // 6. Top bar
+              // 4. Top bar
               Positioned(top: 0, left: 0, right: 0, child: _buildTopBar()),
 
-              // 7. Bottom controls (live)
+              // 5. Bottom controls
               if (_state == _ScannerState.live) _buildBottomControls(),
 
-              // 8. Processing spinner
-              if (_processing)
+              // 6. Processing spinner (only before rect is ready)
+              if (_processing && !_rectReady)
                 const Positioned(
                   bottom: 120, left: 0, right: 0,
                   child: Center(child: SizedBox(width: 36, height: 36,
                       child: CircularProgressIndicator(color: Colors.white, strokeWidth: 3))),
                 ),
 
-              // 9. Results sheet
-              if (_state == _ScannerState.reviewing && _candidates.isNotEmpty)
+              // 7. Results sheet — coexists with the rect overlay
+              if (hasResults)
                 Positioned.fill(
                   child: ScannerResultsSheet(
                     candidates: _candidates,
@@ -711,18 +767,27 @@ class ScannerScreenState extends State<ScannerScreen>
     );
   }
 
-  // ── Top bar ─────────────────────────────────────────────────────────────
-
   Widget _buildTopBar() {
     final isAdj = _state == _ScannerState.adjusting;
+    final hasResults = isAdj && _candidates.isNotEmpty;
+    final String title;
+    if (!isAdj) {
+      title = 'Discover';
+    } else if (_processing) {
+      title = 'Matching…';
+    } else if (hasResults) {
+      title = 'Discover';
+    } else {
+      title = 'Drag corners to crop';
+    }
     return SafeArea(
       child: SizedBox(
         height: 56,
         child: Stack(
           children: [
             Center(child: Text(
-              isAdj ? 'Adjust Card Boundary' : 'Discover',
-              style: TextStyle(color: Colors.white, fontSize: isAdj ? 15 : 17,
+              title,
+              style: TextStyle(color: Colors.white, fontSize: isAdj && !hasResults ? 15 : 17,
                   fontWeight: FontWeight.w600,
                   shadows: const [Shadow(color: Colors.black54, blurRadius: 8)]),
             )),
@@ -730,8 +795,8 @@ class ScannerScreenState extends State<ScannerScreen>
               IconButton(
                 icon: const Icon(Icons.arrow_back, color: Colors.white, size: 22),
                 onPressed: () {
-                  if (_state != _ScannerState.live) _returnToLive();
-                  else widget.onBack();
+                  if (_state != _ScannerState.live) { _returnToLive(); }
+                  else { widget.onBack(); }
                 },
               ),
               if (_state == _ScannerState.live)
@@ -744,8 +809,6 @@ class ScannerScreenState extends State<ScannerScreen>
     );
   }
 
-  // ── Live feed / Bottom controls (unchanged from Phase 1) ──────────────
-
   Widget _buildLiveFeed() {
     if (_initialising) {
       return const ColoredBox(color: Colors.black,
@@ -755,9 +818,8 @@ class ScannerScreenState extends State<ScannerScreen>
       return _CameraError(error: _cameraError!, onRetry: _initCamera);
     }
     final ctrl = _controller;
-    if (ctrl == null) {
-      return const ColoredBox(color: Colors.black,
-          child: Center(child: CircularProgressIndicator(color: Colors.white)));
+    if (ctrl == null || !ctrl.value.isInitialized) {
+      return const ColoredBox(color: Colors.black);
     }
     return ColoredBox(
       color: Colors.black,
@@ -774,6 +836,13 @@ class ScannerScreenState extends State<ScannerScreen>
                       width: ctrl.value.previewSize!.height,
                       height: ctrl.value.previewSize!.width,
                       child: CameraPreview(ctrl))))),
+              if (_state == _ScannerState.live && _liveAnchorPoints.isNotEmpty)
+                RepaintBoundary(
+                  child: _LiveAnchorDots(
+                    bufferPoints: _liveAnchorPoints,
+                    previewSize: ctrl.value.previewSize!,
+                  ),
+                ),
               if (_focusPoint != null)
                 _FocusSquare(position: _focusPoint!, acquired: _focusAcquired),
               if (_currentZoom > _minZoom + 0.15)
@@ -821,8 +890,7 @@ class ScannerScreenState extends State<ScannerScreen>
         )),
         Padding(padding: EdgeInsets.only(bottom: bottom + 8), child: _ModePill(
           onSwitchToSearch: () {
-            _returnToLive();
-            setState(() => _mode = _DiscoverMode.scan);
+            setState(() => _mode = _DiscoverMode.search);
             widget.onNavBarVisibilityChanged(true);
           },
         )),
@@ -831,268 +899,270 @@ class ScannerScreenState extends State<ScannerScreen>
   }
 }
 
+
 // ═══════════════════════════════════════════════════════════════════════════════
-// QUAD-HANDLE OVERLAY (Document Scanner UI — Phase 2)
+// RECT-HANDLE OVERLAY
+// Maintains a rectangular crop region with 4 draggable corner handles.
+// The dimming layer uses saveLayer + BlendMode.clear so the inner rect is
+// genuinely transparent — the frozen still image shows through it.
 // ═══════════════════════════════════════════════════════════════════════════════
 
-class _QuadHandleOverlay extends StatelessWidget {
-  final List<Offset> corners;
+class _RectHandleOverlay extends StatelessWidget {
+  final Rect rect;
   final int? activeIndex;
-  final Offset? activePosition;
-  final Uint8List? capturedBytes;
   final Size widgetSize;
-  final void Function(int index, Offset position) onCornerDragStart;
-  final void Function(int index, Offset position) onCornerDragUpdate;
+  final bool processing;
+  final void Function(int index) onCornerDragStart;
+  final void Function(Rect newRect) onRectChanged;
   final VoidCallback onCornerDragEnd;
 
-  const _QuadHandleOverlay({
-    required this.corners,
+  static const _handleSize = 44.0;
+  static const _minDim = 60.0;
+
+  const _RectHandleOverlay({
+    required this.rect,
     required this.activeIndex,
-    required this.activePosition,
-    required this.capturedBytes,
     required this.widgetSize,
+    required this.processing,
     required this.onCornerDragStart,
-    required this.onCornerDragUpdate,
+    required this.onRectChanged,
     required this.onCornerDragEnd,
   });
 
   @override
   Widget build(BuildContext context) {
+    // Corner positions: 0=TL, 1=TR, 2=BR, 3=BL
+    final corners = [
+      Offset(rect.left, rect.top),
+      Offset(rect.right, rect.top),
+      Offset(rect.right, rect.bottom),
+      Offset(rect.left, rect.bottom),
+    ];
+
     return Stack(
       fit: StackFit.expand,
       children: [
-        // Quad outline + dimmed exterior
-        CustomPaint(
-          painter: _QuadOverlayPainter(corners: corners, activeIndex: activeIndex),
-          child: const SizedBox.expand(),
+        // Dimming layer with transparent hole — uses saveLayer so BlendMode.clear
+        // actually punches through to whatever is behind this widget (the image).
+        RepaintBoundary(
+          child: CustomPaint(
+            painter: _RectOverlayPainter(rect: rect),
+            child: const SizedBox.expand(),
+          ),
         ),
 
-        // 4 draggable corner handles
-        for (var i = 0; i < 4; i++)
+        // Processing indicator — centered inside the crop rect
+        if (processing)
           Positioned(
-            left: corners[i].dx - 22,
-            top: corners[i].dy - 22,
-            child: GestureDetector(
-              onPanStart: (d) => onCornerDragStart(i, corners[i]),
-              onPanUpdate: (d) {
-                final newPos = Offset(
-                  (corners[i].dx + d.delta.dx).clamp(0, widgetSize.width),
-                  (corners[i].dy + d.delta.dy).clamp(0, widgetSize.height),
-                );
-                onCornerDragUpdate(i, newPos);
-              },
-              onPanEnd: (_) => onCornerDragEnd(),
-              child: Container(
-                width: 44, height: 44,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: activeIndex == i
-                      ? Colors.white
-                      : Colors.white.withValues(alpha: 0.85),
-                  border: Border.all(
-                    color: const Color(0xFF448AFF),
-                    width: activeIndex == i ? 3.5 : 2.5,
-                  ),
-                  boxShadow: [BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.4),
-                    blurRadius: 8, spreadRadius: 1,
-                  )],
-                ),
-                child: activeIndex == i
-                    ? const Icon(Icons.open_with, size: 18, color: Color(0xFF448AFF))
-                    : null,
-              ),
+            left: rect.left,
+            top: rect.top,
+            width: rect.width,
+            height: rect.height,
+            child: const Center(
+              child: _ProcessingBadge(),
             ),
           ),
 
-        // Magnifier bubble — appears during active drag, 60px above finger
-        if (activeIndex != null && activePosition != null && capturedBytes != null)
-          Positioned(
-            left: activePosition!.dx - 50,
-            top: activePosition!.dy - 130,
-            child: _MagnifierBubble(
-              touchPoint: activePosition!,
-              capturedBytes: capturedBytes!,
-              widgetSize: widgetSize,
+        // Corner drag handles (disabled while processing)
+        if (!processing)
+          for (var i = 0; i < 4; i++)
+            Positioned(
+              left: corners[i].dx - _handleSize / 2,
+              top: corners[i].dy - _handleSize / 2,
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onPanStart: (_) => onCornerDragStart(i),
+                onPanUpdate: (d) => _onCornerDrag(i, d.delta),
+                onPanEnd: (_) => onCornerDragEnd(),
+                child: SizedBox(
+                  width: _handleSize,
+                  height: _handleSize,
+                  child: Center(
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 120),
+                      width: activeIndex == i ? 36 : 28,
+                      height: activeIndex == i ? 36 : 28,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: activeIndex == i
+                            ? Colors.white
+                            : Colors.white.withValues(alpha: 0.88),
+                        border: Border.all(
+                          color: const Color(0xFF448AFF),
+                          width: activeIndex == i ? 3.5 : 2.5,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: activeIndex == i ? 0.55 : 0.35),
+                            blurRadius: activeIndex == i ? 12 : 6,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: activeIndex == i
+                          ? const Icon(Icons.open_with, size: 16, color: Color(0xFF448AFF))
+                          : null,
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
       ],
     );
+  }
+
+  /// Each corner moves only the two edges it touches, keeping the shape
+  /// rectangular. Minimum dimension enforced to prevent degenerate rects.
+  void _onCornerDrag(int index, Offset delta) {
+    double l = rect.left, t = rect.top, r = rect.right, b = rect.bottom;
+    switch (index) {
+      case 0: // TL
+        l = (l + delta.dx).clamp(0, r - _minDim);
+        t = (t + delta.dy).clamp(0, b - _minDim);
+      case 1: // TR
+        r = (r + delta.dx).clamp(l + _minDim, widgetSize.width);
+        t = (t + delta.dy).clamp(0, b - _minDim);
+      case 2: // BR
+        r = (r + delta.dx).clamp(l + _minDim, widgetSize.width);
+        b = (b + delta.dy).clamp(t + _minDim, widgetSize.height);
+      case 3: // BL
+        l = (l + delta.dx).clamp(0, r - _minDim);
+        b = (b + delta.dy).clamp(t + _minDim, widgetSize.height);
+    }
+    onRectChanged(Rect.fromLTRB(l, t, r, b));
   }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Quad overlay painter — draws the quad outline + semi-transparent mask
+// _RectOverlayPainter
+//
+// Draws a semi-transparent scrim over the full canvas, then punches a
+// transparent hole at [rect] so the image behind shows through clearly.
+//
+// The key fix vs the original: we wrap everything in saveLayer() so that
+// BlendMode.clear operates against the layer's own alpha channel (which is
+// initially transparent), rather than compositing straight to the screen
+// (which would produce opaque black). After restore(), Flutter merges the
+// layer — the hole remains transparent and the image shows through.
+//
+// Corner decorations (bracket-style L-shapes + rule-of-thirds grid lines)
+// are drawn on top after the clear, so they appear over the image.
 // ─────────────────────────────────────────────────────────────────────────────
 
-class _QuadOverlayPainter extends CustomPainter {
-  final List<Offset> corners;
-  final int? activeIndex;
-
-  const _QuadOverlayPainter({required this.corners, this.activeIndex});
+class _RectOverlayPainter extends CustomPainter {
+  final Rect rect;
+  const _RectOverlayPainter({required this.rect});
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (corners.length < 4) return;
+    // ── 1. Save a layer covering the full canvas.
+    //       BlendMode.clear only punches through within a layer.
+    canvas.saveLayer(Offset.zero & size, Paint());
 
-    // Semi-transparent dark overlay covering entire frame
-    final dimPaint = Paint()..color = Colors.black.withValues(alpha: 0.45);
-    canvas.drawRect(Offset.zero & size, dimPaint);
+    // ── 2. Draw the scrim over the entire surface.
+    canvas.drawRect(
+      Offset.zero & size,
+      Paint()..color = Colors.black.withValues(alpha: 0.55),
+    );
 
-    // Cut out the quad region (draw it back as clear)
-    final quadPath = Path()
-      ..moveTo(corners[0].dx, corners[0].dy)
-      ..lineTo(corners[1].dx, corners[1].dy)
-      ..lineTo(corners[2].dx, corners[2].dy)
-      ..lineTo(corners[3].dx, corners[3].dy)
-      ..close();
+    // ── 3. Punch a transparent hole at the crop rect.
+    //       BlendMode.clear replaces pixels with full transparency in the layer.
+    canvas.drawRect(
+      rect,
+      Paint()..blendMode = BlendMode.clear,
+    );
 
-    canvas.drawPath(quadPath, Paint()
-      ..blendMode = BlendMode.clear);
+    // ── 4. Restore — the layer is composited; the hole is genuinely transparent.
+    canvas.restore();
 
-    // Quad outline
-    final linePaint = Paint()
+    // ── 5. Draw the blue border on top (over the image inside the hole).
+    final borderPaint = Paint()
       ..color = const Color(0xFF448AFF)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.5
-      ..strokeJoin = StrokeJoin.round;
-    canvas.drawPath(quadPath, linePaint);
+      ..strokeWidth = 2.0;
+    canvas.drawRect(rect, borderPaint);
 
-    // Edge midpoint dots (visual affordance)
-    final dotPaint = Paint()..color = const Color(0xFF448AFF);
-    for (var i = 0; i < 4; i++) {
-      final mid = Offset(
-        (corners[i].dx + corners[(i + 1) % 4].dx) / 2,
-        (corners[i].dy + corners[(i + 1) % 4].dy) / 2,
+    // ── 6. Rule-of-thirds grid lines (subtle, inside the crop rect).
+    final gridPaint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.25)
+      ..strokeWidth = 0.8;
+
+    final thirdW = rect.width / 3;
+    final thirdH = rect.height / 3;
+    for (var i = 1; i <= 2; i++) {
+      canvas.drawLine(
+        Offset(rect.left + thirdW * i, rect.top),
+        Offset(rect.left + thirdW * i, rect.bottom),
+        gridPaint,
       );
-      canvas.drawCircle(mid, 4, dotPaint);
+      canvas.drawLine(
+        Offset(rect.left, rect.top + thirdH * i),
+        Offset(rect.right, rect.top + thirdH * i),
+        gridPaint,
+      );
     }
+
+    // ── 7. Corner bracket decorations (L-shaped arms in the crop border colour).
+    _drawCornerBrackets(canvas, rect);
+  }
+
+  void _drawCornerBrackets(Canvas canvas, Rect r) {
+    const arm = 20.0;
+    const thickness = 3.5;
+    final p = Paint()
+      ..color = Colors.white
+      ..strokeWidth = thickness
+      ..strokeCap = StrokeCap.round;
+
+    // TL
+    canvas.drawLine(Offset(r.left, r.top), Offset(r.left + arm, r.top), p);
+    canvas.drawLine(Offset(r.left, r.top), Offset(r.left, r.top + arm), p);
+    // TR
+    canvas.drawLine(Offset(r.right, r.top), Offset(r.right - arm, r.top), p);
+    canvas.drawLine(Offset(r.right, r.top), Offset(r.right, r.top + arm), p);
+    // BR
+    canvas.drawLine(Offset(r.right, r.bottom), Offset(r.right - arm, r.bottom), p);
+    canvas.drawLine(Offset(r.right, r.bottom), Offset(r.right, r.bottom - arm), p);
+    // BL
+    canvas.drawLine(Offset(r.left, r.bottom), Offset(r.left + arm, r.bottom), p);
+    canvas.drawLine(Offset(r.left, r.bottom), Offset(r.left, r.bottom - arm), p);
   }
 
   @override
-  bool shouldRepaint(_QuadOverlayPainter old) =>
-      old.corners != corners || old.activeIndex != activeIndex;
+  bool shouldRepaint(_RectOverlayPainter old) => old.rect != rect;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Magnifier bubble — 2× zoom, 100px diameter, positioned above the finger
-// ─────────────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// PROCESSING BADGE (shown inside crop rect while warp+match runs)
+// ═══════════════════════════════════════════════════════════════════════════════
 
-class _MagnifierBubble extends StatelessWidget {
-  final Offset touchPoint;
-  final Uint8List capturedBytes;
-  final Size widgetSize;
-
-  static const double _diameter = 100;
-  static const double _zoom = 2.0;
-
-  const _MagnifierBubble({
-    required this.touchPoint,
-    required this.capturedBytes,
-    required this.widgetSize,
-  });
-
+class _ProcessingBadge extends StatelessWidget {
+  const _ProcessingBadge();
   @override
   Widget build(BuildContext context) {
-    // The magnifier shows a 2× zoomed crop of the frozen image centered
-    // on the touch point. We use a ClipOval + Transform.scale + fractional
-    // alignment offset to achieve this without decoding the image again.
-    //
-    // The Image.memory widget with BoxFit.cover fills the full widget area,
-    // then we scale 2× and translate to center on the touch point.
-
-    final normX = touchPoint.dx / widgetSize.width;
-    final normY = touchPoint.dy / widgetSize.height;
-
     return Container(
-      width: _diameter,
-      height: _diameter,
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: Colors.white, width: 3),
-        boxShadow: [BoxShadow(
-          color: Colors.black.withValues(alpha: 0.5),
-          blurRadius: 12, spreadRadius: 2,
-        )],
+        color: Colors.black.withValues(alpha: 0.65),
+        borderRadius: BorderRadius.circular(24),
       ),
-      child: ClipOval(
-        child: OverflowBox(
-          maxWidth: widgetSize.width,
-          maxHeight: widgetSize.height,
-          child: Transform.scale(
-            scale: _zoom,
-            alignment: Alignment(
-              (normX * 2 - 1).clamp(-1.0, 1.0),
-              (normY * 2 - 1).clamp(-1.0, 1.0),
-            ),
-            child: Image.memory(
-              capturedBytes,
-              fit: BoxFit.cover,
-              width: widgetSize.width,
-              height: widgetSize.height,
-              gaplessPlayback: true,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Adjusting action bar — Scan + Skip buttons
-// ─────────────────────────────────────────────────────────────────────────────
-
-class _AdjustingActionBar extends StatelessWidget {
-  final VoidCallback onScan;
-  final VoidCallback onSkip;
-  const _AdjustingActionBar({required this.onScan, required this.onSkip});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _ActionChip(label: 'Skip', icon: Icons.fast_forward, onTap: onSkip, isPrimary: false),
-        const SizedBox(width: 20),
-        _ActionChip(label: 'Scan', icon: Icons.crop_free, onTap: onScan, isPrimary: true),
-      ],
-    );
-  }
-}
-
-class _ActionChip extends StatelessWidget {
-  final String label;
-  final IconData icon;
-  final VoidCallback onTap;
-  final bool isPrimary;
-  const _ActionChip({required this.label, required this.icon,
-      required this.onTap, required this.isPrimary});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-        decoration: BoxDecoration(
-          color: isPrimary ? Colors.white : Colors.black54,
-          borderRadius: BorderRadius.circular(28),
-          border: isPrimary ? null : Border.all(color: Colors.white30),
-        ),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(icon, size: 18, color: isPrimary ? Colors.black87 : Colors.white),
-          const SizedBox(width: 8),
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600,
-              color: isPrimary ? Colors.black87 : Colors.white)),
-        ]),
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(width: 18, height: 18,
+            child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2)),
+          SizedBox(width: 10),
+          Text('Matching…',
+            style: TextStyle(color: Colors.white, fontSize: 13,
+                fontWeight: FontWeight.w500)),
+        ],
       ),
     );
   }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// EXISTING WIDGETS (unchanged)
+// MODE PILL
 // ═══════════════════════════════════════════════════════════════════════════════
 
 class _ModePill extends StatelessWidget {
@@ -1129,55 +1199,75 @@ class _PillItem extends StatelessWidget {
   }
 }
 
-class _OcrHighlightOverlay extends StatefulWidget {
-  final List<TextBlock> blocks;
-  const _OcrHighlightOverlay({required this.blocks});
+// ═══════════════════════════════════════════════════════════════════════════════
+// LIVE ANCHOR DOTS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+class _LiveAnchorDots extends StatefulWidget {
+  final List<Offset> bufferPoints;
+  final Size previewSize;
+  const _LiveAnchorDots({required this.bufferPoints, required this.previewSize});
   @override
-  State<_OcrHighlightOverlay> createState() => _OcrHighlightOverlayState();
+  State<_LiveAnchorDots> createState() => _LiveAnchorDotsState();
 }
-class _OcrHighlightOverlayState extends State<_OcrHighlightOverlay>
+
+class _LiveAnchorDotsState extends State<_LiveAnchorDots>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _ctrl;
-  late final Animation<double> _fade;
+  late final AnimationController _shimmer;
   @override
   void initState() {
     super.initState();
-    _ctrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
-    _fade = CurvedAnimation(parent: _ctrl, curve: Curves.easeOut);
-    _ctrl.forward();
+    _shimmer = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..repeat(reverse: true);
   }
   @override
-  void dispose() { _ctrl.dispose(); super.dispose(); }
+  void dispose() { _shimmer.dispose(); super.dispose(); }
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(opacity: _fade, child: CustomPaint(
-        painter: _OcrHighlightPainter(blocks: widget.blocks),
-        child: const SizedBox.expand()));
+    return AnimatedBuilder(
+      animation: _shimmer,
+      builder: (context, _) => CustomPaint(
+        painter: _AnchorDotsPainter(bufferPoints: widget.bufferPoints,
+            previewSize: widget.previewSize, shimmerValue: _shimmer.value),
+        child: const SizedBox.expand(),
+      ),
+    );
   }
 }
 
-class _OcrHighlightPainter extends CustomPainter {
-  final List<TextBlock> blocks;
-  const _OcrHighlightPainter({required this.blocks});
+class _AnchorDotsPainter extends CustomPainter {
+  final List<Offset> bufferPoints;
+  final Size previewSize;
+  final double shimmerValue;
+
+  const _AnchorDotsPainter({required this.bufferPoints, required this.previewSize, required this.shimmerValue});
+
   @override
   void paint(Canvas canvas, Size size) {
-    final fill = Paint()..color = const Color(0xFFFFB300).withValues(alpha: 0.22)..style = PaintingStyle.fill;
-    final stroke = Paint()..color = const Color(0xFFFFB300).withValues(alpha: 0.75)..style = PaintingStyle.stroke..strokeWidth = 1.5;
-    for (final block in blocks) {
-      final pts = block.cornerPoints;
-      if (pts.length < 4) continue;
-      final path = Path()
-        ..moveTo(pts[0].x.toDouble(), pts[0].y.toDouble())
-        ..lineTo(pts[1].x.toDouble(), pts[1].y.toDouble())
-        ..lineTo(pts[2].x.toDouble(), pts[2].y.toDouble())
-        ..lineTo(pts[3].x.toDouble(), pts[3].y.toDouble())..close();
-      canvas.drawPath(path, fill);
-      canvas.drawPath(path, stroke);
+    if (bufferPoints.isEmpty) { return; }
+    final opacity = 0.15 + shimmerValue * 0.35;
+    final dotPaint = Paint()..color = const Color(0xFFFFB300).withValues(alpha: opacity)..style = PaintingStyle.fill;
+    final ringPaint = Paint()..color = const Color(0xFFFFB300).withValues(alpha: opacity * 0.6)..style = PaintingStyle.stroke..strokeWidth = 1.5;
+    final bufW = previewSize.height; final bufH = previewSize.width;
+    final widgetW = size.width; final widgetH = size.height;
+    final scale = math.max(widgetW / bufW, widgetH / bufH);
+    final cropX = (bufW * scale - widgetW) / 2.0;
+    final cropY = (bufH * scale - widgetH) / 2.0;
+    for (final bp in bufferPoints) {
+      final wx = bp.dx * scale - cropX;
+      final wy = bp.dy * scale - cropY;
+      if (wx < -10 || wy < -10 || wx > widgetW + 10 || wy > widgetH + 10) { continue; }
+      canvas.drawCircle(Offset(wx, wy), 6, dotPaint);
+      canvas.drawCircle(Offset(wx, wy), 10, ringPaint);
     }
   }
   @override
-  bool shouldRepaint(_OcrHighlightPainter old) => old.blocks != blocks;
+  bool shouldRepaint(_AnchorDotsPainter old) =>
+      old.shimmerValue != shimmerValue || old.bufferPoints != bufferPoints;
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// UTILITY WIDGETS
+// ═══════════════════════════════════════════════════════════════════════════════
 
 class _CameraError extends StatelessWidget {
   final String error; final VoidCallback onRetry;
@@ -1257,7 +1347,7 @@ class _FocusSquarePainter extends CustomPainter {
     }
     corner(l, t, 1, 1); corner(r, t, -1, 1);
     corner(l, b, 1, -1); corner(r, b, -1, -1);
-    if (acquired) canvas.drawCircle(Offset(size.width / 2, size.height / 2), 2.5, Paint()..color = color);
+    if (acquired) { canvas.drawCircle(Offset(size.width / 2, size.height / 2), 2.5, Paint()..color = color); }
   }
   @override
   bool shouldRepaint(_FocusSquarePainter old) => old.color != color || old.acquired != acquired;

@@ -56,32 +56,32 @@ abstract final class FuzzyMatcher {
   ///
   /// Both strings are lowercased before comparison.
   static bool fuzzyMatch(String query, String target) {
-    if (query.isEmpty) return true;
+    if (query.isEmpty) { return true; }
     final q = query.toLowerCase().trim();
     final t = target.toLowerCase();
 
     // 1. Fast path — exact substring
-    if (t.contains(q)) return true;
+    if (t.contains(q)) { return true; }
 
     // 2. Pinyin path — only for targets containing CJK characters
     if (hasCjk(target)) {
       final pinyin = _toPinyin(target);
-      if (pinyin.contains(q)) return true;
+      if (pinyin.contains(q)) { return true; }
 
       final spacedPinyin = _toSpacedPinyin(target);
-      if (spacedPinyin.contains(q)) return true;
+      if (spacedPinyin.contains(q)) { return true; }
     }
 
     // 3. Short queries: exact + pinyin only beyond this point
-    if (q.length < _fuzzyMinLength) return false;
+    if (q.length < _fuzzyMinLength) { return false; }
 
     // 4. Trigram fuzzy — handles typos and partial Latin matches
-    if (trigramSimilarity(q, t) >= _fuzzyThreshold) return true;
+    if (trigramSimilarity(q, t) >= _fuzzyThreshold) { return true; }
 
     // 5. Trigram against spaced pinyin — e.g. typo "liu bai" still finds "刘备"
     if (hasCjk(target)) {
       final spacedPinyin = _toSpacedPinyin(target);
-      if (trigramSimilarity(q, spacedPinyin) >= _fuzzyThreshold) return true;
+      if (trigramSimilarity(q, spacedPinyin) >= _fuzzyThreshold) { return true; }
     }
 
     return false;
@@ -108,13 +108,13 @@ abstract final class FuzzyMatcher {
   ///   Pinyin match → score × 0.8 discount
   ///   No match → 0.0
   static double scannerFuzzyScore(String ocrToken, String candidateName) {
-    if (ocrToken.isEmpty || candidateName.isEmpty) return 0.0;
+    if (ocrToken.isEmpty || candidateName.isEmpty) { return 0.0; }
 
     final q = ocrToken.toLowerCase().trim();
     final t = candidateName.toLowerCase();
 
     // 1. Exact substring match (fast path)
-    if (t.contains(q) || q.contains(t)) return 1.0;
+    if (t.contains(q) || q.contains(t)) { return 1.0; }
 
     // 2. Levenshtein distance — allow 1 edit per 4 characters (25% error rate)
     final maxEdits = math.max(1, t.length ~/ 4);
@@ -134,15 +134,30 @@ abstract final class FuzzyMatcher {
     if (hasCjk(candidateName)) {
       // No-space pinyin
       final pinyin = _toPinyin(candidateName);
-      if (pinyin.contains(q) || q.contains(pinyin)) return 0.8;
+      if (pinyin.contains(q) || q.contains(pinyin)) { return 0.8; }
 
       // Spaced pinyin
       final spacedPinyin = _toSpacedPinyin(candidateName);
-      if (spacedPinyin.contains(q) || q.contains(spacedPinyin)) return 0.8;
+      if (spacedPinyin.contains(q) || q.contains(spacedPinyin)) { return 0.8; }
 
       // Trigram against pinyin
       final pinyinSim = trigramSimilarity(q, spacedPinyin);
-      if (pinyinSim >= 0.50) return (pinyinSim * 0.8).clamp(0.0, 0.8);
+      if (pinyinSim >= 0.50) { return (pinyinSim * 0.8).clamp(0.0, 0.8); }
+    }
+
+    // 5. Radical confusion variants (Phase 4) — CJK tokens only
+    //    If the OCR token contains a commonly confused character, substitute
+    //    it and re-check exact match. Score discounted to 0.85 (slight
+    //    penalty for needing confusion correction).
+    if (hasCjk(ocrToken)) {
+      final variants = _confusionVariants(q);
+      if (variants.length > 1) {
+        for (final variant in variants.skip(1)) {
+          if (t.contains(variant) || variant.contains(t)) {
+            return 0.85;
+          }
+        }
+      }
     }
 
     return 0.0;
@@ -162,9 +177,9 @@ abstract final class FuzzyMatcher {
   /// Uses the standard Wagner–Fischer dynamic programming algorithm.
   /// O(n×m) time, O(min(n,m)) space via single-row optimisation.
   static int levenshteinDistance(String a, String b) {
-    if (a == b) return 0;
-    if (a.isEmpty) return b.length;
-    if (b.isEmpty) return a.length;
+    if (a == b) { return 0; }
+    if (a.isEmpty) { return b.length; }
+    if (b.isEmpty) { return a.length; }
 
     // Ensure a is the shorter string for O(min) space
     if (a.length > b.length) {
@@ -204,7 +219,7 @@ abstract final class FuzzyMatcher {
   static double trigramSimilarity(String a, String b) {
     final triA = _trigrams(a);
     final triB = _trigrams(b);
-    if (triA.isEmpty || triB.isEmpty) return 0.0;
+    if (triA.isEmpty || triB.isEmpty) { return 0.0; }
 
     final mapB = <String, int>{};
     for (final t in triB) {
@@ -222,6 +237,80 @@ abstract final class FuzzyMatcher {
     }
 
     return (2 * shared) / (triA.length + triB.length);
+  }
+
+  // ════════════════════════════════════════════════════════════════════════════
+  // SGS RADICAL CONFUSION MAP (Phase 4)
+  // ════════════════════════════════════════════════════════════════════════════
+
+  /// Maps commonly OCR-confused CJK characters to their correct forms.
+  ///
+  /// When MLKit misreads a character due to radical similarity (e.g. the
+  /// water radical 氵 vs the fire radical 灬), the token will fail exact
+  /// matching. This map lets [scannerFuzzyScore] expand the token into
+  /// confusion variants before giving up.
+  ///
+  /// The map is bidirectional: if A→B exists, a misread of A as B (or
+  /// B as A) both trigger variant expansion.
+  ///
+  /// Entries are derived from empirical MLKit error patterns on SGS cards
+  /// printed in both simplified and traditional Chinese fonts.
+  static const _confusionPairs = <String, String>{
+    // Radical-level confusions
+    '关': '头', // guān ↔ tóu — affects 关羽, 关索, 关兴
+    '诸': '请', // zhū ↔ qǐng — affects 诸葛亮, 诸葛瑾
+    '卦': '挂', // guà ↔ guà — affects 八卦阵
+    '闪': '问', // shǎn ↔ wèn — affects 闪 (Dodge)
+    '杀': '杂', // shā ↔ zá — affects 杀 (Kill)
+    '酒': '洒', // jiǔ ↔ sǎ — affects 酒 (Wine)
+    '竭': '渴', // jié ↔ kě — radical confusion 曷
+    '锁': '锁', // identity (traditional variant already handled by TextNormaliser)
+    '瑜': '愉', // yú ↔ yú — affects 周瑜
+    '策': '束', // cè ↔ shù — affects 孙策
+    '貂': '豹', // diāo ↔ bào — affects 貂蝉
+    '颜': '颜', // identity placeholder
+    '魏': '巍', // wèi ↔ wēi — affects faction name
+    '蜀': '属', // shǔ ↔ shǔ — affects faction name
+    '吴': '呈', // wú ↔ chéng — less common but observed
+    '己': '已', // jǐ ↔ yǐ — common visual confusable
+    '已': '巳', // yǐ ↔ sì — common visual confusable
+  };
+
+  /// Lazily built reverse map for bidirectional lookup.
+  static Map<String, Set<String>>? _confusionIndex;
+
+  static Map<String, Set<String>> get _confusion {
+    if (_confusionIndex != null) { return _confusionIndex!; }
+    final idx = <String, Set<String>>{};
+    for (final entry in _confusionPairs.entries) {
+      if (entry.key == entry.value) continue; // skip identity entries
+      idx.putIfAbsent(entry.key, () => {}).add(entry.value);
+      idx.putIfAbsent(entry.value, () => {}).add(entry.key);
+    }
+    _confusionIndex = idx;
+    return idx;
+  }
+
+  /// Expands [token] into confusion variants by substituting each character
+  /// with its confusion alternatives. Returns the original token plus
+  /// all single-character substitution variants.
+  ///
+  /// For a 2-char token with 1 confused char, this produces 2 variants.
+  /// For a 3-char token with 2 confused chars, this produces up to 5.
+  /// Capped at 8 variants to bound hot-path cost.
+  static List<String> _confusionVariants(String token) {
+    final variants = <String>[token];
+    final chars = token.split('');
+    for (var i = 0; i < chars.length && variants.length < 8; i++) {
+      final alts = _confusion[chars[i]];
+      if (alts == null) { continue; }
+      for (final alt in alts) {
+        final variant = chars.toList()..[i] = alt;
+        variants.add(variant.join());
+        if (variants.length >= 8) { break; }
+      }
+    }
+    return variants;
   }
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -253,7 +342,7 @@ abstract final class FuzzyMatcher {
   /// trigram.
   static List<String> _trigrams(String s) {
     final padded = ' $s ';
-    if (padded.length < 3) return [padded.padRight(3)];
+    if (padded.length < 3) { return [padded.padRight(3)]; }
     final result = <String>[];
     for (int i = 0; i <= padded.length - 3; i++) {
       result.add(padded.substring(i, i + 3));
