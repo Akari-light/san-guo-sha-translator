@@ -1,8 +1,9 @@
 // lib/core/services/image_hash_matcher.dart
 //
 // Pure Dart perceptual hash (pHash) implementation for card artwork comparison.
-// Used as Stage 2 of the camera card lookup pipeline to break ties after OCR
-// narrows the candidate list to 2–5 cards.
+//
+// Phase 1: hashFromBytes() on full frame — noisy but functional.
+// Phase 2: hashFromBytes() on perspective-warped art-zone crop — high quality.
 //
 // pHash works by:
 //   1. Resize image to 32×32 greyscale
@@ -14,7 +15,7 @@
 // between hashes (number of differing bits) measures visual dissimilarity.
 // A distance of ≤10 bits out of 64 reliably indicates the same card artwork.
 //
-// No external packages beyond `image` (already in pubspec.yaml for image processing).
+// No external packages beyond `image` (already in pubspec.yaml).
 // No network calls, no model files — runs in ~1–3ms per comparison.
 
 import 'dart:math' as math;
@@ -43,6 +44,13 @@ class ImageHashMatcher {
     return _computeHash(decoded);
   }
 
+  /// Computes the 64-bit pHash of a decoded [image] directly.
+  ///
+  /// Use this when you already have a decoded img.Image (e.g. from
+  /// PerspectiveWarper.warp() → art zone crop) to avoid re-encoding
+  /// and re-decoding.
+  int hashFromImage(img.Image image) => _computeHash(image);
+
   /// Loads [assetPath] from the Flutter asset bundle, decodes it, and returns
   /// its 64-bit pHash. Result is cached — subsequent calls for the same path
   /// return immediately without re-loading.
@@ -61,6 +69,19 @@ class ImageHashMatcher {
     } catch (_) {
       return null;
     }
+  }
+
+  /// Returns the cached hash for [assetPath], or null if not yet loaded.
+  ///
+  /// This is a synchronous O(1) lookup used by the scanner hot path to
+  /// avoid awaiting hashFromAsset() for each candidate. Reference hashes
+  /// are populated during warmup or lazily on first access.
+  int? getCachedHash(String assetPath) => _hashCache[assetPath];
+
+  /// Pre-caches the hash for [assetPath]. Call during warmup to ensure
+  /// getCachedHash() returns non-null during scoring.
+  Future<void> preCacheAsset(String assetPath) async {
+    await hashFromAsset(assetPath);
   }
 
   /// Returns a similarity score in [0.0, 1.0] between two hashes.
@@ -119,10 +140,7 @@ class ImageHashMatcher {
   }
 
   // 2D DCT using the separable property: DCT-2D = DCT-1D on rows then columns.
-  // Input: flat [size × size] pixel array, row-major.
-  // Output: flat [size × size] DCT coefficient array.
   List<double> _dct2d(List<double> pixels, int size) {
-    // Apply 1D DCT to each row
     final rowDct = List<double>.filled(size * size, 0);
     for (var row = 0; row < size; row++) {
       final rowData = List<double>.generate(size, (i) => pixels[row * size + i]);
@@ -132,7 +150,6 @@ class ImageHashMatcher {
       }
     }
 
-    // Apply 1D DCT to each column
     final result = List<double>.filled(size * size, 0);
     for (var col = 0; col < size; col++) {
       final colData = List<double>.generate(size, (i) => rowDct[i * size + col]);
@@ -145,7 +162,6 @@ class ImageHashMatcher {
   }
 
   // 1D DCT-II (orthonormal form).
-  // Standard formula: X[k] = scale(k) × Σ x[n] × cos(π×k×(2n+1) / (2N))
   List<double> _dct1d(List<double> x) {
     final n = x.length;
     final result = List<double>.filled(n, 0);
@@ -156,7 +172,6 @@ class ImageHashMatcher {
       for (var i = 0; i < n; i++) {
         sum += x[i] * math.cos(piOverTwoN * k * (2 * i + 1));
       }
-      // Orthonormal scaling
       final scale = k == 0
           ? math.sqrt(1.0 / n)
           : math.sqrt(2.0 / n);
@@ -166,7 +181,6 @@ class ImageHashMatcher {
   }
 
   int _hammingDistance(int a, int b) {
-    // Count differing bits using Brian Kernighan's algorithm
     var xor = a ^ b;
     var count = 0;
     while (xor != 0) {
