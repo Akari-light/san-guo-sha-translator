@@ -116,6 +116,14 @@ class _ScannerScreenState extends State<ScannerScreen>
   // ── Tab-active gate (driven by widget.activeNotifier)
   bool _tabActive = false;
 
+  // ── Cancellation flag — set by _returnToLive to stop in-flight processing.
+  // Checked at every await point in _scan/_confirmAndWarp.
+  bool _scanCancelled = false;
+
+  // ── Cached decoded image from _scan, reused by _confirmAndWarp to avoid
+  // decoding the same multi-megapixel JPEG twice (~150ms each).
+  img.Image? _decodedCapture;
+
   // ─────────────────────────────────────────────────────────────────────────
 
   @override
@@ -132,12 +140,14 @@ class _ScannerScreenState extends State<ScannerScreen>
 
   @override
   void dispose() {
+    _scanCancelled = true;
     widget.activeNotifier.removeListener(_onActiveChanged);
     WidgetsBinding.instance.removeObserver(this);
     _controller?.dispose();
     ScannerService.instance.dispose();
     _deleteCapturedFile();
     _capturedImageBytes = null;
+    _decodedCapture = null;
     super.dispose();
   }
 
@@ -247,22 +257,23 @@ class _ScannerScreenState extends State<ScannerScreen>
       if (!mounted || _state != _ScannerState.live) { return; }
     }
     _captureLock = true;
+    _scanCancelled = false;
 
     try {
       try { await ctrl.setFocusMode(FocusMode.locked); } catch (_) {}
 
-      // Apply user's flash preference only for the shutter capture.
       await ctrl.setFlashMode(_flashModeToCamera(_flashMode));
       final xFile = await ctrl.takePicture();
-      // Reset flash to off so live-OCR doesn't trigger it.
       ctrl.setFlashMode(FlashMode.off).ignore();
       _captureLock = false;
+
+      if (_scanCancelled) { return; }
 
       final bytes = await File(xFile.path).readAsBytes();
       _capturedFile = File(xFile.path);
       _capturedImageBytes = bytes;
 
-      if (!mounted) { return; }
+      if (!mounted || _scanCancelled) { return; }
       setState(() {
         _state = _ScannerState.adjusting;
         _processing = true;
@@ -278,10 +289,20 @@ class _ScannerScreenState extends State<ScannerScreen>
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      if (!mounted) { return; }
+      if (!mounted || _scanCancelled) { return; }
 
-      final autoRect = _estimateCardRect(recognised);
+      // Decode once — cached for reuse by _confirmAndWarp.
+      _decodedCapture = img.decodeImage(bytes);
+      final bufW = _decodedCapture?.width.toDouble() ?? 0;
+      final bufH = _decodedCapture?.height.toDouble() ?? 0;
 
+      final autoRect = _estimateCardRect(
+        recognised,
+        bufferWidth: bufW,
+        bufferHeight: bufH,
+      );
+
+      if (_scanCancelled) { return; }
       setState(() {
         _processing = false;
         _adjustRect = autoRect;
@@ -304,10 +325,11 @@ class _ScannerScreenState extends State<ScannerScreen>
     final picked = await _imagePicker.pickImage(source: ImageSource.gallery);
     if (picked == null || !mounted) { return; }
 
+    _scanCancelled = false;
     final bytes = await picked.readAsBytes();
     _capturedImageBytes = bytes;
 
-    if (!mounted) { return; }
+    if (!mounted || _scanCancelled) { return; }
     setState(() {
       _state = _ScannerState.adjusting;
       _processing = true;
@@ -322,10 +344,17 @@ class _ScannerScreenState extends State<ScannerScreen>
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
 
-      if (!mounted) { return; }
+      if (!mounted || _scanCancelled) { return; }
+      _decodedCapture = img.decodeImage(bytes);
+      final bufW = _decodedCapture?.width.toDouble() ?? 0;
+      final bufH = _decodedCapture?.height.toDouble() ?? 0;
       setState(() {
         _processing = false;
-        _adjustRect = _estimateCardRect(recognised);
+        _adjustRect = _estimateCardRect(
+          recognised,
+          bufferWidth: bufW,
+          bufferHeight: bufH,
+        );
         _rectReady = true;
       });
 
@@ -346,7 +375,13 @@ class _ScannerScreenState extends State<ScannerScreen>
 
   /// Estimates a full card bounding rectangle from OCR text blocks.
   /// SGS cards: ~0.63 W:H aspect ratio, text at bottom ~30%.
-  Rect _estimateCardRect(RecognizedText recognised) {
+  ///
+  /// Uses [bufferWidth] and [bufferHeight] from the caller to avoid
+  /// decoding the full JPEG a second time just for dimensions.
+  Rect _estimateCardRect(RecognizedText recognised, {
+    required double bufferWidth,
+    required double bufferHeight,
+  }) {
     if (recognised.blocks.isEmpty) { return _defaultRect(); }
 
     double minX = double.infinity, minY = double.infinity;
@@ -372,14 +407,10 @@ class _ScannerScreenState extends State<ScannerScreen>
     final cardLeft = minX - hPad;
     final cardRight = maxX + hPad;
 
-    final bytes = _capturedImageBytes;
-    if (bytes == null || _widgetSize == Size.zero) { return _defaultRect(); }
+    if (_widgetSize == Size.zero) { return _defaultRect(); }
 
-    final decoded = img.decodeImage(bytes);
-    if (decoded == null) { return _defaultRect(); }
-
-    final bufW = decoded.width.toDouble();
-    final bufH = decoded.height.toDouble();
+    final bufW = bufferWidth;
+    final bufH = bufferHeight;
     final wW = _widgetSize.width;
     final wH = _widgetSize.height;
     final scale = math.max(wW / bufW, wH / bufH);
@@ -407,14 +438,15 @@ class _ScannerScreenState extends State<ScannerScreen>
     setState(() { _processing = true; });
 
     try {
-      final decoded = img.decodeImage(bytes);
+      // Reuse cached decode from _scan() — avoids a second ~150ms decode.
+      // Falls back to decoding if cache is null (e.g. gallery path).
+      final decoded = _decodedCapture ?? img.decodeImage(bytes);
       if (decoded == null) {
         _showSnack('Failed to decode image');
         setState(() { _processing = false; });
         return;
       }
 
-      // ── Widget Rect → buffer pixel Rect (BoxFit.cover inverse) ─────────
       final bufW = decoded.width.toDouble();
       final bufH = decoded.height.toDouble();
       final wW = _widgetSize.width;
@@ -430,27 +462,41 @@ class _ScannerScreenState extends State<ScannerScreen>
         );
       }
 
-      // Convert the Rect's 4 corners to Offsets for PerspectiveWarper
-      // (clockwise from top-left as required by warp()).
       final r = _adjustRect;
       final bufferCorners = [
-        widgetToBuf(r.left, r.top),     // TL
-        widgetToBuf(r.right, r.top),    // TR
-        widgetToBuf(r.right, r.bottom), // BR
-        widgetToBuf(r.left, r.bottom),  // BL
+        widgetToBuf(r.left, r.top),
+        widgetToBuf(r.right, r.top),
+        widgetToBuf(r.right, r.bottom),
+        widgetToBuf(r.left, r.bottom),
       ];
+
+      if (_scanCancelled) { return; }
 
       final straightened = PerspectiveWarper.warp(decoded, bufferCorners);
       final straightenedJpeg = PerspectiveWarper.encodeJpeg(straightened);
+
+      if (_scanCancelled) { return; }
 
       final tempDir = await Directory.systemTemp.createTemp('sha_warp_');
       final tempFile = File('${tempDir.path}/warped.jpg');
       await tempFile.writeAsBytes(straightenedJpeg);
 
+      if (_scanCancelled) {
+        tempFile.delete().ignore();
+        tempDir.delete().ignore();
+        return;
+      }
+
       final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
       final inputImage = InputImage.fromFilePath(tempFile.path);
       final recognised = await recogniser.processImage(inputImage);
       await recogniser.close();
+
+      if (_scanCancelled) {
+        tempFile.delete().ignore();
+        tempDir.delete().ignore();
+        return;
+      }
 
       final result = await ScannerService.instance.match(
         straightenedJpeg,
@@ -461,8 +507,9 @@ class _ScannerScreenState extends State<ScannerScreen>
 
       tempFile.delete().ignore();
       tempDir.delete().ignore();
+      _decodedCapture = null; // Free memory
 
-      if (!mounted) { return; }
+      if (!mounted || _scanCancelled) { return; }
 
       setState(() {
         _processing = false;
@@ -470,9 +517,10 @@ class _ScannerScreenState extends State<ScannerScreen>
       });
 
       if (result.candidates.isEmpty) {
-        _showSnack('No match — adjust the crop and release');
+        _showSnack('No match — adjust the crop and retry');
       }
     } catch (e) {
+      _decodedCapture = null;
       if (!mounted) { return; }
       setState(() { _processing = false; });
       _showSnack('Scan failed: $e');
@@ -484,7 +532,9 @@ class _ScannerScreenState extends State<ScannerScreen>
   // ═════════════════════════════════════════════════════════════════════════
 
   void _returnToLive() {
+    _scanCancelled = true; // Stop any in-flight _confirmAndWarp
     _deleteCapturedFile();
+    _decodedCapture = null;
     _captureLock = false;
     _controller?.setFocusMode(FocusMode.auto).ignore();
     if (_currentZoom != 1.0) { _controller?.setZoomLevel(1.0).ignore(); }
