@@ -206,7 +206,9 @@ class ScannerService {
   // PUBLIC API
   // ═════════════════════════════════════════════════════════════════════════
 
-  /// CAUSE 3 FIX: warmup now pre-caches ALL reference image hashes.
+  /// PERF BUG 3 FIX: warmup() loads card entries immediately but pre-caches
+  /// reference image hashes in batches with frame yields. Each batch of 10
+  /// hashes takes ~50-100ms; yielding between batches lets the UI render.
   Future<void> warmup() async {
     if (_generalEntries != null || _warmingUp) { return; }
     _warmingUp = true;
@@ -215,17 +217,34 @@ class ScannerService {
       debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals, '
           '${_libraryEntries!.length} library cards');
 
-      // Pre-cache reference image hashes so getCachedHash() returns
-      // non-null during scoring. Without this, sVisual is always 0.5.
-      int cached = 0;
-      for (final e in [..._generalEntries!, ..._libraryEntries!]) {
-        final h = await ImageHashMatcher.instance.hashFromAsset(e.imagePath);
-        if (h != null) { cached++; }
-      }
-      debugPrint('[Scanner] Pre-cached $cached reference hashes');
+      // Fire-and-forget: pre-cache hashes in background batches.
+      // This does NOT block the camera init or first scan.
+      _preCacheHashesInBackground();
     } finally {
       _warmingUp = false;
     }
+  }
+
+  /// Pre-caches reference image hashes in batches of 10 with a microtask
+  /// yield between each batch. This prevents the ~430 sequential asset
+  /// loads from starving the UI event loop for 2-4 seconds.
+  void _preCacheHashesInBackground() async {
+    final allEntries = [..._generalEntries!, ..._libraryEntries!];
+    int cached = 0;
+    const batchSize = 10;
+
+    for (var i = 0; i < allEntries.length; i += batchSize) {
+      final end = (i + batchSize).clamp(0, allEntries.length);
+      for (var j = i; j < end; j++) {
+        final h = await ImageHashMatcher.instance.hashFromAsset(
+          allEntries[j].imagePath,
+        );
+        if (h != null) { cached++; }
+      }
+      // Yield to the event loop after each batch so UI stays responsive.
+      await Future.delayed(Duration.zero);
+    }
+    debugPrint('[Scanner] Pre-cached $cached/${allEntries.length} reference hashes');
   }
 
   Future<ScannerResult> match(

@@ -51,14 +51,14 @@ class ScannerScreen extends StatefulWidget {
   final void Function(String id, RecordType type) onCardTap;
   final VoidCallback onBack;
   final void Function(bool visible) onNavBarVisibilityChanged;
-  final bool isActive;
+  final ValueNotifier<bool> activeNotifier;
 
   const ScannerScreen({
     super.key,
     required this.onCardTap,
     required this.onBack,
     required this.onNavBarVisibilityChanged,
-    required this.isActive,
+    required this.activeNotifier,
   });
 
   @override
@@ -110,14 +110,10 @@ class _ScannerScreenState extends State<ScannerScreen>
   // ── Widget size (set on every build from LayoutBuilder)
   Size _widgetSize = Size.zero;
 
-  // ── Live anchor dots
-  List<Offset> _liveAnchorPoints = [];
-  bool _liveOcrRunning = false;
-
   // ── Serialises all takePicture() calls
   bool _captureLock = false;
 
-  // ── Tab-active gate (driven by widget.isActive via didUpdateWidget)
+  // ── Tab-active gate (driven by widget.activeNotifier)
   bool _tabActive = false;
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -126,10 +122,17 @@ class _ScannerScreenState extends State<ScannerScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    widget.activeNotifier.addListener(_onActiveChanged);
+    // If already active when first built (unlikely but safe):
+    if (widget.activeNotifier.value) {
+      _tabActive = true;
+      _initCamera();
+    }
   }
 
   @override
   void dispose() {
+    widget.activeNotifier.removeListener(_onActiveChanged);
     WidgetsBinding.instance.removeObserver(this);
     _controller?.dispose();
     ScannerService.instance.dispose();
@@ -138,14 +141,14 @@ class _ScannerScreenState extends State<ScannerScreen>
     super.dispose();
   }
 
-  @override
-  void didUpdateWidget(covariant ScannerScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (widget.isActive && !oldWidget.isActive) {
+  /// Called when main.dart updates _scannerActiveNotifier. This replaces
+  /// didUpdateWidget — the widget is never recreated, only the notifier fires.
+  void _onActiveChanged() {
+    final active = widget.activeNotifier.value;
+    if (active && !_tabActive) {
       _tabActive = true;
       if (_controller == null && !_initialising) { _initCamera(); }
-      else if (_state == _ScannerState.live) { _startLiveOcrStream(); }
-    } else if (!widget.isActive && oldWidget.isActive) {
+    } else if (!active && _tabActive) {
       _tabActive = false;
       _stopCamera();
     }
@@ -156,7 +159,7 @@ class _ScannerScreenState extends State<ScannerScreen>
     if (state == AppLifecycleState.inactive || state == AppLifecycleState.paused) {
       _stopCamera();
     } else if (state == AppLifecycleState.resumed) {
-      if (widget.isActive) {
+      if (widget.activeNotifier.value) {
         _tabActive = true;
         _initCamera();
       }
@@ -169,7 +172,6 @@ class _ScannerScreenState extends State<ScannerScreen>
       ctrl.dispose();
       _controller = null;
     }
-    if (mounted) { setState(() => _liveAnchorPoints = []); }
   }
 
   // ── Camera init ───────────────────────────────────────────────────────────
@@ -219,65 +221,10 @@ class _ScannerScreenState extends State<ScannerScreen>
       });
 
       ScannerService.instance.warmup();
-      _startLiveOcrStream();
+      // Live OCR stream REMOVED — takePicture() every 400ms was freezing
+      // the camera pipeline. The shimmer dots cost 2.5 camera captures/sec.
     } catch (e) {
       _setError(e.toString());
-    }
-  }
-
-  // ── Live OCR stream for anchor dots ──────────────────────────────────────
-
-  void _startLiveOcrStream() {
-    Future.doWhile(() async {
-      await Future.delayed(const Duration(milliseconds: 400));
-      if (!mounted || _state != _ScannerState.live || !_tabActive) {
-        if (mounted) { setState(() => _liveAnchorPoints = []); }
-        return false;
-      }
-      await _runLiveOcrPass();
-      return mounted && _state == _ScannerState.live && _tabActive;
-    });
-  }
-
-  Future<void> _runLiveOcrPass() async {
-    final ctrl = _controller;
-    if (ctrl == null || !ctrl.value.isInitialized || _liveOcrRunning) { return; }
-    if (_state != _ScannerState.live || !_tabActive) { return; }
-    if (_captureLock) { return; }
-
-    _liveOcrRunning = true;
-    _captureLock = true;
-    try {
-      final xFile = await ctrl.takePicture();
-
-      if (!mounted || _state != _ScannerState.live || !_tabActive) {
-        File(xFile.path).delete().ignore();
-        return;
-      }
-
-      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
-      final inputImage = InputImage.fromFilePath(xFile.path);
-      final recognised = await recogniser.processImage(inputImage);
-      await recogniser.close();
-      File(xFile.path).delete().ignore();
-
-      if (!mounted || _state != _ScannerState.live || !_tabActive) { return; }
-
-      final points = <Offset>[];
-      for (final block in recognised.blocks) {
-        final pts = block.cornerPoints;
-        if (pts.length < 4) { continue; }
-        final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
-        final cy = pts.map((p) => p.y).reduce((a, b) => a + b) / pts.length;
-        points.add(Offset(cx.toDouble(), cy.toDouble()));
-      }
-
-      if (mounted) { setState(() => _liveAnchorPoints = points); }
-    } catch (_) {
-      // Silently ignore
-    } finally {
-      _captureLock = false;
-      _liveOcrRunning = false;
     }
   }
 
@@ -550,9 +497,7 @@ class _ScannerScreenState extends State<ScannerScreen>
       _adjustRect = Rect.zero;
       _rectReady = false;
       _activeDragIndex = null;
-      _liveAnchorPoints = [];
     });
-    if (_tabActive) { _startLiveOcrStream(); }
   }
 
   void _deleteCapturedFile() {
@@ -836,13 +781,6 @@ class _ScannerScreenState extends State<ScannerScreen>
                       width: ctrl.value.previewSize!.height,
                       height: ctrl.value.previewSize!.width,
                       child: CameraPreview(ctrl))))),
-              if (_state == _ScannerState.live && _liveAnchorPoints.isNotEmpty)
-                RepaintBoundary(
-                  child: _LiveAnchorDots(
-                    bufferPoints: _liveAnchorPoints,
-                    previewSize: ctrl.value.previewSize!,
-                  ),
-                ),
               if (_focusPoint != null)
                 _FocusSquare(position: _focusPoint!, acquired: _focusAcquired),
               if (_currentZoom > _minZoom + 0.15)
@@ -1197,72 +1135,6 @@ class _PillItem extends StatelessWidget {
             color: selected ? Colors.black87 : Colors.white70)),
       ])));
   }
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// LIVE ANCHOR DOTS
-// ═══════════════════════════════════════════════════════════════════════════════
-
-class _LiveAnchorDots extends StatefulWidget {
-  final List<Offset> bufferPoints;
-  final Size previewSize;
-  const _LiveAnchorDots({required this.bufferPoints, required this.previewSize});
-  @override
-  State<_LiveAnchorDots> createState() => _LiveAnchorDotsState();
-}
-
-class _LiveAnchorDotsState extends State<_LiveAnchorDots>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _shimmer;
-  @override
-  void initState() {
-    super.initState();
-    _shimmer = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..repeat(reverse: true);
-  }
-  @override
-  void dispose() { _shimmer.dispose(); super.dispose(); }
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _shimmer,
-      builder: (context, _) => CustomPaint(
-        painter: _AnchorDotsPainter(bufferPoints: widget.bufferPoints,
-            previewSize: widget.previewSize, shimmerValue: _shimmer.value),
-        child: const SizedBox.expand(),
-      ),
-    );
-  }
-}
-
-class _AnchorDotsPainter extends CustomPainter {
-  final List<Offset> bufferPoints;
-  final Size previewSize;
-  final double shimmerValue;
-
-  const _AnchorDotsPainter({required this.bufferPoints, required this.previewSize, required this.shimmerValue});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (bufferPoints.isEmpty) { return; }
-    final opacity = 0.15 + shimmerValue * 0.35;
-    final dotPaint = Paint()..color = const Color(0xFFFFB300).withValues(alpha: opacity)..style = PaintingStyle.fill;
-    final ringPaint = Paint()..color = const Color(0xFFFFB300).withValues(alpha: opacity * 0.6)..style = PaintingStyle.stroke..strokeWidth = 1.5;
-    final bufW = previewSize.height; final bufH = previewSize.width;
-    final widgetW = size.width; final widgetH = size.height;
-    final scale = math.max(widgetW / bufW, widgetH / bufH);
-    final cropX = (bufW * scale - widgetW) / 2.0;
-    final cropY = (bufH * scale - widgetH) / 2.0;
-    for (final bp in bufferPoints) {
-      final wx = bp.dx * scale - cropX;
-      final wy = bp.dy * scale - cropY;
-      if (wx < -10 || wy < -10 || wx > widgetW + 10 || wy > widgetH + 10) { continue; }
-      canvas.drawCircle(Offset(wx, wy), 6, dotPaint);
-      canvas.drawCircle(Offset(wx, wy), 10, ringPaint);
-    }
-  }
-  @override
-  bool shouldRepaint(_AnchorDotsPainter old) =>
-      old.shimmerValue != shimmerValue || old.bufferPoints != bufferPoints;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════

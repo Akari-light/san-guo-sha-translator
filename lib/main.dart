@@ -128,19 +128,18 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   // ── Screen list — built once, never recreated
   late final List<Widget> _staticScreens;
 
-  List<Widget> _buildScreens() => [
-    _staticScreens[0], // Codex
-    _staticScreens[1], // Generals
-    _staticScreens[2], // Library
-    ScannerScreen(
-      onCardTap: _pushCard,
-      onBack: () => setState(() => _selectedIndex = _previousIndex),
-      onNavBarVisibilityChanged: (visible) =>
-          setState(() => _scannerShowsNavBar = visible),
-      isActive: _selectedIndex == _discoverTabIndex,
-    ),
-    _staticScreens[3], // Home
-  ];
+  // ── Scanner activation notifier — replaces the isActive parameter.
+  //    The old _buildScreens() created a NEW ScannerScreen widget on every
+  //    setState() because isActive was a constructor parameter that changed.
+  //    This triggered didUpdateWidget cascades, camera reinit attempts,
+  //    and live OCR restarts on every frame across the ENTIRE app.
+  final ValueNotifier<bool> _scannerActiveNotifier = ValueNotifier(false);
+
+  // Built once in initState, returned on every build. ScannerScreen is
+  // never recreated — it listens to _scannerActiveNotifier instead.
+  late final List<Widget> _allScreens;
+
+  List<Widget> _buildScreens() => _allScreens;
 
   @override
   void initState() {
@@ -170,8 +169,21 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onLibraryTap: (id) => _pushCard(id, RecordType.library),
       ),
     ];
-    // App starts on Home (index 4). Scanner receives isActive: false
-    // via _buildScreens() and stays dormant until the Discover tab is selected.
+    // App starts on Home (index 4). Scanner starts dormant because
+    // _scannerActiveNotifier is false. It activates when _switchTab(3) fires.
+    _allScreens = [
+      _staticScreens[0], // Codex
+      _staticScreens[1], // Generals
+      _staticScreens[2], // Library
+      ScannerScreen(
+        onCardTap: _pushCard,
+        onBack: () => setState(() => _selectedIndex = _previousIndex),
+        onNavBarVisibilityChanged: (visible) =>
+            setState(() => _scannerShowsNavBar = visible),
+        activeNotifier: _scannerActiveNotifier,
+      ),
+      _staticScreens[3], // Home
+    ];
   }
 
   @override
@@ -183,6 +195,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     _searchController.dispose();
     _generalsSearchController.dispose();
     _codexSearchController.dispose();
+    _scannerActiveNotifier.dispose();
     super.dispose();
   }
 
@@ -209,6 +222,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       _generalsSearchController.clear();
       _codexSearchController.clear();
     });
+    // Update scanner activation AFTER setState — no widget recreation needed.
+    _scannerActiveNotifier.value = (index == _discoverTabIndex);
   }
 
   Future<void> _pushCard(String id, RecordType type) async {
