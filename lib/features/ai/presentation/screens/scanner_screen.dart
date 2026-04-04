@@ -124,6 +124,13 @@ class _ScannerScreenState extends State<ScannerScreen>
   // decoding the same multi-megapixel JPEG twice (~150ms each).
   img.Image? _decodedCapture;
 
+  // ── Reusable OCR recogniser — creating TextRecognizer loads the ML model
+  // each time (~100ms+). Reusing a single instance eliminates this overhead.
+  TextRecognizer? _textRecogniser;
+
+  TextRecognizer get _recogniser =>
+      _textRecogniser ??= TextRecognizer(script: TextRecognitionScript.chinese);
+
   // ─────────────────────────────────────────────────────────────────────────
 
   @override
@@ -144,6 +151,7 @@ class _ScannerScreenState extends State<ScannerScreen>
     widget.activeNotifier.removeListener(_onActiveChanged);
     WidgetsBinding.instance.removeObserver(this);
     _controller?.dispose();
+    _textRecogniser?.close();
     ScannerService.instance.dispose();
     _deleteCapturedFile();
     _capturedImageBytes = null;
@@ -258,6 +266,7 @@ class _ScannerScreenState extends State<ScannerScreen>
     }
     _captureLock = true;
     _scanCancelled = false;
+    ScannerService.instance.pauseHashCache();
 
     try {
       try { await ctrl.setFocusMode(FocusMode.locked); } catch (_) {}
@@ -284,10 +293,10 @@ class _ScannerScreenState extends State<ScannerScreen>
 
       ctrl.setFocusMode(FocusMode.auto).ignore();
 
-      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
+      // Reuse the shared recogniser instance
       final inputImage = InputImage.fromFilePath(xFile.path);
-      final recognised = await recogniser.processImage(inputImage);
-      await recogniser.close();
+      final recognised = await _recogniser.processImage(inputImage);
+      
 
       if (!mounted || _scanCancelled) { return; }
 
@@ -339,10 +348,10 @@ class _ScannerScreenState extends State<ScannerScreen>
     });
 
     try {
-      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
+      // Reuse the shared recogniser instance
       final inputImage = InputImage.fromFilePath(picked.path);
-      final recognised = await recogniser.processImage(inputImage);
-      await recogniser.close();
+      final recognised = await _recogniser.processImage(inputImage);
+      
 
       if (!mounted || _scanCancelled) { return; }
       _decodedCapture = img.decodeImage(bytes);
@@ -487,10 +496,10 @@ class _ScannerScreenState extends State<ScannerScreen>
         return;
       }
 
-      final recogniser = TextRecognizer(script: TextRecognitionScript.chinese);
+      // Reuse the shared recogniser instance
       final inputImage = InputImage.fromFilePath(tempFile.path);
-      final recognised = await recogniser.processImage(inputImage);
-      await recogniser.close();
+      final recognised = await _recogniser.processImage(inputImage);
+      
 
       if (_scanCancelled) {
         tempFile.delete().ignore();
@@ -536,6 +545,7 @@ class _ScannerScreenState extends State<ScannerScreen>
     _deleteCapturedFile();
     _decodedCapture = null;
     _captureLock = false;
+    ScannerService.instance.resumeHashCache();
     _controller?.setFocusMode(FocusMode.auto).ignore();
     if (_currentZoom != 1.0) { _controller?.setZoomLevel(1.0).ignore(); }
     setState(() {

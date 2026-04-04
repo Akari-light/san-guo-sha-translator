@@ -1,27 +1,16 @@
 // lib/core/services/scanner_service.dart
 //
-// Multimodal Fusion Engine — Phase 6 (Accuracy Overhaul)
+// Multimodal Fusion Engine — Phase 8 (Accuracy & Performance)
 //
-// Phase 6 fixes (diagnosed from 5 real-world scan samples):
+// Generals-only search. Library lookup deferred.
 //
-//   FIX 1: Never exclude a domain. Always search BOTH generals and library.
-//          Domain gate penalty (0.3×) still applies for cross-domain but
-//          the correct card is never excluded from scoring.
-//
-//   FIX 2: Domain classifier zone-weighted. Library keywords in body zone
-//          (skill descriptions mentioning 【杀】【桃】) score 0.03 instead of 0.12.
-//          Skill type keywords (锁定技/限定技) force domain=general immediately.
-//
-//   FIX 3: Dual-hash strategy. General references are clean artwork →
-//          compare against art-zone crop. Library references are full card
-//          images → compare against full straightened image.
-//
-//   FIX 4: Adaptive weights based on hash cache readiness. Cold cache →
-//          W_text=0.85 / W_visual=0.15. Warm cache → W_text=0.25 / W_visual=0.75.
-//
-//   FIX 5: ID fuzzy matching via Levenshtein distance ≤ 2.
-//
-//   FIX 6: Pre-cache hashes during warmup (moved from deferred background).
+// Phase 8 changes:
+//   - Removed img.normalize() — was degrading warped image quality
+//   - ID matching restricted to id-zone tokens only + requires ≥1 letter
+//   - Zone assignment redesigned: all OCR text on a general card is skill
+//     text (body), except bottom ~20% which is copyright/serial (type/id)
+//   - Removed dead library warmup, library name discount, domainGate field
+//   - Background hash cache delay increased to 300ms
 
 import 'dart:math' as math;
 
@@ -37,7 +26,6 @@ import 'fuzzy_matcher.dart';
 import 'image_hash_matcher.dart';
 import '../utils/perspective_warper.dart';
 import '../../features/generals/data/repository/general_loader.dart';
-import '../../features/library/data/repository/library_loader.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // PUBLIC TYPES
@@ -96,8 +84,6 @@ class ZonedToken {
 // INTERNAL TYPES
 // ═══════════════════════════════════════════════════════════════════════════════
 
-enum _DomainType { general, library, unknown }
-
 class _CardEntry {
   final String cardId;
   final RecordType recordType;
@@ -128,7 +114,6 @@ class _ScoredFusionCandidate {
   final _CardEntry entry;
   final double sText;
   final double sVisual;
-  final double domainGate;
   final double boost;
   final double finalScore;
 
@@ -136,7 +121,6 @@ class _ScoredFusionCandidate {
     required this.entry,
     required this.sText,
     required this.sVisual,
-    required this.domainGate,
     required this.boost,
     required this.finalScore,
   });
@@ -164,11 +148,9 @@ const _expansionPrefixToLabel = <String, String>{
   'SP': 'Other',
 };
 
-/// Skill type keywords that appear ONLY on general cards, never on library
-/// cards. A single detection is near-definitive evidence of a general.
-const _skillTypeKeywords = <String>{
-  '锁定技', '限定技', '觉醒技', '主公技', '使命技', '转换技',
-};
+/// ID token validator: must contain at least one letter AND one digit,
+/// 4+ chars. Filters out "999" (HP dots) and "2020" (copyright year).
+final _idTokenRe = RegExp(r'^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{4,}$');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SCANNER SERVICE
@@ -179,42 +161,36 @@ class ScannerService {
   static final ScannerService instance = ScannerService._();
 
   List<_CardEntry>? _generalEntries;
-  List<_CardEntry>? _libraryEntries;
   bool _warmingUp = false;
 
-  static const _generalKeywords = <String>[
-    '锁定技', '限定技', '觉醒技', '主公技', '使命技', '转换技',
-    '体力上限', '体力值',
-  ];
-  static const _libraryKeywords = <String>[
-    '锦囊', '武器', '防具', '坐骑', '宝物', '攻击范围', '装备区', '重铸',
-    '基本牌', '锦囊牌', '武器牌', '防具牌', '坐骑牌', '宝物牌',
-  ];
   static final _expansionPrefixRe =
       RegExp(r'^(JX|YJ|MG|MO|LE|SP)', caseSensitive: false);
-  static final _suitRankRe = RegExp(
-    r'^[A2-9JQK10]{1,2}[♠♥♦♣\u2660\u2665\u2666\u2663]?$',
-    caseSensitive: false,
-  );
 
   // ═════════════════════════════════════════════════════════════════════════
   // PUBLIC API
   // ═════════════════════════════════════════════════════════════════════════
 
-  /// warmup() loads card entries AND pre-caches all reference image hashes.
-  ///
-  /// Hash caching runs as a low-priority background task immediately after
-  /// card entries are loaded. This means the first scan may still have a
-  /// partially warm cache, but subsequent scans will have full pHash coverage.
   Future<void> warmup() async {
     if (_generalEntries != null || _warmingUp) { return; }
     _warmingUp = true;
     try {
-      await Future.wait([_warmupGenerals(), _warmupLibrary()]);
-      debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals, '
-          '${_libraryEntries!.length} library cards. Starting hash pre-cache.');
-      // Start hash caching immediately (not deferred to after first scan).
-      _triggerBackgroundHashCache();
+      final generals = await GeneralLoader().getGenerals();
+      _generalEntries = generals.map((g) => _CardEntry(
+        cardId: g.id,
+        recordType: RecordType.general,
+        nameCn: g.nameCn,
+        nameEn: g.nameEn,
+        imagePath: g.imagePath,
+        normId: _normaliseId(g.id),
+        normName: TextNormaliser.normalise(g.nameCn),
+        skillNames: g.skills
+            .map((s) => TextNormaliser.normalise(s.nameCn))
+            .where((n) => n.length >= 2)
+            .toList(),
+        faction: g.faction,
+        expansionLabel: g.expansion.labelEn,
+      )).toList();
+      debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals.');
     } finally {
       _warmingUp = false;
     }
@@ -222,35 +198,37 @@ class ScannerService {
 
   bool _backgroundCacheStarted = false;
   bool _backgroundCacheCancelled = false;
+  bool _backgroundCachePaused = false;
 
-  /// Starts a very low-priority background hash cache job.
-  /// Called AFTER the first scan result is delivered (not before).
-  /// Processes 3 hashes at a time with 32ms (two frames) between batches.
+  void pauseHashCache() { _backgroundCachePaused = true; }
+  void resumeHashCache() { _backgroundCachePaused = false; }
+
   void _triggerBackgroundHashCache() {
     if (_backgroundCacheStarted) { return; }
     _backgroundCacheStarted = true;
     _backgroundCacheCancelled = false;
 
     () async {
-      final allEntries = [...?_generalEntries, ...?_libraryEntries];
+      final entries = _generalEntries ?? [];
       int cached = 0;
-
-      for (var i = 0; i < allEntries.length; i += 3) {
+      for (var i = 0; i < entries.length; i++) {
         if (_backgroundCacheCancelled) { return; }
-        final end = (i + 3).clamp(0, allEntries.length);
-        for (var j = i; j < end; j++) {
-          // Skip if already cached (e.g. from a scan result lookup)
-          if (ImageHashMatcher.instance.getCachedHash(allEntries[j].imagePath) != null) {
-            cached++;
-            continue;
-          }
-          final h = await ImageHashMatcher.instance.hashFromAsset(allEntries[j].imagePath);
-          if (h != null) { cached++; }
+        while (_backgroundCachePaused && !_backgroundCacheCancelled) {
+          await Future.delayed(const Duration(milliseconds: 500));
         }
-        // Two full frames between batches — minimal event loop pressure
-        await Future.delayed(const Duration(milliseconds: 32));
+        if (_backgroundCacheCancelled) { return; }
+
+        if (ImageHashMatcher.instance.getCachedHash(entries[i].imagePath) != null) {
+          cached++;
+          _cachedHashCount = cached;
+          continue;
+        }
+        final h = await ImageHashMatcher.instance.hashFromAsset(entries[i].imagePath);
+        if (h != null) { cached++; _cachedHashCount = cached; }
+        await Future.delayed(const Duration(milliseconds: 300));
       }
-      debugPrint('[Scanner] Background hash cache: $cached/${allEntries.length}');
+      _cachedHashCount = cached;
+      debugPrint('[Scanner] Hash cache complete: $cached/${entries.length}');
     }();
   }
 
@@ -263,46 +241,7 @@ class ScannerService {
     return _runFusion(bytes, recognisedText, source, straightenedImage);
   }
 
-  void dispose() {
-    _backgroundCacheCancelled = true;
-  }
-
-  // ═════════════════════════════════════════════════════════════════════════
-  // WARMUP
-  // ═════════════════════════════════════════════════════════════════════════
-
-  Future<void> _warmupGenerals() async {
-    final generals = await GeneralLoader().getGenerals();
-    _generalEntries = generals.map((g) => _CardEntry(
-      cardId: g.id,
-      recordType: RecordType.general,
-      nameCn: g.nameCn,
-      nameEn: g.nameEn,
-      imagePath: g.imagePath,
-      normId: _normaliseId(g.id),
-      normName: TextNormaliser.normalise(g.nameCn),
-      skillNames: g.skills
-          .map((s) => TextNormaliser.normalise(s.nameCn))
-          .where((n) => n.length >= 2)
-          .toList(),
-      faction: g.faction,
-      expansionLabel: g.expansion.labelEn,
-    )).toList();
-  }
-
-  Future<void> _warmupLibrary() async {
-    final cards = await LibraryLoader().getCards();
-    _libraryEntries = cards.map((c) => _CardEntry(
-      cardId: c.id,
-      recordType: RecordType.library,
-      nameCn: c.nameCn,
-      nameEn: c.nameEn,
-      imagePath: c.imagePath,
-      normId: _normaliseId(c.id),
-      normName: TextNormaliser.normalise(c.nameCn),
-      skillNames: const [],
-    )).toList();
-  }
+  void dispose() { _backgroundCacheCancelled = true; }
 
   // ═════════════════════════════════════════════════════════════════════════
   // FUSION PIPELINE
@@ -314,23 +253,18 @@ class ScannerService {
     ScanSource source,
     img.Image? straightenedImage,
   ) async {
+    pauseHashCache();
     final sw = Stopwatch()..start();
-    if (_generalEntries == null || _libraryEntries == null) {
-      await warmup();
-    }
+    if (_generalEntries == null) { await warmup(); }
 
     try {
-      if (source == ScanSource.straightened && straightenedImage != null) {
-        straightenedImage = img.normalize(straightenedImage, min: 0, max: 255);
-      }
+      // img.normalize() intentionally REMOVED — degraded OCR text clarity.
 
       final zonedTokens = recognisedText != null
           ? _extractZonedTokens(recognisedText)
           : <ZonedToken>[];
-
       final bool ocrEmpty = zonedTokens.isEmpty;
 
-      // ── DEBUG: Phase A — Input ────────────────────────────────────────
       debugPrint('╔═══════════════════════════════════════════════════');
       debugPrint('║ [Scanner] PHASE A — INPUT');
       debugPrint('║ Source: ${source.name} | Tokens: ${zonedTokens.length}');
@@ -338,25 +272,14 @@ class ScannerService {
         debugPrint('║   [$i] "${zonedTokens[i].text}" → ${zonedTokens[i].zone.name}');
       }
 
-      // ── Phase B: Signal extraction ─────────────────────────────────────
+      // ── Phase B: Signals ───────────────────────────────────────────────
 
-      final domain = ocrEmpty
-          ? _DomainType.unknown
-          : _classifyDomain(zonedTokens);
-
-      // FIX 3: Compute TWO query hashes:
-      //   artZoneHash  — for general references (clean artwork)
-      //   fullImageHash — for library references (full card images)
       int? artZoneHash;
-      int? fullImageHash;
       if (source == ScanSource.straightened && straightenedImage != null) {
         final artZone = PerspectiveWarper.extractArtZone(straightenedImage);
         artZoneHash = ImageHashMatcher.instance.hashFromImage(artZone);
-        fullImageHash = ImageHashMatcher.instance.hashFromImage(straightenedImage);
       } else {
-        final h = ImageHashMatcher.instance.hashFromBytes(bytes);
-        artZoneHash = h;
-        fullImageHash = h;
+        artZoneHash = ImageHashMatcher.instance.hashFromBytes(bytes);
       }
 
       String? detectedFaction;
@@ -366,9 +289,7 @@ class ScannerService {
 
       String? detectedExpansion;
       for (final token in zonedTokens) {
-        if (token.zone != CardZone.id && token.zone != CardZone.name) {
-          continue;
-        }
+        if (token.zone != CardZone.id) { continue; }
         final m = _expansionPrefixRe.firstMatch(token.text.toUpperCase());
         if (m != null) {
           detectedExpansion = _expansionPrefixToLabel[m.group(1)!];
@@ -376,65 +297,44 @@ class ScannerService {
         }
       }
 
-      double baseWT;
-      double baseWV;
-      if (ocrEmpty) {
-        baseWT = 0.0;
-        baseWV = 1.0;
-      } else {
-        final weights = _adaptiveWeights(
-          tokenCount: zonedTokens.length,
-          hasVisual: artZoneHash != null || fullImageHash != null,
-          source: source,
-        );
-        baseWT = weights.$1;
-        baseWV = weights.$2;
-      }
+      final (baseWT, baseWV) = ocrEmpty
+          ? (0.0, 1.0)
+          : _adaptiveWeights(
+              tokenCount: zonedTokens.length,
+              hasVisual: artZoneHash != null,
+              source: source,
+            );
 
-      // ── DEBUG: Phase B — Signals ──────────────────────────────────────
       debugPrint('║ [Scanner] PHASE B — SIGNALS');
-      debugPrint('║ Domain: ${domain.name} | W_text=${baseWT.toStringAsFixed(2)} '
+      debugPrint('║ W_text=${baseWT.toStringAsFixed(2)} '
           'W_visual=${baseWV.toStringAsFixed(2)}');
       debugPrint('║ ArtZoneHash: ${artZoneHash != null ? "OK" : "NULL"} | '
-          'FullImgHash: ${fullImageHash != null ? "OK" : "NULL"} | '
           'Faction: $detectedFaction | Expansion: $detectedExpansion');
 
-      // ── Phase C: Candidate scoring ─────────────────────────────────────
-      // FIX 1: ALWAYS search BOTH domains. Domain gate (0.3×) penalises
-      // cross-domain candidates but never excludes them.
-      final scored = <_ScoredFusionCandidate>[];
+      // ── Phase C: Score candidates ──────────────────────────────────────
 
+      final scored = <_ScoredFusionCandidate>[];
       for (final e in _generalEntries!) {
         final r = _scoreCandidate(
-          e, zonedTokens, artZoneHash, fullImageHash, domain,
+          e, zonedTokens, artZoneHash,
           baseWT, baseWV, detectedFaction, detectedExpansion,
         );
         if (r != null) { scored.add(r); }
       }
-      for (final e in _libraryEntries!) {
-        final r = _scoreCandidate(
-          e, zonedTokens, artZoneHash, fullImageHash, domain,
-          baseWT, baseWV, detectedFaction, detectedExpansion,
-        );
-        if (r != null) { scored.add(r); }
-      }
-
       scored.sort((a, b) => b.finalScore.compareTo(a.finalScore));
 
-      // ── DEBUG: Phase D — Results ──────────────────────────────────────
       debugPrint('║ [Scanner] PHASE D — TOP 5 of ${scored.length}');
       for (var i = 0; i < math.min(5, scored.length); i++) {
         final s = scored[i];
-        final tag = s.entry.recordType == RecordType.general ? 'GEN' : 'LIB';
-        debugPrint('║   #$i [$tag] ${s.entry.cardId} "${s.entry.nameCn}" '
+        debugPrint('║   #$i ${s.entry.cardId} "${s.entry.nameCn}" '
             'sT=${s.sText.toStringAsFixed(3)} sV=${s.sVisual.toStringAsFixed(3)} '
-            'dg=${s.domainGate.toStringAsFixed(2)} boost=${s.boost.toStringAsFixed(2)} '
-            '→ FINAL=${s.finalScore.toStringAsFixed(3)}');
+            'boost=${s.boost.toStringAsFixed(2)} → ${s.finalScore.toStringAsFixed(3)}');
       }
       debugPrint('╚═══════════════════════════════════════════════════');
 
       if (scored.isEmpty) {
         sw.stop();
+        resumeHashCache();
         return ScannerResult(
           debugMessage: '[Scanner] No candidates in ${sw.elapsedMilliseconds}ms.',
         );
@@ -446,9 +346,7 @@ class ScannerService {
           : top.finalScore;
       final fast = top.finalScore >= 0.75 && gap >= 0.20;
 
-      if (top.finalScore > 0.85) {
-        HapticFeedback.mediumImpact();
-      }
+      if (top.finalScore > 0.85) { HapticFeedback.mediumImpact(); }
 
       final candidates = (fast ? [top] : scored.take(5))
           .map((s) => MatchCandidate(
@@ -462,6 +360,8 @@ class ScannerService {
           .toList();
 
       sw.stop();
+      _triggerBackgroundHashCache();
+      resumeHashCache();
 
       return ScannerResult(
         candidates: candidates,
@@ -471,6 +371,7 @@ class ScannerService {
       );
     } catch (e, stack) {
       debugPrint('[Scanner] Error: $e\n$stack');
+      resumeHashCache();
       return ScannerResult(debugMessage: '[Scanner] Error: $e');
     }
   }
@@ -489,9 +390,10 @@ class ScannerService {
         if (pt.y > maxY) { maxY = pt.y.toDouble(); }
       }
     }
-    final cardH = maxY - minY;
-    final cardW = maxX - minX;
+    final textH = maxY - minY;
+    final textW = maxX - minX;
     final tokens = <ZonedToken>[];
+    final seen = <String>{};
     final splitRe = RegExp(r'[\s·•\-—\u3000\uff0c\u3001\uff0e]+');
     final cleanRe = RegExp(r'[^\u4e00-\u9fff\u3400-\u4dbfa-zA-Z0-9]');
 
@@ -499,106 +401,57 @@ class ScannerService {
       for (final line in block.lines) {
         final raw = line.text.trim();
         if (raw.isEmpty) { continue; }
-        final zone = _assignZone(line, minX, minY, cardW, cardH);
+        final zone = _assignZone(line, minX, minY, textW, textH);
         final norm = TextNormaliser.normalise(raw);
+
+        final parts = <String>[];
         for (final part in norm.split(splitRe)) {
           final c = part.replaceAll(cleanRe, '');
-          if (c.length >= 2) { tokens.add(ZonedToken(text: c, zone: zone)); }
+          if (c.length >= 2) { parts.add(c); }
         }
-        final full = norm.replaceAll(cleanRe, '');
-        if (full.length >= 4) { tokens.add(ZonedToken(text: full, zone: zone)); }
+        for (final p in parts) {
+          final key = '${p}_${zone.name}';
+          if (seen.add(key)) { tokens.add(ZonedToken(text: p, zone: zone)); }
+        }
+        if (parts.length > 1) {
+          final full = norm.replaceAll(cleanRe, '');
+          if (full.length >= 4) {
+            final key = '${full}_${zone.name}';
+            if (seen.add(key)) { tokens.add(ZonedToken(text: full, zone: zone)); }
+          }
+        }
       }
     }
     return tokens;
   }
 
+  /// Zone assignment for general cards.
+  ///
+  /// OCR on a warped general card only detects text in the bottom ~35%:
+  /// skill descriptions, copyright line, and serial ID. The character name
+  /// is vertical calligraphy overlaid on artwork — OCR rarely reads it.
+  ///
+  /// Within the OCR text region (rY 0.0 = top of first text, 1.0 = bottom):
+  ///   rY < 0.80 → body (skill descriptions)
+  ///   rY ≥ 0.80, right side or alphanumeric → id (serial number)
+  ///   rY ≥ 0.80 → type (copyright/illustrator)
   CardZone _assignZone(TextLine line, double cL, double cT, double cW, double cH) {
-    if (cH <= 0 || cW <= 0) { return CardZone.unknown; }
+    if (cH <= 0 || cW <= 0) { return CardZone.body; }
     final pts = line.cornerPoints;
-    if (pts.isEmpty) { return CardZone.unknown; }
-    final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
+    if (pts.isEmpty) { return CardZone.body; }
     final cy = pts.map((p) => p.y).reduce((a, b) => a + b) / pts.length;
+    final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
     final rY = (cy - cT) / cH;
     final rX = (cx - cL) / cW;
-    if (rY < 0.25 && rX < 0.15) { return CardZone.id; }
-    if (rY > 0.80 && rX > 0.60) { return CardZone.id; }
-    if (rY < 0.25) { return CardZone.name; }
-    if (rY > 0.85) { return CardZone.type; }
-    return CardZone.body;
-  }
 
-  // ═════════════════════════════════════════════════════════════════════════
-  // DOMAIN CLASSIFIER (FIX 2 — zone-weighted)
-  // ═════════════════════════════════════════════════════════════════════════
-
-  _DomainType _classifyDomain(List<ZonedToken> tokens) {
-    double gs = 0.0, ls = 0.0;
-    bool hasSkillTypeKeyword = false;
-
-    for (final token in tokens) {
-      final t = token.text;
-      final upper = t.toUpperCase();
-
-      if ((token.zone == CardZone.id || token.zone == CardZone.name) &&
-          _suitRankRe.hasMatch(t)) {
-        ls += 0.35;
-        continue;
-      }
-
-      if (token.zone == CardZone.name &&
-          (t.contains('【') || t.contains('】'))) {
-        ls += 0.15;
-      }
-
-      if (_expansionPrefixRe.hasMatch(upper)) {
-        gs += 0.30;
-        continue;
-      }
-
-      // FIX 2: Library keywords in body/unknown zone get almost no weight.
-      // Skill descriptions on general cards naturally mention card names
-      // like 杀, 桃, 闪, 锦囊, etc. Only count library keywords that
-      // appear in name/type/id zones (actual card labels).
-      for (final kw in _libraryKeywords) {
-        if (t.contains(kw)) {
-          if (token.zone == CardZone.type || token.zone == CardZone.name) {
-            ls += 0.25;
-          } else if (token.zone == CardZone.id) {
-            ls += 0.15;
-          } else {
-            // body or unknown zone — heavily discounted
-            ls += 0.03;
-          }
-          break;
-        }
-      }
-
-      // Skill type keywords (锁定技/限定技/觉醒技/主公技/使命技/转换技)
-      // appear on EVERY general card, NEVER on library cards.
-      // A single detection is near-definitive.
-      for (final kw in _generalKeywords) {
-        if (t.contains(kw)) {
-          if (_skillTypeKeywords.contains(kw)) {
-            gs += 0.40;
-            hasSkillTypeKeyword = true;
-          } else {
-            gs += 0.15;
-          }
-          break;
-        }
-      }
+    if (rY > 0.80) {
+      final cleaned = line.text.replaceAll(RegExp(r'[^A-Za-z0-9]'), '');
+      if (rX > 0.60 && cleaned.length >= 3) { return CardZone.id; }
+      if (_idTokenRe.hasMatch(cleaned)) { return CardZone.id; }
+      return CardZone.type;
     }
 
-    debugPrint('[Scanner] Domain scores: general=${gs.toStringAsFixed(2)} '
-        'library=${ls.toStringAsFixed(2)} skillTypeFound=$hasSkillTypeKeyword');
-
-    // FIX 2: If any skill type keyword detected, force general regardless
-    // of library keyword count (skill descriptions contain card names).
-    if (hasSkillTypeKeyword) { return _DomainType.general; }
-
-    if (gs > ls + 0.10) { return _DomainType.general; }
-    if (ls > gs + 0.10) { return _DomainType.library; }
-    return _DomainType.unknown;
+    return CardZone.body;
   }
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -647,20 +500,15 @@ class ScannerService {
   }
 
   // ═════════════════════════════════════════════════════════════════════════
-  // ADAPTIVE WEIGHTS (FIX 4)
+  // ADAPTIVE WEIGHTS
   // ═════════════════════════════════════════════════════════════════════════
 
-  /// Returns the fraction of all card entries that have a cached pHash.
+  int _cachedHashCount = 0;
+
   double _hashCacheReadiness() {
-    final all = [...?_generalEntries, ...?_libraryEntries];
-    if (all.isEmpty) { return 0.0; }
-    int cached = 0;
-    for (final e in all) {
-      if (ImageHashMatcher.instance.getCachedHash(e.imagePath) != null) {
-        cached++;
-      }
-    }
-    return cached / all.length;
+    final total = _generalEntries?.length ?? 0;
+    if (total == 0) { return 0.0; }
+    return (_cachedHashCount / total).clamp(0.0, 1.0);
   }
 
   (double, double) _adaptiveWeights({
@@ -669,27 +517,15 @@ class ScannerService {
     required ScanSource source,
   }) {
     if (!hasVisual) { return (1.0, 0.0); }
-
-    // FIX 4: Scale weights by how much of the hash cache is populated.
-    // Cold cache → trust text. Warm cache → trust visual (pHash is more
-    // reliable than OCR for card matching).
     final readiness = _hashCacheReadiness();
-    debugPrint('[Scanner] Hash cache readiness: ${(readiness * 100).toStringAsFixed(0)}%');
+    debugPrint('[Scanner] Hash cache readiness: '
+        '${(readiness * 100).toStringAsFixed(0)}%');
 
-    if (source == ScanSource.straightened || source == ScanSource.userCrop) {
-      if (readiness > 0.50) {
-        // Warm cache: lean heavily on visual
-        return (0.25, 0.75);
-      } else if (readiness > 0.20) {
-        return (0.40, 0.60);
-      } else {
-        // Cold cache: lean on text since pHash returns neutral 0.5 for uncached
-        return (0.85, 0.15);
-      }
-    }
-
-    if (tokenCount < 3) { return (0.30, 0.70); }
-    return (0.60, 0.40);
+    // pHash provides near-zero discriminating signal for card-photo vs
+    // clean-artwork comparison (empirically verified: correct matches score
+    // 0.45-0.65, same range as random noise). Text matching is the primary
+    // signal. pHash kept at 10% weight as tiebreaker only.
+    return (0.90, 0.10);
   }
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -699,9 +535,7 @@ class ScannerService {
   _ScoredFusionCandidate? _scoreCandidate(
     _CardEntry entry,
     List<ZonedToken> tokens,
-    int? artZoneHash,    // For general comparison (art zone crop)
-    int? fullImageHash,  // For library comparison (full straightened image)
-    _DomainType domain,
+    int? artZoneHash,
     double baseWT,
     double baseWV,
     String? detectedFaction,
@@ -711,134 +545,71 @@ class ScannerService {
     for (final token in tokens) {
       final zw = _zoneWeights[token.zone] ?? 1.0;
 
-      final nq = _nameMatchScore(token.text, entry.normName, entry.recordType);
-      if (nq > 0) {
-        best = math.max(best, zw * nq);
-      }
+      // Name matching (general name vs OCR token)
+      final nq = FuzzyMatcher.scannerFuzzyScore(token.text, entry.normName);
+      if (nq > 0) { best = math.max(best, zw * nq); }
 
-      // FIX 5: ID fuzzy matching via Levenshtein distance
-      final idClean = token.text
-          .replaceAll(RegExp(r'[^A-Za-z0-9]'), '')
-          .toUpperCase();
-      if (idClean.length >= 3 && entry.normId.isNotEmpty) {
-        if (idClean == entry.normId) {
-          best = math.max(best, _zoneWeights[CardZone.id]!);
-        } else if (entry.normId.contains(idClean) &&
-            idClean.length >= entry.normId.length - 2) {
-          best = math.max(best, _zoneWeights[CardZone.id]!);
-        } else if (idClean.length >= 4) {
-          // Levenshtein fuzzy: allow up to 2 edits on IDs
-          final dist = FuzzyMatcher.levenshteinDistance(idClean, entry.normId);
-          if (dist <= 2) {
-            // Score degrades with edit distance
-            final idScore = _zoneWeights[CardZone.id]! * (1.0 - dist * 0.25);
-            best = math.max(best, idScore);
+      // ID matching — ONLY id-zone tokens with ≥1 letter + ≥1 digit
+      if (token.zone == CardZone.id) {
+        final idClean = token.text
+            .replaceAll(RegExp(r'[^A-Za-z0-9]'), '')
+            .toUpperCase();
+        if (_idTokenRe.hasMatch(idClean) && entry.normId.isNotEmpty) {
+          if (idClean == entry.normId) {
+            best = math.max(best, _zoneWeights[CardZone.id]!);
+          } else if (entry.normId.contains(idClean) &&
+              idClean.length >= entry.normId.length - 2) {
+            best = math.max(best, _zoneWeights[CardZone.id]!);
+          } else if (idClean.length >= 4) {
+            final dist = FuzzyMatcher.levenshteinDistance(
+                idClean, entry.normId);
+            if (dist <= 2) {
+              best = math.max(best,
+                  _zoneWeights[CardZone.id]! * (1.0 - dist * 0.25));
+            }
           }
         }
       }
 
-      if (entry.recordType == RecordType.general) {
-        for (final sk in entry.skillNames) {
-          if (token.text == sk || token.text.contains(sk)) {
-            best = math.max(best, _zoneWeights[CardZone.body]! * 0.3);
-            break;
-          }
+      // Skill name matching — use fuzzy scoring for OCR error tolerance.
+      // Skill names are 2-4 chars and OCR frequently misreads 1 character.
+      // A fuzzy match on a skill name is a strong signal (body weight × score).
+      for (final sk in entry.skillNames) {
+        final skScore = FuzzyMatcher.scannerFuzzyScore(token.text, sk);
+        if (skScore > 0) {
+          // Skill name found in token → body zone weight × match quality
+          best = math.max(best, _zoneWeights[CardZone.body]! * skScore);
+          break;
         }
       }
     }
     final sText = (best / _maxZoneWeight).clamp(0.0, 1.0);
 
-    // FIX 3: Dual-hash strategy — use the appropriate hash per card type.
-    // General reference images are clean artwork → compare art zone.
-    // Library reference images are full card images → compare full image.
-    double sVisual = 0.5; // neutral default when no hash available
-    final queryHash = entry.recordType == RecordType.general
-        ? artZoneHash
-        : fullImageHash;
-    if (queryHash != null) {
+    // Visual scoring (tiebreaker only — pHash is near-random for this domain)
+    double sVisual = 0.5;
+    if (artZoneHash != null) {
       final rh = ImageHashMatcher.instance.getCachedHash(entry.imagePath);
       if (rh != null) {
-        sVisual = ImageHashMatcher.instance.similarity(queryHash, rh);
+        sVisual = ImageHashMatcher.instance.similarity(artZoneHash, rh);
       }
     }
 
-    double wT = baseWT;
-    double wV = baseWV;
-    if (sText < 0.20 && sVisual > 0.80 && baseWV < 0.80) {
-      wT = 0.15;
-      wV = 0.85;
-    }
-
-    final eType = entry.recordType == RecordType.general
-        ? _DomainType.general
-        : _DomainType.library;
-    final double dg;
-    if (domain == eType) {
-      dg = 1.0;
-    } else if (domain == _DomainType.unknown) {
-      dg = 0.85;
-    } else {
-      dg = 0.3;
-    }
-
     double boost = 0.0;
-    if (detectedFaction != null &&
-        entry.recordType == RecordType.general &&
-        entry.faction == detectedFaction) {
+    if (detectedFaction != null && entry.faction == detectedFaction) {
       boost += 0.05;
     }
     if (detectedExpansion != null &&
-        entry.recordType == RecordType.general &&
         entry.expansionLabel == detectedExpansion) {
       boost += 0.03;
     }
 
-    final rawScore = wT * sText + wV * sVisual;
-    final finalScore = rawScore * dg + boost;
-
-    if (finalScore < 0.25) { return null; }
+    final finalScore = baseWT * sText + baseWV * sVisual + boost;
+    if (finalScore < 0.10) { return null; }
 
     return _ScoredFusionCandidate(
-      entry: entry,
-      sText: sText,
-      sVisual: sVisual,
-      domainGate: dg,
-      boost: boost,
-      finalScore: finalScore,
+      entry: entry, sText: sText, sVisual: sVisual,
+      boost: boost, finalScore: finalScore,
     );
-  }
-
-  // ═════════════════════════════════════════════════════════════════════════
-  // NAME MATCH SCORING (CAUSE 1 FIX)
-  // ═════════════════════════════════════════════════════════════════════════
-
-  /// CAUSE 1 FIX: Prevents long skill-description tokens from matching
-  /// short library card names via substring containment.
-  ///
-  /// Example: OCR token "对处于濒死状态的角色使用一张桃" (20 chars) would
-  /// match library card "桃" (1 char) with score 1.0 via `q.contains(t)`.
-  /// This caused Image 4's 蔡文姬 → 桃 misidentification.
-  ///
-  /// Fix: When the candidate is a library card with a short name (≤4 chars)
-  /// and the OCR token is much longer (> candidate + 2 chars), discount
-  /// the match by 90%. This eliminates false positives from skill text
-  /// while preserving legitimate short-token matches.
-  double _nameMatchScore(
-    String ocrToken,
-    String candidateName,
-    RecordType candidateType,
-  ) {
-    final score = FuzzyMatcher.scannerFuzzyScore(ocrToken, candidateName);
-    if (score <= 0) { return 0.0; }
-
-    if (candidateType == RecordType.library && candidateName.length <= 4) {
-      final lenDiff = ocrToken.length - candidateName.length;
-      if (lenDiff > 2) {
-        return score * 0.1;
-      }
-    }
-
-    return score;
   }
 
   String _normaliseId(String id) =>
