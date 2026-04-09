@@ -16,6 +16,7 @@ dependencies:
   image: ^4.3.0
   path_provider: ^2.1.0
   image_picker: ^1.2.1
+  tflite_flutter: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +31,8 @@ flutter:
     - assets/data/generals/
     - assets/data/library/
     - assets/data/ruleset/
+    - assets/data/general_embeddings.bin    
     - assets/images/
     - assets/images/generals/
     - assets/images/library/
+    - assets/models/

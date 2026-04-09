@@ -1,16 +1,13 @@
 // lib/core/services/scanner_service.dart
 //
-// Multimodal Fusion Engine — Phase 8 (Accuracy & Performance)
+// Multimodal Fusion Engine — Phase 9 (ML Embeddings)
 //
 // Generals-only search. Library lookup deferred.
 //
-// Phase 8 changes:
-//   - Removed img.normalize() — was degrading warped image quality
-//   - ID matching restricted to id-zone tokens only + requires ≥1 letter
-//   - Zone assignment redesigned: all OCR text on a general card is skill
-//     text (body), except bottom ~20% which is copyright/serial (type/id)
-//   - Removed dead library warmup, library name discount, domainGate field
-//   - Background hash cache delay increased to 300ms
+// Phase 9: Replaced pHash with MobileNetV2 feature embeddings via TFLite.
+// Pre-computed reference embeddings loaded from assets/data/general_embeddings.bin.
+// On-device inference extracts query embedding from warped art zone (~30ms).
+// Cosine similarity provides robust cross-domain matching (card photo vs artwork).
 
 import 'dart:math' as math;
 
@@ -23,7 +20,7 @@ import 'package:image/image.dart' as img;
 import 'recently_viewed_service.dart';
 import 'text_normaliser.dart';
 import 'fuzzy_matcher.dart';
-import 'image_hash_matcher.dart';
+import 'image_embedding_matcher.dart';
 import '../utils/perspective_warper.dart';
 import '../../features/generals/data/repository/general_loader.dart';
 
@@ -191,46 +188,23 @@ class ScannerService {
         expansionLabel: g.expansion.labelEn,
       )).toList();
       debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals.');
+
+      // Load ML model + pre-computed reference embeddings
+      await ImageEmbeddingMatcher.instance.loadModel();
+      await ImageEmbeddingMatcher.instance.loadReferenceEmbeddings();
+      _embeddingsReady = ImageEmbeddingMatcher.instance.referenceCount > 0;
+      debugPrint('[Scanner] ML embeddings ready: $_embeddingsReady '
+          '(${ImageEmbeddingMatcher.instance.referenceCount} refs)');
     } finally {
       _warmingUp = false;
     }
   }
 
-  bool _backgroundCacheStarted = false;
-  bool _backgroundCacheCancelled = false;
-  bool _backgroundCachePaused = false;
+  bool _embeddingsReady = false;
 
-  void pauseHashCache() { _backgroundCachePaused = true; }
-  void resumeHashCache() { _backgroundCachePaused = false; }
-
-  void _triggerBackgroundHashCache() {
-    if (_backgroundCacheStarted) { return; }
-    _backgroundCacheStarted = true;
-    _backgroundCacheCancelled = false;
-
-    () async {
-      final entries = _generalEntries ?? [];
-      int cached = 0;
-      for (var i = 0; i < entries.length; i++) {
-        if (_backgroundCacheCancelled) { return; }
-        while (_backgroundCachePaused && !_backgroundCacheCancelled) {
-          await Future.delayed(const Duration(milliseconds: 500));
-        }
-        if (_backgroundCacheCancelled) { return; }
-
-        if (ImageHashMatcher.instance.getCachedHash(entries[i].imagePath) != null) {
-          cached++;
-          _cachedHashCount = cached;
-          continue;
-        }
-        final h = await ImageHashMatcher.instance.hashFromAsset(entries[i].imagePath);
-        if (h != null) { cached++; _cachedHashCount = cached; }
-        await Future.delayed(const Duration(milliseconds: 300));
-      }
-      _cachedHashCount = cached;
-      debugPrint('[Scanner] Hash cache complete: $cached/${entries.length}');
-    }();
-  }
+  // ── Pause/resume stubs (kept for scanner_screen API compatibility) ──
+  void pauseHashCache() {}
+  void resumeHashCache() {}
 
   Future<ScannerResult> match(
     Uint8List bytes, {
@@ -241,7 +215,9 @@ class ScannerService {
     return _runFusion(bytes, recognisedText, source, straightenedImage);
   }
 
-  void dispose() { _backgroundCacheCancelled = true; }
+  void dispose() {
+    ImageEmbeddingMatcher.instance.dispose();
+  }
 
   // ═════════════════════════════════════════════════════════════════════════
   // FUSION PIPELINE
@@ -274,12 +250,16 @@ class ScannerService {
 
       // ── Phase B: Signals ───────────────────────────────────────────────
 
-      int? artZoneHash;
-      if (source == ScanSource.straightened && straightenedImage != null) {
-        final artZone = PerspectiveWarper.extractArtZone(straightenedImage);
-        artZoneHash = ImageHashMatcher.instance.hashFromImage(artZone);
-      } else {
-        artZoneHash = ImageHashMatcher.instance.hashFromBytes(bytes);
+      // Extract ML feature embedding from the art zone of the warped card.
+      // MobileNetV2 inference takes ~30ms on mid-range phones.
+      Float32List? queryEmbedding;
+      if (_embeddingsReady) {
+        if (source == ScanSource.straightened && straightenedImage != null) {
+          final artZone = PerspectiveWarper.extractArtZone(straightenedImage);
+          queryEmbedding = ImageEmbeddingMatcher.instance.embeddingFromImage(artZone);
+        } else {
+          queryEmbedding = ImageEmbeddingMatcher.instance.embeddingFromBytes(bytes);
+        }
       }
 
       String? detectedFaction;
@@ -301,14 +281,14 @@ class ScannerService {
           ? (0.0, 1.0)
           : _adaptiveWeights(
               tokenCount: zonedTokens.length,
-              hasVisual: artZoneHash != null,
+              hasVisual: queryEmbedding != null,
               source: source,
             );
 
       debugPrint('║ [Scanner] PHASE B — SIGNALS');
       debugPrint('║ W_text=${baseWT.toStringAsFixed(2)} '
           'W_visual=${baseWV.toStringAsFixed(2)}');
-      debugPrint('║ ArtZoneHash: ${artZoneHash != null ? "OK" : "NULL"} | '
+      debugPrint('║ Embedding: ${queryEmbedding != null ? "OK" : "NULL"} | '
           'Faction: $detectedFaction | Expansion: $detectedExpansion');
 
       // ── Phase C: Score candidates ──────────────────────────────────────
@@ -316,7 +296,7 @@ class ScannerService {
       final scored = <_ScoredFusionCandidate>[];
       for (final e in _generalEntries!) {
         final r = _scoreCandidate(
-          e, zonedTokens, artZoneHash,
+          e, zonedTokens, queryEmbedding,
           baseWT, baseWV, detectedFaction, detectedExpansion,
         );
         if (r != null) { scored.add(r); }
@@ -360,8 +340,6 @@ class ScannerService {
           .toList();
 
       sw.stop();
-      _triggerBackgroundHashCache();
-      resumeHashCache();
 
       return ScannerResult(
         candidates: candidates,
@@ -503,29 +481,26 @@ class ScannerService {
   // ADAPTIVE WEIGHTS
   // ═════════════════════════════════════════════════════════════════════════
 
-  int _cachedHashCount = 0;
-
-  double _hashCacheReadiness() {
-    final total = _generalEntries?.length ?? 0;
-    if (total == 0) { return 0.0; }
-    return (_cachedHashCount / total).clamp(0.0, 1.0);
-  }
-
   (double, double) _adaptiveWeights({
     required int tokenCount,
     required bool hasVisual,
     required ScanSource source,
   }) {
     if (!hasVisual) { return (1.0, 0.0); }
-    final readiness = _hashCacheReadiness();
-    debugPrint('[Scanner] Hash cache readiness: '
-        '${(readiness * 100).toStringAsFixed(0)}%');
 
-    // pHash provides near-zero discriminating signal for card-photo vs
-    // clean-artwork comparison (empirically verified: correct matches score
-    // 0.45-0.65, same range as random noise). Text matching is the primary
-    // signal. pHash kept at 10% weight as tiebreaker only.
-    return (0.90, 0.10);
+    // ML embeddings provide strong discriminating signal when available.
+    // Pre-computed reference embeddings are loaded at warmup (no cache lag).
+    if (_embeddingsReady) {
+      debugPrint('[Scanner] ML embeddings: ready');
+      // Visual is highly reliable — give it dominant weight.
+      // Text serves as tiebreaker + ID/skill bonus.
+      return (0.30, 0.70);
+    }
+
+    // Fallback: model not loaded or embeddings not generated yet.
+    // Pure text scoring.
+    debugPrint('[Scanner] ML embeddings: NOT ready (text-only mode)');
+    return (1.0, 0.0);
   }
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -535,7 +510,7 @@ class ScannerService {
   _ScoredFusionCandidate? _scoreCandidate(
     _CardEntry entry,
     List<ZonedToken> tokens,
-    int? artZoneHash,
+    Float32List? queryEmbedding,
     double baseWT,
     double baseWV,
     String? detectedFaction,
@@ -545,7 +520,7 @@ class ScannerService {
     for (final token in tokens) {
       final zw = _zoneWeights[token.zone] ?? 1.0;
 
-      // Name matching (general name vs OCR token)
+      // Name matching
       final nq = FuzzyMatcher.scannerFuzzyScore(token.text, entry.normName);
       if (nq > 0) { best = math.max(best, zw * nq); }
 
@@ -571,13 +546,10 @@ class ScannerService {
         }
       }
 
-      // Skill name matching — use fuzzy scoring for OCR error tolerance.
-      // Skill names are 2-4 chars and OCR frequently misreads 1 character.
-      // A fuzzy match on a skill name is a strong signal (body weight × score).
+      // Skill name matching with fuzzy tolerance
       for (final sk in entry.skillNames) {
         final skScore = FuzzyMatcher.scannerFuzzyScore(token.text, sk);
         if (skScore > 0) {
-          // Skill name found in token → body zone weight × match quality
           best = math.max(best, _zoneWeights[CardZone.body]! * skScore);
           break;
         }
@@ -585,12 +557,14 @@ class ScannerService {
     }
     final sText = (best / _maxZoneWeight).clamp(0.0, 1.0);
 
-    // Visual scoring (tiebreaker only — pHash is near-random for this domain)
-    double sVisual = 0.5;
-    if (artZoneHash != null) {
-      final rh = ImageHashMatcher.instance.getCachedHash(entry.imagePath);
-      if (rh != null) {
-        sVisual = ImageHashMatcher.instance.similarity(artZoneHash, rh);
+    // Visual scoring via ML feature embedding cosine similarity.
+    double sVisual = 0.0;
+    if (queryEmbedding != null) {
+      final refEmb = ImageEmbeddingMatcher.instance
+          .getReferenceEmbedding(entry.cardId);
+      if (refEmb != null) {
+        sVisual = ImageEmbeddingMatcher.instance
+            .similarity(queryEmbedding, refEmb);
       }
     }
 
