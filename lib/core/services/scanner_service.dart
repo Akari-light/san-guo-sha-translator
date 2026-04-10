@@ -528,33 +528,45 @@ class ScannerService {
       final nq = FuzzyMatcher.scannerFuzzyScore(token.text, entry.normName);
       if (nq > 0) { best = math.max(best, zw * nq); }
 
-      // ID matching — ONLY id-zone tokens with ≥1 letter + ≥1 digit
+      // ID matching — ONLY id-zone tokens with ≥1 letter + ≥1 digit.
+      // The serial ID is the most reliable signal on a general card. An exact
+      // or near-exact ID match must always outrank any name/skill text match,
+      // including a perfect type-zone name hit (max 2.0/3.0 = 0.667).
+      //   Exact / substring  → 3.0  → sText = 1.000
+      //   dist = 1           → 2.7  → sText = 0.900  (beats 0.667)
+      //   dist = 2           → 2.25 → sText = 0.750  (still beats 0.667)
       if (token.zone == CardZone.id) {
         final idClean = token.text
             .replaceAll(RegExp(r'[^A-Za-z0-9]'), '')
             .toUpperCase();
         if (_idTokenRe.hasMatch(idClean) && entry.normId.isNotEmpty) {
           if (idClean == entry.normId) {
-            best = math.max(best, _zoneWeights[CardZone.id]!);
+            best = math.max(best, _maxZoneWeight);         // exact → 3.0
           } else if (entry.normId.contains(idClean) &&
               idClean.length >= entry.normId.length - 2) {
-            best = math.max(best, _zoneWeights[CardZone.id]!);
+            best = math.max(best, _maxZoneWeight);         // substring → 3.0
           } else if (idClean.length >= 4) {
             final dist = FuzzyMatcher.levenshteinDistance(
                 idClean, entry.normId);
-            if (dist <= 2) {
-              best = math.max(best,
-                  _zoneWeights[CardZone.id]! * (1.0 - dist * 0.25));
+            if (dist == 1) {
+              best = math.max(best, _maxZoneWeight * 0.90); // dist=1 → 2.7
+            } else if (dist == 2) {
+              best = math.max(best, _maxZoneWeight * 0.75); // dist=2 → 2.25
             }
           }
         }
       }
 
-      // Skill name matching with fuzzy tolerance
+      // Skill name matching — uses the token's actual zone weight, not a
+      // hardcoded body weight. When OCR reads a skill-label line (e.g.
+      // "燕语出牌阶段…") in the type zone (rY > 0.80, weight 2.0), the skill
+      // match scores at 2.0 rather than the body fallback of 0.5. This lifts
+      // sText from 0.167 to 0.667 for cards whose serial ID is not read
+      // cleanly but whose skill name label is clearly visible.
       for (final sk in entry.skillNames) {
         final skScore = FuzzyMatcher.scannerFuzzyScore(token.text, sk);
         if (skScore > 0) {
-          best = math.max(best, _zoneWeights[CardZone.body]! * skScore);
+          best = math.max(best, zw * skScore);
           break;
         }
       }

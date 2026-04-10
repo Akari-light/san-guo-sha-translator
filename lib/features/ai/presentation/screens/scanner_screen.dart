@@ -116,6 +116,12 @@ class _ScannerScreenState extends State<ScannerScreen>
   // ── Tab-active gate (driven by widget.activeNotifier)
   bool _tabActive = false;
 
+  // ── Warmup gate: true only after ScannerService.warmup() fully resolves.
+  // Prevents the race where setState() makes the camera live and the user
+  // taps scan before the TFLite model finishes loading (~500ms–2s), which
+  // causes Embedding:NULL on every scan in that session.
+  bool _warmupComplete = false;
+
   // ── Cancellation flag — set by _returnToLive to stop in-flight processing.
   // Checked at every await point in _scan/_confirmAndWarp.
   bool _scanCancelled = false;
@@ -190,6 +196,7 @@ class _ScannerScreenState extends State<ScannerScreen>
       ctrl.dispose();
       _controller = null;
     }
+    _warmupComplete = false;
   }
 
   // ── Camera init ───────────────────────────────────────────────────────────
@@ -243,6 +250,7 @@ class _ScannerScreenState extends State<ScannerScreen>
       // load (~500ms–2s) races against the first takePicture(), causing
       // _embeddingsReady=false and falling back to text-only scoring.
       await ScannerService.instance.warmup();
+      if (mounted) { setState(() => _warmupComplete = true); }
     } catch (e) {
       _setError(e.toString());
     }
@@ -261,6 +269,10 @@ class _ScannerScreenState extends State<ScannerScreen>
     final ctrl = _controller;
     if (ctrl == null || !ctrl.value.isInitialized || _processing) { return; }
     if (_state != _ScannerState.live) { return; }
+    // Block until warmup completes — TFLite model must be loaded before scan.
+    // Without this gate, scans during warmup produce Embedding:NULL on every
+    // subsequent scan for the entire session.
+    if (!_warmupComplete) { _showSnack('Scanner loading…'); return; }
 
     while (_captureLock) {
       await Future.delayed(const Duration(milliseconds: 50));
