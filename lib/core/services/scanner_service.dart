@@ -2,12 +2,20 @@
 //
 // Multimodal Fusion Engine — Phase 9 (ML Embeddings)
 //
-// Generals-only search. Library lookup deferred.
+// Generals-only search.
+//
+// Library card scanning is deferred: library card names (杀, 闪, 桃, etc.)
+// appear verbatim inside general skill text, so OCR cannot distinguish
+// "this card is named 杀" from "this skill text mentions 杀". Until visual
+// embedding is reliably active at scan time (i.e. warmup completes before
+// the first scan), adding library cards to the candidate pool causes them
+// to out-score the correct general on every scan that reads skill text.
 //
 // Phase 9: Replaced pHash with MobileNetV2 feature embeddings via TFLite.
 // Pre-computed reference embeddings loaded from assets/data/general_embeddings.bin.
-// On-device inference extracts query embedding from warped art zone (~30ms).
-// Cosine similarity provides robust cross-domain matching (card photo vs artwork).
+// On-device inference extracts query embedding from the FULL warped card image
+// (~30ms). Raw cosine similarity (dot product) provides robust cross-domain
+// matching.
 
 import 'dart:math' as math;
 
@@ -21,7 +29,6 @@ import 'recently_viewed_service.dart';
 import 'text_normaliser.dart';
 import 'fuzzy_matcher.dart';
 import 'image_embedding_matcher.dart';
-import '../utils/perspective_warper.dart';
 import '../../features/generals/data/repository/general_loader.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -91,7 +98,6 @@ class _CardEntry {
   final String normName;
   final List<String> skillNames;
   final String? faction;
-  final String? expansionLabel;
 
   const _CardEntry({
     required this.cardId,
@@ -103,7 +109,6 @@ class _CardEntry {
     required this.normName,
     required this.skillNames,
     this.faction,
-    this.expansionLabel,
   });
 }
 
@@ -136,15 +141,6 @@ const _zoneWeights = <CardZone, double>{
 };
 const _maxZoneWeight = 3.0;
 
-const _expansionPrefixToLabel = <String, String>{
-  'JX': 'Limit Break',
-  'YJ': "Hero's Soul",
-  'MG': 'Strategic Assault',
-  'MO': 'Demon',
-  'LE': 'God',
-  'SP': 'Other',
-};
-
 /// ID token validator: must contain at least one letter AND one digit,
 /// 4+ chars. Filters out "999" (HP dots) and "2020" (copyright year).
 final _idTokenRe = RegExp(r'^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{4,}$');
@@ -157,22 +153,19 @@ class ScannerService {
   ScannerService._();
   static final ScannerService instance = ScannerService._();
 
-  List<_CardEntry>? _generalEntries;
+  List<_CardEntry>? _allEntries;
   bool _warmingUp = false;
-
-  static final _expansionPrefixRe =
-      RegExp(r'^(JX|YJ|MG|MO|LE|SP)', caseSensitive: false);
 
   // ═════════════════════════════════════════════════════════════════════════
   // PUBLIC API
   // ═════════════════════════════════════════════════════════════════════════
 
   Future<void> warmup() async {
-    if (_generalEntries != null || _warmingUp) { return; }
+    if (_allEntries != null || _warmingUp) { return; }
     _warmingUp = true;
     try {
       final generals = await GeneralLoader().getGenerals();
-      _generalEntries = generals.map((g) => _CardEntry(
+      _allEntries = generals.map((g) => _CardEntry(
         cardId: g.id,
         recordType: RecordType.general,
         nameCn: g.nameCn,
@@ -185,9 +178,8 @@ class ScannerService {
             .where((n) => n.length >= 2)
             .toList(),
         faction: g.faction,
-        expansionLabel: g.expansion.labelEn,
       )).toList();
-      debugPrint('[Scanner] Warmup: ${_generalEntries!.length} generals.');
+      debugPrint('[Scanner] Warmup: ${_allEntries!.length} generals.');
 
       // Load ML model + pre-computed reference embeddings
       await ImageEmbeddingMatcher.instance.loadModel();
@@ -231,7 +223,7 @@ class ScannerService {
   ) async {
     pauseHashCache();
     final sw = Stopwatch()..start();
-    if (_generalEntries == null) { await warmup(); }
+    if (_allEntries == null) { await warmup(); }
 
     try {
       // img.normalize() intentionally REMOVED — degraded OCR text clarity.
@@ -250,31 +242,26 @@ class ScannerService {
 
       // ── Phase B: Signals ───────────────────────────────────────────────
 
-      // Extract ML feature embedding from the art zone of the warped card.
+      // Extract ML feature embedding from the FULL warped card image.
+      // Reference embeddings were generated from full-size reference images,
+      // so the query must also be full-size. Cropping to an art zone before
+      // embedding causes a domain mismatch (query ≈ orthogonal to every
+      // reference) which produces ~0.17 scores regardless of card shown.
       // MobileNetV2 inference takes ~30ms on mid-range phones.
       Float32List? queryEmbedding;
       if (_embeddingsReady) {
         if (source == ScanSource.straightened && straightenedImage != null) {
-          final artZone = PerspectiveWarper.extractArtZone(straightenedImage);
-          queryEmbedding = ImageEmbeddingMatcher.instance.embeddingFromImage(artZone);
+          queryEmbedding = ImageEmbeddingMatcher.instance
+              .embeddingFromImage(straightenedImage);
         } else {
-          queryEmbedding = ImageEmbeddingMatcher.instance.embeddingFromBytes(bytes);
+          queryEmbedding = ImageEmbeddingMatcher.instance
+              .embeddingFromBytes(bytes);
         }
       }
 
       String? detectedFaction;
       if (source == ScanSource.straightened && straightenedImage != null) {
         detectedFaction = _detectFaction(straightenedImage);
-      }
-
-      String? detectedExpansion;
-      for (final token in zonedTokens) {
-        if (token.zone != CardZone.id) { continue; }
-        final m = _expansionPrefixRe.firstMatch(token.text.toUpperCase());
-        if (m != null) {
-          detectedExpansion = _expansionPrefixToLabel[m.group(1)!];
-          break;
-        }
       }
 
       final (baseWT, baseWV) = ocrEmpty
@@ -289,15 +276,15 @@ class ScannerService {
       debugPrint('║ W_text=${baseWT.toStringAsFixed(2)} '
           'W_visual=${baseWV.toStringAsFixed(2)}');
       debugPrint('║ Embedding: ${queryEmbedding != null ? "OK" : "NULL"} | '
-          'Faction: $detectedFaction | Expansion: $detectedExpansion');
+          'Faction: $detectedFaction');
 
       // ── Phase C: Score candidates ──────────────────────────────────────
 
       final scored = <_ScoredFusionCandidate>[];
-      for (final e in _generalEntries!) {
+      for (final e in _allEntries!) {
         final r = _scoreCandidate(
           e, zonedTokens, queryEmbedding,
-          baseWT, baseWV, detectedFaction, detectedExpansion,
+          baseWT, baseWV, detectedFaction,
         );
         if (r != null) { scored.add(r); }
       }
@@ -405,14 +392,18 @@ class ScannerService {
 
   /// Zone assignment for general cards.
   ///
-  /// OCR on a warped general card only detects text in the bottom ~35%:
-  /// skill descriptions, copyright line, and serial ID. The character name
-  /// is vertical calligraphy overlaid on artwork — OCR rarely reads it.
+  /// OCR on a warped general card sees the full card. Zones by position
+  /// within the detected text bounding box:
   ///
-  /// Within the OCR text region (rY 0.0 = top of first text, 1.0 = bottom):
-  ///   rY < 0.80 → body (skill descriptions)
-  ///   rY ≥ 0.80, right side or alphanumeric → id (serial number)
-  ///   rY ≥ 0.80 → type (copyright/illustrator)
+  ///   rY < 0.40, rX < 0.35, CJK-only, 2–5 chars  → name  (character name)
+  ///   rY ≥ 0.80, right-side or alphanumeric        → id    (serial number)
+  ///   rY ≥ 0.80                                    → type  (copyright line)
+  ///   otherwise                                    → body  (skill descriptions)
+  ///
+  /// Character names (孙鲁班, 关银屏, etc.) appear as vertical calligraphy on
+  /// the left side of the card. They fall in the upper-left OCR region.
+  /// Assigning them name-zone weight (3.0) rather than body-zone weight (0.5)
+  /// makes a correct name match decisive rather than negligible.
   CardZone _assignZone(TextLine line, double cL, double cT, double cW, double cH) {
     if (cH <= 0 || cW <= 0) { return CardZone.body; }
     final pts = line.cornerPoints;
@@ -421,6 +412,16 @@ class ScannerService {
     final cx = pts.map((p) => p.x).reduce((a, b) => a + b) / pts.length;
     final rY = (cy - cT) / cH;
     final rX = (cx - cL) / cW;
+
+    // Name zone: upper-left region, short CJK-only text (2–5 chars).
+    // Character names on SGS cards are vertical calligraphy on the left side.
+    final cjkOnly = RegExp(r'^[\u4e00-\u9fff\u3400-\u4dbf]+$');
+    final rawClean = line.text.replaceAll(RegExp(r'\s'), '');
+    if (rY < 0.40 && rX < 0.40 &&
+        rawClean.length >= 2 && rawClean.length <= 5 &&
+        cjkOnly.hasMatch(rawClean)) {
+      return CardZone.name;
+    }
 
     if (rY > 0.80) {
       final cleaned = line.text.replaceAll(RegExp(r'[^A-Za-z0-9]'), '');
@@ -488,17 +489,21 @@ class ScannerService {
   }) {
     if (!hasVisual) { return (1.0, 0.0); }
 
-    // ML embeddings provide strong discriminating signal when available.
-    // Pre-computed reference embeddings are loaded at warmup (no cache lag).
     if (_embeddingsReady) {
-      debugPrint('[Scanner] ML embeddings: ready');
-      // Visual is highly reliable — give it dominant weight.
-      // Text serves as tiebreaker + ID/skill bonus.
-      return (0.30, 0.70);
+      // OCR on SGS cards reliably reads skill text, serial ID, and copyright
+      // line. When present it is a strong, high-precision signal — ID matches
+      // are near-deterministic and name/skill matches are highly selective.
+      // Visual embedding handles cases where OCR is absent or ambiguous, and
+      // acts as a tiebreaker between text-equal candidates.
+      //
+      // W_text=0.65, W_visual=0.35:
+      //   Correct card, strong OCR (sT≈0.8, sV≈0.75): score ≈ 0.78 → fast-path
+      //   Correct card, poor OCR  (sT≈0.2, sV≈0.75): score ≈ 0.39 → top-5
+      //   Wrong card, no OCR hit  (sT≈0.0, sV≈0.59): score ≈ 0.21 → filtered
+      return (0.65, 0.35);
     }
 
     // Fallback: model not loaded or embeddings not generated yet.
-    // Pure text scoring.
     debugPrint('[Scanner] ML embeddings: NOT ready (text-only mode)');
     return (1.0, 0.0);
   }
@@ -514,7 +519,6 @@ class ScannerService {
     double baseWT,
     double baseWV,
     String? detectedFaction,
-    String? detectedExpansion,
   ) {
     double best = 0.0;
     for (final token in tokens) {
@@ -572,13 +576,16 @@ class ScannerService {
     if (detectedFaction != null && entry.faction == detectedFaction) {
       boost += 0.05;
     }
-    if (detectedExpansion != null &&
-        entry.expansionLabel == detectedExpansion) {
-      boost += 0.03;
-    }
 
     final finalScore = baseWT * sText + baseWV * sVisual + boost;
-    if (finalScore < 0.10) { return null; }
+    // Adaptive noise-floor cutoff.
+    // In fused mode (visual active): cutoff=0.25. Wrong cards with no OCR
+    //   hit score ≈ 0.35*0.59_mean=0.21 and are filtered cleanly.
+    // In text-only mode (visual not ready): cutoff=0.10. Max achievable
+    //   score from body-zone skill match = 1.0*0.5/3.0=0.167, which cannot
+    //   clear 0.25 — using 0.25 here silently eliminates every candidate.
+    final cutoff = (baseWV > 0) ? 0.25 : 0.10;
+    if (finalScore < cutoff) { return null; }
 
     return _ScoredFusionCandidate(
       entry: entry, sText: sText, sVisual: sVisual,

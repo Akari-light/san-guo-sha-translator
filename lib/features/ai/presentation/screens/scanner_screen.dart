@@ -238,9 +238,11 @@ class _ScannerScreenState extends State<ScannerScreen>
         _currentZoom = 1.0;
       });
 
-      ScannerService.instance.warmup();
-      // Live OCR stream REMOVED — takePicture() every 400ms was freezing
-      // the camera pipeline. The shimmer dots cost 2.5 camera captures/sec.
+      // Await warmup so the TFLite model and reference embeddings are fully
+      // loaded before the user can trigger a scan. Without await, the model
+      // load (~500ms–2s) races against the first takePicture(), causing
+      // _embeddingsReady=false and falling back to text-only scoring.
+      await ScannerService.instance.warmup();
     } catch (e) {
       _setError(e.toString());
     }

@@ -8,11 +8,20 @@
 // Architecture:
 //   - MobileNetV2 (ImageNet-pretrained) extracts a 1280-dim feature vector
 //     from the penultimate layer (global average pooling output)
-//   - Feature vectors are L2-normalised → cosine similarity = dot product
-//   - Reference embeddings for all generals are pre-computed at build time
-//     and shipped as a binary asset (assets/data/general_embeddings.bin)
+//   - Feature vectors are L2-normalised → cosine similarity = raw dot product
+//   - Reference embeddings for all generals AND library cards are pre-computed
+//     at build time and shipped as a binary asset
+//     (assets/data/general_embeddings.bin)
 //   - At scan time, one forward pass (~30ms on mid-range phone) extracts
-//     the query embedding, then 468 dot products take <1ms total
+//     the query embedding from the FULL warped card image; dot products
+//     against all references take <1ms total
+//
+// Domain matching:
+//   - Reference images are embedded at 100% (no crop).
+//   - Query images must also be passed at full size — do NOT crop to an art
+//     zone before calling embeddingFromImage(). Mismatched crops cause the
+//     query vector to be near-orthogonal to every reference vector, producing
+//     scores around 0.17 regardless of which card is shown.
 //
 // Dependencies:
 //   - tflite_flutter: ^0.11.0 (runs MobileNetV2 on-device via TFLite)
@@ -168,31 +177,38 @@ class ImageEmbeddingMatcher {
     }
   }
 
-  /// Cosine similarity between two L2-normalised embeddings ∈ [0.0, 1.0].
+  /// Cosine similarity between two L2-normalised embeddings.
   ///
-  /// Since both vectors are L2-normalised, cosine similarity = dot product.
-  /// Mapped from [-1, 1] → [0, 1] via (dot + 1) / 2 for consistency with
-  /// the old pHash similarity API where 1.0 = identical.
+  /// Since both vectors are L2-normalised, cosine similarity equals the dot
+  /// product directly. Returns a value clamped to [0.0, 1.0].
   ///
-  /// Expected similarity ranges:
-  ///   ≥ 0.85: same artwork, different framing/lighting
-  ///   0.70–0.85: visually similar (same character, different pose)
-  ///   0.50–0.70: somewhat similar (same colour palette/faction)
-  ///   < 0.50: clearly different characters
+  /// ⚠️ Do NOT apply a (dot+1)/2 remapping. All reference embeddings for SGS
+  /// card artwork are positive-valued after ImageNet pre-training, so raw dots
+  /// between different cards cluster at 0.33–0.76. The (dot+1)/2 mapping
+  /// compresses this into a 0.66–0.88 band — only 0.22 wide — making every
+  /// card appear equally similar and rendering ranking essentially random.
+  /// Raw dot gives ~6× more discriminative headroom for the fusion scorer.
+  ///
+  /// Expected raw dot ranges (full-image reference vs full warped card query):
+  ///   ≥ 0.80 : same card, clean scan
+  ///   0.65–0.80 : same card, glare / perspective / partial occlusion
+  ///   0.40–0.65 : different card, same faction colour palette
+  ///   < 0.40 : clearly different card
   double similarity(Float32List embA, Float32List embB) {
     if (embA.length != embB.length) return 0.0;
     double dot = 0.0;
     for (var i = 0; i < embA.length; i++) {
       dot += embA[i] * embB[i];
     }
-    // Both are L2-normalised, so dot ∈ [-1, 1]. Map to [0, 1].
-    return ((dot + 1.0) / 2.0).clamp(0.0, 1.0);
+    // Raw dot product IS cosine similarity for L2-normalised vectors.
+    // Clamp to [0, 1] only to guard against floating-point rounding artefacts.
+    return dot.clamp(0.0, 1.0);
   }
 
   /// Finds the top [k] most similar reference cards to [queryEmbedding].
   /// Returns a list of (cardId, similarity) pairs sorted descending.
   ///
-  /// This is O(n) where n = number of reference embeddings (~468).
+  /// This is O(n) where n = number of reference embeddings (~700 generals+library).
   /// At 1280-dim dot product per candidate, total time is <1ms.
   List<(String, double)> findTopK(Float32List queryEmbedding, {int k = 5}) {
     final scores = <(String, double)>[];

@@ -31,7 +31,6 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 GENERALS_DIR = PROJECT_ROOT / "assets" / "images" / "generals"
-LIBRARY_DIR = PROJECT_ROOT / "assets" / "images" / "library"
 MODELS_DIR = PROJECT_ROOT / "assets" / "models"
 OUTPUT_BIN = PROJECT_ROOT / "assets" / "data" / "general_embeddings.bin"
 OUTPUT_TFLITE = MODELS_DIR / "mobilenet_v2.tflite"
@@ -78,10 +77,10 @@ def step1_create_tflite_model():
 
 
 def step2_generate_embeddings():
-    """Run all general and library reference images through MobileNetV2 and save embeddings."""
+    """Run all general reference images through MobileNetV2 and save embeddings."""
     print()
     print("=" * 60)
-    print("STEP 2: Generating embeddings for all generals and library cards")
+    print("STEP 2: Generating embeddings for all generals")
     print("=" * 60)
 
     import tensorflow as tf
@@ -104,21 +103,11 @@ def step2_generate_embeddings():
         print(f"  ERROR: Generals directory not found: {GENERALS_DIR}")
         sys.exit(1)
 
-    if not LIBRARY_DIR.exists():
-        print(f"  ERROR: Library directory not found: {LIBRARY_DIR}")
-        sys.exit(1)
-
-    # Collect all images: generals (flat dir) + library (nested subdirs)
-    generals_files = sorted(GENERALS_DIR.glob("*.webp"))
-    library_files = sorted(LIBRARY_DIR.glob("*.webp"))
-    image_files = generals_files + library_files
-
-    print(f"  Found {len(generals_files)} general images in {GENERALS_DIR}")
-    print(f"  Found {len(library_files)} library images in {LIBRARY_DIR}")
-    print(f"  Total: {len(image_files)} images")
+    image_files = sorted(GENERALS_DIR.glob("*.webp"))
+    print(f"  Found {len(image_files)} general images in {GENERALS_DIR}")
 
     if len(image_files) == 0:
-        print("  ERROR: No .webp files found. Check the directory paths.")
+        print("  ERROR: No .webp files found. Check the directory path.")
         sys.exit(1)
 
     embeddings = {}
