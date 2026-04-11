@@ -928,7 +928,9 @@ class _RectHandleOverlay extends StatelessWidget {
   final void Function(Rect newRect) onRectChanged;
   final VoidCallback onCornerDragEnd;
 
-  static const _handleSize = 44.0;
+  // Hit target size — larger than the visual bracket so the corner is easy to
+  // grab even with a finger. The bracket itself is drawn by _RectOverlayPainter.
+  static const _handleSize = 64.0;
   static const _minDim = 60.0;
 
   const _RectHandleOverlay({
@@ -958,7 +960,7 @@ class _RectHandleOverlay extends StatelessWidget {
         // actually punches through to whatever is behind this widget (the image).
         RepaintBoundary(
           child: CustomPaint(
-            painter: _RectOverlayPainter(rect: rect),
+            painter: _RectOverlayPainter(rect: rect, activeIndex: activeIndex),
             child: const SizedBox.expand(),
           ),
         ),
@@ -975,7 +977,10 @@ class _RectHandleOverlay extends StatelessWidget {
             ),
           ),
 
-        // Corner drag handles (disabled while processing)
+        // Corner drag handles — invisible tap targets only.
+        // All visual feedback (bracket arms, active highlight) is drawn by
+        // _RectOverlayPainter. The hit target is 64×64 centered on each corner,
+        // giving a generous grab zone without cluttering the UI.
         if (!processing)
           for (var i = 0; i < 4; i++)
             Positioned(
@@ -986,37 +991,7 @@ class _RectHandleOverlay extends StatelessWidget {
                 onPanStart: (_) => onCornerDragStart(i),
                 onPanUpdate: (d) => _onCornerDrag(i, d.delta),
                 onPanEnd: (_) => onCornerDragEnd(),
-                child: SizedBox(
-                  width: _handleSize,
-                  height: _handleSize,
-                  child: Center(
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 120),
-                      width: activeIndex == i ? 36 : 28,
-                      height: activeIndex == i ? 36 : 28,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: activeIndex == i
-                            ? Colors.white
-                            : Colors.white.withValues(alpha: 0.88),
-                        border: Border.all(
-                          color: const Color(0xFF448AFF),
-                          width: activeIndex == i ? 3.5 : 2.5,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: activeIndex == i ? 0.55 : 0.35),
-                            blurRadius: activeIndex == i ? 12 : 6,
-                            spreadRadius: 1,
-                          ),
-                        ],
-                      ),
-                      child: activeIndex == i
-                          ? const Icon(Icons.open_with, size: 16, color: Color(0xFF448AFF))
-                          : null,
-                    ),
-                  ),
-                ),
+                child: const SizedBox(width: _handleSize, height: _handleSize),
               ),
             ),
       ],
@@ -1025,21 +1000,29 @@ class _RectHandleOverlay extends StatelessWidget {
 
   /// Each corner moves only the two edges it touches, keeping the shape
   /// rectangular. Minimum dimension enforced to prevent degenerate rects.
+  ///
+  /// Sensitivity multiplier (1.8×): the edge travels faster than the raw
+  /// finger displacement, making fine adjustments feel responsive rather
+  /// than sluggish. Clamp still prevents the rect from leaving the screen.
+  static const _sensitivity = 1.8;
+
   void _onCornerDrag(int index, Offset delta) {
+    final dx = delta.dx * _sensitivity;
+    final dy = delta.dy * _sensitivity;
     double l = rect.left, t = rect.top, r = rect.right, b = rect.bottom;
     switch (index) {
       case 0: // TL
-        l = (l + delta.dx).clamp(0, r - _minDim);
-        t = (t + delta.dy).clamp(0, b - _minDim);
+        l = (l + dx).clamp(0, r - _minDim);
+        t = (t + dy).clamp(0, b - _minDim);
       case 1: // TR
-        r = (r + delta.dx).clamp(l + _minDim, widgetSize.width);
-        t = (t + delta.dy).clamp(0, b - _minDim);
+        r = (r + dx).clamp(l + _minDim, widgetSize.width);
+        t = (t + dy).clamp(0, b - _minDim);
       case 2: // BR
-        r = (r + delta.dx).clamp(l + _minDim, widgetSize.width);
-        b = (b + delta.dy).clamp(t + _minDim, widgetSize.height);
+        r = (r + dx).clamp(l + _minDim, widgetSize.width);
+        b = (b + dy).clamp(t + _minDim, widgetSize.height);
       case 3: // BL
-        l = (l + delta.dx).clamp(0, r - _minDim);
-        b = (b + delta.dy).clamp(t + _minDim, widgetSize.height);
+        l = (l + dx).clamp(0, r - _minDim);
+        b = (b + dy).clamp(t + _minDim, widgetSize.height);
     }
     onRectChanged(Rect.fromLTRB(l, t, r, b));
   }
@@ -1057,13 +1040,14 @@ class _RectHandleOverlay extends StatelessWidget {
 // (which would produce opaque black). After restore(), Flutter merges the
 // layer — the hole remains transparent and the image shows through.
 //
-// Corner decorations (bracket-style L-shapes + rule-of-thirds grid lines)
+// Corner decorations (bracket-style L-shapes + Grid lines)
 // are drawn on top after the clear, so they appear over the image.
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _RectOverlayPainter extends CustomPainter {
   final Rect rect;
-  const _RectOverlayPainter({required this.rect});
+  final int? activeIndex;
+  const _RectOverlayPainter({required this.rect, this.activeIndex});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1074,74 +1058,146 @@ class _RectOverlayPainter extends CustomPainter {
     // ── 2. Draw the scrim over the entire surface.
     canvas.drawRect(
       Offset.zero & size,
-      Paint()..color = Colors.black.withValues(alpha: 0.55),
+      Paint()..color = Colors.black.withValues(alpha: 0.60),
     );
 
     // ── 3. Punch a transparent hole at the crop rect.
-    //       BlendMode.clear replaces pixels with full transparency in the layer.
-    canvas.drawRect(
-      rect,
+    //       Uses the same corner radius as the bracket arms (12 px) so the
+    //       cleared region matches the rounded visual exactly — no sharp
+    //       right-angle bleed visible behind the brackets.
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(rect, const Radius.circular(12.0)),
       Paint()..blendMode = BlendMode.clear,
     );
 
     // ── 4. Restore — the layer is composited; the hole is genuinely transparent.
     canvas.restore();
 
-    // ── 5. Draw the blue border on top (over the image inside the hole).
-    final borderPaint = Paint()
-      ..color = const Color(0xFF448AFF)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawRect(rect, borderPaint);
+    // ── Grid lines inside the crop rect.
+    //       Slightly more visible than before so the grid reads on any card.
+    // final gridPaint = Paint()
+    //   ..color = Colors.white.withValues(alpha: 0.30)
+    //   ..strokeWidth = 0.9;
 
-    // ── 6. Rule-of-thirds grid lines (subtle, inside the crop rect).
-    final gridPaint = Paint()
-      ..color = Colors.white.withValues(alpha: 0.25)
-      ..strokeWidth = 0.8;
+    // final thirdW = rect.width / 3;
+    // final thirdH = rect.height / 3;
+    // for (var i = 1; i <= 2; i++) {
+    //   canvas.drawLine(
+    //     Offset(rect.left + thirdW * i, rect.top),
+    //     Offset(rect.left + thirdW * i, rect.bottom),
+    //     gridPaint,
+    //   );
+    //   canvas.drawLine(
+    //     Offset(rect.left, rect.top + thirdH * i),
+    //     Offset(rect.right, rect.top + thirdH * i),
+    //     gridPaint,
+    //   );
+    // }
 
-    final thirdW = rect.width / 3;
-    final thirdH = rect.height / 3;
-    for (var i = 1; i <= 2; i++) {
-      canvas.drawLine(
-        Offset(rect.left + thirdW * i, rect.top),
-        Offset(rect.left + thirdW * i, rect.bottom),
-        gridPaint,
-      );
-      canvas.drawLine(
-        Offset(rect.left, rect.top + thirdH * i),
-        Offset(rect.right, rect.top + thirdH * i),
-        gridPaint,
-      );
-    }
-
-    // ── 7. Corner bracket decorations (L-shaped arms in the crop border colour).
+    // ── 5. Corner bracket arms — document-scanner style, drawn INSIDE the rect.
+    //       Active corner highlights in accent blue; idle corners are white.
+    //       No circle handle — the bracket is the entire visual affordance.
     _drawCornerBrackets(canvas, rect);
   }
 
   void _drawCornerBrackets(Canvas canvas, Rect r) {
-    const arm = 20.0;
-    const thickness = 3.5;
-    final p = Paint()
-      ..color = Colors.white
-      ..strokeWidth = thickness
-      ..strokeCap = StrokeCap.round;
+    // Draws a rounded-corner L-bracket at each corner of [r], matching the
+    // document-scanner style in reference image 2.
+    //
+    // Geometry (using TL as the worked example; all corners are symmetric):
+    //
+    //   Corner vertex (cx, cy) = (r.left, r.top)
+    //   hDir = +1 (arm extends right along top edge)
+    //   vDir = +1 (arm extends down along left edge)
+    //
+    //   Arc center = (cx + hDir*R, cy + vDir*R) = (left+R, top+R)
+    //
+    //   The arc is tangent to:
+    //     • The horizontal arm at (cx + hDir*R, cy)     → angle 270° (top of circle)
+    //     • The vertical   arm at (cx,          cy + vDir*R) → angle 180° (left of circle)
+    //
+    //   So the horizontal arm runs from its tip at (cx + hDir*arm, cy)
+    //     to the tangent point (cx + hDir*R, cy)            ← inset from vertex by R
+    //   Arc sweeps from that tangent point to (cx, cy + vDir*R)
+    //   Vertical arm runs from (cx, cy + vDir*R) to tip (cx, cy + vDir*arm)
+    //
+    //   Tangent angles (Skia: 0°=3-o-clock, clockwise positive):
+    //     TL: start=−90°, sweep=−90° → end=−180° — V-tangent at 180° ✓
+    //     TR: start=−90°, sweep=+90° → end=  0°  — V-tangent at   0° ✓
+    //     BR: start=+90°, sweep=−90° → end=  0°  — V-tangent at   0° ✓
+    //     BL: start=+90°, sweep=+90° → end=+180° — V-tangent at 180° ✓
+    //
+    //   startAngle = −vDir × π/2
+    //   sweepAngle = −hDir × vDir × π/2  (verified by geometric simulation)
 
-    // TL
-    canvas.drawLine(Offset(r.left, r.top), Offset(r.left + arm, r.top), p);
-    canvas.drawLine(Offset(r.left, r.top), Offset(r.left, r.top + arm), p);
-    // TR
-    canvas.drawLine(Offset(r.right, r.top), Offset(r.right - arm, r.top), p);
-    canvas.drawLine(Offset(r.right, r.top), Offset(r.right, r.top + arm), p);
-    // BR
-    canvas.drawLine(Offset(r.right, r.bottom), Offset(r.right - arm, r.bottom), p);
-    canvas.drawLine(Offset(r.right, r.bottom), Offset(r.right, r.bottom - arm), p);
-    // BL
-    canvas.drawLine(Offset(r.left, r.bottom), Offset(r.left + arm, r.bottom), p);
-    canvas.drawLine(Offset(r.left, r.bottom), Offset(r.left, r.bottom - arm), p);
+    const arm       = 44.0;   // length of each bracket arm along the edge
+    const thickness = 5.0;    // stroke width
+    const cornerR   = 12.0;   // radius of the rounded inner corner arc
+
+    final corners = [
+      (0, r.left,  r.top,     1.0,  1.0), // TL
+      (1, r.right, r.top,    -1.0,  1.0), // TR
+      (2, r.right, r.bottom, -1.0, -1.0), // BR
+      (3, r.left,  r.bottom,  1.0, -1.0), // BL
+    ];
+
+    for (final (idx, cx, cy, hDir, vDir) in corners) {
+      final isActive = activeIndex == idx;
+      final color = isActive ? const Color(0xFF448AFF) : Colors.white;
+
+      if (isActive) {
+        canvas.drawCircle(
+          Offset(cx, cy),
+          20.0,
+          Paint()
+            ..color = const Color(0xFF448AFF).withValues(alpha: 0.22)
+            ..style = PaintingStyle.fill,
+        );
+      }
+
+      // Arc bounding rect — circle centred (cornerR, cornerR) inward from vertex.
+      final arcCenter = Offset(cx + hDir * cornerR, cy + vDir * cornerR);
+      final arcRect = Rect.fromCenter(
+        center: arcCenter,
+        width: cornerR * 2,
+        height: cornerR * 2,
+      );
+
+      // startAngle: angle from arc center to the H-tangent point (cx + hDir*R, cy).
+      // Vector from center to H-tangent = (0, -vDir*R) → atan2(-vDir, 0):
+      //   vDir=+1 → −π/2  (top corners: H-tangent is directly above center)
+      //   vDir=−1 → +π/2  (bottom corners: H-tangent is directly below center)
+      final startAngle = -vDir * math.pi / 2;
+
+      // sweepAngle: short 90° arc from H-tangent to V-tangent, curving inward.
+      // Verified formula:  sweepAngle = −hDir × vDir × π/2
+      //   TL (+1,+1): −90°  TR (−1,+1): +90°  BR (−1,−1): −90°  BL (+1,−1): +90°
+      final sweepAngle = -hDir * vDir * math.pi / 2;
+
+      final path = Path()
+        // Tip of horizontal arm → tangent point on arc (INSET by R from vertex)
+        ..moveTo(cx + hDir * arm, cy)
+        ..lineTo(cx + hDir * cornerR, cy)
+        // 90° arc curving inward
+        ..arcTo(arcRect, startAngle, sweepAngle, false)
+        // Tangent point on arc → tip of vertical arm (INSET by R from vertex)
+        ..lineTo(cx, cy + vDir * arm);
+
+      canvas.drawPath(
+        path,
+        Paint()
+          ..color = color
+          ..strokeWidth = thickness
+          ..strokeCap = StrokeCap.round
+          ..strokeJoin = StrokeJoin.round
+          ..style = PaintingStyle.stroke,
+      );
+    }
   }
 
   @override
-  bool shouldRepaint(_RectOverlayPainter old) => old.rect != rect;
+  bool shouldRepaint(_RectOverlayPainter old) =>
+      old.rect != rect || old.activeIndex != activeIndex;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
