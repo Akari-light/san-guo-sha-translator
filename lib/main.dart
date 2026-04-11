@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/theme/app_theme.dart';
 
@@ -68,13 +69,175 @@ class _MainAppState extends State<MainApp> {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: _themeMode,
-      home: MainNavigationScreen(
-        currentMode: _themeMode,
+      home: SplashScreen(
+        themeMode: _themeMode,
         onThemeChanged: _updateTheme,
       ),
     );
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Splash Screen
+//
+// Timeline (2 400 ms total):
+//   0 –  500 ms   logo fades in      (easeIn,  Interval 0.00–0.21)
+//   500 – 1 800   logo holds
+//   1 800 – 2 400 screen fades out   (easeOut, Interval 0.75–1.00)
+//                 → pushReplacement with zero-duration route transition
+//
+// The native launch screen (Android launch_background.xml / iOS storyboard)
+// already shows #1A1A1C, so there is no visible jump when Flutter takes over.
+// The logo fades in on top of the identical background, giving the illusion
+// of one continuous launch experience.
+// ─────────────────────────────────────────────────────────────────────────────
+
+class SplashScreen extends StatefulWidget {
+  final ThemeMode themeMode;
+  final Function(ThemeMode) onThemeChanged;
+
+  const SplashScreen({
+    super.key,
+    required this.themeMode,
+    required this.onThemeChanged,
+  });
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl;
+
+  /// Logo fades in: opacity 0 → 1 over the first 500 ms.
+  late final Animation<double> _logoOpacity;
+
+  /// Whole Flutter layer fades out: opacity 1 → 0 over the last 600 ms.
+  late final Animation<double> _screenOpacity;
+
+  /// Must exactly match android/app/src/main/res/values/colors.xml
+  /// and the iOS LaunchScreen.storyboard backgroundColor.
+  static const Color _bg = Color(0xFF1A1A1C);
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Keep status-bar icons white over the dark splash background.
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+    ));
+
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2400),
+    );
+
+    _logoOpacity = CurvedAnimation(
+      parent: _ctrl,
+      curve: const Interval(0.00, 0.21, curve: Curves.easeIn),
+    );
+
+    _screenOpacity = Tween<double>(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _ctrl,
+        curve: const Interval(0.75, 1.00, curve: Curves.easeOut),
+      ),
+    );
+
+    _ctrl.forward().then((_) {
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        PageRouteBuilder(
+          // The visual fade already completed via _screenOpacity,
+          // so no additional route animation is needed.
+          transitionDuration: Duration.zero,
+          reverseTransitionDuration: Duration.zero,
+          pageBuilder: (context, _, _) => MainNavigationScreen(
+            currentMode: widget.themeMode,
+            onThemeChanged: widget.onThemeChanged,
+          ),
+        ),
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (context, _) {
+        return Opacity(
+          opacity: _screenOpacity.value,
+          child: Scaffold(
+            backgroundColor: _bg,
+            body: Center(
+              child: FadeTransition(
+                opacity: _logoOpacity,
+                child: const _SplashLogo(),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _SplashLogo extends StatelessWidget {
+  const _SplashLogo();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // ── 殺 — large, white, bold
+        Text(
+          '殺',
+          style: TextStyle(
+            fontSize: 96,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+            letterSpacing: 4,
+            height: 1.0,
+            shadows: [
+              Shadow(
+                color: Colors.white.withValues(alpha: 0.15),
+                blurRadius: 32,
+                offset: Offset.zero,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+        // ── SHA — thin, muted, wide letter-spacing
+        Text(
+          'SHA',
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w300,
+            color: Colors.white.withValues(alpha: 0.35),
+            letterSpacing: 8,
+            height: 1.0,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Main Navigation
+// ─────────────────────────────────────────────────────────────────────────────
 
 class MainNavigationScreen extends StatefulWidget {
   final ThemeMode currentMode;
