@@ -617,8 +617,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         bottomNavigationBar:
             (_selectedIndex == _discoverTabIndex && !_scannerShowsNavBar)
                 ? null
-                : SizedBox(
-                    height: 90,
+                : SafeArea(
+                    top: false,
                     child: BottomNavigationBar(
                       type: BottomNavigationBarType.fixed,
                       currentIndex: _selectedIndex,
