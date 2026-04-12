@@ -15,9 +15,11 @@ class SkinLoader {
   List<SkinDTO>? _cache;
 
   // ── Public API
+  Future<List<SkinDTO>> getAllSkins() async => _loadAll();
+
   Future<List<SkinDTO>> getSkinsForBase(String baseId) async {
     final all = await _loadAll();
-    return all.where((s) => s.baseId == baseId).toList();
+    return all.where((s) => _resolveBaseId(s) == baseId).toList();
   }
 
   void clearCache() => _cache = null;
@@ -39,5 +41,13 @@ class SkinLoader {
     }
 
     return _cache!;
+  }
+
+  String _resolveBaseId(SkinDTO skin) {
+    if (skin.baseId.isNotEmpty) {
+      return skin.baseId.replaceFirst('SP_WSP_', 'SP_');
+    }
+
+    return skin.id.replaceFirst(RegExp(r'_skin\d+$'), '');
   }
 }

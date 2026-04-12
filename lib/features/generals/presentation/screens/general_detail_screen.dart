@@ -11,11 +11,13 @@ import '../../../../core/constants/app_assets.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
+  final String? initialSkinId;
   final void Function(String libraryCardId)? onLibraryCardTap;
 
   const GeneralDetailScreen({
     super.key,
     required this.card,
+    this.initialSkinId,
     this.onLibraryCardTap,
   });
 
@@ -39,6 +41,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   // ── Skins (alt-art for active variant)
   List<SkinDTO> _skins = [];
   int _skinIndex = 0; // 0 = base card image; 1..n = skins[0..n-1]
+  String? _pendingInitialSkinId;
 
   // ── Resolved related-card references
   List<ResolvedReference> _refsEn = [];
@@ -52,6 +55,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   void initState() {
     super.initState();
     _activeCard = widget.card;
+    _pendingInitialSkinId = widget.initialSkinId;
     _tabController = TabController(length: 2, vsync: this);
     _loadAll();
   }
@@ -82,7 +86,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
       _refsEn          = results[3] as List<ResolvedReference>;
       _refsLoading     = false;
       _skins           = results[4] as List<SkinDTO>;
-      _skinIndex       = 0;
+      _skinIndex       = _resolveInitialSkinIndex(_skins);
     });
   }
 
@@ -111,8 +115,17 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     if (!mounted) return;
     setState(() {
       _skins     = skins;
-      _skinIndex = 0;
+      _skinIndex = _resolveInitialSkinIndex(skins);
     });
+  }
+
+  int _resolveInitialSkinIndex(List<SkinDTO> skins) {
+    final skinId = _pendingInitialSkinId;
+    _pendingInitialSkinId = null;
+    if (skinId == null || skins.isEmpty) return 0;
+
+    final index = skins.indexWhere((skin) => skin.id == skinId);
+    return index == -1 ? 0 : index + 1;
   }
 
   // ── Actions
@@ -120,6 +133,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     if (next.id == _activeCard.id) return;
     setState(() {
       _activeCard  = next;
+      _pendingInitialSkinId = null;
       _refsEn      = [];
       _refsCn      = [];
       _refsLoading = true;

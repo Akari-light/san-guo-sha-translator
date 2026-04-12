@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
-import '../../data/models/general_card.dart';
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/constants/app_assets.dart';
 
-/// Reusable grid tile for a single general card.
-/// Shows the card image with a faction colour accent border,
-/// name badge and expansion badge overlaid on the image.
-///
-/// Dimensions are driven entirely by the parent grid's childAspectRatio.
-/// All three grids (GeneralScreen, LibraryScreen, HomeScreen thumbnails)
-/// use the canonical SGS card ratio: 63 / 88 ≈ 0.716.
+import '../../../../core/constants/app_assets.dart';
+import '../../../../core/theme/app_theme.dart';
+
 class GeneralCardTile extends StatelessWidget {
-  final GeneralCard card;
+  final String imagePath;
+  final String faction;
+  final String expansionBadge;
+  final bool isSkin;
+  final bool isFallback;
   final VoidCallback onTap;
 
   const GeneralCardTile({
     super.key,
-    required this.card,
+    required this.imagePath,
+    required this.faction,
+    required this.expansionBadge,
+    this.isSkin = false,
+    this.isFallback = false,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    final factionColor = AppTheme.factionColor(card.faction);
+    final factionColor = AppTheme.factionColor(faction);
+    final variantBadge = isFallback
+        ? 'ART'
+        : isSkin
+            ? 'SKIN'
+            : null;
 
     return GestureDetector(
       onTap: onTap,
@@ -43,9 +49,8 @@ class GeneralCardTile extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              // ── Card image
               Image.asset(
-                card.imagePath,
+                imagePath,
                 fit: BoxFit.cover,
                 errorBuilder: (_, _, _) => Container(
                   color: factionColor.withValues(alpha: 0.1),
@@ -57,33 +62,55 @@ class GeneralCardTile extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // ── Expansion badge (top-right)
-              Positioned(
-                top: 6,
-                right: 6,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 6,
-                    vertical: 3,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.75),
-                    borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: Colors.white54, width: 0.5),
-                  ),
-                  child: Text(
-                    card.expansionBadge,
-                    style: TextStyle(
-                      color: factionColor,
-                      // 11pt fits both single-char badges (界, 神, 魔)
-                      // and two-char badges (神话) without overflow.
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
+              if (expansionBadge.isNotEmpty)
+                Positioned(
+                  top: 6,
+                  right: 6,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 6,
+                      vertical: 3,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.75),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: Colors.white54, width: 0.5),
+                    ),
+                    child: Text(
+                      expansionBadge,
+                      style: TextStyle(
+                        color: factionColor,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              ),
+              if (variantBadge != null)
+                Positioned(
+                  top: 6,
+                  left: 6,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 6,
+                      vertical: 3,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.78),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: Colors.white54, width: 0.5),
+                    ),
+                    child: Text(
+                      variantBadge,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.4,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
