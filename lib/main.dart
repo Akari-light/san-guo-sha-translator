@@ -20,6 +20,7 @@ import 'features/codex/presentation/screens/codex_entry_screen.dart'; // LangTog
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   final prefs = await SharedPreferences.getInstance();
   final savedTheme = prefs.getString('theme_mode') ?? 'system';
@@ -459,7 +460,16 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        systemNavigationBarColor:
+            isDark ? const Color(0xFF252526) : const Color(0xFFF3F3F3),
+        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarIconBrightness:
+            isDark ? Brightness.light : Brightness.dark,
+      ),
+      child: PopScope(
       canPop: false,
       onPopInvokedWithResult: (_, _) {
         // Scanner tab: scanner's inner PopScope (canPop: false) handles
@@ -697,7 +707,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     ),
                   ),
       ),
-    );
+    ), // PopScope
+    ); // AnnotatedRegion
   }
 
   IconData _getThemeIcon(ThemeMode mode) {
