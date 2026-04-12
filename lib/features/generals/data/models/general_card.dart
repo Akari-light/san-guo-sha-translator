@@ -82,12 +82,22 @@ class GeneralCard {
   /// and partial matches ("liu bei", "luu bei", "benev") all resolve.
   bool matchesQuery(String query) {
     if (query.isEmpty) return true;
+    final q = query.trim().toLowerCase();
+    if (_isIdStyleQuery(q)) {
+      return id.toLowerCase().contains(q);
+    }
+
     if (FuzzyMatcher.fuzzyMatch(query, nameEn)) return true;
     if (FuzzyMatcher.fuzzyMatch(query, nameCn)) return true;
-    if (FuzzyMatcher.fuzzyMatch(query, id))     return true;
     if (skills.any((s) => FuzzyMatcher.fuzzyMatch(query, s.nameEn) ||  FuzzyMatcher.fuzzyMatch(query, s.nameCn))) return true;
     return false;
   }
+
+  bool _isIdStyleQuery(String q) =>
+      q.isNotEmpty &&
+      !q.contains(RegExp(r'\s')) &&
+      !FuzzyMatcher.hasCjk(q) &&
+      RegExp(r'^[a-z0-9_-]+$').hasMatch(q);
 
   // ── Image
   String get imagePath => 'assets/images/generals/$id.webp';

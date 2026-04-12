@@ -10,6 +10,8 @@ enum GeneralSortOrder {
   serialNumber, // By card ID: SHU001, SHU002...
   nameAZ,       // Alphabetical A → Z
   nameZA,       // Alphabetical Z → A
+  genderMaleFirst,   // Male → Female
+  genderFemaleFirst, // Female → Male
   powerHighest, // Power Index high → low
   powerLowest;  // Power Index low → high
 
@@ -19,6 +21,8 @@ enum GeneralSortOrder {
       case GeneralSortOrder.serialNumber: return 'Serial Number';
       case GeneralSortOrder.nameAZ:       return 'Name A → Z';
       case GeneralSortOrder.nameZA:       return 'Name Z → A';
+      case GeneralSortOrder.genderMaleFirst:   return 'Gender: Male → Female';
+      case GeneralSortOrder.genderFemaleFirst: return 'Gender: Female → Male';
       case GeneralSortOrder.powerHighest: return 'Power ↓ High to Low';
       case GeneralSortOrder.powerLowest:  return 'Power ↑ Low to High';
     }
@@ -28,12 +32,14 @@ enum GeneralSortOrder {
 // ── Filter State
 class GeneralFilterState {
   final Set<String> factions;
+  final Set<String> genders;
   final Set<Expansion> expansions;
   final bool lordOnly;
   final GeneralSortOrder sortOrder;
 
   const GeneralFilterState({
     this.factions = const {},
+    this.genders = const {},
     this.expansions = const {},
     this.lordOnly = false,
     this.sortOrder = GeneralSortOrder.none,
@@ -41,18 +47,21 @@ class GeneralFilterState {
 
   bool get isActive =>
       factions.isNotEmpty ||
+      genders.isNotEmpty ||
       expansions.isNotEmpty ||
       lordOnly ||
       sortOrder != GeneralSortOrder.none;
 
   GeneralFilterState copyWith({
     Set<String>? factions,
+    Set<String>? genders,
     Set<Expansion>? expansions,
     bool? lordOnly,
     GeneralSortOrder? sortOrder,
   }) {
     return GeneralFilterState(
       factions: factions ?? this.factions,
+      genders: genders ?? this.genders,
       expansions: expansions ?? this.expansions,
       lordOnly: lordOnly ?? this.lordOnly,
       sortOrder: sortOrder ?? this.sortOrder,
@@ -65,6 +74,9 @@ class GeneralFilterState {
 
     if (factions.isNotEmpty) {
       result = result.where((g) => factions.contains(g.faction)).toList();
+    }
+    if (genders.isNotEmpty) {
+      result = result.where((g) => genders.contains(g.gender)).toList();
     }
     if (expansions.isNotEmpty) {
       result = result.where((g) => expansions.contains(g.expansion)).toList();
@@ -84,6 +96,10 @@ class GeneralFilterState {
         result.sort((a, b) => a.nameEn.compareTo(b.nameEn));
       case GeneralSortOrder.nameZA:
         result.sort((a, b) => b.nameEn.compareTo(a.nameEn));
+      case GeneralSortOrder.genderMaleFirst:
+        result.sort((a, b) => _compareByGender(a, b, maleFirst: true));
+      case GeneralSortOrder.genderFemaleFirst:
+        result.sort((a, b) => _compareByGender(a, b, maleFirst: false));
       case GeneralSortOrder.powerHighest:
         result.sort((a, b) => b.powerIndex.compareTo(a.powerIndex));
       case GeneralSortOrder.powerLowest:
@@ -91,6 +107,40 @@ class GeneralFilterState {
     }
 
     return result;
+  }
+
+  static int _compareByGender(
+    GeneralCard a,
+    GeneralCard b, {
+    required bool maleFirst,
+  }) {
+    final aRank = _genderRank(a.gender, maleFirst: maleFirst);
+    final bRank = _genderRank(b.gender, maleFirst: maleFirst);
+    final rankCompare = aRank.compareTo(bRank);
+    if (rankCompare != 0) return rankCompare;
+    return a.nameEn.compareTo(b.nameEn);
+  }
+
+  static int _genderRank(String gender, {required bool maleFirst}) {
+    if (maleFirst) {
+      switch (gender) {
+        case 'Male':
+          return 0;
+        case 'Female':
+          return 1;
+        default:
+          return 2;
+      }
+    }
+
+    switch (gender) {
+      case 'Female':
+        return 0;
+      case 'Male':
+        return 1;
+      default:
+        return 2;
+    }
   }
 }
 
@@ -131,6 +181,7 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
   late TabController _tabController;
 
   static const List<String> _factions = ['Shu', 'Wei', 'Wu', 'Qun', 'God', 'Utilities'];
+  static const List<String> _genders = ['Male', 'Female'];
 
   @override
   void initState() {
@@ -162,6 +213,12 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
         ? updated.remove(expansion)
         : updated.add(expansion);
     _update(_state.copyWith(expansions: updated));
+  }
+
+  void _toggleGender(String gender) {
+    final updated = Set<String>.from(_state.genders);
+    updated.contains(gender) ? updated.remove(gender) : updated.add(gender);
+    _update(_state.copyWith(genders: updated));
   }
 
   @override
@@ -274,6 +331,22 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
                     faction: f,
                     isSelected: _state.factions.contains(f),
                     onTap: () => _toggleFaction(f),
+                  ))
+              .toList(),
+        ),
+
+        const SizedBox(height: 24),
+
+        _buildSectionHeader('GENDER'),
+        const SizedBox(height: 12),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: _genders
+              .map((g) => _AttributeFilterChip(
+                    label: g,
+                    isSelected: _state.genders.contains(g),
+                    onTap: () => _toggleGender(g),
                   ))
               .toList(),
         ),
@@ -423,6 +496,44 @@ class _GeneralFilterSheetState extends State<GeneralFilterSheet>
 }
 
 // ── Faction chip widget
+class _AttributeFilterChip extends StatelessWidget {
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+  final Color? accentColor;
+
+  const _AttributeFilterChip({
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+    this.accentColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = accentColor ?? Theme.of(context).colorScheme.primary;
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 180),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        decoration: BoxDecoration(
+          color: isSelected ? color : color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color, width: 1.5),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: isSelected ? Colors.white : color,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _FactionFilterChip extends StatelessWidget {
   final String faction;
   final bool isSelected;
@@ -436,25 +547,11 @@ class _FactionFilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = AppTheme.factionColor(faction);
-    return GestureDetector(
+    return _AttributeFilterChip(
+      label: faction,
+      isSelected: isSelected,
       onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        decoration: BoxDecoration(
-          color: isSelected ? color : color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color, width: 1.5),
-        ),
-        child: Text(
-          faction,
-          style: TextStyle(
-            color: isSelected ? Colors.white : color,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
+      accentColor: AppTheme.factionColor(faction),
     );
   }
 }

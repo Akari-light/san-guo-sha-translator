@@ -1,32 +1,25 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import '../../data/models/general_card.dart';
-import '../../data/repository/general_loader.dart';
-import '../widgets/general_card_tile.dart';
-import '../screens/general_filter_sheet.dart';
-import '../screens/general_detail_screen.dart';
-import '../../../../core/theme/app_theme.dart';
+import 'package:flutter/services.dart';
+
+import '../../../../core/models/expansion.dart';
 import '../../../../core/navigation/app_router.dart';
 import '../../../../core/services/recently_viewed_service.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../data/models/general_card.dart';
+import '../../data/models/skin_dto.dart';
+import '../../data/repository/general_loader.dart';
+import '../../data/repository/skin_loader.dart';
+import '../screens/general_detail_screen.dart';
+import '../screens/general_filter_sheet.dart';
+import '../widgets/general_card_tile.dart';
 
 class GeneralScreen extends StatefulWidget {
-  /// Live search notifier. main.dart updates this without rebuilding
-  /// the screen widget, so the FutureBuilder cache is never discarded.
   final ValueNotifier<String> searchNotifier;
-
-  /// Called when filter active state changes so main.dart
-  /// can update the AppBar filter icon badge.
   final void Function(bool isActive)? onFilterStateChanged;
-
-  /// Called by main.dart when the filter icon is tapped.
   final void Function(VoidCallback openSheet)? onRegisterSheetOpener;
-
-  /// Forwarded to GeneralDetailScreen for Related Card chip navigation.
-  /// main.dart resolves the id and pushes LibraryDetailScreen.
   final void Function(String libraryCardId)? onLibraryCardTap;
-
-  /// Called by main.dart when a general card tile is tapped, before the
-  /// detail push. main.dart uses this hook to record the view in HomeService.
-  /// When null the screen pushes the detail screen directly without recording.
   final void Function(String id, RecordType type)? onCardTap;
 
   const GeneralScreen({
@@ -43,26 +36,28 @@ class GeneralScreen extends StatefulWidget {
 }
 
 class _GeneralScreenState extends State<GeneralScreen> {
-  late final Future<List<GeneralCard>> _generalsFuture;
+  late final Future<_GeneralGalleryData> _galleryFuture;
   GeneralFilterState _filterState = const GeneralFilterState();
 
   static const List<String> _factionOrder = [
-    'Shu', 'Wei', 'Wu', 'Qun', 'God', 'Utilities',
+    'Shu',
+    'Wei',
+    'Wu',
+    'Qun',
+    'God',
+    'Utilities',
   ];
 
   @override
   void initState() {
     super.initState();
-    _generalsFuture = GeneralLoader().getGenerals();
+    _galleryFuture = _loadGalleryData();
     widget.onRegisterSheetOpener?.call(_openFilterSheet);
   }
 
   @override
   void didUpdateWidget(GeneralScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // Re-register if the parent passes a new callback reference.
-    // Necessary because onRegisterSheetOpener fires a side effect —
-    // it must be re-invoked whenever the prop changes, not only at mount.
     if (widget.onRegisterSheetOpener != oldWidget.onRegisterSheetOpener) {
       widget.onRegisterSheetOpener?.call(_openFilterSheet);
     }
@@ -79,15 +74,165 @@ class _GeneralScreenState extends State<GeneralScreen> {
     );
   }
 
-  Map<String, List<GeneralCard>> _groupByFaction(List<GeneralCard> generals) {
-    final Map<String, List<GeneralCard>> grouped = {};
-    for (final g in generals) {
-      grouped.putIfAbsent(g.faction, () => []).add(g);
+  Future<_GeneralGalleryData> _loadGalleryData() async {
+    final results = await Future.wait<dynamic>([
+      GeneralLoader().getGenerals(),
+      SkinLoader().getAllSkins(),
+      _loadBundledImageIds(),
+    ]);
+
+    final generals = results[0] as List<GeneralCard>;
+    final skins = results[1] as List<SkinDTO>;
+    final imageIds = results[2] as Set<String>;
+    final generalIds = generals.map((g) => g.id).toSet();
+    final skinsByBaseId = <String, List<SkinDTO>>{};
+
+    for (final skin in skins) {
+      final resolvedBaseId = _resolveSkinBaseId(skin, generalIds);
+      skinsByBaseId.putIfAbsent(resolvedBaseId, () => []).add(skin);
     }
+    for (final entry in skinsByBaseId.values) {
+      entry.sort((a, b) => a.id.compareTo(b.id));
+    }
+
+    final knownImageIds = <String>{
+      ...generalIds,
+      ...skins.map((skin) => skin.id),
+    };
+
+    return _GeneralGalleryData(
+      generals: generals,
+      skinsByBaseId: skinsByBaseId,
+      orphanImageIds: imageIds.difference(knownImageIds),
+    );
+  }
+
+  Future<Set<String>> _loadBundledImageIds() async {
+    final manifestRaw = await rootBundle.loadString('AssetManifest.json');
+    final manifest = json.decode(manifestRaw) as Map<String, dynamic>;
+
+    return manifest.keys
+        .where(
+          (path) =>
+              path.startsWith('assets/images/generals/') &&
+              path.endsWith('.webp'),
+        )
+        .map((path) => path.split('/').last.replaceFirst('.webp', ''))
+        .toSet();
+  }
+
+  String _resolveSkinBaseId(SkinDTO skin, Set<String> generalIds) {
+    if (generalIds.contains(skin.baseId)) {
+      return skin.baseId;
+    }
+
+    final inferredBaseId = skin.id.replaceFirst(RegExp(r'_skin\d+$'), '');
+    if (generalIds.contains(inferredBaseId)) {
+      return inferredBaseId;
+    }
+
+    return skin.baseId;
+  }
+
+  bool get _hasRestrictiveFilters =>
+      _filterState.factions.isNotEmpty ||
+      _filterState.genders.isNotEmpty ||
+      _filterState.expansions.isNotEmpty ||
+      _filterState.lordOnly;
+
+  List<_GeneralGalleryEntry> _buildGalleryEntries(
+    List<GeneralCard> generals,
+    Map<String, List<SkinDTO>> skinsByBaseId,
+  ) {
+    final entries = <_GeneralGalleryEntry>[];
+
+    for (final general in generals) {
+      entries.add(_GeneralGalleryEntry.base(general));
+      for (final skin in skinsByBaseId[general.id] ?? const <SkinDTO>[]) {
+        entries.add(_GeneralGalleryEntry.skin(general, skin));
+      }
+    }
+
+    return entries;
+  }
+
+  List<_GeneralGalleryEntry> _buildOrphanEntries(
+    Set<String> orphanImageIds,
+    String query,
+  ) {
+    if (_hasRestrictiveFilters && query.trim().isEmpty) {
+      return const [];
+    }
+
+    final ids = orphanImageIds.toList()..sort();
+    return ids
+        .map(_GeneralGalleryEntry.orphan)
+        .where((entry) => entry.matchesQuery(query))
+        .toList(growable: false);
+  }
+
+  Map<String, List<_GeneralGalleryEntry>> _groupByFaction(
+    List<_GeneralGalleryEntry> entries,
+  ) {
+    final grouped = <String, List<_GeneralGalleryEntry>>{};
+    for (final entry in entries) {
+      grouped.putIfAbsent(entry.faction, () => []).add(entry);
+    }
+
+    final extraKeys = grouped.keys
+        .where((key) => !_factionOrder.contains(key))
+        .toList()
+      ..sort();
+    final orderedKeys = <String>[
+      ..._factionOrder.where(grouped.containsKey),
+      ...extraKeys,
+    ];
+
     return Map.fromEntries(
-      _factionOrder
-          .where((f) => grouped.containsKey(f))
-          .map((f) => MapEntry(f, grouped[f]!)),
+      orderedKeys.map((key) => MapEntry(key, grouped[key]!)),
+    );
+  }
+
+  void _openGalleryEntry(_GeneralGalleryEntry entry) {
+    final card = entry.card;
+    if (card == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${entry.imageId} is bundled but not mapped to general data yet.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    if (entry.initialSkinId != null) {
+      RecentlyViewedService.instance.record(card.id, RecordType.general);
+      Navigator.push(
+        context,
+        detailRoute(
+          GeneralDetailScreen(
+            card: card,
+            initialSkinId: entry.initialSkinId,
+            onLibraryCardTap: widget.onLibraryCardTap,
+          ),
+        ),
+      );
+      return;
+    }
+
+    if (widget.onCardTap != null) {
+      widget.onCardTap!(card.id, RecordType.general);
+      return;
+    }
+
+    Navigator.push(
+      context,
+      detailRoute(
+        GeneralDetailScreen(
+          card: card,
+          onLibraryCardTap: widget.onLibraryCardTap,
+        ),
+      ),
     );
   }
 
@@ -96,128 +241,125 @@ class _GeneralScreenState extends State<GeneralScreen> {
     return ValueListenableBuilder<String>(
       valueListenable: widget.searchNotifier,
       builder: (context, query, _) {
-        return FutureBuilder<List<GeneralCard>>(
-          future: _generalsFuture,
+        return FutureBuilder<_GeneralGalleryData>(
+          future: _galleryFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
 
-            final raw      = snapshot.data ?? [];
-            final searched = query.isEmpty
-                ? raw
-                : raw.where((g) => g.matchesQuery(query)).toList();
-            final generals       = _filterState.apply(searched);
-            final groupedGenerals = _groupByFaction(generals);
+            final galleryData = snapshot.data;
+            if (galleryData == null) {
+              return const Center(child: Text('Failed to load generals.'));
+            }
 
-        return CustomScrollView(
-          slivers: [
-            // ── Active filter summary bar 
-            if (_filterState.isActive)
-              SliverToBoxAdapter(
-                child: _ActiveFilterBar(
-                  filterState: _filterState,
-                  onClear: () {
-                    setState(() => _filterState = const GeneralFilterState());
-                    widget.onFilterStateChanged?.call(false);
-                  },
-                ),
-              ),
+            final filteredGenerals = _filterState.apply(galleryData.generals);
+            final knownEntries = _buildGalleryEntries(
+              filteredGenerals,
+              galleryData.skinsByBaseId,
+            ).where((entry) => entry.matchesQuery(query)).toList(growable: false);
+            final orphanEntries = _buildOrphanEntries(
+              galleryData.orphanImageIds,
+              query,
+            );
+            final visibleEntries = <_GeneralGalleryEntry>[
+              ...knownEntries,
+              ...orphanEntries,
+            ];
+            final groupedEntries = _groupByFaction(visibleEntries);
 
-            // ── Empty state 
-            if (generals.isEmpty)
-              const SliverFillRemaining(
-                child: Center(child: Text('No generals match your search.')),
-              )
-            else
-              for (final entry in groupedGenerals.entries) ...[
-                // Faction header
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 4,
-                          height: 18,
-                          decoration: BoxDecoration(
-                            color: AppTheme.factionColor(entry.key),
-                            borderRadius: BorderRadius.circular(2),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          entry.key.toUpperCase(),
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall
-                              ?.copyWith(
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.2,
-                            color: AppTheme.factionColor(entry.key),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          '${entry.value.length}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(color: Theme.of(context).hintColor),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                // General grid
-                SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  sliver: SliverGrid(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      childAspectRatio: 0.716, // SGS card ratio: 63mm / 88mm = 0.716
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                    ),
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        final card = entry.value[index];
-                        return GeneralCardTile(
-                          card: card,
-                          onTap: () {
-                            if (widget.onCardTap != null) {
-                              // main.dart records the view then pushes the detail.
-                              widget.onCardTap!(card.id, RecordType.general);
-                            } else {
-                              Navigator.push(
-                                context,
-                                detailRoute(GeneralDetailScreen(
-                                  card: card,
-                                  onLibraryCardTap: widget.onLibraryCardTap,
-                                )),
-                              );
-                            }
-                          },
-                        );
+            return CustomScrollView(
+              slivers: [
+                if (_filterState.isActive)
+                  SliverToBoxAdapter(
+                    child: _ActiveFilterBar(
+                      filterState: _filterState,
+                      onClear: () {
+                        setState(() => _filterState = const GeneralFilterState());
+                        widget.onFilterStateChanged?.call(false);
                       },
-                      childCount: entry.value.length,
                     ),
                   ),
-                ),
+                if (visibleEntries.isEmpty)
+                  const SliverFillRemaining(
+                    child: Center(child: Text('No general art matches your search.')),
+                  )
+                else
+                  for (final section in groupedEntries.entries) ...[
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 24, 16, 8),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 4,
+                              height: 18,
+                              decoration: BoxDecoration(
+                                color: AppTheme.factionColor(section.key),
+                                borderRadius: BorderRadius.circular(2),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              section.key.toUpperCase(),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 1.2,
+                                    color: AppTheme.factionColor(section.key),
+                                  ),
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              '${section.value.length}',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(color: Theme.of(context).hintColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SliverPadding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      sliver: SliverGrid(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 0.716,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                        ),
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            final entry = section.value[index];
+                            return GeneralCardTile(
+                              imagePath: entry.imagePath,
+                              faction: entry.faction,
+                              expansionBadge: entry.expansionBadge,
+                              isSkin: entry.isSkin,
+                              isFallback: entry.isFallback,
+                              onTap: () => _openGalleryEntry(entry),
+                            );
+                          },
+                          childCount: section.value.length,
+                        ),
+                      ),
+                    ),
+                  ],
+                const SliverToBoxAdapter(child: SizedBox(height: 100)),
               ],
-
-            const SliverToBoxAdapter(child: SizedBox(height: 100)),
-          ],
+            );
+          },
         );
-      },
-    );
       },
     );
   }
 }
 
-// ── Active filter summary bar 
 class _ActiveFilterBar extends StatelessWidget {
   final GeneralFilterState filterState;
   final VoidCallback onClear;
@@ -235,10 +377,15 @@ class _ActiveFilterBar extends StatelessWidget {
     if (filterState.factions.isNotEmpty) {
       parts.add(filterState.factions.join(', '));
     }
+    if (filterState.genders.isNotEmpty) {
+      parts.add(filterState.genders.join(', '));
+    }
     if (filterState.expansions.isNotEmpty) {
       parts.add(filterState.expansions.map((e) => e.badge).join(', '));
     }
-    if (filterState.lordOnly) parts.add('Lord Only');
+    if (filterState.lordOnly) {
+      parts.add('Lord Only');
+    }
     if (filterState.sortOrder != GeneralSortOrder.none) {
       parts.add(filterState.sortOrder.label);
     }
@@ -252,7 +399,7 @@ class _ActiveFilterBar extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              parts.join(' · '),
+              parts.join(' | '),
               style: TextStyle(
                 fontSize: 12,
                 color: theme.colorScheme.primary,
@@ -268,5 +415,150 @@ class _ActiveFilterBar extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class _GeneralGalleryData {
+  final List<GeneralCard> generals;
+  final Map<String, List<SkinDTO>> skinsByBaseId;
+  final Set<String> orphanImageIds;
+
+  const _GeneralGalleryData({
+    required this.generals,
+    required this.skinsByBaseId,
+    required this.orphanImageIds,
+  });
+}
+
+class _GeneralGalleryEntry {
+  final String imageId;
+  final String imagePath;
+  final GeneralCard? card;
+  final String faction;
+  final String expansionBadge;
+  final bool isSkin;
+  final bool isFallback;
+  final String? initialSkinId;
+  final String? searchLabelEn;
+  final String? searchLabelCn;
+
+  const _GeneralGalleryEntry({
+    required this.imageId,
+    required this.imagePath,
+    required this.card,
+    required this.faction,
+    required this.expansionBadge,
+    required this.isSkin,
+    required this.isFallback,
+    this.initialSkinId,
+    this.searchLabelEn,
+    this.searchLabelCn,
+  });
+
+  factory _GeneralGalleryEntry.base(GeneralCard card) {
+    return _GeneralGalleryEntry(
+      imageId: card.id,
+      imagePath: card.imagePath,
+      card: card,
+      faction: card.faction,
+      expansionBadge: card.expansionBadge,
+      isSkin: false,
+      isFallback: false,
+    );
+  }
+
+  factory _GeneralGalleryEntry.skin(GeneralCard card, SkinDTO skin) {
+    return _GeneralGalleryEntry(
+      imageId: skin.id,
+      imagePath: skin.imagePath,
+      card: card,
+      faction: card.faction,
+      expansionBadge: card.expansionBadge,
+      isSkin: true,
+      isFallback: false,
+      initialSkinId: skin.id,
+      searchLabelEn: skin.nameEn,
+      searchLabelCn: skin.nameCn,
+    );
+  }
+
+  factory _GeneralGalleryEntry.orphan(String imageId) {
+    return _GeneralGalleryEntry(
+      imageId: imageId,
+      imagePath: 'assets/images/generals/$imageId.webp',
+      card: null,
+      faction: _inferFaction(imageId),
+      expansionBadge: _inferExpansionBadge(imageId),
+      isSkin: false,
+      isFallback: true,
+    );
+  }
+
+  bool matchesQuery(String query) {
+    if (query.isEmpty) {
+      return true;
+    }
+    if (card != null && card!.matchesQuery(query)) {
+      return true;
+    }
+
+    final trimmed = query.trim();
+    final lower = trimmed.toLowerCase();
+    if (imageId.toLowerCase().contains(lower)) {
+      return true;
+    }
+    if (searchLabelEn != null && searchLabelEn!.toLowerCase().contains(lower)) {
+      return true;
+    }
+    if (searchLabelCn != null && searchLabelCn!.contains(trimmed)) {
+      return true;
+    }
+    return false;
+  }
+
+  static String _inferFaction(String imageId) {
+    final upper = imageId.toUpperCase();
+    if (upper.contains('QUN')) {
+      return 'Qun';
+    }
+    if (upper.contains('SHU')) {
+      return 'Shu';
+    }
+    if (upper.contains('WEI')) {
+      return 'Wei';
+    }
+    if (upper.contains('WU')) {
+      return 'Wu';
+    }
+    if (upper.contains('GOD') || upper.startsWith('LE')) {
+      return 'God';
+    }
+    return 'Utilities';
+  }
+
+  static String _inferExpansionBadge(String imageId) {
+    final upper = imageId.toUpperCase();
+    if (upper.startsWith('JX_')) {
+      return Expansion.limitBreak.badge;
+    }
+    if (upper.startsWith('YJ_')) {
+      return Expansion.heroesSoul.badge;
+    }
+    if (upper.startsWith('LE')) {
+      return Expansion.god.badge;
+    }
+    if (upper.startsWith('MO_')) {
+      return Expansion.demon.badge;
+    }
+    if (upper.startsWith('MG_')) {
+      return Expansion.mouGong.badge;
+    }
+    if (upper.startsWith('DZ_')) {
+      return Expansion.doudizhu.badge;
+    }
+    if (upper.startsWith('SP_') || upper.startsWith('WM_') || upper.startsWith('J_')) {
+      return Expansion.other.badge;
+    }
+    return Expansion.standard.badge;
   }
 }

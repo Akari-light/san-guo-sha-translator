@@ -4,13 +4,19 @@ SGS Card Scanner — MobileNetV2 Embedding Generator
 
 Generates two files:
   1. assets/models/mobilenet_v2.tflite  — TFLite feature extractor model
-  2. assets/data/general_embeddings.bin — Pre-computed embeddings for all generals
+  2. assets/data/general_embeddings.bin — Versioned reference bundle
 
-Binary format of general_embeddings.bin:
-  - 4 bytes: entry count (uint32, little-endian)
-  - For each entry:
-      - 4 bytes: ID string length (uint32, little-endian)
-      - N bytes: ID string (UTF-8, e.g. "YJ_WU033")
+Binary format of general_embeddings.bin (v2):
+  - 4 bytes: magic "SGSV"
+  - 4 bytes: version uint32 little-endian
+  - 4 bytes: embedding dim uint32 little-endian
+  - 4 bytes: reference count uint32 little-endian
+  - For each reference:
+      - 4 bytes: reference ID string length
+      - N bytes: reference ID string (UTF-8, e.g. "YJ_WU033#canonical")
+      - 4 bytes: logical card ID string length
+      - N bytes: logical card ID string (UTF-8, e.g. "YJ_WU033")
+      - 1 byte: reference type enum
       - 5120 bytes: 1280 x float32 embedding (little-endian)
 
 Usage:
@@ -40,6 +46,9 @@ INPUT_SIZE = 224
 EMBEDDING_DIM = 1280
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
+BUNDLE_MAGIC = b"SGSV"
+BUNDLE_VERSION = 2
+REFERENCE_TYPE_CANONICAL = 0
 
 
 def step1_create_tflite_model():
@@ -154,12 +163,20 @@ def step2_generate_embeddings():
     OUTPUT_BIN.parent.mkdir(parents=True, exist_ok=True)
 
     with open(OUTPUT_BIN, "wb") as f:
+        f.write(BUNDLE_MAGIC)
+        f.write(struct.pack("<I", BUNDLE_VERSION))
+        f.write(struct.pack("<I", EMBEDDING_DIM))
         f.write(struct.pack("<I", len(embeddings)))
 
         for card_id, embedding in sorted(embeddings.items()):
-            id_bytes = card_id.encode("utf-8")
-            f.write(struct.pack("<I", len(id_bytes)))
-            f.write(id_bytes)
+            reference_id = f"{card_id}#canonical"
+            reference_id_bytes = reference_id.encode("utf-8")
+            logical_id_bytes = card_id.encode("utf-8")
+            f.write(struct.pack("<I", len(reference_id_bytes)))
+            f.write(reference_id_bytes)
+            f.write(struct.pack("<I", len(logical_id_bytes)))
+            f.write(logical_id_bytes)
+            f.write(struct.pack("<B", REFERENCE_TYPE_CANONICAL))
             f.write(struct.pack(f"<{EMBEDDING_DIM}f", *embedding))
 
     size_mb = OUTPUT_BIN.stat().st_size / (1024 * 1024)
@@ -179,15 +196,27 @@ def step3_verify():
         return
 
     with open(OUTPUT_BIN, "rb") as f:
+        magic = f.read(4)
+        version = struct.unpack("<I", f.read(4))[0]
+        dim = struct.unpack("<I", f.read(4))[0]
         count = struct.unpack("<I", f.read(4))[0]
+        print(f"  Magic: {magic!r}")
+        print(f"  Version: {version}")
+        print(f"  Embedding dim: {dim}")
         print(f"  Entry count: {count}")
 
         for i in range(min(3, count)):
-            id_len = struct.unpack("<I", f.read(4))[0]
-            card_id = f.read(id_len).decode("utf-8")
+            ref_len = struct.unpack("<I", f.read(4))[0]
+            reference_id = f.read(ref_len).decode("utf-8")
+            logical_len = struct.unpack("<I", f.read(4))[0]
+            logical_id = f.read(logical_len).decode("utf-8")
+            ref_type = struct.unpack("<B", f.read(1))[0]
             embedding = struct.unpack(f"<{EMBEDDING_DIM}f", f.read(EMBEDDING_DIM * 4))
             emb_norm = np.linalg.norm(embedding)
-            print(f"  [{i}] {card_id}: dim={len(embedding)}, L2_norm={emb_norm:.4f}")
+            print(
+                f"  [{i}] ref={reference_id}, logical={logical_id}, "
+                f"type={ref_type}, dim={len(embedding)}, L2_norm={emb_norm:.4f}"
+            )
 
     tflite_size = OUTPUT_TFLITE.stat().st_size / (1024 * 1024) if OUTPUT_TFLITE.exists() else 0
     bin_size = OUTPUT_BIN.stat().st_size / (1024 * 1024)

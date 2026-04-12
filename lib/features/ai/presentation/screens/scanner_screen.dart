@@ -95,6 +95,7 @@ class _ScannerScreenState extends State<ScannerScreen>
 
   // ── Results
   List<MatchCandidate> _candidates = [];
+  ScannerResult? _lastScanResult;
 
   // ── Adjustable rectangle overlay
   Rect _adjustRect = Rect.zero;
@@ -301,6 +302,7 @@ class _ScannerScreenState extends State<ScannerScreen>
         _state = _ScannerState.adjusting;
         _processing = true;
         _candidates = [];
+        _lastScanResult = null;
         _rectReady = false;
         _adjustRect = Rect.zero;
       });
@@ -357,6 +359,7 @@ class _ScannerScreenState extends State<ScannerScreen>
       _state = _ScannerState.adjusting;
       _processing = true;
       _candidates = [];
+      _lastScanResult = null;
       _rectReady = false;
       _adjustRect = Rect.zero;
     });
@@ -534,13 +537,27 @@ class _ScannerScreenState extends State<ScannerScreen>
 
       if (!mounted || _scanCancelled) { return; }
 
+      if (result.outcome == ScannerOutcome.autoSelect &&
+          result.topCandidate != null) {
+        final topCandidate = result.topCandidate!;
+        setState(() {
+          _processing = false;
+          _lastScanResult = result;
+          _candidates = result.candidates;
+        });
+        _returnToLive();
+        widget.onCardTap(topCandidate.cardId, topCandidate.recordType);
+        return;
+      }
+
       setState(() {
         _processing = false;
+        _lastScanResult = result;
         _candidates = result.candidates;
       });
 
       if (result.candidates.isEmpty) {
-        _showSnack('No match — adjust the crop and retry');
+        _showSnack(result.guidanceMessage);
       }
     } catch (e) {
       _decodedCapture = null;
@@ -566,6 +583,7 @@ class _ScannerScreenState extends State<ScannerScreen>
       _state = _ScannerState.live;
       _processing = false;
       _candidates = [];
+      _lastScanResult = null;
       _capturedImageBytes = null;
       _currentZoom = 1.0;
       _adjustRect = Rect.zero;
@@ -716,7 +734,8 @@ class _ScannerScreenState extends State<ScannerScreen>
         builder: (context, constraints) {
           _widgetSize = Size(constraints.maxWidth, constraints.maxHeight);
           final isAdj = _state == _ScannerState.adjusting;
-          final hasResults = isAdj && _candidates.isNotEmpty;
+          final hasResults =
+              isAdj && _lastScanResult != null && _candidates.isNotEmpty;
           return Stack(
             fit: StackFit.expand,
             children: [
@@ -743,6 +762,7 @@ class _ScannerScreenState extends State<ScannerScreen>
                       setState(() {
                         _activeDragIndex = index;
                         _candidates = []; // Dismiss results while re-cropping
+                        _lastScanResult = null;
                       });
                     },
                     onRectChanged: (newRect) {
@@ -774,7 +794,7 @@ class _ScannerScreenState extends State<ScannerScreen>
               if (hasResults)
                 Positioned.fill(
                   child: ScannerResultsSheet(
-                    candidates: _candidates,
+                    result: _lastScanResult!,
                     onSelect: (c) { _returnToLive(); widget.onCardTap(c.cardId, c.recordType); },
                     onDismiss: _returnToLive,
                   ),
@@ -788,7 +808,7 @@ class _ScannerScreenState extends State<ScannerScreen>
 
   Widget _buildTopBar() {
     final isAdj = _state == _ScannerState.adjusting;
-    final hasResults = isAdj && _candidates.isNotEmpty;
+    final hasResults = isAdj && _lastScanResult != null && _candidates.isNotEmpty;
     final String title;
     if (!isAdj) {
       title = 'Discover';

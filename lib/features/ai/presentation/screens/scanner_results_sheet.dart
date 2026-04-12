@@ -22,13 +22,13 @@ import '../../../../core/services/scanner_service.dart';
 // ─────────────────────────────────────────────────────────────────────────────
 
 class ScannerResultsSheet extends StatelessWidget {
-  final List<MatchCandidate> candidates;
+  final ScannerResult result;
   final void Function(MatchCandidate) onSelect;
   final VoidCallback onDismiss;
 
   const ScannerResultsSheet({
     super.key,
-    required this.candidates,
+    required this.result,
     required this.onSelect,
     required this.onDismiss,
   });
@@ -52,7 +52,7 @@ class ScannerResultsSheet extends StatelessWidget {
           snapSizes: const [0.38, 0.60, 0.85],
           builder: (context, scrollController) {
             return _SheetBody(
-              candidates: candidates,
+              result: result,
               onSelect: onSelect,
               onDismiss: onDismiss,
               scrollController: scrollController,
@@ -70,14 +70,14 @@ class ScannerResultsSheet extends StatelessWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _SheetBody extends StatelessWidget {
-  final List<MatchCandidate> candidates;
+  final ScannerResult result;
   final void Function(MatchCandidate) onSelect;
   final VoidCallback onDismiss;
   final ScrollController scrollController;
   final Color bg;
 
   const _SheetBody({
-    required this.candidates,
+    required this.result,
     required this.onSelect,
     required this.onDismiss,
     required this.scrollController,
@@ -87,6 +87,7 @@ class _SheetBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final candidates = result.candidates;
 
     return Container(
       decoration: BoxDecoration(
@@ -124,9 +125,7 @@ class _SheetBody extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        candidates.length == 1
-                            ? 'Match Found'
-                            : '${candidates.length} Possible Matches',
+                        _titleForResult(result, candidates.length),
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w700,
                         ),
@@ -136,6 +135,21 @@ class _SheetBody extends StatelessWidget {
                     ],
                   ),
                 ),
+                if (result.failureReason != ScannerFailureReason.none)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 12),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        result.guidanceMessage,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: theme.hintColor,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
                 const Divider(height: 1),
               ],
             ),
@@ -451,5 +465,19 @@ class _TypeBadge extends StatelessWidget {
           style: TextStyle(fontSize: 11, color: Theme.of(context).hintColor,
               fontWeight: FontWeight.w500)),
     );
+  }
+}
+
+String _titleForResult(ScannerResult result, int count) {
+  switch (result.outcome) {
+    case ScannerOutcome.autoSelect:
+      return 'Confident Match';
+    case ScannerOutcome.rankedResults:
+      if (result.failureReason == ScannerFailureReason.ocrVisualDisagreement) {
+        return '$count Best Matches';
+      }
+      return count == 1 ? 'Match Found' : '$count Possible Matches';
+    case ScannerOutcome.retake:
+      return 'Try Again';
   }
 }
