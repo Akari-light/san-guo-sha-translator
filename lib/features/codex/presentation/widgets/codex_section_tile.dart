@@ -1,11 +1,9 @@
-// lib/features/codex/presentation/widgets/codex_section_tile.dart
-
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_entry_card.dart';
 import 'codex_flow_step_tile.dart';
-import 'codex_rule_block_widget.dart'; // for SegmentTapCallback
+import 'codex_rule_block_widget.dart';
 
 class CodexSectionTile extends StatefulWidget {
   final String sectionNum;
@@ -16,9 +14,6 @@ class CodexSectionTile extends StatefulWidget {
   final bool isDark;
   final List<CodexEntryDTO> entries;
   final bool isFlow;
-
-  /// Forwarded to every [CodexEntryCard] and [CodexFlowStepTile] so that
-  /// [card] and [skill] segments are tappable in the browse view.
   final SegmentTapCallback? onSegmentTap;
 
   const CodexSectionTile({
@@ -51,85 +46,96 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark  = widget.isDark;
-    final showCn  = widget.showChinese;
+    final isDark = widget.isDark;
+    final showCn = widget.showChinese;
     final chapter = widget.chapterKey;
     final divider = AppTheme.codexDivider(isDark);
+    final accent = AppTheme.codexChapterAccent(chapter, isDark);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        // ── Section header ─────────────────────────────────────────────────
         InkWell(
           onTap: () => setState(() => _open = !_open),
           child: Container(
-            padding: const EdgeInsets.fromLTRB(16, 11, 16, 11),
+            padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
             color: AppTheme.codexSectionHeaderBg(isDark),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Section number badge
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  width: 4,
+                  height: 42,
+                  margin: const EdgeInsets.only(top: 2),
                   decoration: BoxDecoration(
-                    color: AppTheme.codexNumBg(chapter, isDark),
-                    border: Border.all(
-                        color: AppTheme.codexNumBorder(chapter, isDark),
-                        width: 1),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Text(
-                    widget.sectionNum,
-                    style: TextStyle(
-                      fontSize: 10.5,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.3,
-                      color: AppTheme.codexNumText(chapter, isDark),
-                      height: 1,
-                    ),
+                    color: accent,
+                    borderRadius: BorderRadius.circular(999),
                   ),
                 ),
-                const SizedBox(width: 10),
-
-                // Title + subtitle pill
+                const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 3,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppTheme.codexNumBg(chapter, isDark),
+                              border: Border.all(
+                                color: AppTheme.codexNumBorder(chapter, isDark),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(999),
+                            ),
+                            child: Text(
+                              widget.sectionNum,
+                              style: TextStyle(
+                                fontSize: 10.5,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.3,
+                                color: AppTheme.codexNumText(chapter, isDark),
+                                height: 1,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            '${widget.entries.length} ${widget.entries.length == 1 ? "entry" : "entries"}',
+                            style: TextStyle(
+                              fontSize: 11.5,
+                              color: AppTheme.codexSecondaryText(isDark),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
                       Text(
                         showCn ? widget.titleCn : widget.titleEn,
                         style: TextStyle(
-                          fontSize: 13.5,
-                          fontWeight: FontWeight.w600,
-                          height: 1.25,
+                          fontSize: 14.5,
+                          fontWeight: FontWeight.w700,
+                          height: 1.2,
                           color: AppTheme.codexTerm(isDark),
                         ),
                       ),
                       const SizedBox(height: 4),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 9, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: AppTheme.codexSubBg(chapter, isDark),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          showCn ? widget.titleEn : widget.titleCn,
-                          style: TextStyle(
-                            fontSize: 10.5,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 0.2,
-                            color: AppTheme.codexSubText(chapter, isDark),
-                            height: 1.5,
-                          ),
+                      Text(
+                        showCn ? widget.titleEn : widget.titleCn,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: AppTheme.codexSubText(chapter, isDark),
+                          height: 1.35,
                         ),
                       ),
                     ],
                   ),
                 ),
-
-                // Chevron
                 AnimatedRotation(
                   turns: _open ? 0.25 : 0,
                   duration: const Duration(milliseconds: 180),
@@ -145,8 +151,6 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
           ),
         ),
         Divider(height: 0.5, thickness: 0.5, color: divider),
-
-        // ── Children ───────────────────────────────────────────────────────
         if (_open)
           if (widget.isFlow)
             ...widget.entries

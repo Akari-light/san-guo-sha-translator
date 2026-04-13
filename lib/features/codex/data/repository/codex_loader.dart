@@ -50,7 +50,35 @@ class CodexLoader {
     if (query.trim().isEmpty) return const [];
     final all = await getAll();
     final q = query.trim().toLowerCase();
-    return all.where((e) => e.matchesQuery(q)).toList();
+    final matches = all.where((e) => e.matchesQuery(q)).toList();
+    matches.sort((a, b) => _scoreEntry(b, q).compareTo(_scoreEntry(a, q)));
+    return matches;
+  }
+
+  int _scoreEntry(CodexEntryDTO entry, String query) {
+    var score = 0;
+
+    final termCn = entry.termCn.toLowerCase();
+    final termEn = entry.termEn.toLowerCase();
+    final titleCn = entry.sectionTitleCn.toLowerCase();
+    final titleEn = entry.sectionTitleEn.toLowerCase();
+    final searchCn = entry.searchTextCn.toLowerCase();
+    final searchEn = entry.searchTextEn.toLowerCase();
+
+    if (termCn == query || termEn == query) score += 120;
+    if (termCn.startsWith(query) || termEn.startsWith(query)) score += 80;
+    if (termCn.contains(query) || termEn.contains(query)) score += 45;
+    if (titleCn.contains(query) || titleEn.contains(query)) score += 20;
+    if (searchCn.contains(query) || searchEn.contains(query)) score += 10;
+
+    score += switch (entry.chapter) {
+      'glossary' => 8,
+      'setup' => 4,
+      'flow' => 2,
+      _ => 0,
+    };
+
+    return score;
   }
 
   void clearCache() => _cache.clear();

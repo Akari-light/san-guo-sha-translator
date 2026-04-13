@@ -1,24 +1,25 @@
-// lib/features/codex/presentation/widgets/codex_rule_block_widget.dart
+﻿// lib/features/codex/presentation/widgets/codex_rule_block_widget.dart
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/resolver_service.dart';
+import '../../../../core/widgets/inline_suit_text.dart';
 
-// ── Tap callback type ─────────────────────────────────────────────────────────
+// â”€â”€ Tap callback type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 //
 // Called when a [card] or [skill] segment is tapped.
 // [rawCn] is always the original Chinese bracket text (used for resolution),
 // [isChinese] reflects the display language so the sheet resolves correctly.
 typedef SegmentTapCallback = void Function(String rawCn, bool isChinese);
 
-// ── Public widget ─────────────────────────────────────────────────────────────
+// â”€â”€ Public widget â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class CodexRuleBlockWidget extends StatelessWidget {
   final CodexRuleBlock block;
 
-  /// Chapter key ('setup' | 'glossary' | 'flow' | 'rules') — tints
+  /// Chapter key ('setup' | 'glossary' | 'flow' | 'rules') â€” tints
   /// [label] and [number] segments with the chapter accent colour.
   final String chapter;
 
@@ -96,9 +97,9 @@ class CodexRuleBlockWidget extends StatelessWidget {
   }
 }
 
-// ── Segment rich-text builder ─────────────────────────────────────────────────
+// â”€â”€ Segment rich-text builder â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 //
-// [segments] must already have been localised via [_localised] before calling —
+// [segments] must already have been localised via [_localised] before calling â€”
 // the builder always reads seg.cn as the display text.
 //
 // [originalSegments] carries the original (pre-localisation) segments so we
@@ -139,31 +140,44 @@ TextSpan buildSegmentSpan({
       switch (seg.kind) {
         case CodexSegmentKind.label:
           return TextSpan(
-            text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w700,
               color: accentColor,
+            ),
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle.copyWith(
+                fontWeight: FontWeight.w700,
+                color: accentColor,
+              ),
+              isDark: isDark,
             ),
           );
 
         case CodexSegmentKind.number:
           return TextSpan(
-            text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w700,
               color: accentColor,
+            ),
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle.copyWith(
+                fontWeight: FontWeight.w700,
+                color: accentColor,
+              ),
+              isDark: isDark,
             ),
           );
 
         case CodexSegmentKind.card:
           final tap = onSegmentTap;
           // Only tappable if a tap handler is provided AND we know data exists.
-          // canResolve returns null before the cache is warm (first app load) —
+          // canResolve returns null before the cache is warm (first app load) â€”
           // treat null as resolvable so taps still work during the brief warm-up.
           final cardResolvable = tap != null &&
               (ResolverService().canResolve(rawCn) != false);
           return TextSpan(
-            text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w600,
               color: cardResolvable ? cardColor : baseStyle.color,
@@ -176,6 +190,18 @@ TextSpan buildSegmentSpan({
                 ? (TapGestureRecognizer()
                   ..onTap = () => tap(rawCn, showChinese))
                 : null,
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle.copyWith(
+                fontWeight: FontWeight.w600,
+                color: cardResolvable ? cardColor : baseStyle.color,
+                decoration: cardResolvable
+                    ? TextDecoration.underline
+                    : TextDecoration.none,
+                decorationColor: cardColor.withAlpha(120),
+              ),
+              isDark: isDark,
+            ),
           );
 
         case CodexSegmentKind.skill:
@@ -183,7 +209,6 @@ TextSpan buildSegmentSpan({
           final skillResolvable = tap != null &&
               (ResolverService().canResolve(rawCn) != false);
           return TextSpan(
-            text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w500,
               color: skillResolvable ? skillColor : baseStyle.color,
@@ -196,26 +221,52 @@ TextSpan buildSegmentSpan({
                 ? (TapGestureRecognizer()
                   ..onTap = () => tap(rawCn, showChinese))
                 : null,
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle.copyWith(
+                fontWeight: FontWeight.w500,
+                color: skillResolvable ? skillColor : baseStyle.color,
+                decoration: skillResolvable
+                    ? TextDecoration.underline
+                    : TextDecoration.none,
+                decorationColor: skillColor.withAlpha(120),
+              ),
+              isDark: isDark,
+            ),
           );
 
         case CodexSegmentKind.token:
-          // Tokens are game markers, not resolvable — not tappable.
+          // Tokens are game markers, not resolvable â€” not tappable.
           return TextSpan(
-            text: text,
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w500,
               color: tokenColor,
             ),
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle.copyWith(
+                fontWeight: FontWeight.w500,
+                color: tokenColor,
+              ),
+              isDark: isDark,
+            ),
           );
 
         case CodexSegmentKind.body:
-          return TextSpan(text: text, style: baseStyle);
+          return TextSpan(
+            style: baseStyle,
+            children: buildInlineSuitSpans(
+              text: text,
+              style: baseStyle,
+              isDark: isDark,
+            ),
+          );
       }
     }).toList(),
   );
 }
 
-// ── Localisation helper ────────────────────────────────────────────────────────
+// â”€â”€ Localisation helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 //
 // Returns segments with the display text in the `cn` slot so buildSegmentSpan
 // always reads seg.cn. The original list is preserved as [originalSegments].
@@ -227,7 +278,7 @@ List<CodexSegment> _localised(List<CodexSegment> segments, bool showChinese) {
       .toList();
 }
 
-// ── Block sub-widgets ─────────────────────────────────────────────────────────
+// â”€â”€ Block sub-widgets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class _RuleBlock extends StatelessWidget {
   final CodexRuleBlock block;
@@ -268,7 +319,7 @@ class _RuleBlock extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 3, right: 6),
           child: Text(
-            '◆',
+            'â—†',
             style: TextStyle(
               fontSize: 9,
               color: AppTheme.codexChapterAccent(chapter, isDark),
@@ -382,7 +433,7 @@ class _CautionBlock extends StatelessWidget {
   }
 }
 
-// ── Example tile ──────────────────────────────────────────────────────────────
+// â”€â”€ Example tile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 class _ExampleTile extends StatelessWidget {
   final CodexExample ex;
@@ -420,8 +471,9 @@ class _ExampleTile extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Text(
-                  text,
+                child: InlineSuitText(
+                  text: text,
+                  isDark: isDark,
                   style: TextStyle(
                     fontSize: 12,
                     color: AppTheme.codexExampleText(isDark),
@@ -451,3 +503,4 @@ class _ExampleTile extends StatelessWidget {
     );
   }
 }
+
