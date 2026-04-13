@@ -1,18 +1,4 @@
-// lib/features/codex/presentation/screens/codex_screen.dart
-//
-// Codex tab body — NOT a Scaffold. Mounted by main.dart as:
-//   _screens[0] = CodexScreen(
-//     searchNotifier:      _codexSearchNotifier,
-//     showChineseNotifier: _codexLangNotifier,
-//   )
-//
-// main.dart owns the AppBar. This widget owns the chapter tab bar and the
-// content below it.
-//
-// No entry detail screen — all content is displayed inline in the list.
-// Segment taps ([card] and [skill] text) open a reference bottom sheet instead.
-
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../data/repository/codex_loader.dart';
 import '../codex_chapter_config.dart';
@@ -39,16 +25,15 @@ class CodexScreen extends StatefulWidget {
 
 class _CodexScreenState extends State<CodexScreen>
     with SingleTickerProviderStateMixin {
-
   late final TabController _tabController;
-  int _activeChapterIndex = 1; // default: Glossary
+  int _activeChapterIndex = 1;
 
-  final Map<String, List<CodexEntryDTO>> _data    = {};
-  final Map<String, bool>                _loading = {};
+  final Map<String, List<CodexEntryDTO>> _data = {};
+  final Map<String, bool> _loading = {};
 
   List<CodexEntryDTO> _searchResults = [];
-  bool   _searchLoading = false;
-  String _lastQuery     = '';
+  bool _searchLoading = false;
+  String _lastQuery = '';
 
   @override
   void initState() {
@@ -84,8 +69,6 @@ class _CodexScreenState extends State<CodexScreen>
     super.dispose();
   }
 
-  // ── Data loading ───────────────────────────────────────────────────────────
-
   Future<void> _loadChapter(String key) async {
     if (_data.containsKey(key) || _loading[key] == true) return;
     setState(() => _loading[key] = true);
@@ -97,38 +80,41 @@ class _CodexScreenState extends State<CodexScreen>
     }
   }
 
-  // ── Search ─────────────────────────────────────────────────────────────────
-
   void _onSearchChanged() {
     final query = widget.searchNotifier.value;
     if (query == _lastQuery) return;
     _lastQuery = query;
 
     if (query.trim().isEmpty) {
-      if (mounted) setState(() { _searchResults = []; _searchLoading = false; });
+      if (mounted) {
+        setState(() {
+          _searchResults = [];
+          _searchLoading = false;
+        });
+      }
       return;
     }
 
-    for (final ch in kCodexChapters) { _loadChapter(ch.key); }
+    for (final ch in kCodexChapters) {
+      _loadChapter(ch.key);
+    }
 
     if (mounted) setState(() => _searchLoading = true);
     CodexLoader.instance.search(query).then((results) {
       if (mounted && widget.searchNotifier.value == query) {
-        setState(() { _searchResults = results; _searchLoading = false; });
+        setState(() {
+          _searchResults = results;
+          _searchLoading = false;
+        });
       }
     });
   }
 
-  // ── Reference sheet ────────────────────────────────────────────────────────
-
-  void _showReferenceSheet(String rawCn, bool isChinese) {
+  void _showReferenceSheet(String rawCn, bool _) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     CodexReferenceSheet.show(
       context: context,
       bracketText: rawCn,
-      // rawCn is always the original Chinese bracket text from the segment,
-      // so resolution must always use isChinese:true regardless of display lang.
-      // showChinese controls the sheet's display language only.
       isChinese: true,
       isDark: isDark,
       showChinese: widget.showChineseNotifier.value,
@@ -137,8 +123,6 @@ class _CodexScreenState extends State<CodexScreen>
 
   SegmentTapCallback get _segmentTap =>
       (rawCn, isChinese) => _showReferenceSheet(rawCn, isChinese);
-
-  // ── Section grouping ───────────────────────────────────────────────────────
 
   Map<String, List<CodexEntryDTO>> _groupBySection(List<CodexEntryDTO> entries) {
     final map = <String, List<CodexEntryDTO>>{};
@@ -149,7 +133,45 @@ class _CodexScreenState extends State<CodexScreen>
     return map;
   }
 
-  // ── Build ──────────────────────────────────────────────────────────────────
+  ({String titleEn, String titleCn, String summary, String scanHint})
+      _chapterMeta(String key) {
+    return switch (key) {
+      'setup' => (
+          titleEn: 'Setup Reference',
+          titleCn: '准备总览',
+          summary:
+              'Deck counts, component lists, and identity-mode composition.',
+          scanHint: 'Best for card counts, piles, and expansion inclusions.',
+        ),
+      'glossary' => (
+          titleEn: 'Terminology',
+          titleCn: '用语规范',
+          summary:
+              'Canonical rules language for operations, values, timing, and state changes.',
+          scanHint: 'Use this first when wording feels close but not identical.',
+        ),
+      'flow' => (
+          titleEn: 'Resolution Flow',
+          titleCn: '流程顺序',
+          summary:
+              'Turn timings, event sequencing, inserted resolutions, and dying/death handling.',
+          scanHint: 'Read sections top-to-bottom when debugging timing or order.',
+        ),
+      'rules' => (
+          titleEn: 'Resolution Rules',
+          titleCn: '规则原则',
+          summary:
+              'Priority, conflict handling, state effects, and execution rules.',
+          scanHint: 'Use when two effects seem to contradict each other.',
+        ),
+      _ => (
+          titleEn: 'Codex',
+          titleCn: '规则索引',
+          summary: 'Structured rules reference.',
+          scanHint: 'Browse by chapter, then drill into the exact term.',
+        ),
+    };
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,16 +186,15 @@ class _CodexScreenState extends State<CodexScreen>
           builder: (context, showChinese, _) {
             return Column(
               children: [
-                if (!isSearching)
-                  _buildTabBar(isDark, showChinese),
+                if (!isSearching) _buildTabBar(isDark, showChinese),
                 Expanded(
                   child: isSearching
                       ? _buildSearchResults(isDark, showChinese, query)
                       : TabBarView(
                           controller: _tabController,
                           children: kCodexChapters
-                              .map((ch) => _buildChapterView(
-                                    ch.key, isDark, showChinese))
+                              .map((ch) =>
+                                  _buildChapterView(ch.key, isDark, showChinese))
                               .toList(),
                         ),
                 ),
@@ -184,8 +205,6 @@ class _CodexScreenState extends State<CodexScreen>
       },
     );
   }
-
-  // ── Chapter tab bar ────────────────────────────────────────────────────────
 
   Widget _buildTabBar(bool isDark, bool showChinese) {
     return ColoredBox(
@@ -210,8 +229,8 @@ class _CodexScreenState extends State<CodexScreen>
                       kCodexChapters[activeIndex].key, isDark),
                 ),
                 tabs: kCodexChapters.asMap().entries.map((e) {
-                  final i      = e.key;
-                  final ch     = e.value;
+                  final i = e.key;
+                  final ch = e.value;
                   final active = activeIndex == i;
                   final accent = AppTheme.codexChapterAccent(ch.key, isDark);
                   return Tab(
@@ -241,39 +260,50 @@ class _CodexScreenState extends State<CodexScreen>
     );
   }
 
-  // ── Chapter browse view ────────────────────────────────────────────────────
-
   Widget _buildChapterView(String key, bool isDark, bool showChinese) {
     final entries = _data[key];
     if (entries == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    final isFlow  = key == 'flow';
+    final isFlow = key == 'flow';
     final grouped = _groupBySection(entries);
+    final meta = _chapterMeta(key);
 
     return ListView.builder(
       padding: const EdgeInsets.only(bottom: 24),
-      itemCount: grouped.length,
+      itemCount: grouped.length + 1,
       itemBuilder: (context, i) {
-        final sectionKey = grouped.keys.elementAt(i);
+        if (i == 0) {
+          return _ChapterHero(
+            chapterKey: key,
+            title: showChinese ? meta.titleCn : meta.titleEn,
+            counterpart: showChinese ? meta.titleEn : meta.titleCn,
+            summary: meta.summary,
+            scanHint: meta.scanHint,
+            sectionCount: grouped.length,
+            entryCount: entries.length,
+            showChinese: showChinese,
+            isDark: isDark,
+          );
+        }
+
+        final sectionKey = grouped.keys.elementAt(i - 1);
         final parts = sectionKey.split('|');
         return CodexSectionTile(
-          sectionNum:  parts[0],
-          titleCn:     parts[1],
-          titleEn:     parts[2],
-          chapterKey:  key,
+          sectionNum: parts[0],
+          titleCn: parts[1],
+          titleEn: parts[2],
+          chapterKey: key,
           showChinese: showChinese,
-          isDark:      isDark,
-          entries:     grouped[sectionKey]!,
-          isFlow:      isFlow,
+          isDark: isDark,
+          entries: grouped[sectionKey]!,
+          isFlow: isFlow,
           onSegmentTap: _segmentTap,
         );
       },
     );
   }
-
-  // ── Search results ─────────────────────────────────────────────────────────
 
   Widget _buildSearchResults(bool isDark, bool showChinese, String query) {
     if (_searchLoading) {
@@ -291,19 +321,16 @@ class _CodexScreenState extends State<CodexScreen>
       );
     }
 
+    final chapters = _searchResults.map((e) => e.chapter).toSet().length;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 10, 16, 6),
-          child: Text(
-            '${_searchResults.length} result'
-            '${_searchResults.length != 1 ? "s" : ""} for "$query"',
-            style: TextStyle(
-              fontSize: 11.5,
-              color: AppTheme.codexSecondaryText(isDark),
-            ),
-          ),
+        _SearchHero(
+          query: query,
+          resultCount: _searchResults.length,
+          chapterCount: chapters,
+          isDark: isDark,
         ),
         Expanded(
           child: ListView.builder(
@@ -317,19 +344,19 @@ class _CodexScreenState extends State<CodexScreen>
                       .asMap()
                       .entries
                       .map((e) => CodexFlowStepTile(
-                            block:        e.value,
-                            index:        e.key,
-                            showChinese:  showChinese,
-                            isDark:       isDark,
+                            block: e.value,
+                            index: e.key,
+                            showChinese: showChinese,
+                            isDark: isDark,
                             onSegmentTap: _segmentTap,
                           ))
                       .toList(),
                 );
               }
               return CodexEntryCard(
-                entry:        entry,
-                showChinese:  showChinese,
-                isDark:       isDark,
+                entry: entry,
+                showChinese: showChinese,
+                isDark: isDark,
                 showChapterBadge: true,
                 onSegmentTap: _segmentTap,
               );
@@ -341,7 +368,225 @@ class _CodexScreenState extends State<CodexScreen>
   }
 }
 
-// ── Tab indicator ─────────────────────────────────────────────────────────────
+class _ChapterHero extends StatelessWidget {
+  final String chapterKey;
+  final String title;
+  final String counterpart;
+  final String summary;
+  final String scanHint;
+  final int sectionCount;
+  final int entryCount;
+  final bool showChinese;
+  final bool isDark;
+
+  const _ChapterHero({
+    required this.chapterKey,
+    required this.title,
+    required this.counterpart,
+    required this.summary,
+    required this.scanHint,
+    required this.sectionCount,
+    required this.entryCount,
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final accent = AppTheme.codexChapterAccent(chapterKey, isDark);
+
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+      decoration: BoxDecoration(
+        color: AppTheme.codexSectionHeaderBg(isDark),
+        border: Border.all(
+          color: accent.withAlpha(isDark ? 90 : 70),
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 42,
+            height: 4,
+            decoration: BoxDecoration(
+              color: accent,
+              borderRadius: BorderRadius.circular(999),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w800,
+              color: AppTheme.codexTerm(isDark),
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            counterpart,
+            style: TextStyle(
+              fontSize: 13,
+              color: AppTheme.codexSubText(chapterKey, isDark),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            summary,
+            style: TextStyle(
+              fontSize: 13.5,
+              height: 1.6,
+              color: AppTheme.codexDefinition(isDark),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            children: [
+              _HeroStat(
+                label: showChinese ? '节' : 'Sections',
+                value: '$sectionCount',
+                accent: accent,
+                isDark: isDark,
+              ),
+              _HeroStat(
+                label: showChinese ? '条目' : 'Entries',
+                value: '$entryCount',
+                accent: accent,
+                isDark: isDark,
+              ),
+              _HeroStat(
+                label: showChinese ? '显示' : 'Display',
+                value: showChinese ? '中文优先' : 'English first',
+                accent: accent,
+                isDark: isDark,
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            scanHint,
+            style: TextStyle(
+              fontSize: 12,
+              height: 1.55,
+              color: AppTheme.codexSecondaryText(isDark),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _HeroStat extends StatelessWidget {
+  final String label;
+  final String value;
+  final Color accent;
+  final bool isDark;
+
+  const _HeroStat({
+    required this.label,
+    required this.value,
+    required this.accent,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: AppTheme.codexTagFill(isDark),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(
+          color: AppTheme.codexTagBorder(isDark),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 10.5,
+              fontWeight: FontWeight.w700,
+              color: AppTheme.codexSecondaryText(isDark),
+              letterSpacing: 0.3,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w700,
+              color: accent,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SearchHero extends StatelessWidget {
+  final String query;
+  final int resultCount;
+  final int chapterCount;
+  final bool isDark;
+
+  const _SearchHero({
+    required this.query,
+    required this.resultCount,
+    required this.chapterCount,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+      decoration: BoxDecoration(
+        color: AppTheme.codexSectionHeaderBg(isDark),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppTheme.codexTagBorder(isDark),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Search results',
+            style: TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
+              color: AppTheme.codexTerm(isDark),
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            '$resultCount ${resultCount == 1 ? "match" : "matches"} across $chapterCount ${chapterCount == 1 ? "chapter" : "chapters"} for "$query".',
+            style: TextStyle(
+              fontSize: 12.5,
+              height: 1.5,
+              color: AppTheme.codexDefinition(isDark),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _ChapterIndicator extends Decoration {
   final Color color;

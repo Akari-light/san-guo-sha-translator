@@ -1,11 +1,11 @@
-// lib/features/codex/presentation/widgets/codex_flow_step_tile.dart
+﻿// lib/features/codex/presentation/widgets/codex_flow_step_tile.dart
 //
 // A single rule block rendered as a numbered step row, used exclusively in the
 // Flow chapter's list view and search results.
 //
 // Now segment-aware: uses buildSegmentSpan() from codex_rule_block_widget.dart
 // so label/number segments render in the Flow chapter accent colour and body
-// prose renders in the standard definition colour — matching the rich-text
+// prose renders in the standard definition colour â€” matching the rich-text
 // treatment in every other chapter.
 //
 // The numbered circle uses the external [index] for visual ordering in the
@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_rule_block_widget.dart';
+import '../../../../core/widgets/inline_suit_text.dart';
 
 class CodexFlowStepTile extends StatelessWidget {
   final CodexRuleBlock block;
@@ -46,7 +47,7 @@ class CodexFlowStepTile extends StatelessWidget {
       color: AppTheme.codexDefinition(isDark),
     );
 
-    // Build the rich text span — falls back to flat string when segments empty.
+    // Build the rich text span â€” falls back to flat string when segments empty.
     final segments = showChinese
         ? block.segments
         : block.segments
@@ -74,7 +75,7 @@ class CodexFlowStepTile extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Numbered circle ─────────────────────────────────────────────
+          // â”€â”€ Numbered circle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           Container(
             width: 26,
             height: 26,
@@ -98,7 +99,7 @@ class CodexFlowStepTile extends StatelessWidget {
             ),
           ),
 
-          // ── Content ──────────────────────────────────────────────────────
+          // â”€â”€ Content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,7 +107,7 @@ class CodexFlowStepTile extends StatelessWidget {
                 // Rich text body
                 Text.rich(span),
 
-                // Examples — rendered as small tag chips (same as before)
+                // Examples â€” rendered as small tag chips (same as before)
                 if (block.examples.isNotEmpty) ...[
                   const SizedBox(height: 9),
                   ...block.examples.map((ex) {
@@ -152,7 +153,7 @@ class CodexFlowStepTile extends StatelessWidget {
   }
 }
 
-// ── Example chip ──────────────────────────────────────────────────────────────
+// â”€â”€ Example chip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Previously a Wrap of tag pills; now rendered as small prose bullets so
 // multi-sentence examples display cleanly rather than being cut off in pills.
 
@@ -186,8 +187,9 @@ class _ExampleChip extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
-              text,
+            child: InlineSuitText(
+              text: text,
+              isDark: isDark,
               style: TextStyle(
                 fontSize: 11.5,
                 height: 1.65,
@@ -200,3 +202,4 @@ class _ExampleChip extends StatelessWidget {
     );
   }
 }
+

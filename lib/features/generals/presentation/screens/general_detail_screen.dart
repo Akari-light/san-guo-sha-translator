@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
 import '../../data/models/skin_dto.dart';
 import '../../data/repository/general_loader.dart';
@@ -8,6 +8,7 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/services/resolver_service.dart';
 import '../../../../core/constants/app_assets.dart';
+import '../../../../core/widgets/inline_suit_text.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
@@ -27,28 +28,28 @@ class GeneralDetailScreen extends StatefulWidget {
 
 class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     with SingleTickerProviderStateMixin {
-  // ── Language
+  // â”€â”€ Language
   bool _isEnglish = true;
 
-  // ── Pin
+  // â”€â”€ Pin
   bool _isPinned = false;
 
-  // ── Active card / variants
+  // â”€â”€ Active card / variants
   late GeneralCard _activeCard;
   List<GeneralCard> _variants = [];
   bool _variantsLoading = true;
 
-  // ── Skins (alt-art for active variant)
+  // â”€â”€ Skins (alt-art for active variant)
   List<SkinDTO> _skins = [];
   int _skinIndex = 0; // 0 = base card image; 1..n = skins[0..n-1]
   String? _pendingInitialSkinId;
 
-  // ── Resolved related-card references
+  // â”€â”€ Resolved related-card references
   List<ResolvedReference> _refsEn = [];
   List<ResolvedReference> _refsCn = [];
   bool _refsLoading = true;
 
-  // ── Skills/FAQ tab controller
+  // â”€â”€ Skills/FAQ tab controller
   late TabController _tabController;
 
   @override
@@ -66,7 +67,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     super.dispose();
   }
 
-  // ── Initial load — all sources run in parallel, one setState at the end.
+  // â”€â”€ Initial load â€” all sources run in parallel, one setState at the end.
   Future<void> _loadAll() async {
     final results = await Future.wait([
       GeneralLoader().getVariants(_activeCard.standardId),
@@ -90,7 +91,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     });
   }
 
-  // ── Version switch — reload refs, pin state, and skins for the new variant.
+  // â”€â”€ Version switch â€” reload refs, pin state, and skins for the new variant.
   Future<void> _loadPinState() async {
     final pinned = await PinService.instance.isPinned(_activeCard.id, PinType.general);
     if (!mounted) return;
@@ -128,7 +129,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     return index == -1 ? 0 : index + 1;
   }
 
-  // ── Actions
+  // â”€â”€ Actions
   void _switchVersion(GeneralCard next) {
     if (next.id == _activeCard.id) return;
     setState(() {
@@ -164,7 +165,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     ));
   }
 
-  // ── Build
+  // â”€â”€ Build
   @override
   Widget build(BuildContext context) {
     final theme  = Theme.of(context);
@@ -201,13 +202,13 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            // ── Hero row: image | identity | lang toggle
+            // â”€â”€ Hero row: image | identity | lang toggle
             IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
 
-                  // Card image — receives the resolved path so it displays either the base art or a skin without knowing about SkinDTO.
+                  // Card image â€” receives the resolved path so it displays either the base art or a skin without knowing about SkinDTO.
                   _CardImage(
                     imagePath: _activeImagePath,
                     factionColor: fc,
@@ -215,7 +216,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
                   const SizedBox(width: 18),
 
-                  // Identity column — skin button lives inside here, below gender
+                  // Identity column â€” skin button lives inside here, below gender
                   Expanded(
                     child: _IdentityColumn(
                       card: card,
@@ -234,7 +235,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
                   const SizedBox(width: 6),
 
-                  // Lang toggle — bottom-aligned with card image
+                  // Lang toggle â€” bottom-aligned with card image
                   _LangToggle(
                     isEnglish: _isEnglish,
                     factionColor: fc,
@@ -246,9 +247,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
             const SizedBox(height: 20),
 
-            // ── Traits
+            // â”€â”€ Traits
             if (card.traitsEn.isNotEmpty) ...[
-              _SectionLabel(label: _isEnglish ? 'Traits' : '特征'),
+              _SectionLabel(label: _isEnglish ? 'Traits' : 'ç‰¹å¾'),
               const SizedBox(height: 9),
               Wrap(
                 spacing: 7,
@@ -261,9 +262,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
             const _Divider(),
 
-            // ── Version segment
+            // â”€â”€ Version segment
             if (!_variantsLoading && _variants.length > 1) ...[
-              _SectionLabel(label: _isEnglish ? 'Version' : '版本'),
+              _SectionLabel(label: _isEnglish ? 'Version' : 'ç‰ˆæœ¬'),
               const SizedBox(height: 10),
               _VersionSegment(
                 variants: _variants,
@@ -274,7 +275,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
               const _Divider(),
             ],
 
-            // ── Skills / FAQ tabs
+            // â”€â”€ Skills / FAQ tabs
             _TabBar(
               controller: _tabController,
               faqCount: card.faq.length,
@@ -311,8 +312,8 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
             const _Divider(),
 
-            // ── Related Cards
-            _SectionLabel(label: _isEnglish ? 'Related Cards' : '相关牌'),
+            // â”€â”€ Related Cards
+            _SectionLabel(label: _isEnglish ? 'Related Cards' : 'ç›¸å…³ç‰Œ'),
             const SizedBox(height: 10),
             if (_refsLoading)
               const Padding(
@@ -323,14 +324,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                     child: CircularProgressIndicator(strokeWidth: 2),
                   ),
                   SizedBox(width: 10),
-                  Text('Loading…', style: TextStyle(fontSize: 12)),
+                  Text('Loadingâ€¦', style: TextStyle(fontSize: 12)),
                 ]),
               )
             else if (refs.isEmpty)
               Text(
                 _isEnglish
                     ? 'No card references in skill descriptions.'
-                    : '技能描述中未找到相关牌。',
+                    : 'æŠ€èƒ½æè¿°ä¸­æœªæ‰¾åˆ°ç›¸å…³ç‰Œã€‚',
                 style: TextStyle(
                   fontSize: 13,
                   color: theme.hintColor,
@@ -367,7 +368,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 }
 
-// Card image (Receives a pre-resolved [imagePath] — stateless, no knowledge of SkinDTO.)
+// Card image (Receives a pre-resolved [imagePath] â€” stateless, no knowledge of SkinDTO.)
 class _CardImage extends StatelessWidget {
   final String imagePath;
   final Color factionColor;
@@ -419,14 +420,14 @@ class _CardImage extends StatelessWidget {
   }
 }
 
-// Identity column — name, faction, health, power, gender, skin button
+// Identity column â€” name, faction, health, power, gender, skin button
 class _IdentityColumn extends StatelessWidget {
   final GeneralCard card;
   final bool isEnglish;
   final Color factionColor;
   final bool isDark;
 
-  // Skin strip props — only rendered when [hasSkins] is true
+  // Skin strip props â€” only rendered when [hasSkins] is true
   final bool hasSkins;
   final int skinIndex;
   final List<SkinDTO> skins;
@@ -474,14 +475,14 @@ class _IdentityColumn extends StatelessWidget {
         const SizedBox(height: 14),
 
         // Health
-        _MicroLabel(label: isEnglish ? 'Health' : '体力'),
+        _MicroLabel(label: isEnglish ? 'Health' : 'ä½“åŠ›'),
         const SizedBox(height: 6),
         _HealthPips(health: card.health),
 
         const SizedBox(height: 12),
 
         // Power
-        _MicroLabel(label: isEnglish ? 'Power' : '战力'),
+        _MicroLabel(label: isEnglish ? 'Power' : 'æˆ˜åŠ›'),
         const SizedBox(height: 6),
         _PowerStars(value: card.powerIndex),
 
@@ -490,8 +491,8 @@ class _IdentityColumn extends StatelessWidget {
         // Gender
         Text(
           card.gender == 'Female'
-              ? (isEnglish ? '♀  Female' : '♀  女')
-              : (isEnglish ? '♂  Male' : '♂  男'),
+              ? (isEnglish ? 'â™€  Female' : 'â™€  å¥³')
+              : (isEnglish ? 'â™‚  Male' : 'â™‚  ç”·'),
           style: TextStyle(
             fontSize: 12,
             letterSpacing: 1,
@@ -502,7 +503,7 @@ class _IdentityColumn extends StatelessWidget {
           ),
         ),
 
-        // Skin thumbnail strip — hidden when no skins exist
+        // Skin thumbnail strip â€” hidden when no skins exist
         if (hasSkins) ...[
           const SizedBox(height: 10),
           _SkinThumbnailStrip(
@@ -542,13 +543,13 @@ class _SkinThumbnailStrip extends StatelessWidget {
   });
 
   // Resolve the image path for any slot index.
-  // Slot 0 → base card art; slot k → skins[k-1].imagePath.
+  // Slot 0 â†’ base card art; slot k â†’ skins[k-1].imagePath.
   String _pathForSlot(int i) =>
       i == 0 ? baseImagePath : skins[i - 1].imagePath;
 
   // Human-readable label for any slot index.
   String _labelForSlot(int i) => i == 0
-      ? (isEnglish ? 'Original' : '原版')
+      ? (isEnglish ? 'Original' : 'åŽŸç‰ˆ')
       : (isEnglish ? skins[i - 1].nameEn : skins[i - 1].nameCn);
 
   @override
@@ -562,13 +563,13 @@ class _SkinThumbnailStrip extends StatelessWidget {
         if (i != skinIndex) i,
     ];
 
-    // Label shown below the strip — name of the currently active slot.
+    // Label shown below the strip â€” name of the currently active slot.
     final activeLabel = _labelForSlot(skinIndex);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // ── Thumbnail row — one tile per non-active slot ───────────────────
+        // â”€â”€ Thumbnail row â€” one tile per non-active slot â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         Row(
           mainAxisSize: MainAxisSize.min,
           children: others.asMap().entries.map((entry) {
@@ -619,7 +620,7 @@ class _SkinThumbnailStrip extends StatelessWidget {
           }).toList(),
         ),
 
-        // ── Active slot label ──────────────────────────────────────────────
+        // â”€â”€ Active slot label â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         const SizedBox(height: 7),
         Row(
           mainAxisSize: MainAxisSize.min,
@@ -652,7 +653,7 @@ class _SkinThumbnailStrip extends StatelessWidget {
   }
 }
 
-// Lang toggle (vertical EN/中 with animated arrow + radial glow)
+// Lang toggle (vertical EN/ä¸­ with animated arrow + radial glow)
 class _LangToggle extends StatelessWidget {
   final bool isEnglish;
   final Color factionColor;
@@ -694,7 +695,7 @@ class _LangToggle extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             _GlowLabel(
-              text: '中',
+              text: 'ä¸­',
               active: !isEnglish,
               accentColor: factionColor,
               fontSize: 13,
@@ -818,7 +819,7 @@ class _PowerStars extends StatelessWidget {
             children: [
               const Center(
                 child: Text(
-                  '★',
+                  'â˜…',
                   style: TextStyle(fontSize: 18, color: _dimColor, height: 1),
                 ),
               ),
@@ -826,7 +827,7 @@ class _PowerStars extends StatelessWidget {
                 clipper: _HalfClipper(left: true),
                 child: Center(
                   child: Text(
-                    '★',
+                    'â˜…',
                     style: TextStyle(
                       fontSize: 18,
                       height: 1,
@@ -839,7 +840,7 @@ class _PowerStars extends StatelessWidget {
                 clipper: _HalfClipper(left: false),
                 child: Center(
                   child: Text(
-                    '★',
+                    'â˜…',
                     style: TextStyle(
                       fontSize: 18,
                       height: 1,
@@ -872,13 +873,13 @@ class _HalfClipper extends CustomClipper<Rect> {
 // Version segment control
 //
 // Layout:
-//   1. Expansion tab row — one tab per unique expansion, dots = within-expansion
+//   1. Expansion tab row â€” one tab per unique expansion, dots = within-expansion
 //      variant count (1 dot = single variant, 3 dots = 3 variants).
-//   2. Sub-variant rail — only rendered when the active expansion tab has
+//   2. Sub-variant rail â€” only rendered when the active expansion tab has
 //      more than one variant. Shows a step rail with numbered nodes and
 //      labels (ID + short name) so the user can pick between within-expansion
 //      variants without leaving the screen.
-//   3. Meta line — "Expansion name · N skills" always visible below.
+//   3. Meta line â€” "Expansion name Â· N skills" always visible below.
 class _VersionSegment extends StatelessWidget {
   final List<GeneralCard> variants;
   final String activeId;
@@ -898,7 +899,7 @@ class _VersionSegment extends StatelessWidget {
     final active = variants.firstWhere((v) => v.id == activeId);
     final ec     = AppTheme.expansionColor(active.expansion);
 
-    // ── Group variants by expansion, preserving sort order.
+    // â”€â”€ Group variants by expansion, preserving sort order.
     // Each group is a list of GeneralCards sharing the same expansion.
     final Map<String, List<GeneralCard>> groups = {};
     for (final v in variants) {
@@ -914,7 +915,7 @@ class _VersionSegment extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // ── Expansion tab row ──────────────────────────────────────────────
+        // â”€â”€ Expansion tab row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         Container(
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
@@ -995,7 +996,7 @@ class _VersionSegment extends StatelessWidget {
                             ),
                           )
                         else
-                          // Single variant — render invisible dot to keep
+                          // Single variant â€” render invisible dot to keep
                           // tab height consistent across all tabs.
                           const SizedBox(height: 4),
                       ],
@@ -1007,7 +1008,7 @@ class _VersionSegment extends StatelessWidget {
           ),
         ),
 
-        // ── Sub-variant step rail ──────────────────────────────────────────
+        // â”€â”€ Sub-variant step rail â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         // Only rendered when the active expansion has >1 variant.
         // Siblings reversed so base card is rightmost.
         // Uses a LayoutBuilder so nodes spread across the full container width
@@ -1045,7 +1046,7 @@ class _VersionSegment extends StatelessWidget {
 
         const SizedBox(height: 8),
 
-        // ── Meta line: expansion label · skill count ───────────────────────
+        // â”€â”€ Meta line: expansion label Â· skill count â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         Row(
           children: [
             Text(
@@ -1058,14 +1059,14 @@ class _VersionSegment extends StatelessWidget {
               ),
             ),
             Text(
-              '  ·  ',
+              '  Â·  ',
               style: TextStyle(
                 fontSize: 13,
                 color: theme.hintColor.withValues(alpha: 0.3),
               ),
             ),
             Text(
-              '${active.skills.length} ${isEnglish ? "skill" : "技能"}'
+              '${active.skills.length} ${isEnglish ? "skill" : "æŠ€èƒ½"}'
               '${isEnglish && active.skills.length != 1 ? "s" : ""}',
               style: TextStyle(
                 fontSize: 13,
@@ -1086,20 +1087,20 @@ class _VersionSegment extends StatelessWidget {
 // are outlined. Each node sits above a label showing the card ID and
 // a shortened display name.
 //
-// Short-name rule: if name_cn/name_en contains '·', use the text AFTER
-// the last '·' as the label (e.g. "虎牢关神吕布·最强神话" → "最强神话").
+// Short-name rule: if name_cn/name_en contains 'Â·', use the text AFTER
+// the last 'Â·' as the label (e.g. "è™Žç‰¢å…³ç¥žå•å¸ƒÂ·æœ€å¼ºç¥žè¯" â†’ "æœ€å¼ºç¥žè¯").
 // Otherwise use the full name.
 // Animated step-rail sub-selector for within-expansion variants.
 //
 /// Sub-variant step rail.
 ///
 /// Visual design:
-/// • One static full-span background rail (dim colour) drawn first (lowest z).
-/// • Per-gap overlay segments drawn on top of the background:
-///     - Gap touching the active node → gradient fade (expansion colour at
+/// â€¢ One static full-span background rail (dim colour) drawn first (lowest z).
+/// â€¢ Per-gap overlay segments drawn on top of the background:
+///     - Gap touching the active node â†’ gradient fade (expansion colour at
 ///       the active end, transparent at the far end).
-///     - All other gaps → transparent (background rail shows through).
-/// • Nodes drawn last (highest z) so they always sit solidly on the rail.
+///     - All other gaps â†’ transparent (background rail shows through).
+/// â€¢ Nodes drawn last (highest z) so they always sit solidly on the rail.
 ///     - Active node: full-opacity image, expansion-colour border ring,
 ///       solid expansion-colour circle background behind the image.
 ///     - Inactive nodes: dimmed image, dim border.
@@ -1112,7 +1113,7 @@ class _SubVariantRail extends StatelessWidget {
   /// version tab row). When null, fixed scroll-mode gap is used.
   final double? fixedWidth;
 
-  static const double nodeSize      = 54.0;   // was 46 — larger for readability
+  static const double nodeSize      = 54.0;   // was 46 â€” larger for readability
   static const double _railHeight   = 2.5;
   static const double _scrollGap    = 28.0;
 
@@ -1148,7 +1149,7 @@ class _SubVariantRail extends StatelessWidget {
     final railTop    = (nodeSize - _railHeight) / 2;
 
     // Rail runs from the RIGHT edge of node 0 to the LEFT edge of node n-1.
-    // This means the line is only ever visible in the gaps between nodes —
+    // This means the line is only ever visible in the gaps between nodes â€”
     // it never overlaps any circle.
     final railLeft  = _nodeLeft(0, n) + nodeSize;          // right edge of first node
     final railRight = _nodeLeft(n - 1, n);                 // left edge of last node
@@ -1166,7 +1167,7 @@ class _SubVariantRail extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
 
-          // ── 1. Background rail — edge-to-edge, dim, lowest z
+          // â”€â”€ 1. Background rail â€” edge-to-edge, dim, lowest z
           //       Starts at right edge of node 0, ends at left edge of node n-1.
           //       Never overlaps any node circle.
           Positioned(
@@ -1182,10 +1183,10 @@ class _SubVariantRail extends StatelessWidget {
             ),
           ),
 
-          // ── 2. Gradient overlay segments adjacent to the active node
+          // â”€â”€ 2. Gradient overlay segments adjacent to the active node
           //       Each gradient also runs edge-to-edge between the two nodes.
-          //       Left gap: right edge of (activeIdx-1) → left edge of activeIdx
-          //       Right gap: right edge of activeIdx → left edge of (activeIdx+1)
+          //       Left gap: right edge of (activeIdx-1) â†’ left edge of activeIdx
+          //       Right gap: right edge of activeIdx â†’ left edge of (activeIdx+1)
           if (activeIdx > 0)
             _gradientSegment(
               left:      rightEdge(activeIdx - 1),
@@ -1203,7 +1204,7 @@ class _SubVariantRail extends StatelessWidget {
               toColor:   dimColor,
             ),
 
-          // ── 3. Nodes — highest z, fully opaque background so rail never shows through
+          // â”€â”€ 3. Nodes â€” highest z, fully opaque background so rail never shows through
           ...siblings.asMap().entries.map((entry) {
             final idx      = entry.key;
             final sibling  = entry.value;
@@ -1354,13 +1355,13 @@ class _TabBar extends StatelessWidget {
           letterSpacing: 2,
         ),
         tabs: [
-          Tab(text: isEnglish ? 'SKILLS' : '技能'),
+          Tab(text: isEnglish ? 'SKILLS' : 'æŠ€èƒ½'),
           Tab(
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  isEnglish ? 'FAQ' : '问答',
+                  isEnglish ? 'FAQ' : 'é—®ç­”',
                   style: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 13,
@@ -1397,7 +1398,7 @@ class _TabBar extends StatelessWidget {
   }
 }
 
-// Skill card (collapsible, gradient border fading left→right)
+// Skill card (collapsible, gradient border fading leftâ†’right)
 class _SkillCard extends StatefulWidget {
   final SkillDTO skill;
   final bool isEnglish;
@@ -1449,25 +1450,32 @@ class _SkillCardState extends State<_SkillCard> {
               children: [
                 Row(
                   children: [
-                    Text(
-                      widget.isEnglish
-                          ? widget.skill.nameEn
-                          : widget.skill.nameCn,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
+                    Expanded(
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 6,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text(
+                            widget.isEnglish
+                                ? widget.skill.nameEn
+                                : widget.skill.nameCn,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          if (widget.skill.skillType.hasBadge)
+                            _SkillTypeBadge(
+                              label: widget.isEnglish
+                                  ? widget.skill.skillType.labelEn
+                                  : widget.skill.skillType.labelCn,
+                              color: accentColor,
+                            ),
+                        ],
                       ),
                     ),
-                    if (widget.skill.skillType.hasBadge) ...[
-                      const SizedBox(width: 8),
-                      _SkillTypeBadge(
-                        label: widget.isEnglish
-                            ? widget.skill.skillType.labelEn
-                            : widget.skill.skillType.labelCn,
-                        color: accentColor,
-                      ),
-                    ],
-                    const Spacer(),
+                    const SizedBox(width: 8),
                     Icon(
                       _expanded
                           ? Icons.keyboard_arrow_up_rounded
@@ -1481,10 +1489,11 @@ class _SkillCardState extends State<_SkillCard> {
                   firstChild: const SizedBox.shrink(),
                   secondChild: Padding(
                     padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                      widget.isEnglish
+                    child: InlineSuitText(
+                      text: widget.isEnglish
                           ? widget.skill.descriptionEn
                           : widget.skill.descriptionCn,
+                      isDark: widget.theme.brightness == Brightness.dark,
                       style: widget.theme.textTheme.bodyMedium?.copyWith(
                         color: descColor,
                         height: 1.7,
@@ -1567,7 +1576,7 @@ class _FaqList extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: Text(
-          isEnglish ? 'No FAQ entries yet.' : '暂无问答。',
+          isEnglish ? 'No FAQ entries yet.' : 'æš‚æ— é—®ç­”ã€‚',
           style: TextStyle(
             fontSize: 13,
             color: theme.hintColor,
@@ -1632,8 +1641,9 @@ class _FaqRowState extends State<_FaqRow> {
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: Text(
-                    q,
+                  child: InlineSuitText(
+                    text: q,
+                    isDark: widget.theme.brightness == Brightness.dark,
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.6,
@@ -1658,8 +1668,9 @@ class _FaqRowState extends State<_FaqRow> {
           firstChild: const SizedBox.shrink(),
           secondChild: Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 12),
-            child: Text(
-              a,
+            child: InlineSuitText(
+              text: a,
+              isDark: widget.theme.brightness == Brightness.dark,
               style: TextStyle(
                 fontSize: 14,
                 height: 1.6,
@@ -1895,3 +1906,5 @@ class _RelatedSkillChip extends StatelessWidget {
     );
   }
 }
+
+
