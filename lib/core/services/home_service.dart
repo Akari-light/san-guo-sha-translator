@@ -136,18 +136,20 @@ class HomeService {
   Future<List<GeneralCard>> _resolveGenerals(List<String> ids) async {
     if (ids.isEmpty) return [];
     final all = await GeneralLoader().getGenerals();
+    final byId = {for (final card in all) card.id: card};
     return ids
-        .map((id) => all.where((g) => g.id == id).firstOrNull)
+        .map((id) => byId[id])
         .whereType<GeneralCard>()
-        .toList();
+        .toList(growable: false);
   }
 
   Future<List<LibraryDTO>> _resolveLibrary(List<String> ids) async {
     if (ids.isEmpty) return [];
     final all = await LibraryLoader().getCards();
+    final byId = {for (final card in all) card.id: card};
     return ids
-        .map((id) => all.where((c) => c.id == id).firstOrNull)
+        .map((id) => byId[id])
         .whereType<LibraryDTO>()
-        .toList();
+        .toList(growable: false);
   }
 }

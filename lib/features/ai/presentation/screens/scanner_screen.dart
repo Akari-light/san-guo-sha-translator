@@ -281,8 +281,6 @@ class _ScannerScreenState extends State<ScannerScreen>
     }
     _captureLock = true;
     _scanCancelled = false;
-    ScannerService.instance.pauseHashCache();
-
     try {
       try { await ctrl.setFocusMode(FocusMode.locked); } catch (_) {}
 
@@ -576,7 +574,6 @@ class _ScannerScreenState extends State<ScannerScreen>
     _deleteCapturedFile();
     _decodedCapture = null;
     _captureLock = false;
-    ScannerService.instance.resumeHashCache();
     _controller?.setFocusMode(FocusMode.auto).ignore();
     if (_currentZoom != 1.0) { _controller?.setZoomLevel(1.0).ignore(); }
     setState(() {

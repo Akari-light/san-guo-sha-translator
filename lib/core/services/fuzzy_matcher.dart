@@ -8,7 +8,7 @@
 // it for different purposes.
 //
 // Two public API tiers:
-//   1. Bool API (unchanged) — fuzzyMatch() / fuzzyMatchAny()
+//   1. Bool API (unchanged) — fuzzyMatch()
 //      Used by GeneralCard.matchesQuery() and LibraryDTO.matchesQuery()
 //      for the browse/search feature.
 //
@@ -85,11 +85,6 @@ abstract final class FuzzyMatcher {
     }
 
     return false;
-  }
-
-  /// Returns true if [query] matches ANY string in [targets].
-  static bool fuzzyMatchAny(String query, Iterable<String> targets) {
-    return targets.any((t) => fuzzyMatch(query, t));
   }
 
   // ════════════════════════════════════════════════════════════════════════════
