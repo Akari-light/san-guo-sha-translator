@@ -85,20 +85,6 @@ class ResolvedReference {
         descriptionCn:  skill.descriptionCn,
         descriptionEn:  skill.descriptionEn,
       );
-
-  // ── Back-compat factories (used by existing call sites on GeneralDetailScreen etc.)
-  // These delegate to the new named factories.
-  factory ResolvedReference.library(String text, LibraryDTO card) =>
-      ResolvedReference.fromLibrary(text, card);
-
-  factory ResolvedReference.skill(String text, SkillDTO skill) =>
-      ResolvedReference.fromSkill(text, skill);
-
-  // ── Legacy accessors for call sites that used .libraryCard / .skill ────────
-  // Returns null — kept only for compile compatibility during transition.
-  // Prefer reading typed fields (nameCn, effectCn, skillType…) directly.
-  LibraryDTO? get libraryCard => null; // fields inlined into ResolvedReference
-  SkillDTO?   get skill_      => null; // underscore avoids shadowing factory name
 }
 
 // ── Service ────────────────────────────────────────────────────────────────────
@@ -115,6 +101,10 @@ class ResolverService {
   // Populated on first call to resolve(). Used by buildSegmentSpan to decide
   // whether to attach a TapGestureRecognizer without an async call.
   Set<String>? _resolvableCn; // bare CN names (no brackets)
+  Map<String, LibraryDTO>? _libByCn;
+  Map<String, LibraryDTO>? _libByEn;
+  Map<String, SkillDTO>? _skillByCn;
+  Map<String, SkillDTO>? _skillByEn;
 
   /// Returns true if [bracketText] (e.g. '【杀】') is known to be resolvable.
   /// Returns null if the cache hasn't been populated yet (first load pending).
@@ -135,6 +125,18 @@ class ResolverService {
       for (final c in libraryCards) c.nameCn,
       for (final s in skillMap.values) s.nameCn,
     };
+    _libByCn = {
+      for (final card in libraryCards) card.nameCn: card,
+    };
+    _libByEn = {
+      for (final card in libraryCards) card.nameEn.toLowerCase(): card,
+    };
+    _skillByCn = {
+      for (final skill in skillMap.values) skill.nameCn: skill,
+    };
+    _skillByEn = {
+      for (final skill in skillMap.values) skill.nameEn.toLowerCase(): skill,
+    };
   }
 
   Future<List<ResolvedReference>> resolve(
@@ -144,22 +146,6 @@ class ResolverService {
     await _ensureCache();
     final tokens = _extractTokens(text, isChinese: isChinese);
     if (tokens.isEmpty) return [];
-
-    final libraryCards = await LibraryLoader().getCards();
-    final skillMap     = await GeneralLoader().getSkillMap();
-
-    final Map<String, LibraryDTO> libByCn = {
-      for (final c in libraryCards) c.nameCn: c,
-    };
-    final Map<String, LibraryDTO> libByEn = {
-      for (final c in libraryCards) c.nameEn.toLowerCase(): c,
-    };
-    final Map<String, SkillDTO> skillByCn = {
-      for (final s in skillMap.values) s.nameCn: s,
-    };
-    final Map<String, SkillDTO> skillByEn = {
-      for (final s in skillMap.values) s.nameEn.toLowerCase(): s,
-    };
 
     final List<ResolvedReference> results = [];
     final Set<String> seen = {};
@@ -171,17 +157,21 @@ class ResolverService {
       ResolvedReference? ref;
 
       if (isChinese) {
-        if (libByCn.containsKey(token)) {
-          ref = ResolvedReference.fromLibrary(token, libByCn[token]!);
-        } else if (skillByCn.containsKey(token)) {
-          ref = ResolvedReference.fromSkill(token, skillByCn[token]!);
+        final libraryCard = _libByCn?[token];
+        final skill = _skillByCn?[token];
+        if (libraryCard != null) {
+          ref = ResolvedReference.fromLibrary(token, libraryCard);
+        } else if (skill != null) {
+          ref = ResolvedReference.fromSkill(token, skill);
         }
       } else {
         final lower = token.toLowerCase();
-        if (libByEn.containsKey(lower)) {
-          ref = ResolvedReference.fromLibrary(token, libByEn[lower]!);
-        } else if (skillByEn.containsKey(lower)) {
-          ref = ResolvedReference.fromSkill(token, skillByEn[lower]!);
+        final libraryCard = _libByEn?[lower];
+        final skill = _skillByEn?[lower];
+        if (libraryCard != null) {
+          ref = ResolvedReference.fromLibrary(token, libraryCard);
+        } else if (skill != null) {
+          ref = ResolvedReference.fromSkill(token, skill);
         }
       }
 

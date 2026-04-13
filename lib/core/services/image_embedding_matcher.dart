@@ -56,15 +56,16 @@ class ImageEmbeddingMatcher {
 
   final List<ReferenceEmbeddingEntry> _referenceEntries = [];
   final Map<String, List<ReferenceEmbeddingEntry>> _referencesByLogicalCard = {};
-  final Map<String, Float32List> _runtimeCache = {};
 
   Future<void> loadModel() async {
     if (_modelLoaded) return;
     try {
       _interpreter = await Interpreter.fromAsset('models/mobilenet_v2.tflite');
-      debugPrint('[Embedding] Model loaded: '
-          'input=${_interpreter!.getInputTensor(0).shape}, '
-          'output=${_interpreter!.getOutputTensor(0).shape}');
+      _debugLog(
+        '[Embedding] Model loaded: '
+        'input=${_interpreter!.getInputTensor(0).shape}, '
+        'output=${_interpreter!.getOutputTensor(0).shape}',
+      );
       _modelLoaded = true;
     } catch (e) {
       debugPrint('[Embedding] Failed to load model: $e');
@@ -91,8 +92,10 @@ class ImageEmbeddingMatcher {
         _loadLegacyBundle(data);
       }
 
-      debugPrint('[Embedding] Loaded ${_referenceEntries.length} references '
-          'across ${_referencesByLogicalCard.length} logical cards.');
+      _debugLog(
+        '[Embedding] Loaded ${_referenceEntries.length} references '
+        'across ${_referencesByLogicalCard.length} logical cards.',
+      );
     } catch (e) {
       debugPrint('[Embedding] Failed to load reference embeddings: $e '
           '(run tools/generate_embeddings.py to create the file)');
@@ -114,32 +117,6 @@ class ImageEmbeddingMatcher {
     return _computeEmbedding(image);
   }
 
-  Float32List? getReferenceEmbedding(String cardId) {
-    final refs = _referencesByLogicalCard[cardId];
-    if (refs == null || refs.isEmpty) return null;
-    return refs.first.embedding;
-  }
-
-  Float32List? getCachedHash(String assetPath) => _runtimeCache[assetPath];
-
-  Future<Float32List?> hashFromAsset(String assetPath) async {
-    if (_runtimeCache.containsKey(assetPath)) return _runtimeCache[assetPath];
-    if (!_modelLoaded) return null;
-    try {
-      final data = await rootBundle.load(assetPath);
-      final bytes = data.buffer.asUint8List();
-      final decoded = img.decodeImage(bytes);
-      if (decoded == null) return null;
-      final embedding = _computeEmbedding(decoded);
-      if (embedding != null) {
-        _runtimeCache[assetPath] = embedding;
-      }
-      return embedding;
-    } catch (_) {
-      return null;
-    }
-  }
-
   double similarity(Float32List embA, Float32List embB) {
     if (embA.length != embB.length) return 0.0;
     double dot = 0.0;
@@ -147,20 +124,6 @@ class ImageEmbeddingMatcher {
       dot += embA[i] * embB[i];
     }
     return dot.clamp(0.0, 1.0);
-  }
-
-  double similarityToLogicalCard(Float32List queryEmbedding, String logicalCardId) {
-    final refs = _referencesByLogicalCard[logicalCardId];
-    if (refs == null || refs.isEmpty) return 0.0;
-
-    var best = 0.0;
-    for (final ref in refs) {
-      final sim = similarity(queryEmbedding, ref.embedding);
-      if (sim > best) {
-        best = sim;
-      }
-    }
-    return best;
   }
 
   List<ReferenceEmbeddingMatch> findTopKLogicalCards(
@@ -185,10 +148,6 @@ class ImageEmbeddingMatcher {
     final matches = bestByLogicalId.values.toList()
       ..sort((a, b) => b.similarity.compareTo(a.similarity));
     return matches.take(k).toList();
-  }
-
-  void clearCache() {
-    _runtimeCache.clear();
   }
 
   void dispose() {
@@ -335,5 +294,10 @@ class ImageEmbeddingMatcher {
 
     return embedding;
   }
-}
 
+  void _debugLog(String message) {
+    if (kDebugMode) {
+      debugPrint(message);
+    }
+  }
+}

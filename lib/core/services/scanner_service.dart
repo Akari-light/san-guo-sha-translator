@@ -221,21 +221,20 @@ class ScannerService {
         ..clear()
         ..addEntries(_allEntries!.map((e) => MapEntry(e.cardId, e)));
 
-      debugPrint('[Scanner] Warmup: ${_allEntries!.length} generals.');
+      _debugLog('[Scanner] Warmup: ${_allEntries!.length} generals.');
 
       await ImageEmbeddingMatcher.instance.loadModel();
       await ImageEmbeddingMatcher.instance.loadReferenceEmbeddings();
       _embeddingsReady = ImageEmbeddingMatcher.instance.referenceCount > 0;
-      debugPrint('[Scanner] ML embeddings ready: $_embeddingsReady '
-          '(${ImageEmbeddingMatcher.instance.referenceCount} refs / '
-          '${ImageEmbeddingMatcher.instance.logicalCardCount} logical cards)');
+      _debugLog(
+        '[Scanner] ML embeddings ready: $_embeddingsReady '
+        '(${ImageEmbeddingMatcher.instance.referenceCount} refs / '
+        '${ImageEmbeddingMatcher.instance.logicalCardCount} logical cards)',
+      );
     } finally {
       _warmingUp = false;
     }
   }
-
-  void pauseHashCache() {}
-  void resumeHashCache() {}
 
   Future<ScannerResult> match(
     Uint8List bytes, {
@@ -256,7 +255,6 @@ class ScannerService {
     ScanSource source,
     img.Image? straightenedImage,
   ) async {
-    pauseHashCache();
     final sw = Stopwatch()..start();
     if (_allEntries == null) {
       await warmup();
@@ -299,21 +297,28 @@ class ScannerService {
         ...visualScores.keys,
       };
 
-      debugPrint('+----------------------------------------------------------');
-      debugPrint('| [Scanner] PHASE A - INPUT');
-      debugPrint('| Source: ${source.name} | Tokens: ${zonedTokens.length}');
-      debugPrint('| Quality=${quality.overall.toStringAsFixed(3)} '
-          '(focus=${quality.focus.toStringAsFixed(3)} '
-          'contrast=${quality.contrast.toStringAsFixed(3)} '
-          'exposure=${quality.exposure.toStringAsFixed(3)})');
-      debugPrint('| Embedding: ${queryEmbedding != null ? 'OK' : 'NULL'} | '
-          'Faction: $detectedFaction');
-      debugPrint('| OCR shortlist: ${ocrTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}');
-      debugPrint('| Visual shortlist: ${visualTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}');
+      _debugLog('+----------------------------------------------------------');
+      _debugLog('| [Scanner] PHASE A - INPUT');
+      _debugLog('| Source: ${source.name} | Tokens: ${zonedTokens.length}');
+      _debugLog(
+        '| Quality=${quality.overall.toStringAsFixed(3)} '
+        '(focus=${quality.focus.toStringAsFixed(3)} '
+        'contrast=${quality.contrast.toStringAsFixed(3)} '
+        'exposure=${quality.exposure.toStringAsFixed(3)})',
+      );
+      _debugLog(
+        '| Embedding: ${queryEmbedding != null ? 'OK' : 'NULL'} | '
+        'Faction: $detectedFaction',
+      );
+      _debugLog(
+        '| OCR shortlist: ${ocrTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}',
+      );
+      _debugLog(
+        '| Visual shortlist: ${visualTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}',
+      );
 
       if (candidateIds.isEmpty) {
         sw.stop();
-        resumeHashCache();
         return _emptyResult(
           elapsedMs: sw.elapsedMilliseconds,
           quality: quality,
@@ -348,20 +353,21 @@ class ScannerService {
       }
       fused.sort((a, b) => b.finalScore.compareTo(a.finalScore));
 
-      debugPrint('| [Scanner] PHASE B - FUSION TOP ${math.min(5, fused.length)}');
+      _debugLog('| [Scanner] PHASE B - FUSION TOP ${math.min(5, fused.length)}');
       for (var i = 0; i < math.min(5, fused.length); i++) {
         final s = fused[i];
-        debugPrint('|   #$i ${s.entry.cardId} '
-            'sT=${s.sText.toStringAsFixed(3)} '
-            'sV=${s.sVisual.toStringAsFixed(3)} '
-            'q=${s.quality.toStringAsFixed(3)} '
-            '-> ${s.finalScore.toStringAsFixed(3)}');
+        _debugLog(
+          '|   #$i ${s.entry.cardId} '
+          'sT=${s.sText.toStringAsFixed(3)} '
+          'sV=${s.sVisual.toStringAsFixed(3)} '
+          'q=${s.quality.toStringAsFixed(3)} '
+          '-> ${s.finalScore.toStringAsFixed(3)}',
+        );
       }
-      debugPrint('+----------------------------------------------------------');
+      _debugLog('+----------------------------------------------------------');
 
       if (fused.isEmpty) {
         sw.stop();
-        resumeHashCache();
         return _emptyResult(
           elapsedMs: sw.elapsedMilliseconds,
           quality: quality,
@@ -435,7 +441,6 @@ class ScannerService {
       );
     } catch (e, stack) {
       debugPrint('[Scanner] Error: $e\n$stack');
-      resumeHashCache();
       return ScannerResult(
         outcome: ScannerOutcome.retake,
         failureReason: ScannerFailureReason.noCandidates,
@@ -906,5 +911,10 @@ class ScannerService {
 
   String _normaliseId(String id) =>
       id.replaceAll(RegExp(r'[^A-Za-z0-9]'), '').toUpperCase();
-}
 
+  void _debugLog(String message) {
+    if (kDebugMode) {
+      debugPrint(message);
+    }
+  }
+}
