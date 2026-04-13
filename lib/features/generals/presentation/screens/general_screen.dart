@@ -1,11 +1,11 @@
-import 'dart:convert';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../core/models/expansion.dart';
 import '../../../../core/navigation/app_router.dart';
 import '../../../../core/services/recently_viewed_service.dart';
+import '../../../../core/services/fuzzy_matcher.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../data/models/general_card.dart';
 import '../../data/models/skin_dto.dart';
@@ -78,12 +78,11 @@ class _GeneralScreenState extends State<GeneralScreen> {
     final results = await Future.wait<dynamic>([
       GeneralLoader().getGenerals(),
       SkinLoader().getAllSkins(),
-      _loadBundledImageIds(),
     ]);
 
     final generals = results[0] as List<GeneralCard>;
     final skins = results[1] as List<SkinDTO>;
-    final imageIds = results[2] as Set<String>;
+    final imageIds = await _loadBundledImageIds();
     final generalIds = generals.map((g) => g.id).toSet();
     final skinsByBaseId = <String, List<SkinDTO>>{};
 
@@ -108,17 +107,24 @@ class _GeneralScreenState extends State<GeneralScreen> {
   }
 
   Future<Set<String>> _loadBundledImageIds() async {
-    final manifestRaw = await rootBundle.loadString('AssetManifest.json');
-    final manifest = json.decode(manifestRaw) as Map<String, dynamic>;
-
-    return manifest.keys
-        .where(
-          (path) =>
-              path.startsWith('assets/images/generals/') &&
-              path.endsWith('.webp'),
-        )
-        .map((path) => path.split('/').last.replaceFirst('.webp', ''))
-        .toSet();
+    try {
+      final manifest = await AssetManifest.loadFromAssetBundle(rootBundle);
+      return manifest
+          .listAssets()
+          .where(
+            (path) =>
+                path.startsWith('assets/images/generals/') &&
+                path.endsWith('.webp'),
+          )
+          .map((path) => path.split('/').last.replaceFirst('.webp', ''))
+          .toSet();
+    } catch (error, stackTrace) {
+      debugPrint(
+        '[GeneralScreen] Failed to enumerate general image assets: $error',
+      );
+      debugPrintStack(stackTrace: stackTrace);
+      return const <String>{};
+    }
   }
 
   String _resolveSkinBaseId(SkinDTO skin, Set<String> generalIds) {
@@ -165,11 +171,26 @@ class _GeneralScreenState extends State<GeneralScreen> {
     }
 
     final ids = orphanImageIds.toList()..sort();
-    return ids
-        .map(_GeneralGalleryEntry.orphan)
-        .where((entry) => entry.matchesQuery(query))
-        .toList(growable: false);
+    return ids.map(_GeneralGalleryEntry.orphan).toList(growable: false);
   }
+
+  bool _shouldUseIdOnlySearch(
+    String query,
+    List<_GeneralGalleryEntry> entries,
+  ) {
+    final q = query.trim().toLowerCase();
+    if (!_isIdStyleQuery(q)) {
+      return false;
+    }
+
+    return entries.any((entry) => entry.imageId.toLowerCase().contains(q));
+  }
+
+  bool _isIdStyleQuery(String q) =>
+      q.isNotEmpty &&
+      !q.contains(RegExp(r'\s')) &&
+      !FuzzyMatcher.hasCjk(q) &&
+      RegExp(r'^[a-z0-9_-]+$').hasMatch(q);
 
   Map<String, List<_GeneralGalleryEntry>> _groupByFaction(
     List<_GeneralGalleryEntry> entries,
@@ -247,6 +268,9 @@ class _GeneralScreenState extends State<GeneralScreen> {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
+            if (snapshot.hasError) {
+              return const Center(child: Text('Failed to load generals.'));
+            }
 
             final galleryData = snapshot.data;
             if (galleryData == null) {
@@ -254,14 +278,38 @@ class _GeneralScreenState extends State<GeneralScreen> {
             }
 
             final filteredGenerals = _filterState.apply(galleryData.generals);
-            final knownEntries = _buildGalleryEntries(
+            final allKnownEntries = _buildGalleryEntries(
               filteredGenerals,
               galleryData.skinsByBaseId,
-            ).where((entry) => entry.matchesQuery(query)).toList(growable: false);
-            final orphanEntries = _buildOrphanEntries(
+            );
+            final allOrphanEntries = _buildOrphanEntries(
               galleryData.orphanImageIds,
               query,
             );
+            final candidateEntries = <_GeneralGalleryEntry>[
+              ...allKnownEntries,
+              ...allOrphanEntries,
+            ];
+            final preferIdOnlySearch = _shouldUseIdOnlySearch(
+              query,
+              candidateEntries,
+            );
+            final knownEntries = allKnownEntries
+                .where(
+                  (entry) => entry.matchesQuery(
+                    query,
+                    preferIdOnlySearch: preferIdOnlySearch,
+                  ),
+                )
+                .toList(growable: false);
+            final orphanEntries = allOrphanEntries
+                .where(
+                  (entry) => entry.matchesQuery(
+                    query,
+                    preferIdOnlySearch: preferIdOnlySearch,
+                  ),
+                )
+                .toList(growable: false);
             final visibleEntries = <_GeneralGalleryEntry>[
               ...knownEntries,
               ...orphanEntries,
@@ -494,27 +542,68 @@ class _GeneralGalleryEntry {
     );
   }
 
-  bool matchesQuery(String query) {
+  bool matchesQuery(
+    String query, {
+    required bool preferIdOnlySearch,
+  }) {
     if (query.isEmpty) {
-      return true;
-    }
-    if (card != null && card!.matchesQuery(query)) {
       return true;
     }
 
     final trimmed = query.trim();
     final lower = trimmed.toLowerCase();
+    if (preferIdOnlySearch) {
+      return imageId.toLowerCase().contains(lower);
+    }
+
+    if (card != null) {
+      if (_matchesDisplayLabel(trimmed, card!.nameEn)) {
+        return true;
+      }
+      if (_matchesDisplayLabel(trimmed, card!.nameCn)) {
+        return true;
+      }
+    }
+
     if (imageId.toLowerCase().contains(lower)) {
       return true;
     }
-    if (searchLabelEn != null && searchLabelEn!.toLowerCase().contains(lower)) {
+    if (_matchesDisplayLabel(trimmed, searchLabelEn)) {
       return true;
     }
-    if (searchLabelCn != null && searchLabelCn!.contains(trimmed)) {
+    if (_matchesDisplayLabel(trimmed, searchLabelCn)) {
       return true;
     }
     return false;
   }
+
+  static bool _matchesDisplayLabel(String query, String? target) {
+    if (target == null || target.isEmpty) {
+      return false;
+    }
+
+    final trimmedQuery = query.trim();
+    if (trimmedQuery.isEmpty) {
+      return true;
+    }
+
+    final lowerQuery = trimmedQuery.toLowerCase();
+    final lowerTarget = target.toLowerCase();
+    if (lowerTarget.contains(lowerQuery)) {
+      return true;
+    }
+
+    final compactQuery = _compactAscii(lowerQuery);
+    if (compactQuery.isEmpty) {
+      return false;
+    }
+
+    final compactTarget = _compactAscii(lowerTarget);
+    return compactTarget.contains(compactQuery);
+  }
+
+  static String _compactAscii(String value) =>
+      value.replaceAll(RegExp(r'[^a-z0-9\u4e00-\u9fff]+'), '');
 
   static String _inferFaction(String imageId) {
     final upper = imageId.toUpperCase();
