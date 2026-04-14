@@ -11,13 +11,6 @@
     "definition_en": "This section includes Identity Mode reference material.",
     "rules": [
       {
-        "type": "note",
-        "cn": "本应用未收录第五部分卡牌章节与附录内容。",
-        "en": "This app does not include chapter 5 card pages or appendix content.",
-        "segments": [],
-        "examples": []
-      },
-      {
         "type": "rule",
         "cn": "本部分收录：身份局卡牌数量一览、身份局游戏牌一览。",
         "en": "This section includes Identity Mode card counts and Identity Mode card lists.",
@@ -108,8 +101,8 @@
     "term_cn": "基本牌",
     "term_en": "Basic Cards",
     "badge": null,
-    "definition_cn": "基本牌共85张，包含6种牌名。火【杀】、雷【杀】、【酒】为军争篇扩充内容。",
-    "definition_en": "85 Basic Cards across 6 card types. Fire [Kill], Thunder [Kill], and [Wine] are from the Military Conflict expansion.",
+    "definition_cn": "基本牌共85张，包含6种牌名。【火杀】、【雷杀】、【酒】为军争篇扩充内容。",
+    "definition_en": "85 Basic Cards across 6 card types. [Fire Kill], [Thunder Kill], and [Wine] are from the Military Conflict expansion.",
     "rules": [
       {
         "type": "rule",
@@ -131,13 +124,13 @@
       },
       {
         "type": "rule",
-        "cn": "火【杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
-        "en": "Fire [Kill] × 5 (Military Conflict): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
+        "cn": "【火杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
+        "en": "[Fire Kill] × 5 (Military Conflict): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
         "segments": [
           {
             "kind": "label",
-            "cn": "火【杀】× 5：",
-            "en": "Fire [Kill] × 5: "
+            "cn": "【火杀】× 5：",
+            "en": " [Fire Kill] × 5: "
           },
           {
             "kind": "body",
@@ -149,13 +142,13 @@
       },
       {
         "type": "rule",
-        "cn": "雷【杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
-        "en": "Thunder [Kill] × 9 (Military Conflict): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
+        "cn": "【雷杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
+        "en": "[Thunder Kill] × 9 (Military Conflict): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
         "segments": [
           {
             "kind": "label",
-            "cn": "雷【杀】× 9：",
-            "en": "Thunder [Kill] × 9: "
+            "cn": "【雷杀】× 9：",
+            "en": "[Thunder Kill] × 9: "
           },
           {
             "kind": "body",
