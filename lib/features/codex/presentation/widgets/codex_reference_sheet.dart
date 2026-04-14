@@ -3,16 +3,16 @@
 // Bottom sheet that surfaces inline reference info when a [card] or [skill]
 // segment is tapped in a Codex rule block.
 //
-// Architecture: pure core-dependent Codex widget.
-//   • Imports only core/* — zero cross-feature presentation or data imports.
-//   • ResolvedReference carries all display fields directly (set in
-//     resolver_service.dart at resolution time), so no LibraryDTO needed here.
+// Architecture: Codex presentation widget backed by the shared reference feature.
+//   • Depends on reference service models, not library/general presentation.
+//   • ResolvedReference carries all display fields directly at resolution time,
+//     so no LibraryDTO or SkillDTO imports are needed here.
 //   • Never navigates — displays inline. Caller retains full nav control.
 
 import 'package:flutter/material.dart';
-import '../../../../core/services/resolver_service.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/constants/app_assets.dart';
+import '../../../reference/services/resolver_service.dart';
 
 class CodexReferenceSheet extends StatelessWidget {
   final ResolvedReference ref;

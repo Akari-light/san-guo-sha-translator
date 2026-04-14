@@ -1,15 +1,12 @@
-// lib/features/codex/presentation/screens/codex_entry_screen.dart
-
-import 'package:flutter/material.dart';
-import '../../data/models/codex_entry_dto.dart';
+﻿import 'package:flutter/material.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../data/models/codex_entry_dto.dart';
+import '../widgets/codex_reference_text.dart';
 import '../widgets/codex_rule_block_widget.dart';
 
 class CodexEntryScreen extends StatefulWidget {
   final CodexEntryDTO entry;
   final bool showChinese;
-
-  /// Optional. When provided, [card] and [skill] segments become tappable.
   final SegmentTapCallback? onSegmentTap;
 
   const CodexEntryScreen({
@@ -35,41 +32,41 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final e      = widget.entry;
+    final entry = widget.entry;
     final showCn = _showChinese;
 
-    final primaryTerm   = showCn ? e.termCn   : e.termEn;
-    final secondaryTerm = showCn ? e.termEn   : e.termCn;
-    final primaryDef    = showCn ? e.definitionCn : e.definitionEn;
-    final secondaryDef  = showCn ? e.definitionEn : e.definitionCn;
+    final primaryTerm = showCn ? entry.termCn : entry.termEn;
+    final secondaryTerm = showCn ? entry.termEn : entry.termCn;
+    final primaryDef = showCn ? entry.definitionCn : entry.definitionEn;
+    final secondaryDef = showCn ? entry.definitionEn : entry.definitionCn;
 
     return Scaffold(
       appBar: AppBar(
-        // Chapter breadcrumb + section number
+        titleSpacing: 0,
         title: Row(
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
               decoration: BoxDecoration(
-                color: AppTheme.codexNumBg(e.chapter, isDark),
+                color: AppTheme.codexNumBg(entry.chapter, isDark),
+                borderRadius: BorderRadius.circular(6),
                 border: Border.all(
-                    color: AppTheme.codexNumBorder(e.chapter, isDark),
-                    width: 0.5),
-                borderRadius: BorderRadius.circular(4),
+                  color: AppTheme.codexNumBorder(entry.chapter, isDark),
+                  width: 0.8,
+                ),
               ),
               child: Text(
-                _chapterLabel(e.chapter),
+                _chapterLabel(entry.chapter),
                 style: TextStyle(
                   fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.codexNumText(e.chapter, isDark),
-                  height: 1,
+                  fontWeight: FontWeight.w700,
+                  color: AppTheme.codexNumText(entry.chapter, isDark),
                 ),
               ),
             ),
             const SizedBox(width: 8),
             Text(
-              '§${e.sectionNum}',
+              '§${entry.sectionNum}',
               style: TextStyle(
                 fontSize: 13,
                 color: AppTheme.codexSecondaryText(isDark),
@@ -78,7 +75,6 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
           ],
         ),
         actions: [
-          // Lang toggle — same style as CodexScreen
           _LangToggle(
             showChinese: showCn,
             isDark: isDark,
@@ -88,56 +84,27 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.only(bottom: 48),
+        padding: const EdgeInsets.fromLTRB(16, 14, 16, 32),
         children: [
-          // ── Term header
-          Container(
-            color: AppTheme.codexSectionHeaderBg(isDark),
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  primaryTerm,
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
-                    color: AppTheme.codexTerm(isDark),
-                  ),
-                ),
-                if (secondaryTerm.isNotEmpty && secondaryTerm != primaryTerm) ...[
-                  const SizedBox(height: 3),
-                  Text(
-                    secondaryTerm,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: AppTheme.codexSecondaryText(isDark),
-                    ),
-                  ),
-                ],
-                const SizedBox(height: 6),
-                Text(
-                  showCn ? e.sectionTitleCn : e.sectionTitleEn,
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: AppTheme.codexChapterAccent(e.chapter, isDark)
-                        .withAlpha(179),
-                  ),
-                ),
-              ],
-            ),
+          _EntryHero(
+            chapter: entry.chapter,
+            primaryTerm: primaryTerm,
+            secondaryTerm: secondaryTerm,
+            sectionTitle: showCn ? entry.sectionTitleCn : entry.sectionTitleEn,
+            counterpartSection:
+                showCn ? entry.sectionTitleEn : entry.sectionTitleCn,
+            ruleCount: entry.rules.length,
+            isDark: isDark,
           ),
-          Divider(
-              height: 0.5,
-              thickness: 0.5,
-              color: AppTheme.codexDivider(isDark)),
-
-          // ── Primary definition
+          const SizedBox(height: 16),
           if (primaryDef.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              child: Text(
-                primaryDef,
+            _ContentBlock(
+              title: showCn ? '简述' : 'Brief',
+              isDark: isDark,
+              child: CodexReferenceText(
+                text: primaryDef,
+                isDark: isDark,
+                onReferenceTap: widget.onSegmentTap,
                 style: TextStyle(
                   fontSize: 14,
                   height: 1.75,
@@ -145,14 +112,15 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
                 ),
               ),
             ),
-
-          // ── Secondary definition (opposite language, muted)
           if (secondaryDef.isNotEmpty) ...[
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                secondaryDef,
+            const SizedBox(height: 12),
+            _ContentBlock(
+              title: showCn ? '对照' : 'Counterpart',
+              isDark: isDark,
+              child: CodexReferenceText(
+                text: secondaryDef,
+                isDark: isDark,
+                onReferenceTap: widget.onSegmentTap,
                 style: TextStyle(
                   fontSize: 13,
                   height: 1.65,
@@ -161,61 +129,206 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
               ),
             ),
           ],
-
-          // ── Rules / notes
-          if (e.rules.isNotEmpty) ...[
+          if (entry.rules.isNotEmpty) ...[
             const SizedBox(height: 16),
-            Divider(
-                height: 0.5,
-                thickness: 0.5,
-                color: AppTheme.codexDivider(isDark)),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-              child: Text(
-                showCn ? '规则与注释' : 'Rules & Notes',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                  color: AppTheme.codexSecondaryText(isDark),
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            _ContentBlock(
+              title: showCn ? '深入说明' : 'In-Depth Explanation',
+              subtitle: showCn
+                  ? '按规则块展开，便于逐条阅读和核对。'
+                  : 'Expanded into rule blocks for slower, article-style reading.',
+              isDark: isDark,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: e.rules
-                    .map((b) => CodexRuleBlockWidget(
-                          block: b,
-                          chapter: e.chapter,
-                          showChinese: showCn,
-                          isDark: isDark,
-                          onSegmentTap: widget.onSegmentTap,
-                        ))
+                children: entry.rules
+                    .map(
+                      (block) => CodexRuleBlockWidget(
+                        block: block,
+                        chapter: entry.chapter,
+                        showChinese: showCn,
+                        isDark: isDark,
+                        onSegmentTap: widget.onSegmentTap,
+                      ),
+                    )
                     .toList(),
               ),
             ),
           ],
-          const SizedBox(height: 16),
         ],
       ),
     );
   }
 
   String _chapterLabel(String chapter) {
-    switch (chapter) {
-      case 'setup':    return 'Setup';
-      case 'glossary': return 'Glossary';
-      case 'flow':     return 'Flow';
-      case 'rules':    return 'Rules';
-      default:         return chapter;
-    }
+    return switch (chapter) {
+      'setup' => 'Setup',
+      'glossary' => 'Glossary',
+      'flow' => 'Flow',
+      'rules' => 'Rules',
+      _ => chapter,
+    };
   }
 }
 
-// ── Lang toggle widget (shared between CodexScreen and CodexEntryScreen) ──────
+class _EntryHero extends StatelessWidget {
+  final String chapter;
+  final String primaryTerm;
+  final String secondaryTerm;
+  final String sectionTitle;
+  final String counterpartSection;
+  final int ruleCount;
+  final bool isDark;
+
+  const _EntryHero({
+    required this.chapter,
+    required this.primaryTerm,
+    required this.secondaryTerm,
+    required this.sectionTitle,
+    required this.counterpartSection,
+    required this.ruleCount,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final accent = AppTheme.codexChapterAccent(chapter, isDark);
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+      decoration: BoxDecoration(
+        color: AppTheme.codexSectionHeaderBg(isDark),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: accent.withAlpha(isDark ? 90 : 70),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 42,
+            height: 4,
+            decoration: BoxDecoration(
+              color: accent,
+              borderRadius: BorderRadius.circular(999),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            primaryTerm,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+              color: AppTheme.codexTerm(isDark),
+            ),
+          ),
+          if (secondaryTerm.isNotEmpty && secondaryTerm != primaryTerm) ...[
+            const SizedBox(height: 4),
+            Text(
+              secondaryTerm,
+              style: TextStyle(
+                fontSize: 14,
+                color: AppTheme.codexSecondaryText(isDark),
+              ),
+            ),
+          ],
+          const SizedBox(height: 10),
+          Text(
+            sectionTitle,
+            style: TextStyle(
+              fontSize: 12.5,
+              fontWeight: FontWeight.w600,
+              color: AppTheme.codexSubText(chapter, isDark),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            counterpartSection,
+            style: TextStyle(
+              fontSize: 12,
+              color: AppTheme.codexSecondaryText(isDark),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+            decoration: BoxDecoration(
+              color: AppTheme.codexTagFill(isDark),
+              borderRadius: BorderRadius.circular(999),
+              border: Border.all(
+                color: AppTheme.codexTagBorder(isDark),
+                width: 1,
+              ),
+            ),
+            child: Text(
+              '$ruleCount ${ruleCount == 1 ? "rule block" : "rule blocks"}',
+              style: TextStyle(
+                fontSize: 11.5,
+                fontWeight: FontWeight.w700,
+                color: AppTheme.codexDefinition(isDark),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ContentBlock extends StatelessWidget {
+  final String title;
+  final String? subtitle;
+  final Widget child;
+  final bool isDark;
+
+  const _ContentBlock({
+    required this.title,
+    required this.child,
+    required this.isDark,
+    this.subtitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+      decoration: BoxDecoration(
+        color: AppTheme.codexSectionHeaderBg(isDark),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppTheme.codexDivider(isDark),
+          width: 0.8,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 0.35,
+              color: AppTheme.codexSecondaryText(isDark),
+            ),
+          ),
+          if (subtitle != null && subtitle!.isNotEmpty) ...[
+            const SizedBox(height: 4),
+            Text(
+              subtitle!,
+              style: TextStyle(
+                fontSize: 12,
+                height: 1.5,
+                color: AppTheme.codexSecondaryText(isDark),
+              ),
+            ),
+          ],
+          const SizedBox(height: 12),
+          child,
+        ],
+      ),
+    );
+  }
+}
 
 class LangToggle extends StatelessWidget {
   final bool showChinese;
@@ -238,16 +351,18 @@ class LangToggle extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-              color: AppTheme.codexLangToggleBorder(isDark), width: 1),
+            color: AppTheme.codexLangToggleBorder(isDark),
+            width: 1,
+          ),
           color: AppTheme.codexLangToggleFill(isDark),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            const Icon(
               Icons.language,
               size: 13,
-              color: const Color(0xFF007ACC),
+              color: Color(0xFF007ACC),
             ),
             const SizedBox(width: 4),
             Text(
@@ -266,7 +381,6 @@ class LangToggle extends StatelessWidget {
   }
 }
 
-// Private alias so codex_entry_screen.dart can use it without export conflicts
 class _LangToggle extends LangToggle {
   const _LangToggle({
     required super.showChinese,

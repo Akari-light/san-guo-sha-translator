@@ -2,9 +2,9 @@
 import '../../data/models/codex_entry_dto.dart';
 import '../../data/repository/codex_loader.dart';
 import '../codex_chapter_config.dart';
+import 'codex_entry_screen.dart';
 import '../widgets/codex_section_tile.dart';
 import '../widgets/codex_entry_card.dart';
-import '../widgets/codex_flow_step_tile.dart';
 import '../widgets/codex_reference_sheet.dart';
 import '../widgets/codex_rule_block_widget.dart';
 import '../../../../core/theme/app_theme.dart';
@@ -110,12 +110,12 @@ class _CodexScreenState extends State<CodexScreen>
     });
   }
 
-  void _showReferenceSheet(String rawCn, bool _) {
+  void _showReferenceSheet(String bracketText, bool isChinese) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     CodexReferenceSheet.show(
       context: context,
-      bracketText: rawCn,
-      isChinese: true,
+      bracketText: bracketText,
+      isChinese: isChinese,
       isDark: isDark,
       showChinese: widget.showChineseNotifier.value,
     );
@@ -123,6 +123,18 @@ class _CodexScreenState extends State<CodexScreen>
 
   SegmentTapCallback get _segmentTap =>
       (rawCn, isChinese) => _showReferenceSheet(rawCn, isChinese);
+
+  void _openEntry(CodexEntryDTO entry, bool showChinese) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => CodexEntryScreen(
+          entry: entry,
+          showChinese: showChinese,
+          onSegmentTap: _segmentTap,
+        ),
+      ),
+    );
+  }
 
   Map<String, List<CodexEntryDTO>> _groupBySection(List<CodexEntryDTO> entries) {
     final map = <String, List<CodexEntryDTO>>{};
@@ -133,42 +145,63 @@ class _CodexScreenState extends State<CodexScreen>
     return map;
   }
 
-  ({String titleEn, String titleCn, String summary, String scanHint})
+  ({
+    String titleEn,
+    String titleCn,
+    String summaryEn,
+    String summaryCn,
+    String scanHintEn,
+    String scanHintCn,
+  })
       _chapterMeta(String key) {
     return switch (key) {
       'setup' => (
           titleEn: 'Setup Reference',
-          titleCn: '准备总览',
-          summary:
-              'Deck counts, component lists, and identity-mode composition.',
-          scanHint: 'Best for card counts, piles, and expansion inclusions.',
+          titleCn: '身份局资料',
+          summaryEn:
+              'Identity Mode counts and card lists, kept separate from card encyclopedia pages.',
+          summaryCn: '收录身份局卡牌数量与游戏牌一览，作为身份局专用资料索引。',
+          scanHintEn:
+              'Use this for counts and inclusions. National War, chapter 5 cards, and appendix pages are omitted.',
+          scanHintCn: '用于核对数量与收录范围。不收录国战、第五部分卡牌章节与附录。',
         ),
       'glossary' => (
           titleEn: 'Terminology',
           titleCn: '用语规范',
-          summary:
+          summaryEn:
               'Canonical rules language for operations, values, timing, and state changes.',
-          scanHint: 'Use this first when wording feels close but not identical.',
+          summaryCn: '收录官方用语及其操作规范，作为全项目翻译与释义的中文基准。',
+          scanHintEn:
+              'Use this first when wording feels close but not identical.',
+          scanHintCn: '遇到措辞接近但不完全相同时，先回本章核对术语。',
         ),
       'flow' => (
           titleEn: 'Resolution Flow',
-          titleCn: '流程顺序',
-          summary:
+          titleCn: '结算流程',
+          summaryEn:
               'Turn timings, event sequencing, inserted resolutions, and dying/death handling.',
-          scanHint: 'Read sections top-to-bottom when debugging timing or order.',
+          summaryCn: '按官方流程整理回合时机、事件结算、濒死与死亡处理。',
+          scanHintEn:
+              'Read sections top-to-bottom when debugging timing or order.',
+          scanHintCn: '处理时机、顺序或插入结算时，按章节自上而下阅读。',
         ),
       'rules' => (
           titleEn: 'Resolution Rules',
           titleCn: '规则原则',
-          summary:
+          summaryEn:
               'Priority, conflict handling, state effects, and execution rules.',
-          scanHint: 'Use when two effects seem to contradict each other.',
+          summaryCn: '集中说明结算原则、技能要素与冲突处理。',
+          scanHintEn:
+              'Use when two effects seem to contradict each other.',
+          scanHintCn: '当两个效果看似冲突时，先回本章判断优先级。',
         ),
       _ => (
           titleEn: 'Codex',
           titleCn: '规则索引',
-          summary: 'Structured rules reference.',
-          scanHint: 'Browse by chapter, then drill into the exact term.',
+          summaryEn: 'Structured rules reference.',
+          summaryCn: '结构化规则索引。',
+          scanHintEn: 'Browse by chapter, then drill into the exact term.',
+          scanHintCn: '先按章节定位，再展开到具体条目。',
         ),
     };
   }
@@ -279,8 +312,8 @@ class _CodexScreenState extends State<CodexScreen>
             chapterKey: key,
             title: showChinese ? meta.titleCn : meta.titleEn,
             counterpart: showChinese ? meta.titleEn : meta.titleCn,
-            summary: meta.summary,
-            scanHint: meta.scanHint,
+            summary: showChinese ? meta.summaryCn : meta.summaryEn,
+            scanHint: showChinese ? meta.scanHintCn : meta.scanHintEn,
             sectionCount: grouped.length,
             entryCount: entries.length,
             showChinese: showChinese,
@@ -290,6 +323,15 @@ class _CodexScreenState extends State<CodexScreen>
 
         final sectionKey = grouped.keys.elementAt(i - 1);
         final parts = sectionKey.split('|');
+        final sectionEntries = grouped[sectionKey]!;
+        CodexEntryDTO? guideEntry;
+        for (final entry in sectionEntries) {
+          if (entry.id.contains('guide') || entry.sectionNum.endsWith('.0')) {
+            guideEntry = entry;
+            break;
+          }
+        }
+        final summarySource = guideEntry ?? sectionEntries.first;
         return CodexSectionTile(
           sectionNum: parts[0],
           titleCn: parts[1],
@@ -297,9 +339,13 @@ class _CodexScreenState extends State<CodexScreen>
           chapterKey: key,
           showChinese: showChinese,
           isDark: isDark,
-          entries: grouped[sectionKey]!,
+          entries: sectionEntries,
+          sectionSummary: showChinese
+              ? summarySource.definitionCn
+              : summarySource.definitionEn,
           isFlow: isFlow,
           onSegmentTap: _segmentTap,
+          onOpenEntry: (entry) => _openEntry(entry, showChinese),
         );
       },
     );
@@ -335,30 +381,15 @@ class _CodexScreenState extends State<CodexScreen>
         Expanded(
           child: ListView.builder(
             itemCount: _searchResults.length,
-            itemBuilder: (context, i) {
-              final entry = _searchResults[i];
-              if (entry.chapter == 'flow') {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: entry.rules
-                      .asMap()
-                      .entries
-                      .map((e) => CodexFlowStepTile(
-                            block: e.value,
-                            index: e.key,
-                            showChinese: showChinese,
-                            isDark: isDark,
-                            onSegmentTap: _segmentTap,
-                          ))
-                      .toList(),
-                );
-              }
-              return CodexEntryCard(
-                entry: entry,
-                showChinese: showChinese,
+             itemBuilder: (context, i) {
+               final entry = _searchResults[i];
+               return CodexEntryCard(
+                 entry: entry,
+                 showChinese: showChinese,
                 isDark: isDark,
                 showChapterBadge: true,
                 onSegmentTap: _segmentTap,
+                onOpenDetails: () => _openEntry(entry, showChinese),
               );
             },
           ),

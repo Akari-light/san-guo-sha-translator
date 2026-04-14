@@ -42,8 +42,8 @@ class CodexSegment {
     };
     return CodexSegment(
       kind: kind,
-      cn:   j['cn'] as String? ?? '',
-      en:   j['en'] as String? ?? '',
+      cn: j['cn'] as String? ?? '',
+      en: j['en'] as String? ?? '',
     );
   }
 }
@@ -118,8 +118,8 @@ class CodexRuleBlock {
     };
     return CodexRuleBlock(
       type: type,
-      cn:   j['cn'] as String? ?? '',
-      en:   j['en'] as String? ?? '',
+      cn: j['cn'] as String? ?? '',
+      en: j['en'] as String? ?? '',
       segments: (j['segments'] as List<dynamic>? ?? [])
           .map((s) => CodexSegment.fromJson(s as Map<String, dynamic>))
           .toList(),
@@ -167,14 +167,14 @@ class CodexEntryDTO {
       CodexEntryDTO(
         id:             j['id']              as String,
         chapter:        chapter,
-        sectionNum:     j['section_num']     as String,
-        sectionTitleCn: j['section_title_cn'] as String,
-        sectionTitleEn: j['section_title_en'] as String,
-        termCn:         j['term_cn']          as String,
-        termEn:         j['term_en']          as String,
-        badge:          j['badge']            as String?,
-        definitionCn:   j['definition_cn']    as String? ?? '',
-        definitionEn:   j['definition_en']    as String? ?? '',
+        sectionNum:     j['section_num'] as String? ?? '',
+        sectionTitleCn: j['section_title_cn'] as String? ?? '',
+        sectionTitleEn: j['section_title_en'] as String? ?? '',
+        termCn:         j['term_cn'] as String? ?? '',
+        termEn:         j['term_en'] as String? ?? '',
+        badge:          j['badge'] as String?,
+        definitionCn:   j['definition_cn'] as String? ?? '',
+        definitionEn:   j['definition_en'] as String? ?? '',
         rules: (j['rules'] as List<dynamic>? ?? [])
             .map((e) => CodexRuleBlock.fromJson(e as Map<String, dynamic>))
             .toList(),

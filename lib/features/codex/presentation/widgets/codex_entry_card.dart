@@ -2,7 +2,7 @@
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_rule_block_widget.dart';
-import '../../../../core/widgets/inline_suit_text.dart';
+import 'codex_reference_text.dart';
 
 class CodexEntryCard extends StatefulWidget {
   final CodexEntryDTO entry;
@@ -10,6 +10,7 @@ class CodexEntryCard extends StatefulWidget {
   final bool isDark;
   final bool showChapterBadge;
   final SegmentTapCallback? onSegmentTap;
+  final VoidCallback? onOpenDetails;
 
   const CodexEntryCard({
     super.key,
@@ -18,6 +19,7 @@ class CodexEntryCard extends StatefulWidget {
     required this.isDark,
     this.showChapterBadge = false,
     this.onSegmentTap,
+    this.onOpenDetails,
   });
 
   @override
@@ -25,15 +27,6 @@ class CodexEntryCard extends StatefulWidget {
 }
 
 class _CodexEntryCardState extends State<CodexEntryCard> {
-  late bool _open;
-
-  @override
-  void initState() {
-    super.initState();
-    _open = widget.entry.id.contains('guide') ||
-        widget.entry.sectionNum.endsWith('.0');
-  }
-
   @override
   Widget build(BuildContext context) {
     final e = widget.entry;
@@ -45,144 +38,115 @@ class _CodexEntryCardState extends State<CodexEntryCard> {
     final secondaryTerm = showCn ? e.termEn : e.termCn;
     final definition = showCn ? e.definitionCn : e.definitionEn;
     final preview = definition.replaceAll('\n', ' ').trim();
+    final canOpenDetails = widget.onOpenDetails != null && e.rules.isNotEmpty;
 
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 220),
-      curve: Curves.easeOutCubic,
-      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(0, 14, 0, 18),
       decoration: BoxDecoration(
-        color: _open ? AppTheme.codexTagFill(isDark) : Colors.transparent,
         border: Border(bottom: BorderSide(color: divider, width: 0.5)),
       ),
-      child: InkWell(
-        onTap: () => setState(() => _open = !_open),
-        borderRadius: BorderRadius.circular(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        primaryTerm,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w700,
-                          height: 1.25,
-                          color: AppTheme.codexTerm(isDark),
-                        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      primaryTerm,
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        height: 1.25,
+                        color: AppTheme.codexTerm(isDark),
                       ),
-                      if (secondaryTerm.isNotEmpty &&
-                          secondaryTerm != primaryTerm)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3),
-                          child: Text(
-                            secondaryTerm,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: AppTheme.codexSecondaryText(isDark),
-                            ),
+                    ),
+                    if (secondaryTerm.isNotEmpty && secondaryTerm != primaryTerm)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          secondaryTerm,
+                          style: TextStyle(
+                            fontSize: 12.5,
+                            height: 1.4,
+                            color: AppTheme.codexSecondaryText(isDark),
                           ),
                         ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 12),
-                AnimatedRotation(
-                  turns: _open ? 0.25 : 0,
-                  duration: const Duration(milliseconds: 180),
-                  curve: Curves.easeOut,
-                  child: Icon(
-                    Icons.chevron_right,
-                    size: 18,
-                    color: AppTheme.codexIconMuted(isDark),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                if (e.badge != null)
-                  _SkillBadge(badge: e.badge!, isDark: isDark),
-                if (widget.showChapterBadge)
-                  _ChapterBadge(chapter: e.chapter, isDark: isDark),
-                _MetaChip(
-                  label: '${e.rules.length} ${e.rules.length == 1 ? "rule" : "rules"}',
-                  isDark: isDark,
-                ),
-                _MetaChip(
-                  label: _open ? 'Expanded' : 'Tap to expand',
-                  isDark: isDark,
-                ),
-              ],
-            ),
-            if (!_open && preview.isNotEmpty)
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: InlineSuitText(
-                  text: preview,
-                  isDark: isDark,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 13,
-                    height: 1.75,
-                    color: AppTheme.codexDefinition(isDark),
-                  ),
+                      ),
+                  ],
                 ),
               ),
-            ClipRect(
-              child: AnimatedSize(
-                duration: const Duration(milliseconds: 220),
-                curve: Curves.easeOutCubic,
-                child: _open
-                    ? Padding(
-                        padding: const EdgeInsets.only(top: 12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (definition.isNotEmpty)
-                              InlineSuitText(
-                                text: definition,
-                                isDark: isDark,
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  height: 1.9,
-                                  color: AppTheme.codexDefinition(isDark),
-                                ),
-                              ),
-                            if (e.rules.isNotEmpty)
-                              Padding(
-                                padding: const EdgeInsets.only(top: 12),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                  children: e.rules
-                                      .map((b) => CodexRuleBlockWidget(
-                                            block: b,
-                                            chapter: e.chapter,
-                                            showChinese: showCn,
-                                            isDark: isDark,
-                                            onSegmentTap: widget.onSegmentTap,
-                                          ))
-                                      .toList(),
-                                ),
-                              ),
-                          ],
-                        ),
-                      )
-                    : const SizedBox.shrink(),
+              if (widget.showChapterBadge)
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: _ChapterBadge(chapter: e.chapter, isDark: isDark),
+                ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              if (e.badge != null)
+                _SkillBadge(badge: e.badge!, isDark: isDark),
+              _MetaChip(
+                label: showCn
+                    ? '${e.rules.length}条规则'
+                    : '${e.rules.length} ${e.rules.length == 1 ? "rule" : "rules"}',
+                isDark: isDark,
+              ),
+              if (canOpenDetails)
+                _MetaChip(
+                  label: showCn ? '含完整说明' : 'Has full explanation',
+                  isDark: isDark,
+                ),
+            ],
+          ),
+          if (preview.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 12),
+              child: CodexReferenceText(
+                text: preview,
+                isDark: isDark,
+                onReferenceTap: widget.onSegmentTap,
+                maxLines: 4,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 13.5,
+                  height: 1.75,
+                  color: AppTheme.codexDefinition(isDark),
+                ),
               ),
             ),
-          ],
-        ),
+          if (canOpenDetails)
+            Padding(
+              padding: const EdgeInsets.only(top: 14),
+              child: OutlinedButton(
+                onPressed: widget.onOpenDetails,
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 11,
+                  ),
+                  side: BorderSide(
+                    color: AppTheme.codexTagBorder(isDark),
+                    width: 1,
+                  ),
+                  foregroundColor: AppTheme.codexTerm(isDark),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                ),
+                child: Text(
+                  showCn ? '查看完整说明' : 'View Full Explanation',
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
