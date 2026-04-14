@@ -15,8 +15,8 @@
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
+import 'codex_reference_text.dart';
 import 'codex_rule_block_widget.dart';
-import '../../../../core/widgets/inline_suit_text.dart';
 
 class CodexFlowStepTile extends StatelessWidget {
   final CodexRuleBlock block;
@@ -116,10 +116,11 @@ class CodexFlowStepTile extends StatelessWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _ExampleChip(
-                          text: text,
-                          isDark: isDark,
-                        ),
+                         _ExampleChip(
+                           text: text,
+                           isDark: isDark,
+                           onReferenceTap: onSegmentTap,
+                         ),
                         // Sub-examples indented
                         if (ex.subExamples.isNotEmpty)
                           Padding(
@@ -132,11 +133,12 @@ class CodexFlowStepTile extends StatelessWidget {
                                 if (subText.isEmpty) {
                                   return const SizedBox.shrink();
                                 }
-                                return _ExampleChip(
-                                  text: subText,
-                                  isDark: isDark,
-                                  indent: true,
-                                );
+                                 return _ExampleChip(
+                                   text: subText,
+                                   isDark: isDark,
+                                   onReferenceTap: onSegmentTap,
+                                   indent: true,
+                                 );
                               }).toList(),
                             ),
                           ),
@@ -161,10 +163,12 @@ class _ExampleChip extends StatelessWidget {
   final String text;
   final bool isDark;
   final bool indent;
+  final CodexReferenceTap? onReferenceTap;
 
   const _ExampleChip({
     required this.text,
     required this.isDark,
+    this.onReferenceTap,
     this.indent = false,
   });
 
@@ -187,9 +191,10 @@ class _ExampleChip extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: InlineSuitText(
+            child: CodexReferenceText(
               text: text,
               isDark: isDark,
+              onReferenceTap: onReferenceTap,
               style: TextStyle(
                 fontSize: 11.5,
                 height: 1.65,

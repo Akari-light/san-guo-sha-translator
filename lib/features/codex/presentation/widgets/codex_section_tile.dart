@@ -13,8 +13,10 @@ class CodexSectionTile extends StatefulWidget {
   final bool showChinese;
   final bool isDark;
   final List<CodexEntryDTO> entries;
+  final String sectionSummary;
   final bool isFlow;
   final SegmentTapCallback? onSegmentTap;
+  final void Function(CodexEntryDTO entry)? onOpenEntry;
 
   const CodexSectionTile({
     super.key,
@@ -25,8 +27,10 @@ class CodexSectionTile extends StatefulWidget {
     required this.showChinese,
     required this.isDark,
     required this.entries,
+    required this.sectionSummary,
     this.isFlow = false,
     this.onSegmentTap,
+    this.onOpenEntry,
   });
 
   @override
@@ -106,7 +110,9 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            '${widget.entries.length} ${widget.entries.length == 1 ? "entry" : "entries"}',
+                            showCn
+                                ? '${widget.entries.length}条'
+                                : '${widget.entries.length} ${widget.entries.length == 1 ? "entry" : "entries"}',
                             style: TextStyle(
                               fontSize: 11.5,
                               color: AppTheme.codexSecondaryText(isDark),
@@ -133,6 +139,19 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                           height: 1.35,
                         ),
                       ),
+                      if (widget.sectionSummary.trim().isNotEmpty) ...[
+                        const SizedBox(height: 10),
+                        Text(
+                          widget.sectionSummary,
+                          maxLines: _open ? 4 : 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 12.5,
+                            color: AppTheme.codexSecondaryText(isDark),
+                            height: 1.55,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
@@ -172,6 +191,9 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                   isDark: isDark,
                   showChapterBadge: false,
                   onSegmentTap: widget.onSegmentTap,
+                  onOpenDetails: widget.onOpenEntry == null
+                      ? null
+                      : () => widget.onOpenEntry!(entry),
                 )),
       ],
     );

@@ -4,11 +4,11 @@ import '../../data/models/skin_dto.dart';
 import '../../data/repository/general_loader.dart';
 import '../../data/repository/skin_loader.dart';
 import '../../../../core/models/skill_dto.dart';
-import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
-import '../../../../core/services/resolver_service.dart';
 import '../../../../core/constants/app_assets.dart';
+import '../../../../core/theme/app_theme.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
+import '../../../reference/services/resolver_service.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;

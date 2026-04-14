@@ -1,28 +1,57 @@
-﻿[
+[
+  {
+    "id": "setup_1_0_info_guide",
+    "section_num": "1.0",
+    "section_title_cn": "资料导引",
+    "section_title_en": "Info Guide",
+    "term_cn": "资料导引",
+    "term_en": "Info Guide",
+    "badge": null,
+    "definition_cn": "本部分收录身份局资料。",
+    "definition_en": "This section includes Identity Mode reference material.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "本应用未收录第五部分卡牌章节与附录内容。",
+        "en": "This app does not include chapter 5 card pages or appendix content.",
+        "segments": [],
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "本部分收录：身份局卡牌数量一览、身份局游戏牌一览。",
+        "en": "This section includes Identity Mode card counts and Identity Mode card lists.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "资料 导引 身份局 资料",
+    "search_text_en": "info guide identity mode reference"
+  },
   {
     "id": "setup_1_1_card_counts",
     "section_num": "1.1",
-    "section_title_cn": "èº«ä»½å±€å¡ç‰Œæ•°é‡ä¸€è§ˆ",
+    "section_title_cn": "身份局卡牌数量一览",
     "section_title_en": "Identity Mode Card Counts",
-    "term_cn": "å¡ç‰Œæ•°é‡",
+    "term_cn": "卡牌数量",
     "term_en": "Card Counts",
     "badge": null,
-    "definition_cn": "èº«ä»½å±€æ‰€ä½¿ç”¨çš„å„ç±»å¡ç‰Œæ€»æ•°ä¸€è§ˆã€‚",
+    "definition_cn": "身份局所使用的各类卡牌总数一览。",
     "definition_en": "A quick reference for how many cards of each type are included in Identity Mode.",
     "rules": [
       {
         "type": "rule",
-        "cn": "èº«ä»½ç‰Œå…±10å¼ ï¼šä¸»å…¬1å¼ ï¼Œå¿ è‡£3å¼ ï¼Œåè´¼4å¼ ï¼Œå†…å¥¸2å¼ ã€‚",
-        "en": "Identity Cards Ã— 10: 1 Lord, 3 Loyalists, 4 Rebels, 2 Spies.",
+        "cn": "身份牌共10张：主公1张，忠臣3张，反贼4张，内奸2张。",
+        "en": "Identity Cards × 10: 1 Lord, 3 Loyalists, 4 Rebels, 2 Spies.",
         "segments": [
           {
             "kind": "label",
-            "cn": "èº«ä»½ç‰Œ Ã— 10ï¼š",
-            "en": "Identity Cards Ã— 10: "
+            "cn": "身份牌 × 10：",
+            "en": "Identity Cards × 10: "
           },
           {
             "kind": "body",
-            "cn": "ä¸»å…¬1å¼ ï¼Œå¿ è‡£3å¼ ï¼Œåè´¼4å¼ ï¼Œå†…å¥¸2å¼ ã€‚",
+            "cn": "主公1张，忠臣3张，反贼4张，内奸2张。",
             "en": "1 Lord, 3 Loyalists, 4 Rebels, 2 Spies."
           }
         ],
@@ -30,17 +59,17 @@
       },
       {
         "type": "rule",
-        "cn": "ä½“åŠ›ç‰Œå…±12å¼ ï¼š1/2é˜´é˜³é±¼1å¼ ï¼Œ2/3é˜´é˜³é±¼1å¼ ï¼Œ3/4é˜´é˜³é±¼8å¼ ï¼Œ4/5é˜´é˜³é±¼2å¼ ã€‚",
-        "en": "HP Cards Ã— 12: 1 card showing 1/2, 1 card showing 2/3, 8 cards showing 3/4, 2 cards showing 4/5.",
+        "cn": "体力牌共12张：1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
+        "en": "HP Cards × 12: 1 card showing 1/2, 1 card showing 2/3, 8 cards showing 3/4, 2 cards showing 4/5.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä½“åŠ›ç‰Œ Ã— 12ï¼š",
-            "en": "HP Cards Ã— 12: "
+            "cn": "体力牌 × 12：",
+            "en": "HP Cards × 12: "
           },
           {
             "kind": "body",
-            "cn": "1/2é˜´é˜³é±¼1å¼ ï¼Œ2/3é˜´é˜³é±¼1å¼ ï¼Œ3/4é˜´é˜³é±¼8å¼ ï¼Œ4/5é˜´é˜³é±¼2å¼ ã€‚",
+            "cn": "1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
             "en": "1 showing 1/2, 1 showing 2/3, 8 showing 3/4, 2 showing 4/5."
           }
         ],
@@ -48,382 +77,297 @@
       },
       {
         "type": "rule",
-        "cn": "æ¸¸æˆç‰Œå…±162å¼ ï¼ˆåŸºæœ¬ç‰Œ85å¼ ï¼Œé”¦å›Šç‰Œ50å¼ ï¼Œè£…å¤‡ç‰Œ27å¼ ï¼‰ã€‚",
-        "en": "Game Cards Ã— 162 (Basic Cards 85, Tool Cards 50, Equipment Cards 27).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "æ¸¸æˆç‰Œ Ã— 162ï¼š",
-            "en": "Game Cards Ã— 162: "
-          },
-          {
-            "kind": "body",
-            "cn": "åŸºæœ¬ç‰Œ85å¼ ï¼Œé”¦å›Šç‰Œ50å¼ ï¼Œè£…å¤‡ç‰Œ27å¼ ã€‚è¯¦è§å„åˆ†ç±»æ¡ç›®ã€‚",
-            "en": "Basic Cards 85, Tool Cards 50, Equipment Cards 27. See individual entries for full breakdowns."
-          }
-        ],
+        "cn": "武将牌详见相关表格。",
+        "en": "General Cards are listed in the related tables.",
+        "segments": [],
+        "examples": []
+      },
+      {
+        "type": "rule",
+        "cn": "游戏牌共有162张，详见相关表格。",
+        "en": "Game Cards × 162 (Basic Cards 85, Tool Cards 50, Equipment Cards 27).",
+        "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "å¦æœ‰æ•ˆæžœæ ‡è®°ç‰Œè‹¥å¹²ï¼šã€æ”¾æƒã€‘æ ‡è®°1æžšï¼Œã€ç¼ æ€¨ã€‘æ ‡è®°5æžšï¼Œã€Œæ¢¦é­‡ã€æ ‡è®°11æžšï¼Œã€ç‹‚é£Žã€‘æ ‡è®°1æžšï¼Œã€å¤§é›¾ã€‘æ ‡è®°7æžšï¼Œã€Œæš´æ€’ã€æ ‡è®°11æžšï¼Œã€Œå¿ã€æ ‡è®°11æžšã€‚",
-        "en": "Additional effect tokens are included: 1 [Abdicate] token, 5 [Entangled Grudge] tokens, 11 ã€ŒNightmareã€ tokens, 1 [Gale] token, 7 [Great Fog] tokens, 11 ã€ŒRageã€ tokens, and 11 ã€ŒForbearanceã€ tokens.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "è¿½åŠ æ ‡è®°ï¼š",
-            "en": "Additional tokens: "
-          },
-          {
-            "kind": "body",
-            "cn": "1æžš",
-            "en": "1 "
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€æ”¾æƒã€‘",
-            "en": "[Abdicate]"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ5æžš",
-            "en": " token, 5 "
-          },
-          {
-            "kind": "body",
-            "cn": "ã€ç¼ æ€¨ã€‘",
-            "en": "[Entangled Grudge]"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ11æžš",
-            "en": " tokens, 11 "
-          },
-          {
-            "kind": "token",
-            "cn": "ã€Œæ¢¦é­‡ã€",
-            "en": "ã€ŒNightmareã€"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ1æžš",
-            "en": " tokens, 1 "
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€ç‹‚é£Žã€‘",
-            "en": "[Gale]"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ7æžš",
-            "en": " token, 7 "
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€å¤§é›¾ã€‘",
-            "en": "[Great Fog]"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ11æžš",
-            "en": " tokens, 11 "
-          },
-          {
-            "kind": "token",
-            "cn": "ã€Œæš´æ€’ã€",
-            "en": "ã€ŒRageã€"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ï¼Œ11æžš",
-            "en": " tokens, 11 "
-          },
-          {
-            "kind": "token",
-            "cn": "ã€Œå¿ã€",
-            "en": "ã€ŒForbearanceã€"
-          },
-          {
-            "kind": "body",
-            "cn": "æ ‡è®°ã€‚",
-            "en": " tokens."
-          }
-        ],
+        "cn": "另有「放权」效果标记牌（KayaK、LiuHeng）1张，「缠怨」效果标记5枚，「梦魇」标记11枚，「狂风」效果标志1枚，「大雾」效果标志7枚，「暴怒」标记11枚，「忍」标记11枚。",
+        "en": "Additional effect tokens are included: 1 「Abdicate」 token, 5 「Entangled Grudge」 tokens, 11 「Nightmare」 tokens, 1 「Gale」 token, 7 「Great Fog」 tokens, 11 「Rage」 tokens, and 11 「Forbearance」 tokens.",
+        "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "èº«ä»½å±€ å¡ç‰Œæ•°é‡ èº«ä»½ç‰Œ ä½“åŠ›ç‰Œ æ­¦å°†ç‰Œ æ¸¸æˆç‰Œ ä¸»å…¬ å¿ è‡£ åè´¼ å†…å¥¸ æ”¾æƒ ç¼ æ€¨ æ¢¦é­‡ ç‹‚é£Ž å¤§é›¾ æš´æ€’ å¿",
+    "search_text_cn": "身份局 卡牌数量 身份牌 体力牌 武将牌 游戏牌 主公 忠臣 反贼 内奸 放权 缠怨 梦魇 狂风 大雾 暴怒 忍",
     "search_text_en": "identity mode card counts lord loyalist rebel spy hp cards library cards abdicate entangled grudge nightmare gale great fog rage forbearance tokens"
   },
   {
     "id": "setup_1_1_basic_cards",
     "section_num": "1.1",
-    "section_title_cn": "èº«ä»½å±€æ¸¸æˆç‰Œä¸€è§ˆ â€” åŸºæœ¬ç‰Œ",
-    "section_title_en": "Identity Mode Game Cards â€” Basic Cards",
-    "term_cn": "åŸºæœ¬ç‰Œ",
+    "section_title_cn": "身份局游戏牌一览 — 基本牌",
+    "section_title_en": "Identity Mode Game Cards — Basic Cards",
+    "term_cn": "基本牌",
     "term_en": "Basic Cards",
     "badge": null,
-    "definition_cn": "åŸºæœ¬ç‰Œå…±85å¼ ï¼ŒåŒ…å«6ç§ç‰Œåã€‚ç«ã€æ€ã€‘ã€é›·ã€æ€ã€‘ã€ã€é…’ã€‘ä¸ºå†›äº‰ç¯‡æ‰©å……å†…å®¹ã€‚",
+    "definition_cn": "基本牌共85张，包含6种牌名。火【杀】、雷【杀】、【酒】为军争篇扩充内容。",
     "definition_en": "85 Basic Cards across 6 card types. Fire [Kill], Thunder [Kill], and [Wine] are from the Military Conflict expansion.",
     "rules": [
       {
         "type": "rule",
-        "cn": "æ™®é€šã€æ€ã€‘30å¼ ï¼šé»‘æ¡ƒ7å¼ ï¼ˆ7/8/8/9/9/10/10ï¼‰ï¼Œæ¢…èŠ±14å¼ ï¼ˆ2/3/4/5/6/7/8/8/9/9/10/10/J/Jï¼‰ï¼Œçº¢æ¡ƒ3å¼ ï¼ˆ10/10/Jï¼‰ï¼Œæ–¹å—6å¼ ï¼ˆ6/7/8/9/10/Kï¼‰ã€‚",
-        "en": "Normal [Kill] Ã— 30: Spades Ã— 7 (7/8/8/9/9/10/10), Clubs Ã— 14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts Ã— 3 (10/10/J), Diamonds Ã— 6 (6/7/8/9/10/K).",
+        "cn": "普通【杀】30张：黑桃7张（7/8/8/9/9/10/10），梅花14张（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3张（10/10/J），方块6张（6/7/8/9/10/K）。",
+        "en": "Normal [Kill] × 30: Spades × 7 (7/8/8/9/9/10/10), Clubs × 14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts × 3 (10/10/J), Diamonds × 6 (6/7/8/9/10/K).",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ™®é€šã€æ€ã€‘Ã— 30ï¼š",
-            "en": "Normal [Kill] Ã— 30: "
+            "cn": "普通【杀】× 30：",
+            "en": "Normal [Kill] × 30: "
           },
           {
             "kind": "body",
-            "cn": "é»‘æ¡ƒ7ï¼ˆ7/8/8/9/9/10/10ï¼‰ï¼Œæ¢…èŠ±14ï¼ˆ2/3/4/5/6/7/8/8/9/9/10/10/J/Jï¼‰ï¼Œçº¢æ¡ƒ3ï¼ˆ10/10/Jï¼‰ï¼Œæ–¹å—6ï¼ˆ6/7/8/9/10/Kï¼‰ã€‚",
-            "en": "Spades Ã—7 (7/8/8/9/9/10/10), Clubs Ã—14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts Ã—3 (10/10/J), Diamonds Ã—6 (6/7/8/9/10/K)."
+            "cn": "黑桃7（7/8/8/9/9/10/10），梅花14（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3（10/10/J），方块6（6/7/8/9/10/K）。",
+            "en": "Spades ×7 (7/8/8/9/9/10/10), Clubs ×14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts ×3 (10/10/J), Diamonds ×6 (6/7/8/9/10/K)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ç«ã€æ€ã€‘5å¼ ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼šçº¢æ¡ƒ3å¼ ï¼ˆ4/7/10ï¼‰ï¼Œæ–¹å—2å¼ ï¼ˆ4/5ï¼‰ã€‚",
-        "en": "Fire [Kill] Ã— 5 (Military Conflict): Hearts Ã— 3 (4/7/10), Diamonds Ã— 2 (4/5).",
+        "cn": "火【杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
+        "en": "Fire [Kill] × 5 (Military Conflict): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ç«ã€æ€ã€‘Ã— 5ï¼š",
-            "en": "Fire [Kill] Ã— 5: "
+            "cn": "火【杀】× 5：",
+            "en": "Fire [Kill] × 5: "
           },
           {
             "kind": "body",
-            "cn": "çº¢æ¡ƒ3ï¼ˆ4/7/10ï¼‰ï¼Œæ–¹å—2ï¼ˆ4/5ï¼‰ã€‚",
-            "en": "Hearts Ã—3 (4/7/10), Diamonds Ã—2 (4/5)."
+            "cn": "红桃3（4/7/10），方块2（4/5）。",
+            "en": "Hearts ×3 (4/7/10), Diamonds ×2 (4/5)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "é›·ã€æ€ã€‘9å¼ ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼šé»‘æ¡ƒ5å¼ ï¼ˆ4/5/6/7/8ï¼‰ï¼Œæ¢…èŠ±4å¼ ï¼ˆ5/6/7/8ï¼‰ã€‚",
-        "en": "Thunder [Kill] Ã— 9 (Military Conflict): Spades Ã— 5 (4/5/6/7/8), Clubs Ã— 4 (5/6/7/8).",
+        "cn": "雷【杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
+        "en": "Thunder [Kill] × 9 (Military Conflict): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
         "segments": [
           {
             "kind": "label",
-            "cn": "é›·ã€æ€ã€‘Ã— 9ï¼š",
-            "en": "Thunder [Kill] Ã— 9: "
+            "cn": "雷【杀】× 9：",
+            "en": "Thunder [Kill] × 9: "
           },
           {
             "kind": "body",
-            "cn": "é»‘æ¡ƒ5ï¼ˆ4/5/6/7/8ï¼‰ï¼Œæ¢…èŠ±4ï¼ˆ5/6/7/8ï¼‰ã€‚",
-            "en": "Spades Ã—5 (4/5/6/7/8), Clubs Ã—4 (5/6/7/8)."
+            "cn": "黑桃5（4/5/6/7/8），梅花4（5/6/7/8）。",
+            "en": "Spades ×5 (4/5/6/7/8), Clubs ×4 (5/6/7/8)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€é—ªã€‘24å¼ ï¼šçº¢æ¡ƒ7å¼ ï¼ˆ2/2/8/9/J/Q/Kï¼‰ï¼Œæ–¹å—17å¼ ï¼ˆ2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/Jï¼‰ã€‚",
-        "en": "[Dodge] Ã— 24: Hearts Ã— 7 (2/2/8/9/J/Q/K), Diamonds Ã— 17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J).",
+        "cn": "【闪】24张：红桃7张（2/2/8/9/J/Q/K），方块17张（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
+        "en": "[Dodge] × 24: Hearts × 7 (2/2/8/9/J/Q/K), Diamonds × 17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ã€é—ªã€‘Ã— 24ï¼š",
-            "en": "[Dodge] Ã— 24: "
+            "cn": "【闪】× 24：",
+            "en": "[Dodge] × 24: "
           },
           {
             "kind": "body",
-            "cn": "çº¢æ¡ƒ7ï¼ˆ2/2/8/9/J/Q/Kï¼‰ï¼Œæ–¹å—17ï¼ˆ2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/Jï¼‰ã€‚",
-            "en": "Hearts Ã—7 (2/2/8/9/J/Q/K), Diamonds Ã—17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J)."
+            "cn": "红桃7（2/2/8/9/J/Q/K），方块17（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
+            "en": "Hearts ×7 (2/2/8/9/J/Q/K), Diamonds ×17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€æ¡ƒã€‘12å¼ ï¼šçº¢æ¡ƒ9å¼ ï¼ˆ3/4/5/6/6/7/8/9/Qï¼‰ï¼Œæ–¹å—3å¼ ï¼ˆ2/3/Qï¼‰ã€‚",
-        "en": "[Peach] Ã— 12: Hearts Ã— 9 (3/4/5/6/6/7/8/9/Q), Diamonds Ã— 3 (2/3/Q).",
+        "cn": "【桃】12张：红桃9张（3/4/5/6/6/7/8/9/Q），方块3张（2/3/Q）。",
+        "en": "[Peach] × 12: Hearts × 9 (3/4/5/6/6/7/8/9/Q), Diamonds × 3 (2/3/Q).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ã€æ¡ƒã€‘Ã— 12ï¼š",
-            "en": "[Peach] Ã— 12: "
+            "cn": "【桃】× 12：",
+            "en": "[Peach] × 12: "
           },
           {
             "kind": "body",
-            "cn": "çº¢æ¡ƒ9ï¼ˆ3/4/5/6/6/7/8/9/Qï¼‰ï¼Œæ–¹å—3ï¼ˆ2/3/Qï¼‰ã€‚",
-            "en": "Hearts Ã—9 (3/4/5/6/6/7/8/9/Q), Diamonds Ã—3 (2/3/Q)."
+            "cn": "红桃9（3/4/5/6/6/7/8/9/Q），方块3（2/3/Q）。",
+            "en": "Hearts ×9 (3/4/5/6/6/7/8/9/Q), Diamonds ×3 (2/3/Q)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€é…’ã€‘5å¼ ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼šé»‘æ¡ƒ2å¼ ï¼ˆ3/9ï¼‰ï¼Œæ¢…èŠ±2å¼ ï¼ˆ3/9ï¼‰ï¼Œæ–¹å—1å¼ ï¼ˆ9ï¼‰ã€‚",
-        "en": "[Wine] Ã— 5 (Military Conflict): Spades Ã— 2 (3/9), Clubs Ã— 2 (3/9), Diamonds Ã— 1 (9).",
+        "cn": "【酒】5张（军争篇）：黑桃2张（3/9），梅花2张（3/9），方块1张（9）。",
+        "en": "[Wine] × 5 (Military Conflict): Spades × 2 (3/9), Clubs × 2 (3/9), Diamonds × 1 (9).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ã€é…’ã€‘Ã— 5ï¼š",
-            "en": "[Wine] Ã— 5: "
+            "cn": "【酒】× 5：",
+            "en": "[Wine] × 5: "
           },
           {
             "kind": "body",
-            "cn": "é»‘æ¡ƒ2ï¼ˆ3/9ï¼‰ï¼Œæ¢…èŠ±2ï¼ˆ3/9ï¼‰ï¼Œæ–¹å—1ï¼ˆ9ï¼‰ã€‚",
-            "en": "Spades Ã—2 (3/9), Clubs Ã—2 (3/9), Diamonds Ã—1 (9)."
+            "cn": "黑桃2（3/9），梅花2（3/9），方块1（9）。",
+            "en": "Spades ×2 (3/9), Clubs ×2 (3/9), Diamonds ×1 (9)."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "åŸºæœ¬ç‰Œ æ€ é—ª æ¡ƒ é…’ ç«æ€ é›·æ€ æ™®é€šæ€ èŠ±è‰² ç‚¹æ•° é»‘æ¡ƒ æ¢…èŠ± çº¢æ¡ƒ æ–¹å— å†›äº‰ç¯‡",
+    "search_text_cn": "基本牌 杀 闪 桃 酒 火杀 雷杀 普通杀 花色 点数 黑桃 梅花 红桃 方块 军争篇",
     "search_text_en": "basic cards kill dodge peach wine fire kill thunder kill suit rank spades clubs hearts diamonds military conflict"
   },
   {
     "id": "setup_1_1_tool_cards",
     "section_num": "1.1",
-    "section_title_cn": "èº«ä»½å±€æ¸¸æˆç‰Œä¸€è§ˆ â€” é”¦å›Šç‰Œ",
-    "section_title_en": "Identity Mode Game Cards â€” Tool Cards",
-    "term_cn": "é”¦å›Šç‰Œ",
+    "section_title_cn": "身份局游戏牌一览 — 锦囊牌",
+    "section_title_en": "Identity Mode Game Cards — Tool Cards",
+    "term_cn": "锦囊牌",
     "term_en": "Tool Cards",
     "badge": null,
-    "definition_cn": "é”¦å›Šç‰Œå…±50å¼ ï¼Œåˆ†ä¸ºå³æ—¶ç”Ÿæ•ˆçš„éžå»¶æ—¶ç±»é”¦å›Šç‰Œï¼ˆ43å¼ ï¼‰å’Œç½®å…¥åˆ¤å®šåŒºå»¶è¿Ÿç”Ÿæ•ˆçš„å»¶æ—¶ç±»é”¦å›Šç‰Œï¼ˆ7å¼ ï¼‰ã€‚",
+    "definition_cn": "锦囊牌共50张，分为即时生效的非延时类锦囊牌（43张）和置入判定区延迟生效的延时类锦囊牌（7张）。",
     "definition_en": "50 Tool Cards in total, split into Non Time-Delay Tool Cards (43) that take effect immediately, and Time-Delayed Tool Cards (7) that are placed in the Judgment Zone and resolve at a later turn.",
     "rules": [
       {
         "type": "rule",
-        "cn": "éžå»¶æ—¶ç±»é”¦å›Šç‰Œå…±43å¼ ï¼šã€è¿‡æ²³æ‹†æ¡¥ã€‘6å¼ ï¼ˆé»‘æ¡ƒ3Â·3/4/Qï¼Œæ¢…èŠ±2Â·3/4ï¼Œçº¢æ¡ƒ1Â·Qï¼‰ï¼Œã€é¡ºæ‰‹ç‰µç¾Šã€‘5å¼ ï¼ˆé»‘æ¡ƒ3Â·3/4/Jï¼Œæ–¹å—2Â·3/4ï¼‰ï¼Œã€å†³æ–—ã€‘3å¼ ï¼ˆé»‘æ¡ƒ/æ¢…èŠ±/æ–¹å—å„Aï¼‰ï¼Œã€å€Ÿåˆ€æ€äººã€‘2å¼ ï¼ˆæ¢…èŠ±Q/Kï¼‰ï¼Œã€æ— ä¸­ç”Ÿæœ‰ã€‘4å¼ ï¼ˆçº¢æ¡ƒ7/8/9/Jï¼‰ï¼Œã€æ— æ‡ˆå¯å‡»ã€‘7å¼ ï¼ˆé»‘æ¡ƒJ/Kï¼Œæ¢…èŠ±Q/Kï¼Œçº¢æ¡ƒA/Kï¼Œæ–¹å—EX-Qï¼‰ï¼Œã€é“ç´¢è¿žçŽ¯ã€‘6å¼ Â·å†›äº‰ç¯‡ï¼ˆé»‘æ¡ƒJ/Qï¼Œæ¢…èŠ±10/J/Q/Kï¼‰ï¼Œã€ç«æ”»ã€‘3å¼ Â·å†›äº‰ç¯‡ï¼ˆçº¢æ¡ƒ2/3ï¼Œæ–¹å—Qï¼‰ï¼Œã€ä¸‡ç®­é½å‘ã€‘1å¼ ï¼ˆçº¢æ¡ƒAï¼‰ï¼Œã€å—è›®å…¥ä¾µã€‘3å¼ ï¼ˆé»‘æ¡ƒ7/Kï¼Œæ¢…èŠ±7ï¼‰ï¼Œã€æ¡ƒå›­ç»“ä¹‰ã€‘1å¼ ï¼ˆçº¢æ¡ƒAï¼‰ï¼Œã€äº”è°·ä¸°ç™»ã€‘2å¼ ï¼ˆçº¢æ¡ƒ3/4ï¼‰ã€‚",
-        "en": "Non Time-Delay Tool Cards Ã— 43: [Dismantle] Ã—6 (Spades 3Â·3/4/Q, Clubs 2Â·3/4, Hearts 1Â·Q), [Steal] Ã—5 (Spades 3Â·3/4/J, Diamonds 2Â·3/4), [Duel] Ã—3 (Spades/Clubs/Diamonds each A), [Proxy Attack] Ã—2 (Clubs Q/K), [Resupply] Ã—4 (Hearts 7/8/9/J), [Nullification] Ã—7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] Ã—6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] Ã—3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] Ã—1 (Hearts A), [Barbarians] Ã—3 (Spades 7/K, Clubs 7), [Peach Garden] Ã—1 (Hearts A), [Harvest] Ã—2 (Hearts 3/4).",
+        "cn": "非延时类锦囊牌共43张：【过河拆桥】6张（黑桃3·3/4/Q，梅花2·3/4，红桃1·Q），【顺手牵羊】5张（黑桃3·3/4/J，方块2·3/4），【决斗】3张（黑桃/梅花/方块各A），【借刀杀人】2张（梅花Q/K），【无中生有】4张（红桃7/8/9/J），【无懈可击】7张（黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q），【铁索连环】6张·军争篇（黑桃J/Q，梅花10/J/Q/K），【火攻】3张·军争篇（红桃2/3，方块Q），【万箭齐发】1张（红桃A），【南蛮入侵】3张（黑桃7/K，梅花7），【桃园结义】1张（红桃A），【五谷丰登】2张（红桃3/4）。",
+        "en": "Non Time-Delay Tool Cards × 43: [Dismantle] ×6 (Spades 3·3/4/Q, Clubs 2·3/4, Hearts 1·Q), [Steal] ×5 (Spades 3·3/4/J, Diamonds 2·3/4), [Duel] ×3 (Spades/Clubs/Diamonds each A), [Proxy Attack] ×2 (Clubs Q/K), [Resupply] ×4 (Hearts 7/8/9/J), [Nullification] ×7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] ×6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] ×3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] ×1 (Hearts A), [Barbarians] ×3 (Spades 7/K, Clubs 7), [Peach Garden] ×1 (Hearts A), [Harvest] ×2 (Hearts 3/4).",
         "segments": [
           {
             "kind": "label",
-            "cn": "éžå»¶æ—¶ç±» Ã— 43ï¼š",
-            "en": "Non Time-Delay Ã— 43: "
+            "cn": "非延时类 × 43：",
+            "en": "Non Time-Delay × 43: "
           },
           {
             "kind": "card",
-            "cn": "ã€è¿‡æ²³æ‹†æ¡¥ã€‘",
+            "cn": "【过河拆桥】",
             "en": "[Dismantle]"
           },
           {
             "kind": "body",
-            "cn": "Ã—6ï¼Œ",
-            "en": " Ã—6, "
+            "cn": "×6，",
+            "en": " ×6, "
           },
           {
             "kind": "card",
-            "cn": "ã€é¡ºæ‰‹ç‰µç¾Šã€‘",
+            "cn": "【顺手牵羊】",
             "en": "[Steal]"
           },
           {
             "kind": "body",
-            "cn": "Ã—5ï¼Œ",
-            "en": " Ã—5, "
+            "cn": "×5，",
+            "en": " ×5, "
           },
           {
             "kind": "card",
-            "cn": "ã€å†³æ–—ã€‘",
+            "cn": "【决斗】",
             "en": "[Duel]"
           },
           {
             "kind": "body",
-            "cn": "Ã—3ï¼Œ",
-            "en": " Ã—3, "
+            "cn": "×3，",
+            "en": " ×3, "
           },
           {
             "kind": "card",
-            "cn": "ã€å€Ÿåˆ€æ€äººã€‘",
+            "cn": "【借刀杀人】",
             "en": "[Proxy Attack]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼Œ",
-            "en": " Ã—2, "
+            "cn": "×2，",
+            "en": " ×2, "
           },
           {
             "kind": "card",
-            "cn": "ã€æ— ä¸­ç”Ÿæœ‰ã€‘",
+            "cn": "【无中生有】",
             "en": "[Resupply]"
           },
           {
             "kind": "body",
-            "cn": "Ã—4ï¼Œ",
-            "en": " Ã—4, "
+            "cn": "×4，",
+            "en": " ×4, "
           },
           {
             "kind": "card",
-            "cn": "ã€æ— æ‡ˆå¯å‡»ã€‘",
+            "cn": "【无懈可击】",
             "en": "[Nullification]"
           },
           {
             "kind": "body",
-            "cn": "Ã—7ï¼Œ",
-            "en": " Ã—7, "
+            "cn": "×7，",
+            "en": " ×7, "
           },
           {
             "kind": "card",
-            "cn": "ã€é“ç´¢è¿žçŽ¯ã€‘",
+            "cn": "【铁索连环】",
             "en": "[Iron Shackles]"
           },
           {
             "kind": "body",
-            "cn": "Ã—6ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œ",
-            "en": " Ã—6 (Military Conflict), "
+            "cn": "×6（军争篇），",
+            "en": " ×6 (Military Conflict), "
           },
           {
             "kind": "card",
-            "cn": "ã€ç«æ”»ã€‘",
+            "cn": "【火攻】",
             "en": "[Incendiary]"
           },
           {
             "kind": "body",
-            "cn": "Ã—3ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œ",
-            "en": " Ã—3 (Military Conflict), "
+            "cn": "×3（军争篇），",
+            "en": " ×3 (Military Conflict), "
           },
           {
             "kind": "card",
-            "cn": "ã€ä¸‡ç®­é½å‘ã€‘",
+            "cn": "【万箭齐发】",
             "en": "[Raining Arrows]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€å—è›®å…¥ä¾µã€‘",
+            "cn": "【南蛮入侵】",
             "en": "[Barbarians]"
           },
           {
             "kind": "body",
-            "cn": "Ã—3ï¼Œ",
-            "en": " Ã—3, "
+            "cn": "×3，",
+            "en": " ×3, "
           },
           {
             "kind": "card",
-            "cn": "ã€æ¡ƒå›­ç»“ä¹‰ã€‘",
+            "cn": "【桃园结义】",
             "en": "[Peach Garden]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€äº”è°·ä¸°ç™»ã€‘",
+            "cn": "【五谷丰登】",
             "en": "[Harvest]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ã€‚",
-            "en": " Ã—2."
+            "cn": "×2。",
+            "en": " ×2."
           }
         ],
         "examples": [
           {
-            "cn": "è¯¦ç»†èŠ±è‰²/ç‚¹æ•°ï¼šã€è¿‡æ²³æ‹†æ¡¥ã€‘é»‘æ¡ƒ3ï¼ˆ3/4/Qï¼‰æ¢…èŠ±2ï¼ˆ3/4ï¼‰çº¢æ¡ƒ1ï¼ˆQï¼‰ï¼›ã€é¡ºæ‰‹ç‰µç¾Šã€‘é»‘æ¡ƒ3ï¼ˆ3/4/Jï¼‰æ–¹å—2ï¼ˆ3/4ï¼‰ï¼›ã€æ— æ‡ˆå¯å‡»ã€‘é»‘æ¡ƒJ/Kï¼Œæ¢…èŠ±Q/Kï¼Œçº¢æ¡ƒA/Kï¼Œæ–¹å—EX-Qï¼›ã€é“ç´¢è¿žçŽ¯ã€‘é»‘æ¡ƒJ/Qï¼Œæ¢…èŠ±10/J/Q/Kï¼›ã€ç«æ”»ã€‘çº¢æ¡ƒ2/3ï¼Œæ–¹å—Qï¼›ã€å—è›®å…¥ä¾µã€‘é»‘æ¡ƒ7/Kï¼Œæ¢…èŠ±7ã€‚",
+            "cn": "详细花色/点数：【过河拆桥】黑桃3（3/4/Q）梅花2（3/4）红桃1（Q）；【顺手牵羊】黑桃3（3/4/J）方块2（3/4）；【无懈可击】黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q；【铁索连环】黑桃J/Q，梅花10/J/Q/K；【火攻】红桃2/3，方块Q；【南蛮入侵】黑桃7/K，梅花7。",
             "en": "Suit/rank detail: [Dismantle] Spades(3/4/Q) Clubs(3/4) Hearts(Q); [Steal] Spades(3/4/J) Diamonds(3/4); [Nullification] Spades(J/K) Clubs(Q/K) Hearts(A/K) Diamonds(EX-Q); [Iron Shackles] Spades(J/Q) Clubs(10/J/Q/K); [Incendiary] Hearts(2/3) Diamonds(Q); [Barbarians] Spades(7/K) Clubs(7).",
             "sub_examples": []
           }
@@ -431,196 +375,196 @@
       },
       {
         "type": "rule",
-        "cn": "å»¶æ—¶ç±»é”¦å›Šç‰Œå…±7å¼ ï¼šã€é—ªç”µã€‘2å¼ ï¼ˆé»‘æ¡ƒAï¼Œçº¢æ¡ƒEX-Qï¼‰ï¼Œã€ä¹ä¸æ€èœ€ã€‘3å¼ ï¼ˆé»‘æ¡ƒ/çº¢æ¡ƒ/æ¢…èŠ±å„6ï¼‰ï¼Œã€å…µç²®å¯¸æ–­ã€‘2å¼ Â·å†›äº‰ç¯‡ï¼ˆé»‘æ¡ƒ10ï¼Œæ¢…èŠ±4ï¼‰ã€‚",
-        "en": "Time-Delayed Tool Cards Ã— 7: [Lightning] Ã—2 (Spades A, Hearts EX-Q), [Acedia] Ã—3 (Spades/Hearts/Clubs each 6), [Starvation] Ã—2 Military Conflict (Spades 10, Clubs 4).",
+        "cn": "延时类锦囊牌共7张：【闪电】2张（黑桃A，红桃EX-Q），【乐不思蜀】3张（黑桃/红桃/梅花各6），【兵粮寸断】2张·军争篇（黑桃10，梅花4）。",
+        "en": "Time-Delayed Tool Cards × 7: [Lightning] ×2 (Spades A, Hearts EX-Q), [Acedia] ×3 (Spades/Hearts/Clubs each 6), [Starvation] ×2 Military Conflict (Spades 10, Clubs 4).",
         "segments": [
           {
             "kind": "label",
-            "cn": "å»¶æ—¶ç±» Ã— 7ï¼š",
-            "en": "Time-Delayed Ã— 7: "
+            "cn": "延时类 × 7：",
+            "en": "Time-Delayed × 7: "
           },
           {
             "kind": "card",
-            "cn": "ã€é—ªç”µã€‘",
+            "cn": "【闪电】",
             "en": "[Lightning]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼ˆé»‘æ¡ƒAï¼Œçº¢æ¡ƒEX-Qï¼‰ï¼Œ",
-            "en": " Ã—2 (Spades A, Hearts EX-Q), "
+            "cn": "×2（黑桃A，红桃EX-Q），",
+            "en": " ×2 (Spades A, Hearts EX-Q), "
           },
           {
             "kind": "card",
-            "cn": "ã€ä¹ä¸æ€èœ€ã€‘",
+            "cn": "【乐不思蜀】",
             "en": "[Acedia]"
           },
           {
             "kind": "body",
-            "cn": "Ã—3ï¼ˆé»‘æ¡ƒ/çº¢æ¡ƒ/æ¢…èŠ±å„6ï¼‰ï¼Œ",
-            "en": " Ã—3 (Spades/Hearts/Clubs each 6), "
+            "cn": "×3（黑桃/红桃/梅花各6），",
+            "en": " ×3 (Spades/Hearts/Clubs each 6), "
           },
           {
             "kind": "card",
-            "cn": "ã€å…µç²®å¯¸æ–­ã€‘",
+            "cn": "【兵粮寸断】",
             "en": "[Starvation]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼ˆå†›äº‰ç¯‡ï¼Œé»‘æ¡ƒ10ï¼Œæ¢…èŠ±4ï¼‰ã€‚",
-            "en": " Ã—2 (Military Conflict, Spades 10, Clubs 4)."
+            "cn": "×2（军争篇，黑桃10，梅花4）。",
+            "en": " ×2 (Military Conflict, Spades 10, Clubs 4)."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "é”¦å›Šç‰Œ éžå»¶æ—¶ å»¶æ—¶ è¿‡æ²³æ‹†æ¡¥ é¡ºæ‰‹ç‰µç¾Š å†³æ–— å€Ÿåˆ€æ€äºº æ— ä¸­ç”Ÿæœ‰ æ— æ‡ˆå¯å‡» é“ç´¢è¿žçŽ¯ ç«æ”» ä¸‡ç®­é½å‘ å—è›®å…¥ä¾µ æ¡ƒå›­ç»“ä¹‰ äº”è°·ä¸°ç™» é—ªç”µ ä¹ä¸æ€èœ€ å…µç²®å¯¸æ–­ å†›äº‰ç¯‡",
+    "search_text_cn": "锦囊牌 非延时 延时 过河拆桥 顺手牵羊 决斗 借刀杀人 无中生有 无懈可击 铁索连环 火攻 万箭齐发 南蛮入侵 桃园结义 五谷丰登 闪电 乐不思蜀 兵粮寸断 军争篇",
     "search_text_en": "tool cards non time-delay time-delayed dismantle steal duel proxy attack resupply nullification iron shackles incendiary raining arrows barbarians peach garden harvest lightning acedia starvation military conflict"
   },
   {
     "id": "setup_1_1_equipment_cards",
     "section_num": "1.1",
-    "section_title_cn": "èº«ä»½å±€æ¸¸æˆç‰Œä¸€è§ˆ â€” è£…å¤‡ç‰Œ",
-    "section_title_en": "Identity Mode Game Cards â€” Equipment Cards",
-    "term_cn": "è£…å¤‡ç‰Œ",
+    "section_title_cn": "身份局游戏牌一览 — 装备牌",
+    "section_title_en": "Identity Mode Game Cards — Equipment Cards",
+    "term_cn": "装备牌",
     "term_en": "Equipment Cards",
     "badge": null,
-    "definition_cn": "è£…å¤‡ç‰Œå…±27å¼ ï¼Œåˆ†ä¸ºæ­¦å™¨ç‰Œï¼ˆ13å¼ ï¼‰ã€é˜²å…·ç‰Œï¼ˆ6å¼ ï¼‰ã€åéª‘ç‰Œï¼ˆ7å¼ ï¼‰ã€å®ç‰©ç‰Œï¼ˆ1å¼ ï¼‰ã€‚æ¯åè§’è‰²çš„è£…å¤‡åŒºå„ç±»åªèƒ½æ”¾ç½®ä¸€å¼ ã€‚",
+    "definition_cn": "装备牌共27张，分为武器牌（13张）、防具牌（6张）、坐骑牌（7张）、宝物牌（1张）。每名角色的装备区各类只能放置一张。",
     "definition_en": "27 Equipment Cards across four categories: Weapons (13), Armor (6), Mounts (7), and Treasure (1). Each character can equip at most one card of each type at a time.",
     "rules": [
       {
         "type": "rule",
-        "cn": "æ­¦å™¨ç‰Œå…±13å¼ ï¼šã€è¯¸è‘›è¿žå¼©ã€‘Ã—2ï¼Œã€é’é‡­å‰‘ã€‘Ã—1ï¼Œã€é›Œé›„åŒè‚¡å‰‘ã€‘Ã—1ï¼Œã€å¯’å†°å‰‘ã€‘Ã—1ï¼Œã€å¤é”­åˆ€ã€‘Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œã€è´¯çŸ³æ–§ã€‘Ã—1ï¼Œã€é’é¾™åƒæœˆåˆ€ã€‘Ã—1ï¼Œã€ä¸ˆå…«è›‡çŸ›ã€‘Ã—1ï¼Œã€æ–¹å¤©ç”»æˆŸã€‘Ã—1ï¼Œã€æœ±é›€ç¾½æ‰‡ã€‘Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œã€éº’éºŸå¼“ã€‘Ã—1ï¼Œã€é“¶æœˆæžªã€‘Ã—1ã€‚",
-        "en": "Weapons Ã— 13: [Repeating Crossbow] Ã—2, [Qing Gang Sword] Ã—1, [Twin Swords] Ã—1, [Frost Blade] Ã—1, [Ancient Scimitar] Ã—1 (Military Conflict), [Stonepiercer] Ã—1, [Green Dragon Crescent Blade] Ã—1, [Serpent Spear] Ã—1, [Sky Piercer] Ã—1, [Vermilion Bird Fan] Ã—1 (Military Conflict), [Kirin Bow] Ã—1, [Moon Spear] Ã—1.",
+        "cn": "武器牌共13张：【诸葛连弩】×2，【青釭剑】×1，【雌雄双股剑】×1，【寒冰剑】×1，【古锭刀】×1（军争篇），【贯石斧】×1，【青龙偃月刀】×1，【丈八蛇矛】×1，【方天画戟】×1，【朱雀羽扇】×1（军争篇），【麒麟弓】×1，【银月枪】×1。",
+        "en": "Weapons × 13: [Repeating Crossbow] ×2, [Qing Gang Sword] ×1, [Twin Swords] ×1, [Frost Blade] ×1, [Ancient Scimitar] ×1 (Military Conflict), [Stonepiercer] ×1, [Green Dragon Crescent Blade] ×1, [Serpent Spear] ×1, [Sky Piercer] ×1, [Vermilion Bird Fan] ×1 (Military Conflict), [Kirin Bow] ×1, [Moon Spear] ×1.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ­¦å™¨ç‰Œ Ã— 13ï¼š",
-            "en": "Weapons Ã— 13: "
+            "cn": "武器牌 × 13：",
+            "en": "Weapons × 13: "
           },
           {
             "kind": "card",
-            "cn": "ã€è¯¸è‘›è¿žå¼©ã€‘",
+            "cn": "【诸葛连弩】",
             "en": "[Repeating Crossbow]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼Œ",
-            "en": " Ã—2, "
+            "cn": "×2，",
+            "en": " ×2, "
           },
           {
             "kind": "card",
-            "cn": "ã€é’é‡­å‰‘ã€‘",
+            "cn": "【青釭剑】",
             "en": "[Qing Gang Sword]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€é›Œé›„åŒè‚¡å‰‘ã€‘",
+            "cn": "【雌雄双股剑】",
             "en": "[Twin Swords]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€å¯’å†°å‰‘ã€‘",
+            "cn": "【寒冰剑】",
             "en": "[Frost Blade]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€å¤é”­åˆ€ã€‘",
+            "cn": "【古锭刀】",
             "en": "[Ancient Scimitar]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œ",
-            "en": " Ã—1 (Military Conflict), "
+            "cn": "×1（军争篇），",
+            "en": " ×1 (Military Conflict), "
           },
           {
             "kind": "card",
-            "cn": "ã€è´¯çŸ³æ–§ã€‘",
+            "cn": "【贯石斧】",
             "en": "[Stonepiercer]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€é’é¾™åƒæœˆåˆ€ã€‘",
+            "cn": "【青龙偃月刀】",
             "en": "[Green Dragon Crescent Blade]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€ä¸ˆå…«è›‡çŸ›ã€‘",
+            "cn": "【丈八蛇矛】",
             "en": "[Serpent Spear]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€æ–¹å¤©ç”»æˆŸã€‘",
+            "cn": "【方天画戟】",
             "en": "[Sky Piercer]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€æœ±é›€ç¾½æ‰‡ã€‘",
+            "cn": "【朱雀羽扇】",
             "en": "[Vermilion Bird Fan]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œ",
-            "en": " Ã—1 (Military Conflict), "
+            "cn": "×1（军争篇），",
+            "en": " ×1 (Military Conflict), "
           },
           {
             "kind": "card",
-            "cn": "ã€éº’éºŸå¼“ã€‘",
+            "cn": "【麒麟弓】",
             "en": "[Kirin Bow]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "body",
-            "cn": "ã€é“¶æœˆæžªã€‘",
+            "cn": "【银月枪】",
             "en": "[Moon Spear]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ã€‚",
-            "en": " Ã—1."
+            "cn": "×1。",
+            "en": " ×1."
           }
         ],
         "examples": [
           {
-            "cn": "èŠ±è‰²/ç‚¹æ•°ï¼šã€è¯¸è‘›è¿žå¼©ã€‘æ¢…èŠ±Aï¼Œæ–¹å—Aï¼›ã€é’é‡­å‰‘ã€‘é»‘æ¡ƒ6ï¼›ã€é›Œé›„åŒè‚¡å‰‘ã€‘é»‘æ¡ƒ2ï¼›ã€å¯’å†°å‰‘ã€‘é»‘æ¡ƒEX-2ï¼›ã€å¤é”­åˆ€ã€‘é»‘æ¡ƒAï¼›ã€è´¯çŸ³æ–§ã€‘æ–¹å—5ï¼›ã€é’é¾™åƒæœˆåˆ€ã€‘é»‘æ¡ƒ5ï¼›ã€ä¸ˆå…«è›‡çŸ›ã€‘é»‘æ¡ƒQï¼›ã€æ–¹å¤©ç”»æˆŸã€‘æ–¹å—Qï¼›ã€æœ±é›€ç¾½æ‰‡ã€‘æ–¹å—Aï¼›ã€éº’éºŸå¼“ã€‘çº¢æ¡ƒ5ï¼›ã€é“¶æœˆæžªã€‘æ–¹å—Q-SPã€‚",
+            "cn": "花色/点数：【诸葛连弩】梅花A，方块A；【青釭剑】黑桃6；【雌雄双股剑】黑桃2；【寒冰剑】黑桃EX-2；【古锭刀】黑桃A；【贯石斧】方块5；【青龙偃月刀】黑桃5；【丈八蛇矛】黑桃Q；【方天画戟】方块Q；【朱雀羽扇】方块A；【麒麟弓】红桃5；【银月枪】方块Q-SP。",
             "en": "Suit/rank: [Repeating Crossbow] Clubs A, Diamonds A; [Qing Gang Sword] Spades 6; [Twin Swords] Spades 2; [Frost Blade] Spades EX-2; [Ancient Scimitar] Spades A; [Stonepiercer] Diamonds 5; [Green Dragon Crescent Blade] Spades 5; [Serpent Spear] Spades Q; [Sky Piercer] Diamonds Q; [Vermilion Bird Fan] Diamonds A; [Kirin Bow] Hearts 5; [Moon Spear] Diamonds Q-SP.",
             "sub_examples": []
           }
@@ -628,58 +572,58 @@
       },
       {
         "type": "rule",
-        "cn": "é˜²å…·ç‰Œå…±6å¼ ï¼šã€å…«å¦é˜µã€‘Ã—2ï¼Œã€ä»çŽ‹ç›¾ã€‘Ã—1ï¼Œã€è—¤ç”²ã€‘Ã—2ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œã€ç™½é“¶ç‹®å­ã€‘Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ã€‚",
-        "en": "Armor Ã— 6: [Eight Trigrams Formation] Ã—2, [Vajra Shield] Ã—1, [Rattan Armour] Ã—2 (Military Conflict), [Silver Lion Helmet] Ã—1 (Military Conflict).",
+        "cn": "防具牌共6张：【八卦阵】×2，【仁王盾】×1，【藤甲】×2（军争篇），【白银狮子】×1（军争篇）。",
+        "en": "Armor × 6: [Eight Trigrams Formation] ×2, [Vajra Shield] ×1, [Rattan Armour] ×2 (Military Conflict), [Silver Lion Helmet] ×1 (Military Conflict).",
         "segments": [
           {
             "kind": "label",
-            "cn": "é˜²å…·ç‰Œ Ã— 6ï¼š",
-            "en": "Armor Ã— 6: "
+            "cn": "防具牌 × 6：",
+            "en": "Armor × 6: "
           },
           {
             "kind": "card",
-            "cn": "ã€å…«å¦é˜µã€‘",
+            "cn": "【八卦阵】",
             "en": "[Eight Trigrams Formation]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼Œ",
-            "en": " Ã—2, "
+            "cn": "×2，",
+            "en": " ×2, "
           },
           {
             "kind": "card",
-            "cn": "ã€ä»çŽ‹ç›¾ã€‘",
+            "cn": "【仁王盾】",
             "en": "[Vajra Shield]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼Œ",
-            "en": " Ã—1, "
+            "cn": "×1，",
+            "en": " ×1, "
           },
           {
             "kind": "card",
-            "cn": "ã€è—¤ç”²ã€‘",
+            "cn": "【藤甲】",
             "en": "[Rattan Armour]"
           },
           {
             "kind": "body",
-            "cn": "Ã—2ï¼ˆå†›äº‰ç¯‡ï¼‰ï¼Œ",
-            "en": " Ã—2 (Military Conflict), "
+            "cn": "×2（军争篇），",
+            "en": " ×2 (Military Conflict), "
           },
           {
             "kind": "card",
-            "cn": "ã€ç™½é“¶ç‹®å­ã€‘",
+            "cn": "【白银狮子】",
             "en": "[Silver Lion Helmet]"
           },
           {
             "kind": "body",
-            "cn": "Ã—1ï¼ˆå†›äº‰ç¯‡ï¼‰ã€‚",
-            "en": " Ã—1 (Military Conflict)."
+            "cn": "×1（军争篇）。",
+            "en": " ×1 (Military Conflict)."
           }
         ],
         "examples": [
           {
-            "cn": "èŠ±è‰²/ç‚¹æ•°ï¼šã€å…«å¦é˜µã€‘é»‘æ¡ƒ2ï¼Œæ¢…èŠ±2ï¼›ã€ä»çŽ‹ç›¾ã€‘æ¢…èŠ±EX-2ï¼›ã€è—¤ç”²ã€‘é»‘æ¡ƒ2ï¼Œæ¢…èŠ±2ï¼›ã€ç™½é“¶ç‹®å­ã€‘æ¢…èŠ±Aã€‚",
+            "cn": "花色/点数：【八卦阵】黑桃2，梅花2；【仁王盾】梅花EX-2；【藤甲】黑桃2，梅花2；【白银狮子】梅花A。",
             "en": "Suit/rank: [Eight Trigrams Formation] Spades 2, Clubs 2; [Vajra Shield] Clubs EX-2; [Rattan Armour] Spades 2, Clubs 2; [Silver Lion Helmet] Clubs A.",
             "sub_examples": []
           }
@@ -687,60 +631,60 @@
       },
       {
         "type": "rule",
-        "cn": "åéª‘ç‰Œå…±7å¼ ï¼šã€+1åéª‘ã€‘4å¼ ï¼ˆç»å½±Â·é»‘æ¡ƒ5ï¼Œçˆªé»„é£žç”µÂ·çº¢æ¡ƒKï¼Œéª…éªÂ·æ–¹å—KÂ·å†›äº‰ç¯‡ï¼Œçš„å¢Â·æ¢…èŠ±5ï¼‰ï¼Œã€-1åéª‘ã€‘3å¼ ï¼ˆå¤§å®›Â·é»‘æ¡ƒKï¼Œèµ¤å…”Â·çº¢æ¡ƒ5ï¼Œç´«éªÂ·æ–¹å—Kï¼‰ã€‚",
-        "en": "Mounts Ã— 7: [+1 Mount] Ã—4 (Jue YingÂ·Spades 5, Zhao Huang Fei DianÂ·Hearts K, Hua LiuÂ·Diamonds KÂ·Military Conflict, Di LuÂ·Clubs 5), [-1 Mount] Ã—3 (Da YuanÂ·Spades K, Red HareÂ·Hearts 5, Zi XingÂ·Diamonds K).",
+        "cn": "坐骑牌共7张：【+1坐骑】4张（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），【-1坐骑】3张（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
+        "en": "Mounts × 7: 「+1 Mount」 ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), 「-1 Mount」 ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K).",
         "segments": [
           {
             "kind": "label",
-            "cn": "åéª‘ç‰Œ Ã— 7ï¼š",
-            "en": "Mounts Ã— 7: "
+            "cn": "坐骑牌 × 7：",
+            "en": "Mounts × 7: "
           },
           {
             "kind": "body",
-            "cn": "ã€+1åéª‘ã€‘",
-            "en": "[+1 Mount]"
+            "cn": "【+1坐骑】",
+            "en": "「+1 Mount」"
           },
           {
             "kind": "body",
-            "cn": "Ã—4ï¼ˆç»å½±Â·é»‘æ¡ƒ5ï¼Œçˆªé»„é£žç”µÂ·çº¢æ¡ƒKï¼Œéª…éªÂ·æ–¹å—KÂ·å†›äº‰ç¯‡ï¼Œçš„å¢Â·æ¢…èŠ±5ï¼‰ï¼Œ",
-            "en": " Ã—4 (Jue YingÂ·Spades 5, Zhao Huang Fei DianÂ·Hearts K, Hua LiuÂ·Diamonds KÂ·Military Conflict, Di LuÂ·Clubs 5), "
+            "cn": "×4（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），",
+            "en": " ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), "
           },
           {
             "kind": "body",
-            "cn": "ã€-1åéª‘ã€‘",
-            "en": "[-1 Mount]"
+            "cn": "【-1坐骑】",
+            "en": "「-1 Mount」"
           },
           {
             "kind": "body",
-            "cn": "Ã—3ï¼ˆå¤§å®›Â·é»‘æ¡ƒKï¼Œèµ¤å…”Â·çº¢æ¡ƒ5ï¼Œç´«éªÂ·æ–¹å—Kï¼‰ã€‚",
-            "en": " Ã—3 (Da YuanÂ·Spades K, Red HareÂ·Hearts 5, Zi XingÂ·Diamonds K)."
+            "cn": "×3（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
+            "en": " ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K)."
           }
         ],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ã€+1åéª‘ã€‘ï¼ˆé˜²å¾¡æ€§ï¼‰ï¼šå…¶ä»–è§’è‰²è®¡ç®—ä¸Žä½ çš„è·ç¦»+1ã€‚ã€-1åéª‘ã€‘ï¼ˆè¿›æ”»æ€§ï¼‰ï¼šä½ è®¡ç®—ä¸Žå…¶ä»–è§’è‰²çš„è·ç¦»-1ã€‚æ¯åè§’è‰²ä¸¤ç±»åéª‘å„é™è£…å¤‡ä¸€å¼ ã€‚",
-        "en": "[+1 Mount] (defensive): other characters measure their distance to you as +1. [-1 Mount] (offensive): you measure your distance to others as -1. Each character may equip at most one of each mount type.",
+        "cn": "【+1坐骑】（防御性）：其他角色计算与你的距离+1。【-1坐骑】（进攻性）：你计算与其他角色的距离-1。每名角色两类坐骑各限装备一张。",
+        "en": "「+1 Mount」 (defensive): other characters measure their distance to you as +1. 「-1 Mount」 (offensive): you measure your distance to others as -1. Each character may equip at most one of each mount type.",
         "segments": [
           {
             "kind": "body",
-            "cn": "ã€+1åéª‘ã€‘",
-            "en": "[+1 Mount]"
+            "cn": "【+1坐骑】",
+            "en": "「+1 Mount」"
           },
           {
             "kind": "body",
-            "cn": "ï¼ˆé˜²å¾¡æ€§ï¼‰ï¼šå…¶ä»–è§’è‰²è®¡ç®—ä¸Žä½ çš„è·ç¦»+1ã€‚",
+            "cn": "（防御性）：其他角色计算与你的距离+1。",
             "en": " (defensive): others measure distance to you +1. "
           },
           {
             "kind": "body",
-            "cn": "ã€-1åéª‘ã€‘",
-            "en": "[-1 Mount]"
+            "cn": "【-1坐骑】",
+            "en": "「-1 Mount」"
           },
           {
             "kind": "body",
-            "cn": "ï¼ˆè¿›æ”»æ€§ï¼‰ï¼šä½ è®¡ç®—ä¸Žå…¶ä»–è§’è‰²çš„è·ç¦»-1ã€‚æ¯åè§’è‰²ä¸¤ç±»å„é™ä¸€å¼ ã€‚",
+            "cn": "（进攻性）：你计算与其他角色的距离-1。每名角色两类各限一张。",
             "en": " (offensive): you measure distance to others -1. Each character equips at most one of each type."
           }
         ],
@@ -748,30 +692,29 @@
       },
       {
         "type": "rule",
-        "cn": "å®ç‰©ç‰Œå…±1å¼ ï¼šã€æœ¨ç‰›æµé©¬ã€‘ï¼Œæ–¹å—5ã€‚",
-        "en": "Treasure Ã— 1: [Wooden Ox], Diamonds 5.",
+        "cn": "宝物牌共1张：【木牛流马】，方块5。",
+        "en": "Treasure × 1: [Wooden Ox], Diamonds 5.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å®ç‰©ç‰Œ Ã— 1ï¼š",
-            "en": "Treasure Ã— 1: "
+            "cn": "宝物牌 × 1：",
+            "en": "Treasure × 1: "
           },
           {
             "kind": "card",
-            "cn": "ã€æœ¨ç‰›æµé©¬ã€‘",
+            "cn": "【木牛流马】",
             "en": "[Wooden Ox]"
           },
           {
             "kind": "body",
-            "cn": "ï¼Œæ–¹å—5ã€‚",
+            "cn": "，方块5。",
             "en": ", Diamonds 5."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "è£…å¤‡ç‰Œ æ­¦å™¨ é˜²å…· åéª‘ å®ç‰© è¯¸è‘›è¿žå¼© é’é‡­å‰‘ é›Œé›„åŒè‚¡å‰‘ å¯’å†°å‰‘ å¤é”­åˆ€ è´¯çŸ³æ–§ é’é¾™åƒæœˆåˆ€ ä¸ˆå…«è›‡çŸ› æ–¹å¤©ç”»æˆŸ æœ±é›€ç¾½æ‰‡ éº’éºŸå¼“ é“¶æœˆæžª å…«å¦é˜µ ä»çŽ‹ç›¾ è—¤ç”² ç™½é“¶ç‹®å­ ç»å½± çˆªé»„é£žç”µ éª…éª çš„å¢ å¤§å®› èµ¤å…” ç´«éª æœ¨ç‰›æµé©¬ å†›äº‰ç¯‡",
+    "search_text_cn": "装备牌 武器 防具 坐骑 宝物 诸葛连弩 青釭剑 雌雄双股剑 寒冰剑 古锭刀 贯石斧 青龙偃月刀 丈八蛇矛 方天画戟 朱雀羽扇 麒麟弓 银月枪 八卦阵 仁王盾 藤甲 白银狮子 绝影 爪黄飞电 骅骝 的卢 大宛 赤兔 紫骍 木牛流马 军争篇",
     "search_text_en": "equipment weapon armor mount treasure repeating crossbow qing gang sword twin swords frost blade ancient scimitar stonepiercer green dragon crescent blade serpent spear sky piercer vermilion bird fan kirin bow moon spear eight trigrams vajra shield rattan armour silver lion helmet jue ying red hare di lu wooden ox military conflict"
   }
 ]
-

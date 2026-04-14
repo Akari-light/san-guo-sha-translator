@@ -3,9 +3,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/services/resolver_service.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../reference/services/resolver_service.dart';
+import 'codex_reference_text.dart';
 
 // â”€â”€ Tap callback type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 //
@@ -58,6 +59,7 @@ class CodexRuleBlockWidget extends StatelessWidget {
                           depth: 0,
                           showChinese: showChinese,
                           isDark: isDark,
+                          onSegmentTap: onSegmentTap,
                         ))
                     .toList(),
               ),
@@ -317,13 +319,11 @@ class _RuleBlock extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 3, right: 6),
-          child: Text(
-            'â—†',
-            style: TextStyle(
-              fontSize: 9,
-              color: AppTheme.codexChapterAccent(chapter, isDark),
-            ),
+          padding: const EdgeInsets.only(top: 7, right: 8),
+          child: Icon(
+            Icons.circle,
+            size: 6,
+            color: AppTheme.codexChapterAccent(chapter, isDark),
           ),
         ),
         Expanded(child: Text.rich(span)),
@@ -440,12 +440,14 @@ class _ExampleTile extends StatelessWidget {
   final int depth;
   final bool showChinese;
   final bool isDark;
+  final SegmentTapCallback? onSegmentTap;
 
   const _ExampleTile({
     required this.ex,
     required this.depth,
     required this.showChinese,
     required this.isDark,
+    this.onSegmentTap,
   });
 
   @override
@@ -471,9 +473,10 @@ class _ExampleTile extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: InlineSuitText(
+                child: CodexReferenceText(
                   text: text,
                   isDark: isDark,
+                  onReferenceTap: onSegmentTap,
                   style: TextStyle(
                     fontSize: 12,
                     color: AppTheme.codexExampleText(isDark),
@@ -489,12 +492,13 @@ class _ExampleTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: ex.subExamples
-                    .map((sub) => _ExampleTile(
-                          ex: sub,
-                          depth: depth + 1,
-                          showChinese: showChinese,
-                          isDark: isDark,
-                        ))
+                     .map((sub) => _ExampleTile(
+                           ex: sub,
+                           depth: depth + 1,
+                           showChinese: showChinese,
+                           isDark: isDark,
+                           onSegmentTap: onSegmentTap,
+                         ))
                     .toList(),
               ),
             ),

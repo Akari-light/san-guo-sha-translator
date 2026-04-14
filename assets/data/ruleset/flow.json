@@ -1,64 +1,64 @@
-﻿[
+[
   {
     "id": "flow_3_0_flow_guide",
     "section_num": "3.0",
-    "section_title_cn": "æµç¨‹å¯¼å¼•",
+    "section_title_cn": "流程导引",
     "section_title_en": "Flow Guide",
-    "term_cn": "æµç¨‹æ€»è§ˆ",
+    "term_cn": "流程总览",
     "term_en": "Flow Overview",
     "badge": null,
-    "definition_cn": "æœ¬éƒ¨åˆ†è¯¦ç»†è¯´æ˜Žäº†æ¸¸æˆçš„æµç¨‹ã€å„ç±»äº‹ä»¶çš„ç»“ç®—æµç¨‹ä»¥åŠå„ä¸ªæµç¨‹ä¸­çš„æ—¶æœºã€‚",
+    "definition_cn": "本部分详细说明了游戏的流程，各类事件的结算流程以及各个流程中的时机。",
     "definition_en": "This section details the game flow, the resolution flow for each type of event, and the timings within each flow.",
     "rules": [
       {
         "type": "note",
-        "cn": "æ¡ˆä¾‹ä¸­æåˆ°ã€Œè§’è‰²ã€ï¼Œå¦‚æ— æ¡ä»¶è¯´æ˜Žï¼Œè¡¨ç¤ºä¸è€ƒè™‘è¯¥è§’è‰²çš„æ­¦å°†æŠ€èƒ½æˆ–è£…å¤‡æŠ€èƒ½ï¼Œè§†ä¸ºç™½æ¿ã€‚",
-        "en": "When an example refers to \"a character\" without qualification, it means the character has no General Card skills or equipment skills â€” treated as a blank.",
+        "cn": "案例中提到「角色」，如无条件说明，表示不考虑该角色的武将技能或装备技能，视为白板。",
+        "en": "When an example refers to \"a character\" without qualification, it means the character has no General Card skills or equipment skills — treated as a blank.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "æµç¨‹æ˜¯è§£å†³å‘åŠ¨æ—¶æœºã€å‘åŠ¨é¡ºåºç­‰è§„å¾‹æ€§é—®é¢˜çš„ä¾æ®ã€‚",
+        "cn": "流程是解决诸如发动时机、发动顺序等大量规律性问题的依据，这些问题于第五部分中将不会再出现。",
         "en": "The flow charts are the basis for resolving recurring questions such as activation timing and activation order.",
         "segments": [],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "æœ¬éƒ¨åˆ†æ¶µç›–ï¼šæ¸¸æˆçš„æµç¨‹ï¼ˆÂ§3.1ï¼‰ã€ä½¿ç”¨/æ‰“å‡º/æ‹¼ç‚¹/ç§»åŠ¨äº‹ä»¶ï¼ˆÂ§3.2â€“3.5ï¼‰ã€ç‰ŒçŠ¶æ€æ”¹å˜ï¼ˆÂ§3.6ï¼‰ã€åˆ¤å®š/ä¼¤å®³/ä½“åŠ›äº‹ä»¶ï¼ˆÂ§3.7â€“3.13ï¼‰ã€æ¿’æ­»/æ­»äº¡äº‹ä»¶ï¼ˆÂ§3.14â€“3.15ï¼‰ã€ä¸“é¢˜ä¸€ï¼ˆä½¿ç”¨ç‰Œçš„æ¡ä»¶ï¼ŒÂ§3.16ï¼‰ã€ä¸“é¢˜äºŒï¼ˆè™šæ‹Ÿç‰Œä¸Žå®žä½“ç‰Œï¼ŒÂ§3.17ï¼‰ã€‚",
-        "en": "This section covers: Game Flow (Â§3.1), Use/Play/Point Duel/Movement Events (Â§3.2â€“3.5), Card State Changes (Â§3.6), Judgment/Damage/HP Events (Â§3.7â€“3.13), Dying/Death Events (Â§3.14â€“3.15), Topic 1: Conditions for Using a Card (Â§3.16), Topic 2: Virtual Cards and Physical Cards (Â§3.17).",
+        "cn": "本部分涵盖：游戏的流程（§3.1）、使用/打出/拼点/移动事件（§3.2–3.5）、牌状态改变（§3.6）、判定/伤害/体力事件（§3.7–3.13）、濒死/死亡事件（§3.14–3.15）、专题一（使用牌的条件，§3.16）、专题二（虚拟牌与实体牌，§3.17）。",
+        "en": "This section covers: Game Flow (§3.1), Use/Play/Point Duel/Movement Events (§3.2–3.5), Card State Changes (§3.6), Judgment/Damage/HP Events (§3.7–3.13), Dying/Death Events (§3.14–3.15), Topic 1: Conditions for Using a Card (§3.16), Topic 2: Virtual Cards and Physical Cards (§3.17).",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "æµç¨‹å¯¼å¼• æ€»è§ˆ äº‹ä»¶ ç»“ç®— æ—¶æœº",
+    "search_text_cn": "流程导引 总览 事件 结算 时机",
     "search_text_en": "flow guide overview events resolution timing"
   },
   {
     "id": "flow_3_1_turn_flow",
     "section_num": "3.1",
-    "section_title_cn": "æ¸¸æˆçš„æµç¨‹",
+    "section_title_cn": "游戏的流程",
     "section_title_en": "Game Flow",
-    "term_cn": "å›žåˆæ—¶æœºä¸€è§ˆ",
+    "term_cn": "回合时机一览",
     "term_en": "Turn Timing Reference",
     "badge": null,
-    "definition_cn": "æ¯åè§’è‰²çš„å›žåˆåˆ†ä¸ºå…­ä¸ªé˜¶æ®µï¼šå‡†å¤‡é˜¶æ®µ â†’ åˆ¤å®šé˜¶æ®µ â†’ æ‘¸ç‰Œé˜¶æ®µ â†’ å‡ºç‰Œé˜¶æ®µ â†’ å¼ƒç‰Œé˜¶æ®µ â†’ ç»“æŸé˜¶æ®µã€‚ä»¥ä¸‹åˆ—å‡ºæ¯ä¸ªæ—¶æœºç‚¹åŠå…¶èƒ½å‘åŠ¨çš„æŠ€èƒ½ã€‚",
-    "definition_en": "Each character's turn has six phases: Starting Phase â†’ Judgment Phase â†’ Draw Phase â†’ Action Phase â†’ Discard Phase â†’ End Phase. The timings and skills that can activate at each point are listed below.",
+    "definition_cn": "每名角色的回合分为六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。以下列出每个时机点及其能发动的技能。",
+    "definition_en": "Each character's turn has six phases: Starting Phase → Judgment Phase → Draw Phase → Action Phase → Discard Phase → End Phase. The timings and skills that can activate at each point are listed below.",
     "rules": [
       {
         "type": "rule",
-        "cn": "ã€å›žåˆå¼€å§‹å‰ã€‘ï¼šè¯¥è§’è‰²çš„å›žåˆå³å°†å¼€å§‹ã€‚è‹¥å…¶æ­¦å°†ç‰ŒèƒŒé¢æœä¸Šï¼Œåˆ™å…¶ç¿»é¢ï¼Œç„¶åŽè·³è¿‡æ­¤å›žåˆã€‚",
+        "cn": "【回合开始前】：该角色的回合即将开始。若其武将牌背面朝上，则其翻面，然后跳过此回合。",
         "en": "Before Turn Start: The character's turn is about to begin. If their General Card is face-down, they flip it face-up and skip their turn.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å›žåˆå¼€å§‹å‰ï¼š",
+            "cn": "回合开始前：",
             "en": "Before Turn Start: "
           },
           {
             "kind": "body",
-            "cn": "è¯¥è§’è‰²çš„å›žåˆå³å°†å¼€å§‹ã€‚è‹¥å…¶æ­¦å°†ç‰ŒèƒŒé¢æœä¸Šï¼Œåˆ™å…¶ç¿»é¢ï¼Œç„¶åŽè·³è¿‡æ­¤å›žåˆã€‚",
+            "cn": "该角色的回合即将开始。若其武将牌背面朝上，则其翻面，然后跳过此回合。",
             "en": "The character's turn is about to begin. If their General Card is face-down, they flip it face-up and skip their turn."
           }
         ],
@@ -66,57 +66,57 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å›žåˆå¼€å§‹æ—¶ã€‘ï¼šè¿›å…¥è¯¥è§’è‰²çš„å›žåˆã€‚èƒ½å‘åŠ¨ï¼šã€ç¬”ä¼ã€‘çš„æ•ˆæžœã€ã€å½“å…ˆã€‘ã€ã€åŒ–èº«â‘¡ã€‘ã€ã€æƒ´æã€‘ã€‚",
-        "en": "At Turn Start: The character's turn begins. Skills that can activate: [Pen Denounce] effect, [Charge Ahead], [Shapeshifterâ‘¡], [Trepidation].",
+        "cn": "【回合开始时】：进入该角色的回合。能发动：〖笔伐〗的效果、〖当先〗、〖化身②〗、〖惴恐〗。",
+        "en": "At Turn Start: The character's turn begins. Skills that can activate: 〖Pen Denounce〗 effect, 〖Charge Ahead〗, 〖Shapeshifter②〗, 〖Trepidation〗.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å›žåˆå¼€å§‹æ—¶ï¼š",
+            "cn": "回合开始时：",
             "en": "At Turn Start: "
           },
           {
             "kind": "body",
-            "cn": "è¿›å…¥è¯¥è§’è‰²çš„å›žåˆã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "进入该角色的回合。能发动：",
             "en": "The character's turn begins. Skills that can activate: "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç¬”ä¼ã€‘",
-            "en": "[Pen Denounce]"
+            "cn": "〖笔伐〗",
+            "en": "〖Pen Denounce〗"
           },
           {
             "kind": "body",
-            "cn": "çš„æ•ˆæžœã€",
+            "cn": "的效果、",
             "en": " effect, "
           },
           {
             "kind": "skill",
-            "cn": "ã€å½“å…ˆã€‘",
-            "en": "[Charge Ahead]"
+            "cn": "〖当先〗",
+            "en": "〖Charge Ahead〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åŒ–èº«â‘¡ã€‘",
-            "en": "[Shapeshifterâ‘¡]"
+            "cn": "〖化身②〗",
+            "en": "〖Shapeshifter②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æƒ´æã€‘",
-            "en": "[Trepidation]"
+            "cn": "〖惴恐〗",
+            "en": "〖Trepidation〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": "."
           }
         ],
@@ -124,87 +124,87 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å‡†å¤‡é˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šèƒ½å‘åŠ¨ã€æ´›ç¥žã€‘ã€ã€å‡¿é™©ã€‘ã€ã€è§‚æ˜Ÿã€‘ã€ã€å¿—ç»§ã€‘ã€ã€è‹¥æ„šã€‘ã€ã€ç¥žæ™ºã€‘ã€ã€è‹±é­‚ã€‘ç­‰æŠ€èƒ½ã€‚",
-        "en": "At Starting Phase Start: Skills including [Goddess of the Luo], [Breach the Pass], [Read the Stars], [Inherit the Will], [Feign Foolishness], [Divine Mind], [Heroic Spirit] and others can activate.",
+        "cn": "【准备阶段开始时】：能发动〖洛神〗、〖凿险〗、〖观星〗、〖志继〗、〖若愚〗、〖神智〗、〖英魂〗等技能。",
+        "en": "At Starting Phase Start: Skills including 〖Goddess of the Luo〗, 〖Breach the Pass〗, 〖Read the Stars〗, 〖Inherit the Will〗, 〖Feign Foolishness〗, 〖Divine Mind〗, 〖Heroic Spirit〗 and others can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡†å¤‡é˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "准备阶段开始时：",
             "en": "At Starting Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
+            "cn": "能发动",
             "en": "Skills including "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ´›ç¥žã€‘",
-            "en": "[Goddess of the Luo]"
+            "cn": "〖洛神〗",
+            "en": "〖Goddess of the Luo〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å‡¿é™©ã€‘",
-            "en": "[Breach the Pass]"
+            "cn": "〖凿险〗",
+            "en": "〖Breach the Pass〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è§‚æ˜Ÿã€‘",
-            "en": "[Read the Stars]"
+            "cn": "〖观星〗",
+            "en": "〖Read the Stars〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¿—ç»§ã€‘",
-            "en": "[Inherit the Will]"
+            "cn": "〖志继〗",
+            "en": "〖Inherit the Will〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è‹¥æ„šã€‘",
-            "en": "[Feign Foolishness]"
+            "cn": "〖若愚〗",
+            "en": "〖Feign Foolishness〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç¥žæ™ºã€‘",
-            "en": "[Divine Mind]"
+            "cn": "〖神智〗",
+            "en": "〖Divine Mind〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è‹±é­‚ã€‘",
-            "en": "[Heroic Spirit]"
+            "cn": "〖英魂〗",
+            "en": "〖Heroic Spirit〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚",
+            "cn": "等技能。",
             "en": " and others can activate."
           }
         ],
@@ -212,17 +212,17 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å‡†å¤‡é˜¶æ®µã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【准备阶段】：暂时没有作用。",
         "en": "Starting Phase: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡†å¤‡é˜¶æ®µï¼š",
+            "cn": "准备阶段：",
             "en": "Starting Phase: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -230,17 +230,17 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å‡†å¤‡é˜¶æ®µç»“æŸæ—¶ã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【准备阶段结束时】：暂时没有作用。",
         "en": "At Starting Phase End: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡†å¤‡é˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "准备阶段结束时：",
             "en": "At Starting Phase End: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -248,93 +248,93 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å‡†å¤‡é˜¶æ®µä¸Žåˆ¤å®šé˜¶æ®µé—´ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€ç¥žé€Ÿâ‘ ã€‘ã€ã€å·§å˜ã€‘ã€ã€æŒ«é”â‘¡ã€‘ã€‚",
-        "en": "Between Starting Phase and Judgment Phase: [Lightning Speedâ‘ ], [Agile Maneuver], [Agile Maneuverâ‘¡] can activate.",
+        "cn": "【准备阶段与判定阶段间】：能发动：〖神速①〗、〖巧变〗、〖挫锐②〗。",
+        "en": "Between Starting Phase and Judgment Phase: 〖Lightning Speed①〗, 〖Agile Maneuver〗, 〖Agile Maneuver②〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡†å¤‡é˜¶æ®µä¸Žåˆ¤å®šé˜¶æ®µé—´ï¼š",
+            "cn": "准备阶段与判定阶段间：",
             "en": "Between Starting Phase and Judgment Phase: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç¥žé€Ÿâ‘ ã€‘",
-            "en": "[Agile Maneuver]"
+            "cn": "〖神速①〗",
+            "en": "〖Lightning Speed①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å·§å˜ã€‘",
-            "en": "[Agile Maneuverâ‘¡]"
+            "cn": "〖巧变〗",
+            "en": "〖Agile Maneuver〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æŒ«é”â‘¡ã€‘",
-            "en": "[æŒ«é”â‘¡]"
+            "cn": "〖挫锐②〗",
+            "en": "〖Agile Maneuver②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€åˆ¤å®šé˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€å‹‡ç•¥ã€‘ã€‚",
-        "en": "At Judgment Phase Start: [Valiant Stratagem] can activate.",
+        "cn": "【判定阶段开始时】：能发动：〖勇略〗。",
+        "en": "At Judgment Phase Start: 〖Valiant Stratagem〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "åˆ¤å®šé˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "判定阶段开始时：",
             "en": "At Judgment Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€å‹‡ç•¥ã€‘",
-            "en": "[å‹‡ç•¥]"
+            "cn": "〖勇略〗",
+            "en": "〖Valiant Stratagem〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€åˆ¤å®šé˜¶æ®µã€‘ï¼šè§’è‰²é¡»æ£€æµ‹å…¶åˆ¤å®šåŒºé‡Œæ˜¯å¦æœ‰å»¶æ—¶ç±»é”¦å›Šç‰Œã€‚è‹¥æœ‰ï¼Œè¿›è¡Œå…¶ä¸­æœ€åŽç½®å…¥å…¶åˆ¤å®šåŒºé‡Œçš„é‚£å¼ å»¶æ—¶ç±»é”¦å›Šç‰Œçš„ä½¿ç”¨ç»“ç®—ï¼Œç„¶åŽé‡å¤æ­¤æµç¨‹ï¼›è‹¥æ²¡æœ‰ï¼Œè¿›å…¥ã€Œåˆ¤å®šé˜¶æ®µç»“æŸæ—¶ã€ã€‚",
+        "cn": "【判定阶段】：角色须检测其判定区里是否有延时类锦囊牌。若有，进行其中最后置入其判定区里的那张延时类锦囊牌的使用结算，然后重复此流程；若没有，进入「判定阶段结束时」。",
         "en": "Judgment Phase: The character checks their Judgment Zone for Time-Delayed Tool Cards. If present, resolve the most recently placed one, then repeat. If none remain, proceed to \"At Judgment Phase End\".",
         "segments": [
           {
             "kind": "label",
-            "cn": "åˆ¤å®šé˜¶æ®µï¼š",
+            "cn": "判定阶段：",
             "en": "Judgment Phase: "
           },
           {
             "kind": "body",
-            "cn": "è§’è‰²é¡»æ£€æµ‹åˆ¤å®šåŒºé‡Œæ˜¯å¦æœ‰å»¶æ—¶ç±»é”¦å›Šç‰Œã€‚è‹¥æœ‰ï¼Œç»“ç®—æœ€åŽç½®å…¥çš„é‚£å¼ ï¼Œç„¶åŽé‡å¤ï¼›è‹¥æ²¡æœ‰ï¼Œè¿›å…¥ã€Œåˆ¤å®šé˜¶æ®µç»“æŸæ—¶ã€ã€‚",
+            "cn": "角色须检测判定区里是否有延时类锦囊牌。若有，结算最后置入的那张，然后重复；若没有，进入「判定阶段结束时」。",
             "en": "Check Judgment Zone for Time-Delayed Tool Cards. If present, resolve the most recently placed one, then repeat. If none remain, proceed to \"At Judgment Phase End\"."
           }
         ],
@@ -342,17 +342,17 @@
       },
       {
         "type": "rule",
-        "cn": "ã€åˆ¤å®šé˜¶æ®µç»“æŸæ—¶ã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【判定阶段结束时】：暂时没有作用。",
         "en": "At Judgment Phase End: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "åˆ¤å®šé˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "判定阶段结束时：",
             "en": "At Judgment Phase End: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -360,115 +360,115 @@
       },
       {
         "type": "rule",
-        "cn": "ã€åˆ¤å®šé˜¶æ®µä¸Žæ‘¸ç‰Œé˜¶æ®µé—´ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€è£¸è¡£ã€‘ã€ã€å·§å˜ã€‘ã€‚",
-        "en": "Between Judgment Phase and Draw Phase: [Bare-Chested], [Agile Maneuver] can activate.",
+        "cn": "【判定阶段与摸牌阶段间】：能发动：〖裸衣〗、〖巧变〗。",
+        "en": "Between Judgment Phase and Draw Phase: 〖Bare-Chested〗, 〖Agile Maneuver〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "åˆ¤å®šé˜¶æ®µä¸Žæ‘¸ç‰Œé˜¶æ®µé—´ï¼š",
+            "cn": "判定阶段与摸牌阶段间：",
             "en": "Between Judgment Phase and Draw Phase: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è£¸è¡£ã€‘",
-            "en": "[Agile Maneuver]"
+            "cn": "〖裸衣〗",
+            "en": "〖Bare-Chested〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€å·§å˜ã€‘",
-            "en": "[å·§å˜]"
+            "cn": "〖巧变〗",
+            "en": "〖Agile Maneuver〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€æ‘¸ç‰Œé˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šè§’è‰²è¿›å…¥æ‘¸ç‰Œé˜¶æ®µä½†è¿˜æ²¡æœ‰æ‘¸ç‰Œã€‚èƒ½å‘åŠ¨ï¼šã€çªè¢­ï¼ˆæ ‡ï¼‰ã€‘ã€ã€é—è®¡ã€‘èŽ·å¾—ã€Œè®¡ã€çš„æ•ˆæžœã€ã€æ‚æ‚ã€‘ã€ã€å†èµ·ã€‘ã€ã€çœ©æƒ‘ã€‘ã€ã€æ¶‰çŒŽã€‘ç­‰æŠ€èƒ½ã€‚",
-        "en": "At Draw Phase Start: The character enters the Draw Phase but has not yet drawn. Skills such as [Sudden Raid], [Posthumous Plan] (gain Stratagem), [Careful Survey], [Rise Again], [Beguile], [Wide Reading] and others can activate.",
+        "cn": "【摸牌阶段开始时】：角色进入摸牌阶段但还没有摸牌。能发动：〖突袭（标）〗、〖遗计〗获得「计」的效果、〖恂恂〗、〖再起〗、〖眩惑〗、〖涉猎〗等技能。",
+        "en": "At Draw Phase Start: The character enters the Draw Phase but has not yet drawn. Skills such as 〖Sudden Raid〗, 〖Posthumous Plan〗 (gain Stratagem), 〖Careful Survey〗, 〖Rise Again〗, 〖Beguile〗, 〖Wide Reading〗 and others can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ‘¸ç‰Œé˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "摸牌阶段开始时：",
             "en": "At Draw Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "è§’è‰²è¿›å…¥æ‘¸ç‰Œé˜¶æ®µä½†è¿˜æ²¡æœ‰æ‘¸ç‰Œã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "角色进入摸牌阶段但还没有摸牌。能发动：",
             "en": "Character enters the Draw Phase but has not yet drawn. Skills such as "
           },
           {
             "kind": "skill",
-            "cn": "ã€çªè¢­ï¼ˆæ ‡ï¼‰ã€‘",
-            "en": "[Sudden Raid]"
+            "cn": "〖突袭（标）〗",
+            "en": "〖Sudden Raid〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é—è®¡ã€‘",
-            "en": "[Posthumous Plan]"
+            "cn": "〖遗计〗",
+            "en": "〖Posthumous Plan〗"
           },
           {
             "kind": "body",
-            "cn": "èŽ·å¾—ã€Œè®¡ã€çš„æ•ˆæžœã€",
+            "cn": "获得「计」的效果、",
             "en": " (gain Stratagem), "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ‚æ‚ã€‘",
-            "en": "[Careful Survey]"
+            "cn": "〖恂恂〗",
+            "en": "〖Careful Survey〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å†èµ·ã€‘",
-            "en": "[Rise Again]"
+            "cn": "〖再起〗",
+            "en": "〖Rise Again〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€çœ©æƒ‘ã€‘",
-            "en": "[Beguile]"
+            "cn": "〖眩惑〗",
+            "en": "〖Beguile〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ¶‰çŒŽã€‘",
-            "en": "[Wide Reading]"
+            "cn": "〖涉猎〗",
+            "en": "〖Wide Reading〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚",
+            "cn": "等技能。",
             "en": " and others can activate."
           }
         ],
@@ -476,63 +476,63 @@
       },
       {
         "type": "rule",
-        "cn": "ã€æ‘¸ç‰Œé˜¶æ®µã€‘ï¼šè§’è‰²æ‘¸ä¸¤å¼ ç‰Œã€‚èƒ½å‘åŠ¨ï¼šã€çªè¢­ã€‘ã€ã€è‹±å§¿â‘ ã€‘ã€ã€å¥½æ–½ã€‘ã€ã€å°†é©°ã€‘ç­‰æŠ€èƒ½ã€‚",
-        "en": "Draw Phase: The character draws 2 cards. Skills such as [Surprise Raid], [Heroic Bearingâ‘ ], [Generous], [Cavalry Charge] and others can activate.",
+        "cn": "【摸牌阶段】：角色摸两张牌。能发动：〖突袭〗、〖英姿①〗、〖好施〗、〖将驰〗等技能。",
+        "en": "Draw Phase: The character draws 2 cards. Skills such as 〖Surprise Raid〗, 〖Heroic Bearing①〗, 〖Generous〗, 〖Cavalry Charge〗 and others can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ‘¸ç‰Œé˜¶æ®µï¼š",
+            "cn": "摸牌阶段：",
             "en": "Draw Phase: "
           },
           {
             "kind": "body",
-            "cn": "è§’è‰²æ‘¸ä¸¤å¼ ç‰Œã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "角色摸两张牌。能发动：",
             "en": "Character draws 2 cards. Skills such as "
           },
           {
             "kind": "skill",
-            "cn": "ã€çªè¢­ã€‘",
-            "en": "[Surprise Raid]"
+            "cn": "〖突袭〗",
+            "en": "〖Surprise Raid〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è‹±å§¿â‘ ã€‘",
-            "en": "[Heroic Bearingâ‘ ]"
+            "cn": "〖英姿①〗",
+            "en": "〖Heroic Bearing①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¥½æ–½ã€‘",
-            "en": "[Generous]"
+            "cn": "〖好施〗",
+            "en": "〖Generous〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å°†é©°ã€‘",
-            "en": "[Cavalry Charge]"
+            "cn": "〖将驰〗",
+            "en": "〖Cavalry Charge〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚",
+            "cn": "等技能。",
             "en": " and others can activate."
           }
         ],
         "examples": [
           {
-            "cn": "è§’è‰²æ‰§è¡Œä¿®æ­£æ‘¸ç‰Œé˜¶æ®µçš„æ‘¸ç‰Œæ•°çš„æ“ä½œåŽï¼Œåœ¨æ‰§è¡ŒæŠ€èƒ½çš„ï¼ˆä¸‹ä¸€ä¸ªï¼‰æ•ˆæžœå‰ï¼Œé¡»å…ˆæŒ‰ä¿®æ­£åŽçš„æ‘¸ç‰Œæ•°æ‘¸ç‰Œã€‚",
+            "cn": "角色执行修正摸牌阶段的摸牌数的操作后，在执行技能的（下一个）效果前，须先按修正后的摸牌数摸牌。",
             "en": "After a character modifies their Draw Phase draw count, they must draw the modified number of cards before proceeding to the next skill effect.",
             "sub_examples": []
           }
@@ -540,27 +540,27 @@
       },
       {
         "type": "rule",
-        "cn": "ã€æ‘¸ç‰Œé˜¶æ®µç»“æŸæ—¶ã€‘ï¼šè§’è‰²æ‘¸ç‰ŒåŽã€‚èƒ½å‘åŠ¨ï¼šã€ä¸ƒæ˜Ÿâ‘¡ã€‘ã€‚",
-        "en": "At Draw Phase End: After the character has drawn. [Seven Starsâ‘¡] can activate.",
+        "cn": "【摸牌阶段结束时】：角色摸牌后。能发动：〖七星②〗。",
+        "en": "At Draw Phase End: After the character has drawn. 〖Seven Stars②〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ‘¸ç‰Œé˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "摸牌阶段结束时：",
             "en": "At Draw Phase End: "
           },
           {
             "kind": "body",
-            "cn": "è§’è‰²æ‘¸ç‰ŒåŽã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "角色摸牌后。能发动：",
             "en": "After the character has drawn. "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¸ƒæ˜Ÿâ‘¡ã€‘",
-            "en": "[Seven Starsâ‘¡]"
+            "cn": "〖七星②〗",
+            "en": "〖Seven Stars②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -568,189 +568,189 @@
       },
       {
         "type": "rule",
-        "cn": "ã€æ‘¸ç‰Œé˜¶æ®µä¸Žå‡ºç‰Œé˜¶æ®µé—´ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€ç¥žé€Ÿâ‘¡ã€‘ã€ã€å·§å˜ã€‘ã€ã€æ”¾æƒã€‘ã€‚",
-        "en": "Between Draw Phase and Action Phase: [Lightning Speedâ‘¡], [Agile Maneuver], [Abdicate] can activate.",
+        "cn": "【摸牌阶段与出牌阶段间】：能发动：〖神速②〗、〖巧变〗、〖放权〗。",
+        "en": "Between Draw Phase and Action Phase: 〖Lightning Speed②〗, 〖Agile Maneuver〗, 〖Abdicate〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ‘¸ç‰Œé˜¶æ®µä¸Žå‡ºç‰Œé˜¶æ®µé—´ï¼š",
+            "cn": "摸牌阶段与出牌阶段间：",
             "en": "Between Draw Phase and Action Phase: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç¥žé€Ÿâ‘¡ã€‘",
-            "en": "[Agile Maneuver]"
+            "cn": "〖神速②〗",
+            "en": "〖Lightning Speed②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å·§å˜ã€‘",
-            "en": "[Abdicate]"
+            "cn": "〖巧变〗",
+            "en": "〖Agile Maneuver〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ”¾æƒã€‘",
-            "en": "[æ”¾æƒ]"
+            "cn": "〖放权〗",
+            "en": "〖Abdicate〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å‡ºç‰Œé˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€å¸æ•Œâ‘¡ã€‘ã€ã€å·§è¯´ã€‘ã€ã€å¼ºè¯†ã€‘ã€ã€çŒ®å›¾ã€‘ã€ã€ç‡•è¯­ã€‘ã€ã€åŒåˆƒã€‘ã€ã€é¸©æ¯’ã€‘ã€‚",
-        "en": "At Action Phase Start: [Counter the Enemyâ‘¡], [Clever Persuasion], [Photographic Memory], [Present the Map], [Swallow's Song], [Twin Blades], [Poison Wine] can activate.",
+        "cn": "【出牌阶段开始时】：能发动：〖司敌②〗、〖巧说〗、〖强识〗、〖献图〗、〖燕语〗、〖双刃〗、〖鸩毒〗。",
+        "en": "At Action Phase Start: 〖Counter the Enemy②〗, 〖Clever Persuasion〗, 〖Photographic Memory〗, 〖Present the Map〗, 〖Swallow's Song〗, 〖Twin Blades〗, 〖Poison Wine〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡ºç‰Œé˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "出牌阶段开始时：",
             "en": "At Action Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¸æ•Œâ‘¡ã€‘",
-            "en": "[Clever Persuasion]"
+            "cn": "〖司敌②〗",
+            "en": "〖Counter the Enemy②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å·§è¯´ã€‘",
-            "en": "[Photographic Memory]"
+            "cn": "〖巧说〗",
+            "en": "〖Clever Persuasion〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¼ºè¯†ã€‘",
-            "en": "[Present the Map]"
+            "cn": "〖强识〗",
+            "en": "〖Photographic Memory〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€çŒ®å›¾ã€‘",
-            "en": "[Swallow's Song]"
+            "cn": "〖献图〗",
+            "en": "〖Present the Map〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç‡•è¯­ã€‘",
-            "en": "[Twin Blades]"
+            "cn": "〖燕语〗",
+            "en": "〖Swallow's Song〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åŒåˆƒã€‘",
-            "en": "[Poison Wine]"
+            "cn": "〖双刃〗",
+            "en": "〖Twin Blades〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€é¸©æ¯’ã€‘",
-            "en": "[é¸©æ¯’]"
+            "cn": "〖鸩毒〗",
+            "en": "〖Poison Wine〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å‡ºç‰Œé˜¶æ®µï¼ˆçš„ç©ºé—²æ—¶é—´ç‚¹ï¼‰ã€‘ï¼šè¿›è¡Œæ¸¸æˆçš„ä¸»è¦é˜¶æ®µã€‚èƒ½å‘åŠ¨å¤šç§ä¸»åŠ¨æŠ€èƒ½åŠä½¿ç”¨é™¤ã€é—ªã€‘ä»¥å¤–çš„åŸºæœ¬ç‰Œã€é™¤ã€æ— æ‡ˆå¯å‡»ã€‘å¤–çš„é”¦å›Šç‰Œã€æ‰€æœ‰è£…å¤‡ç‰Œã€‚",
+        "cn": "【出牌阶段（的空闲时间点）】：进行游戏的主要阶段。能发动多种主动技能及使用除【闪】以外的基本牌、除【无懈可击】外的锦囊牌、所有装备牌。",
         "en": "Action Phase (Idle Timing): The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except [Dodge]), Tool Cards (except [Nullification]), and all Equipment Cards.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡ºç‰Œé˜¶æ®µï¼š",
+            "cn": "出牌阶段：",
             "en": "Action Phase: "
           },
           {
             "kind": "body",
-            "cn": "è¿›è¡Œæ¸¸æˆçš„ä¸»è¦é˜¶æ®µã€‚èƒ½å‘åŠ¨å¤šç§ä¸»åŠ¨æŠ€èƒ½åŠä½¿ç”¨é™¤",
+            "cn": "进行游戏的主要阶段。能发动多种主动技能及使用除",
             "en": "The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except "
           },
           {
             "kind": "card",
-            "cn": "ã€é—ªã€‘",
+            "cn": "【闪】",
             "en": "[Dodge]"
           },
           {
             "kind": "body",
-            "cn": "ä»¥å¤–çš„åŸºæœ¬ç‰Œã€é™¤",
+            "cn": "以外的基本牌、除",
             "en": "), Tool Cards (except "
           },
           {
             "kind": "card",
-            "cn": "ã€æ— æ‡ˆå¯å‡»ã€‘",
+            "cn": "【无懈可击】",
             "en": "[Nullification]"
           },
           {
             "kind": "body",
-            "cn": "å¤–çš„é”¦å›Šç‰Œã€æ‰€æœ‰è£…å¤‡ç‰Œã€‚",
+            "cn": "外的锦囊牌、所有装备牌。",
             "en": "), and all Equipment Cards."
           }
         ],
         "examples": [
           {
-            "cn": "å‘åŠ¨æ—¶æœºä¸ºã€Œå‡ºç‰Œé˜¶æ®µã€çš„æŠ€èƒ½å¿…é¡»åœ¨å‡ºç‰Œé˜¶æ®µçš„ç©ºé—²æ—¶é—´ç‚¹æ‰å¯ä»¥å‘åŠ¨ã€‚å¦‚æžœåœ¨å‡ºç‰Œé˜¶æ®µå‘ç”Ÿäº‹ä»¶ï¼Œé¡»å…ˆæ’å…¥è¿›è¡Œè¯¥äº‹ä»¶çš„ç»“ç®—ï¼Œç»“ç®—å®Œæ¯•åŽæ‰å¯å‘åŠ¨ã€‚",
+            "cn": "发动时机为「出牌阶段」的技能必须在出牌阶段的空闲时间点才可以发动。如果在出牌阶段发生事件，须先插入进行该事件的结算，结算完毕后才可发动。",
             "en": "Skills with timing \"Action Phase\" can only activate at an idle timing. If an event occurs mid-phase, that event's resolution must complete first.",
             "sub_examples": [
               {
-                "cn": "è£…å¤‡ã€é’é¾™åƒæœˆåˆ€ã€‘çš„è§’è‰²åœ¨å‡ºç‰Œé˜¶æ®µä½¿ç”¨çš„ã€æ€ã€‘è¢«ã€é—ªã€‘æŠµæ¶ˆæ—¶ï¼šè‹¥è¯¥è§’è‰²ä¸å‘åŠ¨ã€é’é¾™åƒæœˆåˆ€ã€‘ï¼Œæ­¤æ—¶ä¸ºç©ºé—²æ—¶é—´ç‚¹ï¼Œå¯ä»¥å¯¹è‡ªå·±ä½¿ç”¨ã€é…’ã€‘ï¼›è‹¥è¯¥è§’è‰²å‘åŠ¨ã€é’é¾™åƒæœˆåˆ€ã€‘ï¼Œæ­¤æ—¶ä¸å¯ä»¥ä½¿ç”¨ã€é…’ã€‘ï¼Œå¿…é¡»å¯¹ç›¸åŒç›®æ ‡ä½¿ç”¨ã€æ€ã€‘ã€‚",
-                "en": "When a [Kill] is negated (equipped with [Green Dragon Crescent Blade]): if the weapon is not activated, it is an idle timing and [Wine] may be used on self; if the weapon is activated, [Wine] cannot be used â€” [Kill] must be used on the same target."
+                "cn": "装备【青龙偃月刀】的角色在出牌阶段使用的【杀】被【闪】抵消时：若该角色不发动【青龙偃月刀】，此时为空闲时间点，可以对自己使用【酒】；若该角色发动【青龙偃月刀】，此时不可以使用【酒】，必须对相同目标使用【杀】。",
+                "en": "When a [Kill] is negated (equipped with [Green Dragon Crescent Blade]): if the weapon is not activated, it is an idle timing and [Wine] may be used on self; if the weapon is activated, [Wine] cannot be used — [Kill] must be used on the same target."
               }
             ]
           },
           {
-            "cn": "å‡ºç‰Œé˜¶æ®µæœ‰æ— æ•°ä¸ªç©ºé—²æ—¶é—´ç‚¹ã€‚è‹¥æŠ€èƒ½è¯´æ˜Žã€Œå‡ºç‰Œé˜¶æ®µé™ä¸€æ¬¡ã€ï¼Œåˆ™ä¸€ä¸ªå‡ºç‰Œé˜¶æ®µåªèƒ½å‘åŠ¨ä¸€æ¬¡æ­¤æŠ€èƒ½ã€‚",
+            "cn": "出牌阶段有无数个空闲时间点。若技能说明「出牌阶段限一次」，则一个出牌阶段只能发动一次此技能。",
             "en": "There are infinitely many idle timings in the Action Phase. If a skill specifies \"once per Action Phase,\" it can only activate once per Action Phase.",
             "sub_examples": []
           }
@@ -758,217 +758,217 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å‡ºç‰Œé˜¶æ®µç»“æŸæ—¶ã€‘ï¼šèƒ½å‘åŠ¨/æ‰§è¡Œï¼šã€ç²¾ç­–ã€‘ã€ã€ç”Ÿæ¯ã€‘ã€ã€çŒ®å›¾ã€‘å¤±åŽ»ä½“åŠ›çš„æ•ˆæžœã€ã€æš´å‡Œã€‘ã€‚",
-        "en": "At Action Phase End: [Refined Strategy], [Respite], [Present the Map] (lose HP effect), [Savage Oppression] can activate or execute.",
+        "cn": "【出牌阶段结束时】：能发动/执行：〖精策〗、〖生息〗、〖献图〗失去体力的效果、〖暴凌〗。",
+        "en": "At Action Phase End: 〖Refined Strategy〗, 〖Respite〗, 〖Present the Map〗 (lose HP effect), 〖Savage Oppression〗 can activate or execute.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡ºç‰Œé˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "出牌阶段结束时：",
             "en": "At Action Phase End: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨/æ‰§è¡Œï¼š",
+            "cn": "能发动/执行：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç²¾ç­–ã€‘",
-            "en": "[Respite]"
+            "cn": "〖精策〗",
+            "en": "〖Refined Strategy〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç”Ÿæ¯ã€‘",
-            "en": "[Present the Map]"
+            "cn": "〖生息〗",
+            "en": "〖Respite〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " (lose HP effect), "
           },
           {
             "kind": "skill",
-            "cn": "ã€çŒ®å›¾ã€‘",
-            "en": "[Savage Oppression]"
+            "cn": "〖献图〗",
+            "en": "〖Present the Map〗"
           },
           {
             "kind": "body",
-            "cn": "å¤±åŽ»ä½“åŠ›çš„æ•ˆæžœã€",
+            "cn": "失去体力的效果、",
             "en": " can activate or execute."
           },
           {
             "kind": "skill",
-            "cn": "ã€æš´å‡Œã€‘",
-            "en": "[æš´å‡Œ]"
+            "cn": "〖暴凌〗",
+            "en": "〖Savage Oppression〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å‡ºç‰Œé˜¶æ®µä¸Žå¼ƒç‰Œé˜¶æ®µé—´ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€å·§å˜ã€‘ã€ã€å…‹å·±ã€‘ã€‚",
-        "en": "Between Action Phase and Discard Phase: [Agile Maneuver], [Self-Discipline] can activate.",
+        "cn": "【出牌阶段与弃牌阶段间】：能发动：〖巧变〗、〖克己〗。",
+        "en": "Between Action Phase and Discard Phase: 〖Agile Maneuver〗, 〖Self-Discipline〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å‡ºç‰Œé˜¶æ®µä¸Žå¼ƒç‰Œé˜¶æ®µé—´ï¼š",
+            "cn": "出牌阶段与弃牌阶段间：",
             "en": "Between Action Phase and Discard Phase: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å·§å˜ã€‘",
-            "en": "[Self-Discipline]"
+            "cn": "〖巧变〗",
+            "en": "〖Agile Maneuver〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€å…‹å·±ã€‘",
-            "en": "[å…‹å·±]"
+            "cn": "〖克己〗",
+            "en": "〖Self-Discipline〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å¼ƒç‰Œé˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€æ˜Ÿèˆžã€‘ã€ã€åº¸è‚†â‘¡ã€‘ã€‚",
-        "en": "At Discard Phase Start: [Star Dance], [Debauchedâ‘¡] can activate.",
+        "cn": "【弃牌阶段开始时】：能发动：〖星舞〗、〖庸肆②〗。",
+        "en": "At Discard Phase Start: 〖Star Dance〗, 〖Debauched②〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å¼ƒç‰Œé˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "弃牌阶段开始时：",
             "en": "At Discard Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ˜Ÿèˆžã€‘",
-            "en": "[Debauchedâ‘¡]"
+            "cn": "〖星舞〗",
+            "en": "〖Star Dance〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€åº¸è‚†â‘¡ã€‘",
-            "en": "[åº¸è‚†â‘¡]"
+            "cn": "〖庸肆②〗",
+            "en": "〖Debauched②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å¼ƒç‰Œé˜¶æ®µã€‘ï¼šè‹¥è§’è‰²çš„æ‰‹ç‰Œæ•°å¤§äºŽå…¶æ‰‹ç‰Œä¸Šé™ï¼Œé¡»å¼ƒç½®Xå¼ æ‰‹ç‰Œï¼ˆXä¸ºæ‰‹ç‰Œæ•°ä¸Žæ‰‹ç‰Œä¸Šé™ä¹‹å·®ï¼‰ã€‚",
+        "cn": "【弃牌阶段】：若角色的手牌数大于其手牌上限，须弃置X张手牌（X为手牌数与手牌上限之差）。",
         "en": "Discard Phase: If the character's hand count exceeds their Hand Limit, they must discard X cards (X = hand count minus Hand Limit).",
         "segments": [
           {
             "kind": "label",
-            "cn": "å¼ƒç‰Œé˜¶æ®µï¼š",
+            "cn": "弃牌阶段：",
             "en": "Discard Phase: "
           },
           {
             "kind": "body",
-            "cn": "è‹¥æ‰‹ç‰Œæ•°å¤§äºŽæ‰‹ç‰Œä¸Šé™ï¼Œé¡»å¼ƒç½®Xå¼ æ‰‹ç‰Œï¼ˆX = æ‰‹ç‰Œæ•° âˆ’ æ‰‹ç‰Œä¸Šé™ï¼‰ã€‚",
-            "en": "If hand count exceeds Hand Limit, must discard X cards (X = hand count âˆ’ Hand Limit)."
+            "cn": "若手牌数大于手牌上限，须弃置X张手牌（X = 手牌数 − 手牌上限）。",
+            "en": "If hand count exceeds Hand Limit, must discard X cards (X = hand count − Hand Limit)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å¼ƒç‰Œé˜¶æ®µç»“æŸæ—¶ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€å›ºæ”¿ã€‘ã€ã€æ—‹é£Žâ‘¡ã€‘ã€ã€ç´éŸ³ã€‘ã€‚",
-        "en": "At Discard Phase End: [Consolidate Authority], [Whirlwindâ‘¡], [Zither Melody] can activate.",
+        "cn": "【弃牌阶段结束时】：能发动：〖固政〗、〖旋风②〗、〖琴音〗。",
+        "en": "At Discard Phase End: 〖Consolidate Authority〗, 〖Whirlwind②〗, 〖Zither Melody〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å¼ƒç‰Œé˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "弃牌阶段结束时：",
             "en": "At Discard Phase End: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å›ºæ”¿ã€‘",
-            "en": "[Whirlwindâ‘¡]"
+            "cn": "〖固政〗",
+            "en": "〖Consolidate Authority〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ—‹é£Žâ‘¡ã€‘",
-            "en": "[Zither Melody]"
+            "cn": "〖旋风②〗",
+            "en": "〖Whirlwind②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€ç´éŸ³ã€‘",
-            "en": "[ç´éŸ³]"
+            "cn": "〖琴音〗",
+            "en": "〖Zither Melody〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ã€å¼ƒç‰Œé˜¶æ®µä¸Žç»“æŸé˜¶æ®µé—´ã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【弃牌阶段与结束阶段间】：暂时没有作用。",
         "en": "Between Discard Phase and End Phase: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å¼ƒç‰Œé˜¶æ®µä¸Žç»“æŸé˜¶æ®µé—´ï¼š",
+            "cn": "弃牌阶段与结束阶段间：",
             "en": "Between Discard Phase and End Phase: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -976,117 +976,117 @@
       },
       {
         "type": "rule",
-        "cn": "ã€ç»“æŸé˜¶æ®µå¼€å§‹æ—¶ã€‘ï¼šèƒ½å‘åŠ¨ï¼šã€æ®å®ˆã€‘ã€ã€éªæžœã€‘ã€ã€æŠ¤æ´ã€‘ã€ã€ç§˜è®¡ã€‘ã€ã€ä¸¾èã€‘ã€ã€é—­æœˆã€‘ã€ã€å´©åã€‘ã€ã€ç»ç­–ã€‘ã€ã€ç‹‚é£Žã€‘ã€ã€å¤§é›¾ã€‘ç­‰æŠ€èƒ½ã€‚",
-        "en": "At End Phase Start: Skills including [Steadfast Defense], [Valiant Drive], [Guard and Aid], [Secret Plan], [Commend], [Eclipse the Moon], [Collapse], [Decisive Stratagem], [Gale], [Great Fog] and others can activate.",
+        "cn": "【结束阶段开始时】：能发动：〖据守〗、〖骁果〗、〖护援〗、〖秘计〗、〖举荐〗、〖闭月〗、〖崩坏〗、〖绝策〗、〖狂风〗、〖大雾〗等技能。",
+        "en": "At End Phase Start: Skills including 〖Steadfast Defense〗, 〖Valiant Drive〗, 〖Guard and Aid〗, 〖Secret Plan〗, 〖Commend〗, 〖Eclipse the Moon〗, 〖Collapse〗, 〖Decisive Stratagem〗, 〖Gale〗, 〖Great Fog〗 and others can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ç»“æŸé˜¶æ®µå¼€å§‹æ—¶ï¼š",
+            "cn": "结束阶段开始时：",
             "en": "At End Phase Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": "Skills including "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ®å®ˆã€‘",
-            "en": "[Steadfast Defense]"
+            "cn": "〖据守〗",
+            "en": "〖Steadfast Defense〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€éªæžœã€‘",
-            "en": "[Valiant Drive]"
+            "cn": "〖骁果〗",
+            "en": "〖Valiant Drive〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æŠ¤æ´ã€‘",
-            "en": "[Guard and Aid]"
+            "cn": "〖护援〗",
+            "en": "〖Guard and Aid〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç§˜è®¡ã€‘",
-            "en": "[Secret Plan]"
+            "cn": "〖秘计〗",
+            "en": "〖Secret Plan〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¸¾èã€‘",
-            "en": "[Commend]"
+            "cn": "〖举荐〗",
+            "en": "〖Commend〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é—­æœˆã€‘",
-            "en": "[Eclipse the Moon]"
+            "cn": "〖闭月〗",
+            "en": "〖Eclipse the Moon〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å´©åã€‘",
-            "en": "[Collapse]"
+            "cn": "〖崩坏〗",
+            "en": "〖Collapse〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç»ç­–ã€‘",
-            "en": "[Decisive Stratagem]"
+            "cn": "〖绝策〗",
+            "en": "〖Decisive Stratagem〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç‹‚é£Žã€‘",
-            "en": "[Gale]"
+            "cn": "〖狂风〗",
+            "en": "〖Gale〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤§é›¾ã€‘",
-            "en": "[Great Fog]"
+            "cn": "〖大雾〗",
+            "en": "〖Great Fog〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚",
+            "cn": "等技能。",
             "en": " and others can activate."
           }
         ],
@@ -1094,17 +1094,17 @@
       },
       {
         "type": "rule",
-        "cn": "ã€ç»“æŸé˜¶æ®µã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【结束阶段】：暂时没有作用。",
         "en": "End Phase: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ç»“æŸé˜¶æ®µï¼š",
+            "cn": "结束阶段：",
             "en": "End Phase: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -1112,17 +1112,17 @@
       },
       {
         "type": "rule",
-        "cn": "ã€ç»“æŸé˜¶æ®µç»“æŸæ—¶ã€‘ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+        "cn": "【结束阶段结束时】：暂时没有作用。",
         "en": "At End Phase End: No effect at this time.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ç»“æŸé˜¶æ®µç»“æŸæ—¶ï¼š",
+            "cn": "结束阶段结束时：",
             "en": "At End Phase End: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚",
+            "cn": "暂时没有作用。",
             "en": "No effect at this time."
           }
         ],
@@ -1130,67 +1130,67 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å›žåˆç»“æŸæ—¶ã€‘ï¼šè¯¥è§’è‰²çš„å›žåˆæ‰€æœ‰é˜¶æ®µå‡æ‰§è¡Œå®Œæ¯•ï¼Œå›žåˆå³å°†ç»“æŸã€‚èƒ½å‘åŠ¨/æ‰§è¡Œï¼šã€æ¨ªæ±Ÿâ‘¡ã€‘ã€ã€æ”¾æƒã€‘å¼ƒç½®æ‰‹ç‰Œä»¤ä»–äººé¢å¤–è¡ŒåŠ¨çš„æ•ˆæžœã€ã€è°¦é€Šã€‘èŽ·å¾—æ‰€æœ‰ã€ŒèŠ‚ã€çš„æ•ˆæžœã€ã€çªƒå¬ã€‘ã€ã€å’’ç¼šã€‘èŽ·å¾—æ­¦å°†ç‰Œæ—ã€Œå’’ã€çš„æ•ˆæžœã€‚",
-        "en": "At Turn End: All phases have completed; the turn is about to end. Skills/effects that can activate: [Traverse the Riverâ‘¡], [Abdicate] (discard to grant extra turn), [Humility] (gain all Restraint tokens), [Eavesdrop], [Curse Bind] (gain Curse tokens).",
+        "cn": "【回合结束时】：该角色的回合所有阶段均执行完毕，回合即将结束。能发动/执行：〖横江②〗、〖放权〗弃置手牌令他人额外行动的效果、〖谦逊〗获得所有「节」的效果、〖窃听〗、〖咒缚〗获得武将牌旁「咒」的效果。",
+        "en": "At Turn End: All phases have completed; the turn is about to end. Skills/effects that can activate: 〖Traverse the River②〗, 〖Abdicate〗 (discard to grant extra turn), 〖Humility〗 (gain all Restraint tokens), 〖Eavesdrop〗, 〖Curse Bind〗 (gain Curse tokens).",
         "segments": [
           {
             "kind": "label",
-            "cn": "å›žåˆç»“æŸæ—¶ï¼š",
+            "cn": "回合结束时：",
             "en": "At Turn End: "
           },
           {
             "kind": "body",
-            "cn": "è¯¥è§’è‰²çš„å›žåˆæ‰€æœ‰é˜¶æ®µå‡æ‰§è¡Œå®Œæ¯•ï¼Œå›žåˆå³å°†ç»“æŸã€‚èƒ½å‘åŠ¨/æ‰§è¡Œï¼š",
+            "cn": "该角色的回合所有阶段均执行完毕，回合即将结束。能发动/执行：",
             "en": "All phases have completed; the turn is about to end. Skills/effects that can activate: "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ¨ªæ±Ÿâ‘¡ã€‘",
-            "en": "[Traverse the Riverâ‘¡]"
+            "cn": "〖横江②〗",
+            "en": "〖Traverse the River②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ”¾æƒã€‘",
-            "en": "[Abdicate]"
+            "cn": "〖放权〗",
+            "en": "〖Abdicate〗"
           },
           {
             "kind": "body",
-            "cn": "å¼ƒç½®æ‰‹ç‰Œä»¤ä»–äººé¢å¤–è¡ŒåŠ¨çš„æ•ˆæžœã€",
+            "cn": "弃置手牌令他人额外行动的效果、",
             "en": " (discard to grant extra turn), "
           },
           {
             "kind": "skill",
-            "cn": "ã€è°¦é€Šã€‘",
-            "en": "[Humility]"
+            "cn": "〖谦逊〗",
+            "en": "〖Humility〗"
           },
           {
             "kind": "body",
-            "cn": "èŽ·å¾—æ‰€æœ‰ã€ŒèŠ‚ã€çš„æ•ˆæžœã€",
+            "cn": "获得所有「节」的效果、",
             "en": " (gain all Restraint tokens), "
           },
           {
             "kind": "skill",
-            "cn": "ã€çªƒå¬ã€‘",
-            "en": "[Eavesdrop]"
+            "cn": "〖窃听〗",
+            "en": "〖Eavesdrop〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å’’ç¼šã€‘",
-            "en": "[Curse Bind]"
+            "cn": "〖咒缚〗",
+            "en": "〖Curse Bind〗"
           },
           {
             "kind": "body",
-            "cn": "èŽ·å¾—æ­¦å°†ç‰Œæ—ã€Œå’’ã€çš„æ•ˆæžœã€‚",
+            "cn": "获得武将牌旁「咒」的效果。",
             "en": " (gain Curse tokens)."
           }
         ],
@@ -1198,57 +1198,57 @@
       },
       {
         "type": "rule",
-        "cn": "ã€å›žåˆç»“æŸåŽã€‘ï¼šè¯¥è§’è‰²çš„å›žåˆå·²ç»ç»“æŸã€‚ã€Œè¯¥è§’è‰²çš„å›žåˆå¤–ã€å³ä»Žæ­¤æ—¶æœºå¼€å§‹ã€‚èƒ½å‘åŠ¨ï¼šã€åšå›¾ã€‘ã€ã€åŒ–èº«â‘¡ã€‘ã€ã€æˆšä¹±ã€‘ã€ã€è¿žç ´ã€‘ã€‚æ­¤æ—¶æœºè¿‡åŽï¼Œä¾¿æ˜¯ä¸‹ä¸ªå›žåˆçš„ã€Œå›žåˆå¼€å§‹å‰ã€ã€‚",
-        "en": "After Turn End: The turn has ended. \"Outside this character's turn\" begins from this timing. [Broad Plans], [Shapeshifterâ‘¡], [Tragic Chaos], [Supreme Advance] can activate. After this timing, the next character's \"Before Turn Start\" begins.",
+        "cn": "【回合结束后】：该角色的回合已经结束。「该角色的回合外」即从此时机开始。能发动：〖博图〗、〖化身②〗、〖戚乱〗、〖连破〗。此时机过后，便是下个回合的「回合开始前」。",
+        "en": "After Turn End: The turn has ended. \"Outside this character's turn\" begins from this timing. 〖Broad Plans〗, 〖Shapeshifter②〗, 〖Tragic Chaos〗, 〖Supreme Advance〗 can activate. After this timing, the next character's \"Before Turn Start\" begins.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å›žåˆç»“æŸåŽï¼š",
+            "cn": "回合结束后：",
             "en": "After Turn End: "
           },
           {
             "kind": "body",
-            "cn": "è¯¥è§’è‰²çš„å›žåˆå·²ç»ç»“æŸã€‚ã€Œè¯¥è§’è‰²çš„å›žåˆå¤–ã€å³ä»Žæ­¤æ—¶æœºå¼€å§‹ã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "该角色的回合已经结束。「该角色的回合外」即从此时机开始。能发动：",
             "en": "The turn has ended. \"Outside this character's turn\" begins from this timing. "
           },
           {
             "kind": "skill",
-            "cn": "ã€åšå›¾ã€‘",
-            "en": "[Broad Plans]"
+            "cn": "〖博图〗",
+            "en": "〖Broad Plans〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åŒ–èº«â‘¡ã€‘",
-            "en": "[Shapeshifterâ‘¡]"
+            "cn": "〖化身②〗",
+            "en": "〖Shapeshifter②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æˆšä¹±ã€‘",
-            "en": "[Tragic Chaos]"
+            "cn": "〖戚乱〗",
+            "en": "〖Tragic Chaos〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è¿žç ´ã€‘",
-            "en": "[Supreme Advance]"
+            "cn": "〖连破〗",
+            "en": "〖Supreme Advance〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -1256,94 +1256,94 @@
       },
       {
         "type": "caution",
-        "cn": "ä»»ä½•æ—¶å€™ï¼Œä¸€æ—¦æ»¡è¶³äº†æ¸¸æˆç»“æŸçš„æ¡ä»¶ï¼Œåˆ™ç»ˆæ­¢ä¸€åˆ‡ç»“ç®—ï¼Œç»“æŸæ¸¸æˆï¼Œå®£å¸ƒèƒœåˆ©æ–¹ã€‚",
+        "cn": "任何时候，一旦满足了游戏结束的条件，则终止一切结算，结束游戏，宣布胜利方。",
         "en": "At any point, once the game-ending condition is met, all resolution is immediately terminated, the game ends, and the winning side is declared.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "å›žåˆ é˜¶æ®µ æ—¶æœº å‡†å¤‡ åˆ¤å®š æ‘¸ç‰Œ å‡ºç‰Œ å¼ƒç‰Œ ç»“æŸ æµç¨‹",
+    "search_text_cn": "回合 阶段 时机 准备 判定 摸牌 出牌 弃牌 结束 流程",
     "search_text_en": "turn phase timing starting judgment draw action discard end flow"
   },
   {
     "id": "flow_3_2_use_event",
     "section_num": "3.2",
-    "section_title_cn": "ä½¿ç”¨äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "使用事件的结算流程",
     "section_title_en": "Use Event Resolution Flow",
-    "term_cn": "ä½¿ç”¨äº‹ä»¶",
+    "term_cn": "使用事件",
     "term_en": "Use Event",
     "badge": null,
-    "definition_cn": "è§’è‰²åœ¨æŠ€èƒ½çš„å‘åŠ¨æ—¶æœºæ»¡è¶³å‘åŠ¨æ¡ä»¶æ—¶ï¼Œå£°æ˜ŽæŠ€èƒ½åå¹¶åŒæ—¶é€‰æ‹©ç›®æ ‡ï¼ˆè‹¥æœ‰ï¼‰ã€æ‰§è¡Œæ‰€æœ‰æ¶ˆè€—ï¼ˆè‹¥æœ‰ï¼‰ï¼Œæ¶ˆè€—æ‰§è¡Œå®Œæ¯•å³å‘åŠ¨æŠ€èƒ½ï¼Œé¡»æ‰§è¡ŒæŠ€èƒ½æ•ˆæžœã€‚",
+    "definition_cn": "角色在技能的发动时机满足发动条件时，声明技能名并同时选择目标（若有）、执行所有消耗（若有），消耗执行完毕即发动技能，须执行技能效果。",
     "definition_en": "When a character meets a skill's activation conditions at the correct timing, they declare the skill name while simultaneously selecting targets (if any) and paying all costs (if any). Once all costs are paid, the skill activates and its effects must be executed.",
     "rules": [
       {
         "type": "rule",
-        "cn": "ä½¿ç”¨ç»“ç®—å‰çš„å…­ä¸ªæ—¶æœºï¼ˆæŒ‰é¡ºåºï¼‰ï¼šâ‘ é€‰æ‹©ç›®æ ‡æ—¶ â‘¡ä½¿ç”¨ç‰Œæ—¶ â‘¢æŒ‡å®šç›®æ ‡æ—¶ â‘£æˆä¸ºç›®æ ‡æ—¶ â‘¤æŒ‡å®šç›®æ ‡åŽ â‘¥æˆä¸ºç›®æ ‡åŽã€‚",
-        "en": "Six timings before Use Resolution (in order): â‘  When selecting targets â‘¡ When using the card â‘¢ When designating a target â‘£ When becoming a target â‘¤ After designating a target â‘¥ After becoming a target.",
+        "cn": "使用结算前的六个时机（按顺序）：①选择目标时 ②使用牌时 ③指定目标时 ④成为目标时 ⑤指定目标后 ⑥成为目标后。",
+        "en": "Six timings before Use Resolution (in order): ① When selecting targets ② When using the card ③ When designating a target ④ When becoming a target ⑤ After designating a target ⑥ After becoming a target.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä½¿ç”¨ç»“ç®—å‰ï¼ˆ6ä¸ªæ—¶æœºï¼‰ï¼š",
+            "cn": "使用结算前（6个时机）：",
             "en": "Before Use Resolution (6 timings): "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "é€‰æ‹©ç›®æ ‡æ—¶ ",
+            "cn": "选择目标时 ",
             "en": "When selecting targets "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "ä½¿ç”¨ç‰Œæ—¶ ",
+            "cn": "使用牌时 ",
             "en": "When using the card "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "æŒ‡å®šç›®æ ‡æ—¶ ",
+            "cn": "指定目标时 ",
             "en": "When designating a target "
           },
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "æˆä¸ºç›®æ ‡æ—¶ ",
+            "cn": "成为目标时 ",
             "en": "When becoming a target "
           },
           {
             "kind": "number",
-            "cn": "â‘¤",
-            "en": "â‘¤"
+            "cn": "⑤",
+            "en": "⑤"
           },
           {
             "kind": "body",
-            "cn": "æŒ‡å®šç›®æ ‡åŽ ",
+            "cn": "指定目标后 ",
             "en": "After designating a target "
           },
           {
             "kind": "number",
-            "cn": "â‘¥",
-            "en": "â‘¥"
+            "cn": "⑥",
+            "en": "⑥"
           },
           {
             "kind": "body",
-            "cn": "æˆä¸ºç›®æ ‡åŽã€‚",
+            "cn": "成为目标后。",
             "en": "After becoming a target."
           }
         ],
@@ -1351,62 +1351,62 @@
       },
       {
         "type": "rule",
-        "cn": "ä½¿ç”¨ç»“ç®—ä¸­çš„äº”ä¸ªæ—¶æœºï¼ˆæŒ‰é¡ºåºï¼‰ï¼šâ‘ ä½¿ç”¨ç»“ç®—å¼€å§‹æ—¶ï¼ˆæ£€æµ‹æœ‰æ•ˆæ€§ï¼‰â‘¡ç”Ÿæ•ˆå‰ï¼ˆå¯å“åº”ï¼‰â‘¢ç”Ÿæ•ˆæ—¶ï¼ˆç¡®å®šå°†ç”Ÿæ•ˆï¼‰â‘£ç”Ÿæ•ˆåŽï¼ˆæ‰§è¡Œæ•ˆæžœï¼‰â‘¤ä½¿ç”¨ç»“ç®—ç»“æŸæ—¶ã€‚",
-        "en": "Five timings during Use Resolution (in order): â‘  At Use Resolution Start (validity check) â‘¡ Before taking effect (responses allowed) â‘¢ When taking effect (confirmed to resolve) â‘£ After taking effect (effects execute) â‘¤ At Use Resolution End.",
+        "cn": "使用结算中的五个时机（按顺序）：①使用结算开始时（检测有效性）②生效前（可响应）③生效时（确定将生效）④生效后（执行效果）⑤使用结算结束时。",
+        "en": "Five timings during Use Resolution (in order): ① At Use Resolution Start (validity check) ② Before taking effect (responses allowed) ③ When taking effect (confirmed to resolve) ④ After taking effect (effects execute) ⑤ At Use Resolution End.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä½¿ç”¨ç»“ç®—ä¸­ï¼ˆ5ä¸ªæ—¶æœºï¼‰ï¼š",
+            "cn": "使用结算中（5个时机）：",
             "en": "During Use Resolution (5 timings): "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "ä½¿ç”¨ç»“ç®—å¼€å§‹æ—¶ï¼ˆæ£€æµ‹æœ‰æ•ˆæ€§ï¼‰ ",
+            "cn": "使用结算开始时（检测有效性） ",
             "en": "At Use Resolution Start (validity check) "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "ç”Ÿæ•ˆå‰ï¼ˆå¯å“åº”ï¼‰ ",
+            "cn": "生效前（可响应） ",
             "en": "Before taking effect (responses allowed) "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "ç”Ÿæ•ˆæ—¶ï¼ˆç¡®å®šå°†ç”Ÿæ•ˆï¼‰ ",
+            "cn": "生效时（确定将生效） ",
             "en": "When taking effect (confirmed to resolve) "
           },
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "ç”Ÿæ•ˆåŽï¼ˆæ‰§è¡Œæ•ˆæžœï¼‰ ",
+            "cn": "生效后（执行效果） ",
             "en": "After taking effect (effects execute) "
           },
           {
             "kind": "number",
-            "cn": "â‘¤",
-            "en": "â‘¤"
+            "cn": "⑤",
+            "en": "⑤"
           },
           {
             "kind": "body",
-            "cn": "ä½¿ç”¨ç»“ç®—ç»“æŸæ—¶ã€‚",
+            "cn": "使用结算结束时。",
             "en": "At Use Resolution End."
           }
         ],
@@ -1414,27 +1414,27 @@
       },
       {
         "type": "rule",
-        "cn": "ä½¿ç”¨ç»“ç®—ç»“æŸåŽï¼šå°†å¤„ç†åŒºé‡Œæ­¤ç‰Œå¯¹åº”çš„æ‰€æœ‰ï¼ˆå‰©ä½™çš„ï¼‰å®žä½“ç‰Œç½®å…¥å¼ƒç‰Œå †ï¼Œç„¶åŽç»“ç®—ã€å¥”è¢­â‘ ã€‘ã€‚",
-        "en": "After Use Resolution: all remaining physical cards in the Processing Zone corresponding to this card are placed into the Discard Pile, then [Lightning Raidâ‘ ] is resolved.",
+        "cn": "使用结算结束后：将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆，然后结算〖奔袭①〗。",
+        "en": "After Use Resolution: all remaining physical cards in the Processing Zone corresponding to this card are placed into the Discard Pile, then 〖Lightning Raid①〗 is resolved.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä½¿ç”¨ç»“ç®—ç»“æŸåŽï¼š",
+            "cn": "使用结算结束后：",
             "en": "After Use Resolution: "
           },
           {
             "kind": "body",
-            "cn": "å°†å¤„ç†åŒºé‡Œæ­¤ç‰Œå¯¹åº”çš„æ‰€æœ‰ï¼ˆå‰©ä½™çš„ï¼‰å®žä½“ç‰Œç½®å…¥å¼ƒç‰Œå †ï¼Œç„¶åŽç»“ç®—",
+            "cn": "将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆，然后结算",
             "en": "all remaining physical cards in the Processing Zone are placed into the Discard Pile, then "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¥”è¢­â‘ ã€‘",
-            "en": "[Lightning Raidâ‘ ]"
+            "cn": "〖奔袭①〗",
+            "en": "〖Lightning Raid①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " is resolved."
           }
         ],
@@ -1442,118 +1442,118 @@
       },
       {
         "type": "note",
-        "cn": "ä½¿ç”¨ç»“ç®—å‰ï¼Œè‹¥æ­¤ç‰Œçš„ç›®æ ‡æ•°é‡åœ¨æ’å…¥çš„ç»“ç®—ä¸­å‡ä¸º0ï¼Œç»ˆæ­¢ä½¿ç”¨æµç¨‹ï¼Œå°†å¯¹åº”çš„å®žä½“ç‰Œç½®å…¥å¼ƒç‰Œå †ã€‚",
+        "cn": "使用结算前，若此牌的目标数量在插入的结算中减为0，终止使用流程，将对应的实体牌置入弃牌堆。",
         "en": "Before Use Resolution: if the number of targets drops to 0 during an inserted resolution, the Use Process is terminated and the physical card is placed into the Discard Pile.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "å»¶æ—¶ç±»é”¦å›Šç‰Œåœ¨ä½¿ç”¨ç»“ç®—å‰è‹¥å¯¹åº”å®žä½“ç‰Œä»ŽåŽŸç›®æ ‡è§’è‰²çš„åˆ¤å®šåŒºç§»åŠ¨åˆ°å¦ä¸€åŒºåŸŸï¼Œåˆ™ç»ˆæ­¢ä½¿ç”¨æµç¨‹ã€‚",
+        "cn": "延时类锦囊牌在使用结算前若对应实体牌从原目标角色的判定区移动到另一区域，则终止使用流程。",
         "en": "For Time-Delayed Tool Cards: if the physical card moves out of the target's Judgment Zone before Use Resolution, the Use Process is terminated.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ä¸€å¼ ç‰Œæœ‰å¤šä¸ªç›®æ ‡æ—¶ï¼Œä½¿ç”¨ç»“ç®—å‰å¯¹æ‰€æœ‰ç›®æ ‡ä¾æ¬¡å¤„ç†æ¯ä¸€ä¸ªæ—¶æœºï¼›ä½¿ç”¨ç»“ç®—ä¸­å¯¹ç¬¬ä¸€ä¸ªç›®æ ‡å¤„ç†å®Œæ‰€æœ‰æ—¶æœºåŽï¼Œå†å¤„ç†ä¸‹ä¸€ä¸ªç›®æ ‡ã€‚",
+        "cn": "一张牌有多个目标时，使用结算前对所有目标依次处理每一个时机；使用结算中对第一个目标处理完所有时机后，再处理下一个目标。",
         "en": "When a card has multiple targets: before Use Resolution, all targets are processed through each timing together; during Use Resolution, all timings for each target are fully resolved before moving to the next target.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "ä½¿ç”¨äº‹ä»¶ ç»“ç®—æµç¨‹ ç›®æ ‡ æœ‰æ•ˆæ€§ ç”Ÿæ•ˆ å“åº”",
+    "search_text_cn": "使用事件 结算流程 目标 有效性 生效 响应",
     "search_text_en": "use event resolution flow target validity effect response"
   },
   {
     "id": "flow_3_3_play_event",
     "section_num": "3.3",
-    "section_title_cn": "æ‰“å‡ºäº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "打出事件的结算流程",
     "section_title_en": "Play Event Resolution Flow",
-    "term_cn": "æ‰“å‡ºäº‹ä»¶",
+    "term_cn": "打出事件",
     "term_en": "Play Event",
     "badge": null,
-    "definition_cn": "å½“è§’è‰²éœ€è¦æ‰“å‡ºç‰Œæ—¶è¿›è¡Œæ‰“å‡ºç»“ç®—ã€‚æ‰“å‡ºç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ å£°æ˜Žæ‰“å‡ºçš„ç‰Œåæ—¶ â‘¡æ‰“å‡ºç‰Œæ—¶ã€‚ç»“ç®—å®Œæ¯•åŽå°†å¤„ç†åŒºé‡Œæ­¤ç‰Œå¯¹åº”çš„æ‰€æœ‰ï¼ˆå‰©ä½™çš„ï¼‰å®žä½“ç‰Œç½®å…¥å¼ƒç‰Œå †ã€‚",
-    "definition_en": "When a character needs to play a card out, Play Resolution is conducted. It has two timings: â‘  When declaring the card name â‘¡ When playing the card. After resolution, remaining physical cards in the Processing Zone are placed into the Discard Pile.",
+    "definition_cn": "当角色需要打出牌时进行打出结算。打出结算中有两个时机：①声明打出的牌名时 ②打出牌时。结算完毕后将处理区里此牌对应的所有（剩余的）实体牌置入弃牌堆。",
+    "definition_en": "When a character needs to play a card out, Play Resolution is conducted. It has two timings: ① When declaring the card name ② When playing the card. After resolution, remaining physical cards in the Processing Zone are placed into the Discard Pile.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ å£°æ˜Žæ‰“å‡ºçš„ç‰Œåæ—¶ï¼šè¯¥è§’è‰²é¡»å£°æ˜Žæ‰“å‡ºçš„ç‰Œåï¼ŒåŒæ—¶å±•ç¤ºæ­¤ç‰Œå¯¹åº”çš„å®žä½“ç‰Œä»¥ç¡®å®šå…¶æ‰€æœ‰ç‰Œé¢ä¿¡æ¯ã€‚èƒ½å‘åŠ¨ï¼šã€ä¸ˆå…«è›‡çŸ›ã€‘ã€ã€å€¾å›½ã€‘ã€ã€æ­¦åœ£ã€‘ã€ã€é¾™èƒ†ã€‘ã€ã€è›Šæƒ‘ã€‘ã€ã€é¾™é­‚ã€‘ç­‰æŠ€èƒ½ã€‚",
-        "en": "â‘  When declaring the card name: the character declares the card name and reveals the corresponding physical card to confirm all face information. Skills such as [Serpent Spear], [Fallen Country], [Saint of War], [Dragon Courage], [Bewitchment], [Dragon Soul] can activate.",
+        "cn": "①声明打出的牌名时：该角色须声明打出的牌名，同时展示此牌对应的实体牌以确定其所有牌面信息。能发动：【丈八蛇矛】、〖倾国〗、〖武圣〗、〖龙胆〗、〖蛊惑〗、〖龙魂〗等技能。",
+        "en": "① When declaring the card name: the character declares the card name and reveals the corresponding physical card to confirm all face information. Skills such as [Serpent Spear], 〖Fallen Country〗, 〖Saint of War〗, 〖Dragon Courage〗, 〖Bewitchment〗, 〖Dragon Soul〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "å£°æ˜Žæ‰“å‡ºçš„ç‰Œåæ—¶ï¼š",
+            "cn": "声明打出的牌名时：",
             "en": "When declaring the card name: "
           },
           {
             "kind": "body",
-            "cn": "å£°æ˜Žç‰Œåå¹¶å±•ç¤ºå®žä½“ç‰Œã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "声明牌名并展示实体牌。能发动：",
             "en": "Declare card name and reveal physical card. Skills such as "
           },
           {
             "kind": "card",
-            "cn": "ã€ä¸ˆå…«è›‡çŸ›ã€‘",
+            "cn": "【丈八蛇矛】",
             "en": "[Serpent Spear]"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å€¾å›½ã€‘",
-            "en": "[Fallen Country]"
+            "cn": "〖倾国〗",
+            "en": "〖Fallen Country〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ­¦åœ£ã€‘",
-            "en": "[Saint of War]"
+            "cn": "〖武圣〗",
+            "en": "〖Saint of War〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¾™èƒ†ã€‘",
-            "en": "[Dragon Courage]"
+            "cn": "〖龙胆〗",
+            "en": "〖Dragon Courage〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è›Šæƒ‘ã€‘",
-            "en": "[Bewitchment]"
+            "cn": "〖蛊惑〗",
+            "en": "〖Bewitchment〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¾™é­‚ã€‘",
-            "en": "[Dragon Soul]"
+            "cn": "〖龙魂〗",
+            "en": "〖Dragon Soul〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚",
+            "cn": "等技能。",
             "en": " can activate."
           }
         ],
@@ -1561,62 +1561,62 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡æ‰“å‡ºç‰Œæ—¶ï¼šèƒ½å‘åŠ¨ï¼šæ­¦å°†æŠ€èƒ½ã€æ¶¯è§’ã€‘ã€ã€é¾™èƒ†â‘¡ï¼ˆé˜µï¼‰ã€‘ã€ã€é›·å‡»ã€‘ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½ã€é“¶æœˆæžªã€‘ã€‚",
-        "en": "â‘¡ When playing the card: general skills [Far Reaches], [Dragon Courageâ‘¡], [Thunder Strike], and equipment skill [Moon Spear] can activate.",
+        "cn": "②打出牌时：能发动：武将技能〖涯角〗、〖龙胆②（阵）〗、〖雷击〗，以及装备技能【银月枪】。",
+        "en": "② When playing the card: general skills 〖Far Reaches〗, 〖Dragon Courage②〗, 〖Thunder Strike〗, and equipment skill [Moon Spear] can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "æ‰“å‡ºç‰Œæ—¶ï¼š",
+            "cn": "打出牌时：",
             "en": "When playing the card: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": "Skills "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ¶¯è§’ã€‘",
-            "en": "[Far Reaches]"
+            "cn": "〖涯角〗",
+            "en": "〖Far Reaches〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¾™èƒ†â‘¡ï¼ˆé˜µï¼‰ã€‘",
-            "en": "[Dragon Courageâ‘¡]"
+            "cn": "〖龙胆②（阵）〗",
+            "en": "〖Dragon Courage②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é›·å‡»ã€‘",
-            "en": "[Thunder Strike]"
+            "cn": "〖雷击〗",
+            "en": "〖Thunder Strike〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½",
+            "cn": "，以及装备技能",
             "en": ", and "
           },
           {
             "kind": "skill",
-            "cn": "ã€é“¶æœˆæžªã€‘",
+            "cn": "【银月枪】",
             "en": "[Moon Spear]"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -1624,44 +1624,44 @@
       },
       {
         "type": "note",
-        "cn": "è§’è‰²å¯¹æŸäº‹ä»¶è¿›è¡Œå“åº”éœ€è¦æ‰“å‡ºç‰Œï¼Œè¯¥è§’è‰²ä¸€æ—¦å£°æ˜Žæ‰“å‡ºçš„ç‰Œåå³å¼€å§‹è¿›è¡Œæ‰“å‡ºç»“ç®—ï¼Œè§†ä¸ºå…¶å·²ç»å“åº”æˆåŠŸã€‚",
+        "cn": "角色对某事件进行响应需要打出牌，该角色一旦声明打出的牌名即开始进行打出结算，视为其已经响应成功。",
         "en": "When a character plays a card as a response, once they declare the card name, Play Resolution begins and they are treated as having successfully responded.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "æ‰“å‡ºäº‹ä»¶ ç»“ç®—æµç¨‹ å£°æ˜Ž ç‰Œå å“åº”",
+    "search_text_cn": "打出事件 结算流程 声明 牌名 响应",
     "search_text_en": "play event resolution declare card name response"
   },
   {
     "id": "flow_3_4_point_duel_event",
     "section_num": "3.4",
-    "section_title_cn": "æ‹¼ç‚¹äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "拼点事件的结算流程",
     "section_title_en": "Point Duel Event Resolution Flow",
-    "term_cn": "æ‹¼ç‚¹äº‹ä»¶",
+    "term_cn": "拼点事件",
     "term_en": "Point Duel Event",
     "badge": null,
-    "definition_cn": "æ‹¼ç‚¹ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ è¿›è¡Œæ‹¼ç‚¹æ—¶ â‘¡èµ¢/æ²¡èµ¢åŽã€‚",
-    "definition_en": "Point Duel Resolution has two timings: â‘  When conducting the duel â‘¡ After winning / not winning.",
+    "definition_cn": "拼点结算中有两个时机：①进行拼点时 ②赢/没赢后。",
+    "definition_en": "Point Duel Resolution has two timings: ① When conducting the duel ② After winning / not winning.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ è¿›è¡Œæ‹¼ç‚¹æ—¶ï¼šæ‹¼ç‚¹çš„å‘èµ·è€…é€‰æ‹©æ‹¼ç‚¹çš„ç›®æ ‡ã€‚åŒæ–¹åŒæ—¶å°†ä¸€å¼ æ‰‹ç‰Œæ‰£ç½®å…¥å¤„ç†åŒºï¼Œå†åŒæ—¶äº®å‡ºï¼Œç¡®å®šæ‹¼ç‚¹ç»“æžœï¼šç‚¹æ•°è¾ƒå¤§è€…èµ¢ï¼›è‹¥ç‚¹æ•°ç›¸åŒï¼Œä¸¤åè§’è‰²éƒ½æ²¡èµ¢ã€‚",
-        "en": "â‘  When conducting the duel: the initiator selects their target. Both simultaneously place one hand card face-down into the Processing Zone, then simultaneously reveal them. The character with the higher rank wins; if ranks are equal, neither wins.",
+        "cn": "①进行拼点时：拼点的发起者选择拼点的目标。双方同时将一张手牌扣置入处理区，再同时亮出，确定拼点结果：点数较大者赢；若点数相同，两名角色都没赢。",
+        "en": "① When conducting the duel: the initiator selects their target. Both simultaneously place one hand card face-down into the Processing Zone, then simultaneously reveal them. The character with the higher rank wins; if ranks are equal, neither wins.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "è¿›è¡Œæ‹¼ç‚¹æ—¶ï¼š",
+            "cn": "进行拼点时：",
             "en": "When conducting the duel: "
           },
           {
             "kind": "body",
-            "cn": "åŒæ–¹åŒæ—¶å°†ä¸€å¼ æ‰‹ç‰Œæ‰£ç½®å…¥å¤„ç†åŒºï¼ŒåŒæ—¶äº®å‡ºï¼Œç‚¹æ•°è¾ƒå¤§è€…èµ¢ï¼›ç‚¹æ•°ç›¸åŒåˆ™ä¸¤è€…å‡æœªèµ¢ã€‚",
+            "cn": "双方同时将一张手牌扣置入处理区，同时亮出，点数较大者赢；点数相同则两者均未赢。",
             "en": "Both simultaneously place one hand card face-down into the Processing Zone, then reveal. Higher rank wins; equal rank means neither wins."
           }
         ],
@@ -1669,22 +1669,22 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡èµ¢/æ²¡èµ¢åŽï¼šæ‰§è¡Œç›¸åº”æŠ€èƒ½çš„æ•ˆæžœï¼Œç„¶åŽå°†å¤„ç†åŒºé‡Œæ‰€æœ‰æ‹¼ç‚¹çš„ç‰Œç½®å…¥å¼ƒç‰Œå †ã€‚",
-        "en": "â‘¡ After winning / not winning: execute the corresponding skill effects, then place all dueling cards from the Processing Zone into the Discard Pile.",
+        "cn": "②赢/没赢后：执行相应技能的效果，然后将处理区里所有拼点的牌置入弃牌堆。",
+        "en": "② After winning / not winning: execute the corresponding skill effects, then place all dueling cards from the Processing Zone into the Discard Pile.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "èµ¢/æ²¡èµ¢åŽï¼š",
+            "cn": "赢/没赢后：",
             "en": "After winning / not winning: "
           },
           {
             "kind": "body",
-            "cn": "æ‰§è¡Œç›¸åº”æŠ€èƒ½çš„æ•ˆæžœï¼Œç„¶åŽå°†å¤„ç†åŒºé‡Œæ‰€æœ‰æ‹¼ç‚¹çš„ç‰Œç½®å…¥å¼ƒç‰Œå †ã€‚",
+            "cn": "执行相应技能的效果，然后将处理区里所有拼点的牌置入弃牌堆。",
             "en": "Execute the corresponding skill effects, then place all dueling cards from the Processing Zone into the Discard Pile."
           }
         ],
@@ -1692,64 +1692,64 @@
       },
       {
         "type": "note",
-        "cn": "è‹¥æ‹¼ç‚¹çš„ä¸¤åè§’è‰²ä¸­ï¼Œæœ‰ä¸€ååœ¨åŒæ–¹äº®å‡ºæ‹¼ç‚¹çš„ç‰Œå‰æ­»äº¡ï¼Œåˆ™ä¹‹åŽç³»ç»Ÿä¼šäº®å‡ºæ­»äº¡è§’è‰²æ‹¼ç‚¹çš„ç‰Œæ¥ç¡®å®šæ‹¼ç‚¹çš„ç»“æžœã€‚",
+        "cn": "若拼点的两名角色中，有一名在双方亮出拼点的牌前死亡，则之后系统会亮出死亡角色拼点的牌来确定拼点的结果。",
         "en": "If one dueling character dies before both cards are revealed, the system still reveals that character's dueling card to determine the result.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "æ‹¼ç‚¹äº‹ä»¶ ç»“ç®—æµç¨‹ ç‚¹æ•° èµ¢ æ²¡èµ¢",
+    "search_text_cn": "拼点事件 结算流程 点数 赢 没赢",
     "search_text_en": "point duel event resolution rank win"
   },
   {
     "id": "flow_3_5_card_movement",
     "section_num": "3.5",
-    "section_title_cn": "ç‰Œç§»åŠ¨çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "牌移动的结算流程",
     "section_title_en": "Card Movement Resolution Flow",
-    "term_cn": "ç‰Œç§»åŠ¨",
+    "term_cn": "牌移动",
     "term_en": "Card Movement",
     "badge": null,
-    "definition_cn": "å› ä¸€ç§æ“ä½œè€Œæ”¹å˜ä¸€å¼ ç‰Œæ‰€åœ¨çš„åŒºåŸŸæ—¶è¿›è¡Œç§»åŠ¨ç»“ç®—ã€‚ç§»åŠ¨ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸå‰ â‘¡ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸåŽã€‚",
-    "definition_en": "Card Movement Resolution is conducted whenever a card changes its zone due to an operation. Two timings: â‘  Before moving to the target zone â‘¡ After moving to the target zone.",
+    "definition_cn": "因一种操作而改变一张牌所在的区域时进行移动结算。移动结算中有两个时机：①移动到目标区域前 ②移动到目标区域后。",
+    "definition_en": "Card Movement Resolution is conducted whenever a card changes its zone due to an operation. Two timings: ① Before moving to the target zone ② After moving to the target zone.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸå‰ï¼šæ­¤æ—¶æ­¤ç‰Œä»åœ¨åŽŸåŒºåŸŸé‡Œã€‚èƒ½å‘åŠ¨ï¼šã€ç« æ­¦â‘¡ã€‘ã€ã€çºµçŽ„ã€‘ã€‚",
-        "en": "â‘  Before moving to the target zone: the card is still in its original zone. [Zhang Wuâ‘¡], [Release the Esoteric] can activate.",
+        "cn": "①移动到目标区域前：此时此牌仍在原区域里。能发动：〖章武②〗、〖纵玄〗。",
+        "en": "① Before moving to the target zone: the card is still in its original zone. 〖Zhang Wu②〗, 〖Release the Esoteric〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸå‰ï¼š",
+            "cn": "移动到目标区域前：",
             "en": "Before moving to the target zone: "
           },
           {
             "kind": "body",
-            "cn": "æ­¤æ—¶æ­¤ç‰Œä»åœ¨åŽŸåŒºåŸŸé‡Œã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "此时此牌仍在原区域里。能发动：",
             "en": "The card is still in its original zone. "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç« æ­¦â‘¡ã€‘",
-            "en": "[Zhang Wuâ‘¡]"
+            "cn": "〖章武②〗",
+            "en": "〖Zhang Wu②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€çºµçŽ„ã€‘",
-            "en": "[Release the Esoteric]"
+            "cn": "〖纵玄〗",
+            "en": "〖Release the Esoteric〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -1757,62 +1757,62 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸåŽï¼šæ­¤æ—¶æ­¤ç‰Œå·²åœ¨ç›®æ ‡åŒºåŸŸé‡Œã€‚ä¾æ¬¡å¤„ç†ï¼šâ… .è‹¥ç‰Œå †ç©ºä½†å¼ƒç‰Œå †æœ‰ç‰Œï¼Œç³»ç»Ÿå°†å¼ƒç‰Œå †ä»¥éšæœºé¡ºåºç½®å…¥ç‰Œå †ï¼›â…¡.èƒ½å‘åŠ¨å¤šç§æ­¦å°†æŠ€èƒ½ï¼ˆå¦‚ã€è½è‹±â‘ â‘¡ã€‘ã€ã€ä¼¤é€ã€‘ã€ã€è¿žè¥ã€‘ç­‰ï¼‰åŠè£…å¤‡æŠ€èƒ½ï¼ˆå¦‚ã€ç™½é“¶ç‹®å­â‘¡ã€‘ï¼‰ã€‚",
-        "en": "â‘¡ After moving to the target zone: the card is now in the target zone. Process in order: â… . If Draw Pile is empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; â…¡. Various skills (e.g. [Fallen Blossomsâ‘ â‘¡], [Mourn the Fallen], [Linked Camps]) and equipment skills (e.g. [Silver Lion Helmetâ‘¡]) can activate.",
+        "cn": "②移动到目标区域后：此时此牌已在目标区域里。依次处理：Ⅰ.若牌堆空但弃牌堆有牌，系统将弃牌堆以随机顺序置入牌堆；Ⅱ.能发动多种武将技能（如〖落英①②〗、〖伤逝〗、〖连营〗等）及装备技能（如〖白银狮子②〗）。",
+        "en": "② After moving to the target zone: the card is now in the target zone. Process in order: Ⅰ. If Draw Pile is empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; Ⅱ. Various skills (e.g. 〖Fallen Blossoms①②〗, 〖Mourn the Fallen〗, 〖Linked Camps〗) and equipment skills (e.g. 〖Silver Lion Helmet②〗) can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "ç§»åŠ¨åˆ°ç›®æ ‡åŒºåŸŸåŽï¼š",
+            "cn": "移动到目标区域后：",
             "en": "After moving to the target zone: "
           },
           {
             "kind": "body",
-            "cn": "ä¾æ¬¡å¤„ç†ï¼šâ… .è‹¥ç‰Œå †ç©ºä½†å¼ƒç‰Œå †æœ‰ç‰Œï¼Œç³»ç»Ÿå°†å¼ƒç‰Œå †ä»¥éšæœºé¡ºåºç½®å…¥ç‰Œå †ï¼›â…¡.èƒ½å‘åŠ¨å¤šç§æ­¦å°†æŠ€èƒ½ï¼ˆå¦‚",
-            "en": "Process in order: â… . If Draw Pile empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; â…¡. Various skills (e.g. "
+            "cn": "依次处理：Ⅰ.若牌堆空但弃牌堆有牌，系统将弃牌堆以随机顺序置入牌堆；Ⅱ.能发动多种武将技能（如",
+            "en": "Process in order: Ⅰ. If Draw Pile empty but Discard Pile has cards, system shuffles Discard Pile into Draw Pile; Ⅱ. Various skills (e.g. "
           },
           {
             "kind": "skill",
-            "cn": "ã€è½è‹±â‘ â‘¡ã€‘",
-            "en": "[Fallen Blossomsâ‘ â‘¡]"
+            "cn": "〖落英①②〗",
+            "en": "〖Fallen Blossoms①②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¼¤é€ã€‘",
-            "en": "[Mourn the Fallen]"
+            "cn": "〖伤逝〗",
+            "en": "〖Mourn the Fallen〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è¿žè¥ã€‘",
-            "en": "[Linked Camps]"
+            "cn": "〖连营〗",
+            "en": "〖Linked Camps〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰ï¼‰åŠè£…å¤‡æŠ€èƒ½ï¼ˆå¦‚",
+            "cn": "等）及装备技能（如",
             "en": ") and equipment skills (e.g. "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç™½é“¶ç‹®å­â‘¡ã€‘",
-            "en": "[Silver Lion Helmetâ‘¡]"
+            "cn": "〖白银狮子②〗",
+            "en": "〖Silver Lion Helmet②〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼‰ã€‚",
+            "cn": "）。",
             "en": ") can activate."
           }
         ],
@@ -1820,226 +1820,170 @@
       },
       {
         "type": "note",
-        "cn": "ä¸€å¼ ç‰Œå› å¼ƒç½®è€Œè¿›è¡Œçš„ç§»åŠ¨ç»“ç®—ç»“æŸä¹‹åŽï¼Œæ­¤ç‰Œå³æ‰§è¡Œäº†å¼ƒç½®è¿™ä¸ªæ“ä½œã€‚å³å¼ƒç½®çš„æ¶ˆè€—åœ¨ç‰Œç½®å…¥å¤„ç†åŒºåŽå³å·²æ‰§è¡Œã€‚",
+        "cn": "一张牌因弃置而进行的移动结算结束之后，此牌即执行了弃置这个操作。即弃置的消耗在牌置入处理区后即已执行。",
         "en": "Once the movement resolution caused by a discard is complete, that card is considered to have been discarded. The discard cost is paid once the card enters the Processing Zone.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ä¸€å¼ ç‰Œç§»åŠ¨çš„ç›®æ ‡åŒºåŸŸçš„æ”¹å˜å¹¶ä¸ä¼šä»¤å¯¼è‡´æ­¤æ¬¡ç§»åŠ¨çš„æ“ä½œæ”¹å˜ï¼ˆä¾‹å¦‚ä½¿ç”¨ç‰Œçš„æ“ä½œä¾ç„¶æ˜¯ä½¿ç”¨ï¼‰ã€‚",
+        "cn": "一张牌移动的目标区域的改变并不会令导致此次移动的操作改变（例如使用牌的操作依然是使用）。",
         "en": "Changing a card's movement destination (e.g. via a skill) does not change the nature of the operation that caused the movement (e.g. using a card is still treated as using).",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "ç‰Œç§»åŠ¨ ç»“ç®—æµç¨‹ å¼ƒç½® èŽ·å¾— åŒºåŸŸ",
+    "search_text_cn": "牌移动 结算流程 弃置 获得 区域",
     "search_text_en": "card movement resolution discard gain zone"
   },
   {
     "id": "flow_3_6_card_state_change",
     "section_num": "3.6",
-    "section_title_cn": "ç‰ŒçŠ¶æ€æ”¹å˜èƒ½å‘åŠ¨çš„æŠ€èƒ½",
+    "section_title_cn": "牌状态改变能发动的技能",
     "section_title_en": "Skills Triggerable by Card State Changes",
-    "term_cn": "ç‰ŒçŠ¶æ€æ”¹å˜",
+    "term_cn": "牌状态改变",
     "term_en": "Card State Change",
     "badge": null,
-    "definition_cn": "æ­¦å°†ç‰Œæˆ–æ¸¸æˆç‰Œçš„çŠ¶æ€å‘ç”Ÿæ”¹å˜æ—¶èƒ½å‘åŠ¨çš„æŠ€èƒ½åˆ—è¡¨ã€‚",
+    "definition_cn": "武将牌或游戏牌的状态发生改变时能发动的技能列表。",
     "definition_en": "A reference list of skills that can activate when a General Card or Game Card changes state.",
     "rules": [
       {
         "type": "rule",
-        "cn": "ç¿»é¢åŽï¼šèƒ½å‘åŠ¨ã€è§£å›´ã€‘ã€ã€æ³•æ©ã€‘ã€‚",
-        "en": "After Flip Over: [Break the Siege], [Grace of Law] can activate.",
+        "cn": "翻面后：能发动〖解围〗、〖法恩〗。",
+        "en": "After Flip Over: 〖Break the Siege〗, 〖Grace of Law〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ç¿»é¢åŽï¼š",
+            "cn": "翻面后：",
             "en": "After Flip Over: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
+            "cn": "能发动",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è§£å›´ã€‘",
-            "en": "[Grace of Law]"
+            "cn": "〖解围〗",
+            "en": "〖Break the Siege〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ³•æ©ã€‘",
-            "en": "[æ³•æ©]"
+            "cn": "〖法恩〗",
+            "en": "〖Grace of Law〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "æ¨ªç½®åŽï¼šèƒ½å‘åŠ¨ã€æ³•æ©ã€‘ã€‚",
-        "en": "After Horizontal Position: [Grace of Law] can activate.",
+        "cn": "横置后：能发动〖法恩〗。",
+        "en": "After Horizontal Position: 〖Grace of Law〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ¨ªç½®åŽï¼š",
+            "cn": "横置后：",
             "en": "After Horizontal Position: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
+            "cn": "能发动",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ³•æ©ã€‘",
-            "en": "[æ³•æ©]"
+            "cn": "〖法恩〗",
+            "en": "〖Grace of Law〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "æ­¦å°†ç‰Œæ˜Žç½®åŽï¼šèƒ½å‘åŠ¨ã€é—ºç§€â‘ ã€‘ã€‚",
-        "en": "After General Card is Revealed: [Blushing Beautyâ‘ ] can activate.",
+        "cn": "游戏牌亮出后：能发动〖鹰扬〗。",
+        "en": "After Game Card Revealed: 〖Eagle Supremacy〗 can activate.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ­¦å°†ç‰Œæ˜Žç½®åŽï¼š",
-            "en": "After General Card Revealed: "
-          },
-          {
-            "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
-            "en": " can activate."
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€é—ºç§€â‘ ã€‘",
-            "en": "[é—ºç§€â‘ ]"
-          },
-          {
-            "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "æ­¦å°†ç‰Œç§»é™¤åŽï¼šèƒ½å‘åŠ¨ã€é—ºç§€â‘¡ã€‘ã€‚",
-        "en": "After General Card is Removed: [Blushing Beautyâ‘¡] can activate.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "æ­¦å°†ç‰Œç§»é™¤åŽï¼š",
-            "en": "After General Card Removed: "
-          },
-          {
-            "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
-            "en": " can activate."
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€é—ºç§€â‘¡ã€‘",
-            "en": "[é—ºç§€â‘¡]"
-          },
-          {
-            "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "æ¸¸æˆç‰Œäº®å‡ºåŽï¼šèƒ½å‘åŠ¨ã€é¹°æ‰¬ã€‘ã€‚",
-        "en": "After Game Card Revealed: [Eagle Supremacy] can activate.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "æ¸¸æˆç‰Œäº®å‡ºåŽï¼š",
+            "cn": "游戏牌亮出后：",
             "en": "After Game Card Revealed: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨",
+            "cn": "能发动",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€é¹°æ‰¬ã€‘",
-            "en": "[é¹°æ‰¬]"
+            "cn": "〖鹰扬〗",
+            "en": "〖Eagle Supremacy〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "ç‰ŒçŠ¶æ€æ”¹å˜ ç¿»é¢ æ¨ªç½® æ˜Žç½® äº®å‡º",
+    "search_text_cn": "牌状态改变 翻面 横置 亮出",
     "search_text_en": "card state change flip horizontal reveal"
   },
   {
     "id": "flow_3_7_judgment_event",
     "section_num": "3.7",
-    "section_title_cn": "åˆ¤å®šäº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "判定事件的结算流程",
     "section_title_en": "Judgment Event Resolution Flow",
-    "term_cn": "åˆ¤å®šäº‹ä»¶",
+    "term_cn": "判定事件",
     "term_en": "Judgment Event",
     "badge": null,
-    "definition_cn": "åˆ¤å®šç»“ç®—ä¸­æœ‰ä¸‰ä¸ªæ—¶æœºï¼šâ‘ åˆ¤å®šæ—¶ï¼ˆç¡®å®šåˆ¤å®šç‰Œï¼‰â‘¡åˆ¤å®šç‰Œç”Ÿæ•ˆå‰ï¼ˆå¯æ›¿æ¢åˆ¤å®šç‰Œï¼‰â‘¢åˆ¤å®šç‰Œç”Ÿæ•ˆåŽï¼ˆç¡®å®šåˆ¤å®šç»“æžœï¼‰ã€‚åˆ¤å®šç»“ç®—ç»“æŸåŽå°†åˆ¤å®šç‰Œç½®å…¥å¼ƒç‰Œå †ã€‚",
-    "definition_en": "Judgment Resolution has three timings: â‘  When judging (Judgment Card determined) â‘¡ Before the Judgment Card takes effect (can be replaced) â‘¢ After the Judgment Card takes effect (result determined). After resolution, the Judgment Card goes to the Discard Pile.",
+    "definition_cn": "判定结算中有三个时机：①判定时（确定判定牌）②判定牌生效前（可替换判定牌）③判定牌生效后（确定判定结果）。判定结算结束后将判定牌置入弃牌堆。",
+    "definition_en": "Judgment Resolution has three timings: ① When judging (Judgment Card determined) ② Before the Judgment Card takes effect (can be replaced) ③ After the Judgment Card takes effect (result determined). After resolution, the Judgment Card goes to the Discard Pile.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ åˆ¤å®šæ—¶ï¼šç¡®å®šåˆ¤å®šç‰Œã€‚èƒ½æ‰§è¡Œï¼šã€å’’ç¼šã€‘å°†ã€Œå’’ã€ä½œä¸ºåˆ¤å®šç‰Œçš„æ•ˆæžœã€‚",
-        "en": "â‘  When judging: the Judgment Card is determined. [Curse Bind] (use the Curse token as the Judgment Card) can execute.",
+        "cn": "①判定时：确定判定牌。能执行：〖咒缚〗将「咒」作为判定牌的效果。",
+        "en": "① When judging: the Judgment Card is determined. 〖Curse Bind〗 (use the Curse token as the Judgment Card) can execute.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "åˆ¤å®šæ—¶ï¼š",
+            "cn": "判定时：",
             "en": "When judging: "
           },
           {
             "kind": "body",
-            "cn": "ç¡®å®šåˆ¤å®šç‰Œã€‚èƒ½æ‰§è¡Œï¼š",
+            "cn": "确定判定牌。能执行：",
             "en": "The Judgment Card is determined. "
           },
           {
             "kind": "skill",
-            "cn": "ã€å’’ç¼šã€‘",
-            "en": "[Curse Bind]"
+            "cn": "〖咒缚〗",
+            "en": "〖Curse Bind〗"
           },
           {
             "kind": "body",
-            "cn": "å°†ã€Œå’’ã€ä½œä¸ºåˆ¤å®šç‰Œçš„æ•ˆæžœã€‚",
+            "cn": "将「咒」作为判定牌的效果。",
             "en": " (use Curse token as Judgment Card) can execute."
           }
         ],
@@ -2047,52 +1991,52 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡åˆ¤å®šç‰Œç”Ÿæ•ˆå‰ï¼šåˆ¤å®šç‰Œç­‰å¾…ç”Ÿæ•ˆã€‚èƒ½å‘åŠ¨ï¼šã€é¬¼æ‰ã€‘ã€ã€ç¼“é‡Šã€‘ã€ã€é¬¼é“ã€‘ç­‰æŠ€èƒ½ï¼ˆå¯æ›¿æ¢åˆ¤å®šç‰Œï¼‰ã€‚",
-        "en": "â‘¡ Before the Judgment Card takes effect: the card is waiting to take effect. Skills such as [Demonic Wit], [Delayed Release], [Ghost Path] (which can replace the Judgment Card) can activate.",
+        "cn": "②判定牌生效前：判定牌等待生效。能发动：〖鬼才〗、〖缓释〗、〖鬼道〗等技能（可替换判定牌）。",
+        "en": "② Before the Judgment Card takes effect: the card is waiting to take effect. Skills such as 〖Demonic Wit〗, 〖Delayed Release〗, 〖Ghost Path〗 (which can replace the Judgment Card) can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "åˆ¤å®šç‰Œç”Ÿæ•ˆå‰ï¼š",
+            "cn": "判定牌生效前：",
             "en": "Before the Judgment Card takes effect: "
           },
           {
             "kind": "body",
-            "cn": "åˆ¤å®šç‰Œç­‰å¾…ç”Ÿæ•ˆã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "判定牌等待生效。能发动：",
             "en": "Card is waiting to take effect. Skills such as "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¬¼æ‰ã€‘",
-            "en": "[Demonic Wit]"
+            "cn": "〖鬼才〗",
+            "en": "〖Demonic Wit〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç¼“é‡Šã€‘",
-            "en": "[Delayed Release]"
+            "cn": "〖缓释〗",
+            "en": "〖Delayed Release〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¬¼é“ã€‘",
-            "en": "[Ghost Path]"
+            "cn": "〖鬼道〗",
+            "en": "〖Ghost Path〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ï¼ˆå¯æ›¿æ¢åˆ¤å®šç‰Œï¼‰ã€‚",
+            "cn": "等技能（可替换判定牌）。",
             "en": " (can replace the Judgment Card) can activate."
           }
         ],
@@ -2100,178 +2044,178 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¢åˆ¤å®šç‰Œç”Ÿæ•ˆåŽï¼šç¡®å®šæ­¤æ¬¡åˆ¤å®šçš„ç»“æžœã€‚èƒ½å‘åŠ¨ï¼šã€å¤©å¦’ã€‘ã€ã€é¢‚å¨ã€‘ã€ã€å±¯ç”°ã€‘å°†åˆ¤å®šç‰Œç½®äºŽæ­¦å°†ç‰Œä¸Šçš„æ•ˆæžœã€ã€åŒé›„ã€‘èŽ·å¾—åˆ¤å®šç‰Œçš„æ•ˆæžœã€‚",
-        "en": "â‘¢ After the Judgment Card takes effect: the result is confirmed. [Heaven's Envy], [Laud Authority], [Field Farming] (place Judgment Card on General Card), [Twin Warriors] (gain the Judgment Card) can activate.",
+        "cn": "③判定牌生效后：确定此次判定的结果。能发动：〖天妒〗、〖颂威〗、〖屯田〗将判定牌置于武将牌上的效果、〖双雄〗获得判定牌的效果。",
+        "en": "③ After the Judgment Card takes effect: the result is confirmed. 〖Heaven's Envy〗, 〖Laud Authority〗, 〖Field Farming〗 (place Judgment Card on General Card), 〖Twin Warriors〗 (gain the Judgment Card) can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "åˆ¤å®šç‰Œç”Ÿæ•ˆåŽï¼š",
+            "cn": "判定牌生效后：",
             "en": "After the Judgment Card takes effect: "
           },
           {
             "kind": "body",
-            "cn": "ç¡®å®šæ­¤æ¬¡åˆ¤å®šçš„ç»“æžœã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "确定此次判定的结果。能发动：",
             "en": "Result is confirmed. "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤©å¦’ã€‘",
-            "en": "[Heaven's Envy]"
+            "cn": "〖天妒〗",
+            "en": "〖Heaven's Envy〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¢‚å¨ã€‘",
-            "en": "[Laud Authority]"
+            "cn": "〖颂威〗",
+            "en": "〖Laud Authority〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å±¯ç”°ã€‘",
-            "en": "[Field Farming]"
+            "cn": "〖屯田〗",
+            "en": "〖Field Farming〗"
           },
           {
             "kind": "body",
-            "cn": "å°†åˆ¤å®šç‰Œç½®äºŽæ­¦å°†ç‰Œä¸Šçš„æ•ˆæžœã€",
+            "cn": "将判定牌置于武将牌上的效果、",
             "en": " (place on General Card), "
           },
           {
             "kind": "skill",
-            "cn": "ã€åŒé›„ã€‘",
-            "en": "[Twin Warriors]"
+            "cn": "〖双雄〗",
+            "en": "〖Twin Warriors〗"
           },
           {
             "kind": "body",
-            "cn": "èŽ·å¾—åˆ¤å®šç‰Œçš„æ•ˆæžœã€‚",
+            "cn": "获得判定牌的效果。",
             "en": " (gain Judgment Card) can activate."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "åˆ¤å®šäº‹ä»¶ ç»“ç®—æµç¨‹ åˆ¤å®šç‰Œ æ›¿æ¢ ç»“æžœ",
+    "search_text_cn": "判定事件 结算流程 判定牌 替换 结果",
     "search_text_en": "judgment event resolution judgment card replace result"
   },
   {
     "id": "flow_3_8_damage_event",
     "section_num": "3.8",
-    "section_title_cn": "ä¼¤å®³äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "伤害事件的结算流程",
     "section_title_en": "Damage Event Resolution Flow",
-    "term_cn": "ä¼¤å®³äº‹ä»¶",
+    "term_cn": "伤害事件",
     "term_en": "Damage Event",
     "badge": null,
-    "definition_cn": "ä¼¤å®³æœ‰ä¸‰ç§æ–¹å¼ï¼šâ‘ å› æ‰§è¡Œç‰Œæˆ–æŠ€èƒ½çš„æ•ˆæžœ â‘¡å› è¿žçŽ¯ä¼ å¯¼ â‘¢å› è½¬ç§»ã€‚æ¯ç§æ–¹å¼å¯¹åº”çš„å…­è¦ç´ ï¼ˆæ¸ é“ã€å±žæ€§ã€æ¥æºã€å—ä¼¤è§’è‰²ã€ä¼¤å®³å€¼ã€æ˜¯å¦ä¸ºè¿žçŽ¯ä¼¤å®³ï¼‰å„æœ‰è§„å®šã€‚",
-    "definition_en": "Damage can occur in three ways: â‘  From executing a card or skill's effect â‘¡ From chain propagation â‘¢ From a transfer. Each method determines the six damage elements (channel, attribute, source, target, damage value, whether it is Chain Damage).",
+    "definition_cn": "伤害有三种方式：①因执行牌或技能的效果 ②因连环传导 ③因转移。每种方式对应的六要素（渠道、属性、来源、受伤角色、伤害值、是否为连环伤害）各有规定。",
+    "definition_en": "Damage can occur in three ways: ① From executing a card or skill's effect ② From chain propagation ③ From a transfer. Each method determines the six damage elements (channel, attribute, source, target, damage value, whether it is Chain Damage).",
     "rules": [
       {
         "type": "rule",
-        "cn": "ä¼¤å®³ç»“ç®—å¼€å§‹å‰ï¼šè§¦å‘ã€ç»æƒ…ã€‘ï¼ˆè§¦å‘åŽä¸è¿›è¡Œä¼¤å®³ç»“ç®—ï¼Œæœ¬è¯¥å—åˆ°ä¼¤å®³çš„è§’è‰²æ”¹ä¸ºå¤±åŽ»ç­‰åŒäºŽä¼¤å®³å€¼åŸºæ•°çš„ä½“åŠ›ï¼‰ã€‚",
-        "en": "Before Damage Resolution: [Heartless] triggers (the character loses HP equal to the base damage value instead; no Damage Resolution is conducted).",
+        "cn": "伤害结算开始前：触发〖绝情〗（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。",
+        "en": "Before Damage Resolution: 〖Heartless〗 triggers (the character loses HP equal to the base damage value instead; no Damage Resolution is conducted).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä¼¤å®³ç»“ç®—å¼€å§‹å‰ï¼š",
+            "cn": "伤害结算开始前：",
             "en": "Before Damage Resolution: "
           },
           {
             "kind": "body",
-            "cn": "è§¦å‘",
-            "en": " triggers â€” the character loses HP equal to the base damage value instead; no Damage Resolution is conducted."
+            "cn": "触发",
+            "en": " triggers — the character loses HP equal to the base damage value instead; no Damage Resolution is conducted."
           },
           {
             "kind": "skill",
-            "cn": "ã€ç»æƒ…ã€‘",
-            "en": "[ç»æƒ…]"
+            "cn": "〖绝情〗",
+            "en": "〖Heartless〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼ˆè§¦å‘åŽä¸è¿›è¡Œä¼¤å®³ç»“ç®—ï¼Œæœ¬è¯¥å—åˆ°ä¼¤å®³çš„è§’è‰²æ”¹ä¸ºå¤±åŽ»ç­‰åŒäºŽä¼¤å®³å€¼åŸºæ•°çš„ä½“åŠ›ï¼‰ã€‚",
-            "en": "ï¼ˆè§¦å‘åŽä¸è¿›è¡Œä¼¤å®³ç»“ç®—ï¼Œæœ¬è¯¥å—åˆ°ä¼¤å®³çš„è§’è‰²æ”¹ä¸ºå¤±åŽ»ç­‰åŒäºŽä¼¤å®³å€¼åŸºæ•°çš„ä½“åŠ›ï¼‰ã€‚"
+            "cn": "（触发后不进行伤害结算，本该受到伤害的角色改为失去等同于伤害值基数的体力）。",
+            "en": "(After it triggers, no Damage Resolution is conducted; the character who would have received damage instead loses HP equal to the base damage value)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ä¼¤å®³ç»“ç®—ä¸­çš„å…­ä¸ªæ—¶æœºï¼ˆæŒ‰é¡ºåºï¼‰ï¼šâ‘ ä¼¤å®³ç»“ç®—å¼€å§‹æ—¶ â‘¡é€ æˆä¼¤å®³æ—¶ â‘¢å—åˆ°ä¼¤å®³æ—¶ â‘£é€ æˆä¼¤å®³åŽ â‘¤å—åˆ°ä¼¤å®³åŽ â‘¥ä¼¤å®³ç»“ç®—ç»“æŸæ—¶ã€‚",
-        "en": "Six timings during Damage Resolution (in order): â‘  At Damage Resolution Start â‘¡ When dealing damage â‘¢ When receiving damage â‘£ After dealing damage â‘¤ After receiving damage â‘¥ At Damage Resolution End.",
+        "cn": "伤害结算中的六个时机（按顺序）：①伤害结算开始时 ②造成伤害时 ③受到伤害时 ④造成伤害后 ⑤受到伤害后 ⑥伤害结算结束时。",
+        "en": "Six timings during Damage Resolution (in order): ① At Damage Resolution Start ② When dealing damage ③ When receiving damage ④ After dealing damage ⑤ After receiving damage ⑥ At Damage Resolution End.",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä¼¤å®³ç»“ç®—ä¸­ï¼ˆ6ä¸ªæ—¶æœºï¼‰ï¼š",
+            "cn": "伤害结算中（6个时机）：",
             "en": "During Damage Resolution (6 timings): "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "ä¼¤å®³ç»“ç®—å¼€å§‹æ—¶ ",
+            "cn": "伤害结算开始时 ",
             "en": "At Damage Resolution Start "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "é€ æˆä¼¤å®³æ—¶ ",
+            "cn": "造成伤害时 ",
             "en": "When dealing damage "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "å—åˆ°ä¼¤å®³æ—¶ ",
+            "cn": "受到伤害时 ",
             "en": "When receiving damage "
           },
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "é€ æˆä¼¤å®³åŽ ",
+            "cn": "造成伤害后 ",
             "en": "After dealing damage "
           },
           {
             "kind": "number",
-            "cn": "â‘¤",
-            "en": "â‘¤"
+            "cn": "⑤",
+            "en": "⑤"
           },
           {
             "kind": "body",
-            "cn": "å—åˆ°ä¼¤å®³åŽ ",
+            "cn": "受到伤害后 ",
             "en": "After receiving damage "
           },
           {
             "kind": "number",
-            "cn": "â‘¥",
-            "en": "â‘¥"
+            "cn": "⑥",
+            "en": "⑥"
           },
           {
             "kind": "body",
-            "cn": "ä¼¤å®³ç»“ç®—ç»“æŸæ—¶ã€‚",
+            "cn": "伤害结算结束时。",
             "en": "At Damage Resolution End."
           }
         ],
@@ -2279,608 +2223,608 @@
       },
       {
         "type": "rule",
-        "cn": "â‘ ä¼¤å®³ç»“ç®—å¼€å§‹æ—¶ï¼šèƒ½æ‰§è¡Œã€ç‹‚é£Žã€‘ã€ã€å¤§é›¾ã€‘çš„æ•ˆæžœï¼ˆé˜²æ­¢ä¼¤å®³ï¼‰ã€‚",
-        "en": "â‘  At Damage Resolution Start: [Gale], [Great Fog] effects (prevent damage) can execute.",
+        "cn": "①伤害结算开始时：能执行〖狂风〗、〖大雾〗的效果（防止伤害）。",
+        "en": "① At Damage Resolution Start: 〖Gale〗, 〖Great Fog〗 effects (prevent damage) can execute.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "ä¼¤å®³ç»“ç®—å¼€å§‹æ—¶ï¼š",
+            "cn": "伤害结算开始时：",
             "en": "At Damage Resolution Start: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½æ‰§è¡Œ",
+            "cn": "能执行",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç‹‚é£Žã€‘",
-            "en": "[Great Fog]"
+            "cn": "〖狂风〗",
+            "en": "〖Gale〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " effects (prevent damage) can execute."
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤§é›¾ã€‘",
-            "en": "[å¤§é›¾]"
+            "cn": "〖大雾〗",
+            "en": "〖Great Fog〗"
           },
           {
             "kind": "body",
-            "cn": "çš„æ•ˆæžœï¼ˆé˜²æ­¢ä¼¤å®³ï¼‰ã€‚",
-            "en": "çš„æ•ˆæžœï¼ˆé˜²æ­¢ä¼¤å®³ï¼‰ã€‚"
+            "cn": "的效果（防止伤害）。",
+            "en": " effects (prevent damage) can execute."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¡é€ æˆä¼¤å®³æ—¶ï¼šèƒ½å‘åŠ¨ï¼šã€è£¸è¡£ã€‘ä¼¤å®³å€¼+1çš„æ•ˆæžœã€ã€å¿ ä¹‰â‘¡ã€‘ã€ã€æš—ç®­ã€‘ã€ã€ç©¿å¿ƒã€‘ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½ã€éº’éºŸå¼“ã€‘ã€ã€å¯’å†°å‰‘ã€‘ã€ã€å¤é”­åˆ€ã€‘ã€‚",
-        "en": "â‘¡ When dealing damage: [Bare-Chested] (+1 damage), [Fathers' Legacyâ‘¡], [Arrow from the Dark], [Piercing Heart] and other general skills, plus equipment skills [Kirin Bow], [Frost Blade], [Ancient Scimitar] can activate.",
+        "cn": "②造成伤害时：能发动：〖裸衣〗伤害值+1的效果、〖忠义②〗、〖暗箭〗、〖穿心〗等武将技能，以及装备技能【麒麟弓】、【寒冰剑】、【古锭刀】。",
+        "en": "② When dealing damage: 〖Bare-Chested〗 (+1 damage), 〖Fathers' Legacy②〗, 〖Arrow from the Dark〗, 〖Piercing Heart〗 and other general skills, plus equipment skills [Kirin Bow], [Frost Blade], [Ancient Scimitar] can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "é€ æˆä¼¤å®³æ—¶ï¼š",
+            "cn": "造成伤害时：",
             "en": "When dealing damage: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " (+1 damage), "
           },
           {
             "kind": "skill",
-            "cn": "ã€è£¸è¡£ã€‘",
-            "en": "[Fathers' Legacyâ‘¡]"
+            "cn": "〖裸衣〗",
+            "en": "〖Bare-Chested〗"
           },
           {
             "kind": "body",
-            "cn": "ä¼¤å®³å€¼+1çš„æ•ˆæžœã€",
+            "cn": "伤害值+1的效果、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¿ ä¹‰â‘¡ã€‘",
-            "en": "[Arrow from the Dark]"
+            "cn": "〖忠义②〗",
+            "en": "〖Fathers' Legacy②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æš—ç®­ã€‘",
-            "en": "[Piercing Heart]"
+            "cn": "〖暗箭〗",
+            "en": "〖Arrow from the Dark〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " and others, plus equipment skills "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç©¿å¿ƒã€‘",
+            "cn": "〖穿心〗",
+            "en": "〖Piercing Heart〗"
+          },
+          {
+            "kind": "body",
+            "cn": "等武将技能，以及装备技能",
+            "en": ", "
+          },
+          {
+            "kind": "card",
+            "cn": "【麒麟弓】",
             "en": "[Kirin Bow]"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "card",
-            "cn": "ã€éº’éºŸå¼“ã€‘",
+            "cn": "【寒冰剑】",
             "en": "[Frost Blade]"
           },
           {
             "kind": "body",
-            "cn": "ã€",
-            "en": ", "
+            "cn": "、",
+            "en": " can activate."
           },
           {
             "kind": "card",
-            "cn": "ã€å¯’å†°å‰‘ã€‘",
+            "cn": "【古锭刀】",
             "en": "[Ancient Scimitar]"
           },
           {
             "kind": "body",
-            "cn": "ã€",
-            "en": " can activate."
-          },
-          {
-            "kind": "card",
-            "cn": "ã€å¤é”­åˆ€ã€‘",
-            "en": "[å¤é”­åˆ€]"
-          },
-          {
-            "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¢å—åˆ°ä¼¤å®³æ—¶ï¼šèƒ½å‘åŠ¨ï¼šã€ä»å¿ƒã€‘ã€ã€å¤©é¦™ã€‘ã€ã€éª„çŸœã€‘ã€ã€åå£«ã€‘ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½ã€è—¤ç”²â‘¡ã€‘ã€ã€ç™½é“¶ç‹®å­â‘ ã€‘ã€ã€å¤ªå¹³è¦æœ¯â‘ ã€‘ã€‚",
-        "en": "â‘¢ When receiving damage: [Benevolent Heart], [Celestial Fragrance], [Haughty Pride], [Noble Scholar] and others, plus [Rattan Armourâ‘¡], [Silver Lion Helmetâ‘ ], [Talisman of Peaceâ‘ ] can activate.",
+        "cn": "③受到伤害时：能发动：〖仁心〗、〖天香〗、〖骄矜〗、〖名士〗等武将技能，以及装备技能〖藤甲②〗、〖白银狮子①〗、〖太平要术①〗。",
+        "en": "③ When receiving damage: 〖Benevolent Heart〗, 〖Celestial Fragrance〗, 〖Haughty Pride〗, 〖Noble Scholar〗 and others, plus 〖Rattan Armour②〗, 〖Silver Lion Helmet①〗, 〖Talisman of Peace①〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "å—åˆ°ä¼¤å®³æ—¶ï¼š",
+            "cn": "受到伤害时：",
             "en": "When receiving damage: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä»å¿ƒã€‘",
-            "en": "[Celestial Fragrance]"
+            "cn": "〖仁心〗",
+            "en": "〖Benevolent Heart〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤©é¦™ã€‘",
-            "en": "[Haughty Pride]"
+            "cn": "〖天香〗",
+            "en": "〖Celestial Fragrance〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€éª„çŸœã€‘",
-            "en": "[Noble Scholar]"
+            "cn": "〖骄矜〗",
+            "en": "〖Haughty Pride〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " and others, plus "
           },
           {
             "kind": "skill",
-            "cn": "ã€åå£«ã€‘",
-            "en": "[Rattan Armourâ‘¡]"
+            "cn": "〖名士〗",
+            "en": "〖Noble Scholar〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½",
+            "cn": "等武将技能，以及装备技能",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è—¤ç”²â‘¡ã€‘",
-            "en": "[Silver Lion Helmetâ‘ ]"
+            "cn": "〖藤甲②〗",
+            "en": "〖Rattan Armour②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç™½é“¶ç‹®å­â‘ ã€‘",
-            "en": "[Talisman of Peaceâ‘ ]"
+            "cn": "〖白银狮子①〗",
+            "en": "〖Silver Lion Helmet①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤ªå¹³è¦æœ¯â‘ ã€‘",
-            "en": "[å¤ªå¹³è¦æœ¯â‘ ]"
+            "cn": "〖太平要术①〗",
+            "en": "〖Talisman of Peace①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘£é€ æˆä¼¤å®³åŽï¼šèƒ½å‘åŠ¨ï¼šã€å¿˜éš™ã€‘ã€ã€ç‹‚éª¨ã€‘ã€ã€çƒˆåˆƒã€‘ã€ã€ç ´å†›ã€‘ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½ã€ä¸‰å°–ä¸¤åˆƒåˆ€ã€‘ã€‚",
-        "en": "â‘£ After dealing damage: [Set Aside Grudges], [Bloodthirst], [Blazing Blade], [Shatter the Army] and other general skills, plus [Three-Point Glaive] can activate.",
+        "cn": "④造成伤害后：能发动：〖忘隙〗、〖狂骨〗、〖烈刃〗、〖破军〗等武将技能，以及装备技能【三尖两刃刀】。",
+        "en": "④ After dealing damage: 〖Set Aside Grudges〗, 〖Bloodthirst〗, 〖Blazing Blade〗, 〖Shatter the Army〗 and other general skills, plus [Three-Point Glaive] can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "é€ æˆä¼¤å®³åŽï¼š",
+            "cn": "造成伤害后：",
             "en": "After dealing damage: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¿˜éš™ã€‘",
-            "en": "[Bloodthirst]"
+            "cn": "〖忘隙〗",
+            "en": "〖Set Aside Grudges〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç‹‚éª¨ã€‘",
-            "en": "[Blazing Blade]"
+            "cn": "〖狂骨〗",
+            "en": "〖Bloodthirst〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€çƒˆåˆƒã€‘",
-            "en": "[Shatter the Army]"
+            "cn": "〖烈刃〗",
+            "en": "〖Blazing Blade〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " and others, plus "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç ´å†›ã€‘",
-            "en": "[Three-Point Glaive]"
+            "cn": "〖破军〗",
+            "en": "〖Shatter the Army〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æ­¦å°†æŠ€èƒ½ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½",
+            "cn": "等武将技能，以及装备技能",
             "en": " can activate."
           },
           {
             "kind": "card",
-            "cn": "ã€ä¸‰å°–ä¸¤åˆƒåˆ€ã€‘",
-            "en": "[ä¸‰å°–ä¸¤åˆƒåˆ€]"
+            "cn": "【三尖两刃刀】",
+            "en": "[Three-Point Glaive]"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¤å—åˆ°ä¼¤å®³åŽï¼šèƒ½å‘åŠ¨ï¼šã€å¥¸é›„ã€‘ã€ã€åé¦ˆã€‘ã€ã€åˆšçƒˆã€‘ã€ã€é—è®¡ã€‘ã€ã€èŠ‚å‘½ã€‘ã€ã€æ”¾é€ã€‘ç­‰å¤šç§æ­¦å°†æŠ€èƒ½ã€‚",
-        "en": "â‘¤ After receiving damage: [Treacherous Hero], [Retribution], [Unyielding], [Posthumous Plan], [Preserve Lives], [Exile] and many other general skills can activate.",
+        "cn": "⑤受到伤害后：能发动：〖奸雄〗、〖反馈〗、〖刚烈〗、〖遗计〗、〖节命〗、〖放逐〗等多种武将技能。",
+        "en": "⑤ After receiving damage: 〖Treacherous Hero〗, 〖Retribution〗, 〖Unyielding〗, 〖Posthumous Plan〗, 〖Preserve Lives〗, 〖Exile〗 and many other general skills can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¤",
-            "en": "â‘¤"
+            "cn": "⑤",
+            "en": "⑤"
           },
           {
             "kind": "body",
-            "cn": "å—åˆ°ä¼¤å®³åŽï¼š",
+            "cn": "受到伤害后：",
             "en": "After receiving damage: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¥¸é›„ã€‘",
-            "en": "[Retribution]"
+            "cn": "〖奸雄〗",
+            "en": "〖Treacherous Hero〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åé¦ˆã€‘",
-            "en": "[Unyielding]"
+            "cn": "〖反馈〗",
+            "en": "〖Retribution〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åˆšçƒˆã€‘",
-            "en": "[Posthumous Plan]"
+            "cn": "〖刚烈〗",
+            "en": "〖Unyielding〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é—è®¡ã€‘",
-            "en": "[Preserve Lives]"
+            "cn": "〖遗计〗",
+            "en": "〖Posthumous Plan〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€èŠ‚å‘½ã€‘",
-            "en": "[Exile]"
+            "cn": "〖节命〗",
+            "en": "〖Preserve Lives〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " and many others can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ”¾é€ã€‘",
-            "en": "[æ”¾é€]"
+            "cn": "〖放逐〗",
+            "en": "〖Exile〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰å¤šç§æ­¦å°†æŠ€èƒ½ã€‚",
-            "en": "ç­‰å¤šç§æ­¦å°†æŠ€èƒ½ã€‚"
+            "cn": "等多种武将技能。",
+            "en": " and many other general skills can activate."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¥ä¼¤å®³ç»“ç®—ç»“æŸæ—¶ï¼šæ‰§è¡Œã€å¤©é¦™ã€‘æ‘¸ç‰Œçš„æ•ˆæžœï¼›è‹¥è¯¥è§’è‰²æ˜¯åœ¨å¤„äºŽè¿žçŽ¯çŠ¶æ€æ—¶å—åˆ°å±žæ€§ä¼¤å®³ï¼Œå…¶é¡»é‡ç½®ã€‚",
-        "en": "â‘¥ At Damage Resolution End: [Celestial Fragrance] draw effect executes; if the character was Chained and received elemental damage, they must Reset.",
+        "cn": "⑥伤害结算结束时：执行〖天香〗摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。",
+        "en": "⑥ At Damage Resolution End: 〖Celestial Fragrance〗 draw effect executes; if the character was Chained and received elemental damage, they must Reset.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¥",
-            "en": "â‘¥"
+            "cn": "⑥",
+            "en": "⑥"
           },
           {
             "kind": "body",
-            "cn": "ä¼¤å®³ç»“ç®—ç»“æŸæ—¶ï¼š",
+            "cn": "伤害结算结束时：",
             "en": "At Damage Resolution End: "
           },
           {
             "kind": "body",
-            "cn": "æ‰§è¡Œ",
+            "cn": "执行",
             "en": " draw effect executes; if the character was Chained and received elemental damage, they must Reset."
           },
           {
             "kind": "skill",
-            "cn": "ã€å¤©é¦™ã€‘",
-            "en": "[å¤©é¦™]"
+            "cn": "〖天香〗",
+            "en": "〖Celestial Fragrance〗"
           },
           {
             "kind": "body",
-            "cn": "æ‘¸ç‰Œçš„æ•ˆæžœï¼›è‹¥è¯¥è§’è‰²æ˜¯åœ¨å¤„äºŽè¿žçŽ¯çŠ¶æ€æ—¶å—åˆ°å±žæ€§ä¼¤å®³ï¼Œå…¶é¡»é‡ç½®ã€‚",
-            "en": "æ‘¸ç‰Œçš„æ•ˆæžœï¼›è‹¥è¯¥è§’è‰²æ˜¯åœ¨å¤„äºŽè¿žçŽ¯çŠ¶æ€æ—¶å—åˆ°å±žæ€§ä¼¤å®³ï¼Œå…¶é¡»é‡ç½®ã€‚"
+            "cn": "摸牌的效果；若该角色是在处于连环状态时受到属性伤害，其须重置。",
+            "en": " draw effect executes; if the character was Chained and received elemental damage, they must Reset."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "ä¼¤å®³ç»“ç®—ç»“æŸåŽï¼Œä¾æ¬¡å¤„ç†ï¼šâ… .ã€é…’è¯—â‘¡ã€‘ï¼›â…¡.è§¦å‘è¿žçŽ¯ã€‚",
-        "en": "After Damage Resolution: process in order: â… . [Wine and Verseâ‘¡]; â…¡. Trigger chain propagation (if applicable).",
+        "cn": "伤害结算结束后，依次处理：Ⅰ.〖酒诗②〗；Ⅱ.触发连环。",
+        "en": "After Damage Resolution: process in order: Ⅰ. 〖Wine and Verse②〗; Ⅱ. Trigger chain propagation (if applicable).",
         "segments": [
           {
             "kind": "label",
-            "cn": "ä¼¤å®³ç»“ç®—ç»“æŸåŽï¼š",
+            "cn": "伤害结算结束后：",
             "en": "After Damage Resolution: "
           },
           {
             "kind": "body",
-            "cn": "ä¾æ¬¡å¤„ç†ï¼šâ… .",
-            "en": "Process in order: â… . "
+            "cn": "依次处理：Ⅰ.",
+            "en": "Process in order: Ⅰ. "
           },
           {
             "kind": "skill",
-            "cn": "ã€é…’è¯—â‘¡ã€‘",
-            "en": "[Wine and Verseâ‘¡]"
+            "cn": "〖酒诗②〗",
+            "en": "〖Wine and Verse②〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼›â…¡.è§¦å‘è¿žçŽ¯ã€‚",
-            "en": "; â…¡. Trigger chain propagation (if applicable)."
+            "cn": "；Ⅱ.触发连环。",
+            "en": "; Ⅱ. Trigger chain propagation (if applicable)."
           }
         ],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ç”±äºŽåœ¨ã€Œé€ æˆ/å—åˆ°ä¼¤å®³æ—¶ã€å°šæœªç¡®å®šæœ€ç»ˆçš„ä¼¤å®³å€¼ï¼Œæ­¤æ—¶å‘åŠ¨çš„æŠ€èƒ½é»˜è®¤ä¸ºæ¯é€ æˆ/å—åˆ°ä¸€æ¬¡ä¼¤å®³èƒ½å‘åŠ¨ä¸€æ¬¡ã€‚",
+        "cn": "由于在「造成/受到伤害时」尚未确定最终的伤害值，此时发动的技能默认为每造成/受到一次伤害能发动一次。",
         "en": "Since the final damage value is not yet determined at the \"when dealing/receiving damage\" timing, skills there default to triggering once per damage event regardless of the value.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ã€Œå—åˆ°/é€ æˆä¼¤å®³åŽã€é»˜è®¤è¡¨ç¤ºä¸€æ¬¡ä¼¤å®³äº‹ä»¶åŽï¼ˆæ— è®ºä¼¤å®³å€¼å¤šå°‘å‡ä¸ºä¸€æ¬¡ï¼‰ã€‚è‹¥ä¼¤å®³å€¼ä¸ºXç‚¹ï¼Œå‘åŠ¨æ—¶æœºä¸ºã€Œé€ æˆ/å—åˆ°1ç‚¹ä¼¤å®³åŽã€çš„æŠ€èƒ½èƒ½å‘åŠ¨Xæ¬¡ã€‚",
+        "cn": "「受到/造成伤害后」默认表示一次伤害事件后（无论伤害值多少均为一次）。若伤害值为X点，发动时机为「造成/受到1点伤害后」的技能能发动X次。",
         "en": "\"After receiving/dealing damage\" defaults to once per damage event (regardless of value). If the damage value is X, skills with timing \"after dealing/receiving 1 damage\" can activate X times.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "ä¼¤å®³äº‹ä»¶ ç»“ç®—æµç¨‹ æ¥æº å±žæ€§ è¿žçŽ¯ é€ æˆä¼¤å®³ å—åˆ°ä¼¤å®³",
+    "search_text_cn": "伤害事件 结算流程 来源 属性 连环 造成伤害 受到伤害",
     "search_text_en": "damage event resolution source attribute chain deal receive"
   },
   {
     "id": "flow_3_9_lose_hp_event",
     "section_num": "3.9",
-    "section_title_cn": "å¤±åŽ»ä½“åŠ›äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "失去体力事件的结算流程",
     "section_title_en": "Lose HP Event Resolution Flow",
-    "term_cn": "å¤±åŽ»ä½“åŠ›äº‹ä»¶",
+    "term_cn": "失去体力事件",
     "term_en": "Lose HP Event",
     "badge": null,
-    "definition_cn": "å¤±åŽ»ä½“åŠ›ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ å¤±åŽ»ä½“åŠ›æ—¶ â‘¡å¤±åŽ»ä½“åŠ›åŽã€‚",
-    "definition_en": "Lose HP Resolution has two timings: â‘  When losing HP â‘¡ After losing HP.",
+    "definition_cn": "失去体力结算中有两个时机：①失去体力时 ②失去体力后。",
+    "definition_en": "Lose HP Resolution has two timings: ① When losing HP ② After losing HP.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ å¤±åŽ»ä½“åŠ›æ—¶ï¼šèƒ½å‘åŠ¨ï¼šã€é»„å·¾å¤©å…µç¬¦â‘¡ã€‘ï¼ˆé˜²æ­¢å¤±åŽ»ä½“åŠ›ï¼‰ã€‚è‹¥é˜²æ­¢å¤±åŽ»ä½“åŠ›ï¼Œç»“ç®—ç›´æŽ¥ç»“æŸï¼›å¦åˆ™è¿›è¡Œæ‰£å‡ä½“åŠ›ç»“ç®—ã€‚",
-        "en": "â‘  When losing HP: [Yellow Turban Talismanâ‘¡] (prevent HP loss) can activate. If the loss is prevented, resolution ends immediately; otherwise HP Reduction Resolution is conducted.",
+        "cn": "①失去体力时：能发动：〖黄巾天兵符②〗（防止失去体力）。若防止失去体力，结算直接结束；否则进行扣减体力结算。",
+        "en": "① When losing HP: 〖Yellow Turban Talisman②〗 (prevent HP loss) can activate. If the loss is prevented, resolution ends immediately; otherwise HP Reduction Resolution is conducted.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "å¤±åŽ»ä½“åŠ›æ—¶ï¼š",
+            "cn": "失去体力时：",
             "en": "When losing HP: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " (prevent HP loss) can activate. If prevented, resolution ends; otherwise HP Reduction Resolution is conducted."
           },
           {
             "kind": "skill",
-            "cn": "ã€é»„å·¾å¤©å…µç¬¦â‘¡ã€‘",
-            "en": "[é»„å·¾å¤©å…µç¬¦â‘¡]"
+            "cn": "〖黄巾天兵符②〗",
+            "en": "〖Yellow Turban Talisman②〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼ˆé˜²æ­¢å¤±åŽ»ä½“åŠ›ï¼‰ã€‚è‹¥é˜²æ­¢ï¼Œç»“ç®—ç›´æŽ¥ç»“æŸï¼›å¦åˆ™è¿›è¡Œæ‰£å‡ä½“åŠ›ç»“ç®—ã€‚",
-            "en": "ï¼ˆé˜²æ­¢å¤±åŽ»ä½“åŠ›ï¼‰ã€‚è‹¥é˜²æ­¢ï¼Œç»“ç®—ç›´æŽ¥ç»“æŸï¼›å¦åˆ™è¿›è¡Œæ‰£å‡ä½“åŠ›ç»“ç®—ã€‚"
+            "cn": "（防止失去体力）。若防止，结算直接结束；否则进行扣减体力结算。",
+            "en": " (prevent HP loss) can activate. If prevented, resolution ends; otherwise HP Reduction Resolution is conducted."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¡å¤±åŽ»ä½“åŠ›åŽï¼šèƒ½å‘åŠ¨ï¼šã€è¯ˆé™ã€‘ã€‚",
-        "en": "â‘¡ After losing HP: [Feigned Surrender] can activate.",
+        "cn": "②失去体力后：能发动：〖诈降〗。",
+        "en": "② After losing HP: 〖Feigned Surrender〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "å¤±åŽ»ä½“åŠ›åŽï¼š",
+            "cn": "失去体力后：",
             "en": "After losing HP: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€è¯ˆé™ã€‘",
-            "en": "[è¯ˆé™]"
+            "cn": "〖诈降〗",
+            "en": "〖Feigned Surrender〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "å¤±åŽ»ä½“åŠ›äº‹ä»¶ ç»“ç®—æµç¨‹ é˜²æ­¢ æ‰£å‡",
+    "search_text_cn": "失去体力事件 结算流程 防止 扣减",
     "search_text_en": "lose hp event resolution prevent reduce"
   },
   {
     "id": "flow_3_10_hp_reduction_event",
     "section_num": "3.10",
-    "section_title_cn": "æ‰£å‡ä½“åŠ›äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "扣减体力事件的结算流程",
     "section_title_en": "HP Reduction Event Resolution Flow",
-    "term_cn": "æ‰£å‡ä½“åŠ›äº‹ä»¶",
+    "term_cn": "扣减体力事件",
     "term_en": "HP Reduction Event",
     "badge": null,
-    "definition_cn": "æ‰£å‡ä½“åŠ›ç»“ç®—ä¸­æœ‰ä¸‰ä¸ªæ—¶æœºï¼šâ‘ æ‰£å‡ä½“åŠ›å‰ â‘¡æ‰£å‡ä½“åŠ›æ—¶ â‘¢æ‰£å‡ä½“åŠ›åŽã€‚æ‰£å‡ä½“åŠ›äº‹ä»¶æœ‰ä¸¤ç§æ¥æºï¼šåœ¨ä¼¤å®³äº‹ä»¶ä¸­äº§ç”Ÿï¼Œæˆ–åœ¨å¤±åŽ»ä½“åŠ›äº‹ä»¶ä¸­äº§ç”Ÿã€‚",
-    "definition_en": "HP Reduction Resolution has three timings: â‘  Before HP is reduced â‘¡ When HP is reduced â‘¢ After HP is reduced. It can originate from either a Damage Event or a Lose HP Event.",
+    "definition_cn": "扣减体力结算中有三个时机：①扣减体力前 ②扣减体力时 ③扣减体力后。扣减体力事件有两种来源：在伤害事件中产生，或在失去体力事件中产生。",
+    "definition_en": "HP Reduction Resolution has three timings: ① Before HP is reduced ② When HP is reduced ③ After HP is reduced. It can originate from either a Damage Event or a Lose HP Event.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ æ‰£å‡ä½“åŠ›å‰ï¼ˆä¼¤å®³äº‹ä»¶ä¸­ï¼‰ï¼šé¡»æ£€æµ‹ã€é…’è¯—â‘¡ã€‘ã€ã€ç‹‚éª¨ã€‘ã€ã€æš´è™ã€‘çš„å‘åŠ¨æ¡ä»¶ï¼Œå—åˆ°å±žæ€§ä¼¤å®³çš„è§’è‰²é‡ç½®çš„æ¡ä»¶ï¼Œä»¥åŠè§¦å‘è¿žçŽ¯çš„æ¡ä»¶ã€‚",
-        "en": "â‘  Before HP reduction (in a Damage Event): check activation conditions for [Wine and Verseâ‘¡], [Bloodthirst], [Tyranny], the Reset condition for characters receiving elemental damage, and the chain propagation condition.",
+        "cn": "①扣减体力前（伤害事件中）：须检测〖酒诗②〗、〖狂骨〗、〖暴虐〗的发动条件，受到属性伤害的角色重置的条件，以及触发连环的条件。",
+        "en": "① Before HP reduction (in a Damage Event): check activation conditions for 〖Wine and Verse②〗, 〖Bloodthirst〗, 〖Tyranny〗, the Reset condition for characters receiving elemental damage, and the chain propagation condition.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "æ‰£å‡ä½“åŠ›å‰ï¼ˆä¼¤å®³äº‹ä»¶ä¸­ï¼‰ï¼š",
+            "cn": "扣减体力前（伤害事件中）：",
             "en": "Before HP reduction (Damage Event): "
           },
           {
             "kind": "body",
-            "cn": "é¡»æ£€æµ‹",
+            "cn": "须检测",
             "en": "Check conditions for "
           },
           {
             "kind": "skill",
-            "cn": "ã€é…’è¯—â‘¡ã€‘",
-            "en": "[Wine and Verseâ‘¡]"
+            "cn": "〖酒诗②〗",
+            "en": "〖Wine and Verse②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ç‹‚éª¨ã€‘",
-            "en": "[Bloodthirst]"
+            "cn": "〖狂骨〗",
+            "en": "〖Bloodthirst〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æš´è™ã€‘",
-            "en": "[Tyranny]"
+            "cn": "〖暴虐〗",
+            "en": "〖Tyranny〗"
           },
           {
             "kind": "body",
-            "cn": "çš„å‘åŠ¨æ¡ä»¶ï¼Œå—åˆ°å±žæ€§ä¼¤å®³çš„è§’è‰²é‡ç½®çš„æ¡ä»¶ï¼Œä»¥åŠè§¦å‘è¿žçŽ¯çš„æ¡ä»¶ã€‚",
+            "cn": "的发动条件，受到属性伤害的角色重置的条件，以及触发连环的条件。",
             "en": ", Reset condition for elemental damage, and chain propagation condition."
           }
         ],
@@ -2888,204 +2832,204 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡æ‰£å‡ä½“åŠ›æ—¶ï¼šèƒ½å‘åŠ¨ï¼šã€ä¸å±ˆï¼ˆæ—§é£Žï¼‰ã€‘ã€‚ç„¶åŽæŒ‰æœ€ç»ˆçš„ä¼¤å®³å€¼/å¤±åŽ»ä½“åŠ›å€¼æ‰£å‡ä½“åŠ›ã€‚è‹¥ä½“åŠ›è¢«æ‰£å‡è‡³0ï¼Œåˆ™è¿›è¡Œæ¿’æ­»ç»“ç®—ã€‚",
-        "en": "â‘¡ When HP is reduced: [Indomitable] can activate. HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted.",
+        "cn": "②扣减体力时：能发动：〖不屈（旧风）〗。然后按最终的伤害值/失去体力值扣减体力。若体力被扣减至0，则进行濒死结算。",
+        "en": "② When HP is reduced: 〖Indomitable〗 can activate. HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "æ‰£å‡ä½“åŠ›æ—¶ï¼š",
+            "cn": "扣减体力时：",
             "en": "When HP is reduced: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " can activate. HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted."
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¸å±ˆï¼ˆæ—§é£Žï¼‰ã€‘",
-            "en": "[ä¸å±ˆï¼ˆæ—§é£Žï¼‰]"
+            "cn": "〖不屈（旧风）〗",
+            "en": "〖Indomitable〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚ç„¶åŽæŒ‰æœ€ç»ˆå€¼æ‰£å‡ä½“åŠ›ã€‚è‹¥ä½“åŠ›é™è‡³0ï¼Œåˆ™è¿›è¡Œæ¿’æ­»ç»“ç®—ã€‚",
-            "en": "ã€‚ç„¶åŽæŒ‰æœ€ç»ˆå€¼æ‰£å‡ä½“åŠ›ã€‚è‹¥ä½“åŠ›é™è‡³0ï¼Œåˆ™è¿›è¡Œæ¿’æ­»ç»“ç®—ã€‚"
+            "cn": "。然后按最终值扣减体力。若体力降至0，则进行濒死结算。",
+            "en": ". HP is then reduced by the final value. If HP reaches 0, Verge of Death Resolution is conducted."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¢æ‰£å‡ä½“åŠ›åŽï¼šèƒ½å‘åŠ¨ï¼šã€ä¼¤é€ã€‘ã€‚",
-        "en": "â‘¢ After HP is reduced: [Mourn the Fallen] can activate.",
+        "cn": "③扣减体力后：能发动：〖伤逝〗。",
+        "en": "③ After HP is reduced: 〖Mourn the Fallen〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "æ‰£å‡ä½“åŠ›åŽï¼š",
+            "cn": "扣减体力后：",
             "en": "After HP is reduced: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¼¤é€ã€‘",
-            "en": "[ä¼¤é€]"
+            "cn": "〖伤逝〗",
+            "en": "〖Mourn the Fallen〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "æ‰£å‡ä½“åŠ›äº‹ä»¶ ç»“ç®—æµç¨‹ ä¼¤å®³ å¤±åŽ»ä½“åŠ› æ¿’æ­»",
+    "search_text_cn": "扣减体力事件 结算流程 伤害 失去体力 濒死",
     "search_text_en": "hp reduction event resolution damage lose hp verge of death"
   },
   {
     "id": "flow_3_11_recover_hp_event",
     "section_num": "3.11",
-    "section_title_cn": "å›žå¤ä½“åŠ›äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "回复体力事件的结算流程",
     "section_title_en": "Recover HP Event Resolution Flow",
-    "term_cn": "å›žå¤ä½“åŠ›äº‹ä»¶",
+    "term_cn": "回复体力事件",
     "term_en": "Recover HP Event",
     "badge": null,
-    "definition_cn": "å›žå¤ä½“åŠ›ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ ç¡®å®šå›žå¤æ•°å€¼ â‘¡å›žå¤ä½“åŠ›åŽã€‚",
-    "definition_en": "Recover HP Resolution has two timings: â‘  Determining the recovery amount â‘¡ After recovering HP.",
+    "definition_cn": "回复体力结算中有两个时机：①确定回复数值 ②回复体力后。",
+    "definition_en": "Recover HP Resolution has two timings: ① Determining the recovery amount ② After recovering HP.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ ç¡®å®šå›žå¤æ•°å€¼ï¼šèƒ½äº§ç”Ÿå½±å“çš„æŠ€èƒ½ï¼šã€æ•‘æ´ã€‘ï¼ˆä¿®æ”¹å›žå¤æ•°å€¼ï¼‰ã€‚ç„¶åŽè§’è‰²æŒ‰ç…§æ­¤æ•°å€¼å›žå¤ä½“åŠ›ã€‚",
-        "en": "â‘  Determining the recovery amount: [Rescue] (which modifies the recovery amount) can influence this. The character then recovers HP by the determined amount.",
+        "cn": "①确定回复数值：能产生影响的技能：〖救援〗（修改回复数值）。然后角色按照此数值回复体力。",
+        "en": "① Determining the recovery amount: 〖Rescue〗 (which modifies the recovery amount) can influence this. The character then recovers HP by the determined amount.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "ç¡®å®šå›žå¤æ•°å€¼ï¼š",
+            "cn": "确定回复数值：",
             "en": "Determining the recovery amount: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½äº§ç”Ÿå½±å“çš„æŠ€èƒ½ï¼š",
+            "cn": "能产生影响的技能：",
             "en": " (modifies recovery amount) can influence this. Character then recovers HP by the determined amount."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ•‘æ´ã€‘",
-            "en": "[æ•‘æ´]"
+            "cn": "〖救援〗",
+            "en": "〖Rescue〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼ˆä¿®æ”¹å›žå¤æ•°å€¼ï¼‰ã€‚ç„¶åŽè§’è‰²æŒ‰ç…§æ­¤æ•°å€¼å›žå¤ä½“åŠ›ã€‚",
-            "en": "ï¼ˆä¿®æ”¹å›žå¤æ•°å€¼ï¼‰ã€‚ç„¶åŽè§’è‰²æŒ‰ç…§æ­¤æ•°å€¼å›žå¤ä½“åŠ›ã€‚"
+            "cn": "（修改回复数值）。然后角色按照此数值回复体力。",
+            "en": " (modifies recovery amount). The character then recovers HP by the determined amount."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¡å›žå¤ä½“åŠ›åŽï¼šèƒ½å‘åŠ¨ï¼šã€ä¼¤é€ã€‘ã€ã€æ·‘æ…Žã€‘ã€ã€æ©æ€¨ï¼ˆæ—§å°†ï¼‰â‘ ã€‘ã€‚",
-        "en": "â‘¡ After recovering HP: [Mourn the Fallen], [Gentle Virtue], [Gratitude and Grudgesâ‘ ] can activate.",
+        "cn": "②回复体力后：能发动：〖伤逝〗、〖淑慎〗、〖恩怨（旧将）①〗。",
+        "en": "② After recovering HP: 〖Mourn the Fallen〗, 〖Gentle Virtue〗, 〖Gratitude and Grudges①〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "å›žå¤ä½“åŠ›åŽï¼š",
+            "cn": "回复体力后：",
             "en": "After recovering HP: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
+            "en": ""
+          },
+          {
+            "kind": "skill",
+            "cn": "〖伤逝〗",
+            "en": "〖Mourn the Fallen〗"
+          },
+          {
+            "kind": "body",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¼¤é€ã€‘",
-            "en": "[Gentle Virtue]"
+            "cn": "〖淑慎〗",
+            "en": "〖Gentle Virtue〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
-            "en": ", "
-          },
-          {
-            "kind": "skill",
-            "cn": "ã€æ·‘æ…Žã€‘",
-            "en": "[Gratitude and Grudgesâ‘ ]"
-          },
-          {
-            "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " can activate."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ©æ€¨ï¼ˆæ—§å°†ï¼‰â‘ ã€‘",
-            "en": "[æ©æ€¨ï¼ˆæ—§å°†ï¼‰â‘ ]"
+            "cn": "〖恩怨（旧将）①〗",
+            "en": "〖Gratitude and Grudges①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "å›žå¤ä½“åŠ›äº‹ä»¶ ç»“ç®—æµç¨‹ å›žå¤æ•°å€¼",
+    "search_text_cn": "回复体力事件 结算流程 回复数值",
     "search_text_en": "recover hp event resolution recovery amount"
   },
   {
     "id": "flow_3_12_reduce_max_hp_event",
     "section_num": "3.12",
-    "section_title_cn": "å‡ä½“åŠ›ä¸Šé™äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "减体力上限事件的结算流程",
     "section_title_en": "Reduce Max HP Event Resolution Flow",
-    "term_cn": "å‡ä½“åŠ›ä¸Šé™äº‹ä»¶",
+    "term_cn": "减体力上限事件",
     "term_en": "Reduce Max HP Event",
     "badge": null,
-    "definition_cn": "å‡ä½“åŠ›ä¸Šé™ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ å‡ä½“åŠ›ä¸Šé™å‰ â‘¡å‡ä½“åŠ›ä¸Šé™åŽã€‚",
-    "definition_en": "Reduce Max HP Resolution has two timings: â‘  Before Max HP is reduced â‘¡ After Max HP is reduced.",
+    "definition_cn": "减体力上限结算中有两个时机：①减体力上限前 ②减体力上限后。",
+    "definition_en": "Reduce Max HP Resolution has two timings: ① Before Max HP is reduced ② After Max HP is reduced.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ å‡ä½“åŠ›ä¸Šé™å‰ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚ç„¶åŽè§’è‰²å‡ä½“åŠ›ä¸Šé™ã€‚è‹¥è¯¥è§’è‰²åœ¨å‡å‰çš„ä½“åŠ›å€¼ç­‰äºŽå…¶ä½“åŠ›ä¸Šé™ï¼Œåˆ™é¡»å°†ä½“åŠ›å€¼åŒæ­¥è°ƒæ•´è‡³ç­‰åŒäºŽå‡åŽçš„ä½“åŠ›ä¸Šé™ã€‚",
-        "en": "â‘  Before Max HP is reduced: no effect at this time. Max HP is then reduced. If the character's HP Value equalled their Max HP before the reduction, their HP Value is adjusted down to match.",
+        "cn": "①减体力上限前：暂时没有作用。然后角色减体力上限。若该角色在减前的体力值等于其体力上限，则须将体力值同步调整至等同于减后的体力上限。",
+        "en": "① Before Max HP is reduced: no effect at this time. Max HP is then reduced. If the character's HP Value equalled their Max HP before the reduction, their HP Value is adjusted down to match.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "å‡ä½“åŠ›ä¸Šé™å‰ï¼š",
+            "cn": "减体力上限前：",
             "en": "Before Max HP is reduced: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚ç„¶åŽè§’è‰²å‡ä½“åŠ›ä¸Šé™ã€‚è‹¥å‡å‰ä½“åŠ›å€¼ç­‰äºŽä½“åŠ›ä¸Šé™ï¼Œåˆ™é¡»åŒæ­¥è°ƒæ•´è‡³å‡åŽçš„ä½“åŠ›ä¸Šé™ã€‚",
+            "cn": "暂时没有作用。然后角色减体力上限。若减前体力值等于体力上限，则须同步调整至减后的体力上限。",
             "en": "No effect. Max HP is then reduced. If HP Value equalled Max HP before, HP Value is adjusted down to match."
           }
         ],
@@ -3093,80 +3037,80 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡å‡ä½“åŠ›ä¸Šé™åŽï¼ša.è‹¥ä½“åŠ›ä¸Šé™å¤§äºŽ0ï¼šèƒ½å‘åŠ¨ã€ä¼¤é€ã€‘ã€ã€å¨é‡ã€‘ã€‚b.è‹¥ä½“åŠ›ä¸Šé™ä¸º0ï¼šè¯¥è§’è‰²æ­»äº¡ã€‚",
-        "en": "â‘¡ After Max HP is reduced: a. If Max HP > 0: [Mourn the Fallen], [Imposing Presence] can activate. b. If Max HP = 0: that character dies.",
+        "cn": "②减体力上限后：a.若体力上限大于0：能发动〖伤逝〗、〖威重〗。b.若体力上限为0：该角色死亡。",
+        "en": "② After Max HP is reduced: a. If Max HP > 0: 〖Mourn the Fallen〗, 〖Imposing Presence〗 can activate. b. If Max HP = 0: that character dies.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "å‡ä½“åŠ›ä¸Šé™åŽï¼š",
+            "cn": "减体力上限后：",
             "en": "After Max HP is reduced: "
           },
           {
             "kind": "body",
-            "cn": "è‹¥ä½“åŠ›ä¸Šé™>0ï¼šèƒ½å‘åŠ¨",
+            "cn": "若体力上限>0：能发动",
             "en": "If Max HP > 0: "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¼¤é€ã€‘",
-            "en": "[Mourn the Fallen]"
+            "cn": "〖伤逝〗",
+            "en": "〖Mourn the Fallen〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¨é‡ã€‘",
-            "en": "[Imposing Presence]"
+            "cn": "〖威重〗",
+            "en": "〖Imposing Presence〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚è‹¥ä½“åŠ›ä¸Šé™=0ï¼šè¯¥è§’è‰²æ­»äº¡ã€‚",
+            "cn": "。若体力上限=0：该角色死亡。",
             "en": " can activate. If Max HP = 0: that character dies."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "å‡ä½“åŠ›ä¸Šé™äº‹ä»¶ ç»“ç®—æµç¨‹ ä½“åŠ›ä¸Šé™ æ­»äº¡",
+    "search_text_cn": "减体力上限事件 结算流程 体力上限 死亡",
     "search_text_en": "reduce max hp event resolution max hp death"
   },
   {
     "id": "flow_3_13_increase_max_hp_event",
     "section_num": "3.13",
-    "section_title_cn": "åŠ ä½“åŠ›ä¸Šé™äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "加体力上限事件的结算流程",
     "section_title_en": "Increase Max HP Event Resolution Flow",
-    "term_cn": "åŠ ä½“åŠ›ä¸Šé™äº‹ä»¶",
+    "term_cn": "加体力上限事件",
     "term_en": "Increase Max HP Event",
     "badge": null,
-    "definition_cn": "åŠ ä½“åŠ›ä¸Šé™ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ åŠ ä½“åŠ›ä¸Šé™å‰ â‘¡åŠ ä½“åŠ›ä¸Šé™åŽã€‚",
-    "definition_en": "Increase Max HP Resolution has two timings: â‘  Before Max HP is increased â‘¡ After Max HP is increased.",
+    "definition_cn": "加体力上限结算中有两个时机：①加体力上限前 ②加体力上限后。",
+    "definition_en": "Increase Max HP Resolution has two timings: ① Before Max HP is increased ② After Max HP is increased.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ åŠ ä½“åŠ›ä¸Šé™å‰ï¼šæš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚ç„¶åŽè§’è‰²åŠ ä½“åŠ›ä¸Šé™ã€‚",
-        "en": "â‘  Before Max HP is increased: no effect at this time. Max HP is then increased.",
+        "cn": "①加体力上限前：暂时没有作用。然后角色加体力上限。",
+        "en": "① Before Max HP is increased: no effect at this time. Max HP is then increased.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "åŠ ä½“åŠ›ä¸Šé™å‰ï¼š",
+            "cn": "加体力上限前：",
             "en": "Before Max HP is increased: "
           },
           {
             "kind": "body",
-            "cn": "æš‚æ—¶æ²¡æœ‰ä½œç”¨ã€‚ç„¶åŽè§’è‰²åŠ ä½“åŠ›ä¸Šé™ã€‚",
+            "cn": "暂时没有作用。然后角色加体力上限。",
             "en": "No effect at this time. Max HP is then increased."
           }
         ],
@@ -3174,100 +3118,100 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡åŠ ä½“åŠ›ä¸Šé™åŽï¼šèƒ½å‘åŠ¨ï¼šã€ä¼¤é€ã€‘ã€ã€å¨é‡ã€‘ã€‚",
-        "en": "â‘¡ After Max HP is increased: [Mourn the Fallen], [Imposing Presence] can activate.",
+        "cn": "②加体力上限后：能发动：〖伤逝〗、〖威重〗。",
+        "en": "② After Max HP is increased: 〖Mourn the Fallen〗, 〖Imposing Presence〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "åŠ ä½“åŠ›ä¸Šé™åŽï¼š",
+            "cn": "加体力上限后：",
             "en": "After Max HP is increased: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¼¤é€ã€‘",
-            "en": "[Imposing Presence]"
+            "cn": "〖伤逝〗",
+            "en": "〖Mourn the Fallen〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
-            "en": " can activate."
+            "cn": "、",
+            "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å¨é‡ã€‘",
-            "en": "[å¨é‡]"
+            "cn": "〖威重〗",
+            "en": "〖Imposing Presence〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
-            "en": "ã€‚"
+            "cn": "。",
+            "en": "。"
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "åŠ ä½“åŠ›ä¸Šé™äº‹ä»¶ ç»“ç®—æµç¨‹ ä½“åŠ›ä¸Šé™",
+    "search_text_cn": "加体力上限事件 结算流程 体力上限",
     "search_text_en": "increase max hp event resolution max hp"
   },
   {
     "id": "flow_3_14_verge_of_death_event",
     "section_num": "3.14",
-    "section_title_cn": "æ¿’æ­»äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "濒死事件的结算流程",
     "section_title_en": "Verge of Death Event Resolution Flow",
-    "term_cn": "æ¿’æ­»äº‹ä»¶",
+    "term_cn": "濒死事件",
     "term_en": "Verge of Death Event",
     "badge": null,
-    "definition_cn": "æ¿’æ­»ç»“ç®—ä¸­æœ‰ä¸¤ä¸ªæ—¶æœºï¼šâ‘ è¿›å…¥æ¿’æ­»çŠ¶æ€æ—¶ â‘¡å¤„äºŽæ¿’æ­»çŠ¶æ€æ—¶ã€‚æ¿’æ­»ç»“ç®—ç»“æŸåŽæœ‰ä¸€ä¸ªæ—¶æœºï¼šæ¿’æ­»ç»“ç®—ç»“æŸåŽã€‚",
-    "definition_en": "Verge of Death Resolution has two timings: â‘  When entering the Verge of Death State â‘¡ While in the Verge of Death State. One timing after: After Verge of Death Resolution.",
+    "definition_cn": "濒死结算中有两个时机：①进入濒死状态时 ②处于濒死状态时。濒死结算结束后有一个时机：濒死结算结束后。",
+    "definition_en": "Verge of Death Resolution has two timings: ① When entering the Verge of Death State ② While in the Verge of Death State. One timing after: After Verge of Death Resolution.",
     "rules": [
       {
         "type": "rule",
-        "cn": "â‘ è¿›å…¥æ¿’æ­»çŠ¶æ€æ—¶ï¼šè‹¥å‘åŠ¨æŠ€èƒ½ä»¤å¤„äºŽæ¿’æ­»çŠ¶æ€çš„Aå°†ä½“åŠ›å€¼å›žå¤è‡³1ç‚¹ï¼ŒAå­˜æ´»ï¼Œæ¿’æ­»ç»“ç®—å®Œæ¯•ã€‚èƒ½å‘åŠ¨ï¼šã€è¡¥ç›Šã€‘ã€ã€éšåŠ¿â‘ ã€‘ã€‚",
-        "en": "â‘  When entering the Verge of Death State: if a skill recovers A's HP Value to 1, A survives and resolution ends. [Supplement], [Follow the Situationâ‘ ] can activate.",
+        "cn": "①进入濒死状态时：若发动技能令处于濒死状态的A将体力值回复至1点，A存活，濒死结算完毕。能发动：〖补益〗、〖随势①〗。",
+        "en": "① When entering the Verge of Death State: if a skill recovers A's HP Value to 1, A survives and resolution ends. 〖Supplement〗, 〖Follow the Situation①〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "è¿›å…¥æ¿’æ­»çŠ¶æ€æ—¶ï¼š",
+            "cn": "进入濒死状态时：",
             "en": "When entering Verge of Death State: "
           },
           {
             "kind": "body",
-            "cn": "è‹¥å‘åŠ¨æŠ€èƒ½ä»¤Aå°†ä½“åŠ›å€¼å›žå¤è‡³1ç‚¹ï¼ŒAå­˜æ´»ï¼Œæ¿’æ­»ç»“ç®—å®Œæ¯•ã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "若发动技能令A将体力值回复至1点，A存活，濒死结算完毕。能发动：",
             "en": "If a skill recovers A's HP to 1, A survives and resolution ends. "
           },
           {
             "kind": "skill",
-            "cn": "ã€è¡¥ç›Šã€‘",
-            "en": "[Supplement]"
+            "cn": "〖补益〗",
+            "en": "〖Supplement〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€éšåŠ¿â‘ ã€‘",
-            "en": "[Follow the Situationâ‘ ]"
+            "cn": "〖随势①〗",
+            "en": "〖Follow the Situation①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -3275,78 +3219,78 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¡å¤„äºŽæ¿’æ­»çŠ¶æ€æ—¶ï¼šä»Žå½“å‰å›žåˆè§’è‰²å¼€å§‹æŒ‰é€†æ—¶é’ˆæ–¹å‘ä¾æ¬¡å“åº”ï¼Œç›´åˆ°Aå°†ä½“åŠ›å€¼é¦–æ¬¡å›žå¤è‡³1ç‚¹æˆ–1ç‚¹ä»¥ä¸Šä¸ºæ­¢ï¼ˆAå­˜æ´»ï¼Œç»“ç®—å®Œæ¯•ï¼‰ï¼›è‹¥å½“å‰å›žåˆè§’è‰²çš„ä¸Šå®¶å“åº”å®Œæ¯•åŽAçš„ä½“åŠ›å€¼ä¾ç„¶ä¸º0ï¼ŒAæ­»äº¡ï¼Œæ’å…¥è¿›è¡Œæ­»äº¡ç»“ç®—ã€‚èƒ½å‘åŠ¨ï¼šã€æ¶…æ§ƒã€‘ã€ã€ä¸å±ˆâ‘ ã€‘ã€ã€ä»å¿ƒï¼ˆæ—§å°†ï¼‰ã€‘ç­‰æŠ€èƒ½ã€‚èƒ½ä½¿ç”¨ï¼šã€æ¡ƒã€‘ã€ã€é…’ã€‘ã€‚",
-        "en": "â‘¡ While in the Verge of Death State: starting from the current turn's character going counter-clockwise, each character responds in sequence until A's HP reaches 1 or more (A survives). If A's HP is still 0 after the current turn character's Left Neighbor responds, A dies and Death Resolution is inserted. Skills such as [Nirvana], [Unyieldingâ‘ ], [Benevolent Heart] can activate. [Peach] and [Wine] can be used.",
+        "cn": "②处于濒死状态时：从当前回合角色开始按逆时针方向依次响应，直到A将体力值首次回复至1点或1点以上为止（A存活，结算完毕）；若当前回合角色的上家响应完毕后A的体力值依然为0，A死亡，插入进行死亡结算。能发动：〖涅槃〗、〖不屈①〗、〖仁心（旧将）〗等技能。能使用：【桃】、【酒】。",
+        "en": "② While in the Verge of Death State: starting from the current turn's character going counter-clockwise, each character responds in sequence until A's HP reaches 1 or more (A survives). If A's HP is still 0 after the current turn character's Left Neighbor responds, A dies and Death Resolution is inserted. Skills such as 〖Nirvana〗, 〖Unyielding①〗, 〖Benevolent Heart〗 can activate. [Peach] and [Wine] can be used.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "å¤„äºŽæ¿’æ­»çŠ¶æ€æ—¶ï¼š",
+            "cn": "处于濒死状态时：",
             "en": "While in Verge of Death State: "
           },
           {
             "kind": "body",
-            "cn": "ä»Žå½“å‰å›žåˆè§’è‰²å¼€å§‹æŒ‰é€†æ—¶é’ˆæ–¹å‘ä¾æ¬¡å“åº”ï¼Œç›´åˆ°Aå°†ä½“åŠ›å€¼é¦–æ¬¡å›žå¤è‡³1ç‚¹æˆ–1ç‚¹ä»¥ä¸Šä¸ºæ­¢ï¼ˆAå­˜æ´»ï¼Œç»“ç®—å®Œæ¯•ï¼‰ï¼›è‹¥å½“å‰å›žåˆè§’è‰²çš„ä¸Šå®¶å“åº”å®Œæ¯•åŽAçš„ä½“åŠ›å€¼ä¾ç„¶ä¸º0ï¼ŒAæ­»äº¡ï¼Œæ’å…¥è¿›è¡Œæ­»äº¡ç»“ç®—ã€‚èƒ½å‘åŠ¨ï¼š",
+            "cn": "从当前回合角色开始按逆时针方向依次响应，直到A将体力值首次回复至1点或1点以上为止（A存活，结算完毕）；若当前回合角色的上家响应完毕后A的体力值依然为0，A死亡，插入进行死亡结算。能发动：",
             "en": "Starting from current turn's character, counter-clockwise, each responds until A's HP first reaches 1+ (A survives). If A's HP is still 0 after the current turn character's Left Neighbor responds, A dies and Death Resolution is inserted. Skills such as "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ¶…æ§ƒã€‘",
-            "en": "[Nirvana]"
+            "cn": "〖涅槃〗",
+            "en": "〖Nirvana〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä¸å±ˆâ‘ ã€‘",
-            "en": "[Unyieldingâ‘ ]"
+            "cn": "〖不屈①〗",
+            "en": "〖Unyielding①〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€ä»å¿ƒï¼ˆæ—§å°†ï¼‰ã€‘",
-            "en": "[Benevolent Heart]"
+            "cn": "〖仁心（旧将）〗",
+            "en": "〖Benevolent Heart〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰æŠ€èƒ½ã€‚èƒ½ä½¿ç”¨ï¼š",
+            "cn": "等技能。能使用：",
             "en": " can activate. "
           },
           {
             "kind": "card",
-            "cn": "ã€æ¡ƒã€‘",
+            "cn": "【桃】",
             "en": "[Peach]"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": " and "
           },
           {
             "kind": "card",
-            "cn": "ã€é…’ã€‘",
+            "cn": "【酒】",
             "en": "[Wine]"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can be used."
           }
         ],
         "examples": [
           {
-            "cn": "è‹¥Båœ¨è½®åˆ°å…¶å“åº”æ—¶ä½¿ç”¨çš„ç‰Œç»“ç®—å®Œæ¯•åŽï¼ŒAå›žå¤è¿‡ä½“åŠ›ä½†æœªå°†ä½“åŠ›å€¼å›žå¤è‡³1ç‚¹ï¼Œåˆ™Aè¿›å…¥ä¸€ä¸ªæ–°çš„ã€Œå¤„äºŽæ¿’æ­»çŠ¶æ€æ—¶ã€ï¼Œå‰ä¸€ä¸ªæ—¶æœºç»ˆæ­¢ï¼Œä»ŽBå¼€å§‹æŒ‰é€†æ—¶é’ˆé¡ºåºç»§ç»­å“åº”ã€‚",
+            "cn": "若B在轮到其响应时使用的牌结算完毕后，A回复过体力但未将体力值回复至1点，则A进入一个新的「处于濒死状态时」，前一个时机终止，从B开始按逆时针顺序继续响应。",
             "en": "If B's response resolves and A has recovered some HP but not reached 1, A enters a new \"While in the Verge of Death State\" timing. The previous timing terminates and the sequence continues starting from B counter-clockwise.",
             "sub_examples": []
           }
@@ -3354,102 +3298,102 @@
       },
       {
         "type": "rule",
-        "cn": "æ¿’æ­»ç»“ç®—ç»“æŸåŽï¼šèƒ½æ‰§è¡Œï¼šã€é»©æ­¦ã€‘å¤±åŽ»1ç‚¹ä½“åŠ›çš„æ•ˆæžœã€‚",
-        "en": "After Verge of Death Resolution: [Militarism] (lose 1 HP effect) can execute.",
+        "cn": "濒死结算结束后：能执行：〖黩武〗失去1点体力的效果。",
+        "en": "After Verge of Death Resolution: 〖Militarism〗 (lose 1 HP effect) can execute.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ¿’æ­»ç»“ç®—ç»“æŸåŽï¼š",
+            "cn": "濒死结算结束后：",
             "en": "After Verge of Death Resolution: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½æ‰§è¡Œï¼š",
+            "cn": "能执行：",
             "en": " (lose 1 HP effect) can execute."
           },
           {
             "kind": "skill",
-            "cn": "ã€é»©æ­¦ã€‘",
-            "en": "[é»©æ­¦]"
+            "cn": "〖黩武〗",
+            "en": "〖Militarism〗"
           },
           {
             "kind": "body",
-            "cn": "å¤±åŽ»1ç‚¹ä½“åŠ›çš„æ•ˆæžœã€‚",
-            "en": "å¤±åŽ»1ç‚¹ä½“åŠ›çš„æ•ˆæžœã€‚"
+            "cn": "失去1点体力的效果。",
+            "en": " (lose 1 HP effect) can execute."
           }
         ],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "ã€Œå¤„äºŽæ¿’æ­»çŠ¶æ€æ—¶ã€èƒ½å‘åŠ¨çš„æŠ€èƒ½åœ¨å‘åŠ¨ä¸€æ¬¡åŽï¼ŒäºŽæ­¤æ¬¡æ¿’æ­»ç»“ç®—ç»“æŸä¹‹å‰æ— æ•ˆï¼ˆå³æ¯æ¬¡æ¿’æ­»ç»“ç®—æ¯ç§æŠ€èƒ½åªèƒ½å‘åŠ¨ä¸€æ¬¡ï¼‰ã€‚",
+        "cn": "「处于濒死状态时」能发动的技能在发动一次后，于此次濒死结算结束之前无效（即每次濒死结算每种技能只能发动一次）。",
         "en": "Skills that can activate at \"While in the Verge of Death State\" become Nullified after activating once, until the current Verge of Death Resolution ends. Each skill can only be used once per Verge of Death Resolution.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "æ¿’æ­»äº‹ä»¶ ç»“ç®—æµç¨‹ ä½“åŠ›å€¼ å›žå¤ æ­»äº¡ æ¡ƒ é…’",
+    "search_text_cn": "濒死事件 结算流程 体力值 回复 死亡 桃 酒",
     "search_text_en": "verge of death event resolution hp recover death peach wine"
   },
   {
     "id": "flow_3_15_death_event",
     "section_num": "3.15",
-    "section_title_cn": "æ­»äº¡äº‹ä»¶çš„ç»“ç®—æµç¨‹",
+    "section_title_cn": "死亡事件的结算流程",
     "section_title_en": "Death Event Resolution Flow",
-    "term_cn": "æ­»äº¡äº‹ä»¶",
+    "term_cn": "死亡事件",
     "term_en": "Death Event",
     "badge": null,
-    "definition_cn": "æ­»äº¡ç»“ç®—å¼€å§‹å‰ï¼šè‹¥æ­»äº¡çš„æ˜¯ä¸»å…¬åˆ™æ¸¸æˆç»“æŸï¼›å¦åˆ™è‹¥è¯¥è§’è‰²æ˜¯å› å—åˆ°æœ‰æ¥æºçš„ä¼¤å®³è€Œæ­»äº¡åˆ™è§†ä¸ºæ¥æºæ€æ­»è¿‡è¯¥è§’è‰²ï¼Œè‹¥å…¶æ˜¯åœ¨è‡ªå·±çš„å›žåˆè¿›è¡Œçš„äº‹ä»¶ç»“ç®—ä¸­æ­»äº¡åˆ™å…¶å›žåˆç»“æŸã€‚",
+    "definition_cn": "死亡结算开始前：若死亡的是主公则游戏结束；否则若该角色是因受到有来源的伤害而死亡则视为来源杀死过该角色，若其是在自己的回合进行的事件结算中死亡则其回合结束。",
     "definition_en": "Before Death Resolution: if the Lord dies, the game ends. Otherwise: if the character died from damage with a source, that source is treated as having killed them; if they died during a resolution in their own turn, their turn ends.",
     "rules": [
       {
         "type": "rule",
-        "cn": "æ­»äº¡ç»“ç®—ä¸­æœ‰å››ä¸ªæ—¶æœºï¼ˆæŒ‰é¡ºåºï¼‰ï¼šâ‘ äº®å‡ºèº«ä»½ç‰Œå‰ â‘¡äº®å‡ºèº«ä»½ç‰ŒåŽï¼ˆæ£€æµ‹æ¸¸æˆç»“æŸæ¡ä»¶ï¼‰â‘¢æ­»äº¡æ—¶ â‘£æ­»äº¡åŽã€‚",
-        "en": "Death Resolution has four timings (in order): â‘  Before revealing the Identity Card â‘¡ After revealing the Identity Card (check game-end condition) â‘¢ At the time of death â‘£ After death.",
+        "cn": "死亡结算中有四个时机（按顺序）：①亮出身份牌前 ②亮出身份牌后（检测游戏结束条件）③死亡时 ④死亡后。",
+        "en": "Death Resolution has four timings (in order): ① Before revealing the Identity Card ② After revealing the Identity Card (check game-end condition) ③ At the time of death ④ After death.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ­»äº¡ç»“ç®—ä¸­ï¼ˆ4ä¸ªæ—¶æœºï¼‰ï¼š",
+            "cn": "死亡结算中（4个时机）：",
             "en": "During Death Resolution (4 timings): "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "äº®å‡ºèº«ä»½ç‰Œå‰ ",
+            "cn": "亮出身份牌前 ",
             "en": "Before revealing Identity Card "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "äº®å‡ºèº«ä»½ç‰ŒåŽï¼ˆæ£€æµ‹æ¸¸æˆç»“æŸæ¡ä»¶ï¼‰",
+            "cn": "亮出身份牌后（检测游戏结束条件）",
             "en": "After revealing Identity Card (check game-end condition) "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "æ­»äº¡æ—¶ ",
+            "cn": "死亡时 ",
             "en": "At the time of death "
           },
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "æ­»äº¡åŽã€‚",
+            "cn": "死亡后。",
             "en": "After death."
           }
         ],
@@ -3457,55 +3401,55 @@
       },
       {
         "type": "rule",
-        "cn": "â‘ äº®å‡ºèº«ä»½ç‰Œå‰ï¼šèƒ½å‘åŠ¨ï¼šã€ç„šå¿ƒã€‘ã€‚ç„¶åŽäº®å‡ºèº«ä»½ç‰Œã€‚",
-        "en": "â‘  Before revealing the Identity Card: [Burn the Heart] can activate. The Identity Card is then revealed.",
+        "cn": "①亮出身份牌前：能发动：〖焚心〗。然后亮出身份牌。",
+        "en": "① Before revealing the Identity Card: 〖Burn the Heart〗 can activate. The Identity Card is then revealed.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "äº®å‡ºèº«ä»½ç‰Œå‰ï¼š",
+            "cn": "亮出身份牌前：",
             "en": "Before revealing Identity Card: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": " can activate. Identity Card is then revealed."
           },
           {
             "kind": "skill",
-            "cn": "ã€ç„šå¿ƒã€‘",
-            "en": "[ç„šå¿ƒ]"
+            "cn": "〖焚心〗",
+            "en": "〖Burn the Heart〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚ç„¶åŽäº®å‡ºèº«ä»½ç‰Œã€‚",
-            "en": "ã€‚ç„¶åŽäº®å‡ºèº«ä»½ç‰Œã€‚"
+            "cn": "。然后亮出身份牌。",
+            "en": ". The Identity Card is then revealed."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘¡äº®å‡ºèº«ä»½ç‰ŒåŽï¼šæ£€æµ‹æ˜¯å¦æ»¡è¶³æ¸¸æˆç»“æŸçš„æ¡ä»¶ã€‚",
-        "en": "â‘¡ After revealing the Identity Card: check whether the game-ending condition has been met.",
+        "cn": "②亮出身份牌后：检测是否满足游戏结束的条件。",
+        "en": "② After revealing the Identity Card: check whether the game-ending condition has been met.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "äº®å‡ºèº«ä»½ç‰ŒåŽï¼š",
+            "cn": "亮出身份牌后：",
             "en": "After revealing Identity Card: "
           },
           {
             "kind": "body",
-            "cn": "æ£€æµ‹æ˜¯å¦æ»¡è¶³æ¸¸æˆç»“æŸçš„æ¡ä»¶ã€‚",
+            "cn": "检测是否满足游戏结束的条件。",
             "en": "Check whether the game-ending condition has been met."
           }
         ],
@@ -3513,175 +3457,175 @@
       },
       {
         "type": "rule",
-        "cn": "â‘¢æ­»äº¡æ—¶ï¼šèƒ½å‘åŠ¨ï¼šã€è¡Œæ®‡ã€‘ã€ã€è—æœºã€‘ã€ã€æŒ¥æ³ªã€‘ã€ã€è¿½å¿†ã€‘ã€ã€æ–­è‚ ã€‘ã€ã€éšåŠ¿â‘¡ã€‘ã€ã€å»¶ç¥¸ã€‘ã€ã€æ­¦é­‚â‘¡ã€‘ã€‚ç„¶åŽä¾æ¬¡å¤„ç†ï¼šâ… .ç³»ç»Ÿå¼ƒç½®æ­»äº¡è§’è‰²åŒºåŸŸé‡Œæ‰€æœ‰çš„ç‰Œï¼Œå¹¶å°†æ­¦å°†ç‰Œä¸Š/æ—çš„ç‰Œç½®å…¥å¼ƒç‰Œå †ï¼›â…¡.æ‰§è¡Œå¥–æƒ©ï¼ˆä¸»å…¬æ€æ­»å¿ è‡£å¼ƒç½®æ‰€æœ‰ç‰Œï¼›ä»»ä½•è§’è‰²æ€æ­»åè´¼æ‘¸ä¸‰å¼ ç‰Œï¼‰ã€‚",
-        "en": "â‘¢ At the time of death: [Reap the Fallen], [Hidden Scheme], [Shed Tears], [In Memoriam], [Heartbreak], [Follow the Situationâ‘¡], [Spread Calamity], [War Soulâ‘¡] can activate. Then process in order: â… . System discards all cards in the dead character's zones and places cards on/beside their General Card into the Discard Pile; â…¡. Execute rewards/penalties (Lord kills Loyalist: Lord discards all cards; any character kills Rebel: draw 3 cards).",
+        "cn": "③死亡时：能发动：〖行殇〗、〖藏机〗、〖挥泪〗、〖追忆〗、〖断肠〗、〖随势②〗、〖延祸〗、〖武魂②〗。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。",
+        "en": "③ At the time of death: 〖Reap the Fallen〗, 〖Hidden Scheme〗, 〖Shed Tears〗, 〖In Memoriam〗, 〖Heartbreak〗, 〖Follow the Situation②〗, 〖Spread Calamity〗, 〖War Soul②〗 can activate. Then process in order: Ⅰ. System discards all cards in the dead character's zones and places cards on/beside their General Card into the Discard Pile; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all cards; any character kills Rebel: draw 3 cards).",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "æ­»äº¡æ—¶ï¼š",
+            "cn": "死亡时：",
             "en": "At the time of death: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼š",
+            "cn": "能发动：",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è¡Œæ®‡ã€‘",
-            "en": "[Hidden Scheme]"
+            "cn": "〖行殇〗",
+            "en": "〖Reap the Fallen〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è—æœºã€‘",
-            "en": "[Shed Tears]"
+            "cn": "〖藏机〗",
+            "en": "〖Hidden Scheme〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æŒ¥æ³ªã€‘",
-            "en": "[In Memoriam]"
+            "cn": "〖挥泪〗",
+            "en": "〖Shed Tears〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è¿½å¿†ã€‘",
-            "en": "[Heartbreak]"
+            "cn": "〖追忆〗",
+            "en": "〖In Memoriam〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€æ–­è‚ ã€‘",
-            "en": "[Follow the Situationâ‘¡]"
+            "cn": "〖断肠〗",
+            "en": "〖Heartbreak〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€éšåŠ¿â‘¡ã€‘",
-            "en": "[Spread Calamity]"
+            "cn": "〖随势②〗",
+            "en": "〖Follow the Situation②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å»¶ç¥¸ã€‘",
-            "en": "[War Soulâ‘¡]"
+            "cn": "〖延祸〗",
+            "en": "〖Spread Calamity〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
-            "en": " can activate. Then process: â… . System discards all cards in dead character's zones; â…¡. Execute rewards/penalties (Lord kills Loyalist: Lord discards all; any kills Rebel: draw 3)."
+            "cn": "、",
+            "en": " can activate. Then process: Ⅰ. System discards all cards in dead character's zones; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all; any kills Rebel: draw 3)."
           },
           {
             "kind": "skill",
-            "cn": "ã€æ­¦é­‚â‘¡ã€‘",
-            "en": "[æ­¦é­‚â‘¡]"
+            "cn": "〖武魂②〗",
+            "en": "〖War Soul②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚ç„¶åŽä¾æ¬¡å¤„ç†ï¼šâ… .ç³»ç»Ÿå¼ƒç½®æ­»äº¡è§’è‰²åŒºåŸŸé‡Œæ‰€æœ‰çš„ç‰Œï¼Œå¹¶å°†æ­¦å°†ç‰Œä¸Š/æ—çš„ç‰Œç½®å…¥å¼ƒç‰Œå †ï¼›â…¡.æ‰§è¡Œå¥–æƒ©ï¼ˆä¸»å…¬æ€æ­»å¿ è‡£å¼ƒç½®æ‰€æœ‰ç‰Œï¼›ä»»ä½•è§’è‰²æ€æ­»åè´¼æ‘¸ä¸‰å¼ ç‰Œï¼‰ã€‚",
-            "en": "ã€‚ç„¶åŽä¾æ¬¡å¤„ç†ï¼šâ… .ç³»ç»Ÿå¼ƒç½®æ­»äº¡è§’è‰²åŒºåŸŸé‡Œæ‰€æœ‰çš„ç‰Œï¼Œå¹¶å°†æ­¦å°†ç‰Œä¸Š/æ—çš„ç‰Œç½®å…¥å¼ƒç‰Œå †ï¼›â…¡.æ‰§è¡Œå¥–æƒ©ï¼ˆä¸»å…¬æ€æ­»å¿ è‡£å¼ƒç½®æ‰€æœ‰ç‰Œï¼›ä»»ä½•è§’è‰²æ€æ­»åè´¼æ‘¸ä¸‰å¼ ç‰Œï¼‰ã€‚"
+            "cn": "。然后依次处理：Ⅰ.系统弃置死亡角色区域里所有的牌，并将武将牌上/旁的牌置入弃牌堆；Ⅱ.执行奖惩（主公杀死忠臣弃置所有牌；任何角色杀死反贼摸三张牌）。",
+            "en": ". Then process in order: Ⅰ. System discards all cards in the dead character's zones and places cards on/beside their General Card into the Discard Pile; Ⅱ. Execute rewards/penalties (Lord kills Loyalist: Lord discards all cards; any character kills Rebel: draw 3 cards)."
           }
         ],
         "examples": []
       },
       {
         "type": "rule",
-        "cn": "â‘£æ­»äº¡åŽï¼šèƒ½å‘åŠ¨ï¼šæ­¦å°†æŠ€èƒ½ã€è‚ƒèµ„ã€‘ã€ã€è£‚å›´ã€‘ã€ã€åŠŸç’ã€‘ã€ã€å­å¾·ã€‘ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½ã€é£žé¾™å¤ºå‡¤â‘¡ã€‘ã€‚",
-        "en": "â‘£ After death: general skills [Consolidate Resources], [Break the Encirclement], [Meritorious Valor], [Filial Virtue], and equipment skill [Soaring Dragon Bladeâ‘¡] can activate.",
+        "cn": "④死亡后：能发动：武将技能〖肃资〗、〖裂围〗、〖功獒〗、〖孝德〗，以及装备技能〖飞龙夺凤②〗。",
+        "en": "④ After death: general skills 〖Consolidate Resources〗, 〖Break the Encirclement〗, 〖Meritorious Valor〗, 〖Filial Virtue〗, and equipment skill 〖Soaring Dragon Blade②〗 can activate.",
         "segments": [
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "æ­»äº¡åŽï¼š",
+            "cn": "死亡后：",
             "en": "After death: "
           },
           {
             "kind": "body",
-            "cn": "èƒ½å‘åŠ¨ï¼šæ­¦å°†æŠ€èƒ½",
+            "cn": "能发动：武将技能",
             "en": "General skills "
           },
           {
             "kind": "skill",
-            "cn": "ã€è‚ƒèµ„ã€‘",
-            "en": "[Consolidate Resources]"
+            "cn": "〖肃资〗",
+            "en": "〖Consolidate Resources〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€è£‚å›´ã€‘",
-            "en": "[Break the Encirclement]"
+            "cn": "〖裂围〗",
+            "en": "〖Break the Encirclement〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€åŠŸç’ã€‘",
-            "en": "[Meritorious Valor]"
+            "cn": "〖功獒〗",
+            "en": "〖Meritorious Valor〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å­å¾·ã€‘",
-            "en": "[Filial Virtue]"
+            "cn": "〖孝德〗",
+            "en": "〖Filial Virtue〗"
           },
           {
             "kind": "body",
-            "cn": "ï¼Œä»¥åŠè£…å¤‡æŠ€èƒ½",
+            "cn": "，以及装备技能",
             "en": ", and equipment skill "
           },
           {
             "kind": "skill",
-            "cn": "ã€é£žé¾™å¤ºå‡¤â‘¡ã€‘",
-            "en": "[Soaring Dragon Bladeâ‘¡]"
+            "cn": "〖飞龙夺凤②〗",
+            "en": "〖Soaring Dragon Blade②〗"
           },
           {
             "kind": "body",
-            "cn": "ã€‚",
+            "cn": "。",
             "en": " can activate."
           }
         ],
@@ -3689,111 +3633,111 @@
       },
       {
         "type": "note",
-        "cn": "æ­»äº¡è§’è‰²äºŽæ­»äº¡ç»“ç®—ä¸­ï¼Œä¸èƒ½å‘åŠ¨ä»»ä½•äºŽæ­¤ç»“ç®—æµç¨‹ä¸­æœªåˆ—ä¸¾çš„æŠ€èƒ½ã€‚",
+        "cn": "死亡角色于死亡结算中，不能发动任何于此结算流程中未列举的技能。",
         "en": "During Death Resolution, the dying character cannot activate any skills not listed in this resolution flow.",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "è§’è‰²åœ¨è‡ªå·±å›žåˆçš„äº‹ä»¶ç»“ç®—ä¸­æ­»äº¡ï¼Œåœ¨æ­»äº¡ç»“ç®—å®Œæ¯•åŽè‹¥é¡»ç»§ç»­ç»“ç®—è¯¥äº‹ä»¶ï¼Œåˆ™åœ¨è¯¥äº‹ä»¶ç»“ç®—å®Œæ¯•åŽæ‰è¿›å…¥ã€Œå›žåˆç»“æŸåŽã€ï¼ˆæ­¤æ®µæ—¶é—´ä¸å±žäºŽä»»ä½•è§’è‰²çš„å›žåˆï¼‰ã€‚",
+        "cn": "角色在自己回合的事件结算中死亡，在死亡结算完毕后若须继续结算该事件，则在该事件结算完毕后才进入「回合结束后」（此段时间不属于任何角色的回合）。",
         "en": "If a character dies during a resolution in their own turn, \"After Turn End\" only occurs after that event is fully resolved. The intervening period does not belong to any character's turn.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "æ­»äº¡äº‹ä»¶ ç»“ç®—æµç¨‹ èº«ä»½ç‰Œ å¥–æƒ© æ€æ­» åè´¼ å¿ è‡£",
+    "search_text_cn": "死亡事件 结算流程 身份牌 奖惩 杀死 反贼 忠臣",
     "search_text_en": "death event resolution identity card reward penalty kill rebel loyalist"
   },
   {
     "id": "flow_3_16_conditions_for_using_card",
     "section_num": "3.16",
-    "section_title_cn": "ä¸“é¢˜ä¸€ï¼šä½¿ç”¨ä¸€å¼ ç‰Œçš„æ¡ä»¶",
+    "section_title_cn": "专题一：使用一张牌的条件",
     "section_title_en": "Topic 1: Conditions for Using a Card",
-    "term_cn": "ä½¿ç”¨ç‰Œçš„æ¡ä»¶",
+    "term_cn": "使用牌的条件",
     "term_en": "Conditions for Using a Card",
     "badge": null,
-    "definition_cn": "å½“è§’è‰²éœ€è¦ä½¿ç”¨ç‰Œæ—¶ï¼Œè‹¥ä¸å­˜åœ¨ä»»ä½•åŽŸå› å¯¼è‡´å…¶æ— æ³•ä½¿ç”¨æ­¤ç‰Œï¼Œå…¶æ‰èƒ½ä½¿ç”¨æ­¤ç‰Œæˆ–å‘åŠ¨ç›¸åº”çš„æŠ€èƒ½æ¥ä½¿ç”¨æ­¤ç‰Œã€‚",
+    "definition_cn": "当角色需要使用牌时，若不存在任何原因导致其无法使用此牌，其才能使用此牌或发动相应的技能来使用此牌。",
     "definition_en": "When a character needs to use a card, they can only use it (or activate a skill to use it) if no conditions exist that prevent them from doing so.",
     "rules": [
       {
         "type": "rule",
-        "cn": "ä¼šå¯¼è‡´æ— æ³•ä½¿ç”¨ç‰Œçš„åŽŸå› æœ‰ä¸‰ï¼šâ‘ å—åˆ°æŠ€èƒ½æ•ˆæžœå½±å“ä¸èƒ½ä½¿ç”¨æ­¤ç‰Œï¼ˆå¦‚ã€é“éª‘ã€‘ã€ã€é¸¡è‚‹ã€‘ã€ã€å®Œæ€ã€‘ç­‰ï¼‰ï¼›â‘¡ä½¿ç”¨æ­¤ç‰Œçš„æ¬¡æ•°è¾¾åˆ°ä¸Šé™ï¼ˆä¸»è¦é’ˆå¯¹ã€æ€ã€‘çš„ä½¿ç”¨æ¬¡æ•°é™åˆ¶ï¼‰ï¼›â‘¢ä½¿ç”¨æ­¤ç‰Œçš„åˆæ³•é¢å®šç›®æ ‡æ•°ä¸º0ã€‚",
-        "en": "Three reasons a character may be unable to use a card: â‘  A skill effect prevents it (e.g. [Iron Cavalry], [Chicken Rib], [Total Annihilation]); â‘¡ The frequency limit has been reached (mainly applies to [Kill]); â‘¢ There are no valid required targets.",
+        "cn": "会导致无法使用牌的原因有三：①受到技能效果影响不能使用此牌（如〖铁骑〗、〖鸡肋〗、〖完杀〗等）；②使用此牌的次数达到上限（主要针对【杀】的使用次数限制）；③使用此牌的合法额定目标数为0。",
+        "en": "Three reasons a character may be unable to use a card: ① A skill effect prevents it (e.g. 〖Iron Cavalry〗, 〖Chicken Rib〗, 〖Total Annihilation〗); ② The frequency limit has been reached (mainly applies to [Kill]); ③ There are no valid required targets.",
         "segments": [
           {
             "kind": "label",
-            "cn": "æ— æ³•ä½¿ç”¨ç‰Œçš„ä¸‰ä¸ªåŽŸå› ï¼š",
+            "cn": "无法使用牌的三个原因：",
             "en": "Three reasons a card cannot be used: "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "å—åˆ°æŠ€èƒ½æ•ˆæžœå½±å“ä¸èƒ½ä½¿ç”¨æ­¤ç‰Œï¼ˆå¦‚",
+            "cn": "受到技能效果影响不能使用此牌（如",
             "en": "A skill effect prevents it (e.g. "
           },
           {
             "kind": "skill",
-            "cn": "ã€é“éª‘ã€‘",
-            "en": "[Iron Cavalry]"
+            "cn": "〖铁骑〗",
+            "en": "〖Iron Cavalry〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€é¸¡è‚‹ã€‘",
-            "en": "[Chicken Rib]"
+            "cn": "〖鸡肋〗",
+            "en": "〖Chicken Rib〗"
           },
           {
             "kind": "body",
-            "cn": "ã€",
+            "cn": "、",
             "en": ", "
           },
           {
             "kind": "skill",
-            "cn": "ã€å®Œæ€ã€‘",
-            "en": "[Total Annihilation]"
+            "cn": "〖完杀〗",
+            "en": "〖Total Annihilation〗"
           },
           {
             "kind": "body",
-            "cn": "ç­‰ï¼‰ï¼›",
+            "cn": "等）；",
             "en": "); "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "ä½¿ç”¨æ­¤ç‰Œçš„æ¬¡æ•°è¾¾åˆ°ä¸Šé™ï¼ˆä¸»è¦é’ˆå¯¹",
+            "cn": "使用此牌的次数达到上限（主要针对",
             "en": "The frequency limit has been reached (mainly for "
           },
           {
             "kind": "card",
-            "cn": "ã€æ€ã€‘",
+            "cn": "【杀】",
             "en": "[Kill]"
           },
           {
             "kind": "body",
-            "cn": "çš„ä½¿ç”¨æ¬¡æ•°é™åˆ¶ï¼‰ï¼›",
+            "cn": "的使用次数限制）；",
             "en": "); "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "ä½¿ç”¨æ­¤ç‰Œçš„åˆæ³•é¢å®šç›®æ ‡æ•°ä¸º0ã€‚",
+            "cn": "使用此牌的合法额定目标数为0。",
             "en": "There are no valid required targets."
           }
         ],
@@ -3801,143 +3745,143 @@
       },
       {
         "type": "rule",
-        "cn": "å¯¹äºŽã€æ€ã€‘çš„æ¬¡æ•°é™åˆ¶ï¼šä¸€åè§’è‰²åªæœ‰äºŽå‡ºç‰Œé˜¶æ®µç©ºé—²æ—¶é—´ç‚¹ä½¿ç”¨ã€æ€ã€‘æ‰æœ‰æ¬¡æ•°é™åˆ¶ã€‚é¢å®šæ¬¡æ•°ä¸Šé™é»˜è®¤ä¸º1ï¼Œé¢å¤–æ¬¡æ•°ä¸Šé™é»˜è®¤ä¸º0ã€‚ä½¿ç”¨çš„ã€æ€ã€‘ä¼˜å…ˆè®¡å…¥é¢å®šæ¬¡æ•°ã€‚",
+        "cn": "对于【杀】的次数限制：一名角色只有于出牌阶段空闲时间点使用【杀】才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的【杀】优先计入额定次数。",
         "en": "Regarding [Kill] frequency limits: limits only apply when using [Kill] at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. [Kill] uses count toward the standard limit first.",
         "segments": [
           {
             "kind": "body",
-            "cn": "å¯¹äºŽ",
+            "cn": "对于",
             "en": "Regarding "
           },
           {
             "kind": "card",
-            "cn": "ã€æ€ã€‘",
+            "cn": "【杀】",
             "en": "[Kill]"
           },
           {
             "kind": "body",
-            "cn": "çš„æ¬¡æ•°é™åˆ¶ï¼šä¸€åè§’è‰²åªæœ‰äºŽå‡ºç‰Œé˜¶æ®µç©ºé—²æ—¶é—´ç‚¹ä½¿ç”¨",
+            "cn": "的次数限制：一名角色只有于出牌阶段空闲时间点使用",
             "en": " frequency limits: limits only apply when using "
           },
           {
             "kind": "card",
-            "cn": "ã€æ€ã€‘",
+            "cn": "【杀】",
             "en": "[Kill]"
           },
           {
             "kind": "body",
-            "cn": "æ‰æœ‰æ¬¡æ•°é™åˆ¶ã€‚é¢å®šæ¬¡æ•°ä¸Šé™é»˜è®¤ä¸º1ï¼Œé¢å¤–æ¬¡æ•°ä¸Šé™é»˜è®¤ä¸º0ã€‚ä½¿ç”¨çš„",
+            "cn": "才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的",
             "en": " at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. "
           },
           {
             "kind": "card",
-            "cn": "ã€æ€ã€‘",
+            "cn": "【杀】",
             "en": "[Kill]"
           },
           {
             "kind": "body",
-            "cn": "ä¼˜å…ˆè®¡å…¥é¢å®šæ¬¡æ•°ã€‚",
+            "cn": "优先计入额定次数。",
             "en": " uses count toward the standard limit first."
           }
         ],
         "examples": [
           {
-            "cn": "æ— æ¬¡æ•°é™åˆ¶çš„æŠ€èƒ½ï¼šã€è¯¸è‘›è¿žå¼©ã€‘ã€ã€å’†å“®ã€‘ã€ã€æžªèˆžã€‘ã€ã€é™·é˜µã€‘ï¼ˆæ‹¼ç‚¹èµ¢ï¼‰ã€‚é¢å¤–æ¬¡æ•°ä¸Šé™+1ï¼šã€å°†é©°â‘¡ã€‘ã€ã€è™Žå•¸ã€‘ã€ã€è¯ˆé™ã€‘ã€ã€å¤©ä¹‰ã€‘ï¼ˆæ‹¼ç‚¹èµ¢ï¼‰ã€‚ä¸è®¡å…¥é™åˆ¶ï¼šã€é¾™åŸã€‘ã€ã€æžªèˆžã€‘ã€‚",
-            "en": "No frequency limit: [Repeating Crossbow], [Roar], [Spear Dance], [Charge the Phalanx] (win duel). Extra limit +1: [Cavalry Chargeâ‘¡], [Tiger's Roar], [Feigned Surrender], [Heaven's Justice] (win duel). Not counted: [Dragon Chant], [Spear Dance].",
+            "cn": "无次数限制的技能：【诸葛连弩】、〖咆哮〗、〖枪舞〗、〖陷阵〗（拼点赢）。额外次数上限+1：【将驰②】、〖虎啸〗、〖诈降〗、〖天义〗（拼点赢）。不计入限制：【龙吟】、〖枪舞〗。",
+            "en": "No frequency limit: [Repeating Crossbow], 〖Roar〗, 〖Spear Dance〗, 〖Charge the Phalanx〗 (win duel). Extra limit +1: [Cavalry Charge②], 〖Tiger's Roar〗, 〖Feigned Surrender〗, 〖Heaven's Justice〗 (win duel). Not counted: [Dragon Chant], 〖Spear Dance〗.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "rule",
-        "cn": "åˆæ³•æ€§æ£€æµ‹åŒ…æ‹¬ä¸¤éƒ¨åˆ†ï¼šè·ç¦»åˆæ³•æ€§æ£€æµ‹ï¼ˆä½¿ç”¨ç‰Œæ˜¯å¦æ»¡è¶³è·ç¦»è¦æ±‚ï¼‰å’Œç›®æ ‡åˆæ³•æ€§æ£€æµ‹ï¼ˆä½¿ç”¨ç‰Œæ˜¯å¦èƒ½é€‰æ‹©è¯¥ç›®æ ‡ï¼‰ã€‚",
+        "cn": "合法性检测包括两部分：距离合法性检测（使用牌是否满足距离要求）和目标合法性检测（使用牌是否能选择该目标）。",
         "en": "Legality checks consist of two parts: distance legality (whether the distance requirement is met) and target legality (whether that character can be selected as a target).",
         "segments": [],
         "examples": []
       },
       {
         "type": "note",
-        "cn": "è§’è‰²ä½¿ç”¨å®žä½“ç‰Œï¼Œåœ¨æ£€æµ‹åˆæ³•æ€§æ—¶è§†ä¸ºæ­¤ç‰Œå·²ç»ç½®å…¥ç›®æ ‡åŒºåŸŸã€‚",
+        "cn": "角色使用实体牌，在检测合法性时视为此牌已经置入目标区域。",
         "en": "When a character uses a physical card, the legality check treats the card as already placed into its target zone.",
         "segments": [],
         "examples": [
           {
-            "cn": "è¯¸è‘›äº®ï¼ˆæ ‡ï¼‰ä½¿ç”¨æœ€åŽä¸€å¼ æ‰‹ç‰Œã€å€Ÿåˆ€æ€äººã€‘åœ¨æ£€æµ‹åˆæ³•æ€§æ—¶è§†ä¸ºæ­¤ç‰Œå·²ç½®å…¥å¤„ç†åŒºï¼Œå› æ­¤ä¼šå—åˆ°ã€ç©ºåŸŽã€‘çš„å½±å“ä¸èƒ½é€‰æ‹©å¯¹è‡ªå·±ä½¿ç”¨ã€æ€ã€‘ã€‚",
-            "en": "When Zhuge Liang (Std) uses his last hand card [Proxy Attack], the legality check treats it as already in the Processing Zone â€” [Empty Fort] applies and he cannot target himself.",
+            "cn": "诸葛亮（标）使用最后一张手牌【借刀杀人】在检测合法性时视为此牌已置入处理区，因此会受到〖空城〗的影响不能选择对自己使用【杀】。",
+            "en": "When Zhuge Liang (Std) uses his last hand card [Proxy Attack], the legality check treats it as already in the Processing Zone — 〖Empty Fort〗 applies and he cannot target himself.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "note",
-        "cn": "ä½¿ç”¨å»¶æ—¶ç±»é”¦å›Šç‰Œæœ‰ä¸€æ¡å…±åŒçš„åˆæ³•æ€§æ£€æµ‹è§„åˆ™ï¼šåˆ¤å®šåŒºé‡Œæœ‰å»¶æ—¶ç±»é”¦å›Šç‰Œçš„è§’è‰²ä¸æ˜¯ä½¿ç”¨åŒåå»¶æ—¶ç±»é”¦å›Šç‰Œçš„åˆæ³•ç›®æ ‡ã€‚",
+        "cn": "使用延时类锦囊牌有一条共同的合法性检测规则：判定区里有延时类锦囊牌的角色不是使用同名延时类锦囊牌的合法目标。",
         "en": "There is a universal legality rule for Time-Delayed Tool Cards: a character who already has a Time-Delayed Tool Card of the same name in their Judgment Zone is not a valid target for another card of that same name.",
         "segments": [],
         "examples": []
       }
     ],
-    "search_text_cn": "ä½¿ç”¨ç‰Œçš„æ¡ä»¶ åˆæ³•æ€§ æ¬¡æ•°é™åˆ¶ æ€ è·ç¦» ç›®æ ‡",
+    "search_text_cn": "使用牌的条件 合法性 次数限制 杀 距离 目标",
     "search_text_en": "conditions using card legality frequency limit kill distance target"
   },
   {
     "id": "flow_3_17_virtual_physical_cards",
     "section_num": "3.17",
-    "section_title_cn": "ä¸“é¢˜äºŒï¼šè™šæ‹Ÿç‰Œä¸Žå®žä½“ç‰Œ",
+    "section_title_cn": "专题二：虚拟牌与实体牌",
     "section_title_en": "Topic 2: Virtual Cards and Physical Cards",
-    "term_cn": "è™šæ‹Ÿç‰Œä¸Žå®žä½“ç‰Œ",
+    "term_cn": "虚拟牌与实体牌",
     "term_en": "Virtual Cards and Physical Cards",
     "badge": null,
-    "definition_cn": "ä½¿ç”¨/æ‰“å‡º/å¼ƒç½®ç‰Œæ˜¯æŒ‡æ“ä½œè™šæ‹Ÿç‰Œã€‚å› ä½¿ç”¨/æ‰“å‡º/å¼ƒç½®è€Œç§»åŠ¨çš„å®žä½“ç‰Œç”¨äºŽç¡®å®šæ­¤è™šæ‹Ÿç‰Œçš„ç‰Œé¢ä¿¡æ¯ï¼Œä½†ä½¿ç”¨/æ‰“å‡º/å¼ƒç½®çš„æ˜¯è™šæ‹Ÿç‰Œè€Œéžå®žä½“ç‰Œæœ¬èº«ã€‚",
-    "definition_en": "Using, playing out, or discarding a card refers to operating a virtual card. The physical card that moves determines the virtual card's face information, but it is the virtual card â€” not the physical card â€” that is used, played, or discarded.",
+    "definition_cn": "使用/打出/弃置牌是指操作虚拟牌。因使用/打出/弃置而移动的实体牌用于确定此虚拟牌的牌面信息，但使用/打出/弃置的是虚拟牌而非实体牌本身。",
+    "definition_en": "Using, playing out, or discarding a card refers to operating a virtual card. The physical card that moves determines the virtual card's face information, but it is the virtual card — not the physical card — that is used, played, or discarded.",
     "rules": [
       {
         "type": "rule",
-        "cn": "è™šæ‹Ÿç‰Œä¸Žå®žä½“ç‰Œçš„å¯¹åº”å…³ç³»åˆ†å››ç§æƒ…å†µï¼šâ‘ éžé€šè¿‡ã€Œè½¬åŒ–ã€æˆ–ã€Œè§†ä¸ºã€ä½¿ç”¨/æ‰“å‡ºç‰Œï¼šä¸€å¼ å®žä½“ç‰Œä¸Žä¸€å¼ è™šæ‹Ÿç‰Œå½¢æˆå”¯ä¸€å¯¹åº”å…³ç³»ã€‚â‘¡é€šè¿‡ã€Œè§†ä¸ºã€ä½¿ç”¨/æ‰“å‡ºç‰Œï¼šè™šæ‹Ÿç‰Œæ²¡æœ‰é¢œè‰²ã€èŠ±è‰²å’Œç‚¹æ•°ï¼Œæ— å¯¹åº”å®žä½“ç‰Œã€‚â‘¢é€šè¿‡ã€Œå°†ä¸€å¼ Aç‰Œå½“Bç‰Œä½¿ç”¨/æ‰“å‡ºã€ï¼šä¸€å¼ Aå®žä½“ç‰Œä¸ŽBè™šæ‹Ÿç‰Œå½¢æˆå”¯ä¸€å¯¹åº”å…³ç³»ã€‚â‘£é€šè¿‡ã€Œå°†å¤šå¼ Aç‰Œå½“Bç‰Œä½¿ç”¨/æ‰“å‡ºã€ï¼šå¤šå¼ Aå®žä½“ç‰Œä¸ŽBè™šæ‹Ÿç‰Œå½¢æˆå”¯ä¸€å¯¹åº”å…³ç³»ã€‚",
-        "en": "There are four cases for how virtual and physical cards correspond: â‘  Normal use/play (not via \"treated as\"): one physical card maps to one virtual card. â‘¡ Via \"treated as\" use/play: the virtual card has no color, suit, or rank, with no corresponding physical card. â‘¢ Via \"use card A as card B\": one physical A card maps to one virtual B card. â‘£ Via \"use multiple A cards as card B\": multiple physical A cards collectively map to one virtual B card.",
+        "cn": "虚拟牌与实体牌的对应关系分四种情况：①非通过「转化」或「视为」使用/打出牌：一张实体牌与一张虚拟牌形成唯一对应关系。②通过「视为」使用/打出牌：虚拟牌没有颜色、花色和点数，无对应实体牌。③通过「将一张A牌当B牌使用/打出」：一张A实体牌与B虚拟牌形成唯一对应关系。④通过「将多张A牌当B牌使用/打出」：多张A实体牌与B虚拟牌形成唯一对应关系。",
+        "en": "There are four cases for how virtual and physical cards correspond: ① Normal use/play (not via \"treated as\"): one physical card maps to one virtual card. ② Via \"treated as\" use/play: the virtual card has no color, suit, or rank, with no corresponding physical card. ③ Via \"use card A as card B\": one physical A card maps to one virtual B card. ④ Via \"use multiple A cards as card B\": multiple physical A cards collectively map to one virtual B card.",
         "segments": [
           {
             "kind": "label",
-            "cn": "å¯¹åº”å…³ç³»å››ç§æƒ…å†µï¼š",
+            "cn": "对应关系四种情况：",
             "en": "Four cases for correspondence: "
           },
           {
             "kind": "number",
-            "cn": "â‘ ",
-            "en": "â‘ "
+            "cn": "①",
+            "en": "①"
           },
           {
             "kind": "body",
-            "cn": "æ­£å¸¸ä½¿ç”¨/æ‰“å‡ºï¼šä¸€å¼ å®žä½“ç‰Œå¯¹åº”ä¸€å¼ è™šæ‹Ÿç‰Œã€‚",
+            "cn": "正常使用/打出：一张实体牌对应一张虚拟牌。",
             "en": "Normal use/play: one physical card maps to one virtual card. "
           },
           {
             "kind": "number",
-            "cn": "â‘¡",
-            "en": "â‘¡"
+            "cn": "②",
+            "en": "②"
           },
           {
             "kind": "body",
-            "cn": "é€šè¿‡ã€Œè§†ä¸ºã€ä½¿ç”¨/æ‰“å‡ºï¼šè™šæ‹Ÿç‰Œæ— é¢œè‰²/èŠ±è‰²/ç‚¹æ•°ï¼Œæ— å¯¹åº”å®žä½“ç‰Œã€‚",
+            "cn": "通过「视为」使用/打出：虚拟牌无颜色/花色/点数，无对应实体牌。",
             "en": "Via \"treated as\": virtual card has no color/suit/rank, no corresponding physical card. "
           },
           {
             "kind": "number",
-            "cn": "â‘¢",
-            "en": "â‘¢"
+            "cn": "③",
+            "en": "③"
           },
           {
             "kind": "body",
-            "cn": "é€šè¿‡ã€Œå°†ä¸€å¼ Aç‰Œå½“Bç‰Œã€ï¼šä¸€å¼ Aå®žä½“ç‰Œå¯¹åº”Bè™šæ‹Ÿç‰Œã€‚",
+            "cn": "通过「将一张A牌当B牌」：一张A实体牌对应B虚拟牌。",
             "en": "Via \"use card A as card B\": one physical A maps to one virtual B. "
           },
           {
             "kind": "number",
-            "cn": "â‘£",
-            "en": "â‘£"
+            "cn": "④",
+            "en": "④"
           },
           {
             "kind": "body",
-            "cn": "é€šè¿‡ã€Œå°†å¤šå¼ Aç‰Œå½“Bç‰Œã€ï¼šå¤šå¼ Aå®žä½“ç‰Œå¯¹åº”åŒä¸€å¼ Bè™šæ‹Ÿç‰Œã€‚",
+            "cn": "通过「将多张A牌当B牌」：多张A实体牌对应同一张B虚拟牌。",
             "en": "Via \"use multiple A cards as card B\": multiple physical A cards map to one virtual B."
           }
         ],
@@ -3945,43 +3889,42 @@
       },
       {
         "type": "rule",
-        "cn": "æŠ€èƒ½ä¸­æ“ä½œä¸€å¼ è™šæ‹Ÿç‰Œé»˜è®¤æ˜¯æŒ‡æ“ä½œæ­¤è™šæ‹Ÿç‰Œå¯¹åº”çš„å®žä½“ç‰Œï¼šè‹¥å¯¹åº”å¤šå¼ å®žä½“ç‰Œï¼Œæ‰§è¡Œæ•ˆæžœæ—¶é¡»å…¨éƒ¨åœ¨æœ¬è¯¥æ‰€åœ¨çš„åŒºåŸŸé‡Œï¼Œå¦åˆ™æ— æ³•æ‰§è¡Œè¯¥æ•ˆæžœï¼›è‹¥å¯¹åº”ä¸€å¼ å®žä½“ç‰Œï¼Œè¯¥å®žä½“ç‰Œé¡»åœ¨æœ¬è¯¥æ‰€åœ¨çš„åŒºåŸŸé‡Œï¼›è‹¥æ— å¯¹åº”å®žä½“ç‰Œï¼Œæ— æ³•æ‰§è¡Œè¯¥æ•ˆæžœã€‚",
+        "cn": "技能中操作一张虚拟牌默认是指操作此虚拟牌对应的实体牌：若对应多张实体牌，执行效果时须全部在本该所在的区域里，否则无法执行该效果；若对应一张实体牌，该实体牌须在本该所在的区域里；若无对应实体牌，无法执行该效果。",
         "en": "When a skill operates on a virtual card, it defaults to operating on the corresponding physical card(s). If multiple physical cards correspond, all must be in their expected zones at execution time, otherwise the effect cannot execute. If one physical card corresponds, it must be in its expected zone. If no physical card corresponds, the effect cannot execute.",
         "segments": [],
         "examples": [
           {
-            "cn": "å¤ä¾¯æ¸Šå‘åŠ¨ã€ç¥žé€Ÿâ‘¡ã€‘å¯¹æ›¹æ“ï¼ˆæ ‡ï¼‰ä½¿ç”¨ã€æ€ã€‘ï¼Œæ›¹æ“ï¼ˆæ ‡ï¼‰åœ¨å—åˆ°æ­¤ã€æ€ã€‘é€ æˆçš„ä¼¤å®³åŽï¼Œç”±äºŽæ­¤ã€æ€ã€‘å¹¶æ— å¯¹åº”çš„å®žä½“ç‰Œï¼Œæ›¹æ“ä¸èƒ½å‘åŠ¨ã€å¥¸é›„ã€‘ã€‚",
-            "en": "Xiahou Yuan activates [Lightning Speedâ‘¡] using a virtual [Kill] on Cao Cao (Std). After Cao Cao receives the damage, since this [Kill] has no corresponding physical card, Cao Cao cannot activate [Treacherous Hero].",
+            "cn": "夏侯渊发动〖神速②〗对曹操（标）使用【杀】，曹操（标）在受到此【杀】造成的伤害后，由于此【杀】并无对应的实体牌，曹操不能发动〖奸雄〗。",
+            "en": "Xiahou Yuan activates 〖Lightning Speed②〗 using a virtual [Kill] on Cao Cao (Std). After Cao Cao receives the damage, since this [Kill] has no corresponding physical card, Cao Cao cannot activate 〖Treacherous Hero〗.",
             "sub_examples": []
           }
         ]
       },
       {
         "type": "note",
-        "cn": "ä¸€äº›æŠ€èƒ½ä¸­æåˆ°çš„æ¦‚å¿µï¼ˆå¦‚ã€Œè‹¥æ­¤ã€æ€ã€‘é€ æˆè¿‡ä¼¤å®³ã€ã€é€ æˆä¼¤å®³çš„ç‰Œã€æ¸ é“ç­‰ï¼‰ï¼Œä»¥åŠã€Œä½¿ç”¨/æ‰“å‡º/å¼ƒç½®ï¼ˆè¿‡ï¼‰ç‰Œã€ç­‰ï¼Œéƒ½æ˜¯æŒ‡æ­¤è™šæ‹Ÿç‰Œã€‚",
-        "en": "Concepts in skills â€” such as \"if this [Kill] has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" â€” all refer to the virtual card.",
+        "cn": "一些技能中提到的概念（如「若此【杀】造成过伤害」、造成伤害的牌、渠道等），以及「使用/打出/弃置（过）牌」等，都是指此虚拟牌。",
+        "en": "Concepts in skills — such as \"if this [Kill] has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" — all refer to the virtual card.",
         "segments": [
           {
             "kind": "body",
-            "cn": "ä¸€äº›æŠ€èƒ½ä¸­æåˆ°çš„æ¦‚å¿µï¼ˆå¦‚ã€Œè‹¥æ­¤",
-            "en": "Concepts in skills â€” such as \"if this "
+            "cn": "一些技能中提到的概念（如「若此",
+            "en": "Concepts in skills — such as \"if this "
           },
           {
             "kind": "card",
-            "cn": "ã€æ€ã€‘",
+            "cn": "【杀】",
             "en": "[Kill]"
           },
           {
             "kind": "body",
-            "cn": "é€ æˆè¿‡ä¼¤å®³ã€ã€é€ æˆä¼¤å®³çš„ç‰Œã€æ¸ é“ç­‰ï¼‰ï¼Œä»¥åŠã€Œä½¿ç”¨/æ‰“å‡º/å¼ƒç½®ï¼ˆè¿‡ï¼‰ç‰Œã€ç­‰ï¼Œéƒ½æ˜¯æŒ‡æ­¤è™šæ‹Ÿç‰Œã€‚",
-            "en": " has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" â€” all refer to the virtual card."
+            "cn": "造成过伤害」、造成伤害的牌、渠道等），以及「使用/打出/弃置（过）牌」等，都是指此虚拟牌。",
+            "en": " has dealt damage,\" \"the card that dealt damage,\" \"channel,\" and \"used/played/discarded a card\" — all refer to the virtual card."
           }
         ],
         "examples": []
       }
     ],
-    "search_text_cn": "è™šæ‹Ÿç‰Œ å®žä½“ç‰Œ å¯¹åº”å…³ç³» è§†ä¸º è½¬åŒ– æ¸ é“",
+    "search_text_cn": "虚拟牌 实体牌 对应关系 视为 转化 渠道",
     "search_text_en": "virtual card physical card correspondence treated as conversion channel"
   }
 ]
-
