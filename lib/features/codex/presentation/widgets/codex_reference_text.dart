@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
-import '../../../reference/services/resolver_service.dart';
 
 typedef CodexReferenceTap = void Function(String bracketText, bool isChinese);
 
@@ -76,8 +75,7 @@ List<InlineSpan> _buildReferenceAwareSpans({
     final token = match.group(0)!;
     final isChinese = token.startsWith('\u3010') || token.startsWith('\u3016');
     final referenceTap = onReferenceTap;
-    final resolvable = referenceTap != null &&
-        (ResolverService().canResolve(token, isChinese: isChinese) != false);
+    final resolvable = referenceTap != null;
 
     final linkColor = AppTheme.codexCardRef(isDark);
     final linkStyle = style.copyWith(
@@ -95,13 +93,9 @@ List<InlineSpan> _buildReferenceAwareSpans({
 
     spans.add(
       TextSpan(
+        text: token,
         style: linkStyle,
         recognizer: recognizer,
-        children: buildInlineSuitSpans(
-          text: token,
-          style: linkStyle,
-          isDark: isDark,
-        ),
       ),
     );
 

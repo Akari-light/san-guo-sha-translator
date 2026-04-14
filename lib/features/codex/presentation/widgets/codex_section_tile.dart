@@ -3,6 +3,7 @@ import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_entry_card.dart';
 import 'codex_flow_step_tile.dart';
+import 'codex_reference_text.dart';
 import 'codex_rule_block_widget.dart';
 
 class CodexSectionTile extends StatefulWidget {
@@ -55,6 +56,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
     final chapter = widget.chapterKey;
     final divider = AppTheme.codexDivider(isDark);
     final accent = AppTheme.codexChapterAccent(chapter, isDark);
+    final singleEntry = widget.entries.length == 1 ? widget.entries.first : null;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,9 +143,11 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                       ),
                       if (widget.sectionSummary.trim().isNotEmpty) ...[
                         const SizedBox(height: 10),
-                        Text(
-                          widget.sectionSummary,
-                          maxLines: _open ? 4 : 2,
+                        CodexReferenceText(
+                          text: widget.sectionSummary,
+                          isDark: isDark,
+                          onReferenceTap: widget.onSegmentTap,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 12.5,
@@ -184,6 +188,13 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                       isDark: isDark,
                       onSegmentTap: widget.onSegmentTap,
                     ))
+          else if (singleEntry != null)
+            _SingleEntrySectionBody(
+              entry: singleEntry,
+              showChinese: showCn,
+              isDark: isDark,
+              onSegmentTap: widget.onSegmentTap,
+            )
           else
             ...widget.entries.map((entry) => CodexEntryCard(
                   entry: entry,
@@ -196,6 +207,57 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                       : () => widget.onOpenEntry!(entry),
                 )),
       ],
+    );
+  }
+}
+
+class _SingleEntrySectionBody extends StatelessWidget {
+  final CodexEntryDTO entry;
+  final bool showChinese;
+  final bool isDark;
+  final SegmentTapCallback? onSegmentTap;
+
+  const _SingleEntrySectionBody({
+    required this.entry,
+    required this.showChinese,
+    required this.isDark,
+    this.onSegmentTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final definition = showChinese ? entry.definitionCn : entry.definitionEn;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(18, 16, 18, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (definition.trim().isNotEmpty) ...[
+            CodexReferenceText(
+              text: definition,
+              isDark: isDark,
+              onReferenceTap: onSegmentTap,
+              style: TextStyle(
+                fontSize: 13.5,
+                height: 1.75,
+                color: AppTheme.codexDefinition(isDark),
+              ),
+            ),
+            if (entry.rules.isNotEmpty) const SizedBox(height: 14),
+          ],
+          if (entry.rules.isNotEmpty)
+            ...entry.rules.map(
+              (block) => CodexRuleBlockWidget(
+                block: block,
+                chapter: entry.chapter,
+                showChinese: showChinese,
+                isDark: isDark,
+                onSegmentTap: onSegmentTap,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

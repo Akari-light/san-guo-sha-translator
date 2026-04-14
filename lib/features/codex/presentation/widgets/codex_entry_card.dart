@@ -41,7 +41,7 @@ class _CodexEntryCardState extends State<CodexEntryCard> {
     final canOpenDetails = widget.onOpenDetails != null && e.rules.isNotEmpty;
 
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 14, 0, 18),
+      padding: const EdgeInsets.fromLTRB(18, 14, 18, 18),
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: divider, width: 0.5)),
       ),

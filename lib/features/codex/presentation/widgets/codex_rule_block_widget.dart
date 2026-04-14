@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
 import '../../../../core/theme/app_theme.dart';
-import '../../../reference/services/resolver_service.dart';
 import 'codex_reference_text.dart';
 
 // â”€â”€ Tap callback type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -174,67 +173,48 @@ TextSpan buildSegmentSpan({
 
         case CodexSegmentKind.card:
           final tap = onSegmentTap;
-          // Only tappable if a tap handler is provided AND we know data exists.
-          // canResolve returns null before the cache is warm (first app load) â€”
-          // treat null as resolvable so taps still work during the brief warm-up.
-          final cardResolvable = tap != null &&
-              (ResolverService().canResolve(rawCn) != false);
+          final cardResolvable = tap != null;
+          final cardStyle = baseStyle.copyWith(
+            fontWeight: FontWeight.w600,
+            color: cardResolvable ? cardColor : baseStyle.color,
+            decoration: cardResolvable
+                ? TextDecoration.underline
+                : TextDecoration.none,
+            decorationColor: cardColor.withAlpha(120),
+          );
           return TextSpan(
-            style: baseStyle.copyWith(
-              fontWeight: FontWeight.w600,
-              color: cardResolvable ? cardColor : baseStyle.color,
-              decoration: cardResolvable
-                  ? TextDecoration.underline
-                  : TextDecoration.none,
-              decorationColor: cardColor.withAlpha(120),
-            ),
+            text: text,
+            style: cardStyle,
             recognizer: cardResolvable
                 ? (TapGestureRecognizer()
-                  ..onTap = () => tap(rawCn, showChinese))
+                  ..onTap = () => tap(
+                        rawCn,
+                        originalSegments == null ? showChinese : true,
+                      ))
                 : null,
-            children: buildInlineSuitSpans(
-              text: text,
-              style: baseStyle.copyWith(
-                fontWeight: FontWeight.w600,
-                color: cardResolvable ? cardColor : baseStyle.color,
-                decoration: cardResolvable
-                    ? TextDecoration.underline
-                    : TextDecoration.none,
-                decorationColor: cardColor.withAlpha(120),
-              ),
-              isDark: isDark,
-            ),
           );
 
         case CodexSegmentKind.skill:
           final tap = onSegmentTap;
-          final skillResolvable = tap != null &&
-              (ResolverService().canResolve(rawCn) != false);
+          final skillResolvable = tap != null;
+          final skillStyle = baseStyle.copyWith(
+            fontWeight: FontWeight.w500,
+            color: skillResolvable ? skillColor : baseStyle.color,
+            decoration: skillResolvable
+                ? TextDecoration.underline
+                : TextDecoration.none,
+            decorationColor: skillColor.withAlpha(120),
+          );
           return TextSpan(
-            style: baseStyle.copyWith(
-              fontWeight: FontWeight.w500,
-              color: skillResolvable ? skillColor : baseStyle.color,
-              decoration: skillResolvable
-                  ? TextDecoration.underline
-                  : TextDecoration.none,
-              decorationColor: skillColor.withAlpha(120),
-            ),
+            text: text,
+            style: skillStyle,
             recognizer: skillResolvable
                 ? (TapGestureRecognizer()
-                  ..onTap = () => tap(rawCn, showChinese))
+                  ..onTap = () => tap(
+                        rawCn,
+                        originalSegments == null ? showChinese : true,
+                      ))
                 : null,
-            children: buildInlineSuitSpans(
-              text: text,
-              style: baseStyle.copyWith(
-                fontWeight: FontWeight.w500,
-                color: skillResolvable ? skillColor : baseStyle.color,
-                decoration: skillResolvable
-                    ? TextDecoration.underline
-                    : TextDecoration.none,
-                decorationColor: skillColor.withAlpha(120),
-              ),
-              isDark: isDark,
-            ),
           );
 
         case CodexSegmentKind.token:

@@ -427,7 +427,7 @@ class _ChapterHero extends StatelessWidget {
     final accent = AppTheme.codexChapterAccent(chapterKey, isDark);
 
     return Container(
-      margin: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+      margin: const EdgeInsets.fromLTRB(0, 14, 0, 14),
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
       decoration: BoxDecoration(
         color: AppTheme.codexSectionHeaderBg(isDark),
