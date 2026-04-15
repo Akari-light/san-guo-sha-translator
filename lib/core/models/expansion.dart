@@ -28,12 +28,12 @@ enum Expansion {
       case 'Myth Returns':      return Expansion.mythReturns;
       case 'Hero\'s Soul':      return Expansion.heroesSoul;
       case 'Limit Break':       return Expansion.limitBreak;
-      case 'Demon':             return Expansion.demon;
-      case 'God':               return Expansion.god;
       case 'Art of War':        return Expansion.shiji;
       case 'Strategic Assault': return Expansion.mouGong;
       case 'Doudizhu':          return Expansion.doudizhu;
       case 'Other':             return Expansion.other;
+      case 'Demon':             return Expansion.demon;      
+      case 'God':               return Expansion.god;
       default:                  return Expansion.standard;
     }
   }
