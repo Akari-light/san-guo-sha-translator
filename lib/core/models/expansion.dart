@@ -44,12 +44,12 @@ enum Expansion {
       case Expansion.mythReturns: return '临';
       case Expansion.heroesSoul:  return '魂';
       case Expansion.limitBreak:  return '界';
-      case Expansion.demon:       return '魔';
-      case Expansion.god:         return '神';
       case Expansion.shiji:       return '计';
       case Expansion.mouGong:     return '谋';
       case Expansion.doudizhu:    return '斗';
       case Expansion.other:       return 'SP';
+      case Expansion.demon:       return '魔';
+      case Expansion.god:         return '神';
     }
   }
 
@@ -59,12 +59,12 @@ enum Expansion {
       case Expansion.mythReturns: return 'Myth Returns';
       case Expansion.heroesSoul:  return 'Hero\'s Soul';
       case Expansion.limitBreak:  return 'Limit Break';
-      case Expansion.demon:       return 'Demon';
-      case Expansion.god:         return 'God';
       case Expansion.shiji:       return 'Art of War';
       case Expansion.mouGong:     return 'Strategic Assault';
       case Expansion.doudizhu:    return 'Doudizhu';
       case Expansion.other:       return 'Other';
+      case Expansion.demon:       return 'Demon';
+      case Expansion.god:         return 'God';      
     }
   }
 
@@ -74,12 +74,12 @@ enum Expansion {
       case Expansion.mythReturns: return '神话再临';
       case Expansion.heroesSoul:  return '一将之魂';
       case Expansion.limitBreak:  return '界限突破';
-      case Expansion.demon:       return '魔武将';
-      case Expansion.god:         return '神将';
       case Expansion.shiji:       return '始计篇';
       case Expansion.mouGong:     return '谋攻篇';
       case Expansion.doudizhu:    return '斗地主';
       case Expansion.other:       return '其他';
+      case Expansion.demon:       return '魔武将';
+      case Expansion.god:         return '神将';      
     }
   }
 }
