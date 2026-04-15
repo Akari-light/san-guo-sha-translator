@@ -26,6 +26,11 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -55,6 +60,8 @@
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera is used to scan and identify SGS cards.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Local network access is used so nearby players at the same table can join a Game Session and share their Generals.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

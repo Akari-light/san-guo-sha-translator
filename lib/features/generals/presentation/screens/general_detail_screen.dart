@@ -7,7 +7,11 @@ import '../../../../core/models/skill_dto.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/navigation/app_router.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
+import '../../../game_session/data/repositories/local_room_game_session_repository.dart';
+import '../../../game_session/domain/models/pending_session_selection.dart';
+import '../../../game_session/presentation/screens/game_session_shell_screen.dart';
 import '../../../reference/services/resolver_service.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
@@ -165,6 +169,32 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     ));
   }
 
+  Future<void> _useInGameSession() async {
+    final sessionRepository = LocalRoomGameSessionRepository.instance;
+    final selection = PendingSessionSelection(
+      generalId: _activeCard.id,
+      skinId: _skinIndex == 0 || _skins.isEmpty ? null : _skins[_skinIndex - 1].id,
+    );
+    if (sessionRepository.hasActiveSession) {
+      await sessionRepository.setMyGeneral(
+        generalId: selection.generalId,
+        skinId: selection.skinId,
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${_activeCard.nameEn} is now your session General.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+    if (!mounted) return;
+    await Navigator.of(context).push(
+      detailRoute(GameSessionShellScreen(pendingSelection: selection)),
+    );
+  }
+
   // â”€â”€ Build
   @override
   Widget build(BuildContext context) {
@@ -173,6 +203,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     final card   = _activeCard;
     final fc     = AppTheme.factionColor(card.faction);
     final refs   = _isEnglish ? _refsEn : _refsCn;
+    final sessionRepository = LocalRoomGameSessionRepository.instance;
 
     return Scaffold(
       appBar: AppBar(
@@ -185,6 +216,17 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
         ),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: Icon(
+              sessionRepository.hasActiveSession
+                  ? Icons.groups_2
+                  : Icons.groups_2_outlined,
+            ),
+            tooltip: sessionRepository.hasActiveSession
+                ? 'Set as my session General'
+                : 'Use in Game Session',
+            onPressed: _useInGameSession,
+          ),
           IconButton(
             icon: Icon(
               _isPinned ? Icons.push_pin : Icons.push_pin_outlined,
