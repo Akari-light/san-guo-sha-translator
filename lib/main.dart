@@ -17,6 +17,8 @@ import 'features/library/presentation/screens/library_detail_screen.dart';
 import 'features/ai/presentation/screens/scanner_screen.dart';
 import 'features/codex/presentation/screens/codex_screen.dart';
 import 'features/codex/presentation/screens/codex_entry_screen.dart'; // LangToggle
+import 'features/game_session/data/repositories/local_room_game_session_repository.dart';
+import 'features/game_session/presentation/screens/game_session_shell_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -413,6 +415,14 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     }
   }
 
+  Future<void> _openGameSession() async {
+    if (!mounted) return;
+    await Navigator.of(context).push(
+      detailRoute(const GameSessionShellScreen()),
+    );
+    if (mounted) setState(() {});
+  }
+
   // ── AppBar title ──────────────────────────────────────────────────────────
 
   Widget _buildAppBarTitle() {
@@ -603,6 +613,39 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     ),
 
                   // ── Theme menu (all tabs)
+                  StreamBuilder(
+                    stream: LocalRoomGameSessionRepository.instance.watchRoom(),
+                    initialData: LocalRoomGameSessionRepository.instance.currentRoom,
+                    builder: (context, snapshot) {
+                      final hasActiveRoom = snapshot.data != null;
+                      return Stack(
+                        clipBehavior: Clip.none,
+                        children: [
+                          IconButton(
+                            tooltip: hasActiveRoom
+                                ? 'Open current Game Session'
+                                : 'Open Game Session',
+                            onPressed: _openGameSession,
+                            icon: const Icon(Icons.groups_2_outlined),
+                          ),
+                          if (hasActiveRoom)
+                            Positioned(
+                              right: 10,
+                              top: 10,
+                              child: Container(
+                                width: 8,
+                                height: 8,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFF22C55E),
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                            ),
+                        ],
+                      );
+                    },
+                  ),
+
                   PopupMenuButton<ThemeMode>(
                     icon: Icon(_getThemeIcon(widget.currentMode)),
                     onSelected: (mode) => widget.onThemeChanged(mode),
