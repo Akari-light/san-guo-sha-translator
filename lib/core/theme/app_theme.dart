@@ -267,9 +267,50 @@ class AppTheme {
   static const Color _codexTokenRefDark  = Color(0xFFB47FEC);
   static const Color _codexTokenRefLight = Color(0xFF7B3FC4);
 
+  // —— Codex: Identity role accents
+  static const Color _codexLordDark        = Color(0xFFF28B82);
+  static const Color _codexLordLight       = Color(0xFFC62828);
+  static const Color _codexLoyalistDark    = Color(0xFFF6D365);
+  static const Color _codexLoyalistLight   = Color(0xFFB88700);
+  static const Color _codexRebelDark       = Color(0xFF7FD18B);
+  static const Color _codexRebelLight      = Color(0xFF2E7D32);
+  static const Color _codexSpyDark         = Color(0xFF7FB8F8);
+  static const Color _codexSpyLight        = Color(0xFF1565C0);
+  static const Color _codexOptionOneFillDark = Color(0x0FFFFFFF);
+  static const Color _codexOptionOneFillLight = Color(0x0A000000);
+  static const Color _codexOptionTwoFillDark = Color(0x14FFFFFF);
+  static const Color _codexOptionTwoFillLight = Color(0x12000000);
+
   static Color codexCardRef(bool isDark)  => isDark ? _codexCardRefDark  : _codexCardRefLight;
   static Color codexSkillRef(bool isDark) => isDark ? _codexSkillRefDark : _codexSkillRefLight;
   static Color codexTokenRef(bool isDark) => isDark ? _codexTokenRefDark : _codexTokenRefLight;
+  static Color codexLord(bool isDark) => isDark ? _codexLordDark : _codexLordLight;
+  static Color codexLoyalist(bool isDark) => isDark ? _codexLoyalistDark : _codexLoyalistLight;
+  static Color codexRebel(bool isDark) => isDark ? _codexRebelDark : _codexRebelLight;
+  static Color codexSpy(bool isDark) => isDark ? _codexSpyDark : _codexSpyLight;
+  static Color codexDistributionOptionFill(bool isDark, int optionIndex) {
+    if (optionIndex.isOdd) {
+      return isDark ? _codexOptionTwoFillDark : _codexOptionTwoFillLight;
+    }
+    return isDark ? _codexOptionOneFillDark : _codexOptionOneFillLight;
+  }
+
+  static Color codexRoleAccent(String role, bool isDark) {
+    final normalized = role.trim().toLowerCase();
+    if (normalized == 'lord' || normalized == '\u4e3b\u516c') {
+      return codexLord(isDark);
+    }
+    if (normalized == 'loyalist' || normalized == '\u5fe0\u81e3') {
+      return codexLoyalist(isDark);
+    }
+    if (normalized == 'rebel' || normalized == '\u53cd\u8d3c') {
+      return codexRebel(isDark);
+    }
+    if (normalized == 'spy' || normalized == '\u5185\u5978') {
+      return codexSpy(isDark);
+    }
+    return codexDefinition(isDark);
+  }
 
   // ── Theme Data ────────────────────────────────────────────────────────────--
   static ThemeData get darkTheme {

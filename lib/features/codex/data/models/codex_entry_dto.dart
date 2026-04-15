@@ -74,6 +74,98 @@ class CodexExample {
       );
 }
 
+class CodexRoleDistributionRow {
+  final int players;
+  final List<CodexRoleDistributionOption> options;
+
+  const CodexRoleDistributionRow({
+    required this.players,
+    this.options = const [],
+  });
+
+  factory CodexRoleDistributionRow.fromJson(Map<String, dynamic> j) =>
+      CodexRoleDistributionRow(
+        players: (j['players'] as num?)?.toInt() ?? 0,
+        options: _parseDistributionOptions(j),
+      );
+}
+
+class CodexRoleDistributionOption {
+  final int lord;
+  final int loyalist;
+  final int rebel;
+  final int spy;
+
+  const CodexRoleDistributionOption({
+    required this.lord,
+    required this.loyalist,
+    required this.rebel,
+    required this.spy,
+  });
+
+  factory CodexRoleDistributionOption.fromJson(Map<String, dynamic> j) =>
+      CodexRoleDistributionOption(
+        lord: (j['lord'] as num?)?.toInt() ?? 0,
+        loyalist: (j['loyalist'] as num?)?.toInt() ?? 0,
+        rebel: (j['rebel'] as num?)?.toInt() ?? 0,
+        spy: (j['spy'] as num?)?.toInt() ?? 0,
+      );
+}
+
+List<CodexRoleDistributionOption> _parseDistributionOptions(
+  Map<String, dynamic> j,
+) {
+  final rawOptions = j['options'] as List<dynamic>?;
+  if (rawOptions != null && rawOptions.isNotEmpty) {
+    return rawOptions
+        .map(
+          (option) => CodexRoleDistributionOption.fromJson(
+            option as Map<String, dynamic>,
+          ),
+        )
+        .toList();
+  }
+
+  return [
+    CodexRoleDistributionOption(
+      lord: (j['lord'] as num?)?.toInt() ?? 0,
+      loyalist: (j['loyalist'] as num?)?.toInt() ?? 0,
+      rebel: (j['rebel'] as num?)?.toInt() ?? 0,
+      spy: (j['spy'] as num?)?.toInt() ?? 0,
+    ),
+  ];
+}
+
+class CodexRoleData {
+  final String roleCn;
+  final String roleEn;
+  final String goalCn;
+  final String goalEn;
+  final String tipsCn;
+  final String tipsEn;
+
+  const CodexRoleData({
+    required this.roleCn,
+    required this.roleEn,
+    this.goalCn = '',
+    this.goalEn = '',
+    this.tipsCn = '',
+    this.tipsEn = '',
+  });
+
+  bool get hasGoal => goalCn.isNotEmpty || goalEn.isNotEmpty;
+  bool get hasTips => tipsCn.isNotEmpty || tipsEn.isNotEmpty;
+
+  factory CodexRoleData.fromJson(Map<String, dynamic> j) => CodexRoleData(
+        roleCn: j['role_cn'] as String? ?? '',
+        roleEn: j['role_en'] as String? ?? '',
+        goalCn: j['goal_cn'] as String? ?? '',
+        goalEn: j['goal_en'] as String? ?? '',
+        tipsCn: j['tips_cn'] as String? ?? '',
+        tipsEn: j['tips_en'] as String? ?? '',
+      );
+}
+
 // ── Rule block ────────────────────────────────────────────────────────────────
 
 /// A single prose block (rule / note / caution) inside a [CodexEntryDTO].
@@ -144,6 +236,8 @@ class CodexEntryDTO {
   final String definitionCn;
   final String definitionEn;
   final List<CodexRuleBlock> rules;
+  final List<CodexRoleDistributionRow> roleDistribution;
+  final List<CodexRoleData> roles;
   final String searchTextCn;
   final String searchTextEn;
 
@@ -159,6 +253,8 @@ class CodexEntryDTO {
     required this.definitionCn,
     required this.definitionEn,
     this.rules = const [],
+    this.roleDistribution = const [],
+    this.roles = const [],
     required this.searchTextCn,
     required this.searchTextEn,
   });
@@ -177,6 +273,12 @@ class CodexEntryDTO {
         definitionEn:   j['definition_en'] as String? ?? '',
         rules: (j['rules'] as List<dynamic>? ?? [])
             .map((e) => CodexRuleBlock.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        roleDistribution: (j['role_distribution'] as List<dynamic>? ?? [])
+            .map((e) => CodexRoleDistributionRow.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        roles: (j['roles'] as List<dynamic>? ?? [])
+            .map((e) => CodexRoleData.fromJson(e as Map<String, dynamic>))
             .toList(),
         searchTextCn: j['search_text_cn'] as String? ?? '',
         searchTextEn: j['search_text_en'] as String? ?? '',

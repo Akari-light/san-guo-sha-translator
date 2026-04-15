@@ -162,8 +162,8 @@ class _CodexScreenState extends State<CodexScreen>
               'Identity Mode counts and card lists, kept separate from card encyclopedia pages.',
           summaryCn: '收录身份局卡牌数量与游戏牌一览，作为身份局专用资料索引。',
           scanHintEn:
-              'Use this for counts and inclusions. National War, chapter 5 cards, and appendix pages are omitted.',
-          scanHintCn: '用于核对数量与收录范围。不收录国战、第五部分卡牌章节与附录。',
+              'Use this for counts and inclusions.',
+          scanHintCn: '用于核对数量与收录范围。',
         ),
       'glossary' => (
           titleEn: 'Terminology',
@@ -490,13 +490,7 @@ class _ChapterHero extends StatelessWidget {
                 value: '$entryCount',
                 accent: accent,
                 isDark: isDark,
-              ),
-              _HeroStat(
-                label: showChinese ? '显示' : 'Display',
-                value: showChinese ? '中文优先' : 'English first',
-                accent: accent,
-                isDark: isDark,
-              ),
+              )
             ],
           ),
           const SizedBox(height: 12),

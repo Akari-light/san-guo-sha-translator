@@ -129,6 +129,14 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
               ),
             ),
           ],
+          if (entry.roleDistribution.isNotEmpty || entry.roles.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            _StructuredDetailsBlock(
+              entry: entry,
+              showChinese: showCn,
+              isDark: isDark,
+            ),
+          ],
           if (entry.rules.isNotEmpty) ...[
             const SizedBox(height: 16),
             _ContentBlock(
@@ -166,6 +174,544 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
       'rules' => 'Rules',
       _ => chapter,
     };
+  }
+}
+
+class _StructuredDetailsBlock extends StatelessWidget {
+  final CodexEntryDTO entry;
+  final bool showChinese;
+  final bool isDark;
+
+  const _StructuredDetailsBlock({
+    required this.entry,
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final children = <Widget>[];
+
+    if (entry.roleDistribution.isNotEmpty) {
+      children.add(_ContentBlock(
+        title: showChinese ? '身份分配' : 'Role Distribution',
+        subtitle: showChinese
+            ? '按人数矩阵查看每局使用的身份牌配置。'
+            : 'Read the role mix by player count in a compact matrix.',
+        isDark: isDark,
+        child: _DistributionRail(
+          rows: entry.roleDistribution,
+          showChinese: showChinese,
+          isDark: isDark,
+        ),
+      ));
+    }
+
+    if (entry.roles.isNotEmpty) {
+      if (children.isNotEmpty) {
+        children.add(const SizedBox(height: 12));
+      }
+      children.add(_ContentBlock(
+        title: showChinese ? '身份角色' : 'Role Profiles',
+        subtitle: showChinese
+            ? '按身份逐一阅读目标与技巧，图片只做角色识别。'
+            : 'Read each role as a profile with a clear objective and play guidance.',
+        isDark: isDark,
+        child: Column(
+          children: entry.roles
+              .map(
+                (role) => Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: _RoleDetailPanel(
+                    role: role,
+                    showChinese: showChinese,
+                    isDark: isDark,
+                  ),
+                ),
+              )
+              .toList(),
+        ),
+      ));
+    }
+
+    return Column(children: children);
+  }
+}
+
+class _DistributionRail extends StatelessWidget {
+  final List<CodexRoleDistributionRow> rows;
+  final bool showChinese;
+  final bool isDark;
+
+  const _DistributionRail({
+    required this.rows,
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 10),
+      decoration: BoxDecoration(
+        color: AppTheme.codexTagFill(isDark),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppTheme.codexDivider(isDark),
+          width: 0.8,
+        ),
+      ),
+      child: _DistributionMatrix(
+        rows: rows,
+        showChinese: showChinese,
+        isDark: isDark,
+      ),
+    );
+  }
+}
+
+class _DistributionMatrix extends StatelessWidget {
+  final List<CodexRoleDistributionRow> rows;
+  final bool showChinese;
+  final bool isDark;
+
+  const _DistributionMatrix({
+    required this.rows,
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final children = <Widget>[
+      _DistributionMatrixHeader(showChinese: showChinese, isDark: isDark),
+    ];
+
+    for (var i = 0; i < rows.length; i++) {
+      children.add(
+        _DistributionMatrixGroup(
+          row: rows[i],
+          isDark: isDark,
+        ),
+      );
+      if (i < rows.length - 1) {
+        children.add(
+          Divider(
+            height: 14,
+            thickness: 0.7,
+            color: AppTheme.codexDivider(isDark),
+          ),
+        );
+      }
+    }
+
+    return Column(children: children);
+  }
+}
+
+class _DistributionMatrixHeader extends StatelessWidget {
+  final bool showChinese;
+  final bool isDark;
+
+  const _DistributionMatrixHeader({
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final style = TextStyle(
+      fontSize: 11.5,
+      fontWeight: FontWeight.w700,
+      color: AppTheme.codexSecondaryText(isDark),
+      letterSpacing: 0.2,
+    );
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 40,
+            child: Text(
+              showChinese ? '人数' : 'P',
+              style: style,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              showChinese ? '主公' : 'Lord',
+              style: style.copyWith(color: AppTheme.codexLord(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              showChinese ? '忠臣' : 'Loyalist',
+              style: style.copyWith(color: AppTheme.codexLoyalist(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              showChinese ? '反贼' : 'Rebel',
+              style: style.copyWith(color: AppTheme.codexRebel(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              showChinese ? '内奸' : 'Spy',
+              style: style.copyWith(color: AppTheme.codexSpy(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _DistributionMatrixGroup extends StatelessWidget {
+  final CodexRoleDistributionRow row;
+  final bool isDark;
+
+  const _DistributionMatrixGroup({
+    required this.row,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final leftStyle = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w700,
+      color: AppTheme.codexDefinition(isDark),
+    );
+    final valueStyle = TextStyle(
+      fontSize: 13,
+      fontWeight: FontWeight.w700,
+      color: AppTheme.codexTerm(isDark),
+    );
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: IntrinsicHeight(
+        child: Row(
+          children: [
+            SizedBox(
+              width: 40,
+              child: Center(
+                child: Text(
+                  '${row.players}',
+                  style: leftStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            const SizedBox(width: 4),
+            Expanded(
+              child: Column(
+                children: [
+                  for (var optionIndex = 0; optionIndex < row.options.length; optionIndex++)
+                    Padding(
+                      padding: EdgeInsets.only(
+                        bottom: optionIndex == row.options.length - 1 ? 0 : 6,
+                      ),
+                      child: _DistributionOptionRow(
+                        option: row.options[optionIndex],
+                        optionIndex: optionIndex,
+                        isDark: isDark,
+                        valueStyle: valueStyle,
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DistributionOptionRow extends StatelessWidget {
+  final CodexRoleDistributionOption option;
+  final int optionIndex;
+  final bool isDark;
+  final TextStyle valueStyle;
+
+  const _DistributionOptionRow({
+    required this.option,
+    required this.optionIndex,
+    required this.isDark,
+    required this.valueStyle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 6),
+      decoration: BoxDecoration(
+        color: AppTheme.codexDistributionOptionFill(isDark, optionIndex),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              '${option.lord}',
+              style: valueStyle.copyWith(color: AppTheme.codexLord(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              '${option.loyalist}',
+              style: valueStyle.copyWith(color: AppTheme.codexLoyalist(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              '${option.rebel}',
+              style: valueStyle.copyWith(color: AppTheme.codexRebel(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              '${option.spy}',
+              style: valueStyle.copyWith(color: AppTheme.codexSpy(isDark)),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RoleDetailPanel extends StatelessWidget {
+  final CodexRoleData role;
+  final bool showChinese;
+  final bool isDark;
+
+  const _RoleDetailPanel({
+    required this.role,
+    required this.showChinese,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final primaryRole = showChinese ? role.roleCn : role.roleEn;
+    final secondaryRole = showChinese ? role.roleEn : role.roleCn;
+    final goal = showChinese ? role.goalCn : role.goalEn;
+    final tips = showChinese ? role.tipsCn : role.tipsEn;
+    final imagePath = _roleImagePath(role);
+    final accent = AppTheme.codexRoleAccent(primaryRole, isDark);
+
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: AppTheme.codexSectionHeaderBg(isDark),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: AppTheme.codexDivider(isDark),
+          width: 0.8,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(14, 14, 14, 12),
+            decoration: BoxDecoration(
+              color: AppTheme.codexTagFill(isDark),
+              border: Border(
+                bottom: BorderSide(
+                  color: AppTheme.codexDivider(isDark),
+                  width: 0.8,
+                ),
+              ),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 114,
+                  height: 160,
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppTheme.codexSectionHeaderBg(isDark),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: AppTheme.codexDivider(isDark),
+                      width: 0.8,
+                    ),
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.contain,
+                      errorBuilder: (_, _, _) => Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          primaryRole.isEmpty ? '?' : primaryRole.substring(0, 1),
+                          style: TextStyle(
+                            fontSize: 42,
+                            fontWeight: FontWeight.w800,
+                            color: AppTheme.codexSecondaryText(isDark),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 6,
+                          ),
+                          decoration: BoxDecoration(
+                            color: AppTheme.codexNumBg('setup', isDark),
+                            borderRadius: BorderRadius.circular(999),
+                            border: Border.all(
+                              color: AppTheme.codexNumBorder('setup', isDark),
+                              width: 0.8,
+                            ),
+                          ),
+                          child: Text(
+                            showChinese ? '身份' : 'Role',
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              color: AppTheme.codexNumText('setup', isDark),
+                              letterSpacing: 0.25,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          primaryRole,
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w800,
+                            color: accent,
+                          ),
+                        ),
+                        if (secondaryRole.isNotEmpty && secondaryRole != primaryRole)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Text(
+                              secondaryRole,
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: AppTheme.codexSecondaryText(isDark),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(14, 14, 14, 14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (goal.isNotEmpty) ...[
+                  _DetailLabel(
+                    text: showChinese ? '游戏目标' : 'Objective',
+                    isDark: isDark,
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    goal,
+                    style: TextStyle(
+                      fontSize: 14,
+                      height: 1.6,
+                      color: AppTheme.codexDefinition(isDark),
+                    ),
+                  ),
+                ],
+                if (goal.isNotEmpty && tips.isNotEmpty) const SizedBox(height: 14),
+                if (tips.isNotEmpty) ...[
+                  _DetailLabel(
+                    text: showChinese ? '技巧' : 'Tips',
+                    isDark: isDark,
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    tips,
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      height: 1.65,
+                      color: AppTheme.codexDefinition(isDark),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _roleImagePath(CodexRoleData role) {
+    final roleEn = role.roleEn.trim().toLowerCase();
+    final roleCn = role.roleCn.trim();
+
+    if (roleEn == 'lord' || roleCn == '主公') {
+      return 'assets/images/miscellaneous/lord.webp';
+    }
+    if (roleEn == 'loyalist' || roleCn == '忠臣') {
+      return 'assets/images/miscellaneous/loyalist.webp';
+    }
+    if (roleEn == 'rebel' || roleCn == '反贼') {
+      return 'assets/images/miscellaneous/rebel.webp';
+    }
+    if (roleEn == 'spy' || roleCn == '内奸') {
+      return 'assets/images/miscellaneous/spy.webp';
+    }
+    return 'assets/images/miscellaneous/lord.webp';
+  }
+}
+
+class _DetailLabel extends StatelessWidget {
+  final String text;
+  final bool isDark;
+
+  const _DetailLabel({
+    required this.text,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 11.5,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 0.3,
+        color: AppTheme.codexSubText('setup', isDark),
+      ),
+    );
   }
 }
 
