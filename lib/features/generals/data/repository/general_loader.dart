@@ -21,13 +21,13 @@ class GeneralLoader {
     'assets/data/generals/limit_break.json',
     'assets/data/generals/demon.json',
     'assets/data/generals/god.json',
-    'assets/data/generals/standard.json',         // Uncomment when skill_type filled
-    'assets/data/generals/myth_returns.json',      // Uncomment when skill_type filled
-    'assets/data/generals/heroes_soul.json',       // Uncomment when skill_type filled
-    // 'assets/data/generals/art_of_war.json',        // File not yet created
-    'assets/data/generals/strategic_assault.json', // File not yet created
-    'assets/data/generals/doudizhu.json',          // File not yet created
-    'assets/data/generals/others.json',            // Uncomment when IDs/name_en filled
+    'assets/data/generals/standard.json',         
+    'assets/data/generals/myth_returns.json',     
+    'assets/data/generals/heroes_soul.json',       
+    'assets/data/generals/art_of_war.json',        
+    'assets/data/generals/strategic_assault.json', 
+    'assets/data/generals/doudizhu.json',         
+    'assets/data/generals/others.json',            
     // 'assets/data/generals/utilities.json',         // Tokens, markers, identity cards, HP cards
   ];
 

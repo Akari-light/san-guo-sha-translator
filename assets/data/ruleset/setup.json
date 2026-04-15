@@ -1,713 +1,1253 @@
-[
-  {
-    "id": "setup_1_0_info_guide",
-    "section_num": "1.0",
-    "section_title_cn": "资料导引",
-    "section_title_en": "Info Guide",
-    "term_cn": "资料导引",
-    "term_en": "Info Guide",
-    "badge": null,
-    "definition_cn": "本部分收录身份局资料。",
-    "definition_en": "This section includes Identity Mode reference material.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "本部分收录：身份局卡牌数量一览、身份局游戏牌一览。",
-        "en": "This section includes Identity Mode card counts and Identity Mode card lists.",
-        "segments": [],
-        "examples": []
-      }
-    ],
-    "search_text_cn": "资料 导引 身份局 资料",
-    "search_text_en": "info guide identity mode reference"
-  },
-  {
-    "id": "setup_1_1_card_counts",
-    "section_num": "1.1",
-    "section_title_cn": "身份局卡牌数量一览",
-    "section_title_en": "Identity Mode Card Counts",
-    "term_cn": "卡牌数量",
-    "term_en": "Card Counts",
-    "badge": null,
-    "definition_cn": "身份局所使用的各类卡牌总数一览。",
-    "definition_en": "A quick reference for how many cards of each type are included in Identity Mode.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "身份牌共10张：主公1张，忠臣3张，反贼4张，内奸2张。",
-        "en": "Identity Cards × 10: 1 Lord, 3 Loyalists, 4 Rebels, 2 Spies.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "身份牌 × 10：",
-            "en": "Identity Cards × 10: "
-          },
-          {
-            "kind": "body",
-            "cn": "主公1张，忠臣3张，反贼4张，内奸2张。",
-            "en": "1 Lord, 3 Loyalists, 4 Rebels, 2 Spies."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "体力牌共12张：1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
-        "en": "HP Cards × 12: 1 card showing 1/2, 1 card showing 2/3, 8 cards showing 3/4, 2 cards showing 4/5.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "体力牌 × 12：",
-            "en": "HP Cards × 12: "
-          },
-          {
-            "kind": "body",
-            "cn": "1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
-            "en": "1 showing 1/2, 1 showing 2/3, 8 showing 3/4, 2 showing 4/5."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "武将牌详见相关表格。",
-        "en": "General Cards are listed in the related tables.",
-        "segments": [],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "游戏牌共有162张，详见相关表格。",
-        "en": "Game Cards × 162 (Basic Cards 85, Tool Cards 50, Equipment Cards 27).",
-        "segments": [],
-        "examples": []
-      },
-      {
-        "type": "note",
-        "cn": "另有「放权」效果标记牌（KayaK、LiuHeng）1张，「缠怨」效果标记5枚，「梦魇」标记11枚，「狂风」效果标志1枚，「大雾」效果标志7枚，「暴怒」标记11枚，「忍」标记11枚。",
-        "en": "Additional effect tokens are included: 1 「Abdicate」 token, 5 「Entangled Grudge」 tokens, 11 「Nightmare」 tokens, 1 「Gale」 token, 7 「Great Fog」 tokens, 11 「Rage」 tokens, and 11 「Forbearance」 tokens.",
-        "segments": [],
-        "examples": []
-      }
-    ],
-    "search_text_cn": "身份局 卡牌数量 身份牌 体力牌 武将牌 游戏牌 主公 忠臣 反贼 内奸 放权 缠怨 梦魇 狂风 大雾 暴怒 忍",
-    "search_text_en": "identity mode card counts lord loyalist rebel spy hp cards library cards abdicate entangled grudge nightmare gale great fog rage forbearance tokens"
-  },
-  {
-    "id": "setup_1_1_basic_cards",
-    "section_num": "1.1",
-    "section_title_cn": "身份局游戏牌一览 — 基本牌",
-    "section_title_en": "Identity Mode Game Cards — Basic Cards",
-    "term_cn": "基本牌",
-    "term_en": "Basic Cards",
-    "badge": null,
-    "definition_cn": "基本牌共85张，包含6种牌名。【火杀】、【雷杀】、【酒】为军争篇扩充内容。",
-    "definition_en": "85 Basic Cards across 6 card types. [Fire Kill], [Thunder Kill], and [Wine] are from the Military Conflict expansion.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "普通【杀】30张：黑桃7张（7/8/8/9/9/10/10），梅花14张（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3张（10/10/J），方块6张（6/7/8/9/10/K）。",
-        "en": "Normal [Kill] × 30: Spades × 7 (7/8/8/9/9/10/10), Clubs × 14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts × 3 (10/10/J), Diamonds × 6 (6/7/8/9/10/K).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "普通【杀】× 30：",
-            "en": "Normal [Kill] × 30: "
-          },
-          {
-            "kind": "body",
-            "cn": "黑桃7（7/8/8/9/9/10/10），梅花14（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3（10/10/J），方块6（6/7/8/9/10/K）。",
-            "en": "Spades ×7 (7/8/8/9/9/10/10), Clubs ×14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts ×3 (10/10/J), Diamonds ×6 (6/7/8/9/10/K)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "【火杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
-        "en": "[Fire Kill] × 5 (Military Conflict): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "【火杀】× 5：",
-            "en": " [Fire Kill] × 5: "
-          },
-          {
-            "kind": "body",
-            "cn": "红桃3（4/7/10），方块2（4/5）。",
-            "en": "Hearts ×3 (4/7/10), Diamonds ×2 (4/5)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "【雷杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
-        "en": "[Thunder Kill] × 9 (Military Conflict): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "【雷杀】× 9：",
-            "en": "[Thunder Kill] × 9: "
-          },
-          {
-            "kind": "body",
-            "cn": "黑桃5（4/5/6/7/8），梅花4（5/6/7/8）。",
-            "en": "Spades ×5 (4/5/6/7/8), Clubs ×4 (5/6/7/8)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "【闪】24张：红桃7张（2/2/8/9/J/Q/K），方块17张（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
-        "en": "[Dodge] × 24: Hearts × 7 (2/2/8/9/J/Q/K), Diamonds × 17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "【闪】× 24：",
-            "en": "[Dodge] × 24: "
-          },
-          {
-            "kind": "body",
-            "cn": "红桃7（2/2/8/9/J/Q/K），方块17（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
-            "en": "Hearts ×7 (2/2/8/9/J/Q/K), Diamonds ×17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "【桃】12张：红桃9张（3/4/5/6/6/7/8/9/Q），方块3张（2/3/Q）。",
-        "en": "[Peach] × 12: Hearts × 9 (3/4/5/6/6/7/8/9/Q), Diamonds × 3 (2/3/Q).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "【桃】× 12：",
-            "en": "[Peach] × 12: "
-          },
-          {
-            "kind": "body",
-            "cn": "红桃9（3/4/5/6/6/7/8/9/Q），方块3（2/3/Q）。",
-            "en": "Hearts ×9 (3/4/5/6/6/7/8/9/Q), Diamonds ×3 (2/3/Q)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "【酒】5张（军争篇）：黑桃2张（3/9），梅花2张（3/9），方块1张（9）。",
-        "en": "[Wine] × 5 (Military Conflict): Spades × 2 (3/9), Clubs × 2 (3/9), Diamonds × 1 (9).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "【酒】× 5：",
-            "en": "[Wine] × 5: "
-          },
-          {
-            "kind": "body",
-            "cn": "黑桃2（3/9），梅花2（3/9），方块1（9）。",
-            "en": "Spades ×2 (3/9), Clubs ×2 (3/9), Diamonds ×1 (9)."
-          }
-        ],
-        "examples": []
-      }
-    ],
-    "search_text_cn": "基本牌 杀 闪 桃 酒 火杀 雷杀 普通杀 花色 点数 黑桃 梅花 红桃 方块 军争篇",
-    "search_text_en": "basic cards kill dodge peach wine fire kill thunder kill suit rank spades clubs hearts diamonds military conflict"
-  },
-  {
-    "id": "setup_1_1_tool_cards",
-    "section_num": "1.1",
-    "section_title_cn": "身份局游戏牌一览 — 锦囊牌",
-    "section_title_en": "Identity Mode Game Cards — Tool Cards",
-    "term_cn": "锦囊牌",
-    "term_en": "Tool Cards",
-    "badge": null,
-    "definition_cn": "锦囊牌共50张，分为即时生效的非延时类锦囊牌（43张）和置入判定区延迟生效的延时类锦囊牌（7张）。",
-    "definition_en": "50 Tool Cards in total, split into Non Time-Delay Tool Cards (43) that take effect immediately, and Time-Delayed Tool Cards (7) that are placed in the Judgment Zone and resolve at a later turn.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "非延时类锦囊牌共43张：【过河拆桥】6张（黑桃3·3/4/Q，梅花2·3/4，红桃1·Q），【顺手牵羊】5张（黑桃3·3/4/J，方块2·3/4），【决斗】3张（黑桃/梅花/方块各A），【借刀杀人】2张（梅花Q/K），【无中生有】4张（红桃7/8/9/J），【无懈可击】7张（黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q），【铁索连环】6张·军争篇（黑桃J/Q，梅花10/J/Q/K），【火攻】3张·军争篇（红桃2/3，方块Q），【万箭齐发】1张（红桃A），【南蛮入侵】3张（黑桃7/K，梅花7），【桃园结义】1张（红桃A），【五谷丰登】2张（红桃3/4）。",
-        "en": "Non Time-Delay Tool Cards × 43: [Dismantle] ×6 (Spades 3·3/4/Q, Clubs 2·3/4, Hearts 1·Q), [Steal] ×5 (Spades 3·3/4/J, Diamonds 2·3/4), [Duel] ×3 (Spades/Clubs/Diamonds each A), [Proxy Attack] ×2 (Clubs Q/K), [Resupply] ×4 (Hearts 7/8/9/J), [Nullification] ×7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] ×6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] ×3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] ×1 (Hearts A), [Barbarians] ×3 (Spades 7/K, Clubs 7), [Peach Garden] ×1 (Hearts A), [Harvest] ×2 (Hearts 3/4).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "非延时类 × 43：",
-            "en": "Non Time-Delay × 43: "
-          },
-          {
-            "kind": "card",
-            "cn": "【过河拆桥】",
-            "en": "[Dismantle]"
-          },
-          {
-            "kind": "body",
-            "cn": "×6，",
-            "en": " ×6, "
-          },
-          {
-            "kind": "card",
-            "cn": "【顺手牵羊】",
-            "en": "[Steal]"
-          },
-          {
-            "kind": "body",
-            "cn": "×5，",
-            "en": " ×5, "
-          },
-          {
-            "kind": "card",
-            "cn": "【决斗】",
-            "en": "[Duel]"
-          },
-          {
-            "kind": "body",
-            "cn": "×3，",
-            "en": " ×3, "
-          },
-          {
-            "kind": "card",
-            "cn": "【借刀杀人】",
-            "en": "[Proxy Attack]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2，",
-            "en": " ×2, "
-          },
-          {
-            "kind": "card",
-            "cn": "【无中生有】",
-            "en": "[Resupply]"
-          },
-          {
-            "kind": "body",
-            "cn": "×4，",
-            "en": " ×4, "
-          },
-          {
-            "kind": "card",
-            "cn": "【无懈可击】",
-            "en": "[Nullification]"
-          },
-          {
-            "kind": "body",
-            "cn": "×7，",
-            "en": " ×7, "
-          },
-          {
-            "kind": "card",
-            "cn": "【铁索连环】",
-            "en": "[Iron Shackles]"
-          },
-          {
-            "kind": "body",
-            "cn": "×6（军争篇），",
-            "en": " ×6 (Military Conflict), "
-          },
-          {
-            "kind": "card",
-            "cn": "【火攻】",
-            "en": "[Incendiary]"
-          },
-          {
-            "kind": "body",
-            "cn": "×3（军争篇），",
-            "en": " ×3 (Military Conflict), "
-          },
-          {
-            "kind": "card",
-            "cn": "【万箭齐发】",
-            "en": "[Raining Arrows]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【南蛮入侵】",
-            "en": "[Barbarians]"
-          },
-          {
-            "kind": "body",
-            "cn": "×3，",
-            "en": " ×3, "
-          },
-          {
-            "kind": "card",
-            "cn": "【桃园结义】",
-            "en": "[Peach Garden]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【五谷丰登】",
-            "en": "[Harvest]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2。",
-            "en": " ×2."
-          }
-        ],
-        "examples": [
-          {
-            "cn": "详细花色/点数：【过河拆桥】黑桃3（3/4/Q）梅花2（3/4）红桃1（Q）；【顺手牵羊】黑桃3（3/4/J）方块2（3/4）；【无懈可击】黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q；【铁索连环】黑桃J/Q，梅花10/J/Q/K；【火攻】红桃2/3，方块Q；【南蛮入侵】黑桃7/K，梅花7。",
-            "en": "Suit/rank detail: [Dismantle] Spades(3/4/Q) Clubs(3/4) Hearts(Q); [Steal] Spades(3/4/J) Diamonds(3/4); [Nullification] Spades(J/K) Clubs(Q/K) Hearts(A/K) Diamonds(EX-Q); [Iron Shackles] Spades(J/Q) Clubs(10/J/Q/K); [Incendiary] Hearts(2/3) Diamonds(Q); [Barbarians] Spades(7/K) Clubs(7).",
-            "sub_examples": []
-          }
-        ]
-      },
-      {
-        "type": "rule",
-        "cn": "延时类锦囊牌共7张：【闪电】2张（黑桃A，红桃EX-Q），【乐不思蜀】3张（黑桃/红桃/梅花各6），【兵粮寸断】2张·军争篇（黑桃10，梅花4）。",
-        "en": "Time-Delayed Tool Cards × 7: [Lightning] ×2 (Spades A, Hearts EX-Q), [Acedia] ×3 (Spades/Hearts/Clubs each 6), [Starvation] ×2 Military Conflict (Spades 10, Clubs 4).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "延时类 × 7：",
-            "en": "Time-Delayed × 7: "
-          },
-          {
-            "kind": "card",
-            "cn": "【闪电】",
-            "en": "[Lightning]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2（黑桃A，红桃EX-Q），",
-            "en": " ×2 (Spades A, Hearts EX-Q), "
-          },
-          {
-            "kind": "card",
-            "cn": "【乐不思蜀】",
-            "en": "[Acedia]"
-          },
-          {
-            "kind": "body",
-            "cn": "×3（黑桃/红桃/梅花各6），",
-            "en": " ×3 (Spades/Hearts/Clubs each 6), "
-          },
-          {
-            "kind": "card",
-            "cn": "【兵粮寸断】",
-            "en": "[Starvation]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2（军争篇，黑桃10，梅花4）。",
-            "en": " ×2 (Military Conflict, Spades 10, Clubs 4)."
-          }
-        ],
-        "examples": []
-      }
-    ],
-    "search_text_cn": "锦囊牌 非延时 延时 过河拆桥 顺手牵羊 决斗 借刀杀人 无中生有 无懈可击 铁索连环 火攻 万箭齐发 南蛮入侵 桃园结义 五谷丰登 闪电 乐不思蜀 兵粮寸断 军争篇",
-    "search_text_en": "tool cards non time-delay time-delayed dismantle steal duel proxy attack resupply nullification iron shackles incendiary raining arrows barbarians peach garden harvest lightning acedia starvation military conflict"
-  },
-  {
-    "id": "setup_1_1_equipment_cards",
-    "section_num": "1.1",
-    "section_title_cn": "身份局游戏牌一览 — 装备牌",
-    "section_title_en": "Identity Mode Game Cards — Equipment Cards",
-    "term_cn": "装备牌",
-    "term_en": "Equipment Cards",
-    "badge": null,
-    "definition_cn": "装备牌共27张，分为武器牌（13张）、防具牌（6张）、坐骑牌（7张）、宝物牌（1张）。每名角色的装备区各类只能放置一张。",
-    "definition_en": "27 Equipment Cards across four categories: Weapons (13), Armor (6), Mounts (7), and Treasure (1). Each character can equip at most one card of each type at a time.",
-    "rules": [
-      {
-        "type": "rule",
-        "cn": "武器牌共13张：【诸葛连弩】×2，【青釭剑】×1，【雌雄双股剑】×1，【寒冰剑】×1，【古锭刀】×1（军争篇），【贯石斧】×1，【青龙偃月刀】×1，【丈八蛇矛】×1，【方天画戟】×1，【朱雀羽扇】×1（军争篇），【麒麟弓】×1，【银月枪】×1。",
-        "en": "Weapons × 13: [Repeating Crossbow] ×2, [Qing Gang Sword] ×1, [Twin Swords] ×1, [Frost Blade] ×1, [Ancient Scimitar] ×1 (Military Conflict), [Stonepiercer] ×1, [Green Dragon Crescent Blade] ×1, [Serpent Spear] ×1, [Sky Piercer] ×1, [Vermilion Bird Fan] ×1 (Military Conflict), [Kirin Bow] ×1, [Moon Spear] ×1.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "武器牌 × 13：",
-            "en": "Weapons × 13: "
-          },
-          {
-            "kind": "card",
-            "cn": "【诸葛连弩】",
-            "en": "[Repeating Crossbow]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2，",
-            "en": " ×2, "
-          },
-          {
-            "kind": "card",
-            "cn": "【青釭剑】",
-            "en": "[Qing Gang Sword]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【雌雄双股剑】",
-            "en": "[Twin Swords]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【寒冰剑】",
-            "en": "[Frost Blade]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【古锭刀】",
-            "en": "[Ancient Scimitar]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1（军争篇），",
-            "en": " ×1 (Military Conflict), "
-          },
-          {
-            "kind": "card",
-            "cn": "【贯石斧】",
-            "en": "[Stonepiercer]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【青龙偃月刀】",
-            "en": "[Green Dragon Crescent Blade]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【丈八蛇矛】",
-            "en": "[Serpent Spear]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【方天画戟】",
-            "en": "[Sky Piercer]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【朱雀羽扇】",
-            "en": "[Vermilion Bird Fan]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1（军争篇），",
-            "en": " ×1 (Military Conflict), "
-          },
-          {
-            "kind": "card",
-            "cn": "【麒麟弓】",
-            "en": "[Kirin Bow]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "body",
-            "cn": "【银月枪】",
-            "en": "[Moon Spear]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1。",
-            "en": " ×1."
-          }
-        ],
-        "examples": [
-          {
-            "cn": "花色/点数：【诸葛连弩】梅花A，方块A；【青釭剑】黑桃6；【雌雄双股剑】黑桃2；【寒冰剑】黑桃EX-2；【古锭刀】黑桃A；【贯石斧】方块5；【青龙偃月刀】黑桃5；【丈八蛇矛】黑桃Q；【方天画戟】方块Q；【朱雀羽扇】方块A；【麒麟弓】红桃5；【银月枪】方块Q-SP。",
-            "en": "Suit/rank: [Repeating Crossbow] Clubs A, Diamonds A; [Qing Gang Sword] Spades 6; [Twin Swords] Spades 2; [Frost Blade] Spades EX-2; [Ancient Scimitar] Spades A; [Stonepiercer] Diamonds 5; [Green Dragon Crescent Blade] Spades 5; [Serpent Spear] Spades Q; [Sky Piercer] Diamonds Q; [Vermilion Bird Fan] Diamonds A; [Kirin Bow] Hearts 5; [Moon Spear] Diamonds Q-SP.",
-            "sub_examples": []
-          }
-        ]
-      },
-      {
-        "type": "rule",
-        "cn": "防具牌共6张：【八卦阵】×2，【仁王盾】×1，【藤甲】×2（军争篇），【白银狮子】×1（军争篇）。",
-        "en": "Armor × 6: [Eight Trigrams Formation] ×2, [Vajra Shield] ×1, [Rattan Armour] ×2 (Military Conflict), [Silver Lion Helmet] ×1 (Military Conflict).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "防具牌 × 6：",
-            "en": "Armor × 6: "
-          },
-          {
-            "kind": "card",
-            "cn": "【八卦阵】",
-            "en": "[Eight Trigrams Formation]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2，",
-            "en": " ×2, "
-          },
-          {
-            "kind": "card",
-            "cn": "【仁王盾】",
-            "en": "[Vajra Shield]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1，",
-            "en": " ×1, "
-          },
-          {
-            "kind": "card",
-            "cn": "【藤甲】",
-            "en": "[Rattan Armour]"
-          },
-          {
-            "kind": "body",
-            "cn": "×2（军争篇），",
-            "en": " ×2 (Military Conflict), "
-          },
-          {
-            "kind": "card",
-            "cn": "【白银狮子】",
-            "en": "[Silver Lion Helmet]"
-          },
-          {
-            "kind": "body",
-            "cn": "×1（军争篇）。",
-            "en": " ×1 (Military Conflict)."
-          }
-        ],
-        "examples": [
-          {
-            "cn": "花色/点数：【八卦阵】黑桃2，梅花2；【仁王盾】梅花EX-2；【藤甲】黑桃2，梅花2；【白银狮子】梅花A。",
-            "en": "Suit/rank: [Eight Trigrams Formation] Spades 2, Clubs 2; [Vajra Shield] Clubs EX-2; [Rattan Armour] Spades 2, Clubs 2; [Silver Lion Helmet] Clubs A.",
-            "sub_examples": []
-          }
-        ]
-      },
-      {
-        "type": "rule",
-        "cn": "坐骑牌共7张：【+1坐骑】4张（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），【-1坐骑】3张（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
-        "en": "Mounts × 7: 「+1 Mount」 ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), 「-1 Mount」 ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K).",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "坐骑牌 × 7：",
-            "en": "Mounts × 7: "
-          },
-          {
-            "kind": "body",
-            "cn": "【+1坐骑】",
-            "en": "「+1 Mount」"
-          },
-          {
-            "kind": "body",
-            "cn": "×4（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），",
-            "en": " ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), "
-          },
-          {
-            "kind": "body",
-            "cn": "【-1坐骑】",
-            "en": "「-1 Mount」"
-          },
-          {
-            "kind": "body",
-            "cn": "×3（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
-            "en": " ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K)."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "note",
-        "cn": "【+1坐骑】（防御性）：其他角色计算与你的距离+1。【-1坐骑】（进攻性）：你计算与其他角色的距离-1。每名角色两类坐骑各限装备一张。",
-        "en": "「+1 Mount」 (defensive): other characters measure their distance to you as +1. 「-1 Mount」 (offensive): you measure your distance to others as -1. Each character may equip at most one of each mount type.",
-        "segments": [
-          {
-            "kind": "body",
-            "cn": "【+1坐骑】",
-            "en": "「+1 Mount」"
-          },
-          {
-            "kind": "body",
-            "cn": "（防御性）：其他角色计算与你的距离+1。",
-            "en": " (defensive): others measure distance to you +1. "
-          },
-          {
-            "kind": "body",
-            "cn": "【-1坐骑】",
-            "en": "「-1 Mount」"
-          },
-          {
-            "kind": "body",
-            "cn": "（进攻性）：你计算与其他角色的距离-1。每名角色两类各限一张。",
-            "en": " (offensive): you measure distance to others -1. Each character equips at most one of each type."
-          }
-        ],
-        "examples": []
-      },
-      {
-        "type": "rule",
-        "cn": "宝物牌共1张：【木牛流马】，方块5。",
-        "en": "Treasure × 1: [Wooden Ox], Diamonds 5.",
-        "segments": [
-          {
-            "kind": "label",
-            "cn": "宝物牌 × 1：",
-            "en": "Treasure × 1: "
-          },
-          {
-            "kind": "card",
-            "cn": "【木牛流马】",
-            "en": "[Wooden Ox]"
-          },
-          {
-            "kind": "body",
-            "cn": "，方块5。",
-            "en": ", Diamonds 5."
-          }
-        ],
-        "examples": []
-      }
-    ],
-    "search_text_cn": "装备牌 武器 防具 坐骑 宝物 诸葛连弩 青釭剑 雌雄双股剑 寒冰剑 古锭刀 贯石斧 青龙偃月刀 丈八蛇矛 方天画戟 朱雀羽扇 麒麟弓 银月枪 八卦阵 仁王盾 藤甲 白银狮子 绝影 爪黄飞电 骅骝 的卢 大宛 赤兔 紫骍 木牛流马 军争篇",
-    "search_text_en": "equipment weapon armor mount treasure repeating crossbow qing gang sword twin swords frost blade ancient scimitar stonepiercer green dragon crescent blade serpent spear sky piercer vermilion bird fan kirin bow moon spear eight trigrams vajra shield rattan armour silver lion helmet jue ying red hare di lu wooden ox military conflict"
-  }
+﻿[
+    {
+        "id":  "setup_1_0_identity_mode_overview",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "玩法简介",
+        "term_en":  "Gameplay Overview",
+        "badge":  null,
+        "definition_cn":  "身份局中，每名玩家随机获得一种身份，并围绕各自的身份目标进行对局。除主公外，其余身份在游戏过程中通常保持隐藏。",
+        "definition_en":  "In Identity Mode, each player is randomly assigned a role and plays toward that role\u0027s objective. Except for the Lord, roles usually remain hidden during play.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "游戏开始时随机获得一个身份，包括主公、忠臣、反贼和内奸四种角色。",
+                          "en":  "At the start of the game, each player randomly receives one role: Lord, Loyalist, Rebel, or Spy.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "主公：游戏的中心角色，目标是消灭所有的反贼和内奸。",
+                          "en":  "Lord: the central role of the game. The objective is to eliminate all Rebels and Spies.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "忠臣：辅助主公，目标是保护主公并消灭反贼和内奸。",
+                          "en":  "Loyalist: supports the Lord. The objective is to protect the Lord and eliminate all Rebels and Spies.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "反贼：目标是杀死主公。",
+                          "en":  "Rebel: the objective is to kill the Lord.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "内奸：目标是成为最后存活的玩家，需要先消灭除主公外的所有其他玩家，最后杀死主公。",
+                          "en":  "Spy: the objective is to become the last surviving player. Eliminate every other player except the Lord first, then kill the Lord at the end.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "身份局 玩法简介 主公 忠臣 反贼 内奸 游戏目标",
+        "search_text_en":  "identity mode gameplay overview lord loyalist rebel spy win condition"
+    },
+    {
+        "id":  "setup_1_0_role_distribution",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "身份牌配置",
+        "term_en":  "Role Card Distribution",
+        "badge":  null,
+        "definition_cn":  "根据游戏人数，抽取等量的身份牌随机分配。抽到主公的玩家需立即亮出身份，其他玩家的身份保持隐藏。",
+        "definition_en":  "Prepare role cards according to player count, then distribute one at random to each player. The Lord reveals their role immediately; all other roles stay hidden.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "参照玩家人数使用对应数量的主公、忠臣、反贼和内奸身份牌。",
+                          "en":  "Use the matching number of Lord, Loyalist, Rebel, and Spy cards for the current player count.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "note",
+                          "cn":  "抽到主公身份的玩家需立即亮出身份（将主公牌正面朝上放在面前），其他身份的玩家保存好自己的身份牌，不让别的玩家知道自己的身份。",
+                          "en":  "The player who draws the Lord role reveals it immediately by placing the card face up. All other players keep their role cards hidden.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "身份牌 配置 玩家人数 主公 忠臣 反贼 内奸",
+        "search_text_en":  "role card distribution players lord loyalist rebel spy",
+        "role_distribution":  [
+                                  {
+                                      "players":  4,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  1,
+                                                          "rebel":  1,
+                                                          "spy":  1
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  5,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  1,
+                                                          "rebel":  2,
+                                                          "spy":  1
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  6,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  1,
+                                                          "rebel":  3,
+                                                          "spy":  1
+                                                      },
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  1,
+                                                          "rebel":  2,
+                                                          "spy":  2
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  7,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  2,
+                                                          "rebel":  3,
+                                                          "spy":  1
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  8,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  2,
+                                                          "rebel":  4,
+                                                          "spy":  1
+                                                      },
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  2,
+                                                          "rebel":  3,
+                                                          "spy":  2
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  9,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  3,
+                                                          "rebel":  4,
+                                                          "spy":  1
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "players":  10,
+                                      "options":  [
+                                                      {
+                                                          "lord":  1,
+                                                          "loyalist":  3,
+                                                          "rebel":  4,
+                                                          "spy":  2
+                                                      }
+                                                  ]
+                                  }
+                              ]
+    },
+    {
+        "id":  "setup_1_0_role_goals_and_tips",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "身份目标与技巧",
+        "term_en":  "Role Goals and Tips",
+        "badge":  null,
+        "definition_cn":  "每种身份的胜利条件不同，常见的行动思路也不同。以下整理了各身份的游戏目标与技巧要点。",
+        "definition_en":  "Each role has a different win condition and a different strategic focus. The following summarizes each role\u0027s objective and common play guidance.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "主公的目标是消灭所有反贼和内奸，忠臣的胜利条件与主公相同；反贼以杀死主公为目标；内奸需除掉除自己外所有角色并成为最后的生还者。",
+                          "en":  "The Lord must eliminate all Rebels and Spies. The Loyalist shares the Lord\u0027s victory condition. The Rebel wins by killing the Lord. The Spy must eliminate every other role and become the final survivor.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "身份目标 技巧 主公 忠臣 反贼 内奸 游戏目标",
+        "search_text_en":  "role goals tips lord loyalist rebel spy strategy",
+        "roles":  [
+                      {
+                          "role_cn":  "主公",
+                          "role_en":  "Lord",
+                          "goal_cn":  "消灭所有的反贼和内奸，平定天下。",
+                          "goal_en":  "Eliminate all Rebels and Spies.",
+                          "tips_cn":  "目标为尽量保证忠臣存活的情况下全灭反贼和内奸。具体到行动就是保证本身防御并压制全场，在行动过程中一定要分散反贼火力，当然尺度是关键，要以保证自己生存为首要任务，尽量让反贼火力分散产生内部混乱。",
+                          "tips_en":  "Maintain your own survival first, preserve Loyalists when possible, and pressure the table in a way that splits Rebel aggression instead of letting it concentrate on you."
+                      },
+                      {
+                          "role_cn":  "忠臣",
+                          "role_en":  "Loyalist",
+                          "goal_cn":  "不惜一切保护主公，胜利条件与主公相同。",
+                          "goal_en":  "Protect the Lord at all costs and win under the same condition as the Lord.",
+                          "tips_cn":  "作为忠臣要明白一个活忠的威慑价值大于和反贼以命换命，忠臣是主公的屏障，是主公控制局势的武器和筹码，得局势者得天下，而忠臣就是局势天平的指针。",
+                          "tips_en":  "A living Loyalist usually matters more than trading one-for-one with a Rebel. The Loyalist stabilizes the board, shields the Lord, and helps the Lord keep control of the pace of the game."
+                      },
+                      {
+                          "role_cn":  "反贼",
+                          "role_en":  "Rebel",
+                          "goal_cn":  "杀死主公，推翻统治。",
+                          "goal_en":  "Kill the Lord.",
+                          "tips_cn":  "反贼是最简单也是最纠结的角色，说简单是因为任务很简单只要杀到一个叫做主公的家伙就可以了，说纠结是因为反贼人数众多，大家思路开阔难以统一。配合方面需要注意的是，不能总想着让别人配合你，要想想怎么才能让别人理解你的想法，配合来自充分的思考而非心有灵犀。",
+                          "tips_en":  "Rebels share a simple goal but still need coordination. Strong Rebel play comes from reading the table clearly and creating lines of play that other Rebels can naturally follow."
+                      },
+                      {
+                          "role_cn":  "内奸",
+                          "role_en":  "Spy",
+                          "goal_cn":  "除掉除自己外所有的人，成为最后的生还者。",
+                          "goal_en":  "Eliminate every other player and become the last survivor.",
+                          "tips_cn":  "如果说局势是天平，忠臣是指针，那么内奸就是游码。内奸以身份的特殊，获胜的难度和获胜后的超强成就感一直深受大家喜爱。内奸打法多样，战术灵活，成功的内奸=正确的战术+冷静的头脑+强悍的RP。",
+                          "tips_en":  "The Spy must stay flexible, read shifts in the table, and preserve the path to a final duel with the Lord. Success depends on timing, restraint, and accurate judgment of the board state."
+                      }
+                  ]
+    },
+    {
+        "id":  "setup_1_0_general_cards",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "武将牌",
+        "term_en":  "General Card",
+        "badge":  null,
+        "definition_cn":  "确定身份后，每名玩家选择一张武将牌。武将牌决定角色的势力、体力上限、技能、性别等基础信息。",
+        "definition_en":  "After roles are assigned, each player selects one General Card. A General Card defines the character\u0027s faction, Max HP, skills, gender, and other base attributes.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "主公先从可选武将中选择一张武将牌，并明置。",
+                          "en":  "The Lord chooses a General Card first and reveals it.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "其余玩家各自从分到的可选武将中选择一张武将牌，待选择完成后亮出。",
+                          "en":  "Each other player selects one General Card from their available options, then reveals it after selection is complete.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "武将牌 选择 主公 明置",
+        "search_text_en":  "general card selection lord reveal"
+    },
+    {
+        "id":  "setup_1_0_health",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "体力",
+        "term_en":  "Health",
+        "badge":  null,
+        "definition_cn":  "体力牌用于记录角色当前体力值与体力上限。角色受到伤害后减少体力，回复体力时相应恢复。",
+        "definition_en":  "HP Cards are used to track a character\u0027s current HP and Max HP. Damage lowers HP, while recovery restores it.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "武将亮出后，每名角色领取与其体力上限对应的体力牌。",
+                          "en":  "After General Cards are revealed, each character takes the HP Card matching their Max HP.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "当游戏人数不少于5人时，主公在武将牌体力上限的基础上额外获得1点体力上限。",
+                          "en":  "If there are at least 5 players, the Lord gains +1 Max HP on top of the amount shown on the General Card.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "体力 体力牌 体力上限 主公",
+        "search_text_en":  "health hp max hp lord"
+    },
+    {
+        "id":  "setup_1_0_game_begins",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "游戏开始",
+        "term_en":  "Game Begins",
+        "badge":  null,
+        "definition_cn":  "完成身份与武将准备后，洗混游戏牌并发起始手牌，由主公开始游戏。",
+        "definition_en":  "After roles and generals are prepared, shuffle the deck, deal starting hands, and begin with the Lord\u0027s turn.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "将游戏牌洗混后，每名角色获得4张起始手牌。",
+                          "en":  "Shuffle the game deck, then give each character 4 starting hand cards.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "游戏按逆时针方向进行，主公拥有首先行动的权利。",
+                          "en":  "Play proceeds anti-clockwise, and the Lord takes the first turn.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "游戏开始 起始手牌 主公 逆时针",
+        "search_text_en":  "game begins starting hand lord anti-clockwise"
+    },
+    {
+        "id":  "setup_1_0_player_phase_overview",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "回合阶段",
+        "term_en":  "Player Phase",
+        "badge":  null,
+        "definition_cn":  "每名角色的回合依次经过准备、判定、摸牌、出牌、弃牌、结束六个阶段。完整时机与结算流程详见流程章节。",
+        "definition_en":  "Each turn proceeds through six phases in order: Starting, Judgment, Draw, Play, Discard, and End. Full timing detail is covered in the Flow section.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "准备阶段：回合开始后的起始阶段，部分技能会在此时机发动。",
+                          "en":  "Starting Phase: the opening phase of the turn; some skills activate here.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "判定阶段：若判定区内有延时类锦囊牌，则按规则进行判定与结算。",
+                          "en":  "Judgment Phase: if there are Time-Delayed Tool Cards in the Judgment Zone, resolve them according to their rules.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "摸牌阶段：角色通常摸两张牌。",
+                          "en":  "Draw Phase: the character normally draws 2 cards.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "出牌阶段：角色可以使用手牌、装备牌并发动相关技能。",
+                          "en":  "Play Phase: the character may use hand cards, equip cards, and activate relevant skills.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "弃牌阶段：若手牌数大于当前体力值，则需弃置至与当前体力值相同。",
+                          "en":  "Discard Phase: if hand size exceeds current HP, discard until hand size equals current HP.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "结束阶段：回合结束前的最后阶段，部分技能会在此时机发动。",
+                          "en":  "End Phase: the final phase before the turn ends; some skills activate here.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "回合阶段 准备阶段 判定阶段 摸牌阶段 出牌阶段 弃牌阶段 结束阶段",
+        "search_text_en":  "player phase starting judgment draw play discard end"
+    },
+    {
+        "id":  "setup_1_0_death_and_reward",
+        "section_num":  "1.0",
+        "section_title_cn":  "身份局入门",
+        "section_title_en":  "Identity Mode Overview",
+        "term_cn":  "死亡与奖惩",
+        "term_en":  "Death and Reward",
+        "badge":  null,
+        "definition_cn":  "角色进入濒死状态后，需先按规则进行濒死结算；若未被救回，则角色死亡并公开身份。奖惩效果与击杀对象的身份有关。",
+        "definition_en":  "When a character enters Dying, Dying resolution is handled first. If the character is not saved, they die and reveal their role. Rewards and penalties depend on the dead character\u0027s role.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "当一名角色失去最后的体力后，其进入濒死状态；若最终未被救回，则该角色死亡并亮出身份牌。",
+                          "en":  "When a character loses their last HP, they enter Dying. If they are not ultimately saved, that character dies and reveals their Role Card.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "主公死亡时，游戏立即结束，并按身份胜利条件判定胜负。",
+                          "en":  "If the Lord dies, the game ends immediately and victory is determined by the role win conditions.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "任意角色杀死反贼后，击杀者摸三张牌。",
+                          "en":  "After any character kills a Rebel, the killer draws 3 cards.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "若主公杀死忠臣，则主公需弃置所有牌。",
+                          "en":  "If the Lord kills a Loyalist, the Lord must discard all cards.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "note",
+                          "cn":  "濒死、死亡与奖惩的完整结算流程详见流程章节。",
+                          "en":  "For the full resolution flow of Dying, Death, and rewards or penalties, see the Flow section.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "死亡 奖惩 濒死 主公 忠臣 反贼",
+        "search_text_en":  "death reward penalty dying lord loyalist rebel"
+    },
+    {
+        "id":  "setup_1_1_card_counts",
+        "section_num":  "1.1",
+        "section_title_cn":  "身份局卡牌数量一览",
+        "section_title_en":  "Identity Mode Card Counts",
+        "term_cn":  "卡牌数量",
+        "term_en":  "Card Counts",
+        "badge":  null,
+        "definition_cn":  "身份局所使用的各类卡牌总数一览。",
+        "definition_en":  "A quick reference for how many cards of each type are included in Identity Mode.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "身份牌共10张：主公1张，忠臣3张，反贼4张，内奸2张。",
+                          "en":  "Identity Cards × 10: 1 Lord, 3 Loyalists, 4 Rebels, 2 Spies.",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "身份牌 × 10：",
+                                               "en":  "Identity Cards × 10: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "主公1张，忠臣3张，反贼4张，内奸2张。",
+                                               "en":  "1 Lord, 3 Loyalists, 4 Rebels, 2 Spies."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "体力牌共12张：1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
+                          "en":  "HP Cards × 12: 1 card showing 1/2, 1 card showing 2/3, 8 cards showing 3/4, 2 cards showing 4/5.",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "体力牌 × 12：",
+                                               "en":  "HP Cards × 12: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "1/2阴阳鱼1张，2/3阴阳鱼1张，3/4阴阳鱼8张，4/5阴阳鱼2张。",
+                                               "en":  "1 showing 1/2, 1 showing 2/3, 8 showing 3/4, 2 showing 4/5."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "武将牌详见相关表格。",
+                          "en":  "General Cards are listed in the related tables.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "游戏牌共有162张，详见相关表格。",
+                          "en":  "Game Cards × 162 (Basic Cards 85, Tool Cards 50, Equipment Cards 27).",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "note",
+                          "cn":  "另有「放权」效果标记牌（KayaK、LiuHeng）1张，「缠怨」效果标记5枚，「梦魇」标记11枚，「狂风」效果标志1枚，「大雾」效果标志7枚，「暴怒」标记11枚，「忍」标记11枚。",
+                          "en":  "Additional effect tokens are included: 1 「Abdicate」 token, 5 「Entangled Grudge」 tokens, 11 「Nightmare」 tokens, 1 「Gale」 token, 7 「Great Fog」 tokens, 11 「Rage」 tokens, and 11 「Forbearance」 tokens.",
+                          "segments":  [
+
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "身份局 卡牌数量 身份牌 体力牌 武将牌 游戏牌 主公 忠臣 反贼 内奸 放权 缠怨 梦魇 狂风 大雾 暴怒 忍",
+        "search_text_en":  "identity mode card counts lord loyalist rebel spy hp cards library cards abdicate entangled grudge nightmare gale great fog rage forbearance tokens"
+    },
+    {
+        "id":  "setup_1_2_basic_cards",
+        "section_num":  "1.2",
+        "section_title_cn":  "身份局游戏牌一览 — 基本牌",
+        "section_title_en":  "Identity Mode Game Cards — Basic Cards",
+        "term_cn":  "基本牌",
+        "term_en":  "Basic Cards",
+        "badge":  null,
+        "definition_cn":  "基本牌共85张，包含6种牌名。【火杀】、【雷杀】、【酒】为军争篇扩充内容。",
+        "definition_en":  "85 Basic Cards across 6 card types. [Fire Kill], [Thunder Kill], and [Wine] are from the Military Conflict expansion.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "普通【杀】30张：黑桃7张（7/8/8/9/9/10/10），梅花14张（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3张（10/10/J），方块6张（6/7/8/9/10/K）。",
+                          "en":  "Normal [Kill] × 30: Spades × 7 (7/8/8/9/9/10/10), Clubs × 14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts × 3 (10/10/J), Diamonds × 6 (6/7/8/9/10/K).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "普通【杀】× 30：",
+                                               "en":  "Normal [Kill] × 30: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "黑桃7（7/8/8/9/9/10/10），梅花14（2/3/4/5/6/7/8/8/9/9/10/10/J/J），红桃3（10/10/J），方块6（6/7/8/9/10/K）。",
+                                               "en":  "Spades ×7 (7/8/8/9/9/10/10), Clubs ×14 (2/3/4/5/6/7/8/8/9/9/10/10/J/J), Hearts ×3 (10/10/J), Diamonds ×6 (6/7/8/9/10/K)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "【火杀】5张（军争篇）：红桃3张（4/7/10），方块2张（4/5）。",
+                          "en":  "[Fire Kill] × 5 (Military Conflict): Hearts × 3 (4/7/10), Diamonds × 2 (4/5).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "【火杀】× 5：",
+                                               "en":  " [Fire Kill] × 5: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "红桃3（4/7/10），方块2（4/5）。",
+                                               "en":  "Hearts ×3 (4/7/10), Diamonds ×2 (4/5)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "【雷杀】9张（军争篇）：黑桃5张（4/5/6/7/8），梅花4张（5/6/7/8）。",
+                          "en":  "[Thunder Kill] × 9 (Military Conflict): Spades × 5 (4/5/6/7/8), Clubs × 4 (5/6/7/8).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "【雷杀】× 9：",
+                                               "en":  "[Thunder Kill] × 9: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "黑桃5（4/5/6/7/8），梅花4（5/6/7/8）。",
+                                               "en":  "Spades ×5 (4/5/6/7/8), Clubs ×4 (5/6/7/8)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "【闪】24张：红桃7张（2/2/8/9/J/Q/K），方块17张（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
+                          "en":  "[Dodge] × 24: Hearts × 7 (2/2/8/9/J/Q/K), Diamonds × 17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "【闪】× 24：",
+                                               "en":  "[Dodge] × 24: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "红桃7（2/2/8/9/J/Q/K），方块17（2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J）。",
+                                               "en":  "Hearts ×7 (2/2/8/9/J/Q/K), Diamonds ×17 (2/2/3/4/5/6/6/7/7/8/8/9/10/10/J/J/J)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "【桃】12张：红桃9张（3/4/5/6/6/7/8/9/Q），方块3张（2/3/Q）。",
+                          "en":  "[Peach] × 12: Hearts × 9 (3/4/5/6/6/7/8/9/Q), Diamonds × 3 (2/3/Q).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "【桃】× 12：",
+                                               "en":  "[Peach] × 12: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "红桃9（3/4/5/6/6/7/8/9/Q），方块3（2/3/Q）。",
+                                               "en":  "Hearts ×9 (3/4/5/6/6/7/8/9/Q), Diamonds ×3 (2/3/Q)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "【酒】5张（军争篇）：黑桃2张（3/9），梅花2张（3/9），方块1张（9）。",
+                          "en":  "[Wine] × 5 (Military Conflict): Spades × 2 (3/9), Clubs × 2 (3/9), Diamonds × 1 (9).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "【酒】× 5：",
+                                               "en":  "[Wine] × 5: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "黑桃2（3/9），梅花2（3/9），方块1（9）。",
+                                               "en":  "Spades ×2 (3/9), Clubs ×2 (3/9), Diamonds ×1 (9)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "基本牌 杀 闪 桃 酒 火杀 雷杀 普通杀 花色 点数 黑桃 梅花 红桃 方块 军争篇",
+        "search_text_en":  "basic cards kill dodge peach wine fire kill thunder kill suit rank spades clubs hearts diamonds military conflict"
+    },
+    {
+        "id":  "setup_1_3_tool_cards",
+        "section_num":  "1.3",
+        "section_title_cn":  "身份局游戏牌一览 — 锦囊牌",
+        "section_title_en":  "Identity Mode Game Cards — Tool Cards",
+        "term_cn":  "锦囊牌",
+        "term_en":  "Tool Cards",
+        "badge":  null,
+        "definition_cn":  "锦囊牌共50张，分为即时生效的非延时类锦囊牌（43张）和置入判定区延迟生效的延时类锦囊牌（7张）。",
+        "definition_en":  "50 Tool Cards in total, split into Non Time-Delay Tool Cards (43) that take effect immediately, and Time-Delayed Tool Cards (7) that are placed in the Judgment Zone and resolve at a later turn.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "非延时类锦囊牌共43张：【过河拆桥】6张（黑桃3·3/4/Q，梅花2·3/4，红桃1·Q），【顺手牵羊】5张（黑桃3·3/4/J，方块2·3/4），【决斗】3张（黑桃/梅花/方块各A），【借刀杀人】2张（梅花Q/K），【无中生有】4张（红桃7/8/9/J），【无懈可击】7张（黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q），【铁索连环】6张·军争篇（黑桃J/Q，梅花10/J/Q/K），【火攻】3张·军争篇（红桃2/3，方块Q），【万箭齐发】1张（红桃A），【南蛮入侵】3张（黑桃7/K，梅花7），【桃园结义】1张（红桃A），【五谷丰登】2张（红桃3/4）。",
+                          "en":  "Non Time-Delay Tool Cards × 43: [Dismantle] ×6 (Spades 3·3/4/Q, Clubs 2·3/4, Hearts 1·Q), [Steal] ×5 (Spades 3·3/4/J, Diamonds 2·3/4), [Duel] ×3 (Spades/Clubs/Diamonds each A), [Proxy Attack] ×2 (Clubs Q/K), [Resupply] ×4 (Hearts 7/8/9/J), [Nullification] ×7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] ×6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] ×3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] ×1 (Hearts A), [Barbarians] ×3 (Spades 7/K, Clubs 7), [Peach Garden] ×1 (Hearts A), [Harvest] ×2 (Hearts 3/4).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "非延时类 × 43：",
+                                               "en":  "Non Time-Delay × 43: "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【过河拆桥】",
+                                               "en":  "[Dismantle]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×6，",
+                                               "en":  " ×6, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【顺手牵羊】",
+                                               "en":  "[Steal]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×5，",
+                                               "en":  " ×5, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【决斗】",
+                                               "en":  "[Duel]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×3，",
+                                               "en":  " ×3, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【借刀杀人】",
+                                               "en":  "[Proxy Attack]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2，",
+                                               "en":  " ×2, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【无中生有】",
+                                               "en":  "[Resupply]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×4，",
+                                               "en":  " ×4, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【无懈可击】",
+                                               "en":  "[Nullification]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×7，",
+                                               "en":  " ×7, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【铁索连环】",
+                                               "en":  "[Iron Shackles]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×6（军争篇），",
+                                               "en":  " ×6 (Military Conflict), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【火攻】",
+                                               "en":  "[Incendiary]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×3（军争篇），",
+                                               "en":  " ×3 (Military Conflict), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【万箭齐发】",
+                                               "en":  "[Raining Arrows]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【南蛮入侵】",
+                                               "en":  "[Barbarians]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×3，",
+                                               "en":  " ×3, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【桃园结义】",
+                                               "en":  "[Peach Garden]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【五谷丰登】",
+                                               "en":  "[Harvest]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2。",
+                                               "en":  " ×2."
+                                           }
+                                       ],
+                          "examples":  [
+                                           {
+                                               "cn":  "详细花色/点数：【过河拆桥】黑桃3（3/4/Q）梅花2（3/4）红桃1（Q）；【顺手牵羊】黑桃3（3/4/J）方块2（3/4）；【无懈可击】黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q；【铁索连环】黑桃J/Q，梅花10/J/Q/K；【火攻】红桃2/3，方块Q；【南蛮入侵】黑桃7/K，梅花7。",
+                                               "en":  "Suit/rank detail: [Dismantle] Spades(3/4/Q) Clubs(3/4) Hearts(Q); [Steal] Spades(3/4/J) Diamonds(3/4); [Nullification] Spades(J/K) Clubs(Q/K) Hearts(A/K) Diamonds(EX-Q); [Iron Shackles] Spades(J/Q) Clubs(10/J/Q/K); [Incendiary] Hearts(2/3) Diamonds(Q); [Barbarians] Spades(7/K) Clubs(7).",
+                                               "sub_examples":  [
+
+                                                                ]
+                                           }
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "延时类锦囊牌共7张：【闪电】2张（黑桃A，红桃EX-Q），【乐不思蜀】3张（黑桃/红桃/梅花各6），【兵粮寸断】2张·军争篇（黑桃10，梅花4）。",
+                          "en":  "Time-Delayed Tool Cards × 7: [Lightning] ×2 (Spades A, Hearts EX-Q), [Acedia] ×3 (Spades/Hearts/Clubs each 6), [Starvation] ×2 Military Conflict (Spades 10, Clubs 4).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "延时类 × 7：",
+                                               "en":  "Time-Delayed × 7: "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【闪电】",
+                                               "en":  "[Lightning]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2（黑桃A，红桃EX-Q），",
+                                               "en":  " ×2 (Spades A, Hearts EX-Q), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【乐不思蜀】",
+                                               "en":  "[Acedia]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×3（黑桃/红桃/梅花各6），",
+                                               "en":  " ×3 (Spades/Hearts/Clubs each 6), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【兵粮寸断】",
+                                               "en":  "[Starvation]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2（军争篇，黑桃10，梅花4）。",
+                                               "en":  " ×2 (Military Conflict, Spades 10, Clubs 4)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "锦囊牌 非延时 延时 过河拆桥 顺手牵羊 决斗 借刀杀人 无中生有 无懈可击 铁索连环 火攻 万箭齐发 南蛮入侵 桃园结义 五谷丰登 闪电 乐不思蜀 兵粮寸断 军争篇",
+        "search_text_en":  "tool cards non time-delay time-delayed dismantle steal duel proxy attack resupply nullification iron shackles incendiary raining arrows barbarians peach garden harvest lightning acedia starvation military conflict"
+    },
+    {
+        "id":  "setup_1_4_equipment_cards",
+        "section_num":  "1.4",
+        "section_title_cn":  "身份局游戏牌一览 — 装备牌",
+        "section_title_en":  "Identity Mode Game Cards — Equipment Cards",
+        "term_cn":  "装备牌",
+        "term_en":  "Equipment Cards",
+        "badge":  null,
+        "definition_cn":  "装备牌共27张，分为武器牌（13张）、防具牌（6张）、坐骑牌（7张）、宝物牌（1张）。每名角色的装备区各类只能放置一张。",
+        "definition_en":  "27 Equipment Cards across four categories: Weapons (13), Armor (6), Mounts (7), and Treasure (1). Each character can equip at most one card of each type at a time.",
+        "rules":  [
+                      {
+                          "type":  "rule",
+                          "cn":  "武器牌共13张：【诸葛连弩】×2，【青釭剑】×1，【雌雄双股剑】×1，【寒冰剑】×1，【古锭刀】×1（军争篇），【贯石斧】×1，【青龙偃月刀】×1，【丈八蛇矛】×1，【方天画戟】×1，【朱雀羽扇】×1（军争篇），【麒麟弓】×1，【银月枪】×1。",
+                          "en":  "Weapons × 13: [Repeating Crossbow] ×2, [Qing Gang Sword] ×1, [Twin Swords] ×1, [Frost Blade] ×1, [Ancient Scimitar] ×1 (Military Conflict), [Stonepiercer] ×1, [Green Dragon Crescent Blade] ×1, [Serpent Spear] ×1, [Sky Piercer] ×1, [Vermilion Bird Fan] ×1 (Military Conflict), [Kirin Bow] ×1, [Moon Spear] ×1.",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "武器牌 × 13：",
+                                               "en":  "Weapons × 13: "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【诸葛连弩】",
+                                               "en":  "[Repeating Crossbow]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2，",
+                                               "en":  " ×2, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【青釭剑】",
+                                               "en":  "[Qing Gang Sword]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【雌雄双股剑】",
+                                               "en":  "[Twin Swords]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【寒冰剑】",
+                                               "en":  "[Frost Blade]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【古锭刀】",
+                                               "en":  "[Ancient Scimitar]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1（军争篇），",
+                                               "en":  " ×1 (Military Conflict), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【贯石斧】",
+                                               "en":  "[Stonepiercer]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【青龙偃月刀】",
+                                               "en":  "[Green Dragon Crescent Blade]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【丈八蛇矛】",
+                                               "en":  "[Serpent Spear]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【方天画戟】",
+                                               "en":  "[Sky Piercer]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【朱雀羽扇】",
+                                               "en":  "[Vermilion Bird Fan]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1（军争篇），",
+                                               "en":  " ×1 (Military Conflict), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【麒麟弓】",
+                                               "en":  "[Kirin Bow]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "【银月枪】",
+                                               "en":  "[Moon Spear]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1。",
+                                               "en":  " ×1."
+                                           }
+                                       ],
+                          "examples":  [
+                                           {
+                                               "cn":  "花色/点数：【诸葛连弩】梅花A，方块A；【青釭剑】黑桃6；【雌雄双股剑】黑桃2；【寒冰剑】黑桃EX-2；【古锭刀】黑桃A；【贯石斧】方块5；【青龙偃月刀】黑桃5；【丈八蛇矛】黑桃Q；【方天画戟】方块Q；【朱雀羽扇】方块A；【麒麟弓】红桃5；【银月枪】方块Q-SP。",
+                                               "en":  "Suit/rank: [Repeating Crossbow] Clubs A, Diamonds A; [Qing Gang Sword] Spades 6; [Twin Swords] Spades 2; [Frost Blade] Spades EX-2; [Ancient Scimitar] Spades A; [Stonepiercer] Diamonds 5; [Green Dragon Crescent Blade] Spades 5; [Serpent Spear] Spades Q; [Sky Piercer] Diamonds Q; [Vermilion Bird Fan] Diamonds A; [Kirin Bow] Hearts 5; [Moon Spear] Diamonds Q-SP.",
+                                               "sub_examples":  [
+
+                                                                ]
+                                           }
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "防具牌共6张：【八卦阵】×2，【仁王盾】×1，【藤甲】×2（军争篇），【白银狮子】×1（军争篇）。",
+                          "en":  "Armor × 6: [Eight Trigrams Formation] ×2, [Vajra Shield] ×1, [Rattan Armour] ×2 (Military Conflict), [Silver Lion Helmet] ×1 (Military Conflict).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "防具牌 × 6：",
+                                               "en":  "Armor × 6: "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【八卦阵】",
+                                               "en":  "[Eight Trigrams Formation]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2，",
+                                               "en":  " ×2, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【仁王盾】",
+                                               "en":  "[Vajra Shield]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1，",
+                                               "en":  " ×1, "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【藤甲】",
+                                               "en":  "[Rattan Armour]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×2（军争篇），",
+                                               "en":  " ×2 (Military Conflict), "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【白银狮子】",
+                                               "en":  "[Silver Lion Helmet]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×1（军争篇）。",
+                                               "en":  " ×1 (Military Conflict)."
+                                           }
+                                       ],
+                          "examples":  [
+                                           {
+                                               "cn":  "花色/点数：【八卦阵】黑桃2，梅花2；【仁王盾】梅花EX-2；【藤甲】黑桃2，梅花2；【白银狮子】梅花A。",
+                                               "en":  "Suit/rank: [Eight Trigrams Formation] Spades 2, Clubs 2; [Vajra Shield] Clubs EX-2; [Rattan Armour] Spades 2, Clubs 2; [Silver Lion Helmet] Clubs A.",
+                                               "sub_examples":  [
+
+                                                                ]
+                                           }
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "坐骑牌共7张：【+1坐骑】4张（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），【-1坐骑】3张（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
+                          "en":  "Mounts × 7: 「+1 Mount」 ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), 「-1 Mount」 ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K).",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "坐骑牌 × 7：",
+                                               "en":  "Mounts × 7: "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "【+1坐骑】",
+                                               "en":  "「+1 Mount」"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×4（绝影·黑桃5，爪黄飞电·红桃K，骅骝·方块K·军争篇，的卢·梅花5），",
+                                               "en":  " ×4 (Jue Ying·Spades 5, Zhao Huang Fei Dian·Hearts K, Hua Liu·Diamonds K·Military Conflict, Di Lu·Clubs 5), "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "【-1坐骑】",
+                                               "en":  "「-1 Mount」"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "×3（大宛·黑桃K，赤兔·红桃5，紫骍·方块K）。",
+                                               "en":  " ×3 (Da Yuan·Spades K, Red Hare·Hearts 5, Zi Xing·Diamonds K)."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "note",
+                          "cn":  "【+1坐骑】（防御性）：其他角色计算与你的距离+1。【-1坐骑】（进攻性）：你计算与其他角色的距离-1。每名角色两类坐骑各限装备一张。",
+                          "en":  "「+1 Mount」 (defensive): other characters measure their distance to you as +1. 「-1 Mount」 (offensive): you measure your distance to others as -1. Each character may equip at most one of each mount type.",
+                          "segments":  [
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "【+1坐骑】",
+                                               "en":  "「+1 Mount」"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "（防御性）：其他角色计算与你的距离+1。",
+                                               "en":  " (defensive): others measure distance to you +1. "
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "【-1坐骑】",
+                                               "en":  "「-1 Mount」"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "（进攻性）：你计算与其他角色的距离-1。每名角色两类各限一张。",
+                                               "en":  " (offensive): you measure distance to others -1. Each character equips at most one of each type."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      },
+                      {
+                          "type":  "rule",
+                          "cn":  "宝物牌共1张：【木牛流马】，方块5。",
+                          "en":  "Treasure × 1: [Wooden Ox], Diamonds 5.",
+                          "segments":  [
+                                           {
+                                               "kind":  "label",
+                                               "cn":  "宝物牌 × 1：",
+                                               "en":  "Treasure × 1: "
+                                           },
+                                           {
+                                               "kind":  "card",
+                                               "cn":  "【木牛流马】",
+                                               "en":  "[Wooden Ox]"
+                                           },
+                                           {
+                                               "kind":  "body",
+                                               "cn":  "，方块5。",
+                                               "en":  ", Diamonds 5."
+                                           }
+                                       ],
+                          "examples":  [
+
+                                       ]
+                      }
+                  ],
+        "search_text_cn":  "装备牌 武器 防具 坐骑 宝物 诸葛连弩 青釭剑 雌雄双股剑 寒冰剑 古锭刀 贯石斧 青龙偃月刀 丈八蛇矛 方天画戟 朱雀羽扇 麒麟弓 银月枪 八卦阵 仁王盾 藤甲 白银狮子 绝影 爪黄飞电 骅骝 的卢 大宛 赤兔 紫骍 木牛流马 军争篇",
+        "search_text_en":  "equipment weapon armor mount treasure repeating crossbow qing gang sword twin swords frost blade ancient scimitar stonepiercer green dragon crescent blade serpent spear sky piercer vermilion bird fan kirin bow moon spear eight trigrams vajra shield rattan armour silver lion helmet jue ying red hare di lu wooden ox military conflict"
+    }
 ]
