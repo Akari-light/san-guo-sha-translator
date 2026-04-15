@@ -465,10 +465,10 @@
     ]
   },
   {
-    "id": "WEI074",
+    "id": "WEI&WU074",
     "standard_id": "char_wenyang",
-    "name_cn": "文鸯",
-    "name_en": "Wen Yuan (Wei)",
+    "name_cn": "魏文鸯",
+    "name_en": "Wei · Wen Yuan",
     "gender": "Male",
     "faction": "Wei",
     "health": 4,
@@ -505,10 +505,10 @@
     ]
   },
   {
-    "id": "WU074",
+    "id": "WEI&WU074",
     "standard_id": "char_wenyang",
-    "name_cn": "文鸯",
-    "name_en": "Wen Yuan (Wu)",
+    "name_cn": "吴文鸯",
+    "name_en": "Wu · Wen Yuan",
     "gender": "Male",
     "faction": "Wu",
     "health": 4,

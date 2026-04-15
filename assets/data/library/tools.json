@@ -517,6 +517,20 @@
     "faq": []
   },
   {
+    "id": "tool_seven_armies_flooded",
+    "name_cn": "水淹七军",
+    "name_en": "Seven Armies Flooded",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "effect_cn": [
+      "出牌阶段，对至多两名角色使用。第一名角色受到1点雷电伤害并弃置一张牌，第二名角色受到1点雷电伤害并摸一张牌。"
+    ],
+    "effect_en": [
+      "During your Action Phase, use on up to two characters. The first target receives 1 thunder damage and discards a card; the second target receives 1 thunder damage and draws a card."
+    ],
+    "faq": []
+  },
+  {
     "id": "tool_besiege_the_city",
     "name_cn": "兵臨城下",
     "name_en": "Besiege the City",
