@@ -7537,5 +7537,63 @@
     "name_en": "Humble Deference",
     "description_cn": "其他角色的摸牌阶段开始时，若你没有「谦」，你可以令其多摸两张牌，然后获得「谦」。若如此做：其弃牌阶段结束时，你获得其弃置的至多两张牌；准备阶段，你跳过下个摸牌阶段，然后弃「谦」。",
     "description_en": "At the start of another character's Draw Phase, if you have no 「Modesty」, you may have them draw 2 additional cards, then gain 「Modesty」. If you do: at the end of their Discard Phase, you gain up to 2 of the cards they discarded; during your Starting Phase, skip your next Draw Phase, then remove 「Modesty」."
+  },
+  "skill_maneuver":{
+    "skill_type": "active",
+    "name_cn": "周旋",
+    "name_en": "Maneuver",
+    "description_cn": "弃牌阶段开始时，你可以将任意张手牌置于武将牌上，称为「旋」（至多五张）。当你使用牌时，你移去一张「旋」并摸一张牌；若你的手牌数不为场上唯一最多，你多摸X张牌（X为「旋」的数量）。出牌阶段结束后，你移去所有「旋」。",
+    "description_en": "At the start of your Discard Phase, you may place any number of hand cards on your General Card as 「Maneuver」 tokens (up to 5). Whenever you use a card, remove one 「Maneuver」 token and draw 1 card; if your hand card count is not the sole highest on the field, draw X additional cards (X = the number of remaining 「Maneuver」 tokens). After your Action Phase ends, remove all 「Maneuver」 tokens." 
+  },
+  "skill_imposing_rival":{
+    "skill_type": "convert",
+    "name_cn": "势敌",
+    "name_en": "Imposing Rival",
+    "description_cn": "转换技，锁定技，准备阶段，转换为阳；结束阶段，转换为阴。阳：你计算与其他角色的距离-1，你使用的黑色【杀】不能被响应。阴：其他角色计算与你的距离+1，你不能响应其他角色对你使用的红色【杀】。",
+    "description_en": "Convert Skill (Locked): Starting Phase — switch to Yang; End Phase — switch to Yin. Yang: When you calculate the distance to other characters, subtract 1. Black [Kill] cards you use cannot be responded to. Yin: When other characters calculate the distance to you, add 1. You cannot respond to red [Kill] cards other characters use against you."
+  },
+  "skill_merciful_release":{
+    "skill_type": "active",
+    "name_cn": "义释",
+    "name_en": "Merciful Release",
+    "description_cn": "当你对其他角色造成伤害时，你可以令此伤害-1并获得其装备区里的一张牌。",
+    "description_en": "When you deal damage to another character, you may reduce that damage by 1 and gain one card from their Equipment Zone."
+  },
+  "skill_sp_mounted_archery":{
+    "skill_type": "active",
+    "name_cn": "骑射",
+    "name_en": "Mounted Archery",
+    "description_cn": "你可以将一张装备牌当【酒】使用。你的手牌上限+X（X为你装备区里的牌数）。",
+    "description_en": "You may use an Equipment Card as [Wine]. Your Hand Limit is increased by X (X = the number of cards in your Equipment Zone)."
+  },
+  "skill_clear_sincerity":{
+    "skill_type": "active",
+    "name_cn": "简亮",
+    "name_en": "Clear Sincerity",
+    "description_cn": "摸牌阶段开始时，若你的手牌数不为全场最多，你可以令至多两名角色各摸一张牌。",
+    "description_en": "At the start of your Draw Phase, if your hand card count is not the highest on the field, you may have up to two characters each draw 1 card."
+          
+  },
+  "skill_perilous_alliance":{
+    "skill_type": "active",
+    "name_cn": "危盟",
+    "name_en": "Perilous Alliance",
+    "description_cn": "出牌阶段限一次，你可以获得一名其他角色的至多X张手牌（X为你的体力值），然后交给其等量的牌。若你给出的牌点数之和：大于获得的牌，你摸一张牌；小于获得的牌，你弃置其区域内的一张牌。",
+    "description_en": "Once per Action Phase, you may take up to X hand cards from another character (X = your current HP Value), then give them an equal number of cards in return. If the total rank of the cards you gave is: greater than the cards you took — draw 1 card; less than the cards you took — discard 1 card from their zone."    
+  },
+  "skill_keen_observation":{
+        "skill_type": "active",
+        "name_cn": "观微",
+        "name_en": "Keen Observation",
+        "description_cn": "每回合限一次，一名角色的出牌阶段结束时，若其本回合使用过至少两张牌且这些牌花色均相同，你可以弃置一张牌。若如此做，其摸两张牌，然后其获得一个额外的出牌阶段。",
+        "description_en": "Once per turn, at the end of a character's Action Phase, if they used at least 2 cards this turn and all of those cards share the same suit, you may discard 1 card. If you do, that character draws 2 cards and then gains an additional Action Phase."
+          
+  },
+  "skill_impartial_clarity":{
+    "skill_type": "locked",
+    "name_cn": "公清",
+    "name_en": "Impartial Clarity",
+    "description_cn": "锁定技，当你受到伤害时，若伤害来源的攻击范围：小于3，此伤害改为1；大于3，此伤害+1。",
+    "description_en": "Locked: When you receive damage, if the Attack Range of the damage source is: less than 3 — reduce that damage to 1; greater than 3 — that damage is increased by 1."   
   }
 }

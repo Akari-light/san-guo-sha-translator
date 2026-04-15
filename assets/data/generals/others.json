@@ -5512,7 +5512,7 @@
   },
   {
     "id": "J_QUN014",
-    "standard_id": "",
+    "standard_id": "char_kongrong",
     "name_cn": "孔融",
     "name_en": "Kong Rong",
     "gender": "Male",
@@ -5534,6 +5534,96 @@
     "skills": [
       "skill_upright_benevolence",
       "skill_sharp_remonstrance"
+    ]
+  },
+  {
+    "id": "SP_QUN148",
+    "standard_id": "char_zhanghe",
+    "name_cn": "张郃",
+    "name_en": "Zhang He",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "过牌", "困难"],
+    "traits_en": ["Control", "Card Flow", "High Difficulty"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_maneuver"
+    ]
+  },
+  {
+    "id": "SP_QUN151",
+    "standard_id": "char_huangzhong",
+    "name_cn": "黄忠",
+    "name_en": "Huang Zhong",
+    "gender": "Male",
+    "faction": "Qun",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": ["进攻", "控制", "转化大师"],
+    "traits_en": ["Aggressive", "Control", "Converter"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_imposing_rival",
+      "skill_merciful_release",
+      "skill_sp_mounted_archery"
+    ]
+  },
+  {
+    "id": "SP_SHU073",
+    "standard_id": "char_dengzhi",
+    "name_cn": "邓芝",
+    "name_en": "Deng Zhi",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 2.0,
+    "traits_cn": ["辅助", "过牌", "困难"],
+    "traits_en": ["Support", "Card Flow", "High Difficulty"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_clear_sincerity",
+      "skill_perilous_alliance"
+    ]
+  },
+  {
+    "id": "SP_WU050",
+    "standard_id": "char_panjun",
+    "name_cn": "潘濬",
+    "name_en": "Pan Jun",
+    "gender": "Male",
+    "faction": "Wu",
+    "health": 3,
+    "power_index": 2.5,
+    "traits_cn": ["控制", "辅助", "困难"],
+    "traits_en": ["Control", "Support", "High Difficulty"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_keen_observation",
+      "skill_impartial_clarity"
+    ]
+  },
+  {
+    "id": "SP_SHU090-2",
+    "standard_id": "char_huojun",
+    "name_cn": "霍峻",
+    "name_en": "Huo Jun",
+    "gender": "Male",
+    "faction": "Shu",
+    "health": 4,
+    "power_index": 2.5,
+    "traits_cn": ["防御", "控制", "困难"],
+    "traits_en": ["Defensive", "Control", "High Difficulty"],
+    "expansion": "Other",
+    "faq": [],
+    "skills": [
+      "skill_lone_chokehold",
+      "skill_await_and_strike"
     ]
   }
 ]
