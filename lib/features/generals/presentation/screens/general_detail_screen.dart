@@ -534,7 +534,7 @@ class _IdentityColumn extends StatelessWidget {
         Text(
           card.gender == 'Female'
               ? (isEnglish ? '♀  Female' : '♀  女')
-              : (isEnglish ? '♂‚  Male' : '♂‚  男'),
+              : (isEnglish ? '♂  Male' : '♂  男'),
           style: TextStyle(
             fontSize: 12,
             letterSpacing: 1,
@@ -1088,7 +1088,7 @@ class _VersionSegment extends StatelessWidget {
 
         const SizedBox(height: 8),
 
-        //  Meta line: expansion label Â· skill count 
+        //   Meta line: expansion label · skill count
         Row(
           children: [
             Text(
@@ -1101,7 +1101,7 @@ class _VersionSegment extends StatelessWidget {
               ),
             ),
             Text(
-              '  Â·  ',
+              '  ·  ',
               style: TextStyle(
                 fontSize: 13,
                 color: theme.hintColor.withValues(alpha: 0.3),
