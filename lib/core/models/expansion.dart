@@ -15,12 +15,12 @@ enum Expansion {
   mythReturns,   // 神话再临     — original card index   (was: shenHua)
   heroesSoul,    // 一将之魂     — prefix: YJ_
   limitBreak,    // 界限突破     — prefix: JX_
-  demon,         // 魔武将       — prefix: MO_
-  god,           // 神将         — prefix: LE  (no separator)
   shiji,         // 始计篇       — original card index
   mouGong,       // 谋攻篇       — prefix: MG_
   doudizhu,      // 斗地主       — original card index
-  other;         // 其他         — original card index
+  demon,         // 魔武将       — prefix: MO_
+  other,         // 其他         — original card index
+  god;           // 神将         — prefix: LE  (no separator)
 
   static Expansion fromString(String value) {
     switch (value) {
@@ -31,8 +31,8 @@ enum Expansion {
       case 'Art of War':        return Expansion.shiji;
       case 'Strategic Assault': return Expansion.mouGong;
       case 'Doudizhu':          return Expansion.doudizhu;
-      case 'Other':             return Expansion.other;
       case 'Demon':             return Expansion.demon;      
+      case 'Other':             return Expansion.other;
       case 'God':               return Expansion.god;
       default:                  return Expansion.standard;
     }
@@ -47,8 +47,8 @@ enum Expansion {
       case Expansion.shiji:       return '计';
       case Expansion.mouGong:     return '谋';
       case Expansion.doudizhu:    return '斗';
-      case Expansion.other:       return 'SP';
       case Expansion.demon:       return '魔';
+      case Expansion.other:       return 'SP';
       case Expansion.god:         return '神';
     }
   }
@@ -62,8 +62,8 @@ enum Expansion {
       case Expansion.shiji:       return 'Art of War';
       case Expansion.mouGong:     return 'Strategic Assault';
       case Expansion.doudizhu:    return 'Doudizhu';
-      case Expansion.other:       return 'Other';
       case Expansion.demon:       return 'Demon';
+      case Expansion.other:       return 'Other';
       case Expansion.god:         return 'God';      
     }
   }
@@ -77,8 +77,8 @@ enum Expansion {
       case Expansion.shiji:       return '始计篇';
       case Expansion.mouGong:     return '谋攻篇';
       case Expansion.doudizhu:    return '斗地主';
-      case Expansion.other:       return '其他';
       case Expansion.demon:       return '魔武将';
+      case Expansion.other:       return '其他';
       case Expansion.god:         return '神将';      
     }
   }
