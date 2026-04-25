@@ -31,10 +31,14 @@ class LocalRoomGameSessionHostServer {
   final String hostAddress;
   _LocalRoomState? _state;
   final List<_Subscriber> _subscribers = <_Subscriber>[];
+  final StreamController<GameSessionRoom?> _roomController =
+      StreamController<GameSessionRoom?>.broadcast();
 
   int get port => _server.port;
 
   GameSessionRoom? get currentRoom => _state?.room;
+
+  Stream<GameSessionRoom?> watchRoom() => _roomController.stream;
 
   Future<void> close() async {
     final state = _state;
@@ -47,6 +51,7 @@ class LocalRoomGameSessionHostServer {
     }
     _subscribers.clear();
     await _server.close(force: true);
+    await _roomController.close();
   }
 
   Future<GameSessionRoom> createRoom({
@@ -405,12 +410,14 @@ class LocalRoomGameSessionHostServer {
   Future<void> _broadcastRoom() async {
     final state = _state;
     if (state == null || state.room.status == 'closed') return;
+    _roomController.add(state.room);
     for (final subscriber in [..._subscribers]) {
       await subscriber.send('room', state.room.toJson());
     }
   }
 
   Future<void> _broadcastClosed(String roomCode) async {
+    _roomController.add(null);
     for (final subscriber in [..._subscribers]) {
       await subscriber.send('closed', {'roomCode': roomCode});
     }

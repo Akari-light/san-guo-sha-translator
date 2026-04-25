@@ -58,6 +58,92 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
     );
   }
 
+  Future<void> _showInviteSheet() async {
+    final room = widget.controller.room;
+    if (room == null || !mounted) return;
+
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) {
+        final theme = Theme.of(context);
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(18, 8, 18, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Room QR',
+                  style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Ask nearby players to join the same Wi-Fi network or personal hotspot, then scan this QR or import the room invite text.',
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.hintColor,
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 18),
+                Center(
+                  child: SessionSurface(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: QrImageView(
+                        data: room.invitePayload,
+                        size: 180,
+                        backgroundColor: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 18),
+                Text(
+                  room.roomCode,
+                  style: theme.textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 3,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Host: ${room.coordinator?.displayName ?? room.coordinatorPlayerId}',
+                  style: theme.textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 14),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    SessionActionButton(
+                      label: 'Copy room code',
+                      icon: Icons.tag_rounded,
+                      onPressed: () => _copyValue(
+                        room.roomCode,
+                        'Room code copied.',
+                      ),
+                    ),
+                    SessionActionButton(
+                      label: 'Copy room invite',
+                      icon: Icons.copy_rounded,
+                      onPressed: () => _copyValue(
+                        room.invitePayload,
+                        'Room invite copied.',
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Future<void> _pickMyGeneral() async {
     final generals = await GeneralLoader().getGenerals();
     if (!mounted) return;
@@ -94,8 +180,13 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _showInviteSheet,
+        icon: const Icon(Icons.qr_code_2_rounded),
+        label: const Text('Room QR'),
+      ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(18, 18, 18, 40),
+        padding: const EdgeInsets.fromLTRB(18, 18, 18, 96),
         children: [
           SessionSurface(
             child: Padding(
@@ -103,15 +194,11 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SessionSectionTitle('Invite'),
+                  const SessionSectionTitle('Room'),
                   const SizedBox(height: 12),
-                  Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    crossAxisAlignment: WrapCrossAlignment.start,
+                  Row(
                     children: [
-                      SizedBox(
-                        width: 240,
+                      Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -129,7 +216,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              'Share the QR for the fastest join. Nearby players should be on the same Wi-Fi network or personal hotspot, and room code only works after the host room invite has already been imported on their device.',
+                              'Tap the Room QR button below to show the QR code and join instructions.',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                             const SizedBox(height: 12),
@@ -147,40 +234,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 14),
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              children: [
-                                SessionActionButton(
-                                  label: 'Copy room code',
-                                  icon: Icons.tag_rounded,
-                                  onPressed: () => _copyValue(
-                                    room.roomCode,
-                                    'Room code copied.',
-                                  ),
-                                ),
-                                SessionActionButton(
-                                  label: 'Copy room invite',
-                                  icon: Icons.copy_rounded,
-                                  onPressed: () => _copyValue(
-                                    room.invitePayload,
-                                    'Room invite copied.',
-                                  ),
-                                ),
-                              ],
-                            ),
                           ],
-                        ),
-                      ),
-                      SessionSurface(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: QrImageView(
-                            data: room.invitePayload,
-                            size: 124,
-                            backgroundColor: Colors.white,
-                          ),
                         ),
                       ),
                     ],
