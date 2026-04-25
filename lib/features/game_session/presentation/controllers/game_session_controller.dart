@@ -44,6 +44,12 @@ class GameSessionController extends ChangeNotifier {
     notifyListeners();
   }
 
+  void showRoom() {
+    if (_room == null) return;
+    _page = GameSessionPage.room;
+    notifyListeners();
+  }
+
   void showScanner() {
     _page = GameSessionPage.scanner;
     notifyListeners();
@@ -93,7 +99,14 @@ class GameSessionController extends ChangeNotifier {
   }
 
   Future<void> suspend() => _repository.suspend();
-  Future<void> resume() => _repository.resume();
+
+  Future<void> resume() async {
+    await _repository.resume();
+    if (_room != null && _page != GameSessionPage.scanner) {
+      _page = GameSessionPage.room;
+      notifyListeners();
+    }
+  }
 
   void clearError() {
     _error = null;

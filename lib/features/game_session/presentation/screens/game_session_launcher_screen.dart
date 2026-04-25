@@ -72,6 +72,40 @@ class _GameSessionLauncherScreenState extends State<GameSessionLauncherScreen> {
               ),
             ),
           ],
+          if (controller.room != null) ...[
+            const SizedBox(height: 18),
+            SessionSurface(
+              child: Padding(
+                padding: const EdgeInsets.all(18),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SessionSectionTitle('Current Room'),
+                    const SizedBox(height: 12),
+                    Text(
+                      'You already have an active Game Session open on this device.',
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Room ${controller.room!.roomCode}',
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.8,
+                      ),
+                    ),
+                    const SizedBox(height: 14),
+                    SessionActionButton(
+                      label: 'Open current room',
+                      icon: Icons.meeting_room_rounded,
+                      primary: true,
+                      onPressed: controller.showRoom,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
           const SizedBox(height: 18),
           SessionSurface(
             child: Padding(
