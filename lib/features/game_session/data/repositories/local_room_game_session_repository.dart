@@ -26,6 +26,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
 
   LocalRoomGameSessionHostServer? _hostServer;
   LocalRoomGameSessionClient? _client;
+  StreamSubscription<GameSessionRoom?>? _hostWatchSubscription;
   StreamSubscription<GameSessionRoom?>? _clientWatchSubscription;
   GameSessionRoom? _currentRoom;
   GameSessionInvite? _activeInvite;
@@ -80,6 +81,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
       _localPlayerId = playerId;
       _activeInvite = invite;
       _cachedInvitesByRoomCode[invite.roomCode] = invitePayload;
+      await _startHostWatch(hostServer);
       _applyRoom(room);
       return room;
     } catch (_) {
@@ -291,6 +293,19 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     );
   }
 
+  Future<void> _startHostWatch(LocalRoomGameSessionHostServer hostServer) async {
+    await _hostWatchSubscription?.cancel();
+    _hostWatchSubscription = hostServer.watchRoom().listen((room) {
+      if (room == null) {
+        _currentRoom = null;
+        _activeInvite = null;
+        _controller.add(null);
+        return;
+      }
+      _applyRoom(room);
+    });
+  }
+
   Future<void> _stopClientWatch({required bool closeClient}) async {
     await _clientWatchSubscription?.cancel();
     _clientWatchSubscription = null;
@@ -330,6 +345,8 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
 
   Future<void> _clearSession({required bool closeConnections}) async {
     if (closeConnections) {
+      await _hostWatchSubscription?.cancel();
+      _hostWatchSubscription = null;
       await _stopClientWatch(closeClient: true);
       final hostServer = _hostServer;
       _hostServer = null;
