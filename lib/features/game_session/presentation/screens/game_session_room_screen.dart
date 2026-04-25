@@ -6,8 +6,10 @@ import '../../../../core/navigation/app_router.dart';
 import '../../../generals/data/models/general_card.dart';
 import '../../../generals/data/repository/general_loader.dart';
 import '../../../generals/presentation/screens/general_detail_screen.dart';
+import '../../domain/models/pending_session_selection.dart';
 import '../../domain/models/game_session_player.dart';
 import '../controllers/game_session_controller.dart';
+import 'game_session_general_picker_screen.dart';
 import '../widgets/game_session_widgets.dart';
 
 class GameSessionRoomScreen extends StatefulWidget {
@@ -145,18 +147,19 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
   }
 
   Future<void> _pickMyGeneral() async {
-    final generals = await GeneralLoader().getGenerals();
-    if (!mounted) return;
-    final selected = await showModalBottomSheet<GeneralCard>(
-      context: context,
-      isScrollControlled: true,
-      builder: (context) => _GeneralPickerSheet(generals: generals),
+    final selection = await Navigator.of(context).push<PendingSessionSelection>(
+      detailRoute(const GameSessionGeneralPickerScreen()),
     );
-    if (selected == null) return;
-    await widget.controller.setMyGeneral(selected.id);
+    if (selection == null) return;
+    await widget.controller.setMyGeneral(
+      selection.generalId,
+      skinId: selection.skinId,
+    );
     if (!mounted) return;
+    final selected = _generalMap[selection.generalId];
+    final selectedLabel = selected?.nameEn ?? selection.generalId;
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${selected.nameEn} is now your session General.')),
+      SnackBar(content: Text('$selectedLabel is now your session General.')),
     );
   }
 
@@ -383,71 +386,6 @@ class _PlayerRow extends StatelessWidget {
                 Icons.chevron_right_rounded,
                 color: Theme.of(context).hintColor,
               ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _GeneralPickerSheet extends StatefulWidget {
-  const _GeneralPickerSheet({required this.generals});
-
-  final List<GeneralCard> generals;
-
-  @override
-  State<_GeneralPickerSheet> createState() => _GeneralPickerSheetState();
-}
-
-class _GeneralPickerSheetState extends State<_GeneralPickerSheet> {
-  final _queryController = TextEditingController();
-  String _query = '';
-
-  @override
-  void dispose() {
-    _queryController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final filtered = widget.generals.where((general) {
-      if (_query.trim().isEmpty) return true;
-      return general.matchesQuery(_query);
-    }).toList(growable: false);
-
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(18, 18, 18, 24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextField(
-              controller: _queryController,
-              decoration: const InputDecoration(
-                labelText: 'Search General',
-                hintText: 'Cao Cao / ?? / wei001',
-              ),
-              onChanged: (value) => setState(() => _query = value),
-            ),
-            const SizedBox(height: 14),
-            Flexible(
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemCount: filtered.length,
-                separatorBuilder: (_, _) => const Divider(height: 1),
-                itemBuilder: (context, index) {
-                  final general = filtered[index];
-                  return ListTile(
-                    dense: true,
-                    title: Text(general.nameEn),
-                    subtitle: Text('${general.nameCn} • ${general.id}'),
-                    onTap: () => Navigator.of(context).pop(general),
-                  );
-                },
-              ),
-            ),
           ],
         ),
       ),
