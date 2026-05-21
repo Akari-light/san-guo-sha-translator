@@ -28,7 +28,7 @@
       {
         "q_cn": "发动【雌雄双股剑】时，被攻击者可以弃置装备区的牌或判定区的延时锦囊牌吗？",
         "a_cn": "不能。只能弃置手牌。",
-        "q_en": "Can the target discard equipment or time-delay tool cards when resolving [Twin Swords]?",
+        "q_en": "Can the target discard equipment or time-delay Tool Cards when resolving [Twin Swords]?",
         "a_en": "No. Only hand cards can be discarded."
       },
       {
@@ -80,7 +80,7 @@
       "锁定技，若你使用的【杀】是你最后的手牌，则此【杀】可以多选择两个目标（至多三个目标）。若任意目标使用【闪】抵消了此【杀】，则此【杀】对其余目标均无效。"
     ],
     "effect_en": [
-      "Locked: If the [Kill] you use is your last hand card, it may target up to two additional characters (up to three targets total). If any target uses a [Dodge] to negate the [Kill], the [Kill] is also negated for all remaining targets."
+      "Locked Skill: If the [Kill] you use is your last hand card, it may target up to two additional characters (up to three targets total). If any target uses a [Dodge] to Negate the [Kill], the [Kill] is also negated for all remaining targets."
     ],
     "faq": [
       {
@@ -132,7 +132,7 @@
       "每回合出牌阶段开始时，你可以摸一张牌。当你使用【杀】对目标角色造成伤害时，你可以选择一张该角色的装备牌，将其转移至你的装备区。"
     ],
     "effect_en": [
-      "At the start of your Action Phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own Equipment Zone."
+      "At the start of your Play Phase each turn, you may draw one card. When your [Kill] deals damage to a target, you may choose one of their equipment cards and move it into your own Equipment Zone."
     ],
     "faq": [
       {
@@ -160,7 +160,7 @@
       "锁定技，当你使用【杀】对目标角色造成伤害时，若该角色没有手牌，则此伤害+1。"
     ],
     "effect_en": [
-      "Locked: When your [Kill] deals damage to a target, if that target has no hand cards, the damage dealt is increased by 1."
+      "Locked Skill: When your [Kill] deals damage to a target, if that target has no hand cards, the damage dealt +1."
     ],
     "faq": [
       {
@@ -184,7 +184,7 @@
       {
         "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动【天妒】将判定牌收入手牌，此时是否受到+1伤害？",
         "a_cn": "不受+1伤害。郭嘉通过【天妒】获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
-        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates [Genius] to take the judgment card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
+        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates [Genius] to take the Judgment Card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
         "a_en": "No. Guo Jia now has a hand card (from [Genius]), so the condition for the bonus is no longer met at the time damage is resolved."
       }
     ]
@@ -320,13 +320,13 @@
       "锁定技，当你使用【杀】指定一个目标后，令该目标的防具本次无效。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill] targeting a character, that character's equipped armor is Nullified for that [Kill]."
+      "Locked Skill: When you use [Kill] targeting a character, that character's equipped armor is Nullified for that [Kill]."
     ],
     "faq": [
       {
         "q_cn": "【青釭剑】能使【仁王盾】无效吗？",
         "a_cn": "可以。【仁王盾】视为防具，【青釭剑】可令其在本次【杀】中无效。",
-        "q_en": "Can [Qing Gang Sword] negate [Vajra Shield]?",
+        "q_en": "Can [Qing Gang Sword] Negate [Vajra Shield]?",
         "a_en": "Yes. [Vajra Shield] is treated as armor, so [Qing Gang Sword] Nullifies it for that [Kill]."
       },
       {
@@ -350,7 +350,7 @@
     ],
     "effect_en": [
       "When your [Kill] is negated by a target's [Dodge], you may immediately use another [Kill] against that same target.",
-      "Locked: When you use [Kill], all target characters cannot reveal (flip face-up) their general cards until the [Kill] finishes resolving."
+      "Locked Skill: When you use [Kill], all target characters cannot reveal (flip face-up) their general cards until the [Kill] finishes resolving."
     ],
     "faq": [
       {
@@ -406,13 +406,13 @@
       "锁定技，与你势力相同的其他角色攻击范围+1。"
     ],
     "effect_en": [
-      "Locked: All other characters of the same faction as you gain +1 attack range."
+      "Locked Skill: All other characters of the same faction as you gain +1 Attack Range."
     ],
     "faq": [
       {
         "q_cn": "【吴六剑】是否对自己生效？",
         "a_cn": "不对，只对与你势力相同的其他角色生效。",
-        "q_en": "Does [Six Swords of Wu] increase the attacker's own attack range?",
+        "q_en": "Does [Six Swords of Wu] increase the attacker's own Attack Range?",
         "a_en": "No. The effect only applies to other characters of the same faction."
       },
       {
@@ -486,7 +486,7 @@
       "锁定技，你使用【杀】无次数限制。"
     ],
     "effect_en": [
-      "Locked: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
+      "Locked Skill: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
     ],
     "faq": [
       {
@@ -542,7 +542,7 @@
       "每回合限两次，你使用【杀】或普通锦囊牌可以增加一个目标；此牌离开你的装备区后，你回复1点体力；此牌置入弃牌堆时移出游戏。"
     ],
     "effect_en": [
-      "Twice per turn, when you use [Kill] or a Non Time-Delay Tool card, you may add one additional target. When this card leaves your Equipment Zone, you recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
+      "Twice per turn, when you use [Kill] or a Non-Time-Delayed Tool Card, you may add one additional target. When this card leaves your Equipment Zone, you recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -557,7 +557,7 @@
       "当你使用【杀】指定目标后，你可以令其进行判定，若结果为黑桃，其受到3点雷电伤害；梅花，其受到1点雷电伤害，你回复1点体力并摸一张牌；此牌置入弃牌堆时移出游戏。"
     ],
     "effect_en": [
-      "After you use [Kill] and designate a target, you may have that character perform a Judgment: if the result is Spades, they take 3 lightning damage; if Clubs, they take 1 lightning damage and you recover 1 HP and draw 1 card. When this card enters the Discard Pile, it is instead Removed from the Game."
+      "After you use [Kill] and designate a target, you may have that character perform a Judgment: if the result is Spades, they take 3 Lightning damage; if Clubs, they take 1 Lightning damage and you recover 1 HP and draw 1 card. When this card enters the Discard Pile, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -572,7 +572,7 @@
       "锁定技，当你使用【杀】指定目标后，你令其横置。"
     ],
     "effect_en": [
-      "Locked: After you use [Kill] and designate a target, place that character's General Card in horizontal position."
+      "Locked Skill: After you use [Kill] and designate a target, place that character's General Card in horizontal position."
     ],
     "faq": []
   },
@@ -587,7 +587,7 @@
       "出牌阶段，当你一次失去至少两张手牌后，你可以弃置一名其他角色等量的牌。"
     ],
     "effect_en": [
-      "During your Action Phase, after you lose at least 2 hand cards at once, you may discard an equal number of cards from one other character."
+      "During your Play Phase, after you lose at least 2 hand cards at once, you may discard an equal number of cards from one other character."
     ],
     "faq": []
   },
@@ -632,7 +632,7 @@
       "当你使用的【杀】被抵消时，你可以失去1点体力。然后获得此【杀】并摸一张牌，本回合你使用【杀】的次数+1。"
     ],
     "effect_en": [
-      "When a [Kill] you use is negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] frequency limit increases by 1 this turn."
+      "When a [Kill] you use is negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] usage limit increases by 1 this turn."
     ],
     "faq": []
   },
@@ -662,7 +662,7 @@
       "锁定技，你使用【杀】无视目标角色防具，其不能使用或打出手牌直到结算完成。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill], Ignore the target character's armor. That character cannot use or play out hand cards until the resolution is complete."
+      "Locked Skill: When you use [Kill], Ignore the target character's armor. That character cannot use or play hand cards until the resolution is complete."
     ],
     "faq": []
   },
@@ -677,7 +677,7 @@
       "每回合限两次，当你使用【杀】对目标角色造成伤害时，你可以弃置一张牌令此伤害+1；出牌阶段，你使用【杀】的次数+1；此牌置入弃牌堆时移出游戏。"
     ],
     "effect_en": [
-      "Twice per turn, when your [Kill] deals damage to a target character, you may discard 1 card to increase that damage by 1. During your Action Phase, your [Kill] frequency limit increases by 1. When this card enters the Discard Pile, it is instead Removed from the Game."
+      "Twice per turn, when your [Kill] deals damage to a target character, you may discard 1 card to increase that damage by 1. During your Play Phase, your [Kill] usage limit increases by 1. When this card enters the Discard Pile, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -692,7 +692,7 @@
       "锁定技，你使用的红色【杀】不能被响应。"
     ],
     "effect_en": [
-      "Locked: Red [Kill] cards you use cannot be responded to."
+      "Locked Skill: Red [Kill] cards you use cannot be responded to."
     ],
     "faq": []
   },
@@ -722,7 +722,7 @@
       "锁定技，你使用【杀】无视目标角色防具；当你使用【杀】对目标角色造成伤害时，若其未受伤，此伤害+1。"
     ],
     "effect_en": [
-      "Locked: When you use [Kill], Ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, that damage is increased by 1."
+      "Locked Skill: When you use [Kill], Ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, that damage +1."
     ],
     "faq": []
   },
@@ -780,7 +780,7 @@
       "出牌阶段，当你使用牌指定唯一目标后，你可以弃置两张牌，令其本回合防具无效且不能使用或打出牌。"
     ],
     "effect_en": [
-      "During your Action Phase, after you use a card and designate exactly one target, you may discard 2 cards — that character's armor is Nullified for this turn and they cannot use or play cards."
+      "During your Play Phase, after you use a card and designate exactly one target, you may discard 2 cards — that character's armor is Nullified for this turn and they cannot use or play cards."
     ],
     "faq": []
   },
@@ -874,7 +874,7 @@
       "你的回合外，每当你使用或打出了一张黑色手牌 (若为使用则在它结算之前)，你可以立即对你攻击范围内的任意一名角色使用一张【杀】。"
     ],
     "effect_en": [
-      "Outside of your turn, whenever you use or play out a black hand card (if using, before it resolves), you may immediately use a [Kill] against any one character within your Attack Range."
+      "Outside of your turn, whenever you use or play a black hand card (if using, before it resolves), you may immediately use a [Kill] against any one character within your Attack Range."
     ],
     "faq": [
       {
@@ -896,7 +896,7 @@
       "当你使用非延时类锦囊对其他玩家造成伤害时，你可立即摸1张手牌。"
     ],
     "effect_en": [
-      "When you deal damage to another character by using a Non Time-Delay Tool card, you may immediately draw 1 card."
+      "When you deal damage to another character by using a Non-Time-Delayed Tool Card, you may immediately draw 1 card."
     ],
     "faq": []
   },
@@ -911,7 +911,7 @@
       "锁定技，你的一张【杀】最多可以制定2个目标"
     ],
     "effect_en": [
-      "Locked: Your [Kill] may designate up to 2 targets."
+      "Locked Skill: Your [Kill] may designate up to 2 targets."
     ],
     "faq": []
   },
@@ -926,7 +926,7 @@
       "任何时候,你每打出一张【杀】，则立即摸1张手牌。"
     ],
     "effect_en": [
-      "At any time, whenever you play out a [Kill], immediately draw 1 card."
+      "At any time, whenever you play a [Kill], immediately draw 1 card."
     ],
     "faq": []
   },
@@ -956,7 +956,7 @@
       "在任意角色的判定牌生效前,你可以打出一张手牌代替之。"
     ],
     "effect_en": [
-      "Before any character's Judgment Card takes effect, you may play out a hand card to substitute for it."
+      "Before any character's Judgment Card takes effect, you may play a hand card to substitute for it."
     ],
     "faq": []
   },
@@ -971,7 +971,7 @@
       "当你打出的【杀】被闪避后，可再丢弃一张【杀】使目标受到1点伤害。"
     ],
     "effect_en": [
-      "When a [Kill] you play out is negated by a [Dodge], you may discard a [Kill] to deal 1 damage to that target."
+      "When a [Kill] you play is negated by a [Dodge], you may discard a [Kill] to deal 1 damage to that target."
     ],
     "faq": []
   },
@@ -986,7 +986,7 @@
       "你所指定【决斗】的角色均不能出【杀】抵御。"
     ],
     "effect_en": [
-      "Characters you target with [Duel] cannot play out [Kill] to respond."
+      "Characters you target with [Duel] cannot play [Kill] to respond."
     ],
     "faq": []
   },
@@ -1016,7 +1016,7 @@
       "你所打出红色的【杀】均需要2张【闪】才能闪避。"
     ],
     "effect_en": [
-      "Red [Kill] cards you use require the target to play out 2 [Dodge] cards to negate them."
+      "Red [Kill] cards you use require the target to play 2 [Dodge] cards to Negate them."
     ],
     "faq": []
   },
@@ -1031,7 +1031,7 @@
       "你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"
     ],
     "effect_en": [
-      "When you play out a [Kill], you may discard 2 hand cards to increase that [Kill]'s damage by 1."
+      "When you play a [Kill], you may discard 2 hand cards to increase that [Kill]'s damage by 1."
     ],
     "faq": []
   },
@@ -1063,7 +1063,7 @@
       "锁定技，你的打出的红色牌，目标角色不能出牌响应。失去此武器后，你额外增加一倍的体力上限值。"
     ],
     "effect_en": [
-      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+      "Locked Skill: Red cards you play cannot be responded to. When you lose this weapon, your Max HP is doubled."
     ],
     "faq": []
   },
@@ -1078,7 +1078,7 @@
       "锁定技，你的打出的红色牌，目标角色不能出牌响应。失去此武器后，你额外增加一倍的体力上限值。"
     ],
     "effect_en": [
-      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+      "Locked Skill: Red cards you play cannot be responded to. When you lose this weapon, your Max HP is doubled."
     ],
     "faq": []
   },
@@ -1108,7 +1108,7 @@
       "你使用【杀】指定异性为目标时，你可以选择一项：此【杀】不可被抵消；此【杀】造成的伤害+1。"
     ],
     "effect_en": [
-      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be negated; 2. The damage dealt by this [Kill] is increased by 1."
+      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be negated; 2. The damage dealt by this [Kill] +1."
     ],
     "faq": []
   },
@@ -1123,7 +1123,7 @@
       "锁定技，每当你使用【杀】未造成伤害，你对距离1另一名角色造成1点伤害。"
     ],
     "effect_en": [
-      "Locked: Whenever a [Kill] you use deals no damage, deal 1 damage to another character at distance 1."
+      "Locked Skill: Whenever a [Kill] you use deals no damage, deal 1 damage to another character at distance 1."
     ],
     "faq": []
   },
@@ -1138,7 +1138,7 @@
       "锁定技，每当你使用【杀】造成伤害时，若目标角色未受伤，你令伤害+1。"
     ],
     "effect_en": [
-      "Locked: Whenever your [Kill] deals damage to a target character, if that character is Unwounded, that damage is increased by 1."
+      "Locked Skill: Whenever your [Kill] deals damage to a target character, if that character is Unwounded, that damage +1."
     ],
     "faq": []
   },
@@ -1153,7 +1153,7 @@
       "锁定技，使用【杀】造成伤害后，目标扣减1点体力上限。"
     ],
     "effect_en": [
-      "Locked: After your [Kill] deals damage, the target character's Max HP is reduced by 1."
+      "Locked Skill: After your [Kill] deals damage, the target character's Max HP -1."
     ],
     "faq": []
   },
@@ -1185,7 +1185,7 @@
       "锁定技，回合内，当你打出第一张点数为奇数的【杀】时，可以摸7张牌。失去此装备后，你回复体力至上限值。"
     ],
     "effect_en": [
-      "Locked: During your turn, when you first play out a [Kill] with an odd rank, you may draw 7 cards. When you lose this weapon, you recover HP up to your Max HP."
+      "Locked Skill: During your turn, when you first play a [Kill] with an odd rank, you may draw 7 cards. When you lose this weapon, you recover HP up to your Max HP."
     ],
     "faq": []
   },
@@ -1200,7 +1200,7 @@
       "锁定技，你的结束阶段，对场上装备区内有牌的角色，依次造成2点火属性的伤害。并且你免疫火属性的伤害。"
     ],
     "effect_en": [
-      "Locked: During your End Phase, deal 2 fire damage in sequence to each character on the field who has cards in their Equipment Zone. You are immune to fire damage."
+      "Locked Skill: During your End Phase, deal 2 Fire damage in sequence to each character on the field who has cards in their Equipment Zone. You are immune to Fire damage."
     ],
     "faq": []
   },
@@ -1215,7 +1215,7 @@
       "你的打出的【杀】可定义为禁技杀，并且额外指定多一名目标角色。 失去此牌后，你对一名角色造成3点体力伤害。"
     ],
     "effect_en": [
-      "[Kill] cards you play out may be designated as Skill-Suppressing [Kill]s, and may designate one additional target. When you lose this weapon, deal 3 damage to one character."
+      "[Kill] cards you play may be designated as Skill-Suppressing [Kill]s, and may designate one additional target. When you lose this weapon, deal 3 damage to one character."
     ],
     "faq": []
   },
@@ -1245,7 +1245,7 @@
       "锁定技，你的【杀】无视目标角色的防具。若你手牌大于或血量小于目标角色，此【杀】不能被响应，且伤害+1。"
     ],
     "effect_en": [
-      "Locked: Your [Kill] Ignores the target character's armor. If your hand card count is greater than, or your HP Value is less than, the target's, that [Kill] cannot be responded to and its damage is increased by 1."
+      "Locked Skill: Your [Kill] Ignores the target character's armor. If your hand card count is greater than, or your HP Value is less than, the target's, that [Kill] cannot be responded to and its damage +1."
     ],
     "faq": []
   },
@@ -1260,7 +1260,7 @@
       "锁定技，你打出的红色牌，目标角色不能做出响应。失去此武器后，你额外增加一倍的体力上限值。"
     ],
     "effect_en": [
-      "Locked: Red cards you play out cannot be responded to. When you lose this weapon, your Max HP is doubled."
+      "Locked Skill: Red cards you play cannot be responded to. When you lose this weapon, your Max HP is doubled."
     ],
     "faq": []
   },
@@ -1290,7 +1290,7 @@
       "锁定技，其它角色的准备阶段，若已受伤，需弃置2张牌，或受到1点普通伤害。直到回合结束，不能保留黑色手牌。"
     ],
     "effect_en": [
-      "Locked: During other characters' Starting Phase, if they are Wounded, they must discard 2 cards or receive 1 normal damage. Until the end of their turn, they cannot retain black hand cards."
+      "Locked Skill: During other characters' Preparation Phase, if they are Wounded, they must discard 2 cards or receive 1 normal damage. Until the end of their turn, they cannot retain black hand cards."
     ],
     "faq": []
   },
@@ -1305,7 +1305,7 @@
       "锁定技，你对目标角色打出的【杀】视为带有「毒」的杀。造成伤害后，该角色进入「中毒」状态。"
     ],
     "effect_en": [
-      "Locked: [Kill] cards you play out against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
+      "Locked Skill: [Kill] cards you play against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
     ],
     "faq": []
   },
@@ -1320,7 +1320,7 @@
       "出牌阶段限一次，你可以弃置一张黑色牌，然后将所有手牌置入弃牌堆并摸等量的牌。"
     ],
     "effect_en": [
-      "Once per Action Phase, you may discard one black card, then place all your hand cards into the Discard Pile and draw an equal number of cards."
+      "Once per Play Phase, you may discard one black card, then place all your hand cards into the Discard Pile and draw an equal number of cards."
     ],
     "faq": []
   }
