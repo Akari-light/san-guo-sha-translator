@@ -6,12 +6,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名区域里有牌的其他角色使用。弃置该角色区域内的一张牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character who has at least one card in any zone. Discard one card from that character's zone."
+      "Play Phase: use this card on another character who has at least one card in any zone. Discard one card from that character's zone."
     ],
     "faq": []
   },
@@ -22,12 +22,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名有手牌的其他角色使用。该角色展示一张手牌，然后你可以弃置一张与展示牌颜色相同的手牌，令该角色受到1点火焰伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character who has hand cards. That character reveals one hand card. You may discard a hand card of the same color to deal 1 fire damage to them."
+      "Play Phase: use this card on another character who has hand cards. That character reveals one hand card. You may discard a hand card of the same color to deal 1 Fire damage to them."
     ],
     "faq": []
   },
@@ -38,12 +38,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名装备区里有武器牌的其他角色使用，并指定另一名在其攻击范围内的角色。除非该角色对另一名角色使用一张【杀】，否则将该角色的武器牌交给你。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character with a weapon in their Equipment Zone, and designate a second character within their Attack Range. Unless the first character uses a [Kill] on the second, their weapon is given to you."
+      "Play Phase: use this card on another character with a weapon in their Equipment Zone, and designate a second character within their Attack Range. Unless the first character uses a [Kill] on the second, their weapon is given to you."
     ],
     "faq": []
   },
@@ -54,12 +54,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名其他角色使用。由该角色先出，然后你们依次轮流打出一张【杀】，直到其中一名角色无法打出【杀】时，该角色受到1点伤害（来源为另一名角色）。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. That character plays a [Kill] first, then you alternate. The first player unable to play a [Kill] takes 1 damage from the other."
+      "Play Phase: use this card on another character. That character plays a [Kill] first, then you alternate. The first player unable to play a [Kill] takes 1 damage from the other."
     ],
     "faq": []
   },
@@ -70,12 +70,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对所有其他角色使用。这些角色须依次各打出一张【杀】，否则受到1点伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on all other characters. Each character must in sequence play out a [Kill] or take 1 damage."
+      "Play Phase: use this card on all other characters. Each character must in sequence play a [Kill] or take 1 damage."
     ],
     "faq": []
   },
@@ -86,12 +86,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对距离为1的一名区域里有牌的其他角色使用。你获得该角色区域内的一张牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character at distance 1 who has at least one card in any zone. You gain one card from that character's zone."
+      "Play Phase: use this card on another character at distance 1 who has at least one card in any zone. You gain one card from that character's zone."
     ],
     "faq": []
   },
@@ -102,10 +102,10 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": ["出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"],
     "effect_en": [
-      "Action Phase: Use on all characters. Each character recovers 1 HP in sequence."
+      "Play Phase: use this card on all characters. Each character recovers 1 HP in sequence."
     ],
     "faq": []
   },
@@ -116,14 +116,14 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一至两名角色使用。目标角色横置或重置。(被横置的角色处于〖连环状态〗）",
       "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on one or two characters. Each target is placed in horizontal position or Reset.",
-      "Reforge: During your Action Phase, you may place this card into the Discard Pile to draw 1 card. Reforging is not considered using this Tool card."
+      "Play Phase: use this card on one or two characters. Each target is placed into the Chained state or Reset.",
+      "Reforge: During your Play Phase, you may place this card into the Discard Pile to draw 1 card. Reforging is not considered using this Tool card."
     ],
     "faq": [
       {
@@ -172,7 +172,7 @@
         "q_cn": "重铸时，黄月英能额外摸一张牌吗？",
         "a_cn": "不能。重铸不被视为使用锦囊牌，黄月英的技能不会触发。",
         "q_en": "Can Huang Yue Ying draw an extra card when [Iron Shackles] is Reforged?",
-        "a_en": "No. Reforging is not considered using a tool card, so Huang Yue Ying's skill does not trigger."
+        "a_en": "No. Reforging is not considered using a Tool Card, so Huang Yue Ying's skill does not trigger."
       },
       {
         "q_cn": "使用【铁索连环】有距离限制吗？",
@@ -201,12 +201,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对所有其他角色使用。这些角色须依次各打出一张【闪】，否则受到1点伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on all other characters. Each character must play a [Dodge] in turn or take 1 damage."
+      "Play Phase: use this card on all other characters. Each character must play a [Dodge] in turn or take 1 damage."
     ],
     "faq": []
   },
@@ -217,12 +217,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对所有角色使用。从牌堆顶亮出等同于现存角色数量的牌，所有角色依次各选择并获得其中一张牌，多余的牌置入弃牌堆。"
     ],
     "effect_en": [
-      "Action Phase: Use on all characters. Flip cards from the top of the Draw Pile equal to the number of surviving characters. Each character in sequence selects and gains one of those cards; remaining cards are placed into the Discard Pile."
+      "Play Phase: use this card on all characters. Flip cards from the top of the Draw Pile equal to the number of surviving characters. Each character in sequence selects and gains one of those cards; remaining cards are placed into the Discard Pile."
     ],
     "faq": []
   },
@@ -233,18 +233,18 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "当一张锦囊牌生效前，抵消该锦囊牌的效果；或抵消一张【无懈可击】的效果。"
     ],
     "effect_en": [
-      "When a tool card is about to take effect, negate its effect; or negate another [Nullification]."
+      "When a Tool Card is about to take effect, Negate its effect; or Negate another [Nullification]."
     ],
     "faq": [
       {
         "q_cn": "一张【无懈可击】可以抵消群体锦囊对所有人的效果吗？",
         "a_cn": "不可以。针对群体锦囊，一张【无懈可击】只能保护一名目标，保护多人需对每人分别使用。",
-        "q_en": "Does one [Nullification] negate an AOE card for everyone?",
+        "q_en": "Does one [Nullification] Negate an AOE card for everyone?",
         "a_en": "No. One [Nullification] only protects one target. A separate [Nullification] is needed for each person you want to protect."
       },
       {
@@ -280,9 +280,9 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": ["出牌阶段，对自己使用。你摸两张牌。"],
-    "effect_en": ["Action Phase: Use on yourself. Draw 2 cards."],
+    "effect_en": ["Play Phase: use this card on yourself. Draw 2 cards."],
     "faq": []
   },
   {
@@ -292,12 +292,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名已受伤的角色使用。你观看目标角色的手牌，若你与其手牌中均有【毒】，则你弃置其中一张【毒】并与其各摸两张牌，否则你与其各受到1点无来源伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on a Wounded character. Look at that character's hand cards. If both you and they have [Poison] in hand, discard one [Poison] from among those cards and you each draw 2 cards. Otherwise, you each receive 1 damage with no source."
+      "Play Phase: use this card on a Wounded character. Look at that character's hand cards. If both you and they have [Poison] in hand, discard one [Poison] from among those cards and you each draw 2 cards. Otherwise, you each takes 1 damage with no source."
     ],
     "faq": []
   },
@@ -308,12 +308,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名已受伤的角色使用。该角色回复1点体力，然后可以弃置一张【毒】（防止【毒】的效果）。"
     ],
     "effect_en": [
-      "Action Phase: Use on a Wounded character. That character recovers 1 HP, then may discard a [Poison] from their hand to prevent that [Poison]'s effect."
+      "Play Phase: use this card on a Wounded character. That character recovers 1 HP, then may discard a [Poison] from their hand to prevent that [Poison]'s effect."
     ],
     "faq": [
       {
@@ -331,12 +331,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名其他角色使用。该角色必须对你打出一张【杀】，否则，你可获得他区域内的两张牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. That character must play a [Kill] targeting you. If they do not, you gain 2 cards from their zone."
+      "Play Phase: use this card on another character. That character must play a [Kill] targeting you. If they do not, you gain 2 cards from their zone."
     ],
     "faq": []
   },
@@ -347,12 +347,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名体力为1点的角色使用。将进行一次判定，若不为黑桃牌，你当前体力回复到上限值。"
     ],
     "effect_en": [
-      "Action Phase: Use on a character whose HP Value is 1. Perform a Judgment. If the result is not Spades, you recover HP up to your Max HP."
+      "Play Phase: use this card on a character whose HP Value is 1. Perform a Judgment. If the result is not Spades, you recover HP up to your Max HP."
     ],
     "faq": []
   },
@@ -363,12 +363,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，除你以外的角色，依次两项选其一：1.弃置四张牌；2.本回合不能打出任何牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on all characters other than yourself. Each character in sequence chooses one: 1. Discard 4 cards; 2. Cannot play out any cards this turn."
+      "Play Phase: use this card on all characters other than yourself. Each character in sequence chooses one: 1. Discard 4 cards; 2. Cannot play any cards this turn."
     ],
     "faq": []
   },
@@ -379,10 +379,10 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": ["出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"],
     "effect_en": [
-      "Action Phase: Choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
+      "Play Phase: Choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
     "faq": []
   },
@@ -393,14 +393,14 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "1.出牌阶段对一名装备区内有武器牌的角色使用，将此牌放置其武器牌旁边，其武器牌获得如下效果 〖攻击范围+1，使用【杀】造成的伤害+1。〗",
       "2.出牌阶段对你使用，连续牌堆顶一张牌，直到出现一张装备牌为止，你获得之。"
     ],
     "effect_en": [
-      "1. Action Phase: Use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon gains: Attack Range +1 and damage dealt by [Kill] +1.",
-      "2. Action Phase: Use on yourself — flip cards from the top of the Draw Pile one at a time until an Equipment card is revealed. You gain that Equipment card."
+      "1. Play Phase: Use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon gains: Attack Range +1 and damage dealt by [Kill] +1.",
+      "2. Play Phase: Use on yourself — flip cards from the top of the Draw Pile one at a time until an Equipment card is revealed. You gain that Equipment card."
     ],
     "faq": []
   },
@@ -411,12 +411,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名距离大于等于3的角色使用，该角色必须连续打出2张【闪】，否则减少1点体力。"
     ],
     "effect_en": [
-      "Action Phase: Use on a character at distance 3 or greater. That character must play out 2 [Dodge] cards in sequence. If they cannot, they lose 1 HP."
+      "Play Phase: use this card on a character at distance 3 or greater. That character must play 2 [Dodge] cards in sequence. If they cannot, they lose 1 HP."
     ],
     "faq": []
   },
@@ -427,12 +427,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对所有其他角色使用，由你弃掉每名目标角色区域里的一张牌。"
     ],
     "effect_en": [
-      "Action Phase: Use on all other characters. You discard one card from each target character's zone."
+      "Play Phase: use this card on all other characters. You discard one card from each target character's zone."
     ],
     "faq": []
   },
@@ -443,12 +443,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段对自己使用后，直到回合结束前，可以打出任意数量的【杀】。"
     ],
     "effect_en": [
-      "Action Phase: Use on yourself. Until the end of your turn, you may use any number of [Kill] cards."
+      "Play Phase: use this card on yourself. Until the end of your turn, you may use any number of [Kill] cards."
     ],
     "faq": []
   },
@@ -459,12 +459,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段,对一名其他角色使用, 该角色必须连续打出两张【杀】, 否则会受到1点伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. That character must play out 2 [Kill] cards in sequence. If they cannot, they take 1 damage."
+      "Play Phase: use this card on another character. That character must play 2 [Kill] cards in sequence. If they cannot, they take 1 damage."
     ],
     "faq": []
   },
@@ -475,12 +475,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名本轮未对你造成过伤害的其他角色使用。你弃置其一张牌，然后其须打出一张点数为偶数的手牌，否则你对其造成1点雷电伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character who has not dealt damage to you this round. You discard one of their cards, then they must play out a hand card with an even rank. If they cannot, you deal 1 lightning damage to them."
+      "Play Phase: use this card on another character who has not dealt damage to you this round. You discard one of their cards, then they must play a hand card with an even rank. If they cannot, you deal 1 Lightning damage to them."
     ],
     "faq": []
   },
@@ -491,12 +491,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对其他所有角色使用。其须打出一张【杀】，否则摸一张牌。若因此摸牌的角色数大于未摸牌角色，摸牌的角色弃两张牌并受到1点火焰伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on all other characters. Each must play out a [Kill]; if they do not, they draw 1 card instead. If more characters drew cards than did not, all characters who drew discard 2 cards and take 1 fire damage."
+      "Play Phase: use this card on all other characters. Each must play a [Kill]; if they do not, they draw 1 card instead. If more characters drew cards than did not, all characters who drew discard 2 cards and take 1 Fire damage."
     ],
     "faq": []
   },
@@ -507,12 +507,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-time delay",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对所有其他角色使用。其资弃置两张牌，否则你对其造成2点火焰伤害。"
     ],
     "effect_en": [
-      "Action Phase: Use on all other characters. Each must discard 2 cards. If they do not, you deal 2 fire damage to them."
+      "Play Phase: use this card on all other characters. Each must discard 2 cards. If they do not, you deal 2 Fire damage to them."
     ],
     "faq": []
   },
@@ -526,7 +526,7 @@
       "出牌阶段，对至多两名角色使用。第一名角色受到1点雷电伤害并弃置一张牌，第二名角色受到1点雷电伤害并摸一张牌。"
     ],
     "effect_en": [
-      "During your Action Phase, use on up to two characters. The first target receives 1 thunder damage and discards a card; the second target receives 1 thunder damage and draws a card."
+      "During your Play Phase, use this card on up to two characters. The first target receives 1 Thunder damage and discards a card; the second target receives 1 Thunder damage and draws a card."
     ],
     "faq": []
   },
@@ -540,7 +540,7 @@
       "出牌阶段，对一名其他角色使用。若如此做，你亮出牌堆顶四张牌并依次对目标角色使用其中的【杀】，结算结束后，将其余的牌置入弃牌堆。"
     ],
     "effect_en": [
-      "During your Action Phase, use this on one other character. Flip the top 4 cards of the Draw Pile face-up, then use each [Kill] among them on the target one at a time. After all resolutions are complete, place the remaining cards into the Discard Pile."
+      "During your Play Phase, use this on one other character. Flip the top 4 cards of the Draw Pile face-up, then use each [Kill] among them on the target one at a time. After all resolutions are complete, place the remaining cards into the Discard Pile."
     ],
     "faq": []
   },
@@ -555,8 +555,8 @@
       "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
     ],
     "effect_en": [
-      "During your Action Phase, choose two characters with different hand card counts and note each count. The character with more hand cards discards 1 card; the character with fewer hand cards draws 1 card. When this card's resolution ends, if both chosen characters now have the same hand card count and the card discarded by executing this Tool is still in the Discard Pile, you may give that discarded card to any character.",
-      "Reforge: During your Action Phase, you may place this card into the Discard Pile, then draw 1 card."
+      "During your Play Phase, choose two characters with different hand card counts and note each count. The character with more hand cards discards 1 card; the character with fewer hand cards draws 1 card. When this card's resolution ends, if both chosen characters now have the same hand card count and the card discarded by executing this Tool is still in the Discard Pile, you may give that discarded card to any character.",
+      "Reforge: During your Play Phase, you may place this card into the Discard Pile, then draw 1 card."
     ],
     "faq": []
   },
@@ -567,12 +567,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "延时锦囊牌",
-    "sub_category_en": "Time-delay",
+    "sub_category_en": "Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对距离为1的一名其他角色使用。将【兵粮寸断】置入该角色的判定区。该角色判定阶段，若判定结果不为梅花，其跳过本回合的摸牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Clubs, that character skips their Draw Phase this turn."
+      "Play Phase: use this card on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Clubs, that character skips their Draw Phase this turn."
     ],
     "faq": []
   },
@@ -583,12 +583,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "延时锦囊牌",
-    "sub_category_en": "Time-delay",
+    "sub_category_en": "Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区。该角色判定阶段，若判定结果不为红桃，其跳过本回合的出牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Hearts, that character skips their Action Phase this turn."
+      "Play Phase: use this card on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Hearts, that character skips their Play Phase this turn."
     ],
     "faq": []
   },
@@ -599,12 +599,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "延时锦囊牌",
-    "sub_category_en": "Time-delay",
+    "sub_category_en": "Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对自己使用。将【闪电】置入你的判定区。你的判定阶段，若判定结果为黑桃2至9，你受到3点雷电伤害；否则将【闪电】移至下家的判定区。"
     ],
     "effect_en": [
-      "Action Phase: Use on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is a Spades between 2 and 9, you take 3 lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
+      "Play Phase: use this card on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is a Spades between 2 and 9, you take 3 Lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
     ],
     "faq": []
   },
@@ -615,12 +615,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "延时锦囊牌",
-    "sub_category_en": "Time-delay",
+    "sub_category_en": "Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对自己使用，放置在自己的判定区，待下个回合开始阶段进行判定，若判定结果不为方块，则自己摸取8张手牌，并跳过本回合的出牌阶段和弃牌阶段。"
     ],
     "effect_en": [
-      "Action Phase: Use on yourself. Place [Summon God] into your Judgment Zone. At the start of your next turn's Starting Phase, perform a Judgment. If the result is not Diamonds, draw 8 cards and skip that turn's Action Phase and Discard Phase."
+      "Play Phase: use this card on yourself. Place [Summon God] into your Judgment Zone. At the start of your next turn's Starting Phase, perform a Judgment. If the result is not Diamonds, draw 8 cards and skip that turn's Play Phase and Discard Phase."
     ],
     "faq": []
   },
@@ -631,12 +631,12 @@
     "category_cn": "锦囊牌",
     "category_en": "Tool",
     "sub_category_cn": "延时锦囊牌",
-    "sub_category_en": "Time-delay",
+    "sub_category_en": "Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对任意一名角色使用，将【美人计】置入其判定区。该角色判定阶段，若判定结果为红桃，其须将全部手牌交给场上任意一名异性角色；若判定结果不为红桃，将【美人计】移至其下家的判定区。若场上全部为同性角色，则此牌无效。"
     ],
     "effect_en": [
-      "Action Phase: Use on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to their Right Neighbor's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
+      "Play Phase: use this card on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to their Right Neighbor's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
     ],
     "faq": []
   }

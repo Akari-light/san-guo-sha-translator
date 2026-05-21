@@ -9,7 +9,7 @@
       "出牌阶段限一次, 你可以将一张手牌扣置于你装备区里的【木牛流马】下, 然后你可以将此装备移动到一名其他角色的装备区里; 你可以如手牌般使用或打出【木牛流马】下的牌。"
     ],
     "effect_en": [
-      "Once per Action Phase, you may place one hand card face-down beneath [Wooden Ox]. If you do, you may move this card to another character's Equipment Zone. You may use or play any card stored beneath this card as though it were a hand card."
+      "Once per Play Phase, you may place one hand card face-down beneath [Wooden Ox]. If you do, you may move this card to another character's Equipment Zone. You may use or play any card stored beneath this card as though it were a hand card."
     ],
     "faq": [
       {
@@ -22,13 +22,13 @@
         "q_cn": "一张牌最多可以储存几张牌？",
         "a_cn": "至多5张。每个出牌阶段只能放入1张。",
         "q_en": "How many cards can be stored under [Wooden Ox] at once?",
-        "a_en": "Up to 5 cards. Only 1 card may be placed under it per Action Phase."
+        "a_en": "Up to 5 cards. Only 1 card may be placed under it per Play Phase."
       },
       {
         "q_cn": "把【木牛流马】传给别人时，储备牌也一起转移吗？",
         "a_cn": "视情况而定。若【木牛流马】是从装备区移动到另一个装备区（如通过本身效果、甘露、巧变等），储备牌随之一并转移。若【木牛流马】进入装备区以外的区域（如被顺手牵羊牵走后进入手牌区，或被过河拆桥弃置），储备牌全部置入弃牌堆。",
         "q_en": "When [Wooden Ox] moves to another character, do stored cards transfer too?",
-        "a_en": "It depends. If [Wooden Ox] moves from one Equipment Zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the Equipment Zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the discard pile."
+        "a_en": "It depends. If [Wooden Ox] moves from one Equipment Zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the Equipment Zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the Discard Pile."
       },
       {
         "q_cn": "没有放入储备牌的情况下，可以移动【木牛流马】吗？",
@@ -39,13 +39,13 @@
       {
         "q_cn": "可以使用储备牌发动武将的转化技能（如武圣、龙胆）吗？",
         "a_cn": "可以。任何允许「将手牌当作其他牌使用或打出」的转化技能，均可以选择储备牌发动，例如武圣、龙胆等。",
-        "q_en": "Can stored cards be used to activate a general's conversion skill (such as [Valor] or [Dragon Soul])?",
-        "a_en": "Yes. Any conversion skill that allows you to use or play a hand card as another card can be activated using a stored card."
+        "q_en": "Can stored cards be used to activate a general's Conversion Skill (such as 〖Saint of War〗 or 〖Dragon's Courage〗)?",
+        "a_en": "Yes. Any Conversion Skill that allows you to use or play a hand card as another card can be activated using a stored card."
       },
       {
         "q_cn": "大乔的【流离】或小乔的【天香】可以使用储备牌发动吗？",
         "a_cn": "不可以。这类技能需要「弃置」牌，而储备牌只能被「使用或打出」，无法被弃置。",
-        "q_en": "Can Da Qiao's [Fleeting] or Xiao Qiao's [Heavenly Fragrance] be activated using stored cards?",
+        "q_en": "Can Da Qiao's 〖Displaced〗 or Xiao Qiao's 〖Celestial Fragrance〗 be activated using stored cards?",
         "a_en": "No. Those skills require discarding a card, and stored cards can only be used or played — they cannot be discarded."
       }
     ]
@@ -60,14 +60,14 @@
       "锁定技，你于回合内使用基本牌无距离限制且造成的伤害和回复的体力+1；当你于回合外使用或打出基本牌时，你摸一张牌；此牌离开你的装备区后移出游戏。"
     ],
     "effect_en": [
-      "Locked: During your turn, Basic cards you use have no distance restriction, and the damage they deal and the HP they recover are each increased by 1. When you use or play a Basic card outside of your turn, draw 1 card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+      "Locked Skill: During your turn, Basic cards you use have no distance restriction, and the damage they deal and the HP they recover are each increased by 1. When you use or play a Basic card outside of your turn, draw 1 card. When this card leaves your Equipment Zone, it is instead Removed from the Game."
     ],
     "faq": [
       {
         "q_cn": "【霹雳车】离开装备区后为何被销毁而不是进入弃牌堆？",
         "a_cn": "这是该牌的特殊规则。一旦离开装备区（无论是被弃置、被夺取还是其他原因），牌直接从游戏中移除，不进入弃牌堆。",
         "q_en": "Why is [Catapult] destroyed rather than discarded when it leaves the Equipment Zone?",
-        "a_en": "This is a special rule on the card. Regardless of how it leaves the Equipment Zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the discard pile."
+        "a_en": "This is a special rule on the card. Regardless of how it leaves the Equipment Zone (discarded, stolen, etc.), it is removed from the game entirely and does not enter the Discard Pile."
       }
     ]
   },
@@ -81,7 +81,7 @@
       "出牌阶段开始时，你可以视为使用一张【杀】，此【杀】对目标角色造成伤害后，你弃置其一张牌（每次修改选择一项：1.此【杀】无距离限制；2.此【杀】可多指定一个目标；3.此【杀】对目标角色造成伤害后，你多弃置其一张牌）；此牌离开你的装备区后移出游戏。"
     ],
     "effect_en": [
-      "At the start of your Action Phase, you may be treated as using a [Kill]. When this [Kill] deals damage to the target character, you discard 1 of their cards. Each time you activate this card's effect, choose one upgrade (cumulative): 1. This [Kill] has no distance restriction; 2. This [Kill] may designate one additional target; 3. When this [Kill] deals damage to a target character, discard one additional card from them. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+      "At the start of your Play Phase, you may be treated as using a [Kill]. When this [Kill] deals damage to the target character, you discard 1 of their cards. Each time you activate this card's effect, choose one upgrade (cumulative): 1. This [Kill] has no distance restriction; 2. This [Kill] may designate one additional target; 3. When this [Kill] deals damage to a target character, discard one additional card from them. When this card leaves your Equipment Zone, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -137,7 +137,7 @@
       "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。"
     ],
     "effect_en": [
-      "Locked: During your Draw Phase, draw 2 additional cards. Your Hand Limit is reduced by 1."
+      "Locked Skill: During your Draw Phase, draw 2 additional cards. Your Hand Limit -1."
     ],
     "faq": []
   },
@@ -165,7 +165,7 @@
       "锁定技，你的攻击范围+1；你的手牌上限+1；你使用【杀】的次数 +1。"
     ],
     "effect_en": [
-      "Locked: Your Attack Range is increased by 1. Your Hand Limit is increased by 1. Your [Kill] frequency limit is increased by 1."
+      "Locked Skill: Your Attack Range +1. Your Hand Limit +1. Your [Kill] usage limit +1."
     ],
     "faq": []
   },
@@ -179,7 +179,7 @@
       "出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"
     ],
     "effect_en": [
-      "At the end of your Action Phase, you may reveal a Basic card or Non Time-Delay Tool card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
+      "At the end of your Play Phase, you may reveal a Basic card or Non-Time-Delayed Tool Card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
     ],
     "faq": []
   },
@@ -193,7 +193,7 @@
       "出牌阶段开始时，你可以令一名角色横置或重置；出牌阶段结束时，你可以重铸一张手牌。"
     ],
     "effect_en": [
-      "At the start of your Action Phase, you may place one character's General Card in horizontal position or Reset it. At the end of your Action Phase, you may Reforge 1 hand card."
+      "At the start of your Play Phase, you may place one character into the Chained state or Reset it. At the end of your Play Phase, you may Reforge 1 hand card."
     ],
     "faq": []
   },
@@ -207,7 +207,7 @@
       "锁定技，此牌置入你的装备区后，你弃置另一张牌；此牌离开你的装备区后，你将手牌摸至5。"
     ],
     "effect_en": [
-      "Locked: When this card enters your Equipment Zone, discard 1 other card. When this card leaves your Equipment Zone, draw cards until you have 5 hand cards."
+      "Locked Skill: When this card enters your Equipment Zone, discard 1 other card. When this card leaves your Equipment Zone, draw cards until you have 5 hand cards."
     ],
     "faq": []
   },
@@ -221,7 +221,7 @@
       "锁定技，出牌阶段结束时，你将手牌摸至手牌上限(至多摸至五张)；此牌离开装备区后移出游戏。"
     ],
     "effect_en": [
-      "Locked: At the end of your Action Phase, draw cards until you reach your Hand Limit (up to a maximum of 5 cards drawn). When this card leaves your Equipment Zone, it is instead Removed from the Game."
+      "Locked Skill: At the end of your Play Phase, draw cards until you reach your Hand Limit (up to a maximum of 5 cards drawn). When this card leaves your Equipment Zone, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -249,7 +249,7 @@
       "当你受到伤害时，你可以弃置等于此伤害值的牌，然后防止此伤害；此牌离开装备区后移出游戏。"
     ],
     "effect_en": [
-      "When you receive damage, you may discard a number of cards equal to the damage value to prevent that damage. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+      "When you take damage, you may discard a number of cards equal to the damage value to prevent that damage. When this card leaves your Equipment Zone, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -263,7 +263,7 @@
       "锁定技，当你从装备区失去【孔明灯】时，回复1点体力。任意角色处于濒死状态时，你可以将你装备区的【孔明灯】当【桃】使用"
     ],
     "effect_en": [
-      "Locked: When you lose [Kongming Lantern] from your Equipment Zone, recover 1 HP. When any character enters the Verge of Death State, you may use [Kongming Lantern] from your Equipment Zone as a [Peach]."
+      "Locked Skill: When you lose [Kongming Lantern] from your Equipment Zone, recover 1 HP. When any character enters the Verge of Death State, you may use [Kongming Lantern] from your Equipment Zone as a [Peach]."
     ],
     "faq": []
   },
@@ -277,7 +277,7 @@
       "锁定技，当你失去装备区的【青囊书】时，你回复体力至上限。"
     ],
     "effect_en": [
-      "Locked: When you lose [Hua Tuo's Scripture] from your Equipment Zone, recover HP up to your Max HP."
+      "Locked Skill: When you lose [Hua Tuo's Scripture] from your Equipment Zone, recover HP up to your Max HP."
     ],
     "faq": []
   },
@@ -291,7 +291,7 @@
       "出牌阶段，你可以弃置一张装备牌摸三张牌。"
     ],
     "effect_en": [
-      "During your Action Phase, you may discard 1 Equipment card to draw 3 cards."
+      "During your Play Phase, you may discard 1 Equipment card to draw 3 cards."
     ],
     "faq": []
   },
@@ -306,7 +306,7 @@
       "锁定技，当你受到伤害后，将【玉玺】置入弃牌堆。"
     ],
     "effect_en": [
-      "At the start of your End Phase, you may draw 1 card. Locked: When you receive damage, place [Imperial Seal] into the Discard Pile."
+      "At the start of your End Phase, you may draw 1 card. Locked: When you take damage, place [Imperial Seal] into the Discard Pile."
     ],
     "faq": []
   }
