@@ -83,7 +83,7 @@
       }
     ],
     "search_text_cn": "武将牌 技能 势力 体力上限 性别 属性 技能框",
-    "search_text_en": "general card skill faction max hp gender skill box"
+    "search_text_en": "general card skill faction Max HP gender skill box"
   },
   {
     "id": "glossary_2_1_library_card",
@@ -127,7 +127,7 @@
       {
         "type": "rule",
         "cn": "将武器牌/坐骑牌当其他牌使用，或将其弃置为技能消耗时，不能同时享用该牌提供的距离修正、攻击范围或技能。",
-        "en": "When using a weapon or mount card as a substitute for another card, or discarding it as a skill cost, its distance modification, attack range, or skill cannot simultaneously take effect.",
+        "en": "When using a weapon or mount card as a substitute for another card, or discarding it as a skill cost, its distance modification, Attack Range, or skill cannot simultaneously take effect.",
         "segments": [],
         "examples": [
           {
@@ -140,7 +140,7 @@
       {
         "type": "rule",
         "cn": "正在享用一张装备牌提供的距离、攻击范围或技能时，不能以任何方式操作该装备牌。",
-        "en": "While benefiting from a distance modification, attack range, or skill provided by an equipment card, that card cannot be operated in any way.",
+        "en": "While benefiting from a distance modification, Attack Range, or skill provided by an equipment card, that card cannot be operated in any way.",
         "segments": [],
         "examples": [
           {
@@ -159,7 +159,7 @@
       }
     ],
     "search_text_cn": "装备牌 武器牌 防具牌 坐骑牌 宝物牌 装备区 攻击范围 距离 叠加",
-    "search_text_en": "equipment card weapon armor mount treasure equipment zone attack range distance stack"
+    "search_text_en": "equipment card weapon armor mount treasure Equipment Zone Attack Range distance stack"
   },
   {
     "id": "glossary_2_1_tool_card",
@@ -170,17 +170,17 @@
     "term_en": "Tool Card",
     "badge": null,
     "definition_cn": "带有「锦囊」标识的牌。分为两类：带沙漏标识的为延时类锦囊牌，没有沙漏标识的为非延时类锦囊牌。",
-    "definition_en": "Cards bearing the \"Tool\" label. Two types: those with an hourglass symbol are Time-Delayed Tool Cards; those without are Non Time-Delay Tool Cards.",
+    "definition_en": "Cards bearing the \"Tool\" label. Two types: those with an hourglass symbol are Time-Delayed Tool Cards; those without are Non-Time-Delayed Tool Cards.",
     "rules": [
       {
         "type": "note",
         "cn": "非延时类锦囊牌使用后立即结算；延时类锦囊牌置于目标的判定区，在该角色的下一个判定阶段进行结算。",
-        "en": "Non Time-Delay Tool Cards resolve immediately when used. Time-Delayed Tool Cards are placed in the target's Judgment Zone and resolve during that character's next Judgment Phase.",
+        "en": "Non-Time-Delayed Tool Cards resolve immediately when used. Time-Delayed Tool Cards are placed in the target's Judgment Zone and resolve during that character's next Judgment Phase.",
         "segments": [
           {
             "kind": "label",
             "cn": "非延时类：",
-            "en": "Non Time-Delay: "
+            "en": "Non-Time-Delayed: "
           },
           {
             "kind": "body",
@@ -202,7 +202,7 @@
       }
     ],
     "search_text_cn": "锦囊牌 延时 非延时 沙漏 判定区",
-    "search_text_en": "tool card time-delayed non-time-delay hourglass judgment zone"
+    "search_text_en": "tool card time-delayed non-time-delay hourglass Judgment Zone"
   },
   {
     "id": "glossary_2_2_card_info",
@@ -375,7 +375,7 @@
       }
     ],
     "search_text_cn": "牌堆 扣置 背面朝上 洗牌 弃牌堆 补充",
-    "search_text_en": "draw pile face-down reshuffle discard pile refill"
+    "search_text_en": "draw pile face-down reshuffle Discard Pile refill"
   },
   {
     "id": "glossary_2_3_discard_pile",
@@ -389,7 +389,7 @@
     "definition_en": "The zone where all used, played-out, or discarded cards are placed. Cards here must be face-up.",
     "rules": [],
     "search_text_cn": "弃牌堆 正面朝上 使用 打出 弃置",
-    "search_text_en": "discard pile face-up used played discarded"
+    "search_text_en": "Discard Pile face-up used played discarded"
   },
   {
     "id": "glossary_2_3_field",
@@ -403,7 +403,7 @@
     "definition_en": "Refers collectively to all characters' Equipment Zones and Judgment Zones.",
     "rules": [],
     "search_text_cn": "场上 装备区 判定区",
-    "search_text_en": "field equipment zone judgment zone"
+    "search_text_en": "field Equipment Zone Judgment Zone"
   },
   {
     "id": "glossary_2_3_character_zone",
@@ -425,7 +425,7 @@
       }
     ],
     "search_text_cn": "角色的区域 手牌区 装备区 判定区",
-    "search_text_en": "character zone hand zone equipment zone judgment zone"
+    "search_text_en": "character zone hand zone Equipment Zone Judgment Zone"
   },
   {
     "id": "glossary_2_3_processing_zone",
@@ -496,7 +496,7 @@
     "definition_en": "The zone where a character's equipped cards are placed. Five slots: weapon, armor, +1 mount, -1 mount, and treasure. Cards here must be face-up.",
     "rules": [],
     "search_text_cn": "装备区 武器 防具 坐骑 宝物 五个位置 正面朝上",
-    "search_text_en": "equipment zone weapon armor mount treasure five slots face-up"
+    "search_text_en": "Equipment Zone weapon armor mount treasure five slots face-up"
   },
   {
     "id": "glossary_2_3_judgment_zone",
@@ -544,7 +544,7 @@
       }
     ],
     "search_text_cn": "判定区 延时锦囊 正面朝上 不属于 乐不思蜀 兵粮寸断",
-    "search_text_en": "judgment zone time-delayed face-up not owned acedia starvation"
+    "search_text_en": "Judgment Zone time-delayed face-up not owned acedia starvation"
   },
   {
     "id": "glossary_2_3_characters_cards",
@@ -577,7 +577,7 @@
       }
     ],
     "search_text_cn": "角色的牌 拥有的牌 手牌 装备区 判定牌 判定区",
-    "search_text_en": "character cards owned cards hand equipped judgment zone"
+    "search_text_en": "character cards owned cards hand equipped Judgment Zone"
   },
   {
     "id": "glossary_2_4_rank",
@@ -627,7 +627,7 @@
       }
     ],
     "search_text_cn": "体力上限 阴阳鱼 最大值 主公 人数",
-    "search_text_en": "max hp yin-yang maximum lord player count"
+    "search_text_en": "Max HP yin-yang maximum lord player count"
   },
   {
     "id": "glossary_2_4_hp",
@@ -698,7 +698,7 @@
     "definition_en": "The maximum number of cards a character can keep in hand, equal to their HP Value. Primarily relevant during the Discard Phase. Minimum of 0 after modification.",
     "rules": [],
     "search_text_cn": "手牌上限 体力值 弃牌阶段 保留 最小值",
-    "search_text_en": "hand limit hp value discard phase keep minimum"
+    "search_text_en": "Hand Limit hp value discard phase keep minimum"
   },
   {
     "id": "glossary_2_4_hp_lost",
@@ -712,7 +712,7 @@
     "definition_en": "Calculated as Max HP minus current HP Value.",
     "rules": [],
     "search_text_cn": "已损失的体力值 体力上限 体力值 差值",
-    "search_text_en": "hp lost max hp hp value difference"
+    "search_text_en": "hp lost Max HP hp value difference"
   },
   {
     "id": "glossary_2_4_base_damage",
@@ -793,7 +793,7 @@
     "definition_en": "A character without a weapon has an Attack Range of 1. A character with a weapon has the Attack Range printed on that weapon. If A's Attack Range ≥ distance from A to B, then B is within A's Attack Range.",
     "rules": [],
     "search_text_cn": "攻击范围 武器 距离 目标",
-    "search_text_en": "attack range weapon distance target"
+    "search_text_en": "Attack Range weapon distance target"
   },
   {
     "id": "glossary_2_4_x_variable",
@@ -1037,7 +1037,7 @@
     "section_title_cn": "技能描述",
     "section_title_en": "Skill Descriptions",
     "term_cn": "转换技",
-    "term_en": "Convert Skill",
+    "term_en": "Conversion Skill",
     "badge": "convert",
     "definition_cn": "拥有「阳」和「阴」两种状态的特殊技能。游戏开始时默认处于「阳」状态。每次发动后，状态在「阳」与「阴」之间交替切换——必须在当前状态下执行后方可切换至另一种状态。",
     "definition_en": "A special skill that alternates between two modes: Yang (阳) and Yin (阴). The skill begins in Yang mode at the start of the game. Each activation switches the mode — you must fully execute the current mode before switching to the other.",
@@ -1045,7 +1045,7 @@
       {
         "type": "note",
         "cn": "转换技的描述固定格式为：转换技，阳：……阴：……",
-        "en": "Convert Skill descriptions always follow the format: Convert Skill: Yang — … Yin — …",
+        "en": "Conversion Skill descriptions always follow the format: Conversion Skill: Yang — … Yin — …",
         "segments": [
           {
             "kind": "label",
@@ -1055,7 +1055,7 @@
           {
             "kind": "body",
             "cn": "转换技，阳：[阳效果] 阴：[阴效果]。每次发动后状态自动切换。",
-            "en": "Convert Skill: Yang — ?Yang effect? Yin — ?Yin effect?. Mode switches automatically after each activation."
+            "en": "Conversion Skill: Yang — ?Yang effect? Yin — ?Yin effect?. Mode switches automatically after each activation."
           }
         ],
         "examples": []
@@ -1520,7 +1520,7 @@
     "definition_en": "HP Value less than Max HP = Wounded. HP Value equals Max HP = Unwounded.",
     "rules": [],
     "search_text_cn": "受伤 未受伤 体力值 体力上限",
-    "search_text_en": "wounded unwounded hp value max hp"
+    "search_text_en": "wounded unwounded hp value Max HP"
   },
   {
     "id": "glossary_2_5_recover",
@@ -1534,7 +1534,7 @@
     "definition_en": "Increase HP without exceeding Max HP. An Unwounded character cannot recover HP. If an effect would recover HP to Y but Y exceeds Max HP (X), the character recovers to X instead.",
     "rules": [],
     "search_text_cn": "回复 体力 未受伤 上限 恢复",
-    "search_text_en": "recover hp unwounded max hp cap"
+    "search_text_en": "recover hp unwounded Max HP cap"
   },
   {
     "id": "glossary_2_5_choose_one",
@@ -1679,7 +1679,7 @@
     "term_en": "Phase",
     "badge": null,
     "definition_cn": "每名角色的回合分为六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。",
-    "definition_en": "Each character's turn is divided into six phases: Starting Phase → Judgment Phase → Draw Phase → Action Phase → Discard Phase → End Phase.",
+    "definition_en": "Each character's turn is divided into six phases: Preparation Phase → Judgment Phase → Draw Phase → Play Phase → Discard Phase → End Phase.",
     "rules": [
       {
         "type": "note",
@@ -1767,7 +1767,7 @@
       }
     ],
     "search_text_cn": "死亡 濒死 体力上限 0 直接死亡 不能挽救",
-    "search_text_en": "death verge of death max hp zero direct cannot be saved"
+    "search_text_en": "death verge of death Max HP zero direct cannot be saved"
   },
   {
     "id": "glossary_2_6_kill_character",
@@ -1867,7 +1867,7 @@
       {
         "type": "note",
         "cn": "牌对角色无效，该角色依然可以被选为目标。无效的牌依然计入出牌阶段的使用次数。",
-        "en": "A card being Nullified against a character does not prevent them from being selected as the target. A Nullified card still counts toward the Action Phase use frequency limit.",
+        "en": "A card being Nullified against a character does not prevent them from being selected as the target. A Nullified card still counts toward the Play Phase use frequency limit.",
         "segments": [],
         "examples": []
       }
@@ -2015,7 +2015,7 @@
       }
     ],
     "search_text_cn": "打出 声明 处理区 弃牌堆 使用",
-    "search_text_en": "play out declare processing zone discard pile use"
+    "search_text_en": "play declare processing zone Discard Pile use"
   },
   {
     "id": "glossary_2_8_reforge",
@@ -2026,7 +2026,7 @@
     "term_en": "Reforge",
     "badge": null,
     "definition_cn": "在出牌阶段的空闲时间点，可以重铸带有「重铸」标识的牌：声明→置入处理区→置入弃牌堆→摸一张牌。",
-    "definition_en": "During an idle timing in the Action Phase, a character may Reforge a card bearing the \"Reforge\" label: declare → Processing Zone → Discard Pile → draw 1 card.",
+    "definition_en": "During an idle timing in the Play Phase, a character may Reforge a card bearing the \"Reforge\" label: declare → Processing Zone → Discard Pile → draw 1 card.",
     "rules": [],
     "search_text_cn": "重铸 出牌阶段 标识 摸一张牌",
     "search_text_en": "reforge action phase label draw one card"
@@ -2043,7 +2043,7 @@
     "definition_en": "Move a card to the target zone. Equipment Cards must go into the appropriate slot. \"Place into the Discard Pile\" has two meanings: (1) an active operation (effect or cost); (2) the result of an operation (condition or timing).",
     "rules": [],
     "search_text_cn": "置于 置入 移动 装备区 弃牌堆 空位",
-    "search_text_en": "place into move equipment zone discard pile slot"
+    "search_text_en": "place into move Equipment Zone Discard Pile slot"
   },
   {
     "id": "glossary_2_8_place_face_down",
@@ -2114,7 +2114,7 @@
       }
     ],
     "search_text_cn": "弃置 处理区 弃牌堆 选择 令",
-    "search_text_en": "discard processing zone discard pile choose instruct"
+    "search_text_en": "discard processing zone Discard Pile choose instruct"
   },
   {
     "id": "glossary_2_8_treat_as",
@@ -2241,7 +2241,7 @@
       }
     ],
     "search_text_cn": "代替 替换 弃牌堆 获得 手牌",
-    "search_text_en": "substitute exchange discard pile gain hand"
+    "search_text_en": "substitute exchange Discard Pile gain hand"
   },
   {
     "id": "glossary_2_8_look_at",
@@ -2376,7 +2376,7 @@
     "definition_en": "Flip the top card of the Draw Pile (the Judgment Card) and wait for it to take effect. Its suit, rank, and name determine the Judgment result; the card is then placed into the Discard Pile. The Judgment Card is not owned by any character.",
     "rules": [],
     "search_text_cn": "判定 判定牌 亮出 牌堆顶 结果 生效",
-    "search_text_en": "judgment judgment card flip draw pile result take effect"
+    "search_text_en": "judgment Judgment Card flip draw pile result take effect"
   },
   {
     "id": "glossary_2_8_operate_all",
@@ -2398,10 +2398,10 @@
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",
     "term_cn": "横置",
-    "term_en": "Horizontal Position",
+    "term_en": "Turn sideways",
     "badge": null,
     "definition_cn": "将竖放的武将牌横放的操作。横放的角色即处于连环状态。",
-    "definition_en": "Rotating a character's General Card from vertical to horizontal. A character in horizontal position is in the Chain State.",
+    "definition_en": "Rotating a character's General Card from vertical to horizontal. A character in horizontal position is in the Chained state.",
     "rules": [],
     "search_text_cn": "横置 横放 竖放 武将牌 连环状态",
     "search_text_en": "horizontal position rotate general card chain state"
@@ -2415,7 +2415,7 @@
     "term_en": "Reset",
     "badge": null,
     "definition_cn": "将横放的武将牌竖放的操作。重置即解除连环状态。",
-    "definition_en": "Rotating a character's General Card from horizontal back to vertical. Resetting removes the Chain State.",
+    "definition_en": "Rotating a character's General Card from horizontal back to vertical. Resetting removes the Chained state.",
     "rules": [],
     "search_text_cn": "重置 竖放 横放 武将牌 连环状态",
     "search_text_en": "reset vertical horizontal general card chain state"
@@ -2426,7 +2426,7 @@
     "section_title_cn": "武将牌的操作",
     "section_title_en": "General Card Operations",
     "term_cn": "连环状态",
-    "term_en": "Chain State (Chained)",
+    "term_en": "Chained state (Chained)",
     "badge": null,
     "definition_cn": "武将牌横放的角色处于连环状态。处于连环状态的角色受到非连环属性伤害时，伤害结算结束时若其存活须重置，并触发连环传导。",
     "definition_en": "A character whose General Card is horizontal is Chained. When a Chained character takes elemental damage that is not Chain Damage: at the end of that damage resolution, if they survive, they must Reset; then chain propagation triggers for all other Chained characters.",
