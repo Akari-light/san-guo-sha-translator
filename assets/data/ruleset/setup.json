@@ -329,7 +329,7 @@
                       }
                   ],
         "search_text_cn":  "体力 体力牌 体力上限 主公",
-        "search_text_en":  "health hp max hp lord"
+        "search_text_en":  "health hp Max HP lord"
     },
     {
         "id":  "setup_1_0_game_begins",
@@ -340,12 +340,12 @@
         "term_en":  "Game Begins",
         "badge":  null,
         "definition_cn":  "完成身份与武将准备后，洗混游戏牌并发起始手牌，由主公开始游戏。",
-        "definition_en":  "After roles and generals are prepared, shuffle the deck, deal starting hands, and begin with the Lord\u0027s turn.",
+        "definition_en":  "After roles and generals are prepared, shuffle the Draw Pile, deal starting hands, and begin with the Lord\u0027s turn.",
         "rules":  [
                       {
                           "type":  "rule",
                           "cn":  "将游戏牌洗混后，每名角色获得4张起始手牌。",
-                          "en":  "Shuffle the game deck, then give each character 4 starting hand cards.",
+                          "en":  "Shuffle the Draw Pile, then give each character 4 starting hand cards.",
                           "segments":  [
 
                                        ],
@@ -382,7 +382,7 @@
                       {
                           "type":  "rule",
                           "cn":  "准备阶段：回合开始后的起始阶段，部分技能会在此时机发动。",
-                          "en":  "Starting Phase: the opening phase of the turn; some skills activate here.",
+                          "en":  "Preparation Phase: the opening phase of the turn; some skills activate here.",
                           "segments":  [
 
                                        ],
@@ -751,17 +751,17 @@
         "term_en":  "Tool Cards",
         "badge":  null,
         "definition_cn":  "锦囊牌共50张，分为即时生效的非延时类锦囊牌（43张）和置入判定区延迟生效的延时类锦囊牌（7张）。",
-        "definition_en":  "50 Tool Cards in total, split into Non Time-Delay Tool Cards (43) that take effect immediately, and Time-Delayed Tool Cards (7) that are placed in the Judgment Zone and resolve at a later turn.",
+        "definition_en":  "50 Tool Cards in total, split into Non-Time-Delayed Tool Cards (43) that take effect immediately, and Time-Delayed Tool Cards (7) that are placed in the Judgment Zone and resolve at a later turn.",
         "rules":  [
                       {
                           "type":  "rule",
                           "cn":  "非延时类锦囊牌共43张：【过河拆桥】6张（黑桃3·3/4/Q，梅花2·3/4，红桃1·Q），【顺手牵羊】5张（黑桃3·3/4/J，方块2·3/4），【决斗】3张（黑桃/梅花/方块各A），【借刀杀人】2张（梅花Q/K），【无中生有】4张（红桃7/8/9/J），【无懈可击】7张（黑桃J/K，梅花Q/K，红桃A/K，方块EX-Q），【铁索连环】6张·军争篇（黑桃J/Q，梅花10/J/Q/K），【火攻】3张·军争篇（红桃2/3，方块Q），【万箭齐发】1张（红桃A），【南蛮入侵】3张（黑桃7/K，梅花7），【桃园结义】1张（红桃A），【五谷丰登】2张（红桃3/4）。",
-                          "en":  "Non Time-Delay Tool Cards × 43: [Dismantle] ×6 (Spades 3·3/4/Q, Clubs 2·3/4, Hearts 1·Q), [Steal] ×5 (Spades 3·3/4/J, Diamonds 2·3/4), [Duel] ×3 (Spades/Clubs/Diamonds each A), [Proxy Attack] ×2 (Clubs Q/K), [Resupply] ×4 (Hearts 7/8/9/J), [Nullification] ×7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] ×6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] ×3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] ×1 (Hearts A), [Barbarians] ×3 (Spades 7/K, Clubs 7), [Peach Garden] ×1 (Hearts A), [Harvest] ×2 (Hearts 3/4).",
+                          "en":  "Non-Time-Delayed Tool Cards × 43: [Dismantle] ×6 (Spades 3·3/4/Q, Clubs 2·3/4, Hearts 1·Q), [Steal] ×5 (Spades 3·3/4/J, Diamonds 2·3/4), [Duel] ×3 (Spades/Clubs/Diamonds each A), [Proxy Attack] ×2 (Clubs Q/K), [Resupply] ×4 (Hearts 7/8/9/J), [Nullification] ×7 (Spades J/K, Clubs Q/K, Hearts A/K, Diamonds EX-Q), [Iron Shackles] ×6 Military Conflict (Spades J/Q, Clubs 10/J/Q/K), [Incendiary] ×3 Military Conflict (Hearts 2/3, Diamonds Q), [Raining Arrows] ×1 (Hearts A), [Barbarians] ×3 (Spades 7/K, Clubs 7), [Peach Garden] ×1 (Hearts A), [Harvest] ×2 (Hearts 3/4).",
                           "segments":  [
                                            {
                                                "kind":  "label",
                                                "cn":  "非延时类 × 43：",
-                                               "en":  "Non Time-Delay × 43: "
+                                               "en":  "Non-Time-Delayed × 43: "
                                            },
                                            {
                                                "kind":  "card",

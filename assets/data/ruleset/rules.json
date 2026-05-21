@@ -20,7 +20,7 @@
       {
         "type": "rule",
         "cn": "本部分包含：结算原则（§4.1）、技能要素（§4.2）、专题三 锁定技与优先级（§4.3）、专题四 技能与牌的分类（§4.4）。",
-        "en": "This section covers: Resolution Principles (Â§4.1), Elements of Skills (Â§4.2), Topic 3: Locked Skills and Priority (Â§4.3), Topic 4: Classifying Skills and Cards (Â§4.4).",
+        "en": "This section covers: Resolution Principles (§4.1), Elements of Skills (§4.2), Topic 3: Locked Skills and Priority (§4.3), Topic 4: Classifying Skills and Cards (§4.4).",
         "segments": [],
         "examples": []
       },
@@ -49,7 +49,7 @@
       {
         "type": "rule",
         "cn": "【效果冲突原则①】：当技能说明与游戏通则或用语操作规范冲突时，优先级为：技能的说明 ＞ 基本牌/锦囊牌的说明 ＞ 游戏通则或用语操作规范。",
-        "en": "Conflict Principle ①: When a skill's description conflicts with a general rule or terminology standard, the priority is: Skill description > Basic/Tool card description > General rules or terminology standards.",
+        "en": "Conflict Principle ①: When a skill's description conflicts with a general rule or terminology standard, the priority is: Skill description > Basic/Tool Card description > General rules or terminology standards.",
         "segments": [
           {
             "kind": "label",
@@ -59,13 +59,13 @@
           {
             "kind": "body",
             "cn": "优先级：技能的说明 ＞ 基本牌/锦囊牌的说明 ＞ 游戏通则或用语操作规范。",
-            "en": "Priority: Skill description > Basic/Tool card description > General rules or terminology standards."
+            "en": "Priority: Skill description > Basic/Tool Card description > General rules or terminology standards."
           }
         ],
         "examples": [
           {
             "cn": "张飞的〖咆哮〗与基本牌【杀】每个出牌阶段只能使用一张的说明矛盾，须遵循〖咆哮〗的技能说明。",
-            "en": "Zhang Fei's 〖Roar〗 conflicts with the Basic card rule that [Kill] can only be used once per Action Phase. The skill description takes priority.",
+            "en": "Zhang Fei's 〖Roar〗 conflicts with the Basic card rule that [Kill] can only be used once per Play Phase. The skill description takes priority.",
             "sub_examples": []
           }
         ]
@@ -465,7 +465,7 @@
         "examples": [
           {
             "cn": "夏侯渊进行【乐不思蜀】的判定须跳过出牌阶段，此时不可以发动〖神速②〗，因为跳过出牌阶段是发动〖神速②〗的消耗，而非外部事件代为执行。",
-            "en": "Xiahou Yuan's [Acedia] judgment fails and he must skip his Action Phase. He cannot activate 〖Lightning Speed②〗 because skipping the Action Phase is that skill's cost — the external effect does not count as paying the cost.",
+            "en": "Xiahou Yuan's [Acedia] judgment fails and he must skip his Play Phase. He cannot activate 〖Lightning Speed②〗 because skipping the Play Phase is that skill's cost — the external effect does not count as paying the cost.",
             "sub_examples": []
           }
         ]
@@ -517,7 +517,7 @@
         "examples": [
           {
             "cn": "姜维在准备阶段开始时触发〖志继〗获得〖观星〗，可以继续发动〖观星〗。左慈在回合结束后发动〖化身②〗拥有〖连破〗，可以发动〖连破〗。",
-            "en": "Jiang Wei triggers 〖Inherit the Will〗 at Starting Phase Start and gains 〖Read the Stars〗 — he may immediately activate it. Zuo Ci activates 〖Shapeshifter②〗 after his turn ends and gains 〖Supreme Advance〗 — he may immediately activate it.",
+            "en": "Jiang Wei triggers 〖Inherit the Will〗 at Preparation Phase Start and gains 〖Read the Stars〗 — he may immediately activate it. Zuo Ci activates 〖Shapeshifter②〗 after his turn ends and gains 〖Supreme Advance〗 — he may immediately activate it.",
             "sub_examples": []
           }
         ]

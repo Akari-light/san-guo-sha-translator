@@ -44,7 +44,7 @@
     "term_en": "Turn Timing Reference",
     "badge": null,
     "definition_cn": "每名角色的回合分为六个阶段：准备阶段 → 判定阶段 → 摸牌阶段 → 出牌阶段 → 弃牌阶段 → 结束阶段。以下列出每个时机点及其能发动的技能。",
-    "definition_en": "Each character's turn has six phases: Starting Phase → Judgment Phase → Draw Phase → Action Phase → Discard Phase → End Phase. The timings and skills that can activate at each point are listed below.",
+    "definition_en": "Each character's turn has six phases: Preparation Phase → Judgment Phase → Draw Phase → Play Phase → Discard Phase → End Phase. The timings and skills that can activate at each point are listed below.",
     "rules": [
       {
         "type": "rule",
@@ -125,12 +125,12 @@
       {
         "type": "rule",
         "cn": "【准备阶段开始时】：能发动〖洛神〗、〖凿险〗、〖观星〗、〖志继〗、〖若愚〗、〖神智〗、〖英魂〗等技能。",
-        "en": "At Starting Phase Start: Skills including 〖Goddess of the Luo〗, 〖Breach the Pass〗, 〖Read the Stars〗, 〖Inherit the Will〗, 〖Feign Foolishness〗, 〖Divine Mind〗, 〖Heroic Spirit〗 and others can activate.",
+        "en": "At Preparation Phase Start: Skills including 〖Goddess of the Luo〗, 〖Breach the Pass〗, 〖Read the Stars〗, 〖Inherit the Will〗, 〖Feign Foolishness〗, 〖Divine Mind〗, 〖Heroic Spirit〗 and others can activate.",
         "segments": [
           {
             "kind": "label",
             "cn": "准备阶段开始时：",
-            "en": "At Starting Phase Start: "
+            "en": "At Preparation Phase Start: "
           },
           {
             "kind": "body",
@@ -213,12 +213,12 @@
       {
         "type": "rule",
         "cn": "【准备阶段】：暂时没有作用。",
-        "en": "Starting Phase: No effect at this time.",
+        "en": "Preparation Phase: No effect at this time.",
         "segments": [
           {
             "kind": "label",
             "cn": "准备阶段：",
-            "en": "Starting Phase: "
+            "en": "Preparation Phase: "
           },
           {
             "kind": "body",
@@ -231,12 +231,12 @@
       {
         "type": "rule",
         "cn": "【准备阶段结束时】：暂时没有作用。",
-        "en": "At Starting Phase End: No effect at this time.",
+        "en": "At Preparation Phase End: No effect at this time.",
         "segments": [
           {
             "kind": "label",
             "cn": "准备阶段结束时：",
-            "en": "At Starting Phase End: "
+            "en": "At Preparation Phase End: "
           },
           {
             "kind": "body",
@@ -249,12 +249,12 @@
       {
         "type": "rule",
         "cn": "【准备阶段与判定阶段间】：能发动：〖神速①〗、〖巧变〗、〖挫锐②〗。",
-        "en": "Between Starting Phase and Judgment Phase: 〖Lightning Speed①〗, 〖Agile Maneuver〗, 〖Agile Maneuver②〗 can activate.",
+        "en": "Between Preparation Phase and Judgment Phase: 〖Lightning Speed①〗, 〖Agile Maneuver〗, 〖Agile Maneuver②〗 can activate.",
         "segments": [
           {
             "kind": "label",
             "cn": "准备阶段与判定阶段间：",
-            "en": "Between Starting Phase and Judgment Phase: "
+            "en": "Between Preparation Phase and Judgment Phase: "
           },
           {
             "kind": "body",
@@ -569,12 +569,12 @@
       {
         "type": "rule",
         "cn": "【摸牌阶段与出牌阶段间】：能发动：〖神速②〗、〖巧变〗、〖放权〗。",
-        "en": "Between Draw Phase and Action Phase: 〖Lightning Speed②〗, 〖Agile Maneuver〗, 〖Abdicate〗 can activate.",
+        "en": "Between Draw Phase and Play Phase: 〖Lightning Speed②〗, 〖Agile Maneuver〗, 〖Abdicate〗 can activate.",
         "segments": [
           {
             "kind": "label",
             "cn": "摸牌阶段与出牌阶段间：",
-            "en": "Between Draw Phase and Action Phase: "
+            "en": "Between Draw Phase and Play Phase: "
           },
           {
             "kind": "body",
@@ -617,12 +617,12 @@
       {
         "type": "rule",
         "cn": "【出牌阶段开始时】：能发动：〖司敌②〗、〖巧说〗、〖强识〗、〖献图〗、〖燕语〗、〖双刃〗、〖鸩毒〗。",
-        "en": "At Action Phase Start: 〖Counter the Enemy②〗, 〖Clever Persuasion〗, 〖Photographic Memory〗, 〖Present the Map〗, 〖Swallow's Song〗, 〖Twin Blades〗, 〖Poison Wine〗 can activate.",
+        "en": "At Play Phase Start: 〖Counter the Enemy②〗, 〖Clever Persuasion〗, 〖Photographic Memory〗, 〖Present the Map〗, 〖Swallow's Song〗, 〖Twin Blades〗, 〖Poison Wine〗 can activate.",
         "segments": [
           {
             "kind": "label",
             "cn": "出牌阶段开始时：",
-            "en": "At Action Phase Start: "
+            "en": "At Play Phase Start: "
           },
           {
             "kind": "body",
@@ -705,12 +705,12 @@
       {
         "type": "rule",
         "cn": "【出牌阶段（的空闲时间点）】：进行游戏的主要阶段。能发动多种主动技能及使用除【闪】以外的基本牌、除【无懈可击】外的锦囊牌、所有装备牌。",
-        "en": "Action Phase (Idle Timing): The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except [Dodge]), Tool Cards (except [Nullification]), and all Equipment Cards.",
+        "en": "Play Phase (Idle Timing): The main gameplay phase. Many active skills can activate, and the character may use Basic Cards (except [Dodge]), Tool Cards (except [Nullification]), and all Equipment Cards.",
         "segments": [
           {
             "kind": "label",
             "cn": "出牌阶段：",
-            "en": "Action Phase: "
+            "en": "Play Phase: "
           },
           {
             "kind": "body",
@@ -741,7 +741,7 @@
         "examples": [
           {
             "cn": "发动时机为「出牌阶段」的技能必须在出牌阶段的空闲时间点才可以发动。如果在出牌阶段发生事件，须先插入进行该事件的结算，结算完毕后才可发动。",
-            "en": "Skills with timing \"Action Phase\" can only activate at an idle timing. If an event occurs mid-phase, that event's resolution must complete first.",
+            "en": "Skills with timing \"Play Phase\" can only activate at an idle timing. If an event occurs mid-phase, that event's resolution must complete first.",
             "sub_examples": [
               {
                 "cn": "装备【青龙偃月刀】的角色在出牌阶段使用的【杀】被【闪】抵消时：若该角色不发动【青龙偃月刀】，此时为空闲时间点，可以对自己使用【酒】；若该角色发动【青龙偃月刀】，此时不可以使用【酒】，必须对相同目标使用【杀】。",
@@ -751,7 +751,7 @@
           },
           {
             "cn": "出牌阶段有无数个空闲时间点。若技能说明「出牌阶段限一次」，则一个出牌阶段只能发动一次此技能。",
-            "en": "There are infinitely many idle timings in the Action Phase. If a skill specifies \"once per Action Phase,\" it can only activate once per Action Phase.",
+            "en": "There are infinitely many idle timings in the Play Phase. If a skill specifies \"once per Play Phase,\" it can only activate once per Play Phase.",
             "sub_examples": []
           }
         ]
@@ -759,12 +759,12 @@
       {
         "type": "rule",
         "cn": "【出牌阶段结束时】：能发动/执行：〖精策〗、〖生息〗、〖献图〗失去体力的效果、〖暴凌〗。",
-        "en": "At Action Phase End: 〖Refined Strategy〗, 〖Respite〗, 〖Present the Map〗 (lose HP effect), 〖Savage Oppression〗 can activate or execute.",
+        "en": "At Play Phase End: 〖Refined Strategy〗, 〖Respite〗, 〖Present the Map〗 (lose HP effect), 〖Savage Oppression〗 can activate or execute.",
         "segments": [
           {
             "kind": "label",
             "cn": "出牌阶段结束时：",
-            "en": "At Action Phase End: "
+            "en": "At Play Phase End: "
           },
           {
             "kind": "body",
@@ -817,12 +817,12 @@
       {
         "type": "rule",
         "cn": "【出牌阶段与弃牌阶段间】：能发动：〖巧变〗、〖克己〗。",
-        "en": "Between Action Phase and Discard Phase: 〖Agile Maneuver〗, 〖Self-Discipline〗 can activate.",
+        "en": "Between Play Phase and Discard Phase: 〖Agile Maneuver〗, 〖Self-Discipline〗 can activate.",
         "segments": [
           {
             "kind": "label",
             "cn": "出牌阶段与弃牌阶段间：",
-            "en": "Between Action Phase and Discard Phase: "
+            "en": "Between Play Phase and Discard Phase: "
           },
           {
             "kind": "body",
@@ -2107,7 +2107,7 @@
       }
     ],
     "search_text_cn": "判定事件 结算流程 判定牌 替换 结果",
-    "search_text_en": "judgment event resolution judgment card replace result"
+    "search_text_en": "judgment event resolution Judgment Card replace result"
   },
   {
     "id": "flow_3_8_damage_event",
@@ -3080,7 +3080,7 @@
       }
     ],
     "search_text_cn": "减体力上限事件 结算流程 体力上限 死亡",
-    "search_text_en": "reduce max hp event resolution max hp death"
+    "search_text_en": "reduce Max HP event resolution Max HP death"
   },
   {
     "id": "flow_3_13_increase_max_hp_event",
@@ -3161,7 +3161,7 @@
       }
     ],
     "search_text_cn": "加体力上限事件 结算流程 体力上限",
-    "search_text_en": "increase max hp event resolution max hp"
+    "search_text_en": "increase Max HP event resolution Max HP"
   },
   {
     "id": "flow_3_14_verge_of_death_event",
@@ -3746,7 +3746,7 @@
       {
         "type": "rule",
         "cn": "对于【杀】的次数限制：一名角色只有于出牌阶段空闲时间点使用【杀】才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的【杀】优先计入额定次数。",
-        "en": "Regarding [Kill] frequency limits: limits only apply when using [Kill] at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. [Kill] uses count toward the standard limit first.",
+        "en": "Regarding [Kill] frequency limits: limits only apply when using [Kill] at an idle timing during the Play Phase. The default standard limit is 1; the default extra limit is 0. [Kill] uses count toward the standard limit first.",
         "segments": [
           {
             "kind": "body",
@@ -3771,7 +3771,7 @@
           {
             "kind": "body",
             "cn": "才有次数限制。额定次数上限默认为1，额外次数上限默认为0。使用的",
-            "en": " at an idle timing during the Action Phase. The default standard limit is 1; the default extra limit is 0. "
+            "en": " at an idle timing during the Play Phase. The default standard limit is 1; the default extra limit is 0. "
           },
           {
             "kind": "card",
