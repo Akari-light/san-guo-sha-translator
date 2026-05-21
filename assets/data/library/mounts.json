@@ -9,14 +9,14 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 1."
+      "When you calculate the Distance to another character, -1."
     ],
     "faq": [
       {
         "q_cn": "赤兔会增加我的武器攻击距离吗？",
         "a_cn": "不会。赤兔减少的是你到其他角色的距离，让更多目标变得可达——但不会改变你的武器射程数值。此修正适用于所有需要检测你到某角色距离的情形，例如【顺手牵羊】的距离判断。",
         "q_en": "Does Red Hare increase my weapon attack range?",
-        "a_en": "No. It reduces the distance from you to other characters, making more targets reachable — but it does not change your weapon range value. This modifier applies to all distance checks from you to another character, not only attacks (e.g. [Steal] also checks distance)."
+        "a_en": "No. It reduces the Distance from you to other characters, making more targets reachable — but it does not change your weapon range value. This modifier applies to all Distance checks from you to another character, not only attacks (e.g. [Steal] also checks distance)."
       }
     ]
   },
@@ -30,7 +30,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 1."
+      "When you calculate the Distance to another character, -1."
     ],
     "faq": []
   },
@@ -44,7 +44,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 1."
+      "When you calculate the Distance to another character, -1."
     ],
     "faq": []
   },
@@ -58,14 +58,14 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 1."
+      "When other characters calculate the Distance to you, +1."
     ],
     "faq": [
       {
         "q_cn": "的卢会影响需要判断距离的锦囊牌（如【顺手牵羊】）吗？",
         "a_cn": "会。的卢令其他任意角色计算与你的距离+1，此修正适用于所有以你为目标时的距离检测，不限于攻击。",
-        "q_en": "Does Di Lu affect tool cards like [Steal] that require distance checks?",
-        "a_en": "Yes. Di Lu increases the distance any other character measures to you by 1. This modifier applies to all distance checks targeting you, not only attacks."
+        "q_en": "Does Di Lu affect Tool Cards like [Steal] that require Distance checks?",
+        "a_en": "Yes. Di Lu increases the Distance any other character measures to you by 1. This modifier applies to all Distance checks targeting you, not only attacks."
       }
     ]
   },
@@ -79,7 +79,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 1."
+      "When other characters calculate the Distance to you, +1."
     ],
     "faq": []
   },
@@ -93,7 +93,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 1."
+      "When other characters calculate the Distance to you, +1."
     ],
     "faq": []
   },
@@ -107,7 +107,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 1."
+      "When other characters calculate the Distance to you, +1."
     ],
     "faq": []
   },
@@ -122,8 +122,8 @@
       "锁定技，当你造成属性伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 1.",
-      "Locked: When you deal elemental damage, that damage is increased by 1."
+      "When you calculate the Distance to another character, -1.",
+      "Locked Skill: When you deal elemental damage, that damage +1."
     ],
     "faq": []
   },
@@ -137,7 +137,7 @@
       "其他角色计算与你的距离+2。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 2."
+      "When other characters calculate the Distance to you, +2."
     ],
     "faq": []
   },
@@ -151,7 +151,7 @@
       "你计算与其他角色的距离-1。其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 1. When other characters calculate the distance to you, add 1."
+      "When you calculate the Distance to another character, -1. When other characters calculate the Distance to you, +1."
     ],
     "faq": [
       {
@@ -172,7 +172,7 @@
       "你计算与其他角色的距离-2。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 2."
+      "When you calculate the Distance to another character, -2."
     ],
     "faq": []
   },
@@ -186,7 +186,7 @@
       "其他角色计算与你的距离+2。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 2."
+      "When other characters calculate the Distance to you, +2."
     ],
     "faq": []
   },
@@ -201,8 +201,8 @@
       "出牌阶段，你每使用或打出一张黑色牌时，你可以摸一张牌。回合外，你不能成为普通【杀】的目标。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 2.",
-      "During your Action Phase, each time you use or play a black card, you may draw 1 card. Outside of your turn, you cannot be the target of normal [Kill]."
+      "When you calculate the Distance to another character, -2.",
+      "During your Play Phase, each time you use or play a black card, you may draw 1 card. Outside of your turn, you cannot be the target of normal [Kill]."
     ],
     "faq": []
   },
@@ -216,7 +216,7 @@
       "装备后，回合开始阶段，你可以观看牌堆顶的一张牌，然后选择将其置于牌堆顶或牌堆底。"
     ],
     "effect_en": [
-      "During your Starting Phase, you may look at the top card of the Draw Pile, then choose to place it on the top or bottom of the Draw Pile."
+      "During your Preparation Phase, you may look at the top card of the Draw Pile, then choose to place it on the top or bottom of the Draw Pile."
     ],
     "faq": []
   },
@@ -231,8 +231,8 @@
       "锁定技，你的手牌上限+X，X为你装备区内的牌数。"
     ],
     "effect_en": [
-      "When other characters calculate the distance to you, add 1.",
-      "Locked: Your Hand Limit is increased by X, where X is the number of cards in your Equipment Zone."
+      "When other characters calculate the Distance to you, +1.",
+      "Locked Skill: Your Hand Limit +X, where X is the number of cards in your Equipment Zone."
     ],
     "faq": []
   },
@@ -246,7 +246,7 @@
       "装备后，若目标角色的装备区里没有牌，你使用【杀】或【决斗】（你为伤害来源时）造成的伤害+1。"
     ],
     "effect_en": [
-      "When you use [Kill] or [Duel] (when you are the damage source) and the target character's Equipment Zone has no cards, the damage dealt is increased by 1."
+      "When you use [Kill] or [Duel] (when you are the damage source) and the target character's Equipment Zone has no cards, the damage dealt +1."
     ],
     "faq": []
   },
@@ -261,7 +261,7 @@
       "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 2.",
+      "When you calculate the Distance to another character, -2.",
       "You Ignore all equipment effects. During another character's Draw Phase, you may look at the cards they draw and gain any among them with an even rank."
     ],
     "faq": []
@@ -277,8 +277,8 @@
       "锁定技，若你的体力值为1，你视为拥有技能\"狂骨\"。"
     ],
     "effect_en": [
-      "When you calculate the distance to another character, subtract 2.",
-      "Locked: If your HP Value is 1, you are treated as having the skill [Savage Bone]."
+      "When you calculate the Distance to another character, -2.",
+      "Locked Skill: If your HP Value is 1, you are treated as having the skill 〖Bloodthirst〗."
     ],
     "faq": []
   }

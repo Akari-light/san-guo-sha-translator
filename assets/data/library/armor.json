@@ -48,7 +48,7 @@
       "锁定技，当你受到伤害时，若伤害值大于1，则你将伤害值改为1；当你失去装备区里的【白银狮子】后，你回复1点体力。"
     ],
     "effect_en": [
-      "Locked: When you receive damage, if the damage value exceeds 1, reduce it to 1. When you lose [Silver Lion Helmet] from your Equipment Zone, you recover 1 HP."
+      "Locked Skill: When you take damage, if the damage value is greater than 1, the damage is changed to 1. When you lose [Silver Lion Helmet] from your Equipment Zone, you recover 1 HP."
     ],
     "faq": [
       {
@@ -87,7 +87,7 @@
       "锁定技，当你成为【火攻】或火【杀】的目标时，取消之；若你是小势力角色，你不会被横置。"
     ],
     "effect_en": [
-      "Locked: When you become the target of [Incendiary] or a fire [Kill], you are Removed as the target. If you are a minor-faction character, your General Card cannot be placed in horizontal position."
+      "Locked Skill: When you become the target of [Incendiary] or a fire [Kill], you are Removed as the target. If you are a minor-faction character, your General Card cannot be placed into the Chained state."
     ],
     "faq": [
       {
@@ -105,13 +105,13 @@
       {
         "q_cn": "【明光铠】能防止武将技能造成的火焰伤害吗？",
         "a_cn": "不能。【明光铠】只取消特定卡牌（【火攻】、火【杀】）的目标，不防止武将技能直接造成的火焰伤害。",
-        "q_en": "Does [Radiant Plate] protect against fire damage dealt directly by general skills?",
-        "a_en": "No. [Radiant Plate] only removes you as a target of [Incendiary] and fire [Kill]. It does not prevent fire damage dealt directly by general skills."
+        "q_en": "Does [Radiant Plate] protect against Fire damage dealt directly by general skills?",
+        "a_en": "No. [Radiant Plate] only removes you as a target of [Incendiary] and fire [Kill]. It does not prevent Fire damage dealt directly by general skills."
       },
       {
         "q_cn": "小势力角色的「不被横置」效果在任何时候都生效吗？",
         "a_cn": "是的。只要装备了【明光铠】且为小势力角色，一切令其横置的效果均无效。",
-        "q_en": "Does the 'cannot be placed in horizontal position' effect for minor-faction characters apply at all times while equipped?",
+        "q_en": "Does the 'cannot be placed into the Chained state' effect for minor-faction characters apply at all times while equipped?",
         "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would place their General Card in horizontal position are Nullified."
       }
     ]
@@ -126,19 +126,19 @@
       "锁定技，黑色的【杀】对你无效。"
     ],
     "effect_en": [
-      "Locked: Black [Kill] cards are Nullified against you."
+      "Locked Skill: Black [Kill] cards are Nullified against you."
     ],
     "faq": [
       {
         "q_cn": "【仁王盾】对黑色的雷【杀】是否有效？",
         "a_cn": "有效。只要【杀】的花色为黑色（黑桃或梅花），无论其属性（普通、雷、火），【仁王盾】均令其无效。",
-        "q_en": "Does [Vajra Shield] negate a black thunder [Kill]?",
+        "q_en": "Does [Vajra Shield] Negate a black thunder [Kill]?",
         "a_en": "Yes. As long as the [Kill] card is black (Spades or Clubs), it is Nullified regardless of its elemental type (normal, thunder, or fire)."
       },
       {
         "q_cn": "【青釭剑】能令【仁王盾】无效吗？",
         "a_cn": "可以。【青釭剑】令目标防具无效，因此装备【青釭剑】的攻击者使用黑色【杀】时，【仁王盾】在该次攻击中无效。",
-        "q_en": "Can [Qing Gang Sword] negate [Vajra Shield]?",
+        "q_en": "Can [Qing Gang Sword] Negate [Vajra Shield]?",
         "a_en": "Yes. [Qing Gang Sword] Nullifies the target's armor, so a black [Kill] will land normally when the attacker is equipped with [Qing Gang Sword]."
       },
       {
@@ -159,31 +159,31 @@
       "锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "Locked: [Barbarians], [Raining Arrows], and normal [Kill] cards are Nullified against you. When you receive fire damage, that damage is increased by 1."
+      "Locked Skill: [Barbarians], [Raining Arrows], and normal [Kill] cards are Nullified against you. When you take Fire damage, that damage +1."
     ],
     "faq": [
       {
         "q_cn": "【藤甲】对雷【杀】和火【杀】是否有效？",
         "a_cn": "无效。【藤甲】只令普通【杀】无效，雷【杀】和火【杀】可以正常命中。此外，受到火焰伤害时伤害还会+1。",
         "q_en": "Does [Rattan Armour] protect against thunder [Kill] or fire [Kill]?",
-        "a_en": "No. [Rattan Armour] only Nullifies normal (non-elemental) [Kill]. Thunder [Kill] and fire [Kill] land normally, and fire damage additionally increases by 1."
+        "a_en": "No. [Rattan Armour] only Nullifies normal (non-elemental) [Kill]. Thunder [Kill] and fire [Kill] land normally, and Fire damage additionally increases by 1."
       },
       {
         "q_cn": "【青釭剑】可以无效【藤甲】吗？",
         "a_cn": "可以。装备【青釭剑】的攻击者使用普通【杀】时，【藤甲】在该次攻击中无效，普通【杀】正常命中。",
-        "q_en": "Can [Qing Gang Sword] negate [Rattan Armour]?",
+        "q_en": "Can [Qing Gang Sword] Negate [Rattan Armour]?",
         "a_en": "Yes. When an attacker equipped with [Qing Gang Sword] uses a normal [Kill], [Rattan Armour] is Nullified for that attack and the [Kill] lands normally."
       },
       {
         "q_cn": "【藤甲】的火焰伤害+1是否叠加在原有伤害之上？",
         "a_cn": "是的。例如，受到1点火焰伤害时实际受到2点伤害；受到2点火焰伤害时实际受到3点伤害。",
-        "q_en": "Is the fire damage +1 from [Rattan Armour] added on top of the original damage?",
-        "a_en": "Yes. For example, 1 point of fire damage becomes 2; 2 points of fire damage becomes 3."
+        "q_en": "Is the Fire damage +1 from [Rattan Armour] added on top of the original damage?",
+        "a_en": "Yes. For example, 1 point of Fire damage becomes 2; 2 points of Fire damage becomes 3."
       },
       {
         "q_cn": "铁索连环传导的火焰伤害是否也会触发【藤甲】的+1效果？",
         "a_cn": "是的。连环传导的伤害若为火焰属性，装备【藤甲】的角色受到的伤害+1。",
-        "q_en": "Does fire damage transmitted via [Iron Shackles] chain also trigger [Rattan Armour]'s +1 penalty?",
+        "q_en": "Does Fire damage transmitted via [Iron Shackles] chain also trigger [Rattan Armour]'s +1 penalty?",
         "a_en": "Yes. If chain-transmitted damage has the fire property, a character equipped with [Rattan Armour] takes +1 damage from it."
       }
     ]
@@ -198,7 +198,7 @@
       "锁定技，【杀】对你无效。"
     ],
     "effect_en": [
-      "Locked: [Kill] cards are Nullified against you."
+      "Locked Skill: [Kill] cards are Nullified against you."
     ],
     "faq": []
   },
@@ -212,7 +212,7 @@
       "锁定技，当你成为【杀】或伤害类锦囊牌、黑色锦囊牌的目标后，若此牌目标数大于1，此牌对你无效。"
     ],
     "effect_en": [
-      "Locked: When you become the target of a [Kill], a damage-dealing Tool card, or a black Tool card, if that card has more than one target, that card is Nullified against you."
+      "Locked Skill: When you become the target of a [Kill], a damage-dealing Tool card, or a black Tool card, if that card has more than one target, that card is Nullified against you."
     ],
     "faq": []
   },
@@ -226,7 +226,7 @@
       "锁定技，防止你受到的属性伤害。"
     ],
     "effect_en": [
-      "Locked: Prevent all elemental damage you receive."
+      "Locked Skill: Prevent all elemental damage you take."
     ],
     "faq": []
   },
@@ -240,7 +240,7 @@
       "锁定技，其他角色不能对你使用普通锦囊牌。"
     ],
     "effect_en": [
-      "Locked: Other characters cannot use Non Time-Delay Tool cards on you."
+      "Locked Skill: Other characters cannot use Non-Time-Delayed Tool Cards on you."
     ],
     "faq": []
   },
@@ -268,7 +268,7 @@
       "此牌不能被无视，该技能不能被无效：1.你可以将一张手牌当【闪】使用；2.当你受到【杀】造成的伤害时，你弃置装备区里的【烂银甲】。"
     ],
     "effect_en": [
-      "This card cannot be ignored and its effects cannot be Nullified: 1. You may use a hand card as a [Dodge]; 2. When you receive damage from a [Kill], discard [Tarnished Silver Armor] from your Equipment Zone."
+      "This card cannot be ignored and its effects cannot be Nullified: 1. You may use a hand card as a [Dodge]; 2. When you take damage from a [Kill], discard [Tarnished Silver Armor] from your Equipment Zone."
     ],
     "faq": []
   },
@@ -282,7 +282,7 @@
       "出牌阶段，你可以将手牌中的【护心镜】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
     ],
     "effect_en": [
-      "During your Action Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you receive damage that would reduce your HP to 0 or below, or damage exceeding 1, you may place [Sentinel Mirror] from any Equipment Zone into the Discard Pile to prevent that damage."
+      "During your Play Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you take damage that would reduce your HP to 0 or below, or damage exceeding 1, you may place [Sentinel Mirror] from any Equipment Zone into the Discard Pile to prevent that damage."
     ],
     "faq": [
       {
@@ -321,7 +321,7 @@
       "锁定技，体力为一点时，任何伤害对你无效。当你失去装备区里的【百花裙】时，你可以摸两张牌。"
     ],
     "effect_en": [
-      "Locked: When your HP Value is 1, all damage is Nullified against you. When you lose [Hundred Flowers Skirt] from your Equipment Zone, you may draw 2 cards."
+      "Locked Skill: When your HP Value is 1, all damage is Nullified against you. When you lose [Hundred Flowers Skirt] from your Equipment Zone, you may draw 2 cards."
     ],
     "faq": []
   },
@@ -336,8 +336,8 @@
       "锁定技,武将牌不能被翻面。"
     ],
     "effect_en": [
-      "Locked: Whenever you receive damage of 2 or more, that damage is reduced by 1.",
-      "Locked: Your General Card cannot be flipped over."
+      "Locked Skill: Whenever you take damage of 2 or more, that damage is reduced by 1.",
+      "Locked Skill: Your General Card cannot be flipped over."
     ],
     "faq": []
   },
@@ -351,7 +351,7 @@
       "锁定技，属性伤害对你无效。"
     ],
     "effect_en": [
-      "Locked: Elemental damage is Nullified against you."
+      "Locked Skill: Elemental damage is Nullified against you."
     ],
     "faq": []
   },
@@ -365,7 +365,7 @@
       "锁定技，红色的【杀】对你无效，你的手牌上限+2。"
     ],
     "effect_en": [
-      "Locked: Red [Kill] cards are Nullified against you. Your Hand Limit is increased by 2."
+      "Locked Skill: Red [Kill] cards are Nullified against you. Your Hand Limit is increased by 2."
     ],
     "faq": []
   },
@@ -407,7 +407,7 @@
       "每当你受到伤害时，可选择攻击范围内的一名角色给你1张手牌，否则该角色减少1点体力。"
     ],
     "effect_en": [
-      "Whenever you receive damage, you may choose a character within your Attack Range. That character must give you 1 hand card, or they lose 1 HP."
+      "Whenever you take damage, you may choose a character within your Attack Range. That character must give you 1 hand card, or they lose 1 HP."
     ],
     "faq": []
   },
@@ -421,7 +421,7 @@
       "血量上限+1；主公无法装备，但可打出此牌，恢复1点血(不能进行濒死恢复)。"
     ],
     "effect_en": [
-      "Your Max HP is increased by 1. The Lord cannot equip this card, but may play it out to recover 1 HP (cannot be played out during a Verge of Death Resolution)."
+      "Your Max HP +1. The Lord cannot equip this card, but may play it out to recover 1 HP (cannot be played out during a Verge of Death Resolution)."
     ],
     "faq": []
   },
@@ -435,7 +435,7 @@
       "锁定技,防止你受到的所有伤害，当你失去装备区的【混沌甲】时，你失去X点体力，X为【混沌甲】防止过的伤害次数。"
     ],
     "effect_en": [
-      "Locked: Prevent all damage you receive. When you lose [Primal Chaos Plate] from your Equipment Zone, you lose X HP, where X equals the number of times damage was prevented by this card."
+      "Locked Skill: Prevent all damage you take. When you lose [Primal Chaos Plate] from your Equipment Zone, you lose X HP, where X equals the number of times damage was prevented by this card."
     ],
     "faq": []
   },
@@ -449,7 +449,7 @@
       "锁定技，每当你使用或打出【闪】后，对方受到你造成的1点伤害。"
     ],
     "effect_en": [
-      "Locked: After each time you use or play out a [Dodge], the attacker receives 1 damage dealt by you."
+      "Locked Skill: After each time you use or play out a [Dodge], the attacker receives 1 damage dealt by you."
     ],
     "faq": []
   },
@@ -464,7 +464,7 @@
       "一名角色的准备阶段开始时，所有角色可以选择是否弃置一张牌，然后令此牌对其无效。"
     ],
     "effect_en": [
-      "Locked: Whenever a character draws cards, if they would draw more than 1, the number of cards drawn is reduced to 1.",
+      "Locked Skill: Whenever a character draws cards, if they would draw more than 1, the number of cards drawn is reduced to 1.",
       "At the start of a character's Starting Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
     ],
     "faq": []
