@@ -156,13 +156,13 @@
       {
         "q_cn": "【夺炁】的额外出牌阶段算独立的新回合吗？",
         "a_cn": "算。没有弃牌阶段，手牌可超出上限，延时锦囊不能直接使用，但【罡拳】可将其转化为【决斗】使用。",
-        "q_en": "Does [Seize Qi]'s extra Action Phase count as a new turn?",
+        "q_en": "Does [Seize Qi]'s extra Play Phase count as a new turn?",
         "a_en": "Yes — independent turn with no discard phase, so hand cards can exceed the limit. Delayed tool cards cannot be used directly, but [Astral Strike] can convert them into a [Duel]."
       },
       {
         "q_cn": "炁会因进入弃牌堆或其他区域而失效吗？",
         "a_cn": "不会。炁的标记在任何区域均有效，只有被移出游戏才会消失。",
-        "q_en": "Does [Qi] lose its marker when it enters the discard pile or another zone?",
+        "q_en": "Does [Qi] lose its marker when it enters the Discard Pile or another zone?",
         "a_en": "No. The [Qi] marker persists in any zone and only disappears if the card is removed from the game."
       },
       {
@@ -239,13 +239,13 @@
         "q_cn": "【幻惑】对额外出牌阶段有效吗？",
         "a_cn": "无效。只对目标角色下个正常出牌阶段有效。",
         "q_en": "Does [Bewitch] apply to extra Action Phases from other skills?",
-        "a_en": "No. [Bewitch] only applies to the target's next normal Action Phase."
+        "a_en": "No. [Bewitch] only applies to the target's next normal Play Phase."
       },
       {
         "q_cn": "被幻惑的角色出牌阶段若没有可用手牌会怎样？",
         "a_cn": "可正常发动出牌阶段技能。但若后续通过技能摸到可用手牌，【幻惑】仍会触发。",
-        "q_en": "What if a Bewitched character has no playable cards at the start of their Action Phase?",
-        "a_en": "They may use Action Phase skills normally. If they draw a playable card via a skill during that phase, [Bewitch] will still trigger."
+        "q_en": "What if a Bewitched character has no playable cards at the start of their Play Phase?",
+        "a_en": "They may use Play Phase skills normally. If they draw a playable card via a skill during that phase, [Bewitch] will still trigger."
       },
       {
         "q_cn": "倾世牌被弃置或从【决斗】中打出后，魔貂蝉能获得吗？",

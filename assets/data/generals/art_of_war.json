@@ -673,7 +673,7 @@
         "q_cn": "什么是「智囊」？",
         "a_cn": "「智囊」指三种普通锦囊牌名，分别为：【无中生有】、【过河拆桥】、【无懈可击】。",
         "q_en": "What are \"Wisdom Cards\"?",
-        "a_en": "\"Wisdom Cards\" refer to three Non Time-Delay Tool Card names: [Resupply], [Dismantle], and [Nullification]."
+        "a_en": "\"Wisdom Cards\" refer to three Non-Time-Delayed Tool Card names: [Resupply], [Dismantle], and [Nullification]."
       }
     ],
     "skills": [
@@ -878,7 +878,7 @@
         "q_cn": "什么是「整肃」？",
         "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
         "q_en": "What is \"Drill\"?",
-        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Play Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Play Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
       }
     ],
     "skills": [
@@ -1052,7 +1052,7 @@
         "q_cn": "什么是「整肃」？",
         "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
         "q_en": "What is \"Drill\"?",
-        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Play Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Play Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
       }
     ],
     "skills": [
@@ -1139,7 +1139,7 @@
         "q_cn": "什么是「整肃」？",
         "a_cn": "技能发动者从擂进、变阵、鸣止中选择一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择「整肃奖励」：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
         "q_en": "What is \"Drill\"?",
-        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Action Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Action Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
+        "a_en": "The skill activator chooses one of three modes for the target to execute — Advance, Formation, or Ceasefire. If the target has not failed the Drill by the end of their Discard Phase, they choose a \"Drill Reward\": draw 2 cards or recover 1 HP. Advance: During the Play Phase, all cards used must have strictly increasing ranks and at least 3 cards must be used. Formation: During the Play Phase, all cards used must share the same suit and at least 2 cards must be used. Ceasefire: During the Discard Phase, all cards discarded must have different suits and at least 2 cards must be discarded."
       }
     ],
     "skills": [
