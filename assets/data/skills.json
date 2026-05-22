@@ -53,7 +53,7 @@
     "name_cn": "缮甲",
     "name_en": "Repair Armor",
     "description_cn": "出牌阶段开始时，你可以摸三张牌，然后弃置X张牌（X为3减去你于本局游戏内失去过的装备区里的牌数，至少为0）。若你未以此法弃置：基本牌，你本阶段使用【杀】的次数上限+1；锦囊牌，你本阶段使用牌无距离限制；非装备牌，你可以视为使用一张不计入次数限制的【杀】。",
-    "description_en": "At the start of your Play Phase, you may draw 3 cards, then discard X cards (X = 3 minus the number of cards you have lost from your Equipment Zone this game, minimum 0). If you did not discard a card of the corresponding type by this method: Basic Card — your [Kill] usage limit this phase +1; Tool Card — your card use this phase ignores distance restrictions; non-Equipment Card — you may treat this as using a [Kill] that does not count toward your usage limit."
+    "description_en": "At the start of your Play Phase, you may draw 3 cards, then discard X cards (X = 3 minus the number of cards you have lost from your Equipment Zone this game, minimum 0). If you did not discard a card of the corresponding type by this method: Basic Card — your [Kill] usage limit this phase +1; Tool Card — your card use this phase ignores Distance restrictions; non-Equipment Card — you may treat this as using a [Kill] that does not count toward your usage limit."
   },
   "skill_iron_cavalry": {
     "skill_type": "active",
@@ -2262,7 +2262,7 @@
     "name_cn": "乱击",
     "name_en": "Wild Strike",
     "description_cn": "出牌阶段、你可以将两张手牌当【万箭齐发】使用（不能使用此回合发动本技能时已用过的花色）。当其他角色因响应你使用的【万箭齐发】而打出【闪】时、其摸一张牌。当你使用的【万箭齐发】结算结束后、没有角色因此牌而受到过伤害、你摸一张牌。",
-    "description_en": "During your Play Phase, you may discard 2 hand cards as [Raining Arrows] (you cannot use the same suit you have already used via 〖Wild Strike〗 this turn). When another character plays out [Dodge] in response to your [Raining Arrows], they draw 1 card. After your [Raining Arrows] finishes resolving, if no character took damage from it, you draw 1 card."
+    "description_en": "During your Play Phase, you may discard 2 hand cards as [Raining Arrows] (you cannot use the same suit you have already used via 〖Wild Strike〗 this turn). When another character plays [Dodge] in response to your [Raining Arrows], they draw 1 card. After your [Raining Arrows] finishes resolving, if no character took damage from it, you draw 1 card."
   },
   "skill_bloodline": {
     "skill_type": "lord",
@@ -2319,7 +2319,7 @@
     "name_cn": "帷幕",
     "name_en": "Iron Curtain",
     "description_cn": "限黑色锦囊牌对你无效；你可以将黑色非锦囊牌当【借刀杀人】使用。",
-    "description_en": "Black Tool cards have no effect on you. You may use any black non-Tool card as [Proxy Attack]."
+    "description_en": "Black Tool Cards are Nullified against you. You may use any black non-Tool Card as [Proxy Attack]."
   },
   "skill_reign_of_chaos": {
     "skill_type": "limited",
@@ -2354,7 +2354,7 @@
     "name_cn": "雷击",
     "name_en": "Lightning Strike",
     "description_cn": "每当你使用或打出【闪】时，你可以令一名其他角色进行判定，若结果为：黑桃，你对该角色造成2点雷电伤害；梅花，你回复1点体力，然后对该角色造成1点雷电伤害。",
-    "description_en": "Whenever you use or play [Dodge], you may have another character perform a Judgment. If the result is Spades: deal 2 Lightning damage to that character. If the result is Clubs: recover 1 HP, then deal 1 Lightning damage to that character."
+    "description_en": "Whenever you use or play a [Dodge], you may have another character perform a Judgment. If the result is Spades: deal 2 Lightning damage to that character. If the result is Clubs: recover 1 HP, then deal 1 Lightning damage to that character."
   },
   "skill_ghost_path": {
     "skill_type": "active",
@@ -2459,7 +2459,7 @@
     "name_cn": "求援",
     "name_en": "Seek Aid",
     "description_cn": "当你成为【杀】或伤害锦囊的目标时，你可以令另一名其他角色选择一项：1.交给你一张与此牌同类型不同牌名的牌；2.成为此牌的额外目标。",
-    "description_en": "When you become the target of [Kill] or a damage-dealing Tool card, you may have another character choose one: 1. Give you 1 card of the same type but different name from that card; 2. Become an additional target of that card."
+    "description_en": "When you become the target of a [Kill] or a damage-dealing Tool Card, you may have another character choose one: 1. Give you 1 card of the same type but different name from that card; 2. Become an additional target of that card."
   },
   "skill_decisive_stratagem": {
     "skill_type": "active",
@@ -2473,7 +2473,7 @@
     "name_cn": "灭计",
     "name_en": "Destroy the Plan",
     "description_cn": "出牌阶段限一次，你可以展示一张锦囊牌置于牌堆顶井令一名有手牌的其他角色选择一项:1.弃置一张锦囊牌:2.依次弃置两张牌。",
-    "description_en": "Once per Play Phase: show 1 Tool card from your hand and place it on top of the Draw Pile. Then have another character who has hand cards choose one: 1. Discard 1 Tool card; 2. Discard 2 cards, one at a time."
+    "description_en": "Once per Play Phase: show 1 Tool Card from your hand and place it on top of the Draw Pile. Then have another character who has hand cards choose one: 1. Discard 1 Tool Card; 2. Discard 2 cards, one at a time."
   },
   "skill_raze_the_city": {
     "skill_type": "limited",
@@ -2522,14 +2522,14 @@
     "name_cn": "霸朝",
     "name_en": "Tyrant’s Decree",
     "description_cn": "出牌阶段开始时，你可以令所有其他角色同时选择是否交给你一张牌，然后你可以对未以此法交给你非基本牌的一名角色造成1点伤害。若你选择自己，本阶段你使用当前手牌无次数和距离限制，并入魔。",
-    "description_en": "At the start of your Play Phase: you may have all other characters simultaneously choose whether to give you a card. You may then deal 1 damage to one character who did not give you a non-basic card this way. If you choose yourself, during this phase your current hand cards have no count or distance restrictions, and you Demonize."
+    "description_en": "At the start of your Play Phase: you may have all other characters simultaneously choose whether to give you a card. You may then deal 1 damage to one character who did not give you a non-basic card this way. If you choose yourself, during this phase your current hand cards have no count or Distance restrictions, and you Demonize."
   },
   "skill_ambuscade": {
     "skill_type": "active",
     "name_cn": "诡伏",
     "name_en": "Ambuscade",
     "description_cn": "每轮开始时或你体力值变化后，你获得一张不计入手牌上限的【闪】。技能或牌造成伤害后，你记录此技能或牌名。你可将因此技能获得的【闪】当做记录的牌名使用（不计入次数限制，每回合每种牌名限一次）。",
-    "description_en": "At the start of each round or when your HP changes, gain one [Dodge] that does not count toward your Hand Limit. When a skill or card deals damage, record that skill or card name. You may use [Dodge] cards gained from this skill as any recorded card name (does not count toward frequency limits; once per card name per turn)."
+    "description_en": "At the start of each round or when your HP changes, gain one [Dodge] that does not count toward your Hand Limit. When a skill or card deals damage, record that skill or card name. You may use [Dodge] cards gained from this skill as any recorded card name (does not count toward usage limit; once per card name per turn)."
   },
   "skill_scheme_of_transformation": {
     "skill_type": "active",
@@ -2550,7 +2550,7 @@
     "name_cn": "夺炁",
     "name_en": "Seize Qi",
     "description_cn": "锁定技，一号位首个回合开始前，你执行一个不能使用延时锦囊牌的额外出牌阶段。所有角色的初始手牌称为炁。你每回合对一名角色首次造成伤害后，你获得其一张炁。",
-    "description_en": "Locked Skill: Before the first player's first turn begins, you take an extra Play Phase in which Time-Delayed Tool cards cannot be used. All characters' starting hand cards are called 「Qi」. The first time you deal damage to a character each turn, gain one of their 「Qi」."
+    "description_en": "Locked Skill: Before the first player's first turn begins, you take an extra Play Phase in which Time-Delayed Tool Cards cannot be used. All characters' starting hand cards are called 「Qi」. The first time you deal damage to a character each turn, gain one of their 「Qi」."
   },
   "skill_demonic_frenzy": {
     "skill_type": "active",
@@ -2578,7 +2578,7 @@
     "name_cn": "倾世",
     "name_en": "Alluring",
     "description_cn": "准备阶段，你可入魔，令所有角色获得一张单目标伤害牌。其他角色使用此牌指定唯一目标时，你可弃置一张牌，重新指定牌的目标（无距离限制）。这些牌：造成伤害后，你摸一张牌；未因使用进入弃牌堆后，你获得之。（准备阶段，若这些牌均离开其手牌区，你再令所有角色获得牌。）入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
-    "description_en": "Preparation Phase: You may Demonize — give all characters one single-target damage card. When another character uses this card with only one target, you may discard a card to redirect it (no Distance restriction). These cards: when one deals damage, you draw 1 card; if one enters the discard pile without being used, you gain it. (Preparation Phase: if all these cards have left their holders' hands, give all characters another one.) While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+    "description_en": "Preparation Phase: You may Demonize — give all characters one single-target damage card. When another character uses this card with only one target, you may discard a card to redirect it (no Distance restriction). These cards: when one deals damage, you draw 1 card; if one enters the Discard Pile without being used, you gain it. (Preparation Phase: if all these cards have left their holders' hands, give all characters another one.) While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
   },
   "skill_jx_posthumous_plan": {
     "skill_type": "active",
@@ -2606,7 +2606,7 @@
     "name_cn": "集智",
     "name_en": "Gathered Wisdom",
     "description_cn": "当你使用非转化锦囊牌时，你可以摸一张牌，若此牌是基本牌，你可以弃置此牌令你本回合手牌上限+1。",
-    "description_en": "When you use a non-converted Tool card, you may draw 1 card. If that drawn card is a Basic card, you may discard it to increase your Hand Limit by 1 for this turn."
+    "description_en": "When you use a non-converted Tool Card, you may draw 1 card. If that drawn card is a Basic card, you may discard it to increase your Hand Limit by 1 for this turn."
   },
   "skill_jx_guard_the_seal": {
     "skill_type": "active",
@@ -2627,7 +2627,7 @@
     "name_cn": "武神",
     "name_en": "War God",
     "description_cn": "锁定技，你的红桃手牌视为【杀】。你的红桃【杀】无距离和次数限制且不能被抵消。",
-    "description_en": "Locked Skill: Your Hearts hand cards are treated as [Kill]. Your Hearts [Kill] has no distance or usage limit and cannot be Negated."
+    "description_en": "Locked Skill: Your Hearts hand cards are treated as [Kill]. Your Hearts [Kill] has no Distance or usage limit and cannot be Negated."
   },
   "skill_war_soul": {
     "skill_type": "locked",
@@ -2655,7 +2655,7 @@
     "name_cn": "武神",
     "name_en": "War God",
     "description_cn": "锁定技，你的红桃手牌均只能当【杀】使用或打出；你使用红桃【杀】无距离和次数限制、不计入次数限制且多选择所有有「梦魇」的角色为目标；你每阶段使用的第一张【杀】不能被响应。",
-    "description_en": "Locked Skill: Your Hearts hand cards can only be used or played as [Kill]; your Hearts [Kill] has no distance or usage restriction, does not count toward frequency limits, and additionally targets all characters with Nightmare tokens. The first [Kill] you use each phase cannot be responded to."
+    "description_en": "Locked Skill: Your Hearts hand cards can only be used or played as [Kill]; your Hearts [Kill] has no Distance or usage restriction, does not count toward usage limit, and additionally targets all characters with Nightmare tokens. The first [Kill] you use each phase cannot be responded to."
   },
   "skill_war_god_v3": {
     "skill_type": "active",
@@ -2669,7 +2669,7 @@
     "name_cn": "武神",
     "name_en": "War God",
     "description_cn": "锁定技，你每阶段使用的第一张【杀】不可被响应。你的手牌视为【杀】且你使用【杀】无距离和次数限制、不计入次数且额外指定所有拥有「梦魇」标记的其他角色为目标。",
-    "description_en": "Locked Skill: The first [Kill] you use each phase cannot be responded to. Your hand cards are treated as [Kill] and your [Kill] has no distance or usage restriction, does not count toward the usage limit, and additionally targets all other characters with Nightmare tokens."
+    "description_en": "Locked Skill: The first [Kill] you use each phase cannot be responded to. Your hand cards are treated as [Kill] and your [Kill] has no Distance or usage restriction, does not count toward the usage limit, and additionally targets all other characters with Nightmare tokens."
   },
   "skill_le_war_soul_v1": {
     "skill_type": "locked",
@@ -2837,7 +2837,7 @@
     "name_cn": "放逐",
     "name_en": "Exile",
     "description_cn": "当你受到伤害后，你可以令一名其他角色选择一項：1. 摸X张牌并翻面；2. 弃置X张牌并失去1点体力（X为你已损失的体力值）。",
-    "description_en": "After you take damage, you may instruct another character to choose: 1. Draw X cards and flip their General Card; 2. Discard X cards and lose 1 HP (X = your HP Lost)."
+    "description_en": "After you take damage, you may instruct another character to choose: 1. Draw X cards and Flip their General Card; 2. Discard X cards and lose 1 HP (X = your HP Lost)."
   },
   "skill_le_gather_wisdom": {
     "skill_type": "active",
@@ -2865,7 +2865,7 @@
     "name_cn": "龙怒",
     "name_en": "Dragon Fury",
     "description_cn": "转换技，锁定技，出牌阶段开始时，阳：你失去1点体力并摸一张牌，然后本阶段你的红色手牌均视为火【杀】且无距离限制；阴：你减少1点体力上限并摸一张牌，然后本阶段你的锦囊牌均视为雷【杀】且无次数限制。",
-    "description_en": "Conversion Skill, Locked Skill: At the start of your Play Phase — Yang — lose 1 HP and draw 1 card; your red hand cards are treated as fire [Kill] with no distance limit this phase. Yin — reduce your Max HP by 1 and draw 1 card; your Tool Cards are treated as lightning [Kill] with no usage limit this phase.",
+    "description_en": "Conversion Skill, Locked Skill: At the start of your Play Phase — Yang — lose 1 HP and draw 1 card; your red hand cards are treated as fire [Kill] with no Distance restriction this phase. Yin — reduce your Max HP by 1 and draw 1 card; your Tool Cards are treated as lightning [Kill] with no usage limit this phase.",
     "skill_type_secondary": "locked"
   },
   "skill_entrenched_camp": {
@@ -2901,7 +2901,7 @@
     "name_cn": "夺锐",
     "name_en": "Usurp the Edge",
     "description_cn": "当你于出牌阶段内对一名其他角色造成伤害后，你可以废除你的一个装备栏，然后你选择其武将牌上的一个技能（除限定、觉醒、主公、隐匿技外），令其此技能于其下个回合结束之前无效，你于其下个回合结束或其死亡前拥有此技能且不能发动「夺锐」。",
-    "description_en": "After dealing damage to a character during your Play Phase, you may destroy one of your equipment slots. Then choose one skill on that character's General Card (excluding Limited, Awakening, Lord, and Hidden skills). That skill is disabled until the end of their next turn; you gain that skill until then (or until they die) and cannot use Skill Seizure again during that time."
+    "description_en": "After dealing damage to a character during your Play Phase, you may Abolish one of your Equipment slots. Then choose one skill on that character's General Card (excluding Limited, Awakening, Lord, and Hidden skills). That skill is disabled until the end of their next turn; you gain that skill until then (or until they die) and cannot use Skill Seizure again during that time."
   },
   "skill_cry_of_the_fallen": {
     "skill_type": "locked",
@@ -2950,7 +2950,7 @@
     "name_cn": "五灵",
     "name_en": "Five Spirits",
     "description_cn": "出牌阶段限两次，你可以选择一名未拥有「五灵」标记的角色，按照你指定的顺序向其传授「五禽戏」。拥有「五灵」标记的角色拥有按照你指定的效果，并在准备阶段切换为下一种。虎灵：若你使用的牌仅指定唯一目标，则此牌对目标角色造成伤害时，此伤害+1。鹤灵：拥有「鹤」标记的角色获得「鹤」标记时，摸三张牌。熊灵：每回合限一次，你受到伤害时，此伤害-1。猿灵：拥有「猿」标记的角色获得「猿」标记时，选择另一名角色，获得其装备区的一张牌。鹿灵：你获得「鹿」标记时，回复1点体力，移除判定区所有牌。你不能成为延时锦囊目标。",
-    "description_en": "Twice per Play Phase: Choose a character without a Five Spirits token and assign them the Five Animals Exercise in your chosen order. The character gains the current active effect and switches to the next during their Preparation Phase. Tiger: if your card targets only one character, damage dealt +1. Crane: when the Crane character gains a Crane token, draw 3 cards. Bear: once per turn, damage you take -1. Ape: when the Ape character gains an Ape token, take 1 equipment from another character. Deer: when you gain a Deer token, recover 1 HP and remove all cards from your judgment area; you cannot be targeted by Delayed Tool cards."
+    "description_en": "Twice per Play Phase: Choose a character without a Five Spirits token and assign them the Five Animals Exercise in your chosen order. The character gains the current active effect and switches to the next during their Preparation Phase. Tiger: if your card targets only one character, damage dealt +1. Crane: when the Crane character gains a Crane token, draw 3 cards. Bear: once per turn, damage you take -1. Ape: when the Ape character gains an Ape token, take 1 equipment from another character. Deer: when you gain a Deer token, recover 1 HP and remove all cards from your Judgment Zone; you cannot be targeted by Delayed Tool Cards."
   },
   "skill_traveling_physician": {
     "skill_type": "active",
@@ -2971,7 +2971,7 @@
     "name_cn": "五灵：鹿",
     "name_en": "Five Spirits: Deer",
     "description_cn": "你获得「鹿靈」标記时，回复1点体力，移除判定区所有牌。你不能成为延时锦囊牌的目标",
-    "description_en": "When you gain a Deer token, recover 1 HP and remove all cards from your Judgment Zone. You cannot be targeted by Time-Delayed Tool cards."
+    "description_en": "When you gain a Deer token, recover 1 HP and remove all cards from your Judgment Zone. You cannot be targeted by Time-Delayed Tool Cards."
   },
   "skill_five_spirits_bear": {
     "skill_type": "active",
@@ -3035,14 +3035,14 @@
     "name_cn": "捐甲",
     "name_en": "Sacrifice Armor",
     "description_cn": "锁定技，游戏开始时，你废除防具栏并获得一个额外的武器栏。",
-    "description_en": "Locked Skill: At game start, destroy your armor slot and gain an extra weapon slot."
+    "description_en": "Locked Skill: At game start, Abolish your Armor slot and gain an extra Weapon slot."
   },
   "skill_carry_generals": {
     "skill_type": "locked",
     "name_cn": "挈挟",
     "name_en": "Carry Generals",
     "description_cn": "锁定技，准备阶段，你从随机五张武将牌中选择任意张当武器牌置于装备区，此类牌：无花色点数、攻击范围为牌上的体力上限、效果为牌上描述中含有【杀】的技能（觉醒技、限定技、转换技、主公技除外）、离开装备区时销毁。",
-    "description_en": "Locked Skill: During your Preparation Phase, choose any number of cards from 5 randomly drawn general cards to place in your Equipment Zone as weapon cards. These cards have no suit or value; their Attack Range equals the Max HP on that General Card; their effect is any skill on that card containing [Kill] (excluding Awakening, Limited, Convert, and Lord skills); they are destroyed when they leave the Equipment Zone."
+    "description_en": "Locked Skill: During your Preparation Phase, choose any number of cards from 5 randomly drawn general cards to place in your Equipment Zone as weapon cards. These cards have no suit or value; their Attack Range equals the Max HP on that General Card; their effect is any skill on that card containing [Kill] (excluding Awakening, Limited, Conversion, and Lord skills); they are destroyed when they leave the Equipment Zone."
   },
   "skill_crushing_strike": {
     "skill_type": "active",
@@ -3112,14 +3112,14 @@
     "name_cn": "圣质",
     "name_en": "Sacred Essence",
     "description_cn": "锁定技，当你发动非锁定技后，你本回合使用的下一张牌无距离和次数限制。",
-    "description_en": "Locked Skill: After you activate a non-Locked Skill, the next card you use this turn has no distance or usage restriction."
+    "description_en": "Locked Skill: After you activate a non-Locked Skill, the next card you use this turn has no Distance or usage restriction."
   },
   "skill_sovereign_path": {
     "skill_type": "locked",
     "name_cn": "权道",
     "name_en": "Sovereign Path",
     "description_cn": "锁定技，当你使用【杀】或普通锦囊牌时，你将手牌中两者数量弃至相同并摸一张牌。",
-    "description_en": "Locked Skill: When you use a [Kill] or a Non-Time-Delayed Tool Card, discard hand cards until your counts of [Kill] and Tool cards are equal, then draw 1 card."
+    "description_en": "Locked Skill: When you use a [Kill] or a Non-Time-Delayed Tool Card, discard hand cards until your counts of [Kill] and Tool Cards are equal, then draw 1 card."
   },
   "skill_uphold_order": {
     "skill_type": "convert",
@@ -3141,14 +3141,14 @@
     "name_cn": "灵策",
     "name_en": "Spirit Strategy",
     "description_cn": "锁定技。一名角色使用非虚拟非转化的锦囊牌时，若此牌的牌名属于智囊牌名、「定汉」已记录的牌名或【奇正相生】时，你摸一张牌。（智囊牌的初始記錄为【无中生有】、【过河拆橋】、【无懈可擊】）。",
-    "description_en": "Locked Skill: When a character uses a non-virtual, non-converted Tool card whose name matches a Strategist card name, a name recorded in 〖Grand Pacification〗, or [Qizheng Xiangsheng], you draw 1 card. (Initial Strategist card names: [Resupply], [Dismantle], [Nullification].)"
+    "description_en": "Locked Skill: When a character uses a non-virtual, non-converted Tool Card whose name matches a Strategist card name, a name recorded in 〖Grand Pacification〗, or [Qizheng Xiangsheng], you draw 1 card. (Initial Strategist card names: [Resupply], [Dismantle], [Nullification].)"
   },
   "skill_grand_pacification": {
     "skill_type": "active",
     "name_cn": "定汉",
     "name_en": "Grand Pacification",
     "description_cn": "每种牌名限一次，你成为锦囊牌的目标时，你记录此牌名，然后取消之。你的回合开始时，你可以在「定汉」记录中，增加或移除一种锦囊牌牌名。",
-    "description_en": "Once per card name: when you become the target of a Tool card, record that card name and negate its effect on you. At the start of your turn, you may add or remove one Tool card name from your Grand Pacification record."
+    "description_en": "Once per card name: when you become the target of a Tool Card, record that card name and negate its effect on you. At the start of your turn, you may add or remove one Tool Card name from your Grand Pacification record."
   },
   "skill_astute_insight": {
     "skill_type": "active",
@@ -3225,7 +3225,7 @@
     "name_cn": "狩骊",
     "name_en": "Steed Hunt",
     "description_cn": "锁定技，游戏开始时，从下家开始所有角色随机使用牌堆中的一张坐骑。你可将场上的一张进攻马当【杀】（不计入次数）、防御马当【闪】使用或打出，以此法失去坐骑的角色本回合非锁定技失效，你与其本回合受到的伤害+1且改为雷电伤害。",
-    "description_en": "Locked Skill: At the start of the game, each character beginning with your next-seat neighbor randomly equips one mount from the Draw Pile. You may treat one Attack Horse on the field as a [Kill] (not counting toward frequency) or one Defense Horse as a [Dodge] to use or play. A character who loses their mount this way has all non-Locked skills disabled for this turn, and all damage you and that character take this turn is +1 and becomes Thunder damage."
+    "description_en": "Locked Skill: At the start of the game, each character beginning with your next-seat neighbor randomly equips one mount from the Draw Pile. You may treat one Attack Horse on the field as a [Kill] (not counting toward your usage limit) or one Defense Horse as a [Dodge] to use or play. A character who loses their mount this way has all non-Locked skills disabled for this turn, and all damage you and that character take this turn is +1 and becomes Thunder damage."
   },
   "skill_unbridled_surge": {
     "skill_type": "active",
@@ -3309,7 +3309,7 @@
     "name_cn": "拓域",
     "name_en": "Expand Territory",
     "description_cn": "锁定技，你的手牌区添加三个分别令手牌具有以下效果的副区域（初始为未开发状态）：1、无次数与距离限制；2、伤害与回复值+1；3、无法被响应。出牌阶段开始和结束时，你将未分配的手牌分配至任意已开发的副区域中。",
-    "description_en": "Locked Skill: Your hand card zone gains three sub-zones, each granting cards assigned to it one of the following effects (each sub-zone starts undeveloped): 1. No frequency or distance restrictions; 2. Damage and recovery values +1; 3. Cannot be responded to. At the start and end of your Play Phase, assign any unassigned hand cards to any already-developed sub-zone."
+    "description_en": "Locked Skill: Your hand card zone gains three sub-zones, each granting cards assigned to it one of the following effects (each sub-zone starts undeveloped): 1. No frequency or Distance restrictions; 2. Damage and recovery values +1; 3. Cannot be responded to. At the start and end of your Play Phase, assign any unassigned hand cards to any already-developed sub-zone."
   },
   "skill_daring_advance": {
     "skill_type": "locked",
@@ -3450,7 +3450,7 @@
     "name_cn": "论策",
     "name_en": "Strategic Plan",
     "description_cn": "每轮开始时,你可以选择一名角色并令其获得以下计策中的一策 （仅你可见）:1. 上策,其出牌阶段开始时,可以立即使用一张[杀】, 此[杀】无距离和次数限制且不计入次数;2.中策, 直到其回合结束, 其回合内首次使用[杀]指定目标时,你获得其一张牌; 3.下策,若该角色出牌阶段未使用【杀】 造成过伤害,其回合结束时,你可以将至多三张牌交给该角色 （若该角色为你改为摸三张牌）并令其回复1点体力。",
-    "description_en": "At the start of each round, you may choose a character and secretly give them one Stratagem: 1. Upper — at the start of their Play Phase, they may immediately use 1 [Kill] with no distance or usage restriction (not counting toward limits); 2. Middle — the first time they target someone with [Kill] this turn, you take 1 of their cards; 3. Lower — if they dealt no damage via [Kill] during their Play Phase, at the end of their turn you may give them up to 3 cards (or draw 3 if the target is yourself) and they recover 1 HP."
+    "description_en": "At the start of each round, you may choose a character and secretly give them one Stratagem: 1. Upper — at the start of their Play Phase, they may immediately use 1 [Kill] with no Distance or usage restriction (not counting toward limits); 2. Middle — the first time they target someone with [Kill] this turn, you take 1 of their cards; 3. Lower — if they dealt no damage via [Kill] during their Play Phase, at the end of their turn you may give them up to 3 cards (or draw 3 if the target is yourself) and they recover 1 HP."
   },
   "skill_survey_of_harm": {
     "skill_type": "locked",
@@ -3485,21 +3485,21 @@
     "name_cn": "藏巧",
     "name_en": "Hidden Ingenuity",
     "description_cn": "每轮开始时，你可以获得游戏外或弃牌堆中的【折戟】、【女装】、【驽马】各至多一张；当你使用上述牌时，你可以将手牌摸至体力上限。",
-    "description_en": "At the start of each round, you may take up to one copy each of [Blunt Halberd], [Women's Garb], and [Slow Horse] from outside the game or the discard pile. Whenever you use any of those cards, you may draw up to your Max HP in hand cards."
+    "description_en": "At the start of each round, you may take up to one copy each of [Blunt Halberd], [Women's Garb], and [Slow Horse] from outside the game or the Discard Pile. Whenever you use any of those cards, you may draw up to your Max HP in hand cards."
   },
   "skill_divine_mechanism": {
     "skill_type": "active",
     "name_cn": "神机",
     "name_en": "Divine Mechanism",
     "description_cn": "每回合限一次，以你为唯一目标的黑色牌结算结束后，你可以将场上一张装备牌当未以此法使用过的延时锦囊牌使用（均使用过后重置）；此类锦囊牌在判定区内同时拥有被转化的装备牌的效果。",
-    "description_en": "Once per turn, after a black card that targeted only you finishes resolving, you may use one equipment card on the field as a Delayed Tool card that has not yet been used this way (reset after all options are used). While that Tool card is in a Judgment Zone, it also has the effect of the equipment card it was converted from."
+    "description_en": "Once per turn, after a black card that targeted only you finishes resolving, you may use one Equipment Card on the field as a Delayed Tool Card that has not yet been used this way (reset after all options are used). While that Tool Card is in a Judgment Zone, it also has the effect of the equipment card it was converted from."
   },
   "skill_transmute": {
     "skill_type": "active",
     "name_cn": "化朽",
     "name_en": "Transmute",
     "description_cn": "出牌阶段限一次，你可以将一种「藏巧」装备牌效果修改为下述对应顺序的牌直到你的下回合开始：【魂·诸葛连弩】；【魂·八卦阵】；【轨轨】。",
-    "description_en": "Once per Play Phase, you may change the effect of one 〖Hidden Ingenuity〗 equipment card to the corresponding card in the following sequence until the start of your next turn: [Soul · Zhuge Repeating Crossbow]; [Soul · Eight Trigrams Array]; [Rail Rail]."
+    "description_en": "Once per Play Phase, you may change the effect of one 〖Hidden Ingenuity〗 Equipment Card to the corresponding card in the following sequence until the start of your next turn: [Soul · Zhuge Repeating Crossbow]; [Soul · Eight Trigrams Array]; [Rail Rail]."
   },
   "skill_battle_ready": {
     "skill_type": "locked",
@@ -3744,7 +3744,7 @@
     "name_cn": "谦逊",
     "name_en": "Humility",
     "description_cn": "当一张锦囊牌对你生效时，若你武将牌上没有同名牌且你不是使用者，则你将之置于武将牌上，然后可将至多X张牌移出游戏直到本回合结束（X为你武将牌上的牌数且至多为5）；出牌阶段开始时，你可以使用一张武将牌上的牌。",
-    "description_en": "When a Tool card takes effect on you, if your General Card has no card of the same name and you are not the User, place it on your General Card. You may then Remove from the Game up to X cards until the end of this turn (X = number of cards on your General Card, max 5). At the start of your Play Phase, you may use 1 card from your General Card."
+    "description_en": "When a Tool Card takes effect on you, if your General Card has no card of the same name and you are not the User, place it on your General Card. You may then Remove from the Game up to X cards until the end of this turn (X = number of cards on your General Card, max 5). At the start of your Play Phase, you may use 1 card from your General Card."
   },
   "skill_mg_linked_camps": {
     "skill_type": "active",
@@ -3765,7 +3765,7 @@
     "name_cn": "诈降",
     "name_en": "Feigned Surrender",
     "description_cn": "锁定技，摸牌阶段，你多摸X张牌；每回合你使用的前X张牌无距离次数限制且不能被响应（X为你已损失的体力值）。",
-    "description_en": "Locked Skill: During your Draw Phase, draw X additional cards. Each turn, the first X cards you use have no distance or count restrictions and cannot be responded to (X = your HP Lost)."
+    "description_en": "Locked Skill: During your Draw Phase, draw X additional cards. Each turn, the first X cards you use have no Distance or count restriction and cannot be responded to (X = your HP Lost)."
   },
   "skill_mg_mounted_archery": {
     "skill_type": "active",
@@ -3779,7 +3779,7 @@
     "name_cn": "解烦",
     "name_en": "Dispel Vexation",
     "description_cn": "出牌阶段限一次，你可指定一名角色，令其选择一项：1.攻击范围内含有其的角色依次弃一张牌；2.其摸此时攻击范围内有其的角色数的牌；背水：此技能失效直至你杀死一名角色。",
-    "description_en": "Once per Play Phase: Choose a character. They must choose one: 1. Each character who has them within their Attack Range discards 1 card one at a time; 2. They draw cards equal to the number of characters who have them within Attack Range. Back Against the Wall: This skill is disabled until you kill a character."
+    "description_en": "Once per Play Phase: Choose a character. They must choose one: 1. Each character who has them within their Attack Range discards 1 card one at a time; 2. They draw cards equal to the number of characters who have them within Attack Range. Last Resort: This skill is disabled until you kill a character."
   },
   "skill_le_heroic_mettle": {
     "skill_type": "active",
@@ -3828,7 +3828,7 @@
     "name_cn": "天命",
     "name_en": "Mandate of Heaven",
     "description_cn": "当你成为【杀】的目标后，你可以：弃置两张牌（不足则全弃），摸两张牌。若全场体力值唯一最大的角色不为你，其可以如此做。",
-    "description_en": "When you become the target of [Kill], you may discard up to 2 cards (discard all if fewer) and draw 2 cards. If another character has the sole highest HP Value on the field, they may do the same."
+    "description_en": "When you become the target of a [Kill], you may discard up to 2 cards (discard all if fewer) and draw 2 cards. If another character has the sole highest HP Value on the field, they may do the same."
   },
   "skill_secret_edict": {
     "skill_type": "active",
@@ -3842,7 +3842,7 @@
     "name_cn": "竭缘",
     "name_en": "Fated End",
     "description_cn": "当你对体力值大于等于你的其他角色造成伤害时，你可以弃置一张黑色手牌，令此伤害+1。当你受到体力值大于等于你的其他角色造成的伤害时，你可以弃置一张红色手牌，令此伤害-1。",
-    "description_en": "When you deal damage to another character whose HP Value is greater than or equal to yours, you may discard one black hand card to increase that damage by 1. When you take damage from another character whose HP Value is greater than or equal to yours, you may discard one red hand card to reduce that damage by 1."
+    "description_en": "When you deal damage to another character whose HP Value is greater than or equal to yours, you may discard one black hand card to that damage +1. When you take damage from another character whose HP Value is greater than or equal to yours, you may discard one red hand card to reduce that damage by 1."
   },
   "skill_burning_resolve": {
     "skill_type": "locked",
@@ -3926,7 +3926,7 @@
     "name_cn": "慷忾",
     "name_en": "Resolute Sacrifice",
     "description_cn": "与你距离不大于1的角色成为【杀】的目标后，你可以摸一张牌，然后若该角色不为你，你展示一张牌并交给该角色，若此牌为装备牌，其可以使用之。",
-    "description_en": "When a character within distance 1 of you becomes the target of [Kill], you may draw 1 card. If that character is not you, show 1 hand card and give it to them; if the card is an Equipment Card, they may use it."
+    "description_en": "When a character within distance 1 of you becomes the target of a [Kill], you may draw 1 card. If that character is not you, show 1 hand card and give it to them; if the card is an Equipment Card, they may use it."
   },
   "skill_delayed_release": {
     "skill_type": "active",
@@ -3961,7 +3961,7 @@
     "name_cn": "奋迅",
     "name_en": "Swift Advance",
     "description_cn": "出牌阶段限一次，你可以选择一名其他角色，然后你本回合计算与其的距离视为1，若如此做，若你直到结束阶段未对其造成过伤害，结束阶段，你弃置一张牌。",
-    "description_en": "Once per Play Phase: Choose another character — your distance to them is treated as 1 for this turn. If you have not dealt damage to them by the end of your End Phase, discard 1 card."
+    "description_en": "Once per Play Phase: Choose another character — your Distance to them is treated as 1 for this turn. If you have not dealt damage to them by the end of your End Phase, discard 1 card."
   },
   "skill_poison_wine": {
     "skill_type": "active",
@@ -3982,7 +3982,7 @@
     "name_cn": "魅步",
     "name_en": "Alluring Step",
     "description_cn": "攻击范围内包含你的角色出牌阶段开始时，你可以弃置一张牌，该角色此阶段获得“止息”，若你弃置的牌不为【杀】或黑色锦囊牌，本回合其与你的距离视为1。",
-    "description_en": "At the start of another character's Play Phase, if you are within their Attack Range, you may discard 1 card — they gain 〖Pause〗 this phase. If the discarded card is not [Kill] or a Black Tool card, their Distance to you is treated as 1 this turn."
+    "description_en": "At the start of another character's Play Phase, if you are within their Attack Range, you may discard 1 card — they gain 〖Pause〗 this phase. If the discarded card is not [Kill] or a Black Tool Card, their Distance to you is treated as 1 this turn."
   },
   "skill_tranquil_grace": {
     "skill_type": "active",
@@ -3996,7 +3996,7 @@
     "name_cn": "止息",
     "name_en": "Pause",
     "description_cn": "锁定技，出牌阶段，你至多使用X张牌，X为你的体力值。你使用锦囊牌后，结束出牌阶段",
-    "description_en": "Locked Skill: During your Play Phase, you may use at most X cards (X = your HP Value). After you use a Tool card, end your Play Phase."
+    "description_en": "Locked Skill: During your Play Phase, you may use at most X cards (X = your HP Value). After you use a Tool Card, end your Play Phase."
   },
   "skill_erode": {
     "skill_type": "active",
@@ -4073,7 +4073,7 @@
     "name_cn": "凌人",
     "name_en": "Overawe",
     "description_cn": "每回合限一次，当你使用伤害类牌指定目标后，你可以猜测其中一个目标的手牌是否有基本牌、锦囊牌或装备牌。然后其展示手牌，若至少猜对:一项，此牌对其伤害+1；两项，你摸两张牌；三项，你获得“好雄”和“行殇”直到你下回合开始。",
-    "description_en": "Once per turn: After you use a damage-dealing card and designate a target, guess whether a target's hand contains Basic cards, Tool cards, or Equipment cards — they show their hand. If ≥1 correct: +1 damage; ≥2 correct: draw 2 cards; all 3 correct: gain 〖Treacherous Hero〗 and 〖Reap the Fallen〗 until the start of your next turn."
+    "description_en": "Once per turn: After you use a damage-dealing card and designate a target, guess whether a target's hand contains Basic cards, Tool Cards, or Equipment cards — they show their hand. If ≥1 correct: +1 damage; ≥2 correct: draw 2 cards; all 3 correct: gain 〖Treacherous Hero〗 and 〖Reap the Fallen〗 until the start of your next turn."
   },
   "skill_covert_watch": {
     "skill_type": "locked",
@@ -4101,7 +4101,7 @@
     "name_cn": "机巧",
     "name_en": "Mechanical Ingenuity",
     "description_cn": "出牌阶段开始时，你可以弃置任意张装备牌，然后你亮出牌堆頂两倍数量的牌，获得其中的锦囊牌。",
-    "description_en": "At the start of your Play Phase, you may discard any number of Equipment cards, then Reveal double that number of cards from the top of the Draw Pile and gain all Tool cards among them."
+    "description_en": "At the start of your Play Phase, you may discard any number of Equipment cards, then Reveal double that number of cards from the top of the Draw Pile and gain all Tool Cards among them."
   },
   "skill_exquisite_design": {
     "skill_type": "locked",
@@ -4143,7 +4143,7 @@
     "name_cn": "祈禳",
     "name_en": "Pray and Pacify",
     "description_cn": "当你使用装备牌时，你可以获得牌堆中一张锦囊牌，若此牌为：普通锦囊牌，你使用此牌指定唯一目标时可以多指定一个目标；延时锦囊牌，你下回合【羽化】观看的牌数+1（至多为5）。",
-    "description_en": "When you use an Equipment Card, take 1 Tool card from the Draw Pile. If it is a Non-Time-Delayed Tool: your next use of that card may designate 1 additional target. If a Time-Delayed Tool: 〖Transcend〗 views 1 extra card next turn (max 5)."
+    "description_en": "When you use an Equipment Card, take 1 Tool Card from the Draw Pile. If it is a Non-Time-Delayed Tool Card: your next use of that card may designate 1 additional target. If a Time-Delayed Tool: 〖Transcend〗 views 1 extra card next turn (max 5)."
   },
   "skill_transcend": {
     "skill_type": "locked",
@@ -4178,7 +4178,7 @@
     "name_cn": "谦雅",
     "name_en": "Modest Elegance",
     "description_cn": "当你成为锦囊牌的目标后，你可以将任意张手牌交给一名其他角色。",
-    "description_en": "When you become the target of a Tool card, you may give any number of your hand cards to another character."
+    "description_en": "When you become the target of a Tool Card, you may give any number of your hand cards to another character."
   },
   "skill_sp_forge_alliance": {
     "skill_type": "active",
@@ -4220,7 +4220,7 @@
     "name_cn": "凶镬",
     "name_en": "Savage Cauldron",
     "description_cn": "游戏开始时，你获得3枚“暴戾”标记(至多拥有3枚)。出牌阶段，你可以交给一名其他角色1枚“暴戾”标记，你对有此标记的角色造成的伤害+1，且其出牌阶段开始时，移去“暴戾”标记并随机执行- 项:1.受到1点火焰伤害且本回合不能对你使用【杀】:2.失去1点体力且本回合手牌上限-1:3.你随机获得其一张手牌和一张装备区里的牌。",
-    "description_en": "Game start: gain 3 「Savage」 tokens (max 3). During your Play Phase, you may give 1 「Savage」 token to another character — your damage against them is +1. At the start of their next Play Phase, they remove the token and one effect is randomly executed: 1. They take 1 Fire damage and cannot use [Kill] targeting you this turn; 2. They lose 1 HP and their Hand Limit is −1 this turn; 3. You randomly gain 1 of their hand cards and 1 of their equipped cards."
+    "description_en": "At the start of the game, gain 3 「Savage」 tokens (max 3). During your Play Phase, you may give 1 「Savage」 token to another character — your damage against them is +1. At the start of their next Play Phase, they remove the token and one effect is randomly executed: 1. They take 1 Fire damage and cannot use [Kill] targeting you this turn; 2. They lose 1 HP and their Hand Limit is −1 this turn; 3. You randomly gain 1 of their hand cards and 1 of their equipped cards."
   },
   "skill_kill_without_mercy": {
     "skill_type": "locked",
@@ -4255,7 +4255,7 @@
     "name_cn": "缮甲",
     "name_en": "Repair the Armor",
     "description_cn": "游戏开始时，你获得3个“损”标记。当你失去一张装备牌后，移去1个“损”标记。出牌阶段限一次，你可以摸三张牌并可以使用一张【杀】。然后此阶段你使用下张手牌时(X为你的“损”标记数)，你弃置一张牌。若如此做，此阶段结束时，若你此阶段未以此法弃置过基本牌或锦囊牌，你可以视为使用一张无距离和次数限制的【杀】。",
-    "description_en": "Game start: gain 3 「Damage」 tokens; you lose 1 token whenever you lose an Equipment Card. Once per Play Phase: draw 3 cards and you may use 1 [Kill]. Then when you use your next hand card, discard X cards (X = your 「Damage」 tokens). If you do not discard a Basic or Tool card this way, you may be treated as using 1 [Kill] with no distance or count restriction."
+    "description_en": "At the start of the game, gain 3 「Damage」 tokens; you lose 1 token whenever you lose an Equipment Card. Once per Play Phase: draw 3 cards and you may use 1 [Kill]. Then when you use your next hand card, discard X cards (X = your 「Damage」 tokens). If you do not discard a Basic or Tool Card this way, you may be treated as using 1 [Kill] with no Distance or count restriction."
   },
   "skill_debate_by_example": {
     "skill_type": "active",
@@ -4689,7 +4689,7 @@
     "name_cn": "星卜",
     "name_en": "Star Divination",
     "description_cn": "结束阶段，你可以亮出牌堆顶的三张牌，然后你可以根据其中红色牌的数量，令一名你指定的其他角色获得以下对应的效果：为3，其下个回合摸牌阶段多摸两张牌、出牌阶段使用【杀】的次数上限+1；为2，其下个回合出牌阶段使用【杀】的次数上限-1、跳过弃牌阶段；不大于1，其下个回合准备阶段弃置一张手牌。",
-    "description_en": "End Phase: Reveal the top 3 cards. Based on the Red count, apply to a character for their next turn: 3 Red — Draw Phase +2, [Kill] limit +1; 2 Red — [Kill] limit −1, skip Discard Phase; ≤1 Red — discard 1 hand card at Preparation Phase."
+    "description_en": "End Phase: Reveal the top 3 cards of the Draw Pile. Based on the Red count, apply to a character for their next turn: 3 Red — Draw Phase +2, [Kill] limit +1; 2 Red — [Kill] limit −1, skip Discard Phase; ≤1 Red — discard 1 hand card at Preparation Phase."
   },
   "skill_weather_forecast": {
     "skill_type": "locked",
@@ -4766,14 +4766,14 @@
     "name_cn": "和衷",
     "name_en": "Harmonious Accord",
     "description_cn": "每回合各限一次，当你的手牌数变为1后，你可以展示之并摸一张牌，然后令你本回合下次使用点数大于 /小于此牌点数的普通锦囊牌各多结算一次。",
-    "description_en": "Once per option per turn: When your hand count becomes 1, show it and draw 1. For the rest of this turn: your next Non-Time-Delayed Tool with a higher rank resolves once extra; your next one with a lower rank also resolves once extra."
+    "description_en": "Once per option per turn: When your hand count becomes 1, show it and draw 1. For the rest of this turn: your next Non-Time-Delayed Tool Card with a higher rank resolves once extra; your next one with a lower rank also resolves once extra."
   },
   "skill_wild_and_arrogant": {
     "skill_type": "active",
     "name_cn": "犷骜",
     "name_en": "Wild and Arrogant",
     "description_cn": "你使用【杀】可以多指定一个目标，其他角色使用【杀】可以多指定你为目标(有距离限制)。若你的手牌数为偶数，你摸一张牌令此【杀】对任意目标无效。",
-    "description_en": "Your [Kill] may designate 1 additional target. Others may also designate you as an extra [Kill] target (with range). If your hand count is even, draw 1 card to Nullify that [Kill] against any 1 of its targets."
+    "description_en": "Your [Kill] may designate 1 additional target. Others may also designate you as an extra [Kill] target (distance restriction applies). If your hand count is even, draw 1 card to Nullify that [Kill] against any 1 of its targets."
   },
   "skill_blazing_ambition": {
     "skill_type": "awakening",
@@ -4801,7 +4801,7 @@
     "name_cn": "侻失",
     "name_en": "Tactless Misstep",
     "description_cn": "锁定技，你不能使用【无懈可击】。当你使用点数为字母的牌时，你令之无效并摸一张牌，然后你下次对手牌数小于你的角色使用牌无距离和次数限制。当你于一回合内使用了三张未造成伤害的伤害牌后，〖嚣翻〗于本回合内失效。",
-    "description_en": "Locked Skill: You cannot use [Nullification]. When you use a letter-rank card (A/J/Q/K), Nullify it and draw 1; your next card against a character with fewer hand cards has no distance or count restriction. After using 3 non-damaging damage cards this turn, 〖Wild Boast〗 is Nullified for the rest of this turn."
+    "description_en": "Locked Skill: You cannot use [Nullification]. When you use a letter-rank card (A/J/Q/K), Nullify it and draw 1; your next card against a character with fewer hand cards has no Distance or count restriction. After using 3 non-damaging damage cards this turn, 〖Wild Boast〗 is Nullified for the rest of this turn."
   },
   "skill_unruffled_calm": {
     "skill_type": "convert",
@@ -4815,7 +4815,7 @@
     "name_cn": "蓄发",
     "name_en": "Store the Hair",
     "description_cn": "出牌阶段各限一次，你可以:1.将至少半数手牌置于武将牌上，称为“蓄发”牌，然后你可以将一张牌当“蓄发”牌中任意普通锦囊牌使用；2.移去至少半数“蓄发牌，然后你可以将一张牌当移去牌中的一张普通锦變牌使用",
-    "description_en": "Once per option per Play Phase: 1. Place ≥ half your hand (rounded up) on your General Card as 「Stored」 cards, then use 1 hand card as any Non-Time-Delayed Tool in the 「Stored」 cards; 2. Remove ≥ half the 「Stored」 cards, then use 1 hand card as any of the removed Non-Time-Delayed Tool Cards."
+    "description_en": "Once per option per Play Phase: 1. Place ≥ half your hand (rounded up) on your General Card as 「Stored」 cards, then use 1 hand card as any Non-Time-Delayed Tool Card in the 「Stored」 cards; 2. Remove ≥ half the 「Stored」 cards, then use 1 hand card as any of the removed Non-Time-Delayed Tool Cards."
   },
   "skill_linked_verses": {
     "skill_type": "active",
@@ -4941,7 +4941,7 @@
     "name_cn": "立牧",
     "name_en": "Claim the Province",
     "description_cn": "出牌阶段，你可以将一张方块牌当【乐不思蜀】对自己使用，然后你回复点体力。若你的判定区里有牌，你对你攻击范围内的其他角色使用牌无距离和次数限制。",
-    "description_en": "During your Play Phase, use a Diamonds card as [Acedia] on yourself, then recover X HP (X = cards in your Judgment Zone). While you have [Acedia] in your Judgment Zone, you have no distance or count restriction when using cards against other characters."
+    "description_en": "During your Play Phase, use a Diamonds card as [Acedia] on yourself, then recover X HP (X = cards in your Judgment Zone). While you have [Acedia] in your Judgment Zone, you have no Distance or count restriction when using cards against other characters."
   },
   "skill_unleash_chaos": {
     "skill_type": "active",
@@ -5032,7 +5032,7 @@
     "name_cn": "凤瑶",
     "name_en": "Phoenix Jade",
     "description_cn": "锁定技，当黑桃牌离开一名角色装备区后，你回复1点体力。当你对其他角色造成伤害时，你弃置你或其场上一张黑桃牌，令此伤害+1。",
-    "description_en": "Locked Skill: When a Spades Equipment leaves any character's Equipment Zone, recover 1 HP. When you deal damage to another character, discard 1 Spades field card from either zone to increase that damage by 1."
+    "description_en": "Locked Skill: When a Spades Equipment leaves any character's Equipment Zone, recover 1 HP. When you deal damage to another character, discard 1 Spades field card from either zone to that damage +1."
   },
   "skill_sharp_observation": {
     "skill_type": "active",
@@ -5137,7 +5137,7 @@
     "name_cn": "应援",
     "name_en": "Rally Support",
     "description_cn": "当你于回合内使用牌结算完成进入弃牌堆时，你可以将之交给一名其他角色(每种牌名每回合限一次)。",
-    "description_en": "When a card you Used during your turn is placed into the Discard Pile, you may give it to another character (once per card name per turn)."
+    "description_en": "When a card you used during your turn is placed into the Discard Pile, you may give it to another character (once per card name per turn)."
   },
   "skill_self_scribe": {
     "skill_type": "locked",
@@ -5214,7 +5214,7 @@
     "name_cn": "执义",
     "name_en": "Uphold Righteousness",
     "description_cn": "锁定技，一名角色的结束阶段，若你本回合使用或打出过基本牌，你视为使用其中一张或摸一张牌。",
-    "description_en": "Locked Skill: At a character's End Phase, if you used or played a Basic card this turn, be treated as using 1 of those Basic cards or draw 1 card."
+    "description_en": "Locked Skill: At a character's End Phase, if you used or played a Basic Card this turn, be treated as using 1 of those Basic Cards or draw 1 card."
   },
   "skill_praise_of_shu": {
     "skill_type": "active",
@@ -5284,7 +5284,7 @@
     "name_cn": "助国",
     "name_en": "Aid the State",
     "description_cn": "出牌阶段限一次，你可以令一名角色将手牌调整至X张（X为其体力上限且至多为5），然后若其：未摸牌，其回复1点体力；摸牌且手牌数全场最多，你可以令其选择是否对你指定的另一名角色使用一张不计入次数且无距离次数限制的【杀】。",
-    "description_en": "Once per Play Phase: Have a character adjust their hand count to X (X = their Max HP, max 5). If they did not draw, they recover 1 HP. If they drew and have the most hand cards, you may have them choose whether to use 1 [Kill] (no count restriction, no distance limit) against another character you designate."
+    "description_en": "Once per Play Phase: Have a character adjust their hand count to X (X = their Max HP, max 5). If they did not draw, they recover 1 HP. If they drew and have the most hand cards, you may have them choose whether to use 1 [Kill] (no count restriction, no Distance restriction) against another character you designate."
   },
   "skill_fortify_oneself": {
     "skill_type": "active",
@@ -5305,7 +5305,7 @@
     "name_cn": "惩凶",
     "name_en": "Punish the Wicked",
     "description_cn": "当你使用锦囊牌仅指定其他角色为目标后，你可以弃置一名牌数不小于X的其他角色一张牌（X为你此阶段使用的牌数）。若此牌与你使用的锦囊牌颜色相同，你对其造成1点伤害。",
-    "description_en": "When you use a Tool card targeting only other characters, you may discard 1 card from a character whose card count is ≥ X (X = cards you used this phase). If that card matches the Tool's color, deal 1 damage to them."
+    "description_en": "When you use a Tool Card targeting only other characters, you may discard 1 card from a character whose card count is ≥ X (X = cards you used this phase). If that card matches the Tool's color, deal 1 damage to them."
   },
   "skill_reckless_seizure": {
     "skill_type": "active",
@@ -5347,7 +5347,7 @@
     "name_cn": "谏诤",
     "name_en": "Remonstrate",
     "description_cn": "出牌阶段限一次，你可以观看一名其他角色的手牌，然后若其中有你可以使用的牌，你可以获得并使用其中一张。若此牌指定了其为目标，你与其各横置，然后其观看你的手牌。",
-    "description_en": "Once per Play Phase: Look at another character's hand cards. If any can be Used by you, gain and use 1 of them. If that card designates them as a target, you and they each enter the Chained state, then they look at your hand."
+    "description_en": "Once per Play Phase: Look at another character's hand cards. If any can be used by you, gain and use 1 of them. If that card designates them as a target, you and they each enter the Chained state, then they look at your hand."
   },
   "skill_hidden_counsel": {
     "skill_type": "active",
@@ -5361,7 +5361,7 @@
     "name_cn": "钝袭",
     "name_en": "Blunted Strike",
     "description_cn": "当你使用伤害类牌时，你可令其中一名目标获得1枚 “钝”标记。有钝”标记的角色于其出牌阶段使用基本牌或锦囊牌指定唯一目标后，其移去1枚“钝”，令所有角色进行判定，然后将目标改为结果点数最大的角色(点数相同则由你选择)，若更改后的目标与原目标相同，则使用者失去1点体力并结束此阶段。",
-    "description_en": "When you use a damage-dealing card, you may give 1 target 1 「Blunted」 token. A character with a 「Blunted」 token, after Using a Basic or Tool card targeting only 1 character, removes the token — all characters perform a Judgment and the target changes to the character with the highest result rank (you choose on ties). If the new target is the same as the original, the user loses 1 HP and ends their Play Phase."
+    "description_en": "When you use a damage-dealing card, you may give 1 target 1 「Blunted」 token. A character with a 「Blunted」 token, after Using a Basic or Tool Card targeting only 1 character, removes the token — all characters perform a Judgment and the target changes to the character with the highest result rank (you choose on ties). If the new target is the same as the original, the user loses 1 HP and ends their Play Phase."
   },
   "skill_counsel_the_state": {
     "skill_type": "active",
@@ -5375,7 +5375,7 @@
     "name_cn": "倾势",
     "name_en": "Exploit the Momentum",
     "description_cn": "当你于回合内使用【杀】或锦囊牌指定一名其他角色为目标后，若此牌是你本回合使用的第X张牌(为你的手牌数)，你可对其中一名目标角色造成1点伤害。",
-    "description_en": "When you use [Kill] or a Tool card targeting another character during your turn, if that card is the Xth card you used this turn (X = your current hand count), you may deal 1 damage to 1 of its targets."
+    "description_en": "When you use [Kill] or a Tool Card targeting another character during your turn, if that card is the Xth card you used this turn (X = your current hand count), you may deal 1 damage to 1 of its targets."
   },
   "skill_pierce_to_the_bone": {
     "skill_type": "active",
@@ -5452,7 +5452,7 @@
     "name_cn": "谦冲",
     "name_en": "Modest and Yielding",
     "description_cn": "锁定技，若你装备区里的牌均为黑色，你获得“帷幕”，红色，你获得“明哲”，否则出牌阶段开始时，你声明一种类别，本回合你使用该类别的牌无距离次数限制。",
-    "description_en": "Locked Skill: If all cards in your Equipment Zone are Black, gain 〖Iron Curtain〗. If all are Red, gain 〖Sagely Wisdom〗. Otherwise, at the start of your Play Phase, declare 1 card type — your cards of that type have no distance or count restriction this turn."
+    "description_en": "Locked Skill: If all cards in your Equipment Zone are Black, gain 〖Iron Curtain〗. If all are Red, gain 〖Sagely Wisdom〗. Otherwise, at the start of your Play Phase, declare 1 card type — your cards of that type have no Distance or count restriction this turn."
   },
   "skill_value_frugality": {
     "skill_type": "locked",
@@ -5466,7 +5466,7 @@
     "name_cn": "帷幕",
     "name_en": "Iron Curtain",
     "description_cn": "锁定技，你不能成为黑色锦囊牌的目标。",
-    "description_en": "Locked Skill: You cannot be the target of Black Tool cards."
+    "description_en": "Locked Skill: You cannot be targeted by Black Tool Cards."
   },
   "skill_sp_sagely_wisdom": {
     "skill_type": "active",
@@ -5578,7 +5578,7 @@
     "name_cn": "镇边",
     "name_en": "Pacify the Frontier",
     "description_cn": "锁定技，你的手牌上限等于你的体力上限。当牌不因使用进入弃牌堆时，你记录这些牌的花色，然后若你记录了四种花色且体力上限小于8，你清除记录的花色并加1点体力上限。",
-    "description_en": "Locked Skill: Your Hand Limit equals your Max HP. When cards enter the Discard Pile via any means other than being Used, record their suits. When you have recorded all 4 suits and your Max HP < 8, clear the record and increase your Max HP by 1."
+    "description_en": "Locked Skill: Your Hand Limit equals your Max HP. When cards enter the Discard Pile via any means other than being used, record their suits. When you have recorded all 4 suits and your Max HP < 8, clear the record and increase your Max HP by 1."
   },
   "skill_brutal_assault": {
     "skill_type": "active",
@@ -5606,14 +5606,14 @@
     "name_cn": "破垣",
     "name_en": "Breach the Wall",
     "description_cn": "游戏开始或回合开始时，若你的装备区里有【霹雳车】，你可以拜置一名其他角色的至多两张牌，若没有，将【霹雳车】置入你的装备区。",
-    "description_en": "Game start or turn start: if you have [Siege Engine] equipped, discard up to 2 cards from another character's zones. If you do not have [Siege Engine] equipped, place it into your Equipment Zone."
+    "description_en": "At the start of the game or at the start of your turn: if you have [Siege Engine] equipped, discard up to 2 cards from another character's zones. If you do not have [Siege Engine] equipped, place it into your Equipment Zone."
   },
   "skill_craft_strategies": {
     "skill_type": "active",
     "name_cn": "画策",
     "name_en": "Craft Strategies",
     "description_cn": "出牌阶段限一次，你可以将一张手牌当上一轮所有角色均未使用过的普通锦囊牌使用。",
-    "description_en": "Once per Play Phase: Use 1 hand card as any Non-Time-Delayed Tool Card that no character Used last round."
+    "description_en": "Once per Play Phase: Use 1 hand card as any Non-Time-Delayed Tool Card that no character used last round."
   },
   "skill_watch_tower": {
     "skill_type": "locked",
@@ -5873,7 +5873,7 @@
     "name_cn": "硝引",
     "name_en": "Fuse the Trail",
     "description_cn": "准备阶段，你可以亮出牌堆顶的X张牌（X为你距离1以内的角色数），获得其中的红色牌，并将其中任意张黑色牌置于等量名连续其他角色的武将牌上。当有「硝引」牌的角色受到伤害时，若为：火焰伤害，伤害来源可以弃置一张与「硝引」牌类型相同的牌并移去一张此类型的「硝引」牌，令此伤害+1；非火焰伤害，伤害来源可以获得一张「硝引」牌并将此伤害改为火焰伤害。",
-    "description_en": "Preparation Phase: You may flip the top X cards of the Draw Pile (X = number of characters within distance 1 of you), gain all red cards among them, and place any number of black cards face-up on the General Cards of an equal number of consecutive other characters as 「Fuse」 tokens. When a character with 「Fuse」 tokens receives damage: if it is Fire damage, the damage source may discard a card of the same category as a 「Fuse」 token and remove one such token to increase that damage by 1; if it is not Fire damage, the damage source may gain one 「Fuse」 token and change that damage to Fire damage."
+    "description_en": "Preparation Phase: You may flip the top X cards of the Draw Pile (X = number of characters within distance 1 of you), gain all red cards among them, and place any number of black cards face-up on the General Cards of an equal number of consecutive other characters as 「Fuse」 tokens. When a character with 「Fuse」 tokens receives damage: if it is Fire damage, the damage source may discard a card of the same category as a 「Fuse」 token and remove one such token to that damage +1; if it is not Fire damage, the damage source may gain one 「Fuse」 token and change that damage to Fire damage."
   },
   "skill_fireworks": {
     "skill_type": "active",
@@ -5957,7 +5957,7 @@
     "name_cn": "宛蝉",
     "name_en": "Graceful Cicada",
     "description_cn": "出牌阶段限一次，你可以选择一名角色，令其摸X张牌（X为你与其的距离且至多为3），然后其可以使用一张无距离和次数限制的基本牌或普通锦囊牌（此牌目标的相邻角色也成为此牌目标）。",
-    "description_en": "Once per Play Phase, choose a character — they draw X cards (X = distance between you and them, max 3). They may then use one Basic Card or Non-Time-Delayed Tool Card with no distance or usage restriction (the Left and Right Neighbors of that card's targets also become targets)."
+    "description_en": "Once per Play Phase, choose a character — they draw X cards (X = Distance between you and them, max 3). They may then use one Basic Card or Non-Time-Delayed Tool Card with no Distance or usage restriction (the Left and Right Neighbors of that card's targets also become targets)."
   },
   "skill_crimson_lip": {
     "skill_type": "active",
@@ -6027,7 +6027,7 @@
     "name_cn": "华裳",
     "name_en": "Ornate Garb",
     "description_cn": "游戏开始时，你将牌堆中每种颜色各一张牌置入装备区。若你的装备区里有两种颜色的牌，你使用牌无距离限制。当你使用一张牌结算结束后，你可以将一张与之相同花色的非装备手牌置入装备区（替换原装备，且以此法置入装备区的牌将于离开你的装备区时置入弃牌堆）。当你的手牌数小于X时，你将手牌摸至X张（X为你装备区里牌的花色数）。",
-    "description_en": "At the start of the game, place one card of each color from the Draw Pile into your Equipment Zone. If your Equipment Zone contains cards of both colors, you may use cards without distance restrictions. After a card you use finishes resolving, you may place a non-Equipment hand card of the same suit into your Equipment Zone (replacing the existing equipment; cards placed this way are placed into the Discard Pile when they leave your Equipment Zone). When your hand card count falls below X, draw up to X cards (X = the number of different suits among cards in your Equipment Zone)."
+    "description_en": "At the start of the game, place one card of each color from the Draw Pile into your Equipment Zone. If your Equipment Zone contains cards of both colors, you may use cards without Distance restrictions. After a card you use finishes resolving, you may place a non-Equipment hand card of the same suit into your Equipment Zone (replacing the existing equipment; cards placed this way are placed into the Discard Pile when they leave your Equipment Zone). When your hand card count falls below X, draw up to X cards (X = the number of different suits among cards in your Equipment Zone)."
   },
   "skill_exceed_protocol": {
     "skill_type": "locked",
@@ -6146,7 +6146,7 @@
     "name_cn": "隅泣",
     "name_en": "Mourning Vigil",
     "description_cn": "每回合限两次，当一名角色受到伤害后，若你与其距离小于等于[0]，你可以观看牌堆顶的[3]张牌，将其中至多[1]张交给受伤的角色，然后你获得其余至多[1]张并将剩余的牌放回牌堆顶。",
-    "description_en": "Twice per turn: After a character receives damage, if the distance between you and them is at most [0], you may look at the top [3] cards of the Draw Pile, give up to [1] of them to the damaged character, then gain up to [1] of the remainder and place any leftover cards back on top of the Draw Pile."
+    "description_en": "Twice per turn: After a character receives damage, if the Distance between you and them is at most [0], you may look at the top [3] cards of the Draw Pile, give up to [1] of them to the damaged character, then gain up to [1] of the remainder and place any leftover cards back on top of the Draw Pile."
   },
   "skill_self_preservation_vigil": {
     "skill_type": "active",
@@ -6181,7 +6181,7 @@
     "name_cn": "震袭",
     "name_en": "Thunderstrike Raid",
     "description_cn": "每回合限一次，当你使用【杀】指定目标后，你可以选择一项：1. 弃置其X张手牌（X为你与其的距离）；2. 移动其场上的一张牌；若其体力值大于你或为全场最高，你可以背水。",
-    "description_en": "Once per turn: After you use [Kill] and designate a target, you may choose one: 1. Discard X of their hand cards (X = the distance between you and them); 2. Move one of their cards on the field. If their HP Value is greater than yours or is the highest on the field, you may instead choose Last Resort (execute all other options first, then accept the consequence)."
+    "description_en": "Once per turn: After you use [Kill] and designate a target, you may choose one: 1. Discard X of their hand cards (X = the Distance between you and them); 2. Move one of their cards on the field. If their HP Value is greater than yours or is the highest on the field, you may instead choose Last Resort (execute all other options first, then accept the consequence)."
   },
   "skill_raise_the_standard": {
     "skill_type": "locked",
@@ -6343,7 +6343,7 @@
     "name_cn": "酖毒",
     "name_en": "Brew Poison",
     "description_cn": "出牌阶段结束时，你可以展示至多五张基本牌或普通锦囊牌，然后你的下个回合开始时视为依次使用这些牌且无距离限制。你使用这些牌期间有角色回复体力或受到伤害后，你摸一张牌且以此法获得的牌不计入本回合手牌上限。",
-    "description_en": "At the end of your Play Phase, you may show up to 5 Basic Cards or Non-Time-Delayed Tool Cards. At the start of your next turn, you are treated as using those cards in sequence with no distance restrictions. While using these cards, whenever a character recovers HP or receives damage, draw 1 card; cards gained this way do not count toward your Hand Limit this turn."
+    "description_en": "At the end of your Play Phase, you may show up to 5 Basic Cards or Non-Time-Delayed Tool Cards. At the start of your next turn, you are treated as using those cards in sequence with no Distance restrictions. While using these cards, whenever a character recovers HP or receives damage, draw 1 card; cards gained this way do not count toward your Hand Limit this turn."
   },
   "skill_warm_sunshine": {
     "skill_type": "locked",
@@ -6462,7 +6462,7 @@
     "name_cn": "谟猷",
     "name_en": "Grand Strategy",
     "description_cn": "当你每使用两张手牌结算后，你可以摸三张牌，然后弃置一种花色的所有手牌。若你的手牌未包含所有类别，你本回合使用的下一张牌若为：基本牌，则无次数及距离限制；锦囊牌，则不可响应。",
-    "description_en": "After every two hand cards you use finish resolving, you may draw 3 cards, then discard all hand cards of one suit. If your hand does not contain all card categories, the next card you use this turn: if it is a Basic Card — it has no count or distance restrictions; if it is a Tool Card — it cannot be responded to."
+    "description_en": "After every two hand cards you use finish resolving, you may draw 3 cards, then discard all hand cards of one suit. If your hand does not contain all card categories, the next card you use this turn: if it is a Basic Card — it has no count or Distance restrictions; if it is a Tool Card — it cannot be responded to."
   },
   "skill_arrogant_pride": {
     "skill_type": "locked",
@@ -6483,7 +6483,7 @@
     "name_cn": "追讨",
     "name_en": "Relentless Pursuit",
     "description_cn": "连招技（黑色牌+伤害牌），你可以选择一名本回合未以此法选择过的其他角色并摸两张牌，然后你本回合：计算与其的距离视为1；对其使用牌结算后，可以弃置其至多X张牌（X为此牌满足的条件数：黑色牌、伤害牌）。",
-    "description_en": "Combo Skill (black card + damage card): You may choose another character who has not been chosen this way this turn and draw 2 cards. This turn: the distance between you and that character is treated as 1; after a card you use against them finishes resolving, you may discard up to X of their cards (X = the number of conditions the combo cards satisfied: black card, damage card)."
+    "description_en": "Combo Skill (black card + damage card): You may choose another character who has not been chosen this way this turn and draw 2 cards. This turn: the Distance between you and that character is treated as 1; after a card you use against them finishes resolving, you may discard up to X of their cards (X = the number of conditions the combo cards satisfied: black card, damage card)."
   },
   "skill_fierce_will": {
     "skill_type": "active",
@@ -6525,7 +6525,7 @@
     "name_cn": "军合",
     "name_en": "Coalition",
     "description_cn": "准备阶段，你可以展示任意张颜色或类别均相同的牌并获得X次「军合」效果（X为你展示的牌数+1）。当有「军合」效果的角色：造成伤害时，其可以弃置一张与展示牌颜色或类别相同的牌令此伤害+1，然后「军合」次数-1；受到伤害后，其摸两张牌，然后「军合」次数-1。",
-    "description_en": "During your Preparation Phase, you may show any number of cards that all share the same color or category and gain X 「Coalition」 tokens (X = the number of cards shown + 1). When a character with 「Coalition」 tokens: deals damage — they may discard a card of the same color or category as the shown cards to increase that damage by 1, then remove 1 「Coalition」 token; receives damage — they draw 2 cards, then remove 1 「Coalition」 token."
+    "description_en": "During your Preparation Phase, you may show any number of cards that all share the same color or category and gain X 「Coalition」 tokens (X = the number of cards shown + 1). When a character with 「Coalition」 tokens: deals damage — they may discard a card of the same color or category as the shown cards to that damage +1, then remove 1 「Coalition」 token; receives damage — they draw 2 cards, then remove 1 「Coalition」 token."
   },
   "skill_domineering_might": {
     "skill_type": "active",
@@ -6882,7 +6882,7 @@
     "name_cn": "象阵",
     "name_en": "Elephant Formation",
     "description_cn": "锁定技，【南蛮入侵】对你无效。【南蛮入侵】结算结束后，若此牌造成过伤害，你与伤害来源各摸一张牌。",
-    "description_en": "Locked Skill: [Barbarians] has no effect on you. After [Barbarians] finishes resolving, if it dealt any damage, you and the damage source each draw 1 card."
+    "description_en": "Locked Skill: [Barbarians] is Nullified against you. After [Barbarians] finishes resolving, if it dealt any damage, you and the damage source each draw 1 card."
   },
   "skill_elusive_trace": {
     "skill_type": "locked",
@@ -6981,7 +6981,7 @@
     "name_cn": "固营",
     "name_en": "Hold the Camp",
     "description_cn": "锁定技，每回合限一次，当你于回合外因使用、打出或弃置而一次性仅失去一张牌后，当前回合角色须选择：1. 随机交给你一张牌；2. 你获得此牌（若为装备则使用之）。准备阶段，你须弃置X张牌（X为此前此技能发动过的次数），然后置此技能发动次数为零。",
-    "description_en": "Locked Skill: Once per turn: After you lose exactly 1 card outside your turn by using, playing out, or discarding it, the current turn's character must choose: 1. Randomly give you 1 card; 2. You gain that card (if it is an Equipment Card, use it instead). During your Preparation Phase, you must discard X cards (X = the number of times this skill has activated previously), then reset this skill's activation count to zero."
+    "description_en": "Locked Skill: Once per turn: After you lose exactly 1 card outside your turn by using, playing, or discarding it, the current turn's character must choose: 1. Randomly give you 1 card; 2. You gain that card (if it is an Equipment Card, use it instead). During your Preparation Phase, you must discard X cards (X = the number of times this skill has activated previously), then reset this skill's activation count to zero."
   },
   "skill_harmonize_formations": {
     "skill_type": "active",
@@ -7402,7 +7402,7 @@
     "name_cn": "戎备",
     "name_en": "Arm the Troops",
     "description_cn": "限定技，出牌阶段，你可以选择一名有空置的装备栏的角色，令其为其每个空置的装备栏随机使用一张装备牌。",
-    "description_en": "Limited Skill: During your Play Phase, you may choose one character who has empty equipment slots — they randomly use one Equipment Card for each empty slot."
+    "description_en": "Limited Skill: During your Play Phase, you may choose one character who has empty Equipment slots — they randomly use one Equipment Card for each empty slot."
   },
   "skill_remedy_the_age": {
     "skill_type": "locked",
