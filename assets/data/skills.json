@@ -2234,7 +2234,7 @@
     "name_cn": "胆守",
     "name_en": "Steadfast Courage",
     "description_cn": "每回合限一次，当你成为非装备牌的目标后，你可以摸X张牌(X为你本回合成为非装备牌目标的次数且至多为5)；一名角色的结束阶段，若你本回合未发动过“胆守”，你可以弃置等于其手牌数的牌，然后对其造成1点伤害。",
-    "description_en": "Once per turn: After you become the target of a non-Equipment card, you may draw X cards (X = the total number of times you have been targeted by non-Equipment cards this turn, max 5). At the end of a character's turn, if you did not draw via 〖Gallant Defense〗 this turn, you may discard a number of cards equal to that character's hand count, then deal 1 damage to them."
+    "description_en": "Once per turn: After you become the target of a non-Equipment card, you may draw X cards (X = the total number of times you have been targeted by non-Equipment cards this turn, max 5). At the end of a character's turn, if you did not draw via 〖Steadfast Courage〗 this turn, you may discard a number of cards equal to that character's hand count, then deal 1 damage to them."
   },
   "skill_pestilence_purge": {
     "skill_type": "active",
@@ -2550,21 +2550,21 @@
     "name_cn": "夺炁",
     "name_en": "Seize Qi",
     "description_cn": "锁定技，一号位首个回合开始前，你执行一个不能使用延时锦囊牌的额外出牌阶段。所有角色的初始手牌称为炁。你每回合对一名角色首次造成伤害后，你获得其一张炁。",
-    "description_en": "Locked Skill: Before the first player's first turn begins, you take an extra Play Phase in which Time-Delayed Tool cards cannot be used. All characters' starting hand cards are called [Qi]. The first time you deal damage to a character each turn, gain one of their [Qi]."
+    "description_en": "Locked Skill: Before the first player's first turn begins, you take an extra Play Phase in which Time-Delayed Tool cards cannot be used. All characters' starting hand cards are called 「Qi」. The first time you deal damage to a character each turn, gain one of their 「Qi」."
   },
   "skill_demonic_frenzy": {
     "skill_type": "active",
     "name_cn": "狂魔",
     "name_en": "Demonic Frenzy",
     "description_cn": "出牌阶段，你可以入魔并选择一名其他角色，你与其成为狂角色，每回合对彼此首次造成的伤害+1；击败对方后，获得对方所有炁。狂角色死亡后，你重新指定。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
-    "description_en": "Play Phase: You may Demonize and choose another character. You and that character become Frenzied: the first damage dealt between you each turn +1; upon defeating them, gain all their [Qi]. When the Frenzied character dies, you must designate a new one. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+    "description_en": "Play Phase: You may Demonize and choose another character. You and that character become Frenzied: the first damage dealt between you each turn +1; upon defeating them, gain all their 「Qi」. When the Frenzied character dies, you must designate a new one. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
   },
   "skill_astral_strike": {
     "skill_type": "active",
     "name_cn": "罡拳",
     "name_en": "Astral Strike",
     "description_cn": "若你使用的上一张牌为炁，你可以将一张装备牌当指定相邻角色为目标的【火杀】使用；否则，你可以将一张锦囊牌当【决斗】使用。",
-    "description_en": "If the last card you used was a [Qi] card, you may use an Equipment Card as a [Fire Kill] targeting an adjacent character; otherwise, you may use a Tool Card as a [Duel]."
+    "description_en": "If the last card you used was a 「Qi」 card, you may use an Equipment Card as a [Fire Kill] targeting an adjacent character; otherwise, you may use a Tool Card as a [Duel]."
   },
   "skill_bewitch": {
     "skill_type": "active",
@@ -2816,7 +2816,7 @@
     "name_cn": "连破",
     "name_en": "Supreme Advance",
     "description_cn": "觉醒技，准备阶段，若「忍」标记数量不小于4，你减1点体力上限，然后获得「极略」",
-    "description_en": "Awakening Skill: During your Preparation Phase, if your Forbearance token count is at least 4, reduce your Max HP by 1 and gain [Supreme Strategy]."
+    "description_en": "Awakening Skill: During your Preparation Phase, if your Forbearance token count is at least 4, reduce your Max HP by 1 and gain 〖Supreme Strategy〗."
   },
   "skill_supreme_strategy": {
     "skill_type": "active",
@@ -3126,7 +3126,7 @@
     "name_cn": "持纲",
     "name_en": "Uphold Order",
     "description_cn": "转换技，锁定技，阴：你的判定阶段改为出牌阶段；阳：你的判定阶段改为摸牌阶段。",
-    "description_en": "Conversion Skill, Locked Skill: Yin — Your Judgment Phase becomes an Play Phase. Yang — Your Judgment Phase becomes a Draw Phase.",
+    "description_en": "Conversion Skill, Locked Skill: Yin — Your Judgment Phase becomes a Play Phase. Yang — Your Judgment Phase becomes a Draw Phase.",
     "skill_type_secondary": "locked"
   },
   "skill_heavens_aid": {
@@ -3141,7 +3141,7 @@
     "name_cn": "灵策",
     "name_en": "Spirit Strategy",
     "description_cn": "锁定技。一名角色使用非虚拟非转化的锦囊牌时，若此牌的牌名属于智囊牌名、「定汉」已记录的牌名或【奇正相生】时，你摸一张牌。（智囊牌的初始記錄为【无中生有】、【过河拆橋】、【无懈可擊】）。",
-    "description_en": "Locked Skill: When a character uses a non-virtual, non-converted Tool card whose name matches a Strategist card name, a name recorded in [Grand Pacification], or [Qizheng Xiangsheng], you draw 1 card. (Initial Strategist card names: [Resupply], [Dismantle], [Nullification].)"
+    "description_en": "Locked Skill: When a character uses a non-virtual, non-converted Tool card whose name matches a Strategist card name, a name recorded in 〖Grand Pacification〗, or [Qizheng Xiangsheng], you draw 1 card. (Initial Strategist card names: [Resupply], [Dismantle], [Nullification].)"
   },
   "skill_grand_pacification": {
     "skill_type": "active",
@@ -3302,7 +3302,7 @@
     "name_cn": "幻境",
     "name_en": "Realm of Illusion",
     "description_cn": "限定技,你获得X张〖幻术〗牌,然后直到本回合结 束,〖幻化〗发动次数增加次且可以令〖幻术〗牌 成为〖幻化〗目标(X为你当前已损失体力值的两倍, 且至少为1",
-    "description_en": "Limited Skill: Gain X Illusion cards. Until the end of this turn, [Transform]'s activation limit increases and Illusion cards may also be selected as Transformation targets (X = twice your current HP Lost, minimum 1)."
+    "description_en": "Limited Skill: Gain X Illusion cards. Until the end of this turn, 〖Transform〗's activation limit increases and Illusion cards may also be selected as Transformation targets (X = twice your current HP Lost, minimum 1)."
   },
   "skill_expand_territory": {
     "skill_type": "locked",
@@ -3323,7 +3323,7 @@
     "name_cn": "奇径",
     "name_en": "Surprise Route",
     "description_cn": "觉醒技，每个回合结束后，若你的手牌副区域均已开发，你减1体力上限，获得「摧心」，然后将座次移动至除你以外的两名相邻角色之间并获得一个额外的回合。",
-    "description_en": "Awakening Skill: At the end of each turn, if all your hand card sub-zones are developed, reduce your Max HP by 1, gain [Crushing Push], then move your seat position to between any two adjacent characters other than yourself and take an extra turn."
+    "description_en": "Awakening Skill: At the end of each turn, if all your hand card sub-zones are developed, reduce your Max HP by 1, gain 〖Crushing Push〗, then move your seat position to between any two adjacent characters other than yourself and take an extra turn."
   },
   "skill_crushing_push": {
     "skill_type": "active",
@@ -3351,7 +3351,7 @@
     "name_cn": "平襄",
     "name_en": "Pacify Xiang",
     "description_cn": "限定技， 出牌阶段，你可以減9点体力上限。若如此做，你视为使用至多九张火【杀】。然后你失去〖九伐〗且本局遊戲你的手牌上限改为体力上限。",
-    "description_en": "Limited Skill: During your Play Phase, you may reduce your Max HP by 9. If you do, you are treated as using up to 9 [Fire Kill] cards. You then lose [Nine Campaigns] and your Hand Limit for the rest of the game equals your Max HP."
+    "description_en": "Limited Skill: During your Play Phase, you may reduce your Max HP by 9. If you do, you are treated as using up to 9 [Fire Kill] cards. You then lose 〖Nine Campaigns〗 and your Hand Limit for the rest of the game equals your Max HP."
   },
   "skill_astral_soul": {
     "skill_type": "active",
@@ -3372,7 +3372,7 @@
     "name_cn": "神霈",
     "name_en": "Divine Deluge",
     "description_cn": "限定技,当你进入濒死状态时,你可以回复点体 力(为你本局进入濒死状态的次数),并对一名 角色造成等量的雷电伤害,然后获得〖回天〗。",
-    "description_en": "Limited Skill: When you enter the Verge of Death State, you may recover X HP (X = the number of times you have entered the Verge of Death State this game) and deal X Lightning damage to one character. Then gain [Return of Heaven]."
+    "description_en": "Limited Skill: When you enter the Verge of Death State, you may recover X HP (X = the number of times you have entered the Verge of Death State this game) and deal X Lightning damage to one character. Then gain 〖Return of Heaven〗."
   },
   "skill_return_of_heaven": {
     "skill_type": "active",
@@ -3457,14 +3457,14 @@
     "name_cn": "览害",
     "name_en": "Survey of Harm",
     "description_cn": "锁定技,有计策的角色回合结束时,若此回合有计策：1. 成功发动,你摸 X 张牌并发动-次 〖论策〗 (X 为你本轮计策成功的次数且至多为 3); 2.未成功发动,你增加1 点体力上限 （体力上限至多加 3) 并回复1点体力",
-    "description_en": "Locked Skill: At the end of the turn of a character with a Stratagem, if this turn the Stratagem was: 1. Successfully triggered — draw X cards and activate [Strategic Plan] once more (X = successful Stratagems this round, max 3); 2. Not triggered — increase your Max HP by 1 (max +3) and recover 1 HP."
+    "description_en": "Locked Skill: At the end of the turn of a character with a Stratagem, if this turn the Stratagem was: 1. Successfully triggered — draw X cards and activate 〖Strategic Plan〗 once more (X = successful Stratagems this round, max 3); 2. Not triggered — increase your Max HP by 1 (max +3) and recover 1 HP."
   },
   "skill_twin_beauties": {
     "skill_type": "active",
     "name_cn": "双姝",
     "name_en": "Twin Beauties",
     "description_cn": "准备阶段，你可以 亮出牌堆顶的两张牌，若其中：包含方块牌，本回合〖娉婷〗可选择的项数+1；包含红桃牌，本回合〖移筝〗可选择的项数+1；只有黑色牌，你获得这些牌。",
-    "description_en": "During your Preparation Phase, you may Reveal the top 2 cards of the Draw Pile. If they include: a Diamonds — [Graceful Bearing]'s selectable options +1 this turn; a Hearts — [Zither Shift]'s selectable options +1 this turn; only black cards — you gain those cards."
+    "description_en": "During your Preparation Phase, you may Reveal the top 2 cards of the Draw Pile. If they include: a Diamonds — 〖Graceful Bearing〗's selectable options +1 this turn; a Hearts — 〖Zither Shift〗's selectable options +1 this turn; only black cards — you gain those cards."
   },
   "skill_graceful_bearing": {
     "skill_type": "active",
@@ -3499,7 +3499,7 @@
     "name_cn": "化朽",
     "name_en": "Transmute",
     "description_cn": "出牌阶段限一次，你可以将一种「藏巧」装备牌效果修改为下述对应顺序的牌直到你的下回合开始：【魂·诸葛连弩】；【魂·八卦阵】；【轨轨】。",
-    "description_en": "Once per Play Phase, you may change the effect of one [Hidden Ingenuity] equipment card to the corresponding card in the following sequence until the start of your next turn: [Soul · Zhuge Repeating Crossbow]; [Soul · Eight Trigrams Array]; [Rail Rail]."
+    "description_en": "Once per Play Phase, you may change the effect of one 〖Hidden Ingenuity〗 equipment card to the corresponding card in the following sequence until the start of your next turn: [Soul · Zhuge Repeating Crossbow]; [Soul · Eight Trigrams Array]; [Rail Rail]."
   },
   "skill_battle_ready": {
     "skill_type": "locked",
@@ -3653,14 +3653,14 @@
     "name_cn": "登极",
     "name_en": "Ascend the Throne",
     "description_cn": "觉醒技，准备阶段，若你的「储」数不小于3，你减1点体力上限，获得所有「储」，获得〖奸雄〗和〖天行〗。",
-    "description_en": "Awakening Skill: During your Preparation Phase, if you have at least 3 Reserve cards, reduce your Max HP by 1, gain all Reserve cards, and gain [Treacherous Hero] and [Imperial March]."
+    "description_en": "Awakening Skill: During your Preparation Phase, if you have at least 3 Reserve cards, reduce your Max HP by 1, gain all Reserve cards, and gain 〖Treacherous Hero〗 and 〖Imperial March〗."
   },
   "skill_imperial_march": {
     "skill_type": "awakening",
     "name_cn": "天行",
     "name_en": "Imperial March",
     "description_cn": "觉醒技，准备阶段，若你的「储」数不小于3，你减1点体力上限，获得所有「储」，失去〖储元〗，并获得下列技能中的一项：〖仁德〗、〖制衡〗、〖乱击〗、〖放权〗。",
-    "description_en": "Awakening Skill: During your Preparation Phase, if you have at least 3 Reserve cards, reduce your Max HP by 1, gain all Reserve cards, lose [Reserve Source], and gain one of: [Benevolence], [Balance of Power], [Volley], or [Abdicate]."
+    "description_en": "Awakening Skill: During your Preparation Phase, if you have at least 3 Reserve cards, reduce your Max HP by 1, gain all Reserve cards, lose 〖Reserve Source〗, and gain one of: 〖Benevolence〗, 〖Balance of Power〗, 〖Volley〗, or 〖Abdicate〗."
   },
   "skill_le_benevolence": {
     "skill_type": "active",
@@ -3709,7 +3709,7 @@
     "name_cn": "静域",
     "name_en": "Tranquil Domain",
     "description_cn": "锁定技，每个技能每轮限一次，当一名角色发动除〖静域〗外的技能时，你摸一张牌。",
-    "description_en": "Locked Skill: Once per round per skill — whenever a character activates any skill other than [Tranquil Domain], you draw 1 card."
+    "description_en": "Locked Skill: Once per round per skill — whenever a character activates any skill other than 〖Tranquil Domain〗, you draw 1 card."
   },
   "skill_filtered_hearts": {
     "skill_type": "active",
@@ -5620,7 +5620,7 @@
     "name_cn": "望橹",
     "name_en": "Watch Tower",
     "description_cn": "锁定技，回合开始时，若你的装备区里有【大攻车】你执行一个额外的出牌阶段，若没有，将【大攻车】置入你的装备区。",
-    "description_en": "Locked Skill: At the start of your turn, if you have [Great Siege Engine] equipped, perform an additional Play Phase. If not, place [Great Siege Engine] into your Equipment Zone."
+    "description_en": "Locked Skill: At the start of your turn, if you have [Siege Engine] equipped, perform an additional Play Phase. If not, place [Siege Engine] into your Equipment Zone."
   },
   "skill_breach_the_fortification": {
     "skill_type": "active",
@@ -5641,7 +5641,7 @@
     "name_cn": "征南",
     "name_en": "Conquer the South",
     "description_cn": "当其他角色死亡后，你可以摸三张牌，然后你选择 “武圣”、“当先”、“制蛮”中未拥有的一个技能获得。",
-    "description_en": "When another character dies, draw 3 cards, then choose 1 skill you do not yet have from 〖Saint of War〗, 〖Lead the Charge〗, and 〖Suppress Tribes〗, and gain it."
+    "description_en": "When another character dies, draw 3 cards, then choose 1 skill you do not yet have from 〖Saint of War〗, 〖Charge Ahead〗, and 〖Suppress Tribes〗, and gain it."
   },
   "skill_gather_the_fragrance": {
     "skill_type": "locked",
@@ -5718,7 +5718,7 @@
     "name_cn": "共砺",
     "name_en": "Honed Together",
     "description_cn": "锁定技，游戏开始时，你令本局「钦英」减少X个可用于弃置的类别的牌（X为全场友武将数）。",
-    "description_en": "Locked Skill: At the start of the game, [Admire the Valiant] loses X card categories that can be used as discards, where X equals the number of allied generals on the field."
+    "description_en": "Locked Skill: At the start of the game, 〖Admire the Valiant〗 loses X card categories that can be used as discards, where X equals the number of allied generals on the field."
   },
   "skill_dz_catch_the_pig": {
     "skill_type": "active",
@@ -5753,7 +5753,7 @@
     "name_cn": "共砺",
     "name_en": "Honed Together",
     "description_cn": "锁定技，游戏开始时，你令本局「顺逸」添加X个可触发的花色（X为全场友武将数）。",
-    "description_en": "Locked Skill: At the start of the game, [Riding the Flow] gains X additional suits that can trigger it, where X equals the number of allied generals on the field."
+    "description_en": "Locked Skill: At the start of the game, 〖Riding the Flow〗 gains X additional suits that can trigger it, where X equals the number of allied generals on the field."
   },
   "skill_dz_ornamental_fist": {
     "skill_type": "locked",
@@ -5767,7 +5767,7 @@
     "name_cn": "三殴",
     "name_en": "Triple Strike",
     "description_cn": "锁定技，其他角色受到你的伤害后或猜错「花拳」的效果后，获得1枚「击倒」标记。一名角色获得至少3枚「击倒」标记后移除此标记并进入「击倒」状态。「击倒」状态的角色始终跳过出牌阶段。若角色于「击倒」状态，当有十张牌离开牌堆或进入弃牌堆后，其脱离「击倒」状态。",
-    "description_en": "Locked Skill: After another character receives damage from you, or after a character guesses [Ornamental Fist]'s effect incorrectly, that character gains 1 「Knocked Down」 token. Once a character has 3 or more 「Knocked Down」 tokens, remove all tokens and that character enters the 「Knocked Down」 state. A character in the 「Knocked Down」 state always skips their Play Phase. A character exits the 「Knocked Down」 state after ten cards leave the Draw Pile or enter the Discard Pile."
+    "description_en": "Locked Skill: After another character receives damage from you, or after a character guesses 〖Ornamental Fist〗's effect incorrectly, that character gains 1 「Knocked Down」 token. Once a character has 3 or more 「Knocked Down」 tokens, remove all tokens and that character enters the 「Knocked Down」 state. A character in the 「Knocked Down」 state always skips their Play Phase. A character exits the 「Knocked Down」 state after ten cards leave the Draw Pile or enter the Discard Pile."
   },
   "skill_dz_twin_jade": {
     "skill_type": "locked",
