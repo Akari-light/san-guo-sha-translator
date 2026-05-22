@@ -27,7 +27,7 @@
       "出牌阶段，对一名有手牌的其他角色使用。该角色展示一张手牌，然后你可以弃置一张与展示牌颜色相同的手牌，令该角色受到1点火焰伤害。"
     ],
     "effect_en": [
-      "Play Phase: use this card on another character who has hand cards. That character reveals one hand card. You may discard a hand card of the same color to deal 1 Fire damage to them."
+      "Play Phase: use this card on another character who has hand cards. That character shows one hand card. You may discard a hand card of the same color to deal 1 Fire damage to them."
     ],
     "faq": []
   },
@@ -123,7 +123,7 @@
     ],
     "effect_en": [
       "Play Phase: use this card on one or two characters. Each target is placed into the Chained state or Reset.",
-      "Reforge: During your Play Phase, you may place this card into the Discard Pile to draw 1 card. Reforging is not considered using this Tool card."
+      "Reforge: During your Play Phase, you may place this card into the Discard Pile to draw 1 card. Reforging is not considered using a Tool Card."
     ],
     "faq": [
       {
@@ -184,12 +184,12 @@
         "q_cn": "若多名连环角色同时死亡，结算顺序是什么？",
         "a_cn": "按从使用者开始逆时针方向的顺序依次结算。",
         "q_en": "If multiple chained characters die simultaneously, what is the elimination order?",
-        "a_en": "Counter-clockwise from the attacker."
+        "a_en": "Counter-clockwise from the card's user."
       },
       {
         "q_cn": "主公通过连环伤害间接杀死忠臣，需要弃置所有手牌和装备牌吗？",
         "a_cn": "需要。主公仍是伤害来源，无论是否通过连环传导。",
-        "q_en": "If the Ruler kills a Loyalist through chain damage, do they still discard all cards?",
+        "q_en": "If the Ruler kills a Loyalist through chain damage, do they still discard all hand cards and Equipment cards?",
         "a_en": "Yes. The Ruler is still the damage source regardless of whether it was direct or transmitted."
       }
     ]
@@ -222,7 +222,7 @@
       "出牌阶段，对所有角色使用。从牌堆顶亮出等同于现存角色数量的牌，所有角色依次各选择并获得其中一张牌，多余的牌置入弃牌堆。"
     ],
     "effect_en": [
-      "Play Phase: use this card on all characters. Flip cards from the top of the Draw Pile equal to the number of surviving characters. Each character in sequence selects and gains one of those cards; remaining cards are placed into the Discard Pile."
+      "Play Phase: use this card on all characters. Reveal cards from the top of the Draw Pile equal to the number of surviving characters. Each character in sequence selects and gains one of those cards; remaining cards are placed into the Discard Pile."
     ],
     "faq": []
   },
@@ -263,7 +263,7 @@
         "q_cn": "【桃园结义】被【无懈可击】抵消后，其他角色还能回血吗？",
         "a_cn": "可以。【无懈可击】只影响被指定的那一名目标，其他角色仍正常回血。",
         "q_en": "If [Peach Garden] is nullified for one person, do the others still recover health?",
-        "a_en": "Yes. [Nullification] only affects the one target it is played against — all other players still recover health normally."
+        "a_en": "Yes. [Nullification] only affects the one target it is played against — all other players still recover HP normally."
       },
       {
         "q_cn": "对方用【无懈可击】抵消我的【无懈可击】，会影响其他人的结算吗？",
@@ -297,7 +297,7 @@
       "出牌阶段，对一名已受伤的角色使用。你观看目标角色的手牌，若你与其手牌中均有【毒】，则你弃置其中一张【毒】并与其各摸两张牌，否则你与其各受到1点无来源伤害。"
     ],
     "effect_en": [
-      "Play Phase: use this card on a Wounded character. Look at that character's hand cards. If both you and they have [Poison] in hand, discard one [Poison] from among those cards and you each draw 2 cards. Otherwise, you each takes 1 damage with no source."
+      "Play Phase: use this card on a Wounded character. Look at that character's hand cards. If both you and they have [Poison] in hand, discard one [Poison] from among those cards and you each draw 2 cards. Otherwise, you each take 1 damage with no source."
     ],
     "faq": []
   },
@@ -382,7 +382,7 @@
     "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": ["出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"],
     "effect_en": [
-      "Play Phase: Choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
+      "Play Phase: choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
     "faq": []
   },
@@ -399,8 +399,8 @@
       "2.出牌阶段对你使用，连续牌堆顶一张牌，直到出现一张装备牌为止，你获得之。"
     ],
     "effect_en": [
-      "1. Play Phase: Use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon gains: Attack Range +1 and damage dealt by [Kill] +1.",
-      "2. Play Phase: Use on yourself — flip cards from the top of the Draw Pile one at a time until an Equipment card is revealed. You gain that Equipment card."
+      "1. Play Phase: use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon gains: Attack Range +1 and damage dealt by [Kill] +1.",
+      "2. Play Phase: use on yourself — flip cards from the top of the Draw Pile one at a time until an Equipment card is revealed. You gain that Equipment card."
     ],
     "faq": []
   },
@@ -448,7 +448,7 @@
       "出牌阶段对自己使用后，直到回合结束前，可以打出任意数量的【杀】。"
     ],
     "effect_en": [
-      "Play Phase: use this card on yourself. Until the end of your turn, you may use any number of [Kill] cards."
+      "Play Phase: use this card on yourself. Until the end of your turn, you may play any number of [Kill] cards."
     ],
     "faq": []
   },
@@ -526,7 +526,7 @@
       "出牌阶段，对至多两名角色使用。第一名角色受到1点雷电伤害并弃置一张牌，第二名角色受到1点雷电伤害并摸一张牌。"
     ],
     "effect_en": [
-      "During your Play Phase, use this card on up to two characters. The first target receives 1 Thunder damage and discards a card; the second target receives 1 Thunder damage and draws a card."
+      "During your Play Phase, use this card on up to two characters. The first target receives 1 Lightning damage and discards a card; the second target receives 1 Lightning damage and draws a card."
     ],
     "faq": []
   },
@@ -540,7 +540,7 @@
       "出牌阶段，对一名其他角色使用。若如此做，你亮出牌堆顶四张牌并依次对目标角色使用其中的【杀】，结算结束后，将其余的牌置入弃牌堆。"
     ],
     "effect_en": [
-      "During your Play Phase, use this on one other character. Flip the top 4 cards of the Draw Pile face-up, then use each [Kill] among them on the target one at a time. After all resolutions are complete, place the remaining cards into the Discard Pile."
+      "During your Play Phase, use this on one other character. Reveal the top 4 cards of the Draw Pile, then use each [Kill] among them on the target one at a time. After all resolutions are complete, place the remaining cards into the Discard Pile."
     ],
     "faq": []
   },
@@ -572,7 +572,7 @@
       "出牌阶段，对距离为1的一名其他角色使用。将【兵粮寸断】置入该角色的判定区。该角色判定阶段，若判定结果不为梅花，其跳过本回合的摸牌阶段。"
     ],
     "effect_en": [
-      "Play Phase: use this card on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Clubs, that character skips their Draw Phase this turn."
+      "Play Phase: use this card on another character at distance 1. Place [Starvation] into that character's Judgment Zone. During their Judgment Phase, if the result is not Clubs, that character skips their Draw Phase this turn."
     ],
     "faq": []
   },
@@ -588,7 +588,7 @@
       "出牌阶段，对一名其他角色使用。将【乐不思蜀】置入该角色的判定区。该角色判定阶段，若判定结果不为红桃，其跳过本回合的出牌阶段。"
     ],
     "effect_en": [
-      "Play Phase: use this card on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not a Hearts, that character skips their Play Phase this turn."
+      "Play Phase: use this card on another character. Place [Acedia] into that character's Judgment Zone. During their Judgment Phase, if the result is not Hearts, that character skips their Play Phase this turn."
     ],
     "faq": []
   },
@@ -604,7 +604,7 @@
       "出牌阶段，对自己使用。将【闪电】置入你的判定区。你的判定阶段，若判定结果为黑桃2至9，你受到3点雷电伤害；否则将【闪电】移至下家的判定区。"
     ],
     "effect_en": [
-      "Play Phase: use this card on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is a Spades between 2 and 9, you take 3 Lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
+      "Play Phase: use this card on yourself. Place [Lightning] into your Judgment Zone. During your Judgment Phase, if the result is Spades between 2 and 9, you take 3 Lightning damage; otherwise, move [Lightning] to the next player's Judgment Zone."
     ],
     "faq": []
   },
@@ -620,7 +620,7 @@
       "出牌阶段，对自己使用，放置在自己的判定区，待下个回合开始阶段进行判定，若判定结果不为方块，则自己摸取8张手牌，并跳过本回合的出牌阶段和弃牌阶段。"
     ],
     "effect_en": [
-      "Play Phase: use this card on yourself. Place [Summon God] into your Judgment Zone. At the start of your next turn's Starting Phase, perform a Judgment. If the result is not Diamonds, draw 8 cards and skip that turn's Play Phase and Discard Phase."
+      "Play Phase: use this card on yourself. Place [Summon God] into your Judgment Zone. At the start of your next turn, perform a Judgment. If the result is not Diamonds, draw 8 cards and skip that turn's Play Phase and Discard Phase."
     ],
     "faq": []
   },
@@ -636,7 +636,7 @@
       "出牌阶段，对任意一名角色使用，将【美人计】置入其判定区。该角色判定阶段，若判定结果为红桃，其须将全部手牌交给场上任意一名异性角色；若判定结果不为红桃，将【美人计】移至其下家的判定区。若场上全部为同性角色，则此牌无效。"
     ],
     "effect_en": [
-      "Play Phase: use this card on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to their Right Neighbor's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
+      "Play Phase: use this card on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to the next player's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
     ],
     "faq": []
   }
