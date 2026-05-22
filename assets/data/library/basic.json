@@ -57,13 +57,13 @@
       {
         "q_cn": "可以给满血角色用桃吗？",
         "a_cn": "不可以。未受伤的角色（体力值等于体力上限）无法回复体力。",
-        "q_en": "Can I use a Peach on a full-health character?",
-        "a_en": "No. An Unwounded character (HP equal to Max HP) cannot recover HP."
+        "q_en": "Can I use a [Peach] on a full-health character?",
+        "a_en": "No. An unwounded character (HP Value equal to Max HP) cannot recover HP."
       },
       {
         "q_cn": "在自己的回合可以给另一名角色用桃吗？",
         "a_cn": "不可以。只有在其他角色进入濒死状态时才能对其使用桃。",
-        "q_en": "Can I use a Peach on another character during my turn?",
+        "q_en": "Can I use a [Peach] on another character during my turn?",
         "a_en": "No. [Peach] can only be used on another character when they are in the Verge of Death State."
       }
     ]
@@ -78,20 +78,20 @@
       "出牌階段，對自己使用，令自己的下一張使用的【殺】造成的傷害+1 (每回合限使用1次); 任何時候，當自己進入濒死階段時，對自己使用，立即恢復 1 點體力值。"
     ],
     "effect_en": [
-      "During your Play Phase, use on yourself; the damage of your next [Kill] this turn +1 (once per turn). At any time during a Verge of Death Resolution, use on yourself to recover 1 HP."
+      "During your Play Phase, use on yourself; your next [Kill] this turn deals 1 additional damage (once per turn). At any time, when you enter the Verge of Death State, use on yourself to immediately recover 1 HP."
     ],
     "faq": [
       {
         "q_cn": "酒可以对别人使用吗？",
         "a_cn": "不可以，酒只能对自己使用。",
-        "q_en": "Can I use Wine on others?",
+        "q_en": "Can I use [Wine] on others?",
         "a_en": "No. [Wine] can only be used on yourself."
       },
       {
         "q_cn": "在濒死状态下使用酒，回复的是体力还是体力值？",
         "a_cn": "回复1点体力。使用酒进入濒死状态结算时，令角色回复1点体力，使其脱离濒死状态。",
-        "q_en": "When [Wine] is used during the Verge of Death State, does it recover HP?",
-        "a_en": "Yes. Using [Wine] during a Verge of Death Resolution recovers 1 HP, which can bring the character out of the Verge of Death State."
+        "q_en": "When [Wine] is used in the Verge of Death State, does it recover HP or HP Value?",
+        "a_en": "It recovers 1 HP. Using [Wine] during Verge of Death Resolution recovers 1 HP for the character, which can bring them out of the Verge of Death State."
       }
     ]
   },
@@ -134,7 +134,7 @@
       "赠予：出牌阶段，你可以从手牌中将该牌以正面向上的方式将此牌赠予其他角色。若此牌不是装备牌，则进入该角色手牌区；若此牌为装备牌，则进入该角色装备区且替换已有装备。"
     ],
     "effect_en": [
-      "When [Poison] leaves your hand area face-up (including being transformed into another card) or is Revealed as a Point Duel card, you lose 1 HP. When you gain a [Poison] by drawing a card, you may show it and give it to another character (to prevent the effect of [Poison]).",
+      "When [Poison] leaves your hand area face-up (including being transformed into another card) or is revealed as a Point Duel card, you lose 1 HP. When you gain a [Poison] by drawing a card, you may show it and give it to another character (to prevent the effect of [Poison]).",
       "Gift: During your Play Phase, you may give this card from your hand face-up to another character. If it is not an Equipment Card, it goes into that character's hand area; if it is an Equipment Card, it goes into that character's Equipment Zone and replaces any existing equipment in that slot."
     ],
     "faq": [

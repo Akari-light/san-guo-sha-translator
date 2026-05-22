@@ -112,7 +112,7 @@
         "q_cn": "小势力角色的「不被横置」效果在任何时候都生效吗？",
         "a_cn": "是的。只要装备了【明光铠】且为小势力角色，一切令其横置的效果均无效。",
         "q_en": "Does the 'cannot be placed into the Chained state' effect for minor-faction characters apply at all times while equipped?",
-        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would place their General Card in horizontal position are Nullified."
+        "a_en": "Yes. As long as [Radiant Plate] is equipped and the character is a minor-faction character, all effects that would place their General Card into the Chained state are Nullified."
       }
     ]
   },
@@ -132,13 +132,13 @@
       {
         "q_cn": "【仁王盾】对黑色的雷【杀】是否有效？",
         "a_cn": "有效。只要【杀】的花色为黑色（黑桃或梅花），无论其属性（普通、雷、火），【仁王盾】均令其无效。",
-        "q_en": "Does [Vajra Shield] Negate a black thunder [Kill]?",
+        "q_en": "Does [Vajra Shield] Nullify a black thunder [Kill]?",
         "a_en": "Yes. As long as the [Kill] card is black (Spades or Clubs), it is Nullified regardless of its elemental type (normal, thunder, or fire)."
       },
       {
         "q_cn": "【青釭剑】能令【仁王盾】无效吗？",
         "a_cn": "可以。【青釭剑】令目标防具无效，因此装备【青釭剑】的攻击者使用黑色【杀】时，【仁王盾】在该次攻击中无效。",
-        "q_en": "Can [Qing Gang Sword] Negate [Vajra Shield]?",
+        "q_en": "Can [Qing Gang Sword] Nullify [Vajra Shield]?",
         "a_en": "Yes. [Qing Gang Sword] Nullifies the target's armor, so a black [Kill] will land normally when the attacker is equipped with [Qing Gang Sword]."
       },
       {
@@ -171,7 +171,7 @@
       {
         "q_cn": "【青釭剑】可以无效【藤甲】吗？",
         "a_cn": "可以。装备【青釭剑】的攻击者使用普通【杀】时，【藤甲】在该次攻击中无效，普通【杀】正常命中。",
-        "q_en": "Can [Qing Gang Sword] Negate [Rattan Armour]?",
+        "q_en": "Can [Qing Gang Sword] Nullify [Rattan Armour]?",
         "a_en": "Yes. When an attacker equipped with [Qing Gang Sword] uses a normal [Kill], [Rattan Armour] is Nullified for that attack and the [Kill] lands normally."
       },
       {
@@ -301,7 +301,7 @@
         "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
         "a_cn": "不算。【护心镜】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
         "q_en": "When [Sentinel Mirror] is placed into the Discard Pile upon activation, does it count as being 'discarded'?",
-        "a_en": "No. It is placed into the Discard Pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as [Qiao Ji]) are not activated."
+        "a_en": "No. It is placed into the Discard Pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as 〖Fierce Lady〗) are not activated."
       },
       {
         "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
@@ -337,7 +337,7 @@
     ],
     "effect_en": [
       "Locked Skill: Whenever you take damage of 2 or more, that damage is reduced by 1.",
-      "Locked Skill: Your General Card cannot be flipped over."
+      "Locked Skill: Your General Card cannot be flipped."
     ],
     "faq": []
   },
@@ -379,7 +379,7 @@
       "当有你成为【杀】的目标时，可丢弃1张手牌，转移给与你距离为1的角色。"
     ],
     "effect_en": [
-      "When you become the target of a [Kill], you may discard 1 hand card to redirect that [Kill] to a character at distance 1 from you."
+      "When you become the target of a [Kill], you may discard 1 hand card to redirect that [Kill] to a character at Distance 1 from you."
     ],
     "faq": []
   },
@@ -421,7 +421,7 @@
       "血量上限+1；主公无法装备，但可打出此牌，恢复1点血(不能进行濒死恢复)。"
     ],
     "effect_en": [
-      "Your Max HP +1. The Lord cannot equip this card, but may play it out to recover 1 HP (cannot be played out during a Verge of Death Resolution)."
+      "Your Max HP +1. The Lord cannot equip this card, but may Play it to recover 1 HP (cannot be played during a Dying Event)."
     ],
     "faq": []
   },
@@ -449,7 +449,7 @@
       "锁定技，每当你使用或打出【闪】后，对方受到你造成的1点伤害。"
     ],
     "effect_en": [
-      "Locked Skill: After each time you use or play out a [Dodge], the attacker receives 1 damage dealt by you."
+      "Locked Skill: After each time you use or play a [Dodge], the attacker takes 1 damage dealt by you."
     ],
     "faq": []
   },
@@ -465,7 +465,7 @@
     ],
     "effect_en": [
       "Locked Skill: Whenever a character draws cards, if they would draw more than 1, the number of cards drawn is reduced to 1.",
-      "At the start of a character's Starting Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
+      "At the start of a character's Preparation Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
     ],
     "faq": []
   }

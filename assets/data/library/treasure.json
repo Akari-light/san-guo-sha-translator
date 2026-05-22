@@ -9,14 +9,14 @@
       "出牌阶段限一次, 你可以将一张手牌扣置于你装备区里的【木牛流马】下, 然后你可以将此装备移动到一名其他角色的装备区里; 你可以如手牌般使用或打出【木牛流马】下的牌。"
     ],
     "effect_en": [
-      "Once per Play Phase, you may place one hand card face-down beneath [Wooden Ox]. If you do, you may move this card to another character's Equipment Zone. You may use or play any card stored beneath this card as though it were a hand card."
+      "Once per Play Phase, you may place 1 hand card face-down beneath [Wooden Ox], then you may move this card to another character's Equipment Zone. You may use or play cards stored beneath [Wooden Ox] as though they were hand cards."
     ],
     "faq": [
       {
         "q_cn": "【木牛流马】下的牌算手牌吗？",
         "a_cn": "不算。储备牌不在手牌区，不受针对手牌的技能影响（如弃置、拼点等），只有在可以「使用或打出」手牌的时机才能动用储备牌。",
         "q_en": "Do cards stored under [Wooden Ox] count as hand cards?",
-        "a_en": "No. Stored cards are not hand cards and are unaffected by effects that target hand cards (such as discarding or competing). They can only be used or played at moments that allow you to use or play a hand card."
+        "a_en": "No. Stored cards are not in the hand-card area and are unaffected by skills that target hand cards (such as discarding or pitching). They can only be drawn upon at moments that allow you to use or play a hand card."
       },
       {
         "q_cn": "一张牌最多可以储存几张牌？",
@@ -28,7 +28,7 @@
         "q_cn": "把【木牛流马】传给别人时，储备牌也一起转移吗？",
         "a_cn": "视情况而定。若【木牛流马】是从装备区移动到另一个装备区（如通过本身效果、甘露、巧变等），储备牌随之一并转移。若【木牛流马】进入装备区以外的区域（如被顺手牵羊牵走后进入手牌区，或被过河拆桥弃置），储备牌全部置入弃牌堆。",
         "q_en": "When [Wooden Ox] moves to another character, do stored cards transfer too?",
-        "a_en": "It depends. If [Wooden Ox] moves from one Equipment Zone to another (via its own effect, [Sweet Dew], [Adapt], etc.), all stored cards transfer along with it. If it leaves the Equipment Zone for any other area (e.g. stolen by [Steal] into a hand, or discarded by [Dismantle]), all stored cards are placed into the Discard Pile."
+        "a_en": "It depends. If [Wooden Ox] moves from one Equipment Zone to another (via its own effect, [Sweet Dew], 〖Agile Maneuver〗, etc.), all stored cards transfer with it. If [Wooden Ox] enters any area outside an Equipment Zone (e.g. taken into a hand by [Steal], or discarded by [Dismantle]), all stored cards are placed into the Discard Pile."
       },
       {
         "q_cn": "没有放入储备牌的情况下，可以移动【木牛流马】吗？",
@@ -81,7 +81,7 @@
       "出牌阶段开始时，你可以视为使用一张【杀】，此【杀】对目标角色造成伤害后，你弃置其一张牌（每次修改选择一项：1.此【杀】无距离限制；2.此【杀】可多指定一个目标；3.此【杀】对目标角色造成伤害后，你多弃置其一张牌）；此牌离开你的装备区后移出游戏。"
     ],
     "effect_en": [
-      "At the start of your Play Phase, you may be treated as using a [Kill]. When this [Kill] deals damage to the target character, you discard 1 of their cards. Each time you activate this card's effect, choose one upgrade (cumulative): 1. This [Kill] has no distance restriction; 2. This [Kill] may designate one additional target; 3. When this [Kill] deals damage to a target character, discard one additional card from them. When this card leaves your Equipment Zone, it is instead Removed from the Game."
+      "At the start of your Play Phase, you may be treated as using a [Kill]; after this [Kill] deals damage to the target character, you discard 1 of their cards. (Each time you activate this effect, choose one upgrade that persists: 1. this [Kill] has no distance restriction; 2. this [Kill] may designate 1 additional target; 3. after this [Kill] deals damage to the target character, you discard 1 additional card from them.) When this card leaves your Equipment Zone, it is instead Removed from the Game."
     ],
     "faq": []
   },
@@ -179,7 +179,7 @@
       "出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"
     ],
     "effect_en": [
-      "At the end of your Play Phase, you may reveal a Basic card or Non-Time-Delayed Tool Card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
+      "At the end of your Play Phase, you may show a Basic card or Non-Time-Delayed Tool Card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
     ],
     "faq": []
   },
@@ -263,7 +263,7 @@
       "锁定技，当你从装备区失去【孔明灯】时，回复1点体力。任意角色处于濒死状态时，你可以将你装备区的【孔明灯】当【桃】使用"
     ],
     "effect_en": [
-      "Locked Skill: When you lose [Kongming Lantern] from your Equipment Zone, recover 1 HP. When any character enters the Verge of Death State, you may use [Kongming Lantern] from your Equipment Zone as a [Peach]."
+      "Locked Skill: When you lose [Kongming Lantern] from your Equipment Zone, recover 1 HP. When any character is in the Verge of Death State, you may use [Kongming Lantern] from your Equipment Zone as a [Peach]."
     ],
     "faq": []
   },
@@ -306,7 +306,7 @@
       "锁定技，当你受到伤害后，将【玉玺】置入弃牌堆。"
     ],
     "effect_en": [
-      "At the start of your End Phase, you may draw 1 card. Locked: When you take damage, place [Imperial Seal] into the Discard Pile."
+      "At the start of your End Phase, you may draw 1 card. Locked Skill: When you take damage, place [Imperial Seal] into the Discard Pile."
     ],
     "faq": []
   }
