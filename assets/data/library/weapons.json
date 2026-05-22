@@ -52,14 +52,14 @@
       {
         "q_cn": "装备【雌雄双股剑】攻击大乔，大乔发动【流离】将目标转移后，如何结算？",
         "a_cn": "武器技能在【流离】结算后判断。若新目标满足发动条件（与攻击者性别不同），则由新目标承担武器效果。",
-        "q_en": "If the attacker targets Da Qiao with [Twin Swords] equipped and Da Qiao uses [Fleeting] to redirect the [Kill], how is the weapon resolved?",
-        "a_en": "The weapon skill is evaluated after [Fleeting] resolves. If the new target meets the condition (different gender), they bear the weapon's effect instead."
+        "q_en": "If the attacker targets Da Qiao with [Twin Swords] equipped and Da Qiao uses 〖Displaced〗 to redirect the [Kill], how is the weapon resolved?",
+        "a_en": "The weapon skill is evaluated after 〖Displaced〗 resolves. If the new target meets the condition (different gender), they bear the weapon's effect instead."
       },
       {
         "q_cn": "马超或黄忠装备【雌雄双股剑】并使用【杀】指定异性目标后，武将技能和武器技能如何结算？",
         "a_cn": "先发动武将技能，再发动武器技能。例如：马超对黄月英使用【杀】并发动【铁骑】，判定结果出来后，黄月英再选择弃手牌或令马超摸牌，然后结算伤害。",
         "q_en": "If Ma Chao or Huang Zhong (equipped with [Twin Swords]) uses [Kill] on an opposite-gender target, in what order do the general skill and weapon skill resolve?",
-        "a_en": "The general's skill resolves first, then the weapon skill. For example: Ma Chao uses [Kill] on Huang Yueying and activates [Iron Cavalry]; after the judgment, Huang Yueying chooses to discard or let Ma Chao draw, then damage is dealt."
+        "a_en": "The general's skill resolves first, then the weapon skill. For example: Ma Chao uses [Kill] on Huang Yueying and activates 〖Iron Cavalry〗; after the judgment, Huang Yueying chooses to discard or let Ma Chao draw, then damage is dealt."
       },
       {
         "q_cn": "女性角色装备【雌雄双股剑】对只有一张手牌的诸葛亮使用【杀】，若诸葛亮弃置该牌后进入空城状态，伤害如何结算？",
@@ -80,7 +80,7 @@
       "锁定技，若你使用的【杀】是你最后的手牌，则此【杀】可以多选择两个目标（至多三个目标）。若任意目标使用【闪】抵消了此【杀】，则此【杀】对其余目标均无效。"
     ],
     "effect_en": [
-      "Locked Skill: If the [Kill] you use is your last hand card, it may target up to two additional characters (up to three targets total). If any target uses a [Dodge] to Negate the [Kill], the [Kill] is also negated for all remaining targets."
+      "Locked Skill: If the [Kill] you use is your last hand card, it may target up to two additional characters (up to three targets total). If any target uses a [Dodge] to Negate the [Kill], the [Kill] is also Nullified for all remaining targets."
     ],
     "faq": [
       {
@@ -104,20 +104,20 @@
       {
         "q_cn": "无手牌的刘备装备【方天画戟】，通过【激将】借用他人的【杀】，能发动武器技能吗？",
         "a_cn": "不能。【方天画戟】要求必须是使用者自己的最后一张手牌，通过【激将】使用的【杀】不满足此条件。",
-        "q_en": "Liu Bei has no hand cards and is equipped with [Sky Piercer]. He activates [Rally] to have an ally play a [Kill]. Can the weapon skill activate?",
-        "a_en": "No. [Sky Piercer] requires the [Kill] to be the attacker's own last hand card. A [Kill] played via [Rally] does not satisfy this condition."
+        "q_en": "Liu Bei has no hand cards and is equipped with [Sky Piercer]. He activates 〖Rally the Vanguard〗 to have an ally play a [Kill]. Can the weapon skill activate?",
+        "a_en": "No. [Sky Piercer] requires the [Kill] to be the attacker's own last hand card. A [Kill] played via 〖Rally the Vanguard〗 does not satisfy this condition."
       },
       {
         "q_cn": "夏侯渊发动【神速】打出的最后一张装备牌（而非【杀】），能否触发【方天画戟】特效？",
         "a_cn": "不可以。武器技能只由【杀】触发，且必须是手牌中的最后一张。",
-        "q_en": "Xiahou Yuan activates [Godspeed] and the last card played is an equipment card, not a [Kill]. Can [Sky Piercer]'s skill activate?",
+        "q_en": "Xiahou Yuan activates 〖Lightning Speed〗 and the last card played is an equipment card, not a [Kill]. Can [Sky Piercer]'s skill activate?",
         "a_en": "No. The weapon skill only triggers when the last hand card played is a [Kill]."
       },
       {
         "q_cn": "发动【方天画戟】技能时，大乔发动【流离】将自己身上的【杀】转移给另一个目标，如何结算？",
         "a_cn": "被【流离】的角色须承受两次【杀】的结算。大乔必须在被指定为目标时立即发动【流离】，而非轮到她结算时才发动。",
-        "q_en": "During [Sky Piercer]'s resolution, Da Qiao uses [Fleeting] to redirect the [Kill] aimed at her onto another existing target. How is this resolved?",
-        "a_en": "The redirected character must resolve two separate [Kill] instances. Da Qiao must activate [Fleeting] immediately when she is designated as a target, not when the [Kill] resolves on her in turn order."
+        "q_en": "During [Sky Piercer]'s resolution, Da Qiao uses 〖Displaced〗 to redirect the [Kill] aimed at her onto another existing target. How is this resolved?",
+        "a_en": "The redirected character must resolve two separate [Kill] instances. Da Qiao must activate 〖Displaced〗 immediately when she is designated as a target, not when the [Kill] resolves on her in turn order."
       }
     ]
   },
@@ -172,20 +172,20 @@
       {
         "q_cn": "装备【古锭刀】攻击没有手牌的大乔，大乔发动【流离】后，新目标若也没有手牌，伤害是否+1？",
         "a_cn": "对大乔本人的伤害不+1（她不再是目标）。若【流离】的新目标没有手牌，则对新目标的伤害+1。",
-        "q_en": "The attacker equipped with [Ancient Scimitar] targets Da Qiao (no hand cards); Da Qiao uses [Fleeting] to redirect the [Kill]. If the new target also has no hand cards, does the bonus damage apply?",
+        "q_en": "The attacker equipped with [Ancient Scimitar] targets Da Qiao (no hand cards); Da Qiao uses 〖Displaced〗 to redirect the [Kill]. If the new target also has no hand cards, does the bonus damage apply?",
         "a_en": "The bonus does not apply to Da Qiao since she is no longer the target. If the new target has no hand cards, the +1 bonus applies to them."
       },
       {
         "q_cn": "装备【古锭刀】攻击小乔，小乔发动【天香】将伤害转移给一名无手牌的角色，该角色是否受到+1伤害？",
         "a_cn": "不会。【古锭刀】只针对【杀】的直接目标（小乔），【天香】转移的伤害不触发武器效果。",
-        "q_en": "The attacker uses [Kill] on Xiao Qiao (equipped with [Ancient Scimitar]); Xiao Qiao activates [Heavenly Fragrance] to redirect the damage to another character with no hand cards. Does the bonus apply?",
-        "a_en": "No. [Ancient Scimitar] only affects the direct target of the [Kill] (Xiao Qiao). Damage redirected by [Heavenly Fragrance] does not trigger the weapon bonus."
+        "q_en": "The attacker uses [Kill] on Xiao Qiao (equipped with [Ancient Scimitar]); Xiao Qiao activates 〖Celestial Fragrance〗 to redirect the damage to another character with no hand cards. Does the bonus apply?",
+        "a_en": "No. [Ancient Scimitar] only affects the direct target of the [Kill] (Xiao Qiao). Damage redirected by 〖Celestial Fragrance〗 does not trigger the weapon bonus."
       },
       {
         "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动【天妒】将判定牌收入手牌，此时是否受到+1伤害？",
         "a_cn": "不受+1伤害。郭嘉通过【天妒】获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
-        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates [Genius] to take the Judgment Card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
-        "a_en": "No. Guo Jia now has a hand card (from [Genius]), so the condition for the bonus is no longer met at the time damage is resolved."
+        "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates 〖Heaven's Envy〗 to take the Judgment Card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
+        "a_en": "No. Guo Jia now has a hand card (from 〖Heaven's Envy〗), so the condition for the bonus is no longer met at the time damage is resolved."
       }
     ]
   },
@@ -200,7 +200,7 @@
       "当你使用的【杀】被目标角色使用的【闪】抵消后，你可以弃置两张牌。若如此做，此【杀】依然造成伤害。"
     ],
     "effect_en": [
-      "When your [Kill] is negated by a target's [Dodge], you may discard two cards. If you do, the [Kill] still deals damage."
+      "When your [Kill] is Negated by a target's [Dodge], you may discard two cards. If you do, the [Kill] still deals damage."
     ],
     "faq": [
       {
@@ -212,13 +212,13 @@
       {
         "q_cn": "装备【贯石斧】命中曹操后，曹操发动【奸雄】可以收取什么牌？",
         "a_cn": "曹操收取对其造成伤害的那张【杀】。",
-        "q_en": "If [Stonepiercer] forces damage through and hits Cao Cao, what card does [Mastermind] collect?",
+        "q_en": "If [Stonepiercer] forces damage through and hits Cao Cao, what card does 〖Treacherous Hero〗 collect?",
         "a_en": "Cao Cao collects the [Kill] card that dealt damage to him."
       },
       {
         "q_cn": "陆逊装备【贯石斧】发动武器技能，是否可以先弃一张手牌触发【连营】，再弃第二张来凑够两张？",
         "a_cn": "不能。弃置两张牌必须同时进行。",
-        "q_en": "Lu Xun is equipped with [Stonepiercer] and wants to activate the weapon skill. Can he discard one card first to trigger [Chain Barracks], then discard a second card?",
+        "q_en": "Lu Xun is equipped with [Stonepiercer] and wants to activate the weapon skill. Can he discard one card first to trigger 〖Linked Camps〗, then discard a second card?",
         "a_en": "No. The two cards must be discarded simultaneously."
       },
       {
@@ -236,13 +236,13 @@
       {
         "q_cn": "装备【贯石斧】攻击张角，若张角使用【闪】触发【雷击】，如何结算？",
         "a_cn": "先结算【雷击】判定。判定完成后，若攻击者仍存活，可选择是否弃两张牌强制命中。",
-        "q_en": "The attacker equipped with [Stonepiercer] uses [Kill] on Zhang Jiao; Zhang Jiao plays [Dodge] and activates [Lightning Strike]. How does this resolve?",
-        "a_en": "Resolve [Lightning Strike]'s judgment first. After it resolves, if the attacker is still alive, they may choose to discard two cards to force the damage through."
+        "q_en": "The attacker equipped with [Stonepiercer] uses [Kill] on Zhang Jiao; Zhang Jiao plays [Dodge] and activates 〖Lightning Strike〗. How does this resolve?",
+        "a_en": "Resolve 〖Lightning Strike〗's judgment first. After it resolves, if the attacker is still alive, they may choose to discard two cards to force the damage through."
       },
       {
         "q_cn": "太史慈通过拼点赢得额外【杀】并使用多目标【杀】时，能对每个出【闪】的目标分别发动武器技能吗？",
         "a_cn": "可以。每当一名目标出【闪】，太史慈可立即选择是否发动【贯石斧】技能强制命中该目标。",
-        "q_en": "Tai Shi Ci wins a duel and uses a multi-target [Kill]. Can he activate [Stonepiercer] separately for each target that plays a [Dodge]?",
+        "q_en": "Tai Shi Ci wins a Point Duel and uses a multi-target [Kill]. Can he activate [Stonepiercer] separately for each target that plays a [Dodge]?",
         "a_en": "Yes. Each time a target plays a [Dodge], Tai Shi Ci may immediately choose whether to activate [Stonepiercer] against that target."
       }
     ]
@@ -326,7 +326,7 @@
       {
         "q_cn": "【青釭剑】能使【仁王盾】无效吗？",
         "a_cn": "可以。【仁王盾】视为防具，【青釭剑】可令其在本次【杀】中无效。",
-        "q_en": "Can [Qing Gang Sword] Negate [Vajra Shield]?",
+        "q_en": "Can [Qing Gang Sword] Nullify [Vajra Shield]?",
         "a_en": "Yes. [Vajra Shield] is treated as armor, so [Qing Gang Sword] Nullifies it for that [Kill]."
       },
       {
@@ -349,15 +349,15 @@
       "锁定技，当你使用【杀】时，所有目标角色不能明置武将牌，直到此【杀】结算完毕为止。"
     ],
     "effect_en": [
-      "When your [Kill] is negated by a target's [Dodge], you may immediately use another [Kill] against that same target.",
+      "When your [Kill] is Negated by a target's [Dodge], you may immediately use another [Kill] against that same target.",
       "Locked Skill: When you use [Kill], all target characters cannot reveal (flip face-up) their general cards until the [Kill] finishes resolving."
     ],
     "faq": [
       {
         "q_cn": "发动【青龙偃月刀】追加的【杀】是否也可以触发武器技能？",
         "a_cn": "可以，若追加的【杀】也被【闪】抵消，可再次发动武器技能。",
-        "q_en": "If the follow-up [Kill] from [Green Dragon Crescent Blade] is also negated by a [Dodge], can the weapon skill activate again?",
-        "a_en": "Yes. If the follow-up [Kill] is also negated, the weapon skill can trigger again."
+        "q_en": "If the follow-up [Kill] from [Green Dragon Crescent Blade] is also Negated by a [Dodge], can the weapon skill activate again?",
+        "a_en": "Yes. If the follow-up [Kill] is also Negated, the weapon skill can trigger again."
       },
       {
         "q_cn": "锁定技（禁止明置）是否影响无武将牌明置需求的技能？",
@@ -470,7 +470,7 @@
       {
         "q_cn": "蜀国武将装备【丈八蛇矛】时，可以用武器技能响应刘备的【激将】吗？",
         "a_cn": "可以。",
-        "q_en": "If a Shu general is equipped with [Serpent Spear], can they use its skill to respond to Liu Bei's [Rally]?",
+        "q_en": "If a Shu general is equipped with [Serpent Spear], can they use its skill to respond to Liu Bei's 〖Rally the Vanguard〗?",
         "a_en": "Yes."
       }
     ]
@@ -572,7 +572,7 @@
       "锁定技，当你使用【杀】指定目标后，你令其横置。"
     ],
     "effect_en": [
-      "Locked Skill: After you use [Kill] and designate a target, place that character's General Card in horizontal position."
+      "Locked Skill: After you use [Kill] and designate a target, that character is placed into the Chained state."
     ],
     "faq": []
   },
@@ -632,7 +632,7 @@
       "当你使用的【杀】被抵消时，你可以失去1点体力。然后获得此【杀】并摸一张牌，本回合你使用【杀】的次数+1。"
     ],
     "effect_en": [
-      "When a [Kill] you use is negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] usage limit increases by 1 this turn."
+      "When a [Kill] you use is Negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] usage limit increases by 1 this turn."
     ],
     "faq": []
   },
@@ -844,7 +844,7 @@
       "你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"
     ],
     "effect_en": [
-      "You may use any normal [Kill] as a lightning [Kill]."
+      "You may use any normal [Kill] as a thunder [Kill]."
     ],
     "faq": []
   },
@@ -971,7 +971,7 @@
       "当你打出的【杀】被闪避后，可再丢弃一张【杀】使目标受到1点伤害。"
     ],
     "effect_en": [
-      "When a [Kill] you play is negated by a [Dodge], you may discard a [Kill] to deal 1 damage to that target."
+      "When a [Kill] you play is Negated by a [Dodge], you may discard a [Kill] to deal 1 damage to that target."
     ],
     "faq": []
   },
@@ -1016,7 +1016,7 @@
       "你所打出红色的【杀】均需要2张【闪】才能闪避。"
     ],
     "effect_en": [
-      "Red [Kill] cards you use require the target to play 2 [Dodge] cards to Negate them."
+      "Red [Kill] cards you play require the target to play 2 [Dodge] cards to Negate them."
     ],
     "faq": []
   },
@@ -1093,7 +1093,7 @@
       "结束阶段开始时，你可以弃置装备区里的【烈刃飞刀】然后展示你攻击范围内所有其他角色的一张手牌，选择其中一张，你获得之，然后将其余的牌置入弃牌堆。"
     ],
     "effect_en": [
-      "At the start of your End Phase, you may discard [Scythe] from your Equipment Zone — then each other character within your Attack Range reveals 1 hand card. Choose one of those cards to gain; place the remaining revealed cards into the Discard Pile."
+      "At the start of your End Phase, you may discard [Scythe] from your Equipment Zone — then each other character within your Attack Range shows 1 hand card. Choose one of those cards to gain; place the remaining shown cards into the Discard Pile."
     ],
     "faq": []
   },
@@ -1108,7 +1108,7 @@
       "你使用【杀】指定异性为目标时，你可以选择一项：此【杀】不可被抵消；此【杀】造成的伤害+1。"
     ],
     "effect_en": [
-      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be negated; 2. The damage dealt by this [Kill] +1."
+      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be Negated; 2. The damage dealt by this [Kill] +1."
     ],
     "faq": []
   },
@@ -1305,7 +1305,7 @@
       "锁定技，你对目标角色打出的【杀】视为带有「毒」的杀。造成伤害后，该角色进入「中毒」状态。"
     ],
     "effect_en": [
-      "Locked Skill: [Kill] cards you play against a target are treated as carrying [Poison]. After damage is dealt, that character enters the Poisoned State."
+      "Locked Skill: [Kill] cards you play against a target are treated as carrying 「Poison」. After damage is dealt, that character enters the Poisoned State."
     ],
     "faq": []
   },
