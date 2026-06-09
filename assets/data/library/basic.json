@@ -131,11 +131,11 @@
     "category_en": "Basic",
     "effect_cn": [
       "当【毒】以正面向上的形式离开你的手牌区（包括转化为其他牌）或作为拼点牌亮出后，你失去1点体力。当你通过摸牌获得【毒】时，你可以展示之并交给其他角色（防止【毒】的效果）。",
-      "赠予：出牌阶段，你可以从手牌中将该牌以正面向上的方式将此牌赠予其他角色。若此牌不是装备牌，则进入该角色手牌区；若此牌为装备牌，则进入该角色装备区且替换已有装备。"
+      "赠予：出牌阶段，你可以从手牌中将该牌以正面向上的方式将此牌赠予其他角色"
     ],
     "effect_en": [
       "When [Poison] leaves your hand area face-up (including being transformed into another card) or is revealed as a Point Duel card, you lose 1 HP. When you gain a [Poison] by drawing a card, you may show it and give it to another character (to prevent the effect of [Poison]).",
-      "Gift: During your Play Phase, you may give this card from your hand face-up to another character. If it is not an Equipment Card, it goes into that character's hand area; if it is an Equipment Card, it goes into that character's Equipment Zone and replaces any existing equipment in that slot."
+      "Gift: During your Play Phase, you may give this card from your hand face-up to another character. "
     ],
     "faq": [
       {
