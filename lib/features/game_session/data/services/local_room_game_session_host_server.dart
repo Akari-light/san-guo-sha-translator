@@ -7,10 +7,7 @@ import '../../domain/models/game_session_room.dart';
 import '../../domain/models/pending_session_selection.dart';
 
 class LocalRoomGameSessionHostServer {
-  LocalRoomGameSessionHostServer._(
-    this._server, {
-    required this.hostAddress,
-  });
+  LocalRoomGameSessionHostServer._(this._server, {required this.hostAddress});
 
   static Future<LocalRoomGameSessionHostServer> bind() async {
     final server = await HttpServer.bind(
@@ -30,6 +27,7 @@ class LocalRoomGameSessionHostServer {
   final HttpServer _server;
   final String hostAddress;
   _LocalRoomState? _state;
+  bool _isActiveHost = false;
   final List<_Subscriber> _subscribers = <_Subscriber>[];
   final StreamController<GameSessionRoom?> _roomController =
       StreamController<GameSessionRoom?>.broadcast();
@@ -43,6 +41,7 @@ class LocalRoomGameSessionHostServer {
   Future<void> close() async {
     final state = _state;
     _state = null;
+    _isActiveHost = false;
     if (state != null) {
       await _broadcastClosed(state.room.roomCode);
     }
@@ -74,6 +73,8 @@ class LocalRoomGameSessionHostServer {
       lastSeenAt: now,
       presence: GameSessionPresence.online,
       pendingSelection: pendingSelection,
+      hostAddress: hostAddress,
+      hostPort: port,
     );
     _state = _LocalRoomState(
       room: GameSessionRoom(
@@ -88,8 +89,60 @@ class LocalRoomGameSessionHostServer {
       hostPlayerId: playerId,
       accessToken: _requireInviteToken(invitePayload),
     );
+    _isActiveHost = true;
     await _broadcastRoom();
     return _state!.room;
+  }
+
+  Future<void> updateStandbyRoom({
+    required GameSessionRoom room,
+    required String localPlayerId,
+    required String accessToken,
+  }) async {
+    if (_isActiveHost) {
+      return;
+    }
+    _state = _LocalRoomState(
+      room: room,
+      hostPlayerId: localPlayerId,
+      accessToken: accessToken,
+    );
+    _isActiveHost = false;
+  }
+
+  Future<GameSessionRoom> promoteStandby({
+    required String roomCode,
+    required String localPlayerId,
+    required String invitePayload,
+  }) async {
+    final state = _state;
+    if (state == null ||
+        state.room.roomCode != roomCode ||
+        state.room.status == 'closed') {
+      throw StateError('No standby Game Session is available to promote.');
+    }
+    final updatedPlayers = [
+      for (final player in state.room.players)
+        if (player.playerId == localPlayerId)
+          player.copyWith(
+            presence: GameSessionPresence.online,
+            lastSeenAt: DateTime.now(),
+            hostAddress: hostAddress,
+            hostPort: port,
+          )
+        else
+          player,
+    ];
+    state.room = state.room.copyWith(
+      coordinatorPlayerId: localPlayerId,
+      revision: state.room.revision + 1,
+      status: 'active',
+      invitePayload: invitePayload,
+      players: _orderPlayers(updatedPlayers),
+    );
+    _isActiveHost = true;
+    await _broadcastRoom();
+    return state.room;
   }
 
   Future<GameSessionRoom> joinRoom({
@@ -97,6 +150,8 @@ class LocalRoomGameSessionHostServer {
     required String playerId,
     required String displayName,
     PendingSessionSelection? pendingSelection,
+    String? hostAddress,
+    int? hostPort,
   }) async {
     final state = _requireOpenState(roomCode);
     final existing = state.room.playerById(playerId);
@@ -109,6 +164,8 @@ class LocalRoomGameSessionHostServer {
       presence: GameSessionPresence.online,
       pendingSelection: pendingSelection,
       existing: existing,
+      hostAddress: hostAddress,
+      hostPort: hostPort,
     );
     if (existing == null && state.room.players.length >= 10) {
       throw StateError('This room is already full.');
@@ -214,11 +271,12 @@ class LocalRoomGameSessionHostServer {
     return state.room;
   }
 
-  Future<GameSessionRoom?> fetchRoom({
-    required String roomCode,
-  }) async {
+  Future<GameSessionRoom?> fetchRoom({required String roomCode}) async {
     final state = _state;
-    if (state == null || state.room.roomCode != roomCode || state.room.status == 'closed') {
+    if (state == null ||
+        state.room.roomCode != roomCode ||
+        state.room.status == 'closed' ||
+        !_isActiveHost) {
       return null;
     }
     return state.room;
@@ -239,12 +297,7 @@ class LocalRoomGameSessionHostServer {
         return;
       }
       if (request.method == 'GET' && path == '/room/events') {
-        shouldClose = false;
-        await _handleEvents(request);
-        return;
-      }
-      if (request.method == 'POST' && path == '/room/create') {
-        await _handleCreate(request);
+        shouldClose = !await _handleEvents(request);
         return;
       }
       if (request.method == 'POST' && path == '/room/join') {
@@ -265,15 +318,16 @@ class LocalRoomGameSessionHostServer {
       }
 
       request.response.statusCode = HttpStatus.notFound;
-      await _writeJson(request.response, {'error': 'Unknown Game Session route.'});
+      await _writeJson(request.response, {
+        'error': 'Unknown Game Session route.',
+      });
     } catch (error) {
-      request.response.statusCode = error is StateError ? HttpStatus.badRequest : HttpStatus.internalServerError;
-      await _writeJson(
-        request.response,
-        {
-          'error': error.toString().replaceFirst('Bad state: ', ''),
-        },
-      );
+      request.response.statusCode = error is StateError
+          ? HttpStatus.badRequest
+          : HttpStatus.internalServerError;
+      await _writeJson(request.response, {
+        'error': error.toString().replaceFirst('Bad state: ', ''),
+      });
     } finally {
       if (shouldClose) {
         await request.response.close().catchError((_) {});
@@ -281,37 +335,27 @@ class LocalRoomGameSessionHostServer {
     }
   }
 
-  Future<void> _handleCreate(HttpRequest request) async {
-    final body = await _readJson(request);
-    final roomId = _requireString(body, 'roomId');
-    final roomCode = _requireString(body, 'roomCode').toUpperCase();
-    final invitePayload = _requireString(body, 'invitePayload');
-    final playerId = _requireString(body, 'playerId');
-    final displayName = _requireString(body, 'displayName');
-    final pendingSelection = _pendingSelectionFrom(_mapFrom(body['pendingSelection']));
-    final room = await createRoom(
-      roomId: roomId,
-      roomCode: roomCode,
-      invitePayload: invitePayload,
-      playerId: playerId,
-      displayName: displayName,
-      pendingSelection: pendingSelection,
-    );
-    await _writeJson(request.response, room.toJson());
-  }
-
   Future<void> _handleJoin(HttpRequest request) async {
     final body = await _readJson(request);
     final roomCode = _requireString(body, 'roomCode').toUpperCase();
     final playerId = _requireString(body, 'playerId');
     final displayName = _requireString(body, 'displayName');
-    final pendingSelection = _pendingSelectionFrom(_mapFrom(body['pendingSelection']));
+    final pendingSelection = _pendingSelectionFrom(
+      _mapFrom(body['pendingSelection']),
+    );
+    final hostAddress = body['hostAddress'] as String?;
+    final hostPort = _intFrom(body['hostPort']);
+    if (!_isValidAdvertisedEndpoint(hostAddress, hostPort)) {
+      throw StateError('The advertised backup host endpoint is not valid.');
+    }
     _verifyToken(request, roomCode);
     final room = await joinRoom(
       roomCode: roomCode,
       playerId: playerId,
       displayName: displayName,
       pendingSelection: pendingSelection,
+      hostAddress: hostAddress,
+      hostPort: hostPort,
     );
     await _writeJson(request.response, room.toJson());
   }
@@ -355,40 +399,56 @@ class LocalRoomGameSessionHostServer {
     final roomCode = _requireString(body, 'roomCode').toUpperCase();
     final playerId = _requireString(body, 'playerId');
     _verifyToken(request, roomCode);
-    final room = await leaveRoom(
-      roomCode: roomCode,
-      playerId: playerId,
-    );
-    await _writeJson(
-      request.response,
-      {
-        'closed': room.status == 'closed',
-        'room': room.toJson(),
-      },
-    );
+    final room = await leaveRoom(roomCode: roomCode, playerId: playerId);
+    await _writeJson(request.response, {
+      'closed': room.status == 'closed',
+      'room': room.toJson(),
+    });
   }
 
   Future<void> _handleSnapshot(HttpRequest request) async {
-    final roomCode = request.uri.queryParameters['roomCode']?.toUpperCase() ?? '';
+    final roomCode =
+        request.uri.queryParameters['roomCode']?.toUpperCase() ?? '';
     _verifyToken(request, roomCode);
+    if (!_isActiveHost) {
+      request.response.statusCode = HttpStatus.serviceUnavailable;
+      await _writeJson(request.response, {
+        'error': 'This Game Session backup host is not active yet.',
+      });
+      return;
+    }
     final room = await fetchRoom(roomCode: roomCode);
     if (room == null) {
       request.response.statusCode = HttpStatus.gone;
-      await _writeJson(request.response, {'error': 'This Game Session is no longer active.'});
+      await _writeJson(request.response, {
+        'error': 'This Game Session is no longer active.',
+      });
       return;
     }
     await _writeJson(request.response, room.toJson());
   }
 
-  Future<void> _handleEvents(HttpRequest request) async {
-    final roomCode = request.uri.queryParameters['roomCode']?.toUpperCase() ?? '';
+  Future<bool> _handleEvents(HttpRequest request) async {
+    final roomCode =
+        request.uri.queryParameters['roomCode']?.toUpperCase() ?? '';
     final state = _state;
-    if (state == null || state.room.roomCode != roomCode || state.room.status == 'closed') {
+    if (state == null ||
+        state.room.roomCode != roomCode ||
+        state.room.status == 'closed') {
       request.response.statusCode = HttpStatus.gone;
-      await _writeJson(request.response, {'error': 'This Game Session is no longer active.'});
-      return;
+      await _writeJson(request.response, {
+        'error': 'This Game Session is no longer active.',
+      });
+      return false;
     }
     _verifyToken(request, roomCode);
+    if (!_isActiveHost) {
+      request.response.statusCode = HttpStatus.serviceUnavailable;
+      await _writeJson(request.response, {
+        'error': 'This Game Session backup host is not active yet.',
+      });
+      return false;
+    }
 
     final response = request.response;
     response.statusCode = HttpStatus.ok;
@@ -405,6 +465,7 @@ class LocalRoomGameSessionHostServer {
     response.done.whenComplete(() {
       _subscribers.remove(subscriber);
     });
+    return true;
   }
 
   Future<void> _broadcastRoom() async {
@@ -423,7 +484,10 @@ class LocalRoomGameSessionHostServer {
     }
   }
 
-  Future<void> _closeRoom(String roomCode, {required bool keepServerAlive}) async {
+  Future<void> _closeRoom(
+    String roomCode, {
+    required bool keepServerAlive,
+  }) async {
     final state = _state;
     if (state == null || state.room.roomCode != roomCode) {
       return;
@@ -433,6 +497,7 @@ class LocalRoomGameSessionHostServer {
       status: 'closed',
       players: const <GameSessionPlayer>[],
     );
+    _isActiveHost = false;
     await _broadcastClosed(roomCode);
     for (final subscriber in [..._subscribers]) {
       await subscriber.close();
@@ -445,8 +510,13 @@ class LocalRoomGameSessionHostServer {
 
   _LocalRoomState _requireOpenState(String roomCode) {
     final state = _state;
-    if (state == null || state.room.roomCode != roomCode || state.room.status == 'closed') {
+    if (state == null ||
+        state.room.roomCode != roomCode ||
+        state.room.status == 'closed') {
       throw StateError('This Game Session is no longer active.');
+    }
+    if (!_isActiveHost) {
+      throw StateError('This device is not the active Game Session host.');
     }
     return state;
   }
@@ -470,6 +540,8 @@ class LocalRoomGameSessionHostServer {
     required GameSessionPresence presence,
     PendingSessionSelection? pendingSelection,
     GameSessionPlayer? existing,
+    String? hostAddress,
+    int? hostPort,
   }) {
     return GameSessionPlayer(
       playerId: playerId,
@@ -479,6 +551,8 @@ class LocalRoomGameSessionHostServer {
       presence: presence,
       generalId: pendingSelection?.generalId ?? existing?.generalId,
       skinId: pendingSelection?.skinId ?? existing?.skinId,
+      hostAddress: hostAddress ?? existing?.hostAddress,
+      hostPort: hostPort ?? existing?.hostPort,
     );
   }
 
@@ -508,9 +582,14 @@ class _LocalRoomState {
 }
 
 class _Subscriber {
-  _Subscriber(this.response);
+  _Subscriber(this.response) {
+    _heartbeat = Timer.periodic(const Duration(seconds: 15), (_) {
+      unawaited(sendHeartbeat());
+    });
+  }
 
   final HttpResponse response;
+  late final Timer _heartbeat;
 
   Future<void> send(String event, Object? data) async {
     try {
@@ -521,7 +600,17 @@ class _Subscriber {
     }
   }
 
+  Future<void> sendHeartbeat() async {
+    try {
+      response.write(': keep-alive\n\n');
+      await response.flush();
+    } catch (_) {
+      await close();
+    }
+  }
+
   Future<void> close() async {
+    _heartbeat.cancel();
     await response.close().catchError((_) {});
   }
 }
@@ -569,6 +658,15 @@ bool _isPrivateIpv4(String address) {
   return false;
 }
 
+bool _isValidAdvertisedEndpoint(String? address, int? port) {
+  if (address == null && port == null) return true;
+  if (address == null || address.trim().isEmpty || port == null) return false;
+  if (port <= 0 || port > 65535) return false;
+  final trimmed = address.trim();
+  if (trimmed == InternetAddress.loopbackIPv4.address) return false;
+  return _isPrivateIpv4(trimmed) || trimmed.startsWith('169.254.');
+}
+
 Map<String, dynamic> _mapFrom(Object? value) {
   if (value is Map<String, dynamic>) {
     return value;
@@ -598,8 +696,25 @@ String _requireString(Map<String, dynamic> json, String key) {
   throw StateError('Missing required field: $key');
 }
 
+int? _intFrom(Object? value) {
+  if (value is int) return value;
+  if (value is num) return value.toInt();
+  if (value is String) return int.tryParse(value);
+  return null;
+}
+
 Future<Map<String, dynamic>> _readJson(HttpRequest request) async {
-  final body = await utf8.decodeStream(request);
+  const maxBodyBytes = 64 * 1024;
+  var totalBytes = 0;
+  final bytes = <int>[];
+  await for (final chunk in request) {
+    totalBytes += chunk.length;
+    if (totalBytes > maxBodyBytes) {
+      throw StateError('The Game Session request is too large.');
+    }
+    bytes.addAll(chunk);
+  }
+  final body = utf8.decode(bytes);
   if (body.trim().isEmpty) {
     return <String, dynamic>{};
   }
@@ -621,7 +736,9 @@ Future<void> _writeJson(HttpResponse response, Object? payload) async {
 
 String _requireInviteToken(String invitePayload) {
   try {
-    final decoded = jsonDecode(utf8.decode(base64Url.decode(base64Url.normalize(invitePayload.trim()))));
+    final decoded = jsonDecode(
+      utf8.decode(base64Url.decode(base64Url.normalize(invitePayload.trim()))),
+    );
     if (decoded is Map && decoded['accessToken'] is String) {
       return decoded['accessToken'] as String;
     }

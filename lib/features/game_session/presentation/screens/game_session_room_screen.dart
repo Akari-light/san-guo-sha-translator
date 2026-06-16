@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -13,10 +13,7 @@ import 'game_session_general_picker_screen.dart';
 import '../widgets/game_session_widgets.dart';
 
 class GameSessionRoomScreen extends StatefulWidget {
-  const GameSessionRoomScreen({
-    super.key,
-    required this.controller,
-  });
+  const GameSessionRoomScreen({super.key, required this.controller});
 
   final GameSessionController controller;
 
@@ -55,9 +52,9 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
   Future<void> _copyValue(String value, String message) async {
     await Clipboard.setData(ClipboardData(text: value));
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
   }
 
   Future<void> _showInviteSheet() async {
@@ -79,7 +76,9 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
               children: [
                 Text(
                   'Room QR',
-                  style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                  style: theme.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -123,18 +122,14 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                     SessionActionButton(
                       label: 'Copy room code',
                       icon: Icons.tag_rounded,
-                      onPressed: () => _copyValue(
-                        room.roomCode,
-                        'Room code copied.',
-                      ),
+                      onPressed: () =>
+                          _copyValue(room.roomCode, 'Room code copied.'),
                     ),
                     SessionActionButton(
                       label: 'Copy room invite',
                       icon: Icons.copy_rounded,
-                      onPressed: () => _copyValue(
-                        room.invitePayload,
-                        'Room invite copied.',
-                      ),
+                      onPressed: () =>
+                          _copyValue(room.invitePayload, 'Room invite copied.'),
                     ),
                   ],
                 ),
@@ -172,6 +167,8 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
   @override
   Widget build(BuildContext context) {
     final room = widget.controller.room!;
+    final connection = widget.controller.connection;
+    final canMutateRoom = connection.allowsRoomMutations;
     return Scaffold(
       appBar: AppBar(
         title: Text('Room ${room.roomCode}'),
@@ -191,6 +188,11 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 96),
         children: [
+          SessionStatusBanner(
+            status: connection.status,
+            message: connection.message,
+          ),
+          const SizedBox(height: 18),
           SessionSurface(
             child: Padding(
               padding: const EdgeInsets.all(18),
@@ -207,7 +209,8 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                           children: [
                             Text(
                               room.roomCode,
-                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              style: Theme.of(context).textTheme.headlineSmall
+                                  ?.copyWith(
                                     fontWeight: FontWeight.w800,
                                     letterSpacing: 3,
                                   ),
@@ -260,7 +263,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                         label: 'Set My General',
                         icon: Icons.person_search_rounded,
                         primary: true,
-                        onPressed: _pickMyGeneral,
+                        onPressed: canMutateRoom ? _pickMyGeneral : null,
                       ),
                     ],
                   ),
@@ -268,11 +271,13 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                   for (final player in room.orderedPlayers) ...[
                     _PlayerRow(
                       player: player,
-                      isCoordinator: player.playerId == room.coordinatorPlayerId,
+                      isCoordinator:
+                          player.playerId == room.coordinatorPlayerId,
                       presenceColor: _presenceColor(player.presence),
                       generalName: player.generalId == null
                           ? null
-                          : _generalMap[player.generalId!]?.nameEn ?? player.generalId,
+                          : _generalMap[player.generalId!]?.nameEn ??
+                                player.generalId,
                       onTap: player.generalId == null
                           ? null
                           : () => _openGeneral(player.generalId!),
@@ -324,10 +329,9 @@ class _PlayerRow extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
         decoration: BoxDecoration(
-          color: Theme.of(context)
-              .colorScheme
-              .surfaceContainerHighest
-              .withValues(alpha: 0.5),
+          color: Theme.of(
+            context,
+          ).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
@@ -350,9 +354,7 @@ class _PlayerRow extends StatelessWidget {
                       Flexible(
                         child: Text(
                           player.displayName,
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall
+                          style: Theme.of(context).textTheme.titleSmall
                               ?.copyWith(fontWeight: FontWeight.w700),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -392,4 +394,3 @@ class _PlayerRow extends StatelessWidget {
     );
   }
 }
-
