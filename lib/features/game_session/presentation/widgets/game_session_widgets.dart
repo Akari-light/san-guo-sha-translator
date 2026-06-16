@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/models/game_session_connection_state.dart';
+
 class SessionSurface extends StatelessWidget {
-  const SessionSurface({
-    super.key,
-    required this.child,
-  });
+  const SessionSurface({super.key, required this.child});
 
   final Widget child;
 
@@ -34,9 +33,9 @@ class SessionSectionTitle extends StatelessWidget {
     return Text(
       text.toUpperCase(),
       style: Theme.of(context).textTheme.labelLarge?.copyWith(
-            letterSpacing: 1.6,
-            fontWeight: FontWeight.w700,
-          ),
+        letterSpacing: 1.6,
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 }
@@ -72,6 +71,84 @@ class SessionStatusPill extends StatelessWidget {
   }
 }
 
+class SessionStatusBanner extends StatelessWidget {
+  const SessionStatusBanner({super.key, required this.status, this.message});
+
+  final GameSessionConnectionStatus status;
+  final String? message;
+
+  @override
+  Widget build(BuildContext context) {
+    final (icon, label, color) = switch (status) {
+      GameSessionConnectionStatus.hosting => (
+        Icons.wifi_tethering_rounded,
+        'Hosting',
+        const Color(0xFF16A34A),
+      ),
+      GameSessionConnectionStatus.connected => (
+        Icons.check_circle_rounded,
+        'Connected',
+        const Color(0xFF16A34A),
+      ),
+      GameSessionConnectionStatus.reconnecting => (
+        Icons.sync_rounded,
+        'Reconnecting',
+        const Color(0xFFF59E0B),
+      ),
+      GameSessionConnectionStatus.handoff => (
+        Icons.swap_horiz_rounded,
+        'Host handoff',
+        const Color(0xFF0EA5E9),
+      ),
+      GameSessionConnectionStatus.closed => (
+        Icons.meeting_room_rounded,
+        'Closed',
+        const Color(0xFF64748B),
+      ),
+      GameSessionConnectionStatus.failed => (
+        Icons.error_outline_rounded,
+        'Connection issue',
+        Theme.of(context).colorScheme.error,
+      ),
+      GameSessionConnectionStatus.connecting => (
+        Icons.sync_rounded,
+        'Connecting',
+        const Color(0xFF0EA5E9),
+      ),
+      GameSessionConnectionStatus.idle => (
+        Icons.info_outline_rounded,
+        'Idle',
+        const Color(0xFF64748B),
+      ),
+    };
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: color.withValues(alpha: 0.32)),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: color, size: 20),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              message == null || message!.trim().isEmpty
+                  ? label
+                  : '$label - ${message!.trim()}',
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: color,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class SessionActionButton extends StatelessWidget {
   const SessionActionButton({
     super.key,
@@ -93,7 +170,9 @@ class SessionActionButton extends StatelessWidget {
       onPressed: onPressed,
       icon: Icon(icon ?? Icons.arrow_forward),
       style: FilledButton.styleFrom(
-        backgroundColor: primary ? scheme.primary : scheme.surfaceContainerHighest,
+        backgroundColor: primary
+            ? scheme.primary
+            : scheme.surfaceContainerHighest,
         foregroundColor: primary ? scheme.onPrimary : scheme.onSurface,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),

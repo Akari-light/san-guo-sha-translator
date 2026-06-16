@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 import '../../domain/contracts/game_session_repository.dart';
+import '../../domain/models/game_session_connection_state.dart';
 import '../../domain/models/game_session_room.dart';
 import '../../domain/models/pending_session_selection.dart';
 
@@ -13,26 +14,33 @@ class GameSessionController extends ChangeNotifier {
     required GameSessionRepository repository,
     this.pendingSelection,
   }) : _repository = repository {
-    _subscription = _repository.watchRoom().listen((room) {
-      _room = room;
-      _page = room == null ? GameSessionPage.launcher : GameSessionPage.room;
-      notifyListeners();
+    _subscription = _repository.watchConnection().listen((connection) {
+      _connection = connection;
+      _room = connection.room;
+      _page = connection.room == null
+          ? GameSessionPage.launcher
+          : GameSessionPage.room;
+      _notifyIfAlive();
     });
-    _room = _repository.currentRoom;
+    _connection = _repository.currentConnection;
+    _room = _connection.room;
     _page = _room == null ? GameSessionPage.launcher : GameSessionPage.room;
   }
 
   final GameSessionRepository _repository;
   final PendingSessionSelection? pendingSelection;
-  late final StreamSubscription<GameSessionRoom?> _subscription;
+  late final StreamSubscription<GameSessionConnectionState> _subscription;
 
   GameSessionPage _page = GameSessionPage.launcher;
+  GameSessionConnectionState _connection = GameSessionConnectionState.idle;
   GameSessionRoom? _room;
   bool _busy = false;
+  bool _disposed = false;
   String? _error;
   String? _importedInvitePayload;
 
   GameSessionPage get page => _page;
+  GameSessionConnectionState get connection => _connection;
   GameSessionRoom? get room => _room;
   bool get busy => _busy;
   String? get error => _error;
@@ -41,25 +49,27 @@ class GameSessionController extends ChangeNotifier {
 
   void showLauncher() {
     _page = GameSessionPage.launcher;
-    notifyListeners();
+    _notifyIfAlive();
   }
 
   void showRoom() {
     if (_room == null) return;
     _page = GameSessionPage.room;
-    notifyListeners();
+    _notifyIfAlive();
   }
 
   void showScanner() {
     _page = GameSessionPage.scanner;
-    notifyListeners();
+    _notifyIfAlive();
   }
 
   Future<void> createRoom(String displayName) async {
-    await _run(() => _repository.createRoom(
-          displayName: displayName,
-          pendingSelection: pendingSelection,
-        ));
+    await _run(
+      () => _repository.createRoom(
+        displayName: displayName,
+        pendingSelection: pendingSelection,
+      ),
+    );
   }
 
   Future<void> joinByInvite(String invitePayload, String displayName) async {
@@ -75,11 +85,13 @@ class GameSessionController extends ChangeNotifier {
   }
 
   Future<void> joinByRoomCode(String roomCode, String displayName) async {
-    await _run(() => _repository.joinFromRoomCode(
-          roomCode: roomCode,
-          displayName: displayName,
-          pendingSelection: pendingSelection,
-        ));
+    await _run(
+      () => _repository.joinFromRoomCode(
+        roomCode: roomCode,
+        displayName: displayName,
+        pendingSelection: pendingSelection,
+      ),
+    );
   }
 
   Future<void> importInvite(String invitePayload) async {
@@ -91,7 +103,9 @@ class GameSessionController extends ChangeNotifier {
   }
 
   Future<void> setMyGeneral(String generalId, {String? skinId}) async {
-    await _run(() => _repository.setMyGeneral(generalId: generalId, skinId: skinId));
+    await _run(
+      () => _repository.setMyGeneral(generalId: generalId, skinId: skinId),
+    );
   }
 
   Future<void> leaveRoom() async {
@@ -104,31 +118,37 @@ class GameSessionController extends ChangeNotifier {
     await _repository.resume();
     if (_room != null && _page != GameSessionPage.scanner) {
       _page = GameSessionPage.room;
-      notifyListeners();
+      _notifyIfAlive();
     }
   }
 
   void clearError() {
     _error = null;
-    notifyListeners();
+    _notifyIfAlive();
   }
 
   Future<void> _run(Future<dynamic> Function() action) async {
     _busy = true;
     _error = null;
-    notifyListeners();
+    _notifyIfAlive();
     try {
       await action();
     } catch (error) {
       _error = error.toString().replaceFirst('Bad state: ', '');
     } finally {
       _busy = false;
-      notifyListeners();
+      _notifyIfAlive();
     }
+  }
+
+  void _notifyIfAlive() {
+    if (_disposed) return;
+    notifyListeners();
   }
 
   @override
   void dispose() {
+    _disposed = true;
     _subscription.cancel();
     super.dispose();
   }
