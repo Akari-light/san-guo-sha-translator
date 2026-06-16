@@ -1,4 +1,4 @@
-﻿// lib/features/codex/presentation/widgets/codex_rule_block_widget.dart
+// lib/features/codex/presentation/widgets/codex_rule_block_widget.dart
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -53,13 +53,15 @@ class CodexRuleBlockWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: block.examples
-                    .map((ex) => _ExampleTile(
-                          ex: ex,
-                          depth: 0,
-                          showChinese: showChinese,
-                          isDark: isDark,
-                          onSegmentTap: onSegmentTap,
-                        ))
+                    .map(
+                      (ex) => _ExampleTile(
+                        ex: ex,
+                        depth: 0,
+                        showChinese: showChinese,
+                        isDark: isDark,
+                        onSegmentTap: onSegmentTap,
+                      ),
+                    )
                     .toList(),
               ),
             ),
@@ -122,13 +124,13 @@ TextSpan buildSegmentSpan({
   }
 
   final accentColor = AppTheme.codexChapterAccent(chapter, isDark);
-  final cardColor   = AppTheme.codexCardRef(isDark);
-  final skillColor  = AppTheme.codexSkillRef(isDark);
-  final tokenColor  = AppTheme.codexTokenRef(isDark);
+  final cardColor = AppTheme.codexCardRef(isDark);
+  final skillColor = AppTheme.codexSkillRef(isDark);
+  final tokenColor = AppTheme.codexTokenRef(isDark);
 
   return TextSpan(
     children: segments.asMap().entries.map((entry) {
-      final i   = entry.key;
+      final i = entry.key;
       final seg = entry.value;
       final text = seg.cn; // already localised into display slot
 
@@ -187,10 +189,10 @@ TextSpan buildSegmentSpan({
             style: cardStyle,
             recognizer: cardResolvable
                 ? (TapGestureRecognizer()
-                  ..onTap = () => tap(
-                        rawCn,
-                        originalSegments == null ? showChinese : true,
-                      ))
+                    ..onTap = () => tap(
+                      rawCn,
+                      originalSegments == null ? showChinese : true,
+                    ))
                 : null,
           );
 
@@ -210,15 +212,15 @@ TextSpan buildSegmentSpan({
             style: skillStyle,
             recognizer: skillResolvable
                 ? (TapGestureRecognizer()
-                  ..onTap = () => tap(
-                        rawCn,
-                        originalSegments == null ? showChinese : true,
-                      ))
+                    ..onTap = () => tap(
+                      rawCn,
+                      originalSegments == null ? showChinese : true,
+                    ))
                 : null,
           );
 
         case CodexSegmentKind.token:
-          // Tokens are game markers, not resolvable â€” not tappable.
+          // Codex keeps tokens as styled game markers instead of tappable refs.
           return TextSpan(
             style: baseStyle.copyWith(
               fontWeight: FontWeight.w500,
@@ -399,8 +401,10 @@ class _CautionBlock extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
       decoration: BoxDecoration(
         border: Border(
-          left:
-              BorderSide(color: AppTheme.codexCautionAccent(isDark), width: 2),
+          left: BorderSide(
+            color: AppTheme.codexCautionAccent(isDark),
+            width: 2,
+          ),
         ),
         color: AppTheme.codexCautionFill(isDark),
         borderRadius: const BorderRadius.only(
@@ -472,13 +476,15 @@ class _ExampleTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: ex.subExamples
-                     .map((sub) => _ExampleTile(
-                           ex: sub,
-                           depth: depth + 1,
-                           showChinese: showChinese,
-                           isDark: isDark,
-                           onSegmentTap: onSegmentTap,
-                         ))
+                    .map(
+                      (sub) => _ExampleTile(
+                        ex: sub,
+                        depth: depth + 1,
+                        showChinese: showChinese,
+                        isDark: isDark,
+                        onSegmentTap: onSegmentTap,
+                      ),
+                    )
                     .toList(),
               ),
             ),
@@ -487,4 +493,3 @@ class _ExampleTile extends StatelessWidget {
     );
   }
 }
-
