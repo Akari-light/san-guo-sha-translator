@@ -58,7 +58,7 @@ class CodexReferenceSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bg      = isDark ? const Color(0xFF252526) : Colors.white;
+    final bg = isDark ? const Color(0xFF252526) : Colors.white;
     final divider = AppTheme.codexDivider(isDark);
 
     return Container(
@@ -123,9 +123,9 @@ class _SkillContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final primaryName   = showChinese ? ref.nameCn : ref.nameEn;
+    final primaryName = showChinese ? ref.nameCn : ref.nameEn;
     final secondaryName = showChinese ? ref.nameEn : ref.nameCn;
-    final primaryDesc   = showChinese
+    final primaryDesc = showChinese
         ? (ref.descriptionCn ?? '')
         : (ref.descriptionEn ?? '');
     final secondaryDesc = showChinese
@@ -180,7 +180,11 @@ class _SkillContent extends StatelessWidget {
         ),
 
         const SizedBox(height: 14),
-        Divider(height: 0.5, thickness: 0.5, color: AppTheme.codexDivider(isDark)),
+        Divider(
+          height: 0.5,
+          thickness: 0.5,
+          color: AppTheme.codexDivider(isDark),
+        ),
         const SizedBox(height: 12),
 
         // Primary description
@@ -225,19 +229,20 @@ class _LibraryContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final primaryName   = showChinese ? ref.nameCn   : ref.nameEn;
-    final secondaryName = showChinese ? ref.nameEn   : ref.nameCn;
-    final primaryCat    = showChinese
+    final primaryName = showChinese ? ref.nameCn : ref.nameEn;
+    final secondaryName = showChinese ? ref.nameEn : ref.nameCn;
+    final primaryCat = showChinese
         ? (ref.categoryCn ?? '')
         : (ref.categoryEn ?? '');
-    final effects = (showChinese
-            ? (ref.effectCn ?? <String>[])
-            : (ref.effectEn ?? <String>[]))
-        .where((e) => e.trim().isNotEmpty)
-        .toList();
+    final effects =
+        (showChinese
+                ? (ref.effectCn ?? <String>[])
+                : (ref.effectEn ?? <String>[]))
+            .where((e) => e.trim().isNotEmpty)
+            .toList();
 
     final catColor = AppTheme.categoryColor(ref.categoryEn ?? '', isDark);
-    final imgPath  = ref.imagePath ?? '';
+    final imgPath = ref.imagePath ?? '';
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -342,17 +347,19 @@ class _LibraryContent extends StatelessWidget {
               ],
 
               // Effects
-              ...effects.map((e) => Padding(
-                    padding: const EdgeInsets.only(bottom: 6),
-                    child: Text(
-                      e,
-                      style: TextStyle(
-                        fontSize: 13,
-                        height: 1.7,
-                        color: AppTheme.codexDefinition(isDark),
-                      ),
+              ...effects.map(
+                (e) => Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Text(
+                    e,
+                    style: TextStyle(
+                      fontSize: 13,
+                      height: 1.7,
+                      color: AppTheme.codexDefinition(isDark),
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -382,7 +389,10 @@ class _Pill extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
       decoration: BoxDecoration(
         color: color.withAlpha(isDark ? 35 : 20),
-        border: Border.all(color: color.withAlpha(isDark ? 120 : 100), width: 1),
+        border: Border.all(
+          color: color.withAlpha(isDark ? 120 : 100),
+          width: 1,
+        ),
         borderRadius: BorderRadius.circular(rounded ? 20 : 5),
       ),
       child: Text(

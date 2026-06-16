@@ -1,10 +1,11 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import '../../data/models/general_card.dart';
 import '../../data/models/skin_dto.dart';
 import '../../data/repository/general_loader.dart';
 import '../../data/repository/skin_loader.dart';
 import '../../../../core/models/skill_dto.dart';
 import '../../../../core/services/pin_service.dart';
+import '../../../../core/services/recently_viewed_service.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/navigation/app_router.dart';
@@ -12,6 +13,8 @@ import '../../../../core/widgets/inline_suit_text.dart';
 import '../../../game_session/data/repositories/local_room_game_session_repository.dart';
 import '../../../game_session/domain/models/pending_session_selection.dart';
 import '../../../game_session/presentation/screens/game_session_shell_screen.dart';
+import '../../../library/data/repository/library_loader.dart';
+import '../../../library/presentation/screens/library_detail_screen.dart';
 import '../../../reference/services/resolver_service.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
@@ -48,7 +51,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   int _skinIndex = 0; // 0 = base card image; 1..n = skins[0..n-1]
   String? _pendingInitialSkinId;
 
-  //  Resolved related-card references
+  //  Resolved description references
   List<ResolvedReference> _refsEn = [];
   List<ResolvedReference> _refsCn = [];
   bool _refsLoading = true;
@@ -76,8 +79,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     final results = await Future.wait([
       GeneralLoader().getVariants(_activeCard.standardId),
       PinService.instance.isPinned(_activeCard.id, PinType.general),
-      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: true),
-      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: false),
+      ResolverService().resolveGeneralSkills(
+        _activeCard.skills,
+        isChinese: true,
+      ),
+      ResolverService().resolveGeneralSkills(
+        _activeCard.skills,
+        isChinese: false,
+      ),
       SkinLoader().getSkinsForBase(_activeCard.id),
     ]);
     if (!mounted) return;
@@ -86,31 +95,40 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
       _variants = variants
         ..sort((a, b) => a.expansion.index.compareTo(b.expansion.index));
       _variantsLoading = false;
-      _isPinned        = results[1] as bool;
-      _refsCn          = results[2] as List<ResolvedReference>;
-      _refsEn          = results[3] as List<ResolvedReference>;
-      _refsLoading     = false;
-      _skins           = results[4] as List<SkinDTO>;
-      _skinIndex       = _resolveInitialSkinIndex(_skins);
+      _isPinned = results[1] as bool;
+      _refsCn = results[2] as List<ResolvedReference>;
+      _refsEn = results[3] as List<ResolvedReference>;
+      _refsLoading = false;
+      _skins = results[4] as List<SkinDTO>;
+      _skinIndex = _resolveInitialSkinIndex(_skins);
     });
   }
 
   //  Version switch — reload refs, pin state, and skins for the new variant.
   Future<void> _loadPinState() async {
-    final pinned = await PinService.instance.isPinned(_activeCard.id, PinType.general);
+    final pinned = await PinService.instance.isPinned(
+      _activeCard.id,
+      PinType.general,
+    );
     if (!mounted) return;
     setState(() => _isPinned = pinned);
   }
 
   Future<void> _resolveRefs() async {
     final results = await Future.wait([
-      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: true),
-      ResolverService().resolveGeneralSkills(_activeCard.skills, isChinese: false),
+      ResolverService().resolveGeneralSkills(
+        _activeCard.skills,
+        isChinese: true,
+      ),
+      ResolverService().resolveGeneralSkills(
+        _activeCard.skills,
+        isChinese: false,
+      ),
     ]);
     if (!mounted) return;
     setState(() {
-      _refsCn      = results[0];
-      _refsEn      = results[1];
+      _refsCn = results[0];
+      _refsEn = results[1];
       _refsLoading = false;
     });
   }
@@ -119,7 +137,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     final skins = await SkinLoader().getSkinsForBase(_activeCard.id);
     if (!mounted) return;
     setState(() {
-      _skins     = skins;
+      _skins = skins;
       _skinIndex = _resolveInitialSkinIndex(skins);
     });
   }
@@ -137,13 +155,13 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   void _switchVersion(GeneralCard next) {
     if (next.id == _activeCard.id) return;
     setState(() {
-      _activeCard  = next;
+      _activeCard = next;
       _pendingInitialSkinId = null;
-      _refsEn      = [];
-      _refsCn      = [];
+      _refsEn = [];
+      _refsCn = [];
       _refsLoading = true;
-      _skins       = [];
-      _skinIndex   = 0;
+      _skins = [];
+      _skinIndex = 0;
       _tabController.index = 0;
     });
     _loadPinState();
@@ -157,23 +175,32 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
   }
 
   Future<void> _togglePin() async {
-    final nowPinned = await PinService.instance.toggle(_activeCard.id, PinType.general);
+    final nowPinned = await PinService.instance.toggle(
+      _activeCard.id,
+      PinType.general,
+    );
     if (!mounted) return;
     setState(() => _isPinned = nowPinned);
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(nowPinned
-          ? '${_activeCard.nameEn} pinned to Home'
-          : '${_activeCard.nameEn} unpinned'),
-      duration: const Duration(seconds: 2),
-      behavior: SnackBarBehavior.floating,
-    ));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          nowPinned
+              ? '${_activeCard.nameEn} pinned to Home'
+              : '${_activeCard.nameEn} unpinned',
+        ),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   Future<void> _useInGameSession() async {
     final sessionRepository = LocalRoomGameSessionRepository.instance;
     final selection = PendingSessionSelection(
       generalId: _activeCard.id,
-      skinId: _skinIndex == 0 || _skins.isEmpty ? null : _skins[_skinIndex - 1].id,
+      skinId: _skinIndex == 0 || _skins.isEmpty
+          ? null
+          : _skins[_skinIndex - 1].id,
     );
     if (sessionRepository.hasActiveSession) {
       await sessionRepository.setMyGeneral(
@@ -190,19 +217,33 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
       return;
     }
     if (!mounted) return;
-    await Navigator.of(context).push(
-      detailRoute(GameSessionShellScreen(pendingSelection: selection)),
-    );
+    await Navigator.of(
+      context,
+    ).push(detailRoute(GameSessionShellScreen(pendingSelection: selection)));
+  }
+
+  Future<void> _openLibraryReference(String id) async {
+    final onLibraryCardTap = widget.onLibraryCardTap;
+    if (onLibraryCardTap != null) {
+      onLibraryCardTap(id);
+      return;
+    }
+
+    final card = await LibraryLoader().findById(id);
+    if (!mounted || card == null) return;
+    await RecentlyViewedService.instance.record(id, RecordType.library);
+    if (!mounted) return;
+    Navigator.of(context).push(detailRoute(LibraryDetailScreen(card: card)));
   }
 
   //  Build
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
+    final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final card   = _activeCard;
-    final fc     = AppTheme.factionColor(card.faction);
-    final refs   = _isEnglish ? _refsEn : _refsCn;
+    final card = _activeCard;
+    final fc = AppTheme.factionColor(card.faction);
+    final refs = _isEnglish ? _refsEn : _refsCn;
     final sessionRepository = LocalRoomGameSessionRepository.instance;
 
     return Scaffold(
@@ -243,18 +284,13 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             //  Hero row: image | identity | lang toggle
             IntrinsicHeight(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-
                   // Card image — receives the resolved path so it displays either the base art or a skin without knowing about SkinDTO.
-                  _CardImage(
-                    imagePath: _activeImagePath,
-                    factionColor: fc,
-                  ),
+                  _CardImage(imagePath: _activeImagePath, factionColor: fc),
 
                   const SizedBox(width: 18),
 
@@ -334,12 +370,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 if (_tabController.index == 0) {
                   return Column(
                     children: card.skills
-                        .map((s) => _SkillCard(
-                              skill: s,
-                              isEnglish: _isEnglish,
-                              isDark: isDark,
-                              theme: theme,
-                            ))
+                        .map(
+                          (s) => _SkillCard(
+                            skill: s,
+                            isEnglish: _isEnglish,
+                            isDark: isDark,
+                            theme: theme,
+                          ),
+                        )
                         .toList(),
                   );
                 } else {
@@ -354,26 +392,29 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
 
             const _Divider(),
 
-            //  Related Cards
-            _SectionLabel(label: _isEnglish ? 'Related Cards' : '相关牌'),
+            //  References
+            _SectionLabel(label: _isEnglish ? 'References' : '引用'),
             const SizedBox(height: 10),
             if (_refsLoading)
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8),
-                child: Row(children: [
-                  SizedBox(
-                    width: 16, height: 16,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  ),
-                  SizedBox(width: 10),
-                  Text('Loading…', style: TextStyle(fontSize: 12)),
-                ]),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                    SizedBox(width: 10),
+                    Text('Loading…', style: TextStyle(fontSize: 12)),
+                  ],
+                ),
               )
             else if (refs.isEmpty)
               Text(
                 _isEnglish
-                    ? 'No card references in skill descriptions.'
-                    : '技能描述中未找到相关牌。',
+                    ? 'No references in skill descriptions.'
+                    : '技能描述中未找到引用。',
                 style: TextStyle(
                   fontSize: 13,
                   color: theme.hintColor,
@@ -385,16 +426,12 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 spacing: 8,
                 runSpacing: 8,
                 children: refs.map((ref) {
-                  if (ref.type == ReferenceType.libraryCard &&
-                      ref.id != null) {
+                  if (ref.type == ReferenceType.libraryCard && ref.id != null) {
                     return _RelatedCardChip(
-                      label: _isEnglish
-                          ? ref.nameEn
-                          : ref.nameCn,
+                      label: _isEnglish ? ref.nameEn : ref.nameCn,
                       category: ref.categoryEn ?? '',
                       isDark: isDark,
-                      onTap: () =>
-                          widget.onLibraryCardTap?.call(ref.id!),
+                      onTap: () => _openLibraryReference(ref.id!),
                     );
                   } else {
                     return _RelatedSkillChip(
@@ -586,8 +623,7 @@ class _SkinThumbnailStrip extends StatelessWidget {
 
   // Resolve the image path for any slot index.
   // Slot 0 → base card art; slot k → skins[k-1].imagePath.
-  String _pathForSlot(int i) =>
-      i == 0 ? baseImagePath : skins[i - 1].imagePath;
+  String _pathForSlot(int i) => i == 0 ? baseImagePath : skins[i - 1].imagePath;
 
   // Human-readable label for any slot index.
   String _labelForSlot(int i) => i == 0
@@ -596,7 +632,7 @@ class _SkinThumbnailStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme      = Theme.of(context);
+    final theme = Theme.of(context);
     final totalSlots = 1 + skins.length;
 
     // Build the list of slot indices that are NOT currently active.
@@ -611,13 +647,14 @@ class _SkinThumbnailStrip extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //  Thumbnail row — one tile per non-active slot 
+        //  Thumbnail row — one tile per non-active slot
         Row(
           mainAxisSize: MainAxisSize.min,
           children: others.asMap().entries.map((entry) {
-            final pos      = entry.key;   // position in the rendered row
-            final slotIdx  = entry.value; // actual slot index (0 = base, 1..n = skins)
-            final isLast   = pos == others.length - 1;
+            final pos = entry.key; // position in the rendered row
+            final slotIdx =
+                entry.value; // actual slot index (0 = base, 1..n = skins)
+            final isLast = pos == others.length - 1;
 
             return GestureDetector(
               onTap: onSelect != null ? () => onSelect!(slotIdx) : null,
@@ -662,7 +699,7 @@ class _SkinThumbnailStrip extends StatelessWidget {
           }).toList(),
         ),
 
-        //  Active slot label 
+        //  Active slot label
         const SizedBox(height: 7),
         Row(
           mainAxisSize: MainAxisSize.min,
@@ -846,13 +883,13 @@ class _PowerStars extends StatelessWidget {
   const _PowerStars({required this.value});
 
   static const Color _goldColor = AppTheme.skillLord;
-  static const Color _dimColor  = Color(0x22888888);
+  static const Color _dimColor = Color(0x22888888);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: List.generate(5, (i) {
-        final leftLit  = value >= i + 0.5;
+        final leftLit = value >= i + 0.5;
         final rightLit = value >= i + 1.0;
         return SizedBox(
           width: 18,
@@ -937,9 +974,9 @@ class _VersionSegment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
+    final theme = Theme.of(context);
     final active = variants.firstWhere((v) => v.id == activeId);
-    final ec     = AppTheme.expansionColor(active.expansion);
+    final ec = AppTheme.expansionColor(active.expansion);
 
     //  Group variants by expansion, preserving sort order.
     // Each group is a list of GeneralCards sharing the same expansion.
@@ -957,7 +994,7 @@ class _VersionSegment extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //  Expansion tab row 
+        //  Expansion tab row
         Container(
           padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(
@@ -969,19 +1006,18 @@ class _VersionSegment extends StatelessWidget {
           ),
           child: Row(
             children: expansionKeys.map((key) {
-              final group    = groups[key]!;
-              final first    = group.first;
-              final tabEc    = AppTheme.expansionColor(first.expansion);
+              final group = groups[key]!;
+              final first = group.first;
+              final tabEc = AppTheme.expansionColor(first.expansion);
               final isActive = group.any((v) => v.id == activeId);
-              final dotCount = group.length; // dots = within-expansion variant count
+              final dotCount =
+                  group.length; // dots = within-expansion variant count
 
               return Expanded(
                 child: GestureDetector(
                   // Tapping the tab selects the first card in that group
                   // (or keeps current if already active).
-                  onTap: () => onSelect(
-                    isActive ? active : group.first,
-                  ),
+                  onTap: () => onSelect(isActive ? active : group.first),
                   behavior: HitTestBehavior.opaque,
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 220),
@@ -1050,7 +1086,7 @@ class _VersionSegment extends StatelessWidget {
           ),
         ),
 
-        //  Sub-variant step rail 
+        //  Sub-variant step rail
         // Only rendered when the active expansion has >1 variant.
         // Siblings reversed so base card is rightmost.
         // Uses a LayoutBuilder so nodes spread across the full container width
@@ -1151,13 +1187,14 @@ class _SubVariantRail extends StatelessWidget {
   final String activeId;
   final Color expansionColor;
   final ValueChanged<GeneralCard> onSelect;
+
   /// When non-null, nodes are spread to fill this exact width (matches the
   /// version tab row). When null, fixed scroll-mode gap is used.
   final double? fixedWidth;
 
-  static const double nodeSize      = 54.0;   // was 46 — larger for readability
-  static const double _railHeight   = 2.5;
-  static const double _scrollGap    = 28.0;
+  static const double nodeSize = 54.0; // was 46 — larger for readability
+  static const double _railHeight = 2.5;
+  static const double _scrollGap = 28.0;
 
   const _SubVariantRail({
     required this.siblings,
@@ -1178,44 +1215,43 @@ class _SubVariantRail extends StatelessWidget {
   // Horizontal centre of node i.
   @override
   Widget build(BuildContext context) {
-    final theme      = Theme.of(context);
-    final isDark     = theme.brightness == Brightness.dark;
-    final ec         = expansionColor;
-    final dimColor   = theme.colorScheme.outlineVariant
-        .withValues(alpha: isDark ? 0.25 : 0.30);
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final ec = expansionColor;
+    final dimColor = theme.colorScheme.outlineVariant.withValues(
+      alpha: isDark ? 0.25 : 0.30,
+    );
 
-    final n          = siblings.length;
-    final activeIdx  = siblings.indexWhere((s) => s.id == activeId);
-    final stackWidth = fixedWidth
-        ?? (n * nodeSize + (n - 1) * _scrollGap);
-    final railTop    = (nodeSize - _railHeight) / 2;
+    final n = siblings.length;
+    final activeIdx = siblings.indexWhere((s) => s.id == activeId);
+    final stackWidth = fixedWidth ?? (n * nodeSize + (n - 1) * _scrollGap);
+    final railTop = (nodeSize - _railHeight) / 2;
 
     // Rail runs from the RIGHT edge of node 0 to the LEFT edge of node n-1.
     // This means the line is only ever visible in the gaps between nodes —
     // it never overlaps any circle.
-    final railLeft  = _nodeLeft(0, n) + nodeSize;          // right edge of first node
-    final railRight = _nodeLeft(n - 1, n);                 // left edge of last node
+    final railLeft = _nodeLeft(0, n) + nodeSize; // right edge of first node
+    final railRight = _nodeLeft(n - 1, n); // left edge of last node
     final railWidth = (railRight - railLeft).clamp(0.0, double.infinity);
 
     // Helper: right edge of node i
     double rightEdge(int i) => _nodeLeft(i, n) + nodeSize;
     // Helper: left edge of node i
-    double leftEdge(int i)  => _nodeLeft(i, n);
+    double leftEdge(int i) => _nodeLeft(i, n);
 
     return SizedBox(
-      width:  stackWidth,
-      height: nodeSize + 6 + 30,   // +30 for larger label
+      width: stackWidth,
+      height: nodeSize + 6 + 30, // +30 for larger label
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-
           //  1. Background rail — edge-to-edge, dim, lowest z
           //       Starts at right edge of node 0, ends at left edge of node n-1.
           //       Never overlaps any node circle.
           Positioned(
-            left:   railLeft,
-            width:  railWidth,
-            top:    railTop,
+            left: railLeft,
+            width: railWidth,
+            top: railTop,
             height: _railHeight,
             child: Container(
               decoration: BoxDecoration(
@@ -1231,30 +1267,30 @@ class _SubVariantRail extends StatelessWidget {
           //       Right gap: right edge of activeIdx → left edge of (activeIdx+1)
           if (activeIdx > 0)
             _gradientSegment(
-              left:      rightEdge(activeIdx - 1),
-              right:     leftEdge(activeIdx),
-              top:       railTop,
+              left: rightEdge(activeIdx - 1),
+              right: leftEdge(activeIdx),
+              top: railTop,
               fromColor: dimColor,
-              toColor:   ec,
+              toColor: ec,
             ),
           if (activeIdx < n - 1)
             _gradientSegment(
-              left:      rightEdge(activeIdx),
-              right:     leftEdge(activeIdx + 1),
-              top:       railTop,
+              left: rightEdge(activeIdx),
+              right: leftEdge(activeIdx + 1),
+              top: railTop,
               fromColor: ec,
-              toColor:   dimColor,
+              toColor: dimColor,
             ),
 
           //  3. Nodes — highest z, fully opaque background so rail never shows through
           ...siblings.asMap().entries.map((entry) {
-            final idx      = entry.key;
-            final sibling  = entry.value;
+            final idx = entry.key;
+            final sibling = entry.value;
             final isActive = sibling.id == activeId;
 
             return Positioned(
               left: _nodeLeft(idx, n),
-              top:  0,
+              top: 0,
               child: GestureDetector(
                 onTap: () => onSelect(sibling),
                 behavior: HitTestBehavior.opaque,
@@ -1266,7 +1302,7 @@ class _SubVariantRail extends StatelessWidget {
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 220),
                         curve: Curves.easeInOut,
-                        width:  nodeSize,
+                        width: nodeSize,
                         height: nodeSize,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -1292,8 +1328,9 @@ class _SubVariantRail extends StatelessWidget {
                                 child: Icon(
                                   Icons.person_outline_rounded,
                                   size: 24,
-                                  color: (isActive ? ec : dimColor)
-                                      .withValues(alpha: 0.6),
+                                  color: (isActive ? ec : dimColor).withValues(
+                                    alpha: 0.6,
+                                  ),
                                 ),
                               ),
                             ),
@@ -1304,7 +1341,7 @@ class _SubVariantRail extends StatelessWidget {
                       Text(
                         sibling.id,
                         style: TextStyle(
-                          fontSize: 10,         // was 9
+                          fontSize: 10, // was 9
                           letterSpacing: 0.3,
                           fontWeight: isActive
                               ? FontWeight.w700
@@ -1337,16 +1374,14 @@ class _SubVariantRail extends StatelessWidget {
     required Color toColor,
   }) {
     return Positioned(
-      left:   left,
-      width:  right - left,
-      top:    top,
+      left: left,
+      width: right - left,
+      top: top,
       height: _railHeight,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(_railHeight / 2),
-          gradient: LinearGradient(
-            colors: [fromColor, toColor],
-          ),
+          gradient: LinearGradient(colors: [fromColor, toColor]),
         ),
       ),
     );
@@ -1414,12 +1449,15 @@ class _TabBar extends StatelessWidget {
                   const SizedBox(width: 5),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 5, vertical: 1),
+                      horizontal: 5,
+                      vertical: 1,
+                    ),
                     decoration: BoxDecoration(
                       color: factionColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                          color: factionColor.withValues(alpha: 0.45)),
+                        color: factionColor.withValues(alpha: 0.45),
+                      ),
                     ),
                     child: Text(
                       '$faqCount',
@@ -1464,13 +1502,14 @@ class _SkillCardState extends State<_SkillCard> {
   @override
   Widget build(BuildContext context) {
     final accentColor = AppTheme.skillTypeColor(widget.skill.skillType);
-    final dimColor    = widget.theme.colorScheme.outlineVariant
-        .withValues(alpha: 0.35);
-    final bgColor     = widget.theme.colorScheme.surface.withValues(alpha: 0.5);
-    final descColor   = widget.isDark
+    final dimColor = widget.theme.colorScheme.outlineVariant.withValues(
+      alpha: 0.35,
+    );
+    final bgColor = widget.theme.colorScheme.surface.withValues(alpha: 0.5);
+    final descColor = widget.isDark
         ? (widget.isEnglish
-            ? AppTheme.descriptionEnDark
-            : AppTheme.descriptionCnDark)
+              ? AppTheme.descriptionEnDark
+              : AppTheme.descriptionCnDark)
         : widget.theme.textTheme.bodyMedium?.color;
 
     return GestureDetector(
@@ -1629,7 +1668,9 @@ class _FaqList extends StatelessWidget {
     }
     return Column(
       children: faq
-          .map((item) => _FaqRow(item: item, isEnglish: isEnglish, theme: theme))
+          .map(
+            (item) => _FaqRow(item: item, isEnglish: isEnglish, theme: theme),
+          )
           .toList(),
     );
   }
@@ -1689,8 +1730,9 @@ class _FaqRowState extends State<_FaqRow> {
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.6,
-                      color: widget.theme.colorScheme.onSurface
-                          .withValues(alpha: 0.65),
+                      color: widget.theme.colorScheme.onSurface.withValues(
+                        alpha: 0.65,
+                      ),
                     ),
                   ),
                 ),
@@ -1721,14 +1763,17 @@ class _FaqRowState extends State<_FaqRow> {
               ),
             ),
           ),
-          crossFadeState:
-              _open ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+          crossFadeState: _open
+              ? CrossFadeState.showSecond
+              : CrossFadeState.showFirst,
           duration: const Duration(milliseconds: 240),
           sizeCurve: Curves.easeInOut,
         ),
         Divider(
           height: 1,
-          color: widget.theme.colorScheme.outlineVariant.withValues(alpha: 0.25),
+          color: widget.theme.colorScheme.outlineVariant.withValues(
+            alpha: 0.25,
+          ),
         ),
       ],
     );
@@ -1763,10 +1808,9 @@ class _Divider extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 22),
       child: Divider(
         height: 1,
-        color: Theme.of(context)
-            .colorScheme
-            .outlineVariant
-            .withValues(alpha: 0.35),
+        color: Theme.of(
+          context,
+        ).colorScheme.outlineVariant.withValues(alpha: 0.35),
       ),
     );
   }
@@ -1781,10 +1825,10 @@ class _MicroLabel extends StatelessWidget {
     return Text(
       label.toUpperCase(),
       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            fontSize: 9,
-            letterSpacing: 2.8,
-            color: Theme.of(context).hintColor.withValues(alpha: 0.4),
-          ),
+        fontSize: 9,
+        letterSpacing: 2.8,
+        color: Theme.of(context).hintColor.withValues(alpha: 0.4),
+      ),
     );
   }
 }
@@ -1948,5 +1992,3 @@ class _RelatedSkillChip extends StatelessWidget {
     );
   }
 }
-
-

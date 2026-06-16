@@ -5,7 +5,7 @@ import '../../generals/data/repository/general_loader.dart';
 import '../../library/data/models/library_dto.dart';
 import '../../library/data/repository/library_loader.dart';
 
-enum ReferenceType { libraryCard, skill }
+enum ReferenceType { libraryCard, skill, token }
 
 class ResolvedReference {
   final String bracketText;
@@ -65,6 +65,13 @@ class ResolvedReference {
         descriptionCn: skill.descriptionCn,
         descriptionEn: skill.descriptionEn,
       );
+
+  factory ResolvedReference.fromToken(String text) => ResolvedReference._(
+    bracketText: text,
+    type: ReferenceType.token,
+    nameCn: text,
+    nameEn: text,
+  );
 }
 
 class ResolverService {
@@ -78,6 +85,7 @@ class ResolverService {
   static final RegExp _enBrackets = RegExp(
     '(?:\\[([^\\]]+)\\]|\u3016([^\u3017]+)\u3017)',
   );
+  static final RegExp _tokens = RegExp('\u300c([^\u300d]+)\u300d');
 
   Set<String>? _resolvableCn;
   Map<String, LibraryDTO>? _libByCn;
@@ -90,17 +98,27 @@ class ResolverService {
       return null;
     }
 
-    final bare = bracketText.length >= 2 &&
+    final bare =
+        bracketText.length >= 2 &&
             ((bracketText.startsWith('\u3010') &&
                     bracketText.endsWith('\u3011')) ||
                 (bracketText.startsWith('\u3016') &&
                     bracketText.endsWith('\u3017')) ||
-                (bracketText.startsWith('[') && bracketText.endsWith(']')))
+                (bracketText.startsWith('[') && bracketText.endsWith(']')) ||
+                (bracketText.startsWith('\u300c') &&
+                    bracketText.endsWith('\u300d')))
         ? bracketText.substring(1, bracketText.length - 1)
         : bracketText;
 
     if (isChinese) {
+      if (bracketText.startsWith('\u300c') && bracketText.endsWith('\u300d')) {
+        return bare.isNotEmpty;
+      }
       return _resolvableCn!.contains(bare);
+    }
+
+    if (bracketText.startsWith('\u300c') && bracketText.endsWith('\u300d')) {
+      return bare.isNotEmpty;
     }
 
     final lower = bare.toLowerCase();
@@ -117,15 +135,11 @@ class ResolverService {
       for (final c in libraryCards) c.nameCn,
       for (final s in skillMap.values) s.nameCn,
     };
-    _libByCn = {
-      for (final card in libraryCards) card.nameCn: card,
-    };
+    _libByCn = {for (final card in libraryCards) card.nameCn: card};
     _libByEn = {
       for (final card in libraryCards) card.nameEn.toLowerCase(): card,
     };
-    _skillByCn = {
-      for (final skill in skillMap.values) skill.nameCn: skill,
-    };
+    _skillByCn = {for (final skill in skillMap.values) skill.nameCn: skill};
     _skillByEn = {
       for (final skill in skillMap.values) skill.nameEn.toLowerCase(): skill,
     };
@@ -136,8 +150,9 @@ class ResolverService {
     bool isChinese = true,
   }) async {
     await _ensureCache();
-    final tokens = _extractTokens(text, isChinese: isChinese);
-    if (tokens.isEmpty) return [];
+    final tokens = _extractBracketTokens(text, isChinese: isChinese);
+    final tokenRefs = _extractTokenRefs(text);
+    if (tokens.isEmpty && tokenRefs.isEmpty) return [];
 
     final results = <ResolvedReference>[];
     final seen = <String>{};
@@ -167,9 +182,18 @@ class ResolverService {
       }
 
       if (ref != null) {
-        results.add(ref);
+        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
+          results.add(ref);
+        }
       } else {
         debugPrint('[ResolverService] Unresolved reference: $token');
+      }
+    }
+
+    for (final token in tokenRefs) {
+      final ref = ResolvedReference.fromToken(token);
+      if (seen.add('${ref.type.name}:${ref.bracketText}')) {
+        results.add(ref);
       }
     }
 
@@ -187,7 +211,7 @@ class ResolverService {
       final text = isChinese ? skill.descriptionCn : skill.descriptionEn;
       final refs = await resolve(text, isChinese: isChinese);
       for (final ref in refs) {
-        if (seen.add(ref.bracketText)) {
+        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
           results.add(ref);
         }
       }
@@ -196,11 +220,38 @@ class ResolverService {
     return results;
   }
 
-  List<String> _extractTokens(String text, {required bool isChinese}) {
+  Future<List<ResolvedReference>> resolveLibraryEffects(
+    List<String> effects, {
+    bool isChinese = true,
+  }) async {
+    final seen = <String>{};
+    final results = <ResolvedReference>[];
+
+    for (final text in effects) {
+      final refs = await resolve(text, isChinese: isChinese);
+      for (final ref in refs) {
+        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
+          results.add(ref);
+        }
+      }
+    }
+
+    return results;
+  }
+
+  List<String> _extractBracketTokens(String text, {required bool isChinese}) {
     final pattern = isChinese ? _cnBrackets : _enBrackets;
     return pattern
         .allMatches(text)
         .map((m) => m.group(1) ?? m.group(2) ?? '')
+        .where((t) => t.isNotEmpty)
+        .toList();
+  }
+
+  List<String> _extractTokenRefs(String text) {
+    return _tokens
+        .allMatches(text)
+        .map((m) => m.group(1) ?? '')
         .where((t) => t.isNotEmpty)
         .toList();
   }

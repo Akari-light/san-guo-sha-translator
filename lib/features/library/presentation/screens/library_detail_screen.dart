@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../data/models/library_dto.dart';
+import '../../data/repository/library_loader.dart';
+import '../../../../core/navigation/app_router.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/constants/app_assets.dart';
+import '../../../reference/services/resolver_service.dart';
 
 class LibraryDetailScreen extends StatefulWidget {
   final LibraryDTO card;
@@ -15,7 +18,10 @@ class LibraryDetailScreen extends StatefulWidget {
 class _LibraryDetailScreenState extends State<LibraryDetailScreen>
     with SingleTickerProviderStateMixin {
   bool _isEnglish = true;
-  bool _isPinned  = false;
+  bool _isPinned = false;
+  List<ResolvedReference> _refsEn = [];
+  List<ResolvedReference> _refsCn = [];
+  bool _refsLoading = true;
   late TabController _tabController;
 
   @override
@@ -23,6 +29,7 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
     _loadPinState();
+    _resolveRefs();
   }
 
   @override
@@ -32,31 +39,66 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
   }
 
   Future<void> _loadPinState() async {
-    final pinned = await PinService.instance.isPinned(widget.card.id, PinType.library);
+    final pinned = await PinService.instance.isPinned(
+      widget.card.id,
+      PinType.library,
+    );
     if (!mounted) return;
     setState(() => _isPinned = pinned);
   }
 
+  Future<void> _resolveRefs() async {
+    final results = await Future.wait([
+      ResolverService().resolveLibraryEffects(
+        widget.card.effectCn,
+        isChinese: true,
+      ),
+      ResolverService().resolveLibraryEffects(
+        widget.card.effectEn,
+        isChinese: false,
+      ),
+    ]);
+    if (!mounted) return;
+    setState(() {
+      _refsCn = results[0];
+      _refsEn = results[1];
+      _refsLoading = false;
+    });
+  }
+
+  Future<void> _openLibraryReference(String id) async {
+    final card = await LibraryLoader().findById(id);
+    if (card == null || !mounted) return;
+    Navigator.of(context).push(detailRoute(LibraryDetailScreen(card: card)));
+  }
+
   Future<void> _togglePin() async {
-    final nowPinned =
-        await PinService.instance.toggle(widget.card.id, PinType.library);
+    final nowPinned = await PinService.instance.toggle(
+      widget.card.id,
+      PinType.library,
+    );
     if (!mounted) return;
     setState(() => _isPinned = nowPinned);
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(nowPinned
-          ? '${widget.card.nameEn} pinned to Home'
-          : '${widget.card.nameEn} unpinned'),
-      duration: const Duration(seconds: 2),
-      behavior: SnackBarBehavior.floating,
-    ));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          nowPinned
+              ? '${widget.card.nameEn} pinned to Home'
+              : '${widget.card.nameEn} unpinned',
+        ),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
+    final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final card   = widget.card;
-    final cc     = AppTheme.categoryColor(card.categoryEn, isDark);
+    final card = widget.card;
+    final cc = AppTheme.categoryColor(card.categoryEn, isDark);
+    final refs = _isEnglish ? _refsEn : _refsCn;
 
     return Scaffold(
       appBar: AppBar(
@@ -85,7 +127,6 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             // ── Card image (portrait or landscape for time-delay tools)
             _CardImage(card: card, categoryColor: cc),
 
@@ -121,10 +162,10 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
             // ── Effect / FAQ tab bar
             _LibTabBar(
               controller: _tabController,
-              faqCount:   card.faq.length,
+              faqCount: card.faq.length,
               categoryColor: cc,
-              isEnglish:  _isEnglish,
-              theme:      theme,
+              isEnglish: _isEnglish,
+              theme: theme,
             ),
 
             const SizedBox(height: 16),
@@ -135,20 +176,69 @@ class _LibraryDetailScreenState extends State<LibraryDetailScreen>
               builder: (context, _) {
                 if (_tabController.index == 0) {
                   return _EffectBody(
-                    card:      card,
+                    card: card,
                     isEnglish: _isEnglish,
-                    isDark:    isDark,
-                    theme:     theme,
+                    isDark: isDark,
+                    theme: theme,
                   );
                 } else {
                   return _FaqList(
-                    faq:       card.faq,
+                    faq: card.faq,
                     isEnglish: _isEnglish,
-                    theme:     theme,
+                    theme: theme,
                   );
                 }
               },
             ),
+
+            const _Divider(),
+
+            _SectionLabel(label: _isEnglish ? 'References' : '引用'),
+            const SizedBox(height: 10),
+            if (_refsLoading)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                    SizedBox(width: 10),
+                    Text('Loading...', style: TextStyle(fontSize: 12)),
+                  ],
+                ),
+              )
+            else if (refs.isEmpty)
+              Text(
+                _isEnglish
+                    ? 'No references in effect descriptions.'
+                    : '效果描述中未找到引用。',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: theme.hintColor,
+                  fontStyle: FontStyle.italic,
+                ),
+              )
+            else
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: refs.map((ref) {
+                  if (ref.type == ReferenceType.libraryCard && ref.id != null) {
+                    return _ReferenceCardChip(
+                      label: _isEnglish ? ref.nameEn : ref.nameCn,
+                      category: ref.categoryEn ?? '',
+                      isDark: isDark,
+                      onTap: () => _openLibraryReference(ref.id!),
+                    );
+                  }
+                  return _ReferenceIconChip(
+                    label: _isEnglish ? ref.nameEn : ref.nameCn,
+                  );
+                }).toList(),
+              ),
           ],
         ),
       ),
@@ -181,7 +271,7 @@ class _CardImage extends StatelessWidget {
     // For time-delay cards we rotate the whole thing 90° CW afterwards,
     // so the layout slot becomes _cardH × _cardW (landscape).
     final decoratedCard = Container(
-      width:  _cardW,
+      width: _cardW,
       height: _cardH,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
@@ -208,12 +298,12 @@ class _CardImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(11.5),
         child: Image.asset(
           card.imagePath,
-          width:  _cardW,
+          width: _cardW,
           height: _cardH,
           fit: BoxFit.cover,
           errorBuilder: (context, error, _) => Image.asset(
             AppAssets.libraryPlaceholder,
-            width:  _cardW,
+            width: _cardW,
             height: _cardH,
             fit: BoxFit.cover,
           ),
@@ -230,12 +320,7 @@ class _CardImage extends StatelessWidget {
     // Unlike Transform.rotate, RotatedBox participates in layout — it
     // correctly swaps width↔height so the Column sees a landscape
     // footprint (240 wide × 160 tall) with no constraint violations.
-    return Center(
-      child: RotatedBox(
-        quarterTurns: 1,
-        child: decoratedCard,
-      ),
-    );
+    return Center(child: RotatedBox(quarterTurns: 1, child: decoratedCard));
   }
 }
 
@@ -253,22 +338,21 @@ class _IdentityColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme  = Theme.of(context);
+    final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final name   = isEnglish ? card.nameEn    : card.nameCn;
-    final cat    = isEnglish ? card.categoryEn : card.categoryCn;
+    final name = isEnglish ? card.nameEn : card.nameCn;
+    final cat = isEnglish ? card.categoryEn : card.categoryCn;
     final subCat = isEnglish ? card.subCategoryEn : card.subCategoryCn;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         // Name
         Text(
           name,
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w700,
-            fontSize:      isEnglish ? 24 : 22,
+            fontSize: isEnglish ? 24 : 22,
             letterSpacing: isEnglish ? -0.3 : 1.5,
             height: 1.15,
           ),
@@ -282,7 +366,6 @@ class _IdentityColumn extends StatelessWidget {
           runSpacing: 6,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-
             // Category badge (coloured)
             _Badge(label: cat, color: categoryColor),
 
@@ -301,9 +384,9 @@ class _IdentityColumn extends StatelessWidget {
             // Range badge — lives in the tag row, Option C style
             if (card.range != null)
               _RangeBadge(
-                range:     card.range!,
-                color:     AppTheme.statBadgeColor,
-                isDark:    isDark,
+                range: card.range!,
+                color: AppTheme.statBadgeColor,
+                isDark: isDark,
                 isEnglish: isEnglish,
               ),
           ],
@@ -417,8 +500,8 @@ class _GlowLabel extends StatelessWidget {
           duration: const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
           style: TextStyle(
-            fontSize:      fontSize,
-            fontWeight:    FontWeight.w700,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w700,
             letterSpacing: letterSpacing,
             color: active
                 ? accentColor
@@ -452,27 +535,26 @@ class _LibTabBar extends StatelessWidget {
     return Theme(
       data: theme.copyWith(
         highlightColor: Colors.transparent,
-        splashColor:    Colors.transparent,
-        splashFactory:  NoSplash.splashFactory,
+        splashColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
       ),
       child: TabBar(
-        controller:           controller,
-        indicatorColor:       categoryColor,
-        indicatorSize:        TabBarIndicatorSize.label,
-        labelColor:           categoryColor,
+        controller: controller,
+        indicatorColor: categoryColor,
+        indicatorSize: TabBarIndicatorSize.label,
+        labelColor: categoryColor,
         unselectedLabelColor: theme.hintColor,
-        overlayColor:         WidgetStateProperty.all(Colors.transparent),
-        splashFactory:        NoSplash.splashFactory,
-        dividerColor:
-            theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        splashFactory: NoSplash.splashFactory,
+        dividerColor: theme.colorScheme.outlineVariant.withValues(alpha: 0.3),
         labelStyle: const TextStyle(
-          fontWeight:    FontWeight.w700,
-          fontSize:      13,
+          fontWeight: FontWeight.w700,
+          fontSize: 13,
           letterSpacing: 2,
         ),
         unselectedLabelStyle: const TextStyle(
-          fontWeight:    FontWeight.w400,
-          fontSize:      13,
+          fontWeight: FontWeight.w400,
+          fontSize: 13,
           letterSpacing: 2,
         ),
         tabs: [
@@ -484,8 +566,8 @@ class _LibTabBar extends StatelessWidget {
                 Text(
                   isEnglish ? 'FAQ' : '问答',
                   style: const TextStyle(
-                    fontWeight:    FontWeight.w700,
-                    fontSize:      13,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 13,
                     letterSpacing: 2,
                   ),
                 ),
@@ -493,19 +575,22 @@ class _LibTabBar extends StatelessWidget {
                   const SizedBox(width: 5),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 5, vertical: 1),
+                      horizontal: 5,
+                      vertical: 1,
+                    ),
                     decoration: BoxDecoration(
-                      color:  categoryColor.withValues(alpha: 0.15),
+                      color: categoryColor.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                          color: categoryColor.withValues(alpha: 0.45)),
+                        color: categoryColor.withValues(alpha: 0.45),
+                      ),
                     ),
                     child: Text(
                       '$faqCount',
                       style: TextStyle(
-                        fontSize:   9,
+                        fontSize: 9,
                         fontWeight: FontWeight.w700,
-                        color:      categoryColor,
+                        color: categoryColor,
                       ),
                     ),
                   ),
@@ -574,9 +659,9 @@ class _FaqList extends StatelessWidget {
         child: Text(
           isEnglish ? 'No FAQ entries.' : '暂无问答。',
           style: TextStyle(
-            fontSize:  13,
+            fontSize: 13,
             fontStyle: FontStyle.italic,
-            color:     theme.hintColor,
+            color: theme.hintColor,
           ),
         ),
       );
@@ -642,9 +727,10 @@ class _FaqRowState extends State<_FaqRow> {
                     q,
                     style: TextStyle(
                       fontSize: 14,
-                      height:   1.6,
-                      color: widget.theme.colorScheme.onSurface
-                          .withValues(alpha: 0.65),
+                      height: 1.6,
+                      color: widget.theme.colorScheme.onSurface.withValues(
+                        alpha: 0.65,
+                      ),
                     ),
                   ),
                 ),
@@ -653,7 +739,7 @@ class _FaqRowState extends State<_FaqRow> {
                   _open
                       ? Icons.keyboard_arrow_up_rounded
                       : Icons.keyboard_arrow_down_rounded,
-                  size:  16,
+                  size: 16,
                   color: widget.theme.hintColor.withValues(alpha: 0.3),
                 ),
               ],
@@ -661,28 +747,30 @@ class _FaqRowState extends State<_FaqRow> {
           ),
         ),
         AnimatedCrossFade(
-          firstChild:  const SizedBox.shrink(),
+          firstChild: const SizedBox.shrink(),
           secondChild: Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 12),
             child: Text(
               a,
               style: TextStyle(
-                fontSize:  14,
-                height:    1.6,
+                fontSize: 14,
+                height: 1.6,
                 fontStyle: FontStyle.italic,
                 color: const Color(0xFF86EFAC).withValues(alpha: 0.85),
               ),
             ),
           ),
-          crossFadeState:
-              _open ? CrossFadeState.showSecond : CrossFadeState.showFirst,
-          duration:  const Duration(milliseconds: 240),
+          crossFadeState: _open
+              ? CrossFadeState.showSecond
+              : CrossFadeState.showFirst,
+          duration: const Duration(milliseconds: 240),
           sizeCurve: Curves.easeInOut,
         ),
         Divider(
           height: 1,
-          color:  widget.theme.colorScheme.outlineVariant
-              .withValues(alpha: 0.25),
+          color: widget.theme.colorScheme.outlineVariant.withValues(
+            alpha: 0.25,
+          ),
         ),
       ],
     );
@@ -690,6 +778,25 @@ class _FaqRowState extends State<_FaqRow> {
 }
 
 // ── Shared small widgets ──────────────────────────────────────────────────────
+
+class _SectionLabel extends StatelessWidget {
+  final String label;
+  const _SectionLabel({required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Text(
+      label.toUpperCase(),
+      style: theme.textTheme.labelLarge?.copyWith(
+        fontSize: 13,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 2.0,
+        color: theme.colorScheme.onSurface.withValues(alpha: 0.55),
+      ),
+    );
+  }
+}
 
 class _Divider extends StatelessWidget {
   const _Divider();
@@ -700,10 +807,9 @@ class _Divider extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 22),
       child: Divider(
         height: 1,
-        color: Theme.of(context)
-            .colorScheme
-            .outlineVariant
-            .withValues(alpha: 0.35),
+        color: Theme.of(
+          context,
+        ).colorScheme.outlineVariant.withValues(alpha: 0.35),
       ),
     );
   }
@@ -719,17 +825,96 @@ class _Badge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color:        color.withValues(alpha: 0.14),
+        color: color.withValues(alpha: 0.14),
         borderRadius: BorderRadius.circular(6),
-        border:       Border.all(color: color.withValues(alpha: 0.45)),
+        border: Border.all(color: color.withValues(alpha: 0.45)),
       ),
       child: Text(
         label,
         style: TextStyle(
-          color:      color,
-          fontSize:   13,
+          color: color,
+          fontSize: 13,
           fontWeight: FontWeight.w700,
         ),
+      ),
+    );
+  }
+}
+
+class _ReferenceCardChip extends StatelessWidget {
+  final String label;
+  final String category;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  const _ReferenceCardChip({
+    required this.label,
+    required this.category,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = AppTheme.categoryColor(category, isDark);
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withValues(alpha: 0.6), width: 1.5),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                color: color,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(Icons.arrow_forward_ios_rounded, size: 10, color: color),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ReferenceIconChip extends StatelessWidget {
+  final String label;
+  const _ReferenceIconChip({required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final color = theme.colorScheme.secondary;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.auto_awesome_rounded, size: 11, color: color),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 13,
+              color: color,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -748,12 +933,13 @@ class _NeutralBadge extends StatelessWidget {
         color: theme.colorScheme.surface.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
-            color: theme.colorScheme.outlineVariant.withValues(alpha: 0.45)),
+          color: theme.colorScheme.outlineVariant.withValues(alpha: 0.45),
+        ),
       ),
       child: Text(
         label,
         style: TextStyle(
-          fontSize:   13,
+          fontSize: 13,
           fontWeight: FontWeight.w700,
           color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
         ),
@@ -788,14 +974,18 @@ class _RangeBadge extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.straighten_rounded, size: 17.5, color: color.withValues(alpha: 0.7)),
+          Icon(
+            Icons.straighten_rounded,
+            size: 17.5,
+            color: color.withValues(alpha: 0.7),
+          ),
           const SizedBox(width: 4),
           Text(
             isEnglish ? 'Range' : '距离',
             style: TextStyle(
-              fontSize:      12.5,
+              fontSize: 12.5,
               letterSpacing: 1.5,
-              fontWeight:    FontWeight.w600,
+              fontWeight: FontWeight.w600,
               color: color.withValues(alpha: 0.6),
             ),
           ),
@@ -803,10 +993,10 @@ class _RangeBadge extends StatelessWidget {
           Text(
             '$range',
             style: TextStyle(
-              fontSize:   14,
+              fontSize: 14,
               fontWeight: FontWeight.w900,
-              color:      color,
-              height:     1,
+              color: color,
+              height: 1,
             ),
           ),
         ],
