@@ -15,9 +15,11 @@ class LocalRoomGameSessionClient {
   LocalRoomGameSessionClient({
     required GameSessionInvite invite,
     required String playerId,
-  })  : _invite = invite,
-        _playerId = playerId,
-        _httpClient = HttpClient()..idleTimeout = const Duration(seconds: 20);
+  }) : _invite = invite,
+       _playerId = playerId,
+       _httpClient = HttpClient()..idleTimeout = const Duration(seconds: 20);
+
+  static const Duration _requestTimeout = Duration(seconds: 5);
 
   final GameSessionInvite _invite;
   final String _playerId;
@@ -26,8 +28,13 @@ class LocalRoomGameSessionClient {
   Uri get _baseUri {
     final hostAddress = _invite.hostAddress;
     final hostPort = _invite.hostPort;
-    if (hostAddress == null || hostAddress.trim().isEmpty || hostPort == null || hostPort <= 0) {
-      throw StateError('This invite does not include a reachable host address.');
+    if (hostAddress == null ||
+        hostAddress.trim().isEmpty ||
+        hostPort == null ||
+        hostPort <= 0) {
+      throw StateError(
+        'This invite does not include a reachable host address.',
+      );
     }
     return Uri(scheme: 'http', host: hostAddress, port: hostPort);
   }
@@ -35,21 +42,27 @@ class LocalRoomGameSessionClient {
   Future<GameSessionRoom> joinRoom({
     required String displayName,
     PendingSessionSelection? pendingSelection,
+    String? localHostAddress,
+    int? localHostPort,
   }) async {
-    return _sendRoomRequest(
-      'POST',
-      '/room/join',
-      {
-        'roomCode': _invite.roomCode,
-        'playerId': _playerId,
-        'displayName': displayName,
-        if (pendingSelection != null)
-          'pendingSelection': {
-            'generalId': pendingSelection.generalId,
-            if (pendingSelection.skinId != null) 'skinId': pendingSelection.skinId,
-          },
-      },
-    );
+    final body = <String, dynamic>{
+      'roomCode': _invite.roomCode,
+      'playerId': _playerId,
+      'displayName': displayName,
+      if (pendingSelection != null)
+        'pendingSelection': {
+          'generalId': pendingSelection.generalId,
+          if (pendingSelection.skinId != null)
+            'skinId': pendingSelection.skinId,
+        },
+    };
+    if (localHostAddress != null) {
+      body['hostAddress'] = localHostAddress;
+    }
+    if (localHostPort != null) {
+      body['hostPort'] = localHostPort;
+    }
+    return _sendRoomRequest('POST', '/room/join', body);
   }
 
   Future<GameSessionRoom> setMyGeneral({
@@ -65,47 +78,36 @@ class LocalRoomGameSessionClient {
       body['skinId'] = value;
     }
 
-    return _sendRoomRequest(
-      'PATCH',
-      '/room/general',
-      body,
-    );
+    return _sendRoomRequest('PATCH', '/room/general', body);
   }
 
   Future<GameSessionRoom> setPresence(GameSessionPresence presence) async {
-    return _sendRoomRequest(
-      'PATCH',
-      '/room/presence',
-      {
-        'roomCode': _invite.roomCode,
-        'playerId': _playerId,
-        'presence': presence.name,
-      },
-    );
+    return _sendRoomRequest('PATCH', '/room/presence', {
+      'roomCode': _invite.roomCode,
+      'playerId': _playerId,
+      'presence': presence.name,
+    });
   }
 
   Future<void> leaveRoom() async {
-    await _sendRoomRequest(
-      'POST',
-      '/room/leave',
-      {
-        'roomCode': _invite.roomCode,
-        'playerId': _playerId,
-      },
-      expectRoom: false,
-    );
+    await _sendRoomRequest('POST', '/room/leave', {
+      'roomCode': _invite.roomCode,
+      'playerId': _playerId,
+    }, expectRoom: false);
   }
 
   Future<GameSessionRoom?> fetchRoom() async {
     final response = await _sendHttpRequest(
       'GET',
       '/room/snapshot',
-      queryParameters: {
-        'roomCode': _invite.roomCode,
-      },
+      queryParameters: {'roomCode': _invite.roomCode},
     );
-    if (response.statusCode == HttpStatus.gone || response.statusCode == HttpStatus.notFound) {
+    if (response.statusCode == HttpStatus.gone ||
+        response.statusCode == HttpStatus.notFound) {
       return null;
+    }
+    if (response.statusCode >= 400) {
+      throw StateError(await _readErrorMessage(response));
     }
     final json = await _readJsonResponse(response);
     return GameSessionRoom.fromJson(json);
@@ -115,18 +117,19 @@ class LocalRoomGameSessionClient {
     HttpClientRequest? request;
     HttpClientResponse? response;
     try {
-      request = await _httpClient.getUrl(
-        _baseUri.replace(
-          path: '/room/events',
-          queryParameters: <String, String>{
-            'roomCode': _invite.roomCode,
-          },
-        ),
-      );
+      request = await _httpClient
+          .getUrl(
+            _baseUri.replace(
+              path: '/room/events',
+              queryParameters: <String, String>{'roomCode': _invite.roomCode},
+            ),
+          )
+          .timeout(_requestTimeout);
       request.headers.set('X-Game-Session-Token', _invite.accessToken ?? '');
       request.headers.set(HttpHeaders.acceptHeader, 'text/event-stream');
-      response = await request.close();
-      if (response.statusCode == HttpStatus.gone || response.statusCode == HttpStatus.notFound) {
+      response = await request.close().timeout(_requestTimeout);
+      if (response.statusCode == HttpStatus.gone ||
+          response.statusCode == HttpStatus.notFound) {
         yield null;
         return;
       }
@@ -136,7 +139,8 @@ class LocalRoomGameSessionClient {
 
       var eventName = 'room';
       final dataLines = <String>[];
-      await for (final line in response.transform(utf8.decoder).transform(const LineSplitter())) {
+      await for (final line
+          in response.transform(utf8.decoder).transform(const LineSplitter())) {
         if (line.startsWith(':')) continue;
         if (line.isEmpty) {
           if (dataLines.isNotEmpty) {
@@ -157,7 +161,6 @@ class LocalRoomGameSessionClient {
       if (dataLines.isNotEmpty) {
         yield _decodeEvent(eventName, dataLines.join('\n'));
       }
-      yield null;
     } finally {
       try {
         request?.abort();
@@ -203,21 +206,25 @@ class LocalRoomGameSessionClient {
     Map<String, dynamic>? body,
     Map<String, String>? queryParameters,
   }) async {
-    final uri = _baseUri.replace(
-      path: path,
-      queryParameters: queryParameters,
+    final uri = _baseUri.replace(path: path, queryParameters: queryParameters);
+    final request = await _httpClient
+        .openUrl(method, uri)
+        .timeout(_requestTimeout);
+    request.headers.set(
+      HttpHeaders.contentTypeHeader,
+      ContentType.json.mimeType,
     );
-    final request = await _httpClient.openUrl(method, uri);
-    request.headers.set(HttpHeaders.contentTypeHeader, ContentType.json.mimeType);
     request.headers.set('X-Game-Session-Token', _invite.accessToken ?? '');
     if (body != null) {
       request.add(utf8.encode(jsonEncode(body)));
     }
-    return request.close();
+    return request.close().timeout(_requestTimeout);
   }
 
-  Future<Map<String, dynamic>> _readJsonResponse(HttpClientResponse response) async {
-    final body = await utf8.decodeStream(response);
+  Future<Map<String, dynamic>> _readJsonResponse(
+    HttpClientResponse response,
+  ) async {
+    final body = await _readResponseBody(response);
     if (body.trim().isEmpty) {
       return <String, dynamic>{};
     }
@@ -232,7 +239,7 @@ class LocalRoomGameSessionClient {
   }
 
   Future<String> _readErrorMessage(HttpClientResponse response) async {
-    final body = await utf8.decodeStream(response);
+    final body = await _readResponseBody(response);
     if (body.trim().isEmpty) {
       return 'The Game Session host rejected the request.';
     }
@@ -247,6 +254,20 @@ class LocalRoomGameSessionClient {
     return body.trim();
   }
 
+  Future<String> _readResponseBody(HttpClientResponse response) async {
+    const maxBodyBytes = 64 * 1024;
+    var totalBytes = 0;
+    final bytes = <int>[];
+    await for (final chunk in response) {
+      totalBytes += chunk.length;
+      if (totalBytes > maxBodyBytes) {
+        throw StateError('The Game Session host returned too much data.');
+      }
+      bytes.addAll(chunk);
+    }
+    return utf8.decode(bytes);
+  }
+
   GameSessionRoom? _decodeEvent(String eventName, String data) {
     if (eventName == 'closed') {
       return null;
@@ -256,7 +277,9 @@ class LocalRoomGameSessionClient {
       return GameSessionRoom.fromJson(decoded);
     }
     if (decoded is Map) {
-      return GameSessionRoom.fromJson(decoded.map((key, value) => MapEntry(key.toString(), value)));
+      return GameSessionRoom.fromJson(
+        decoded.map((key, value) => MapEntry(key.toString(), value)),
+      );
     }
     return null;
   }

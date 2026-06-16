@@ -1,11 +1,14 @@
 import '../models/game_session_invite.dart';
+import '../models/game_session_connection_state.dart';
 import '../models/game_session_room.dart';
 import '../models/pending_session_selection.dart';
 
 abstract class GameSessionRepository {
   Stream<GameSessionRoom?> watchRoom();
+  Stream<GameSessionConnectionState> watchConnection();
 
   GameSessionRoom? get currentRoom;
+  GameSessionConnectionState get currentConnection;
   bool get hasActiveSession;
   String? get activeRoomCode;
   String? get activeInvitePayload;
