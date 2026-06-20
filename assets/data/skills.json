@@ -2557,14 +2557,14 @@
     "name_cn": "狂魔",
     "name_en": "Demonic Frenzy",
     "description_cn": "出牌阶段，你可以入魔并选择一名其他角色，你与其成为狂角色，每回合对彼此首次造成的伤害+1；击败对方后，获得对方所有炁。狂角色死亡后，你重新指定。入魔后，每轮结束时，若本轮你未造成过伤害，你失去1点体力。",
-    "description_en": "Play Phase: You may Demonize and choose another character. You and that character become Frenzied: the first damage dealt between you each turn +1; upon defeating them, gain all their 「Qi」. When the Frenzied character dies, you must designate a new one. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
+    "description_en": "Play Phase: You may Demonize and choose another character. You and that character become Frenzied: the first time each of you deals damage to the other each turn, that damage +1; upon defeating them, gain all their 「Qi」. When the Frenzied character dies, you must designate a new one. While Demonized: at the end of each round, if you dealt no damage this round, lose 1 HP."
   },
   "skill_astral_strike": {
     "skill_type": "active",
     "name_cn": "罡拳",
     "name_en": "Astral Strike",
     "description_cn": "若你使用的上一张牌为炁，你可以将一张装备牌当指定相邻角色为目标的【火杀】使用；否则，你可以将一张锦囊牌当【决斗】使用。",
-    "description_en": "If the last card you used was a 「Qi」 card, you may use an Equipment Card as a [Fire Kill] targeting an adjacent character; otherwise, you may use a Tool Card as a [Duel]."
+    "description_en": "If the last card you used was a 「Qi」 card, you may use an Equipment Card as a [Fire Kill] targeting all adjacent characters; otherwise, you may use a Tool Card as a [Duel]."
   },
   "skill_bewitch": {
     "skill_type": "active",
