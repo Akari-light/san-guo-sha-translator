@@ -344,6 +344,12 @@ class _ScannerScreenState extends State<ScannerScreen>
 
   Future<void> _scanFromGallery() async {
     if (_processing || _state != _ScannerState.live) { return; }
+    if (!_warmupComplete) {
+      _showSnack('Scanner loading...');
+      await ScannerService.instance.warmup();
+      if (!mounted || _state != _ScannerState.live) { return; }
+      setState(() => _warmupComplete = true);
+    }
 
     final picked = await _imagePicker.pickImage(source: ImageSource.gallery);
     if (picked == null || !mounted) { return; }
@@ -391,10 +397,42 @@ class _ScannerScreenState extends State<ScannerScreen>
     }
   }
 
-  Rect _defaultRect() {
+  Rect _fittedImageRect({
+    required double bufferWidth,
+    required double bufferHeight,
+  }) {
     final w = _widgetSize.width;
     final h = _widgetSize.height;
-    return Rect.fromLTRB(w * 0.15, h * 0.075, w * 0.85, h * 0.925);
+    if (w <= 0 || h <= 0 || bufferWidth <= 0 || bufferHeight <= 0) {
+      return Offset.zero & _widgetSize;
+    }
+
+    final scale = math.min(w / bufferWidth, h / bufferHeight);
+    final fittedW = bufferWidth * scale;
+    final fittedH = bufferHeight * scale;
+    return Rect.fromLTWH(
+      (w - fittedW) / 2.0,
+      (h - fittedH) / 2.0,
+      fittedW,
+      fittedH,
+    );
+  }
+
+  Rect _defaultRect({
+    double? bufferWidth,
+    double? bufferHeight,
+  }) {
+    final w = _widgetSize.width;
+    final h = _widgetSize.height;
+    if (bufferWidth != null && bufferHeight != null) {
+      final imageRect = _fittedImageRect(
+        bufferWidth: bufferWidth,
+        bufferHeight: bufferHeight,
+      );
+      final inset = math.min(imageRect.width, imageRect.height) * 0.025;
+      return imageRect.deflate(inset);
+    }
+    return Rect.fromLTRB(w * 0.08, h * 0.05, w * 0.92, h * 0.95);
   }
 
   /// Estimates a full card bounding rectangle from OCR text blocks.
@@ -406,7 +444,12 @@ class _ScannerScreenState extends State<ScannerScreen>
     required double bufferWidth,
     required double bufferHeight,
   }) {
-    if (recognised.blocks.isEmpty) { return _defaultRect(); }
+    if (recognised.blocks.isEmpty) {
+      return _defaultRect(
+        bufferWidth: bufferWidth,
+        bufferHeight: bufferHeight,
+      );
+    }
 
     double minX = double.infinity, minY = double.infinity;
     double maxX = 0, maxY = 0;
@@ -421,31 +464,42 @@ class _ScannerScreenState extends State<ScannerScreen>
 
     final textW = maxX - minX;
     final textH = maxY - minY;
-    if (textW < 50 || textH < 10) { return _defaultRect(); }
+    if (textW < 50 || textH < 10) {
+      return _defaultRect(
+        bufferWidth: bufferWidth,
+        bufferHeight: bufferHeight,
+      );
+    }
 
     const cardAspect = 0.63;
     final estimatedCardH = textW / cardAspect;
-    final cardBottom = maxY + estimatedCardH * 0.03;
-    final cardTop = cardBottom - estimatedCardH;
-    final hPad = textW * 0.05;
+    final cardBottom = maxY + estimatedCardH * 0.08;
+    final cardTop = cardBottom - estimatedCardH - estimatedCardH * 0.08;
+    final hPad = math.max(textW * 0.16, bufferWidth * 0.035);
     final cardLeft = minX - hPad;
     final cardRight = maxX + hPad;
 
-    if (_widgetSize == Size.zero) { return _defaultRect(); }
+    if (_widgetSize == Size.zero) {
+      return _defaultRect(
+        bufferWidth: bufferWidth,
+        bufferHeight: bufferHeight,
+      );
+    }
 
     final bufW = bufferWidth;
     final bufH = bufferHeight;
-    final wW = _widgetSize.width;
-    final wH = _widgetSize.height;
-    final scale = math.max(wW / bufW, wH / bufH);
-    final cropX = (bufW * scale - wW) / 2.0;
-    final cropY = (bufH * scale - wH) / 2.0;
+    final imageRect = _fittedImageRect(bufferWidth: bufW, bufferHeight: bufH);
+    final scale = imageRect.width / bufW;
 
     // Buffer → widget coordinate transform
-    final wLeft   = (cardLeft * scale - cropX).clamp(0.0, wW);
-    final wTop    = (cardTop * scale - cropY).clamp(0.0, wH);
-    final wRight  = (cardRight * scale - cropX).clamp(0.0, wW);
-    final wBottom = (cardBottom * scale - cropY).clamp(0.0, wH);
+    final wLeft = (imageRect.left + cardLeft * scale)
+        .clamp(imageRect.left, imageRect.right);
+    final wTop = (imageRect.top + cardTop * scale)
+        .clamp(imageRect.top, imageRect.bottom);
+    final wRight = (imageRect.left + cardRight * scale)
+        .clamp(imageRect.left, imageRect.right);
+    final wBottom = (imageRect.top + cardBottom * scale)
+        .clamp(imageRect.top, imageRect.bottom);
 
     return Rect.fromLTRB(wLeft, wTop, wRight, wBottom);
   }
@@ -473,16 +527,13 @@ class _ScannerScreenState extends State<ScannerScreen>
 
       final bufW = decoded.width.toDouble();
       final bufH = decoded.height.toDouble();
-      final wW = _widgetSize.width;
-      final wH = _widgetSize.height;
-      final scale = math.max(wW / bufW, wH / bufH);
-      final cropX = (bufW * scale - wW) / 2.0;
-      final cropY = (bufH * scale - wH) / 2.0;
+      final imageRect = _fittedImageRect(bufferWidth: bufW, bufferHeight: bufH);
+      final scale = imageRect.width / bufW;
 
       Offset widgetToBuf(double wx, double wy) {
         return Offset(
-          ((wx + cropX) / scale).clamp(0, bufW),
-          ((wy + cropY) / scale).clamp(0, bufH),
+          ((wx - imageRect.left) / scale).clamp(0, bufW),
+          ((wy - imageRect.top) / scale).clamp(0, bufH),
         );
       }
 
@@ -503,34 +554,28 @@ class _ScannerScreenState extends State<ScannerScreen>
 
       final tempDir = await Directory.systemTemp.createTemp('sha_warp_');
       final tempFile = File('${tempDir.path}/warped.jpg');
-      await tempFile.writeAsBytes(straightenedJpeg);
+      late final ScannerResult result;
+      try {
+        await tempFile.writeAsBytes(straightenedJpeg);
 
-      if (_scanCancelled) {
+        if (_scanCancelled) { return; }
+
+        // Reuse the shared recogniser instance.
+        final inputImage = InputImage.fromFilePath(tempFile.path);
+        final recognised = await _recogniser.processImage(inputImage);
+
+        if (_scanCancelled) { return; }
+
+        result = await ScannerService.instance.match(
+          straightenedJpeg,
+          recognisedText: recognised,
+          source: ScanSource.straightened,
+          straightenedImage: straightened,
+        );
+      } finally {
         tempFile.delete().ignore();
-        tempDir.delete().ignore();
-        return;
+        tempDir.delete(recursive: true).ignore();
       }
-
-      // Reuse the shared recogniser instance
-      final inputImage = InputImage.fromFilePath(tempFile.path);
-      final recognised = await _recogniser.processImage(inputImage);
-      
-
-      if (_scanCancelled) {
-        tempFile.delete().ignore();
-        tempDir.delete().ignore();
-        return;
-      }
-
-      final result = await ScannerService.instance.match(
-        straightenedJpeg,
-        recognisedText: recognised,
-        source: ScanSource.straightened,
-        straightenedImage: straightened,
-      );
-
-      tempFile.delete().ignore();
-      tempDir.delete().ignore();
       _decodedCapture = null; // Free memory
 
       if (!mounted || _scanCancelled) { return; }
@@ -743,7 +788,7 @@ class _ScannerScreenState extends State<ScannerScreen>
               if (_capturedImageBytes != null && isAdj)
                 Positioned.fill(
                   child: Image.memory(_capturedImageBytes!,
-                    fit: BoxFit.cover, gaplessPlayback: true),
+                    fit: BoxFit.contain, gaplessPlayback: true),
                 ),
 
               // 3. Rect-handle overlay — only after OCR computes the real rect
@@ -884,7 +929,9 @@ class _ScannerScreenState extends State<ScannerScreen>
   }
 
   Widget _buildBottomControls() {
-    final ready = _controller?.value.isInitialized == true && !_processing;
+    final ready = _controller?.value.isInitialized == true &&
+        _warmupComplete &&
+        !_processing;
     final bottom = MediaQuery.of(context).padding.bottom;
     return Positioned(left: 0, right: 0, bottom: 0, child: Column(
       mainAxisSize: MainAxisSize.min,

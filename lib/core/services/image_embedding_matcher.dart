@@ -60,7 +60,8 @@ class ImageEmbeddingMatcher {
   Future<void> loadModel() async {
     if (_modelLoaded) return;
     try {
-      _interpreter = await Interpreter.fromAsset('models/mobilenet_v2.tflite');
+      _interpreter =
+          await Interpreter.fromAsset('assets/models/mobilenet_v2.tflite');
       _debugLog(
         '[Embedding] Model loaded: '
         'input=${_interpreter!.getInputTensor(0).shape}, '

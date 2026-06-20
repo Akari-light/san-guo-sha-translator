@@ -17,6 +17,7 @@ import 'package:image/image.dart' as img;
 import 'fuzzy_matcher.dart';
 import 'image_embedding_matcher.dart';
 import 'recently_viewed_service.dart';
+import 'scanner_text_matcher.dart';
 import 'text_normaliser.dart';
 import '../../features/generals/data/repository/general_loader.dart';
 
@@ -177,8 +178,8 @@ const _zoneWeights = <CardZone, double>{
   CardZone.unknown: 1.0,
 };
 const _maxZoneWeight = 3.0;
-const _ocrShortlistSize = 8;
-const _visualShortlistSize = 8;
+const _ocrShortlistSize = 30;
+const _visualShortlistSize = 30;
 const _resultListSize = 5;
 
 final _idTokenRe = RegExp(r'^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{4,}$');
@@ -189,14 +190,21 @@ class ScannerService {
 
   List<_CardEntry>? _allEntries;
   final Map<String, _CardEntry> _entriesById = {};
-  bool _warmingUp = false;
+  Future<void>? _warmupFuture;
   bool _embeddingsReady = false;
 
   Future<void> warmup() async {
-    if (_allEntries != null || _warmingUp) {
+    if (_allEntries != null && _embeddingsReady) {
       return;
     }
-    _warmingUp = true;
+    if (_warmupFuture != null) {
+      return _warmupFuture!;
+    }
+    _warmupFuture = _warmup();
+    return _warmupFuture!;
+  }
+
+  Future<void> _warmup() async {
     try {
       final generals = await GeneralLoader().getGenerals();
       _allEntries = generals
@@ -225,14 +233,15 @@ class ScannerService {
 
       await ImageEmbeddingMatcher.instance.loadModel();
       await ImageEmbeddingMatcher.instance.loadReferenceEmbeddings();
-      _embeddingsReady = ImageEmbeddingMatcher.instance.referenceCount > 0;
+      _embeddingsReady = ImageEmbeddingMatcher.instance.isReady &&
+          ImageEmbeddingMatcher.instance.referenceCount > 0;
       _debugLog(
         '[Scanner] ML embeddings ready: $_embeddingsReady '
         '(${ImageEmbeddingMatcher.instance.referenceCount} refs / '
         '${ImageEmbeddingMatcher.instance.logicalCardCount} logical cards)',
       );
     } finally {
-      _warmingUp = false;
+      _warmupFuture = null;
     }
   }
 
@@ -247,6 +256,8 @@ class ScannerService {
 
   void dispose() {
     ImageEmbeddingMatcher.instance.dispose();
+    _warmupFuture = null;
+    _embeddingsReady = false;
   }
 
   Future<ScannerResult> _runFusion(
@@ -256,7 +267,7 @@ class ScannerService {
     img.Image? straightenedImage,
   ) async {
     final sw = Stopwatch()..start();
-    if (_allEntries == null) {
+    if (_allEntries == null || !_embeddingsReady) {
       await warmup();
     }
 
@@ -275,7 +286,10 @@ class ScannerService {
         detectedFaction = _detectFaction(straightenedImage);
       }
 
-      final ocrTrack = _buildOcrShortlist(zonedTokens);
+      final printedIdCandidates = ScannerTextMatcher.extractPrintedIdCandidates(
+        zonedTokens.map((t) => t.text),
+      );
+      final ocrTrack = _buildOcrShortlist(zonedTokens, printedIdCandidates);
       final visualTrack = queryEmbedding != null
           ? _buildVisualShortlist(queryEmbedding)
           : const <_TrackCandidate>[];
@@ -313,6 +327,7 @@ class ScannerService {
       _debugLog(
         '| OCR shortlist: ${ocrTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}',
       );
+      _debugLog('| Printed IDs: ${printedIdCandidates.join(', ')}');
       _debugLog(
         '| Visual shortlist: ${visualTrack.map((c) => '${c.entry.cardId}:${c.score.toStringAsFixed(3)}').join(', ')}',
       );
@@ -346,6 +361,7 @@ class ScannerService {
             visualScore: visualScore,
             quality: quality.overall,
             detectedFaction: detectedFaction,
+            hasOcrSignal: ocrTrack.isNotEmpty,
             fromOcrShortlist: ocrScores.containsKey(cardId),
             fromVisualShortlist: visualScores.containsKey(cardId),
           ),
@@ -673,14 +689,17 @@ class ScannerService {
     );
   }
 
-  List<_TrackCandidate> _buildOcrShortlist(List<ZonedToken> tokens) {
-    if (tokens.isEmpty || _allEntries == null) {
+  List<_TrackCandidate> _buildOcrShortlist(
+    List<ZonedToken> tokens,
+    Set<String> printedIdCandidates,
+  ) {
+    if ((tokens.isEmpty && printedIdCandidates.isEmpty) || _allEntries == null) {
       return const <_TrackCandidate>[];
     }
 
     final scored = <_TrackCandidate>[];
     for (final entry in _allEntries!) {
-      final score = _scoreTextSignal(entry, tokens);
+      final score = _scoreTextSignal(entry, tokens, printedIdCandidates);
       if (score > 0.0) {
         scored.add(_TrackCandidate(entry: entry, score: score));
       }
@@ -705,8 +724,17 @@ class ScannerService {
     return candidates;
   }
 
-  double _scoreTextSignal(_CardEntry entry, List<ZonedToken> tokens) {
-    double best = 0.0;
+  double _scoreTextSignal(
+    _CardEntry entry,
+    List<ZonedToken> tokens,
+    Set<String> printedIdCandidates,
+  ) {
+    var best = ScannerTextMatcher.scoreIdEvidence(
+          normalisedEntryId: entry.normId,
+          printedIdCandidates: printedIdCandidates,
+        ) *
+        _maxZoneWeight;
+
     for (final token in tokens) {
       final zoneWeight = _zoneWeights[token.zone] ?? 1.0;
 
@@ -754,6 +782,7 @@ class ScannerService {
     required double visualScore,
     required double quality,
     required String? detectedFaction,
+    required bool hasOcrSignal,
     required bool fromOcrShortlist,
     required bool fromVisualShortlist,
   }) {
@@ -763,20 +792,25 @@ class ScannerService {
 
     double score;
     if (ocrConfidence > 0 && visualConfidence > 0) {
-      score = 0.52 * ocrConfidence +
-          0.36 * visualConfidence +
-          0.12 * qualityConfidence;
+      score = 0.62 * ocrConfidence +
+          0.20 * visualConfidence +
+          0.18 * qualityConfidence;
     } else if (ocrConfidence > 0) {
-      score = 0.82 * ocrConfidence + 0.18 * qualityConfidence;
+      score = 0.78 * ocrConfidence + 0.22 * qualityConfidence;
     } else {
-      score = 0.78 * visualConfidence + 0.22 * qualityConfidence;
+      score = 0.62 * visualConfidence + 0.18 * qualityConfidence;
+      if (hasOcrSignal && !fromOcrShortlist) {
+        score *= 0.42;
+      }
     }
 
     if (detectedFaction != null && entry.faction == detectedFaction) {
       score += 0.04;
     }
     if (fromOcrShortlist && fromVisualShortlist) {
-      score += 0.03;
+      score += 0.05;
+    } else if (fromOcrShortlist) {
+      score += 0.04;
     }
     if (ocrConfidence > 0 && visualConfidence > 0) {
       final delta = (ocrConfidence - visualConfidence).abs();
@@ -803,18 +837,26 @@ class ScannerService {
     if (rawScore <= 0.0) {
       return 0.0;
     }
-    if (rawScore >= 0.95) {
+    if (rawScore >= 0.99) {
       return 1.0;
     }
-    final normalised = ((rawScore - 0.12) / 0.78).clamp(0.0, 1.0);
-    return _smoothstep(normalised);
+    if (rawScore >= 0.82) {
+      return (0.72 + ((rawScore - 0.82) / 0.17) * 0.22).clamp(0.0, 0.94);
+    }
+    if (rawScore >= 0.70) {
+      return (0.48 + ((rawScore - 0.70) / 0.12) * 0.18).clamp(0.0, 0.66);
+    }
+    if (rawScore >= 0.45) {
+      return (0.22 + ((rawScore - 0.45) / 0.25) * 0.22).clamp(0.0, 0.44);
+    }
+    return (rawScore * 1.8).clamp(0.0, 0.34);
   }
 
   double _calibrateVisualScore(double rawSimilarity) {
     if (rawSimilarity <= 0.0) {
       return 0.0;
     }
-    final normalised = ((rawSimilarity - 0.42) / 0.40).clamp(0.0, 1.0);
+    final normalised = ((rawSimilarity - 0.62) / 0.24).clamp(0.0, 1.0);
     return _smoothstep(normalised);
   }
 
