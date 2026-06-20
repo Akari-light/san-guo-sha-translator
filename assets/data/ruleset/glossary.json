@@ -1657,6 +1657,28 @@
     "search_text_en": "turn counter-clockwise lord extra turn"
   },
   {
+    "id": "glossary_2_6_round",
+    "section_num": "2.6",
+    "section_title_cn": "游戏流程",
+    "section_title_en": "Game Flow",
+    "term_cn": "轮",
+    "term_en": "Round",
+    "badge": null,
+    "definition_cn": "一轮从主公的回合开始时开始，到下一次主公的回合开始前结束。游戏开始时第一次主公的回合即第一轮。",
+    "definition_en": "A round starts at the start of the Lord's turn and ends immediately before the next Lord's turn starts. The first Lord turn at game start is Round 1.",
+    "rules": [
+      {
+        "type": "note",
+        "cn": "一轮不是单名角色的一个回合；回合是某名角色自己的完整流程，而一轮通常覆盖从主公开始、按行动顺序到下一次主公回合开始前的这一段。",
+        "en": "A round is not a single character's turn. A turn is one character's own full turn flow; a round spans from the Lord's turn start through turn order until just before the next Lord's turn starts.",
+        "segments": [],
+        "examples": []
+      }
+    ],
+    "search_text_cn": "轮 每轮 本轮 一轮 主公 回合开始 回合 轮次",
+    "search_text_en": "round once per round this round lord turn start turn"
+  },
+  {
     "id": "glossary_2_6_neighbors",
     "section_num": "2.6",
     "section_title_cn": "游戏流程",
