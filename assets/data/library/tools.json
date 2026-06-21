@@ -103,7 +103,9 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
-    "effect_cn": ["出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"],
+    "effect_cn": [
+      "出牌阶段，对所有角色使用。所有角色依次各回复1点体力。"
+    ],
     "effect_en": [
       "Play Phase: use this card on all characters. Each character recovers 1 HP in sequence."
     ],
@@ -281,8 +283,12 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
-    "effect_cn": ["出牌阶段，对自己使用。你摸两张牌。"],
-    "effect_en": ["Play Phase: use this card on yourself. Draw 2 cards."],
+    "effect_cn": [
+      "出牌阶段，对自己使用。你摸两张牌。"
+    ],
+    "effect_en": [
+      "Play Phase: use this card on yourself. Draw 2 cards."
+    ],
     "faq": []
   },
   {
@@ -380,7 +386,9 @@
     "category_en": "Tool",
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
-    "effect_cn": ["出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"],
+    "effect_cn": [
+      "出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"
+    ],
     "effect_en": [
       "Play Phase: choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
@@ -637,6 +645,22 @@
     ],
     "effect_en": [
       "Play Phase: use this card on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to the next player's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
+    ],
+    "faq": []
+  },
+  {
+    "id": "tool_orthodox_and_unorthodox",
+    "name_cn": "奇正相生",
+    "name_en": "Orthodox and Unorthodox",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-Time-Delayed Tool",
+    "effect_cn": [
+      "出牌阶段，对一名其他角色使用。你为其指定「正兵」或「奇兵」（仅你可见），然后其可以打出一张【杀】或【闪】。若「奇兵」目标未打出【杀】，你对其造成1点伤害；若「正兵」目标未打出【闪】，你获得其一张牌。"
+    ],
+    "effect_en": [
+      "Play Phase: use this card on another character. Secretly assign that character as 「Orthodox」 or 「Unorthodox」, visible only to you. Then they may play a [Kill] or [Dodge]. If an 「Unorthodox」 target does not play a [Kill], you deal 1 damage to them. If an 「Orthodox」 target does not play a [Dodge], you gain one of their cards."
     ],
     "faq": []
   }

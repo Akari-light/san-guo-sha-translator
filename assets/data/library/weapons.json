@@ -1323,5 +1323,42 @@
       "Once per Play Phase, you may discard one black card, then place all your hand cards into the Discard Pile and draw an equal number of cards."
     ],
     "faq": []
+  },
+  {
+    "id": "weapon_blunt_halberd",
+    "name_cn": "折戟",
+    "name_en": "Blunt Halberd",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 0,
+    "effect_cn": [
+      "这是一把坏掉的武器……"
+    ],
+    "effect_en": [
+      "This is a broken weapon..."
+    ],
+    "faq": [
+      {
+        "q_cn": "装备【折戟】后还能使用【杀】吗？",
+        "a_cn": "通常不能，因为【折戟】的攻击范围为0。若某张【杀】或技能效果无视攻击范围，则仍可使用。",
+        "q_en": "Can a character equipped with [Blunt Halberd] still use [Kill]?",
+        "a_en": "Usually no, because [Blunt Halberd] has an Attack Range of 0. If a [Kill] or skill effect ignores Attack Range, it can still be used."
+      }
+    ]
+  },
+  {
+    "id": "weapon_soul_zhuge_repeating_crossbow",
+    "name_cn": "魂·诸葛连弩",
+    "name_en": "Soul · Zhuge Repeating Crossbow",
+    "category_cn": "武器牌",
+    "category_en": "Weapon",
+    "range": 1,
+    "effect_cn": [
+      "你使用【杀】无次数限制。你使用【杀】指定目标后，可以令任意名已死亡角色依次观看目标的手牌并可以重铸其中一张牌。"
+    ],
+    "effect_en": [
+      "Your use of [Kill] has no usage limit. After you use [Kill] and designate a target, you may have any number of dead characters, in sequence, each view the target's hand cards and optionally recast one of them."
+    ],
+    "faq": []
   }
 ]

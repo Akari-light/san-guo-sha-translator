@@ -281,5 +281,44 @@
       "Locked Skill: If your HP Value is 1, you are treated as having the skill 〖Bloodthirst〗."
     ],
     "faq": []
+  },
+  {
+    "id": "mount_slow_horse",
+    "name_cn": "驽马",
+    "name_en": "Slow Horse",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [
+      "你计算与其他角色的距离-1。",
+      "锁定技，其他角色计算与你的距离始终为1。"
+    ],
+    "effect_en": [
+      "When you calculate the Distance to another character, -1.",
+      "Locked Skill: When other characters calculate the Distance to you, it is always 1."
+    ],
+    "faq": []
+  },
+  {
+    "id": "mount_ling_ling",
+    "name_cn": "軨軨",
+    "name_en": "Ling Ling",
+    "category_cn": "坐骑牌",
+    "category_en": "Mount",
+    "effect_cn": [
+      "你计算与其他角色的距离-2。",
+      "准备阶段，你须对一名角色造成1点雷电伤害。每轮结束时，所有死亡角色同时秘密选择上家或下家，然后按死亡先后顺序依次将此牌移动至所选角色的装备区。"
+    ],
+    "effect_en": [
+      "When you calculate the Distance to another character, -2.",
+      "During your Preparation Phase, you must deal 1 Lightning damage to one character. At the end of each round, all dead characters secretly and simultaneously choose previous player or next player. Then, in death order, each moves this card to the chosen character's Equipment Zone."
+    ],
+    "faq": [
+      {
+        "q_cn": "每轮结束时，【軨軨】如何移动？",
+        "a_cn": "所有已死亡角色同时秘密选择上家或下家，然后按死亡先后顺序依次结算，将此牌移动至对应角色的装备区。",
+        "q_en": "How does [Ling Ling] move at the end of each round?",
+        "a_en": "All dead characters secretly and simultaneously choose previous player or next player. Then the choices resolve in death order, moving this card to the corresponding character's Equipment Zone."
+      }
+    ]
   }
 ]

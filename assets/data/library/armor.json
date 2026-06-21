@@ -468,5 +468,46 @@
       "At the start of a character's Preparation Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
     ],
     "faq": []
+  },
+  {
+    "id": "armor_womens_garb",
+    "name_cn": "女装",
+    "name_en": "Women's Garb",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "锁定技，当你成为【杀】的目标后，若你是男性角色，你进行判定，若结果为黑色，此【杀】伤害+1。"
+    ],
+    "effect_en": [
+      "Locked Skill: After you become the target of a [Kill], if you are male, perform a Judgment. If the result is black, that [Kill] deals +1 damage."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_soul_eight_trigrams_formation",
+    "name_cn": "魂·八卦阵",
+    "name_en": "Soul · Eight Trigrams Formation",
+    "category_cn": "防具牌",
+    "category_en": "Armor",
+    "effect_cn": [
+      "当你需要使用或打出【闪】时，你可以进行一次判定，若结果为红色，视为你使用或打出之。判定前，你可以令一名死亡角色卜算3。"
+    ],
+    "effect_en": [
+      "When you need to use or play a [Dodge], you may perform a Judgment. If the result is red, it is treated as you using or playing a [Dodge]. Before the Judgment, you may have one dead character perform Foresight 3."
+    ],
+    "faq": [
+      {
+        "q_cn": "什么是卜算X？",
+        "a_cn": "卜算X指观看牌堆顶的X张牌，然后将这些牌以任意顺序置于牌堆顶或牌堆底。",
+        "q_en": "What is Foresight X?",
+        "a_en": "Foresight X means looking at the top X cards of the Draw Pile, then placing them on the top or bottom of the Draw Pile in any order."
+      },
+      {
+        "q_cn": "【魂·八卦阵】的判定流程中，可以操作提供此技能的装备牌吗？",
+        "a_cn": "不能。在因【魂·八卦阵】进行的判定流程中，不能以任何方式操作装备区里提供此技能的装备牌；但在此【闪】的使用流程中仍可操作该装备牌。",
+        "q_en": "During the Judgment process of [Soul · Eight Trigrams Formation], can the equipment card providing this skill be manipulated?",
+        "a_en": "No. During the Judgment process caused by [Soul · Eight Trigrams Formation], the equipment card providing this skill cannot be manipulated in any way. However, during the [Dodge] use process itself, that equipment card may still be manipulated."
+      }
+    ]
   }
 ]
