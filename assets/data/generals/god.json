@@ -22,21 +22,21 @@
     "faq": [
       {
         "q_cn": "神关羽死亡时，如果场上有两个或两个以上角色拥有最多的梦魇标记，如何结算？",
-        "a_cn": "由神关羽指定其中一个角色进行【武魂】的判定。",
-        "q_en": "When God Guan Yu dies and two or more characters are tied for the most Nightmare tokens, how is this resolved?",
-        "a_en": "God Guan Yu chooses one of those characters to make the [War Soul] judgment."
+        "a_cn": "由神关羽指定其中一个角色进行〖武魂〗的判定。",
+        "q_en": "When God Guan Yu dies and two or more characters are tied for the most 「Nightmare」 tokens, how is this resolved?",
+        "a_en": "God Guan Yu chooses one of those characters to make the 〖War Soul〗 judgment."
       },
       {
-        "q_cn": "被【武魂】技能杀死的角色，能否用【桃】救？",
+        "q_cn": "被〖武魂〗技能杀死的角色，能否用【桃】救？",
         "a_cn": "立即死亡，不能救。",
-        "q_en": "Can a character killed by [War Soul] be saved with a [Peach]?",
+        "q_en": "Can a character killed by 〖War Soul〗 be saved with a [Peach]?",
         "a_en": "No. They die immediately and cannot be saved."
       },
       {
-        "q_cn": "杀死反贼神关羽时，是先判定【武魂】还是先摸3张牌？",
-        "a_cn": "先判定【武魂】。",
-        "q_en": "When a Rebel kills God Guan Yu, does [War Soul] resolve before drawing 3 cards?",
-        "a_en": "Yes. [War Soul] resolves first."
+        "q_cn": "杀死反贼神关羽时，是先判定〖武魂〗还是先摸3张牌？",
+        "a_cn": "先判定〖武魂〗。",
+        "q_en": "When a Rebel kills God Guan Yu, does 〖War Soul〗 resolve before drawing 3 cards?",
+        "a_en": "Yes. 〖War Soul〗 resolves first."
       },
       {
         "q_cn": "如果最后只剩下主公和反贼神关羽，主公杀死神关羽时如何结算？",
@@ -46,14 +46,14 @@
       },
       {
         "q_cn": "如果持有最多梦魇标记的角色比神关羽早死去，那么神关羽死亡时如何结算？",
-        "a_cn": "剩下活着的角色里拥有最多梦魇标记的人成为【武魂】的对象。",
-        "q_en": "If the character with the most Nightmare tokens dies before God Guan Yu, how does [War Soul] resolve on his death?",
-        "a_en": "Among surviving characters, the one with the most Nightmare tokens becomes the target of [War Soul]."
+        "a_cn": "剩下活着的角色里拥有最多梦魇标记的人成为〖武魂〗的对象。",
+        "q_en": "If the character with the most 「Nightmare」 tokens dies before God Guan Yu, how does 〖War Soul〗 resolve on his death?",
+        "a_en": "Among surviving characters, the one with the most 「Nightmare」 tokens becomes the target of 〖War Soul〗."
       },
       {
-        "q_cn": "如果神关羽死亡时，场上没有任何一个角色拥有梦魇标记，能否发动【武魂】？",
+        "q_cn": "如果神关羽死亡时，场上没有任何一个角色拥有梦魇标记，能否发动〖武魂〗？",
         "a_cn": "不能发动。",
-        "q_en": "If no character has any Nightmare tokens when God Guan Yu dies, can [War Soul] still activate?",
+        "q_en": "If no character has any 「Nightmare」 tokens when God Guan Yu dies, can 〖War Soul〗 still activate?",
         "a_en": "No. It cannot activate."
       },
       {
@@ -76,7 +76,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 5,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "防御",
@@ -151,7 +151,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 5,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "进攻",
       "防御",
@@ -177,7 +177,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 3,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "控制",
       "过牌",
@@ -191,9 +191,9 @@
     "expansion": "God",
     "faq": [
       {
-        "q_cn": "神吕蒙能否对自己发动【攻心】？",
+        "q_cn": "神吕蒙能否对自己发动〖攻心〗？",
         "a_cn": "不可以。",
-        "q_en": "Can God Lu Meng use [Mental Attack] on himself?",
+        "q_en": "Can God Lu Meng use 〖Strike at the Heart〗 on himself?",
         "a_en": "No."
       },
       {
@@ -232,25 +232,25 @@
       {
         "q_cn": "发动业炎如果周瑜进入濒死如何结算？先求桃才发动火焰伤害吗？",
         "a_cn": "对，先求桃，没桃则死亡，但依然可以结算伤害。",
-        "q_en": "If God Zhou Yu enters the Verge of Death State while activating [Raging Flames], must Verge of Death Resolution happen first?",
+        "q_en": "If God Zhou Yu enters the Verge of Death State while activating 〖Raging Flames〗, must Verge of Death Resolution happen first?",
         "a_en": "Yes. If he is not saved he dies, but the remaining damage still resolves afterward."
       },
       {
         "q_cn": "业炎造成的伤害是否从神周瑜起逆时针结算效果？如果业炎过程中神周瑜死亡，是否继续结算？",
         "a_cn": "对，逆时针结算，即使死亡，依然结算，除非满足游戏结束条件。",
-        "q_en": "Does [Raging Flames] damage resolve counter-clockwise starting from God Zhou Yu? Does resolution continue if he dies during it?",
+        "q_en": "Does 〖Raging Flames〗 damage resolve counter-clockwise starting from God Zhou Yu? Does resolution continue if he dies during it?",
         "a_en": "Yes, counter-clockwise. Damage continues resolving even if God Zhou Yu dies, unless the game-end condition is met."
       },
       {
         "q_cn": "业炎发动是否对神周瑜发动时的体力有要求？",
         "a_cn": "没有，几点体力都可以发动，但如果发动业炎导致周瑜进入濒死状态，则先结算濒死，不管有没有救回，后续伤害都在濒死结算后造成。",
-        "q_en": "Does activating [Raging Flames] require a minimum HP?",
+        "q_en": "Does activating 〖Raging Flames〗 require a minimum HP?",
         "a_en": "No. If activating it causes God Zhou Yu to enter the Verge of Death State, Verge of Death Resolution occurs first; remaining damage resolves afterward regardless of outcome."
       },
       {
         "q_cn": "神周瑜弃牌阶段发动琴音让所有人去1血，自己剩下3血手牌4张，是否需要继续弃牌到3张？",
         "a_cn": "是的，需要继续弃牌。",
-        "q_en": "God Zhou Yu uses [Zither Melody] during his Discard Phase, causing all to lose 1 HP. He now has 3 HP and 4 hand cards. Must he continue discarding to 3?",
+        "q_en": "God Zhou Yu uses 〖Zither Melody〗 during his Discard Phase, causing all to lose 1 HP. He now has 3 HP and 4 hand cards. Must he continue discarding to 3?",
         "a_en": "Yes. He must discard down to his Hand Limit."
       }
     ],
@@ -283,13 +283,13 @@
       {
         "q_cn": "如果神诸葛在放完狂风或者大雾后在该回合死亡，该回合狂风和大雾效用是否保留？",
         "a_cn": "不保留，神诸葛死亡则狂风大雾效果即刻消失。",
-        "q_en": "If God Zhuge Liang dies after using [Gale] or [Great Fog] this turn, do those effects remain?",
+        "q_en": "If God Zhuge Liang dies after using 〖Gale〗 or 〖Great Fog〗 this turn, do those effects remain?",
         "a_en": "No. The effects disappear immediately upon his death."
       },
       {
         "q_cn": "狂风和大雾是否可以对自己使用？",
         "a_cn": "可以。",
-        "q_en": "Can [Gale] and [Great Fog] target God Zhuge Liang himself?",
+        "q_en": "Can 〖Gale〗 and 〖Great Fog〗 target God Zhuge Liang himself?",
         "a_en": "Yes."
       }
     ],
@@ -307,7 +307,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 3,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "过牌",
@@ -350,7 +350,7 @@
       {
         "q_cn": "神曹操一次性受到2点伤害，归心如何结算？",
         "a_cn": "一次一次结算，先分别获得一张翻一次面，再分别获得一张再翻一次面。",
-        "q_en": "If God Cao Cao takes 2 damage at once, how does [Rallying Hearts] resolve?",
+        "q_en": "If God Cao Cao takes 2 damage at once, how does 〖Rallying Hearts〗 resolve?",
         "a_en": "It resolves once per damage point: first he takes 1 card from each character and flips his general card, then repeats for the second damage."
       }
     ],
@@ -367,7 +367,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 5,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "防御",
@@ -410,27 +410,27 @@
     "expansion": "God",
     "faq": [
       {
-        "q_cn": "【龙魂】描述中的X是多少？",
+        "q_cn": "〖龙魂〗描述中的X是多少？",
         "a_cn": "你当前的体力值大于0时，X=你当前的体力值；你当前的体力值为0时，X=1。",
-        "q_en": "What is X in the [Dragon Soul] description?",
+        "q_en": "What is X in the 〖Dragon Soul〗 description?",
         "a_en": "X equals your current HP Value when it is greater than 0. When your HP Value is 0, X = 1."
       },
       {
-        "q_cn": "体力为2的神赵云是否可以发动【龙魂】将最后两张方块手牌当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
+        "q_cn": "体力为2的神赵云是否可以发动〖龙魂〗将最后两张方块手牌当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
         "a_cn": "可以。该【火杀】视为最后一张手牌",
-        "q_en": "Can God Zhao Yun with 2 HP activate [Dragon Soul] to use his last 2 Diamonds hand cards as a [Fire Kill], and simultaneously trigger [Sky Piercer Halberd] to target up to 3 characters?",
+        "q_en": "Can God Zhao Yun with 2 HP activate 〖Dragon Soul〗 to use his last 2 Diamonds hand cards as a [Fire Kill], and simultaneously trigger [Sky Piercer] to target up to 3 characters?",
         "a_en": "Yes. That [Fire Kill] is treated as the last hand card."
       },
       {
-        "q_cn": "体力为2的神赵云是否可以发动【龙魂】将最后一张方块手牌和装备区里的一张方块马当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
+        "q_cn": "体力为2的神赵云是否可以发动〖龙魂〗将最后一张方块手牌和装备区里的一张方块马当【火杀】使用的同时发动【方天画戟】对至多三名目标角色使用该【火杀】？",
         "a_cn": "不可以。",
-        "q_en": "Can God Zhao Yun with 2 HP activate [Dragon Soul] to use his last Diamonds hand card and a Diamonds mount from his Equipment Zone as a [Fire Kill], simultaneously triggering [Sky Piercer Halberd] for up to 3 targets?",
+        "q_en": "Can God Zhao Yun with 2 HP activate 〖Dragon Soul〗 to use his last Diamonds hand card and a Diamonds mount from his Equipment Zone as a [Fire Kill], simultaneously triggering [Sky Piercer] for up to 3 targets?",
         "a_en": "No."
       },
       {
-        "q_cn": "甲对神赵云使用【借刀杀人】指定杀乙，神赵云【龙魂】装备区的黑桃武器当【无懈可击】使用，甲又使用【无懈可击】，如何结算？",
+        "q_cn": "甲对神赵云使用【借刀杀人】指定杀乙，神赵云〖龙魂〗装备区的黑桃武器当【无懈可击】使用，甲又使用【无懈可击】，如何结算？",
         "a_cn": "如果乙仍在神赵云的攻击范围内且神赵云愿意，依然可以使用【杀】；若不能或不愿使用【杀】，无事发生，【借刀杀人】结算完毕。",
-        "q_en": "Player A uses [Proxy Attack] on God Zhao Yun targeting Player B. God Zhao Yun uses a Spades weapon from his Equipment Zone as [Nullification] via [Dragon Soul]. Player A then uses [Nullification]. How does this resolve?",
+        "q_en": "Player A uses [Proxy Attack] on God Zhao Yun targeting Player B. God Zhao Yun uses a Spades weapon from his Equipment Zone as [Nullification] via 〖Dragon Soul〗. Player A then uses [Nullification]. How does this resolve?",
         "a_en": "If Player B is still within God Zhao Yun's attack range and he is willing, he may still use [Kill]. If he cannot or chooses not to, nothing happens and [Proxy Attack] finishes resolving."
       }
     ],
@@ -447,7 +447,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "发育",
       "控制",
@@ -461,34 +461,34 @@
     "expansion": "God",
     "faq": [
       {
-        "q_cn": "觉醒后的神司马懿没有忍标记时受到伤害，是否可以发动【放逐】？",
-        "a_cn": "可以。神司马懿在受到伤害后触发【忍戒】获得忍标记后，依然处于受到伤害后这个时机，可以弃一枚刚刚获得的忍标记发动【放逐】。",
-        "q_en": "After awakening, can God Sima Yi activate [Exile] if he has no Forbearance tokens when taking damage?",
-        "a_en": "Yes. After taking damage, [Forbearance] triggers granting him a token. He is still within the 'after taking damage' timing window and may immediately spend that token to activate [Exile]."
+        "q_cn": "觉醒后的神司马懿没有忍标记时受到伤害，是否可以发动〖放逐〗？",
+        "a_cn": "可以。神司马懿在受到伤害后触发〖忍戒〗获得忍标记后，依然处于受到伤害后这个时机，可以弃一枚刚刚获得的忍标记发动〖放逐〗。",
+        "q_en": "After awakening, can God Sima Yi activate 〖Exile〗 if he has no 「Forbearance」 tokens when taking damage?",
+        "a_en": "Yes. After taking damage, 〖Forbearance〗 triggers granting him a token. He is still within the 'after taking damage' timing window and may immediately spend that token to activate 〖Exile〗."
       },
       {
-        "q_cn": "神司马懿在其他角色的回合杀死至少一名角色，在该角色的回合结束后，是否可以发动【连破】？",
+        "q_cn": "神司马懿在其他角色的回合杀死至少一名角色，在该角色的回合结束后，是否可以发动〖连破〗？",
         "a_cn": "可以。",
-        "q_en": "If God Sima Yi kills at least one character during another character's turn, can he activate [Supreme Advance] after that turn ends?",
+        "q_en": "If God Sima Yi kills at least one character during another character's turn, can he activate 〖Supreme Advance〗 after that turn ends?",
         "a_en": "Yes."
       },
       {
-        "q_cn": "贾诩发动乱武，结算过程中贾诩先死亡，神司马懿再杀死至少一名角色，乱武结算完毕后神司马懿是否可以发动连破？",
+        "q_cn": "贾诩发动〖乱武〗，结算过程中贾诩先死亡，神司马懿再杀死至少一名角色，〖乱武〗结算完毕后神司马懿是否可以发动〖连破〗？",
         "a_cn": "不可以。贾诩死亡其回合立即结束，神司马懿未满足在回合内杀死至少一名角色的条件。",
-        "q_en": "Jia Xu uses [Barbarians]. Jia Xu dies first during resolution, then God Sima Yi kills a character. Can God Sima Yi activate [Supreme Advance] after [Barbarians] resolves?",
+        "q_en": "Jia Xu uses 〖Reign of Chaos〗. Jia Xu dies first during resolution, then God Sima Yi kills a character. Can God Sima Yi activate 〖Supreme Advance〗 after 〖Reign of Chaos〗 resolves?",
         "a_en": "No. Jia Xu's death immediately ends his turn, so the condition was not met within that turn."
       },
       {
-        "q_cn": "贾诩发动乱武，结算过程中神司马懿先杀死一名角色，贾诩再死亡，神司马懿是否可以发动连破？",
-        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动连破，在乱武结算完毕后进行一个额外的回合。",
-        "q_en": "Jia Xu uses [Barbarians]. God Sima Yi kills a character first, then Jia Xu dies. Can God Sima Yi activate [Supreme Advance]?",
-        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate [Supreme Advance] and take an extra turn after [Barbarians] resolves."
+        "q_cn": "贾诩发动〖乱武〗，结算过程中神司马懿先杀死一名角色，贾诩再死亡，神司马懿是否可以发动〖连破〗？",
+        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动〖连破〗，在乱武结算完毕后进行一个额外的回合。",
+        "q_en": "Jia Xu uses 〖Reign of Chaos〗. God Sima Yi kills a character first, then Jia Xu dies. Can God Sima Yi activate 〖Supreme Advance〗?",
+        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate 〖Supreme Advance〗 and take an extra turn after 〖Reign of Chaos〗 resolves."
       },
       {
-        "q_cn": "贾诩发动乱武，结算过程中神司马懿杀死贾诩，乱武结算完毕后神司马懿是否可以发动连破？",
-        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动连破，在乱武结算完毕后进行一个额外的回合。",
-        "q_en": "Jia Xu uses [Barbarians]. God Sima Yi kills Jia Xu during resolution. Can God Sima Yi activate [Supreme Advance] after [Barbarians] resolves?",
-        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate [Supreme Advance] and take an extra turn after [Barbarians] resolves."
+        "q_cn": "贾诩发动〖乱武〗，结算过程中神司马懿杀死贾诩，〖乱武〗结算完毕后神司马懿是否可以发动〖连破〗？",
+        "a_cn": "可以。贾诩死亡其回合立即结束，神司马懿可以发动〖连破〗，在乱武结算完毕后进行一个额外的回合。",
+        "q_en": "Jia Xu uses 〖Reign of Chaos〗. God Sima Yi kills Jia Xu during resolution. Can God Sima Yi activate 〖Supreme Advance〗 after 〖Reign of Chaos〗 resolves?",
+        "a_en": "Yes. Jia Xu's death ends his turn. God Sima Yi can activate 〖Supreme Advance〗 and take an extra turn after 〖Reign of Chaos〗 resolves."
       }
     ],
     "skills": [
@@ -511,7 +511,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 6,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "辅助",
@@ -537,7 +537,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "进攻",
       "辅助",
@@ -553,20 +553,20 @@
       {
         "q_cn": "军略标记数为0时，能否发动摧克？",
         "a_cn": "可以。此时军略数视为偶数，可以发动偶数项效果。",
-        "q_en": "Can [Crushing Advance] be activated when the Stratagem count is 0?",
+        "q_en": "Can 〖Crushing Advance〗 be activated when the 「Stratagem」 count is 0?",
         "a_en": "Yes. A count of 0 is treated as even, so the even-number effect may be activated."
       },
       {
         "q_cn": "军略数超过7时，是否可以发动摧克的奇数项和偶数项效果？",
         "a_cn": "可以，且其可以与超过7项同时发动。",
-        "q_en": "When the Stratagem count exceeds 7, can both the odd and even effects of [Crushing Advance] be activated?",
+        "q_en": "When the 「Stratagem」 count exceeds 7, can both the odd and even effects of 〖Crushing Advance〗 be activated?",
         "a_en": "Yes, and they can be activated simultaneously with the exceeds-7 effect."
       },
       {
         "q_cn": "神陆逊发动绽火选择界黄月英，界黄月英是否弃置装备区的防具牌和宝物牌？",
         "a_cn": "是。绽火是令被选择的角色自行弃置装备区的所有牌。",
-        "q_en": "When God Lu Xun uses [Blaze of Fire] and selects Jie Huang Yueying, does she also discard armor and treasure cards?",
-        "a_en": "Yes. [Blaze of Fire] instructs the selected character to discard all cards from their Equipment Zone."
+        "q_en": "When God Lu Xun uses 〖Blaze of Fire〗 and selects Jie Huang Yueying, does she also discard armor and treasure cards?",
+        "a_en": "Yes. 〖Blaze of Fire〗 instructs the selected character to discard all cards from their Equipment Zone."
       }
     ],
     "skills": [
@@ -623,15 +623,15 @@
     "expansion": "God",
     "faq": [
       {
-        "q_cn": "神甘宁发动魄袭观看别人的手牌时两个人凑不齐共计四张牌时该如何处理？",
+        "q_cn": "神甘宁发动〖魄袭〗观看别人的手牌时，两个人凑不齐共计四张牌时该如何处理？",
         "a_cn": "只能观看手牌，不能进行其他操作。",
-        "q_en": "When activating [Soul Raid], if the combined hands total fewer than 4 cards, what happens?",
+        "q_en": "When activating 〖Spirit Ambush〗, if the combined hands total fewer than 4 cards, what happens?",
         "a_en": "God Gan Ning may only view the hand cards. No further action can be taken."
       },
       {
         "q_cn": "神甘宁的营可以标记自己吗？",
         "a_cn": "可以，但不会触发获得手牌。",
-        "q_en": "Can God Gan Ning place the Camp token on himself?",
+        "q_en": "Can God Gan Ning place the 「Camp」 token on himself?",
         "a_en": "Yes, but the effect of taking all hand cards will not trigger."
       }
     ],
@@ -662,9 +662,9 @@
     "expansion": "God",
     "faq": [
       {
-        "q_cn": "神貂蝉发动技能「魅魂」并声明花色，若其没有，是谁判断？可能对方有但不愿交给你算不算没有？",
+        "q_cn": "神貂蝉发动技能〖魅魂〗并声明花色，若其没有，是谁判断？可能对方有但不愿交给你算不算没有？",
         "a_cn": "目标角色若有声明花色的牌，必须选择其中一张交给神貂蝉，不能选择让神貂蝉观看手牌并弃牌。",
-        "q_en": "When God Diao Chan uses [Soul Lure] and declares a suit, who decides if the target has that suit? Can the target refuse to give a matching card?",
+        "q_en": "When God Diao Chan uses 〖Soul Lure〗 and declares a suit, who decides if the target has that suit? Can the target refuse to give a matching card?",
         "a_en": "If the target has a card of the declared suit, they must give one to God Diao Chan. They cannot choose to let her view and discard instead."
       },
       {
@@ -693,9 +693,9 @@
       },
       {
         "q_cn": "当一名拥有2个或更多「魅惑」标记的角色回合即将开始时，若其武将牌处于背面朝上的状态，如何结算？",
-        "a_cn": "「惑心」的技能触发时机晚于武将牌从背面翻转至正面朝上，因此玩家翻面后跳过该角色的这一回合，不会触发「惑心」，「魅惑」标记保留。",
-        "q_en": "When a character with 2+ Bewitch tokens is about to begin their turn while their general card is face-down, how is this resolved?",
-        "a_en": "[Bewitching Hearts] triggers after the card flips face-up. The character's turn is then skipped — [Bewitching Hearts] does not trigger and the Bewitch tokens are retained."
+        "a_cn": "〖惑心〗的技能触发时机晚于武将牌从背面翻转至正面朝上，因此玩家翻面后跳过该角色的这一回合，不会触发〖惑心〗，「魅惑」标记保留。",
+        "q_en": "When a character with 2 or more 「Bewitch」 tokens is about to begin their turn while their general card is face-down, how is this resolved?",
+        "a_en": "The trigger timing for 〖Bewitching Hearts〗 is after the general card would flip face-up. Because that turn is skipped after the flip, 〖Bewitching Hearts〗 does not trigger, and the 「Bewitch」 tokens remain."
       }
     ],
     "skills": [
@@ -737,7 +737,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 1,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "辅助",
       "回复",
@@ -823,7 +823,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "进攻",
       "回复",
@@ -850,7 +850,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 5,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "回复",
@@ -877,7 +877,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 3,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "控制",
       "辅助",
@@ -904,7 +904,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "发育",
       "回复",
@@ -933,7 +933,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 3,
-    "power_index": 5.0,
+    "power_index": 5,
     "traits_cn": [
       "控制",
       "过牌",
@@ -1015,7 +1015,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "进攻",
       "使命",
@@ -1094,7 +1094,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "控制",
       "进攻",
@@ -1276,7 +1276,7 @@
     "gender": "Female",
     "faction": "God",
     "health": 3,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "控制",
       "过牌",
@@ -1407,7 +1407,7 @@
     "gender": "Female",
     "faction": "God",
     "health": 3,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "辅助",
       "控制",
@@ -1434,7 +1434,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 8,
-    "power_index": 5.0,
+    "power_index": 5,
     "traits_cn": [
       "进攻",
       "防御",
@@ -1491,7 +1491,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 6,
-    "power_index": 5.0,
+    "power_index": 5,
     "traits_cn": [
       "进攻",
       "防御",
@@ -1625,7 +1625,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 4.0,
+    "power_index": 4,
     "traits_cn": [
       "发育",
       "过牌",
@@ -1683,7 +1683,7 @@
     "gender": "Male",
     "faction": "God",
     "health": 4,
-    "power_index": 3.0,
+    "power_index": 3,
     "traits_cn": [
       "进攻",
       "控制",
