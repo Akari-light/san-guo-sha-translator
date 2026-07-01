@@ -433,11 +433,15 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                       isDark: isDark,
                       onTap: () => _openLibraryReference(ref.id!),
                     );
-                  } else {
+                  } else if (ref.type == ReferenceType.skill) {
                     return _RelatedSkillChip(
                       label: _isEnglish ? ref.nameEn : ref.nameCn,
                     );
                   }
+                  return _RelatedTokenChip(
+                    label: _isEnglish ? ref.nameEn : ref.nameCn,
+                    isDark: isDark,
+                  );
                 }).toList(),
               ),
           ],
@@ -1985,6 +1989,41 @@ class _RelatedSkillChip extends StatelessWidget {
               fontSize: 13,
               color: color,
               fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RelatedTokenChip extends StatelessWidget {
+  final String label;
+  final bool isDark;
+
+  const _RelatedTokenChip({required this.label, required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    final color = AppTheme.referenceTokenText(isDark);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: AppTheme.referenceTokenFill(isDark),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppTheme.referenceTokenBorder(isDark)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.local_offer_rounded, size: 11, color: color),
+          const SizedBox(width: 4),
+          Text(
+            '\u300c$label\u300d',
+            style: TextStyle(
+              fontSize: 13,
+              color: color,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],
