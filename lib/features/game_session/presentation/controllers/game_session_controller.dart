@@ -15,15 +15,10 @@ class GameSessionController extends ChangeNotifier {
     this.pendingSelection,
   }) : _repository = repository {
     _subscription = _repository.watchConnection().listen((connection) {
-      _connection = connection;
-      _room = connection.room;
-      _page = connection.room == null
-          ? GameSessionPage.launcher
-          : GameSessionPage.room;
+      _applyConnection(connection);
       _notifyIfAlive();
     });
-    _connection = _repository.currentConnection;
-    _room = _connection.room;
+    _applyConnection(_repository.currentConnection);
     _page = _room == null ? GameSessionPage.launcher : GameSessionPage.room;
   }
 
@@ -37,15 +32,14 @@ class GameSessionController extends ChangeNotifier {
   bool _busy = false;
   bool _disposed = false;
   String? _error;
-  String? _importedInvitePayload;
+  String _scannerDisplayName = '';
 
   GameSessionPage get page => _page;
   GameSessionConnectionState get connection => _connection;
   GameSessionRoom? get room => _room;
   bool get busy => _busy;
   String? get error => _error;
-  String? get activeInvitePayload => _repository.activeInvitePayload;
-  String? get importedInvitePayload => _importedInvitePayload;
+  String get scannerDisplayName => _scannerDisplayName;
 
   void showLauncher() {
     _page = GameSessionPage.launcher;
@@ -58,7 +52,8 @@ class GameSessionController extends ChangeNotifier {
     _notifyIfAlive();
   }
 
-  void showScanner() {
+  void showScanner({String displayName = ''}) {
+    _scannerDisplayName = displayName;
     _page = GameSessionPage.scanner;
     _notifyIfAlive();
   }
@@ -73,43 +68,30 @@ class GameSessionController extends ChangeNotifier {
   }
 
   Future<void> joinByInvite(String invitePayload, String displayName) async {
-    await _run(() async {
-      await _repository.cacheInvitePayload(invitePayload);
-      await _repository.joinFromInvite(
-        invitePayload: invitePayload,
-        displayName: displayName,
-        pendingSelection: pendingSelection,
-      );
-      _importedInvitePayload = invitePayload.trim();
-    });
-  }
-
-  Future<void> joinByRoomCode(String roomCode, String displayName) async {
     await _run(
-      () => _repository.joinFromRoomCode(
-        roomCode: roomCode,
+      () => _repository.joinFromInvite(
+        invitePayload: invitePayload,
         displayName: displayName,
         pendingSelection: pendingSelection,
       ),
     );
   }
 
-  Future<void> importInvite(String invitePayload) async {
-    await _run(() async {
-      final trimmed = invitePayload.trim();
-      await _repository.cacheInvitePayload(trimmed);
-      _importedInvitePayload = trimmed;
-    });
-  }
-
-  Future<void> setMyGeneral(String generalId, {String? skinId}) async {
-    await _run(
+  Future<bool> setMyGeneral(String generalId, {String? skinId}) {
+    return _run(
       () => _repository.setMyGeneral(generalId: generalId, skinId: skinId),
     );
   }
 
+  Future<bool> clearMyGeneral() => _run(_repository.clearMyGeneral);
+
   Future<void> leaveRoom() async {
     await _run(_repository.leaveRoom);
+    if (_repository.currentRoom == null) {
+      _room = null;
+      _page = GameSessionPage.launcher;
+      _notifyIfAlive();
+    }
   }
 
   Future<void> suspend() => _repository.suspend();
@@ -127,18 +109,37 @@ class GameSessionController extends ChangeNotifier {
     _notifyIfAlive();
   }
 
-  Future<void> _run(Future<dynamic> Function() action) async {
+  Future<bool> _run(Future<dynamic> Function() action) async {
     _busy = true;
     _error = null;
     _notifyIfAlive();
     try {
       await action();
+      return true;
     } catch (error) {
       _error = error.toString().replaceFirst('Bad state: ', '');
+      return false;
     } finally {
       _busy = false;
       _notifyIfAlive();
     }
+  }
+
+  void _applyConnection(GameSessionConnectionState connection) {
+    _connection = connection;
+    if (_page == GameSessionPage.scanner && connection.room == null) {
+      return;
+    }
+    if (connection.status == GameSessionConnectionStatus.closed ||
+        connection.status == GameSessionConnectionStatus.idle) {
+      _room = null;
+      _page = GameSessionPage.launcher;
+      return;
+    }
+    _room = connection.room;
+    _page = connection.room == null
+        ? GameSessionPage.launcher
+        : GameSessionPage.room;
   }
 
   void _notifyIfAlive() {

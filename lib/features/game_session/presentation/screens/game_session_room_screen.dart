@@ -75,14 +75,14 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Room QR',
+                  'Room invite',
                   style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Ask nearby players to join the same Wi-Fi network or personal hotspot, then scan this QR or import the room invite text.',
+                  'Ask nearby players to join the same Wi-Fi network or personal hotspot, then scan this QR or paste the room invite text.',
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.hintColor,
                     height: 1.5,
@@ -120,13 +120,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                   runSpacing: 8,
                   children: [
                     SessionActionButton(
-                      label: 'Copy room code',
-                      icon: Icons.tag_rounded,
-                      onPressed: () =>
-                          _copyValue(room.roomCode, 'Room code copied.'),
-                    ),
-                    SessionActionButton(
-                      label: 'Copy room invite',
+                      label: 'Copy invite',
                       icon: Icons.copy_rounded,
                       onPressed: () =>
                           _copyValue(room.invitePayload, 'Room invite copied.'),
@@ -146,11 +140,11 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
       detailRoute(const GameSessionGeneralPickerScreen()),
     );
     if (selection == null) return;
-    await widget.controller.setMyGeneral(
+    final updated = await widget.controller.setMyGeneral(
       selection.generalId,
       skinId: selection.skinId,
     );
-    if (!mounted) return;
+    if (!mounted || !updated) return;
     final selected = _generalMap[selection.generalId];
     final selectedLabel = selected?.nameEn ?? selection.generalId;
     ScaffoldMessenger.of(context).showSnackBar(
@@ -158,10 +152,20 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
     );
   }
 
-  Future<void> _openGeneral(String generalId) async {
+  Future<void> _clearMyGeneral() async {
+    final cleared = await widget.controller.clearMyGeneral();
+    if (!mounted || !cleared) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Your session General was cleared.')),
+    );
+  }
+
+  Future<void> _openGeneral(String generalId, {String? skinId}) async {
     final card = await GeneralLoader().findById(generalId);
     if (!mounted || card == null) return;
-    Navigator.of(context).push(detailRoute(GeneralDetailScreen(card: card)));
+    Navigator.of(
+      context,
+    ).push(detailRoute(GeneralDetailScreen(card: card, initialSkinId: skinId)));
   }
 
   @override
@@ -183,7 +187,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _showInviteSheet,
         icon: const Icon(Icons.qr_code_2_rounded),
-        label: const Text('Room QR'),
+        label: const Text('Invite QR'),
       ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 96),
@@ -222,7 +226,7 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              'Tap the Room QR button below to show the QR code and join instructions.',
+                              'Tap the Invite QR button below to show the QR code and join instructions.',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                             const SizedBox(height: 12),
@@ -256,14 +260,22 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const SessionSectionTitle('Roster'),
+                  const SizedBox(height: 12),
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
                     children: [
-                      const Expanded(child: SessionSectionTitle('Roster')),
                       SessionActionButton(
                         label: 'Set My General',
                         icon: Icons.person_search_rounded,
                         primary: true,
                         onPressed: canMutateRoom ? _pickMyGeneral : null,
+                      ),
+                      SessionActionButton(
+                        label: 'Clear',
+                        icon: Icons.person_remove_rounded,
+                        onPressed: canMutateRoom ? _clearMyGeneral : null,
                       ),
                     ],
                   ),
@@ -280,7 +292,10 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
                                 player.generalId,
                       onTap: player.generalId == null
                           ? null
-                          : () => _openGeneral(player.generalId!),
+                          : () => _openGeneral(
+                              player.generalId!,
+                              skinId: player.skinId,
+                            ),
                     ),
                     const SizedBox(height: 10),
                   ],
@@ -294,9 +309,11 @@ class _GameSessionRoomScreenState extends State<GameSessionRoomScreen> {
             runSpacing: 10,
             children: [
               SessionActionButton(
-                label: 'Leave room',
+                label: widget.controller.busy ? 'Leaving...' : 'Leave room',
                 icon: Icons.logout_rounded,
-                onPressed: widget.controller.leaveRoom,
+                onPressed: widget.controller.busy
+                    ? null
+                    : widget.controller.leaveRoom,
               ),
             ],
           ),

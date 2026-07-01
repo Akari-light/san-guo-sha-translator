@@ -16,6 +16,7 @@ class GameSessionQrScannerScreen extends StatefulWidget {
 class _GameSessionQrScannerScreenState
     extends State<GameSessionQrScannerScreen> {
   bool _handledBarcode = false;
+  String? _error;
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +28,54 @@ class _GameSessionQrScannerScreenState
           onPressed: widget.controller.showLauncher,
         ),
       ),
-      body: MobileScanner(
-        onDetect: (capture) async {
-          if (_handledBarcode) return;
-          if (capture.barcodes.isEmpty) return;
-          final raw = capture.barcodes.first.rawValue;
-          if (raw == null || raw.trim().isEmpty) return;
-          _handledBarcode = true;
-          await widget.controller.importInvite(raw.trim());
-          widget.controller.showLauncher();
-        },
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          MobileScanner(
+            onDetect: (capture) async {
+              if (_handledBarcode) return;
+              if (capture.barcodes.isEmpty) return;
+              final raw = capture.barcodes.first.rawValue;
+              if (raw == null || raw.trim().isEmpty) return;
+              setState(() {
+                _handledBarcode = true;
+                _error = null;
+              });
+              await widget.controller.joinByInvite(
+                raw.trim(),
+                widget.controller.scannerDisplayName,
+              );
+              if (!mounted || widget.controller.room != null) return;
+              setState(() {
+                _handledBarcode = false;
+                _error =
+                    widget.controller.error ??
+                    'Could not join room. Check the invite and try again.';
+              });
+            },
+          ),
+          if (_error != null)
+            SafeArea(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: const EdgeInsets.all(18),
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.errorContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    _error!,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onErrorContainer,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

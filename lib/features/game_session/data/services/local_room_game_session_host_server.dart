@@ -2,9 +2,12 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
+
 import '../../domain/models/game_session_player.dart';
 import '../../domain/models/game_session_room.dart';
 import '../../domain/models/pending_session_selection.dart';
+import 'local_room_game_session_invite_codec.dart';
 
 class LocalRoomGameSessionHostServer {
   LocalRoomGameSessionHostServer._(this._server, {required this.hostAddress});
@@ -16,6 +19,10 @@ class LocalRoomGameSessionHostServer {
       shared: true,
     );
     final hostAddress = await _resolvePreferredHostAddress();
+    debugPrint(
+      'Bound local room server on 0.0.0.0:${server.port}; '
+      'advertising $hostAddress:${server.port}',
+    );
     final instance = LocalRoomGameSessionHostServer._(
       server,
       hostAddress: hostAddress,
@@ -28,6 +35,7 @@ class LocalRoomGameSessionHostServer {
   final String hostAddress;
   _LocalRoomState? _state;
   bool _isActiveHost = false;
+  bool _closed = false;
   final List<_Subscriber> _subscribers = <_Subscriber>[];
   final StreamController<GameSessionRoom?> _roomController =
       StreamController<GameSessionRoom?>.broadcast();
@@ -39,6 +47,8 @@ class LocalRoomGameSessionHostServer {
   Stream<GameSessionRoom?> watchRoom() => _roomController.stream;
 
   Future<void> close() async {
+    if (_closed) return;
+    _closed = true;
     final state = _state;
     _state = null;
     _isActiveHost = false;
@@ -50,7 +60,9 @@ class LocalRoomGameSessionHostServer {
     }
     _subscribers.clear();
     await _server.close(force: true);
-    await _roomController.close();
+    if (!_roomController.isClosed) {
+      await _roomController.close();
+    }
   }
 
   Future<GameSessionRoom> createRoom({
@@ -121,17 +133,20 @@ class LocalRoomGameSessionHostServer {
         state.room.status == 'closed') {
       throw StateError('No standby Game Session is available to promote.');
     }
+    final previousCoordinatorPlayerId = state.room.coordinatorPlayerId;
     final updatedPlayers = [
       for (final player in state.room.players)
-        if (player.playerId == localPlayerId)
-          player.copyWith(
-            presence: GameSessionPresence.online,
-            lastSeenAt: DateTime.now(),
-            hostAddress: hostAddress,
-            hostPort: port,
-          )
-        else
-          player,
+        if (player.playerId != previousCoordinatorPlayerId ||
+            player.playerId == localPlayerId)
+          if (player.playerId == localPlayerId)
+            player.copyWith(
+              presence: GameSessionPresence.online,
+              lastSeenAt: DateTime.now(),
+              hostAddress: hostAddress,
+              hostPort: port,
+            )
+          else
+            player,
     ];
     state.room = state.room.copyWith(
       coordinatorPlayerId: localPlayerId,
@@ -187,7 +202,7 @@ class LocalRoomGameSessionHostServer {
   Future<GameSessionRoom> setMyGeneral({
     required String roomCode,
     required String playerId,
-    required String generalId,
+    String? generalId,
     String? skinId,
   }) async {
     final state = _requireOpenState(roomCode);
@@ -198,7 +213,7 @@ class LocalRoomGameSessionHostServer {
     final now = DateTime.now();
     final updatedPlayer = existing.copyWith(
       generalId: generalId,
-      skinId: skinId,
+      skinId: generalId == null ? null : skinId,
       presence: GameSessionPresence.online,
       lastSeenAt: now,
     );
@@ -250,8 +265,7 @@ class LocalRoomGameSessionHostServer {
     }
 
     if (playerId == state.hostPlayerId) {
-      await _closeRoom(state.room.roomCode, keepServerAlive: true);
-      return state.room.copyWith(status: 'closed');
+      return _transferHostOrClose(state, playerId);
     }
 
     final remainingPlayers = [
@@ -283,8 +297,14 @@ class LocalRoomGameSessionHostServer {
   }
 
   Future<void> _serve() async {
-    await for (final request in _server) {
-      unawaited(_handleRequest(request));
+    try {
+      await for (final request in _server) {
+        unawaited(_handleRequest(request));
+      }
+    } catch (_) {
+      if (!_closed) {
+        rethrow;
+      }
     }
   }
 
@@ -364,8 +384,9 @@ class LocalRoomGameSessionHostServer {
     final body = await _readJson(request);
     final roomCode = _requireString(body, 'roomCode').toUpperCase();
     final playerId = _requireString(body, 'playerId');
-    final generalId = _requireString(body, 'generalId');
-    final skinId = body['skinId'] as String?;
+    final clearSelection = body['clear'] == true;
+    final generalId = clearSelection ? null : _requireString(body, 'generalId');
+    final skinId = clearSelection ? null : body['skinId'] as String?;
     _verifyToken(request, roomCode);
     final room = await setMyGeneral(
       roomCode: roomCode,
@@ -464,6 +485,7 @@ class LocalRoomGameSessionHostServer {
     _subscribers.add(subscriber);
     response.done.whenComplete(() {
       _subscribers.remove(subscriber);
+      subscriber.markClosed();
     });
     return true;
   }
@@ -471,17 +493,74 @@ class LocalRoomGameSessionHostServer {
   Future<void> _broadcastRoom() async {
     final state = _state;
     if (state == null || state.room.status == 'closed') return;
-    _roomController.add(state.room);
+    if (!_roomController.isClosed) {
+      _roomController.add(state.room);
+    }
     for (final subscriber in [..._subscribers]) {
+      if (subscriber.isClosed) {
+        _subscribers.remove(subscriber);
+        continue;
+      }
       await subscriber.send('room', state.room.toJson());
+      if (subscriber.isClosed) {
+        _subscribers.remove(subscriber);
+      }
     }
   }
 
   Future<void> _broadcastClosed(String roomCode) async {
-    _roomController.add(null);
-    for (final subscriber in [..._subscribers]) {
-      await subscriber.send('closed', {'roomCode': roomCode});
+    if (!_roomController.isClosed) {
+      _roomController.add(null);
     }
+    for (final subscriber in [..._subscribers]) {
+      if (subscriber.isClosed) {
+        _subscribers.remove(subscriber);
+        continue;
+      }
+      await subscriber.send('closed', {'roomCode': roomCode});
+      if (subscriber.isClosed) {
+        _subscribers.remove(subscriber);
+      }
+    }
+  }
+
+  Future<GameSessionRoom> _transferHostOrClose(
+    _LocalRoomState state,
+    String leavingPlayerId,
+  ) async {
+    final remainingPlayers = [
+      for (final player in state.room.players)
+        if (player.playerId != leavingPlayerId) player,
+    ];
+    final nextHost = _nextTransferHost(remainingPlayers);
+    if (nextHost == null) {
+      await _closeRoom(state.room.roomCode, keepServerAlive: true);
+      return state.room.copyWith(status: 'closed');
+    }
+
+    state.room = state.room.copyWith(
+      revision: state.room.revision + 1,
+      coordinatorPlayerId: nextHost.playerId,
+      players: _orderPlayers(remainingPlayers),
+      status: 'active',
+    );
+    await _broadcastRoom();
+    final transferredRoom = state.room;
+    _state = null;
+    _isActiveHost = false;
+    return transferredRoom;
+  }
+
+  GameSessionPlayer? _nextTransferHost(List<GameSessionPlayer> players) {
+    for (final player in _orderPlayers(players)) {
+      if (player.presence == GameSessionPresence.offline) continue;
+      if (player.hostAddress == null || player.hostPort == null) continue;
+      if (!_isValidAdvertisedEndpoint(player.hostAddress, player.hostPort)) {
+        continue;
+      }
+      return player;
+    }
+    return null;
   }
 
   Future<void> _closeRoom(
@@ -582,6 +661,8 @@ class _LocalRoomState {
 }
 
 class _Subscriber {
+  static const Duration _sseWriteTimeout = Duration(seconds: 2);
+
   _Subscriber(this.response) {
     _heartbeat = Timer.periodic(const Duration(seconds: 15), (_) {
       unawaited(sendHeartbeat());
@@ -590,28 +671,49 @@ class _Subscriber {
 
   final HttpResponse response;
   late final Timer _heartbeat;
+  bool _closed = false;
+  Future<void> _writeQueue = Future<void>.value();
+
+  bool get isClosed => _closed;
 
   Future<void> send(String event, Object? data) async {
-    try {
-      response.write(_sseEvent(event, data));
-      await response.flush();
-    } catch (_) {
-      await close();
-    }
+    await _enqueueWrite(_sseEvent(event, data));
   }
 
   Future<void> sendHeartbeat() async {
-    try {
-      response.write(': keep-alive\n\n');
-      await response.flush();
-    } catch (_) {
-      await close();
-    }
+    await _enqueueWrite(': keep-alive\n\n');
+  }
+
+  Future<void> _enqueueWrite(String value) {
+    if (_closed) return Future<void>.value();
+    final write = _writeQueue.then((_) async {
+      if (_closed) return;
+      try {
+        response.write(value);
+        await response.flush().timeout(_sseWriteTimeout);
+      } catch (_) {
+        await close();
+      }
+    });
+    _writeQueue = write.catchError((_) {});
+    return write;
   }
 
   Future<void> close() async {
+    if (_closed) return;
+    _closed = true;
     _heartbeat.cancel();
-    await response.close().catchError((_) {});
+    try {
+      await response.close().timeout(_sseWriteTimeout);
+    } catch (_) {
+      // The peer may disappear while another SSE write is unwinding.
+    }
+  }
+
+  void markClosed() {
+    if (_closed) return;
+    _closed = true;
+    _heartbeat.cancel();
   }
 }
 
@@ -627,22 +729,73 @@ Future<String> _resolvePreferredHostAddress() async {
       includeLinkLocal: false,
       includeLoopback: false,
     );
-    for (final networkInterface in interfaces) {
+    final candidates = [
+      for (final networkInterface in interfaces)
+        for (final address in networkInterface.addresses)
+          '${networkInterface.name}=${address.address}',
+    ];
+    debugPrint('Local room host address candidates: ${candidates.join(', ')}');
+    final preferredInterfaces = interfaces.toList()
+      ..sort(
+        (left, right) => _hostInterfacePriority(
+          left.name,
+        ).compareTo(_hostInterfacePriority(right.name)),
+      );
+    for (final networkInterface in preferredInterfaces) {
+      if (_isVirtualHostInterface(networkInterface.name)) continue;
       for (final address in networkInterface.addresses) {
         if (_isPrivateIpv4(address.address)) {
           return address.address;
         }
       }
     }
-    for (final networkInterface in interfaces) {
+    for (final networkInterface in preferredInterfaces) {
+      if (_isVirtualHostInterface(networkInterface.name)) continue;
       if (networkInterface.addresses.isNotEmpty) {
         return networkInterface.addresses.first.address;
       }
     }
+    debugPrint(
+      'No non-virtual local room host address found; falling back to loopback.',
+    );
   } catch (_) {
     // Fall back below.
   }
   return InternetAddress.loopbackIPv4.address;
+}
+
+bool _isVirtualHostInterface(String interfaceName) =>
+    _hostInterfacePriority(interfaceName) >= 20;
+
+int _hostInterfacePriority(String interfaceName) {
+  final name = interfaceName.toLowerCase();
+  if (name.contains('vethernet') ||
+      name.contains('virtual') ||
+      name.contains('vpn') ||
+      name.contains('wsl') ||
+      name.contains('default switch') ||
+      name.contains('host-only') ||
+      name.contains('vmware') ||
+      name.contains('vmnet') ||
+      name.contains('virtualbox') ||
+      name.contains('vbox') ||
+      name.contains('hyper-v') ||
+      name.contains('hyperv') ||
+      name.contains('docker') ||
+      name.startsWith('tun') ||
+      name.startsWith('tap')) {
+    return 20;
+  }
+  if (name.contains('wlan') ||
+      name.contains('wifi') ||
+      name.contains('wi-fi') ||
+      name.contains('wireless')) {
+    return 0;
+  }
+  if (name.contains('ethernet') || name.startsWith('eth')) {
+    return 10;
+  }
+  return 15;
 }
 
 bool _isPrivateIpv4(String address) {
@@ -736,11 +889,12 @@ Future<void> _writeJson(HttpResponse response, Object? payload) async {
 
 String _requireInviteToken(String invitePayload) {
   try {
-    final decoded = jsonDecode(
-      utf8.decode(base64Url.decode(base64Url.normalize(invitePayload.trim()))),
+    final invite = const LocalRoomGameSessionInviteCodec().decode(
+      invitePayload,
     );
-    if (decoded is Map && decoded['accessToken'] is String) {
-      return decoded['accessToken'] as String;
+    final accessToken = invite.accessToken;
+    if (accessToken != null && accessToken.isNotEmpty) {
+      return accessToken;
     }
   } catch (_) {
     // The request body already carries the invite payload, so fallback below.

@@ -16,15 +16,6 @@ class LocalRoomGameSessionInviteCodec {
       throw const FormatException('Invite payload is empty.');
     }
 
-    final roomCodePattern = RegExp(r'^[A-Z0-9]{6}$');
-    if (roomCodePattern.hasMatch(trimmed.toUpperCase())) {
-      return GameSessionInvite(
-        roomId: trimmed.toUpperCase(),
-        roomCode: trimmed.toUpperCase(),
-        createdAt: DateTime.now(),
-      );
-    }
-
     final json = utf8.decode(base64Url.decode(base64Url.normalize(trimmed)));
     final map = jsonDecode(json) as Map<String, dynamic>;
     return GameSessionInvite.fromJson(map);
