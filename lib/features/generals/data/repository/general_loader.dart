@@ -21,16 +21,15 @@ class GeneralLoader {
     'assets/data/generals/limit_break.json',
     'assets/data/generals/demon.json',
     'assets/data/generals/god.json',
-    'assets/data/generals/standard.json',         
-    'assets/data/generals/myth_returns.json',     
-    'assets/data/generals/heroes_soul.json',       
-    'assets/data/generals/art_of_war.json',        
-    'assets/data/generals/strategic_assault.json', 
-    'assets/data/generals/doudizhu.json',         
-    'assets/data/generals/others.json',            
-    // 'assets/data/generals/utilities.json',         // Tokens, markers, identity cards, HP cards
+    'assets/data/generals/standard.json',
+    'assets/data/generals/myth_returns.json',
+    'assets/data/generals/heroes_soul.json',
+    'assets/data/generals/art_of_war.json',
+    'assets/data/generals/strategic_assault.json',
+    'assets/data/generals/doudizhu.json',
+    'assets/data/generals/others.json',
+    'assets/data/generals/utilities.json', // Tokens, markers, identity cards, HP cards
   ];
-
 
   static const String _skillsFile = 'assets/data/skills.json';
 
@@ -51,6 +50,7 @@ class GeneralLoader {
   }
 
   Future<List<GeneralCard>> getVariants(String standardId) async {
+    if (standardId.isEmpty) return [];
     final all = await getGenerals();
     return all.where((g) => g.standardId == standardId).toList();
   }
@@ -107,14 +107,16 @@ class GeneralLoader {
         final List<dynamic> data = json.decode(response);
 
         final generals = data
-            .map((json) => GeneralCard.fromJson(
-                  json as Map<String, dynamic>,
-                  skillMap,
-                ))
+            .map(
+              (json) =>
+                  GeneralCard.fromJson(json as Map<String, dynamic>, skillMap),
+            )
             .toList();
 
         all.addAll(generals);
-        debugPrint('[GeneralLoader] Loaded ${generals.length} generals from $filePath');
+        debugPrint(
+          '[GeneralLoader] Loaded ${generals.length} generals from $filePath',
+        );
       } catch (e) {
         debugPrint('[GeneralLoader] Failed to load $filePath: $e');
       }
