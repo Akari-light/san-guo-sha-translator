@@ -284,6 +284,11 @@ class AppTheme {
   static Color codexCardRef(bool isDark)  => isDark ? _codexCardRefDark  : _codexCardRefLight;
   static Color codexSkillRef(bool isDark) => isDark ? _codexSkillRefDark : _codexSkillRefLight;
   static Color codexTokenRef(bool isDark) => isDark ? _codexTokenRefDark : _codexTokenRefLight;
+  static Color referenceTokenText(bool isDark) => codexTokenRef(isDark);
+  static Color referenceTokenFill(bool isDark) =>
+      codexTokenRef(isDark).withValues(alpha: isDark ? 0.12 : 0.08);
+  static Color referenceTokenBorder(bool isDark) =>
+      codexTokenRef(isDark).withValues(alpha: 0.55);
   static Color codexLord(bool isDark) => isDark ? _codexLordDark : _codexLordLight;
   static Color codexLoyalist(bool isDark) => isDark ? _codexLoyalistDark : _codexLoyalistLight;
   static Color codexRebel(bool isDark) => isDark ? _codexRebelDark : _codexRebelLight;
