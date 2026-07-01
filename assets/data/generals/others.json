@@ -1716,7 +1716,26 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "【铸刀】中的“铸刀”装备如何使用？",
+        "a_cn": "“铸刀”装备是蒲元通过【铸刀】获得的专属衍生武器，不加入普通牌堆。按弃置牌的花色决定可获得的武器：红桃为【红缎枪】，方块为【烈淬刀】，黑桃为【混毒弯匕】，梅花为【水波剑】；【天雷刃】只能通过弃置【闪电】获得，且跳过判定。",
+        "q_en": "How do the 「Forged Blade」 Equipment cards from 〖Forge the Blade〗 work?",
+        "a_en": "They are Pu Yuan's exclusive generated weapons and are not added to the normal Draw Pile. The discarded card's suit determines the weapon: Hearts = [Crimson Satin Spear], Diamonds = [Blazeforged Blade], Spades = [Venom Curved Dagger], Clubs = [Rippling Wave Sword]. [Celestial Thunder Blade] can only be gained by discarding [Lightning], and the Judgment is skipped."
+      },
+      {
+        "q_cn": "若对应的“铸刀”装备已经出现过，还能再次获得吗？",
+        "a_cn": "不能。若对应的“铸刀”装备已加入游戏，或判定结果点数大于弃置牌点数，则蒲元改为获得一张【杀】。这些“铸刀”装备进入弃牌堆时移出游戏，不会成为普通弃牌堆中的牌。",
+        "q_en": "Can Pu Yuan gain the same 「Forged Blade」 Equipment again if it has already appeared?",
+        "a_en": "No. If the corresponding 「Forged Blade」 Equipment has already joined the game, or if the Judgment rank is greater than the discarded card's rank, Pu Yuan gains 1 [Kill] instead. These 「Forged Blade」 Equipment cards are removed from the game when they enter the Discard Pile, so they do not become normal discard-pile cards."
+      },
+      {
+        "q_cn": "【天雷刃】具体如何获得？",
+        "a_cn": "发动【铸刀】时，若你弃置的手牌是【闪电】，则不进行判定，直接尝试获得【天雷刃】。若【天雷刃】尚未加入游戏，你获得【天雷刃】；若【天雷刃】已经加入游戏，则改为获得一张【杀】。【天雷刃】不是通过弃置黑桃牌、判定出黑桃牌或普通“铸刀”花色对应关系获得的。",
+        "q_en": "How exactly do you gain [Celestial Thunder Blade]?",
+        "a_en": "When you activate 〖Forge the Blade〗, if the hand card you discard is [Lightning], do not perform a Judgment and directly attempt to gain [Celestial Thunder Blade]. If [Celestial Thunder Blade] has not joined the game, you gain it; if it has already joined the game, gain 1 [Kill] instead. [Celestial Thunder Blade] is not gained by discarding a Spade card, revealing a Spade Judgment, or through the normal suit-to-weapon mapping."
+      }
+    ],
     "skills": [
       "skill_master_craftsman",
       "skill_forge_the_blade"
@@ -1742,7 +1761,32 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "【神工】锻造出的装备来自哪里？",
+        "a_cn": "“神工”装备来自独立的“神工锻造库”，不加入普通牌堆，也不能被【奇思】从牌堆或弃牌堆获得。弃置武器牌会锻造“神工”武器，弃置防具牌会锻造“神工”防具，弃置坐骑牌或宝物牌会锻造“神工”宝物。锻造结束后，蒲元从本次锻造出的牌中选择一张置入一名角色的装备区。",
+        "q_en": "Where do the 「Divine Craft」 Equipment cards come from?",
+        "a_en": "They come from a separate 「Divine Craft forge pool」, not from the normal Draw Pile, and 〖Inspired Design〗 cannot take them from the Draw Pile or Discard Pile. Discarding a Weapon forges 「Divine Craft」 Weapons, discarding Armor forges 「Divine Craft」 Armor, and discarding a Mount or Treasure forges 「Divine Craft」 Treasures. After the forge, Pu Yuan chooses 1 of the forged cards and places it into a character's Equipment Zone."
+      },
+      {
+        "q_cn": "只有一张【助力点数】和一张【妨害点数】实体牌时，锻造时怎么使用？",
+        "a_cn": "这两张牌不是要分发或消耗的牌，而是本次锻造的小计分牌。蒲元发动【神工】后，蒲元默认助力，其他角色依次选择助力、妨害或不参与；每名选择助力或妨害的角色亮出牌堆顶一张牌。将助力一方亮出牌的点数合计记录在【助力点数】上，将妨害一方亮出牌的点数合计记录在【妨害点数】上。一次锻造结算完后，这两个点数清零，下次锻造重新计算。",
+        "q_en": "If I only own one [Assist Points] card and one [Obstruct Points] card, how are they used during forging?",
+        "a_en": "They are not dealt out or spent; they are score cards for the current forge only. After Pu Yuan activates 〖Divine Craft〗, Pu Yuan assists by default, and each other character chooses to assist, obstruct, or abstain. Each assisting or obstructing character reveals the top card of the Draw Pile. Record the total ranks of assisting revealed cards on [Assist Points], and the total ranks of obstructing revealed cards on [Obstruct Points]. After that forge resolves, both totals reset to 0 and are recalculated for the next forge."
+      },
+      {
+        "q_cn": "【助力点数】和【妨害点数】如何决定锻造结果？",
+        "a_cn": "若无人妨害，本次为完美锻造，蒲元从3张对应副类别的“神工”装备中选择1张；若有人妨害且助力点数大于或等于妨害点数，本次为锻造成功，蒲元从2张对应副类别的“神工”装备中选择1张；若助力点数小于妨害点数，本次为锻造失败，蒲元只获得1张对应副类别的“神工”装备并将其置入一名角色的装备区。",
+        "q_en": "How do [Assist Points] and [Obstruct Points] determine the forge result?",
+        "a_en": "If nobody obstructs, it is a perfect forge and Pu Yuan chooses 1 from 3 eligible 「Divine Craft」 Equipment cards. If at least one character obstructs and Assist Points are greater than or equal to Obstruct Points, the forge succeeds and Pu Yuan chooses 1 from 2 eligible cards. If Assist Points are lower than Obstruct Points, the forge fails and Pu Yuan gets only 1 eligible 「Divine Craft」 Equipment card, then places it into a character's Equipment Zone."
+      },
+      {
+        "q_cn": "“神工”装备离开装备区后一定会移出游戏吗？",
+        "a_cn": "按实体牌文字，若“神工”装备于本回合移出游戏，蒲元在该回合结束时摸一张牌。线上规则进一步说明：以【神工】获得的装备进入弃牌堆时会被销毁/移出游戏；若它被其他效果移动到牌堆顶、手牌等非弃牌堆区域，则不会因此立刻销毁。",
+        "q_en": "Does a 「Divine Craft」 Equipment always leave the game after leaving the Equipment Zone?",
+        "a_en": "The printed card says Pu Yuan draws 1 card at that turn's end if a 「Divine Craft」 Equipment left the game during that turn. Online rules clarify that Equipment gained through 〖Divine Craft〗 is destroyed/removed from the game when it enters the Discard Pile. If another effect moves it to a non-discard zone, such as the top of the Draw Pile or a hand, it is not immediately destroyed for that reason."
+      }
+    ],
     "skills": [
       "skill_divine_craft",
       "skill_inspired_design"
@@ -1976,7 +2020,20 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "2026珍藏版中的「天候」牌有什么用途？",
+        "a_cn": "「天候」牌是周群发动〖天候〗时使用的实体提示/速查牌，不加入普通牌堆，也不作为基本牌、锦囊牌或装备牌使用。周群发动〖天候〗后，按展示牌花色令一名角色获得对应天气技能：红桃为〖烈暑〗，方块为〖凝雾〗，黑桃为〖骤雨〗，梅花为〖严霜〗；「天候」牌用于提醒当前天气技能及其效果。",
+        "q_en": "What is the 「Weather」 card in the 2026 Collector's Edition used for?",
+        "a_en": "The 「Weather」 card is a physical reminder/reference card used with Zhou Qun's 〖Weather Forecast〗. It is not added to the normal Draw Pile and is not used as a Basic, Tool, or Equipment card. After Zhou Qun activates 〖Weather Forecast〗, the shown card's suit gives one character the matching weather skill: Hearts = 〖Blazing Summer〗, Diamonds = 〖Freezing Fog〗, Spades = 〖Sudden Rain〗, Clubs = 〖Bitter Frost〗. The 「Weather」 card is used to remind players which weather skill is currently relevant and what it does."
+      }
+    ],
+    "reference_tokens": [
+      {
+        "name_cn": "天候",
+        "name_en": "Weather"
+      }
+    ],
     "skills": [
       "skill_weather_forecast",
       "skill_prophetic_words",

@@ -16,6 +16,9 @@ class GeneralCard {
   final Expansion expansion;
   final List<SkillDTO> skills;
   final List<Map<String, String>> faq;
+  final List<String> sourceSkillIds;
+  final List<String> aliases;
+  final List<Map<String, String>> referenceTokens;
 
   const GeneralCard({
     required this.id,
@@ -31,6 +34,9 @@ class GeneralCard {
     required this.expansion,
     required this.skills,
     this.faq = const [],
+    this.sourceSkillIds = const [],
+    this.aliases = const [],
+    this.referenceTokens = const [],
   });
 
   factory GeneralCard.fromJson(
@@ -42,31 +48,39 @@ class GeneralCard {
     final rawSkills = json['skills'] as List? ?? [];
 
     return GeneralCard(
-      id:          json['id']          as String,
-      standardId:  json['standard_id'] as String,
-      nameCn:      json['name_cn']     as String,
-      nameEn:      json['name_en']     as String,
-      gender:      json['gender']      as String,
-      faction:     json['faction']     as String,
-      health:      json['health']      as int,
-      powerIndex:  (json['power_index'] as num).toDouble(),
-      traitsCn:    List<String>.from(json['traits_cn'] ?? []),
-      traitsEn:    List<String>.from(json['traits_en'] ?? []),
-      expansion:   Expansion.fromString(json['expansion'] as String),
+      id: json['id'] as String,
+      standardId: json['standard_id'] as String,
+      nameCn: json['name_cn'] as String,
+      nameEn: json['name_en'] as String,
+      gender: json['gender'] as String,
+      faction: json['faction'] as String,
+      health: json['health'] as int,
+      powerIndex: (json['power_index'] as num).toDouble(),
+      traitsCn: List<String>.from(json['traits_cn'] ?? []),
+      traitsEn: List<String>.from(json['traits_en'] ?? []),
+      expansion: Expansion.fromString(json['expansion'] as String),
       // Skills are inline objects — parse each one directly.
       // Entries that are plain strings (legacy skill IDs) are looked up in
       // skillMap as a fallback so older data files don't break.
-      skills: rawSkills.map<SkillDTO?>((entry) {
-        if (entry is Map<String, dynamic>) {
-          // Inline skill object — preferred format
-          return SkillDTO.fromJson('inline', entry);
-        } else if (entry is String) {
-          // Legacy: skill ID string referencing skills.json
-          return skillMap[entry];
-        }
-        return null;
-      }).whereType<SkillDTO>().toList(),
+      skills: rawSkills
+          .map<SkillDTO?>((entry) {
+            if (entry is Map<String, dynamic>) {
+              // Inline skill object — preferred format
+              return SkillDTO.fromJson('inline', entry);
+            } else if (entry is String) {
+              // Legacy: skill ID string referencing skills.json
+              return skillMap[entry];
+            }
+            return null;
+          })
+          .whereType<SkillDTO>()
+          .toList(),
       faq: (json['faq'] as List? ?? [])
+          .map((item) => Map<String, String>.from(item as Map))
+          .toList(),
+      sourceSkillIds: List<String>.from(json['source_skill_ids'] ?? []),
+      aliases: List<String>.from(json['aliases'] ?? []),
+      referenceTokens: (json['reference_tokens'] as List? ?? [])
           .map((item) => Map<String, String>.from(item as Map))
           .toList(),
     );
@@ -89,7 +103,13 @@ class GeneralCard {
 
     if (FuzzyMatcher.fuzzyMatch(query, nameEn)) return true;
     if (FuzzyMatcher.fuzzyMatch(query, nameCn)) return true;
-    if (skills.any((s) => FuzzyMatcher.fuzzyMatch(query, s.nameEn) ||  FuzzyMatcher.fuzzyMatch(query, s.nameCn))) return true;
+    if (skills.any(
+      (s) =>
+          FuzzyMatcher.fuzzyMatch(query, s.nameEn) ||
+          FuzzyMatcher.fuzzyMatch(query, s.nameCn),
+    )) {
+      return true;
+    }
     return false;
   }
 
@@ -108,13 +128,20 @@ class GeneralCard {
   // ── Faction
   String get factionCn {
     switch (faction) {
-      case 'Shu':       return '蜀';
-      case 'Wei':       return '魏';
-      case 'Wu':        return '吴';
-      case 'Qun':       return '群';
-      case 'God':       return '神';
-      case 'Utilities': return '工具';
-      default:          return faction;
+      case 'Shu':
+        return '蜀';
+      case 'Wei':
+        return '魏';
+      case 'Wu':
+        return '吴';
+      case 'Qun':
+        return '群';
+      case 'God':
+        return '神';
+      case 'Utilities':
+        return '工具';
+      default:
+        return faction;
     }
   }
 

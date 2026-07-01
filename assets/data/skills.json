@@ -1171,12 +1171,12 @@
     "description_en": "Once per Play Phase: you may give all your hand cards to another character. During that character's next turn, their Hand Limit +1, and they may use 1 additional [Kill] during their Play Phase."
   },
   "skill_rise_and_fall": {
-    "skill_type": "limited",
+    "skill_type": "lord",
     "name_cn": "兴衰",
     "name_en": "Rise and Fall",
     "description_cn": "主公技，限定技，当你进入濒死状态时，你可令其他魏势力角色依次选择是否令你回复1点体力。选择是的角色在此次濒死结算结束后受到1点伤害",
     "description_en": "Lord Skill, Limited Skill: When you enter the Verge of Death State, you may have other Wei faction characters each in turn choose whether to have you recover 1 HP. Each character who chose yes takes 1 damage after this Verge of Death Resolution ends.",
-    "skill_type_secondary": "lord"
+    "skill_type_secondary": "limited"
   },
   "skill_thousand_steeds": {
     "skill_type": "locked",
@@ -4555,29 +4555,29 @@
     "skill_type": "active",
     "name_cn": "天匠",
     "name_en": "Master Craftsman",
-    "description_cn": "游戏开始时，你获得牌堆中两张副类别不同的装备牌并置入你的装备区；出牌阶段，你可以将你装备区里的牌置入其他角色的装备区(替换原有装备)，若此牌为 “铸刃”装备，你摸两张牌。",
-    "description_en": "Game start: take 2 Equipment cards of different sub-types from the Draw Pile and equip them. During your Play Phase, move any of your Equipment into another character's Equipment Zone (replacing existing); if it is a 「Forged Blade」, draw 2 cards."
+    "description_cn": "游戏开始时，你获得牌堆中两张副类别不同的装备牌并置入你的装备区；出牌阶段，你可以将你装备区里的牌置入其他角色的装备区（替换原有装备），若此牌为“铸刀”装备，你摸两张牌。",
+    "description_en": "Game start: gain 2 Equipment cards with different sub-categories from the Draw Pile and place them into your Equipment Zone. During your Play Phase, you may place a card in your Equipment Zone into another character's Equipment Zone (replacing their existing equipment). If that card is a 「Forged Blade」 Equipment, draw 2 cards."
   },
   "skill_forge_the_blade": {
     "skill_type": "active",
-    "name_cn": "铸刃",
+    "name_cn": "铸刀",
     "name_en": "Forge the Blade",
-    "description_cn": "出牌阶段限一次，你可以弃置一张手牌并进行判定，若结果点数不大于你弃置牌的点数，你获得一张与你弃置牌花色相同的“铸刀”装备，若此牌已加入游戏或结果点数大于你弃置牌的点数，你获得一张【杀】(【天雷刃】须弃置【闪电】获得且跳过判定)。",
-    "description_en": "Once per Play Phase: you may discard 1 hand card and perform a Judgment. If the result's rank is not greater than the discarded card's rank, gain a 「Forged Blade」 weapon of the same suit. If that weapon is already in play, or the result's rank is greater, gain a [Kill] instead. ([Celestial Thunder Blade] must be gained by discarding a [Lightning] and skipping the Judgment.)"
+    "description_cn": "出牌阶段限一次，你可以弃置一张手牌并进行判定，若结果点数不大于你弃置牌的点数，你获得一张与你弃置牌花色相同的“铸刀”装备，若此牌已加入游戏或结果点数大于你弃置牌的点数，你获得一张【杀】（【天雷刃】须弃置【闪电】获得且跳过判定）。",
+    "description_en": "Once per Play Phase: you may discard 1 hand card and perform a Judgment. If the result's rank is not greater than the discarded card's rank, gain a 「Forged Blade」 Equipment with the same suit as the discarded card. If that card has already joined the game, or if the result's rank is greater than the discarded card's rank, gain 1 [Kill]. ([Celestial Thunder Blade] must be gained by discarding [Lightning] and skipping the Judgment.)"
   },
   "skill_divine_craft": {
     "skill_type": "active",
     "name_cn": "神工",
     "name_en": "Divine Craft",
-    "description_cn": "出牌阶段各限一次，你可以弃置一张武器牌/防具牌/坐骑牌或宝物牌，并进行锻造，然后将一张“神工”武器 /防具/完物置入一名角色的装备区(替换原有装备)；每回台结束时，若“神工”装备于本回合移出游戏，你摸一张牌。",
-    "description_en": "Once per Equipment type per Play Phase: Discard 1 Weapon/Armor/Mount/Treasure card and forge — place a 「Divine Craft」 Equipment of that type into a character's zone. At the end of each turn, if a 「Divine Craft」 Equipment left the game this turn, draw 1 card."
+    "description_cn": "出牌阶段各限一次，你可以弃置一张武器牌/防具牌/坐骑牌或宝物牌，并进行锻造，然后将一张“神工”武器/防具/宝物置入一名角色的装备区（替换原有装备）；每回合结束时，若“神工”装备于本回合移出游戏，你摸一张牌。",
+    "description_en": "Once per Play Phase for each listed category: you may discard 1 Weapon/Armor/Mount/Treasure card and forge, then place 1 「Divine Craft」 Weapon/Armor/Treasure into a character's Equipment Zone (replacing their existing equipment). At the end of each turn, if a 「Divine Craft」 Equipment left the game this turn, draw 1 card."
   },
   "skill_inspired_design": {
     "skill_type": "active",
     "name_cn": "奇思",
     "name_en": "Inspired Design",
-    "description_cn": "游戏开始时，你获得牌堆中两张副类别不同的装备牌并置入你的装备区；摸牌阶段，你可以少摸一张牌，并获得牌堆或弃牌堆中一张任意副类别的装备牌",
-    "description_en": "Game start: take 2 Equipment cards of different sub-types from the Draw Pile and equip them. Draw Phase: you may draw 1 fewer card and instead take any 1 Equipment from the Draw Pile or Discard Pile."
+    "description_cn": "游戏开始时，你获得牌堆中两张副类别不同的装备牌并置入你的装备区；摸牌阶段，你可以少摸一张牌，并获得牌堆或弃牌堆中一张任意副类别的装备牌。",
+    "description_en": "Game start: gain 2 Equipment cards with different sub-categories from the Draw Pile and place them into your Equipment Zone. During your Draw Phase, you may draw 1 fewer card and gain 1 Equipment card of any sub-category from the Draw Pile or Discard Pile."
   },
   "skill_measured_comfort": {
     "skill_type": "active",
@@ -7593,5 +7593,40 @@
     "name_en": "Impartial Clarity",
     "description_cn": "锁定技，当你受到伤害时，若伤害来源的攻击范围：小于3，此伤害改为1；大于3，此伤害+1。",
     "description_en": "Locked Skill: When you take damage, if the Attack Range of the damage source is: less than 3 — reduce that damage to 1; greater than 3 — that damage +1."
+  },
+  "skill_token_assist_points": {
+    "skill_type": "active",
+    "name_cn": "助力点数",
+    "name_en": "Assist Points",
+    "description_cn": "【神工】锻造时使用的计分牌。记录本次锻造中助力一方亮出牌的点数合计；本次锻造结算完后清零。",
+    "description_en": "Score card used during 〖Divine Craft〗 forging. Record the total ranks of cards revealed by the assisting side for this forge; reset it after this forge resolves."
+  },
+  "skill_token_obstruct_points": {
+    "skill_type": "active",
+    "name_cn": "妨害点数",
+    "name_en": "Obstruct Points",
+    "description_cn": "【神工】锻造时使用的计分牌。记录本次锻造中妨害一方亮出牌的点数合计；本次锻造结算完后清零。",
+    "description_en": "Score card used during 〖Divine Craft〗 forging. Record the total ranks of cards revealed by the obstructing side for this forge; reset it after this forge resolves."
+  },
+  "skill_token_heavy_blow": {
+    "skill_type": "active",
+    "name_cn": "重拳",
+    "name_en": "Heavy Blow",
+    "description_cn": "【花拳】秘密选择的效果之一：造成的伤害+1。",
+    "description_en": "One secret option chosen for 〖Ornamental Fist〗: damage dealt +1."
+  },
+  "skill_token_light_blow": {
+    "skill_type": "active",
+    "name_cn": "轻拳",
+    "name_en": "Light Blow",
+    "description_cn": "【花拳】秘密选择的效果之一：使用后你摸一张牌。",
+    "description_en": "One secret option chosen for 〖Ornamental Fist〗: after the card resolves, you draw 1 card."
+  },
+  "skill_token_drill_enforcement": {
+    "skill_type": "active",
+    "name_cn": "整肃",
+    "name_en": "Drill Enforcement",
+    "description_cn": "选择擂进、变阵、鸣止中的一项令目标执行。若其于其回合内弃牌阶段结束后未整肃失败，则选择整肃奖励：摸两张牌或回复1点体力。擂进：出牌阶段内，使用的所有牌点数需递增且至少使用三张牌。变阵：出牌阶段内，使用的所有牌花色需相同且至少使用两张牌。鸣止：弃牌阶段内，弃置的所有牌花色均不同且至少弃置两张牌。",
+    "description_en": "Choose one Drill task: Advancing Ranks, Formation Change, or Sound the Halt. If the target has not failed the Drill by the end of their Discard Phase this turn, they choose a Drill reward: draw 2 cards or recover 1 HP. Advancing Ranks: during the Play Phase, all used cards must have strictly increasing ranks and at least 3 cards must be used. Formation Change: during the Play Phase, all used cards must share one suit and at least 2 cards must be used. Sound the Halt: during the Discard Phase, all discarded cards must have different suits and at least 2 cards must be discarded."
   }
 }

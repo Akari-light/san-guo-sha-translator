@@ -16,6 +16,8 @@ import '../../../game_session/presentation/screens/game_session_shell_screen.dar
 import '../../../library/data/repository/library_loader.dart';
 import '../../../library/presentation/screens/library_detail_screen.dart';
 import '../../../reference/services/resolver_service.dart';
+import '../../../reference/presentation/widgets/reference_sheet.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 
 class GeneralDetailScreen extends StatefulWidget {
   final GeneralCard card;
@@ -96,8 +98,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
         ..sort((a, b) => a.expansion.index.compareTo(b.expansion.index));
       _variantsLoading = false;
       _isPinned = results[1] as bool;
-      _refsCn = results[2] as List<ResolvedReference>;
-      _refsEn = results[3] as List<ResolvedReference>;
+      _refsCn = _withGeneralReferenceTokens(
+        results[2] as List<ResolvedReference>,
+        isChinese: true,
+      );
+      _refsEn = _withGeneralReferenceTokens(
+        results[3] as List<ResolvedReference>,
+        isChinese: false,
+      );
       _refsLoading = false;
       _skins = results[4] as List<SkinDTO>;
       _skinIndex = _resolveInitialSkinIndex(_skins);
@@ -127,10 +135,38 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     ]);
     if (!mounted) return;
     setState(() {
-      _refsCn = results[0];
-      _refsEn = results[1];
+      _refsCn = _withGeneralReferenceTokens(results[0], isChinese: true);
+      _refsEn = _withGeneralReferenceTokens(results[1], isChinese: false);
       _refsLoading = false;
     });
+  }
+
+  List<ResolvedReference> _withGeneralReferenceTokens(
+    List<ResolvedReference> refs, {
+    required bool isChinese,
+  }) {
+    if (_activeCard.referenceTokens.isEmpty) return refs;
+
+    final merged = List<ResolvedReference>.from(refs);
+    final seen = {
+      for (final ref in merged)
+        '${ref.type.name}:${ref.id ?? (isChinese ? ref.nameCn : ref.nameEn)}',
+    };
+
+    for (final token in _activeCard.referenceTokens) {
+      final nameCn = token['name_cn'] ?? token['name_en'] ?? '';
+      final nameEn = token['name_en'] ?? token['name_cn'] ?? '';
+      if (nameCn.trim().isEmpty && nameEn.trim().isEmpty) continue;
+
+      final ref = ResolvedReference.fromNamedToken(
+        nameCn: nameCn,
+        nameEn: nameEn,
+      );
+      final key = '${ref.type.name}:${isChinese ? ref.nameCn : ref.nameEn}';
+      if (seen.add(key)) merged.add(ref);
+    }
+
+    return merged;
   }
 
   Future<void> _loadSkins() async {
@@ -234,6 +270,14 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
     await RecentlyViewedService.instance.record(id, RecordType.library);
     if (!mounted) return;
     Navigator.of(context).push(detailRoute(LibraryDetailScreen(card: card)));
+  }
+
+  Future<void> _openGeneralReference(String id) async {
+    final card = await GeneralLoader().findById(id);
+    if (!mounted || card == null) return;
+    await RecentlyViewedService.instance.record(id, RecordType.general);
+    if (!mounted) return;
+    Navigator.of(context).push(detailRoute(GeneralDetailScreen(card: card)));
   }
 
   //  Build
@@ -441,6 +485,9 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                   return _RelatedTokenChip(
                     label: _isEnglish ? ref.nameEn : ref.nameCn,
                     isDark: isDark,
+                    onTap: ref.id == null
+                        ? null
+                        : () => _openGeneralReference(ref.id!),
                   );
                 }).toList(),
               ),
@@ -1698,6 +1745,17 @@ class _FaqRow extends StatefulWidget {
 class _FaqRowState extends State<_FaqRow> {
   bool _open = false;
 
+  Future<void> _showReference(String bracketText, bool isChinese) async {
+    final isDark = widget.theme.brightness == Brightness.dark;
+    await ReferenceSheet.show(
+      context: context,
+      bracketText: bracketText,
+      isChinese: isChinese,
+      isDark: isDark,
+      showChinese: !widget.isEnglish,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final q = widget.isEnglish
@@ -1728,9 +1786,11 @@ class _FaqRowState extends State<_FaqRow> {
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: InlineSuitText(
+                  child: ReferenceText(
                     text: q,
                     isDark: widget.theme.brightness == Brightness.dark,
+                    isChineseText: !widget.isEnglish,
+                    onReferenceTap: _showReference,
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.6,
@@ -1756,9 +1816,11 @@ class _FaqRowState extends State<_FaqRow> {
           firstChild: const SizedBox.shrink(),
           secondChild: Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 12),
-            child: InlineSuitText(
+            child: ReferenceText(
               text: a,
               isDark: widget.theme.brightness == Brightness.dark,
+              isChineseText: !widget.isEnglish,
+              onReferenceTap: _showReference,
               style: TextStyle(
                 fontSize: 14,
                 height: 1.6,
@@ -2000,13 +2062,18 @@ class _RelatedSkillChip extends StatelessWidget {
 class _RelatedTokenChip extends StatelessWidget {
   final String label;
   final bool isDark;
+  final VoidCallback? onTap;
 
-  const _RelatedTokenChip({required this.label, required this.isDark});
+  const _RelatedTokenChip({
+    required this.label,
+    required this.isDark,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     final color = AppTheme.referenceTokenText(isDark);
-    return Container(
+    final child = Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
         color: AppTheme.referenceTokenFill(isDark),
@@ -2026,8 +2093,18 @@ class _RelatedTokenChip extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
+          if (onTap != null) ...[
+            const SizedBox(width: 4),
+            Icon(Icons.arrow_forward_ios_rounded, size: 10, color: color),
+          ],
         ],
       ),
+    );
+    if (onTap == null) return child;
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: child,
     );
   }
 }

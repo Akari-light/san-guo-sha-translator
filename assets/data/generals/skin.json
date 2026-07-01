@@ -96,6 +96,12 @@
     "name_en": "Pu Yuan · Skin"
   },
   {
+    "id": "TOKEN_ZhengNan_skin1",
+    "base_id": "TOKEN_ZhengNan",
+    "name_cn": "鲍三娘 · 征南",
+    "name_en": "Bao Sanniang · Conquer the South"
+  },
+  {
     "id": "SP_WEI062_skin1",
     "base_id": "SP_WEI062",
     "name_cn": "劉曄·皮肤",
