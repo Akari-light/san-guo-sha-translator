@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../domain/contracts/game_session_repository.dart';
@@ -27,7 +28,6 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
       StreamController<GameSessionRoom?>.broadcast();
   final StreamController<GameSessionConnectionState> _connectionController =
       StreamController<GameSessionConnectionState>.broadcast();
-  final Map<String, String> _cachedInvitesByRoomCode = <String, String>{};
   final Random _random = Random.secure();
 
   LocalRoomGameSessionHostServer? _hostServer;
@@ -39,6 +39,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
   GameSessionInvite? _activeInvite;
   String? _localPlayerId;
   bool _isSuspended = false;
+  bool _isRecoveringClientWatch = false;
   int _sessionEpoch = 0;
   Future<void> _operationQueue = Future<void>.value();
   GameSessionConnectionState _connection = GameSessionConnectionState.idle;
@@ -58,13 +59,6 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
 
   @override
   bool get hasActiveSession => _currentRoom != null;
-
-  @override
-  String? get activeRoomCode => _currentRoom?.roomCode;
-
-  @override
-  String? get activeInvitePayload =>
-      _currentRoom?.invitePayload ?? _invitePayloadForActiveInvite;
 
   @override
   Future<GameSessionRoom> createRoom({
@@ -105,7 +99,6 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
         _hostServer = hostServer;
         _localPlayerId = playerId;
         _activeInvite = invite;
-        _cachedInvitesByRoomCode[invite.roomCode] = invitePayload;
         await _startHostWatch(hostServer);
         _applyRoom(room, status: GameSessionConnectionStatus.hosting);
         return room;
@@ -129,8 +122,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     PendingSessionSelection? pendingSelection,
   }) async {
     return _runExclusive(() async {
-      await cacheInvitePayload(invitePayload);
-      final invite = decodeInvite(invitePayload);
+      final invite = _decodeInvite(invitePayload);
       await _clearSession(closeConnections: true);
       _emitConnection(
         const GameSessionConnectionState(
@@ -163,52 +155,21 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
           await _setPresence(GameSessionPresence.away);
         }
         return room;
-      } catch (_) {
+      } catch (error) {
         await client.close();
         await standbyServer.close();
+        final message = _diagnosticMessage('Could not join room', error);
+        debugPrint('[GameSession] $message');
         _emitConnection(
-          const GameSessionConnectionState(
+          GameSessionConnectionState(
             status: GameSessionConnectionStatus.failed,
-            message: 'Could not join room.',
+            message: message,
+            updatedAt: DateTime.now(),
           ),
         );
         rethrow;
       }
     });
-  }
-
-  @override
-  Future<GameSessionRoom> joinFromRoomCode({
-    required String roomCode,
-    required String displayName,
-    PendingSessionSelection? pendingSelection,
-  }) async {
-    final normalizedRoomCode = roomCode.trim().toUpperCase();
-    if (normalizedRoomCode.isEmpty) {
-      throw StateError('Enter a room code first.');
-    }
-
-    final invitePayload = _cachedInvitesByRoomCode[normalizedRoomCode];
-    if (invitePayload == null || invitePayload.trim().isEmpty) {
-      throw StateError(
-        'Room code alone only works after you have scanned or imported the host room invite on this device.',
-      );
-    }
-
-    return joinFromInvite(
-      invitePayload: invitePayload,
-      displayName: displayName,
-      pendingSelection: pendingSelection,
-    );
-  }
-
-  @override
-  Future<void> cacheInvitePayload(String invitePayload) async {
-    final invite = decodeInvite(invitePayload);
-    if (invite.roomCode.isEmpty) {
-      throw StateError('This room invite is not valid.');
-    }
-    _cachedInvitesByRoomCode[invite.roomCode] = invitePayload.trim();
   }
 
   @override
@@ -233,6 +194,27 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
         generalId: generalId,
         skinId: skinId,
       );
+      _applyRoom(nextRoom, status: GameSessionConnectionStatus.connected);
+    });
+  }
+
+  @override
+  Future<void> clearMyGeneral() async {
+    return _runExclusive(() async {
+      final room = _requireRoom();
+      final playerId = await _ensurePlayerId();
+
+      if (_isHostingRoom) {
+        final nextRoom = await _hostServer!.setMyGeneral(
+          roomCode: room.roomCode,
+          playerId: playerId,
+        );
+        _applyRoom(nextRoom, status: GameSessionConnectionStatus.hosting);
+        return;
+      }
+
+      final client = _requireClient();
+      final nextRoom = await client.clearMyGeneral();
       _applyRoom(nextRoom, status: GameSessionConnectionStatus.connected);
     });
   }
@@ -319,17 +301,10 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     });
   }
 
-  @override
-  GameSessionInvite decodeInvite(String invitePayload) =>
+  GameSessionInvite _decodeInvite(String invitePayload) =>
       _inviteCodec.decode(invitePayload);
 
   bool get _isHostingRoom => _hostServer != null && _currentRoom != null;
-
-  String? get _invitePayloadForActiveInvite {
-    final invite = _activeInvite;
-    if (invite == null) return null;
-    return _inviteCodec.encode(invite);
-  }
 
   Future<void> _startClientWatch(LocalRoomGameSessionClient client) async {
     await _stopClientWatch(closeClient: false);
@@ -376,12 +351,13 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
   }
 
   Future<void> _stopClientWatch({required bool closeClient}) async {
-    await _clientWatchSubscription?.cancel();
+    final subscription = _clientWatchSubscription;
     _clientWatchSubscription = null;
     if (closeClient) {
       await _client?.close();
       _client = null;
     }
+    await subscription?.cancel();
   }
 
   Future<void> _setPresence(GameSessionPresence presence) async {
@@ -411,8 +387,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
   }) {
     _currentRoom = room;
     if (!preserveActiveInvite && room.invitePayload.trim().isNotEmpty) {
-      _cachedInvitesByRoomCode[room.roomCode] = room.invitePayload.trim();
-      _activeInvite = decodeInvite(room.invitePayload);
+      _activeInvite = _decodeInvite(room.invitePayload);
     }
     unawaited(_refreshStandbyRoom(room));
     _controller.add(room);
@@ -436,6 +411,12 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     bool emitIdle = true,
   }) async {
     _sessionEpoch += 1;
+    _currentRoom = null;
+    _activeInvite = null;
+    _controller.add(null);
+    if (emitIdle) {
+      _emitConnection(GameSessionConnectionState.idle);
+    }
     if (closeConnections) {
       await _hostWatchSubscription?.cancel();
       _hostWatchSubscription = null;
@@ -453,64 +434,63 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     } else {
       await _stopClientWatch(closeClient: false);
     }
-    _currentRoom = null;
-    _activeInvite = null;
-    _controller.add(null);
-    if (emitIdle) {
-      _emitConnection(GameSessionConnectionState.idle);
-    }
   }
 
   Future<void> _handleRoomClosed(int epoch) async {
     if (epoch != _sessionEpoch) return;
+    await _clearSession(closeConnections: true, emitIdle: false);
     _emitConnection(
       GameSessionConnectionState(
         status: GameSessionConnectionStatus.closed,
-        room: _currentRoom,
         message: 'Host closed the room.',
         updatedAt: DateTime.now(),
       ),
     );
-    await _clearSession(closeConnections: true, emitIdle: false);
   }
 
   Future<void> _recoverClientWatchLoss(int epoch) async {
     if (epoch != _sessionEpoch || _isHostingRoom || _isSuspended) return;
-    final client = _client;
-    if (client == null) return;
+    if (_isRecoveringClientWatch) return;
+    _isRecoveringClientWatch = true;
+    try {
+      final client = _client;
+      if (client == null) return;
 
-    for (var attempt = 1; attempt <= 3; attempt += 1) {
-      if (epoch != _sessionEpoch || _isSuspended) return;
-      _emitConnection(
-        GameSessionConnectionState(
-          status: GameSessionConnectionStatus.reconnecting,
-          room: _currentRoom,
-          retryAttempt: attempt,
-          message: 'Reconnecting to host...',
-          updatedAt: DateTime.now(),
-        ),
-      );
-      await Future<void>.delayed(Duration(milliseconds: 350 * attempt));
-      try {
-        final room = await client.fetchRoom();
+      for (var attempt = 1; attempt <= 3; attempt += 1) {
         if (epoch != _sessionEpoch || _isSuspended) return;
-        if (room == null) {
-          await _handleRoomClosed(epoch);
-          return;
-        }
-        _applyRoom(
-          room,
-          status: GameSessionConnectionStatus.connected,
-          message: 'Reconnected.',
+        _emitConnection(
+          GameSessionConnectionState(
+            status: GameSessionConnectionStatus.reconnecting,
+            room: _currentRoom,
+            retryAttempt: attempt,
+            message: 'Reconnecting to host...',
+            updatedAt: DateTime.now(),
+          ),
         );
-        await _startClientWatch(client);
-        return;
-      } catch (_) {
-        // Try again or fall through to host handoff.
+        await Future<void>.delayed(Duration(milliseconds: 350 * attempt));
+        try {
+          final room = await client.fetchRoom();
+          if (epoch != _sessionEpoch || _isSuspended) return;
+          if (room == null) {
+            await _handleRoomClosed(epoch);
+            return;
+          }
+          _applyRoom(
+            room,
+            status: GameSessionConnectionStatus.connected,
+            message: 'Reconnected.',
+          );
+          await _startClientWatch(client);
+          return;
+        } catch (_) {
+          // Try again or fall through to host handoff.
+        }
       }
-    }
 
-    await _attemptHostHandoff(epoch);
+      await _attemptHostHandoff(epoch);
+    } finally {
+      _isRecoveringClientWatch = false;
+    }
   }
 
   Future<void> _attemptHostHandoff(int epoch) async {
@@ -522,6 +502,19 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     if (room == null || invite == null) {
       await _clearSession(closeConnections: true);
       return;
+    }
+
+    if (room.coordinatorPlayerId == localPlayerId) {
+      await _promoteLocalStandby(room, invite, localPlayerId, epoch);
+      return;
+    }
+
+    if (room.coordinatorPlayerId != invite.issuedByPlayerId) {
+      final electedCoordinator = room.playerById(room.coordinatorPlayerId);
+      if (electedCoordinator != null) {
+        await _followHandoffHost(room, invite, electedCoordinator, epoch);
+        return;
+      }
     }
 
     final candidate = _nextHandoffPlayer(room);
@@ -587,7 +580,6 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     _hostServer = standbyServer;
     _standbyServer = null;
     _activeInvite = nextInvite;
-    _cachedInvitesByRoomCode[nextInvite.roomCode] = invitePayload;
     await _startHostWatch(standbyServer);
     _applyRoom(
       nextRoom,
@@ -722,6 +714,13 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
     _connectionController.add(state);
   }
 
+  String _diagnosticMessage(String prefix, Object error) {
+    final raw = error.toString().replaceFirst('Bad state: ', '').trim();
+    if (raw.isEmpty) return '$prefix.';
+    if (raw.startsWith(prefix)) return raw;
+    return '$prefix: $raw';
+  }
+
   Future<T> _runExclusive<T>(Future<T> Function() action) {
     final previous = _operationQueue;
     final completer = Completer<T>();
@@ -780,8 +779,7 @@ class LocalRoomGameSessionRepository implements GameSessionRepository {
         (_) => characters[_random.nextInt(characters.length)],
         growable: false,
       ).join();
-      if (!_cachedInvitesByRoomCode.containsKey(code) &&
-          _currentRoom?.roomCode != code) {
+      if (_currentRoom?.roomCode != code) {
         return code;
       }
     }

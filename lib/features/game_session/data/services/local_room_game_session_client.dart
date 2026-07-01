@@ -33,7 +33,15 @@ class LocalRoomGameSessionClient {
         hostPort == null ||
         hostPort <= 0) {
       throw StateError(
-        'This invite does not include a reachable host address.',
+        'This invite does not include a reachable host endpoint '
+        '(host: ${hostAddress ?? 'missing'}, port: ${hostPort ?? 'missing'}).',
+      );
+    }
+    if (hostAddress.trim() == InternetAddress.loopbackIPv4.address ||
+        hostAddress.trim().toLowerCase() == 'localhost') {
+      throw StateError(
+        'This invite points to this device ($hostAddress:$hostPort), not the '
+        'room host. Ask the host to recreate the room on Wi-Fi or hotspot.',
       );
     }
     return Uri(scheme: 'http', host: hostAddress, port: hostPort);
@@ -79,6 +87,14 @@ class LocalRoomGameSessionClient {
     }
 
     return _sendRoomRequest('PATCH', '/room/general', body);
+  }
+
+  Future<GameSessionRoom> clearMyGeneral() async {
+    return _sendRoomRequest('PATCH', '/room/general', {
+      'roomCode': _invite.roomCode,
+      'playerId': _playerId,
+      'clear': true,
+    });
   }
 
   Future<GameSessionRoom> setPresence(GameSessionPresence presence) async {
@@ -207,18 +223,38 @@ class LocalRoomGameSessionClient {
     Map<String, String>? queryParameters,
   }) async {
     final uri = _baseUri.replace(path: path, queryParameters: queryParameters);
-    final request = await _httpClient
-        .openUrl(method, uri)
-        .timeout(_requestTimeout);
-    request.headers.set(
-      HttpHeaders.contentTypeHeader,
-      ContentType.json.mimeType,
-    );
-    request.headers.set('X-Game-Session-Token', _invite.accessToken ?? '');
-    if (body != null) {
-      request.add(utf8.encode(jsonEncode(body)));
+    final stopwatch = Stopwatch()..start();
+    HttpClientRequest? request;
+    try {
+      request = await _httpClient.openUrl(method, uri).timeout(_requestTimeout);
+      request.headers.set(
+        HttpHeaders.contentTypeHeader,
+        ContentType.json.mimeType,
+      );
+      request.headers.set('X-Game-Session-Token', _invite.accessToken ?? '');
+      if (body != null) {
+        request.add(utf8.encode(jsonEncode(body)));
+      }
+      return await request.close().timeout(_requestTimeout);
+    } on TimeoutException catch (error) {
+      request?.abort();
+      throw StateError(_joinFailureMessage(uri, 'timed out', stopwatch, error));
+    } on SocketException catch (error) {
+      request?.abort();
+      throw StateError(
+        _joinFailureMessage(uri, 'socket failed', stopwatch, error),
+      );
+    } on HttpException catch (error) {
+      request?.abort();
+      throw StateError(
+        _joinFailureMessage(uri, 'HTTP failed', stopwatch, error),
+      );
+    } on HandshakeException catch (error) {
+      request?.abort();
+      throw StateError(
+        _joinFailureMessage(uri, 'handshake failed', stopwatch, error),
+      );
     }
-    return request.close().timeout(_requestTimeout);
   }
 
   Future<Map<String, dynamic>> _readJsonResponse(
@@ -282,5 +318,19 @@ class LocalRoomGameSessionClient {
       );
     }
     return null;
+  }
+
+  String _joinFailureMessage(
+    Uri uri,
+    String category,
+    Stopwatch stopwatch,
+    Object error,
+  ) {
+    final endpoint = '${uri.host}:${uri.port}';
+    return 'Could not reach the Game Session host at $endpoint for '
+        '${uri.path} after ${stopwatch.elapsedMilliseconds}ms: '
+        '$category (${error.toString().replaceFirst('Bad state: ', '')}). '
+        'Check that both devices are on the same Wi-Fi or hotspot and that the '
+        'host invite shows a reachable LAN address.';
   }
 }
