@@ -3,7 +3,7 @@ import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_entry_card.dart';
 import 'codex_flow_step_tile.dart';
-import 'codex_reference_text.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 import 'codex_rule_block_widget.dart';
 
 class CodexSectionTile extends StatefulWidget {
@@ -143,7 +143,7 @@ class _CodexSectionTileState extends State<CodexSectionTile> {
                       ),
                       if (widget.sectionSummary.trim().isNotEmpty) ...[
                         const SizedBox(height: 10),
-                        CodexReferenceText(
+                        ReferenceText(
                           text: widget.sectionSummary,
                           isDark: isDark,
                           onReferenceTap: widget.onSegmentTap,
@@ -234,7 +234,7 @@ class _SingleEntrySectionBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (definition.trim().isNotEmpty) ...[
-            CodexReferenceText(
+            ReferenceText(
               text: definition,
               isDark: isDark,
               onReferenceTap: onSegmentTap,

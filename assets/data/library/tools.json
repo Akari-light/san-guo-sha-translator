@@ -130,9 +130,9 @@
     "faq": [
       {
         "q_cn": "连环状态是按配对记录的吗？",
-        "a_cn": "不是。连环状态是全局的，所有连环角色视为同一组。任意连环角色受到属性伤害时，所有其他连环角色都受到等量伤害。",
+        "a_cn": "不是。所有处于「连环状态」的角色参与同一次连环传导，不按配对记录。传导以最初受伤角色实际受到的伤害值为基数；后续每名角色分别应用自身适用的伤害增减和防止效果，最终受到的伤害可以不同。",
         "q_en": "Is chain status tracked in specific pairs?",
-        "a_en": "No. Chain status is global — all chained characters form one group. Elemental damage to any one of them transmits to all others regardless of how they were linked."
+        "a_en": "No. All characters in the 「Chained」 state participate in the same chain propagation, regardless of how they were linked. Propagation uses the initial recipient's actual damage as its base. Each subsequent recipient applies their own relevant modifiers and prevention effects; their final damage can differ."
       },
       {
         "q_cn": "可以只选择1名角色使用此牌吗？",
@@ -148,9 +148,9 @@
       },
       {
         "q_cn": "【无懈可击】可以抵消【铁索连环】吗？",
-        "a_cn": "可以，但只能针对一名目标——它令该目标不成为此次【铁索连环】的目标，从而阻止其状态被改变。另一名目标的状态仍会改变。重铸时不能使用【无懈可击】。",
+        "a_cn": "可以。【无懈可击】令【铁索连环】对相应目标的效果无效，而非移除该目标。其他目标正常结算。重铸不能被【无懈可击】抵消。",
         "q_en": "Can [Nullification] block [Iron Shackles]?",
-        "a_en": "Yes, but only for one target at a time — it removes that target from the card's effect, preventing their state from changing. The other target's state still changes. [Nullification] cannot be used against a Reforge."
+        "a_en": "[Nullification] negates [Iron Shackles]' effect on the relevant target; it does not remove that target. Other targets resolve normally. Reforging cannot be Nullified."
       },
       {
         "q_cn": "连环角色的攻击被【闪】躲避后，其他连环角色需要响应吗？",
@@ -160,15 +160,15 @@
       },
       {
         "q_cn": "藤甲与连环伤害如何互动？",
-        "a_cn": "传递的伤害等于原始受击者实际受到的伤害。若藤甲使其受到2点伤害，其他连环角色也受到2点伤害。",
+        "a_cn": "传导以最初受伤角色实际受到的伤害值为基数。若【藤甲】使其受到2点火焰伤害，则后续传导以2点为基数；后续每名角色分别应用自身适用的伤害增减和防止效果，最终受到的伤害可以不同。",
         "q_en": "How does [Rattan Armour] interact with chain damage?",
-        "a_en": "Transmitted damage matches what the original target actually receives. If [Rattan Armour] raises their damage to 2, all other chained characters also receive 2."
+        "a_en": "Chain propagation uses the initial recipient's actual damage as its base. If [Rattan Armour] raises that recipient's fire damage to 2, the propagation base is 2. Each subsequent recipient applies their own relevant modifiers and prevention effects; their final damage can differ."
       },
       {
         "q_cn": "【过河拆桥】或【顺手牵羊】能解除连环状态吗？",
-        "a_cn": "不能。连环状态是武将牌的横置状态，不是一张牌，无法被弃置或获取。唯一能切换连环状态的方式是再次对该角色使用【铁索连环】（令其重置）。",
+        "a_cn": "不能。「连环状态」是角色的状态，不是一张牌，不能被【过河拆桥】或【顺手牵羊】移除。角色重置即可解除此状态，包括按规则结算属性伤害时重置，或通过牌和技能的效果重置。",
         "q_en": "Can [Dismantle] or [Steal] remove chain status?",
-        "a_en": "No. Chain status is a positional state of the general card (horizontally placed), not a card that can be discarded or taken. The only way to toggle chain status is to use [Iron Shackles] on that character again (which Resets them)."
+        "a_en": "Neither [Dismantle] nor [Steal] removes the 「Chained」 state. It is a character state, not a card. It can end through resetting, including applicable elemental-damage resolution or a card or skill effect."
       },
       {
         "q_cn": "重铸时，黄月英能额外摸一张牌吗？",
@@ -183,10 +183,10 @@
         "a_en": "No. [Iron Shackles] can target any character regardless of distance."
       },
       {
-        "q_cn": "若多名连环角色同时死亡，结算顺序是什么？",
-        "a_cn": "按从使用者开始逆时针方向的顺序依次结算。",
-        "q_en": "If multiple chained characters die simultaneously, what is the elimination order?",
-        "a_en": "Counter-clockwise from the card's user."
+        "q_cn": "连环传导中的濒死和死亡如何结算？",
+        "a_cn": "先结算每名受伤角色的伤害及由此引发的濒死或死亡事件，再继续检查下一名角色。从当前回合角色开始，按逆时针方向依次检查。",
+        "q_en": "How are dying and death resolved during chain propagation?",
+        "a_en": "Resolve each recipient's damage and any resulting dying or death event before continuing to the next recipient. Check recipients counter-clockwise from the current turn's character."
       },
       {
         "q_cn": "主公通过连环伤害间接杀死忠臣，需要弃置所有手牌和装备牌吗？",
@@ -305,7 +305,14 @@
     "effect_en": [
       "Play Phase: use this card on a Wounded character. Look at that character's hand cards. If both you and they have [Poison] in hand, discard one [Poison] from among those cards and you each draw 2 cards. Otherwise, you each take 1 damage with no source."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【以毒攻毒】中的【毒】由谁弃置？可以对自己使用吗？",
+        "a_cn": "若你与目标角色的手牌中均有【毒】，由你选择并弃置你或目标角色手牌中的一张【毒】。你可以对已受伤的自己使用此牌；此时一张【毒】即可满足条件，你弃置其中一张【毒】，然后只摸两张牌，不会因同时为使用者和目标而摸四张牌。",
+        "q_en": "Who discards the [Poison] for [Fight Fire with Fire], and can you use it on yourself?",
+        "a_en": "If both you and the target have [Poison] in hand, you choose and discard one [Poison] from either hand. You may use this card on yourself while Wounded. In that case, one [Poison] satisfies the condition; discard one [Poison], then draw only 2 cards, not 4 for being both the user and target."
+      }
+    ]
   },
   {
     "id": "tool_bone_scraping_cure",
@@ -324,9 +331,9 @@
     "faq": [
       {
         "q_cn": "【刮骨疗毒】可以替代【桃】使用吗？",
-        "a_cn": "在一定程度上可以。【刮骨疗毒】与【桃】相同，可以回复1点体力，但还可以额外弃置一张【毒】消除其效果，而【桃】无法做到这点。",
+        "a_cn": "不可以。【刮骨疗毒】只能在出牌阶段对已受伤的角色使用，不能在濒死结算中作为【桃】使用，除非其他效果另有规定。",
         "q_en": "Can [Bone-Scraping Cure] substitute for [Peach]?",
-        "a_en": "Partly. Like [Peach], it recovers 1 HP. However, it also allows the target to discard a [Poison] to remove its effect — something [Peach] cannot do."
+        "a_en": "No. [Bone-Scraping Cure] can only be used on a Wounded character during the Play Phase; it cannot be used as [Peach] during Verge of Death Resolution unless another effect specifically permits it."
       }
     ]
   },
@@ -342,7 +349,7 @@
       "出牌阶段，对一名其他角色使用。该角色必须对你打出一张【杀】，否则，你可获得他区域内的两张牌。"
     ],
     "effect_en": [
-      "Play Phase: use this card on another character. That character must play a [Kill] targeting you. If they do not, you gain 2 cards from their zone."
+      "Play Phase: use this card on another character. That character must use a [Kill] against you. If they do not, you may gain 2 cards from their zone."
     ],
     "faq": []
   },
@@ -360,7 +367,14 @@
     "effect_en": [
       "Play Phase: use this card on a character whose HP Value is 1. Perform a Judgment. If the result is not Spades, you recover HP up to your Max HP."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【死斗】由谁进行判定？",
+        "a_cn": "由此牌的使用者进行判定。目标角色只用于检验此牌的使用条件。若判定结果不为黑桃，使用者将体力回复至体力上限；若为黑桃，则不回复体力。",
+        "q_en": "Who performs the Judgment for [Duel to the Death]?",
+        "a_en": "The card's user performs the Judgment. The target is used only to check the card's use condition. If the result is not Spades, the user recovers HP up to their Max HP; on Spades, they recover no HP."
+      }
+    ]
   },
   {
     "id": "tool_water_takes_no_form",
@@ -376,7 +390,14 @@
     "effect_en": [
       "Play Phase: use this card on all characters other than yourself. Each character in sequence chooses one: 1. Discard 4 cards; 2. Cannot play any cards this turn."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "「不能打出任何牌」也禁止使用牌吗？",
+        "a_cn": "此处按「打出」的正式规则含义结算，只禁止打出牌，不禁止使用牌。例如，不能打出【杀】响应【决斗】，但此限制本身不禁止使用【桃】或【无懈可击】。限制在当前回合结束时失效。",
+        "q_en": "Does the prohibition on playing cards also prohibit using cards?",
+        "a_en": "Here, playing cards has its formal rules meaning and is distinct from using cards. For example, this restriction prevents playing [Kill] in response to [Duel], but does not itself prohibit using [Peach] or [Nullification]. It expires when the current turn ends."
+      }
+    ]
   },
   {
     "id": "tool_desperate_counterattack",
@@ -387,12 +408,19 @@
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
-      "出牌阶段,选择一名角色下之拼点。胜方获得败方的所有手牌。"
+      "出牌阶段，选择一名角色下之拼点。胜方获得败方的所有手牌。"
     ],
     "effect_en": [
       "Play Phase: choose one character and conduct a Point Duel with them. The winner gains all of the loser's hand cards."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "若【絕地反擊】的拼点牌点数相同，如何结算？",
+        "a_cn": "若双方拼点牌点数相同，则双方均未赢，因此没有胜方或败方，也不会有角色因此获得另一方的手牌。",
+        "q_en": "What happens if the Point Duel for [Desperate Counterattack] is tied?",
+        "a_en": "If the Point Duel ranks are equal, neither character wins. There is therefore no winner or loser, and neither character gains the other's hand cards."
+      }
+    ]
   },
   {
     "id": "tool_siege_war_tiger",
@@ -407,10 +435,29 @@
       "2.出牌阶段对你使用，连续牌堆顶一张牌，直到出现一张装备牌为止，你获得之。"
     ],
     "effect_en": [
-      "1. Play Phase: use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon gains: Attack Range +1 and damage dealt by [Kill] +1.",
+      "1. Play Phase: use on a character who has a weapon in their Equipment Zone — place this card beside their weapon. That weapon's Attack Range and [Kill] damage each increase by 1.",
       "2. Play Phase: use on yourself — flip cards from the top of the Draw Pile one at a time until an Equipment card is revealed. You gain that Equipment card."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【攻城战虎】的两个效果是否一起执行？",
+        "a_cn": "推荐房规：每次使用只选择一种方式，强化武器或寻找装备牌，不同时执行两种效果。",
+        "q_en": "Do both effects of [Siege War Tiger] resolve together?",
+        "a_en": "Recommended house rule: choose one mode per use, either enhancing a weapon or searching for an Equipment card. Do not resolve both modes."
+      },
+      {
+        "q_cn": "【攻城战虎】的武器强化能否叠加，何时结束？",
+        "a_cn": "推荐房规：每件武器至多附加一张【攻城战虎】。该武器离开其当前装备区时，强化结束，将附加的【攻城战虎】置入弃牌堆；即使武器移入另一名角色的装备区，强化也不随之转移。",
+        "q_en": "Can [Siege War Tiger]'s weapon enhancement stack, and when does it end?",
+        "a_en": "Recommended house rule: a weapon can have only one [Siege War Tiger] attached. When that weapon leaves its current Equipment Zone, the enhancement ends and the attached [Siege War Tiger] is placed into the Discard Pile. The enhancement does not transfer with a weapon moved to another character."
+      },
+      {
+        "q_cn": "寻找装备牌时，其他亮出的牌如何处理？",
+        "a_cn": "推荐房规：获得第一张亮出的装备牌，将此前以此法亮出的其他牌置入弃牌堆。",
+        "q_en": "What happens to the other cards revealed while searching for equipment?",
+        "a_en": "Recommended house rule: gain the first Equipment card revealed and place the other cards revealed this way into the Discard Pile."
+      }
+    ]
   },
   {
     "id": "tool_crossing_in_white",
@@ -456,7 +503,7 @@
       "出牌阶段对自己使用后，直到回合结束前，可以打出任意数量的【杀】。"
     ],
     "effect_en": [
-      "Play Phase: use this card on yourself. Until the end of your turn, you may play any number of [Kill] cards."
+      "Play Phase: use this card on yourself. Until the end of your turn, you may use any number of [Kill] cards."
     ],
     "faq": []
   },
@@ -469,7 +516,7 @@
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
-      "出牌阶段,对一名其他角色使用, 该角色必须连续打出两张【杀】, 否则会受到1点伤害。"
+      "出牌阶段，对一名其他角色使用，该角色必须连续打出两张【杀】，否则会受到1点伤害。"
     ],
     "effect_en": [
       "Play Phase: use this card on another character. That character must play 2 [Kill] cards in sequence. If they cannot, they take 1 damage."
@@ -506,7 +553,20 @@
     "effect_en": [
       "Play Phase: use this card on all other characters. Each must play a [Kill]; if they do not, they draw 1 card instead. If more characters drew cards than did not, all characters who drew discard 2 cards and take 1 Fire damage."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【烽火狼煙】何时比较摸牌与未摸牌的角色数？",
+        "a_cn": "所有其他角色依次完成打出【杀】或摸一张牌的结算后再比较。只计算此牌的目标：因未打出【杀】而摸牌的角色计入摸牌人数，打出【杀】而未摸牌的角色计入未摸牌人数；此牌的使用者不计入。",
+        "q_en": "When does [War Signals] compare the numbers of characters who drew and did not draw?",
+        "a_en": "Compare them after all other characters have resolved whether to play a [Kill] or draw 1 card. Count only this card's targets: characters who drew because they did not play a [Kill] are in the drawing group, while those who played a [Kill] are in the non-drawing group. Do not count the card's user."
+      },
+      {
+        "q_cn": "摸牌的角色数较多时，弃牌和火焰伤害如何结算？",
+        "a_cn": "按行动顺序依次结算每名以此法摸牌的角色。该角色先弃置两张牌，再受到1点火焰伤害；若其牌数少于两张，则弃置其所有牌。",
+        "q_en": "How are the discard and Fire damage resolved when more characters drew cards?",
+        "a_en": "Resolve each character who drew this way in action order. That character first discards 2 cards, then takes 1 Fire damage. If they have fewer than 2 cards, they discard all their cards."
+      }
+    ]
   },
   {
     "id": "tool_fire_at_red_cliffs",
@@ -517,7 +577,7 @@
     "sub_category_cn": "普通锦囊牌",
     "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
-      "出牌阶段，对所有其他角色使用。其资弃置两张牌，否则你对其造成2点火焰伤害。"
+      "出牌阶段，对所有其他角色使用。其须弃置两张牌，否则你对其造成2点火焰伤害。"
     ],
     "effect_en": [
       "Play Phase: use this card on all other characters. Each must discard 2 cards. If they do not, you deal 2 Fire damage to them."
@@ -566,7 +626,14 @@
       "During your Play Phase, choose two characters with different hand card counts and note each count. The character with more hand cards discards 1 card; the character with fewer hand cards draws 1 card. When this card's resolution ends, if both chosen characters now have the same hand card count and the card discarded by executing this Tool is still in the Discard Pile, you may give that discarded card to any character.",
       "Reforge: During your Play Phase, you may place this card into the Discard Pile, then draw 1 card."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【调剂盐梅】结算结束时，可以交给角色的是哪张牌？",
+        "a_cn": "是执行此效果时弃置的那张牌，不是【调剂盐梅】本身。结算结束时，两名目标的手牌数须相同，且该弃牌仍在弃牌堆中。",
+        "q_en": "Which card can be given away after [Season with Salt and Plum] resolves?",
+        "a_en": "The card discarded by this effect, not [Season with Salt and Plum] itself. At the end of resolution, both targets must have equal hand card counts, and that discarded card must still be in the Discard Pile."
+      }
+    ]
   },
   {
     "id": "tool_starvation",
@@ -646,7 +713,20 @@
     "effect_en": [
       "Play Phase: use this card on any character — place [Beauty Stratagem] into their Judgment Zone. During their Judgment Phase, perform a Judgment. If the result is Hearts, that character must give all their hand cards to any one character of the opposite gender on the field. If the result is not Hearts, move [Beauty Stratagem] to the next player's Judgment Zone. If all characters on the field are the same gender, this card is Nullified."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "判定为红桃或场上角色均为同性时，【美人计】如何处理？",
+        "a_cn": "推荐房规：红桃判定的交牌效果结算后，将【美人计】置入弃牌堆。若结算其效果时所有存活角色均为同性，则不执行交牌效果，将【美人计】置入弃牌堆。",
+        "q_en": "What happens to [Beauty Stratagem] after a Hearts result or when all characters have the same gender?",
+        "a_en": "Recommended house rule: after resolving the hand-card transfer for a Hearts result, place [Beauty Stratagem] into the Discard Pile. If all surviving characters have the same gender when its effect resolves, it does nothing and is placed into the Discard Pile."
+      },
+      {
+        "q_cn": "非红桃判定后，下家的判定区不能接收【美人计】怎么办？",
+        "a_cn": "推荐房规：按下家顺序寻找下一个能合法接收【美人计】的判定区，跳过不合法的去处；若没有合法去处，则将【美人计】置入弃牌堆。",
+        "q_en": "What if the next character cannot receive [Beauty Stratagem] after a non-Hearts result?",
+        "a_en": "Recommended house rule: continue in next-player order to the next Judgment Zone that can legally receive [Beauty Stratagem], skipping illegal destinations. If no legal destination exists, place it into the Discard Pile."
+      }
+    ]
   },
   {
     "id": "tool_orthodox_and_unorthodox",
@@ -662,6 +742,19 @@
     "effect_en": [
       "Play Phase: use this card on another character. Secretly assign that character as 「Orthodox」 or 「Unorthodox」, visible only to you. Then they may play a [Kill] or [Dodge]. If an 「Unorthodox」 target does not play a [Kill], you deal 1 damage to them. If an 「Orthodox」 target does not play a [Dodge], you gain one of their cards."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "「正兵」和「奇兵」是否公开？",
+        "a_cn": "不公开。你因此牌的执行动作而选择的选项和获得的标记，对所有其他角色均不可见。",
+        "q_en": "Are 「Orthodox」 and 「Unorthodox」 public?",
+        "a_en": "No. The option you choose and the marker you gain through this card's execution action are not visible to any other character."
+      },
+      {
+        "q_cn": "「正兵」和「奇兵」如何结算？",
+        "a_cn": "按此次使用【奇正相生】时为此目标作出的秘密选择结算。「奇兵」目标未打出【杀】，则你对其造成1点普通伤害；「正兵」目标未打出【闪】，则你获得其一张牌。此前使用此牌时的选择不计入此次结算。",
+        "q_en": "How do 「Orthodox」 and 「Unorthodox」 resolve?",
+        "a_en": "Resolve using the hidden choice made for this target during this use of [Orthodox and Unorthodox]. For 「Unorthodox」, failure to play [Kill] causes 1 normal damage. For 「Orthodox」, failure to play [Dodge] lets the user gain one of the target's cards. Choices from earlier uses do not count."
+      }
+    ]
   }
 ]

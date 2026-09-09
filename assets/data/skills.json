@@ -4570,7 +4570,7 @@
     "name_cn": "神工",
     "name_en": "Divine Craft",
     "description_cn": "出牌阶段各限一次，你可以弃置一张武器牌/防具牌/坐骑牌或宝物牌，并进行锻造，然后将一张“神工”武器/防具/宝物置入一名角色的装备区（替换原有装备）；每回合结束时，若“神工”装备于本回合移出游戏，你摸一张牌。",
-    "description_en": "Once per Play Phase for each listed category: you may discard 1 Weapon/Armor/Mount/Treasure card and forge, then place 1 「Divine Craft」 Weapon/Armor/Treasure into a character's Equipment Zone (replacing their existing equipment). At the end of each turn, if a 「Divine Craft」 Equipment left the game this turn, draw 1 card."
+    "description_en": "Once per Play Phase for each listed category: you may discard 1 Weapon/Armor/Mount/Treasure card and forge, then place 1 「Divine Treasury」 Weapon/Armor/Treasure into a character's Equipment Zone (replacing their existing equipment). At the end of each turn, if a 「Divine Treasury」 Equipment left the game this turn, draw 1 card."
   },
   "skill_inspired_design": {
     "skill_type": "active",
@@ -5627,7 +5627,7 @@
     "name_cn": "陷筑",
     "name_en": "Breach the Fortification",
     "description_cn": "当你使用【杀】造成伤害后，你可以修改【大攻车】 (每张【大攻车】至多修改五次)。",
-    "description_en": "After your [Kill] deals damage, you may upgrade [Siege Engine] (max 5 upgrades per card)."
+    "description_en": "After a [Kill] you use deals damage, you may upgrade [Siege Engine], up to five upgrades in total per card."
   },
   "skill_dismantle_the_engine": {
     "skill_type": "locked",
@@ -7598,14 +7598,14 @@
     "skill_type": "active",
     "name_cn": "助力点数",
     "name_en": "Assist Points",
-    "description_cn": "【神工】锻造时使用的计分牌。记录本次锻造中助力一方亮出牌的点数合计；本次锻造结算完后清零。",
+    "description_cn": "〖神工〗锻造时使用的计分牌。记录本次锻造中助力一方亮出牌的点数合计；本次锻造结算完后清零。",
     "description_en": "Score card used during 〖Divine Craft〗 forging. Record the total ranks of cards revealed by the assisting side for this forge; reset it after this forge resolves."
   },
   "skill_token_obstruct_points": {
     "skill_type": "active",
     "name_cn": "妨害点数",
     "name_en": "Obstruct Points",
-    "description_cn": "【神工】锻造时使用的计分牌。记录本次锻造中妨害一方亮出牌的点数合计；本次锻造结算完后清零。",
+    "description_cn": "〖神工〗锻造时使用的计分牌。记录本次锻造中妨害一方亮出牌的点数合计；本次锻造结算完后清零。",
     "description_en": "Score card used during 〖Divine Craft〗 forging. Record the total ranks of cards revealed by the obstructing side for this forge; reset it after this forge resolves."
   },
   "skill_token_heavy_blow": {

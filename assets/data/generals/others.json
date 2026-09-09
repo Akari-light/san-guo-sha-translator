@@ -1763,14 +1763,14 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "【神工】锻造出的装备来自哪里？",
-        "a_cn": "“神工”装备来自独立的“神工锻造库”，不加入普通牌堆，也不能被【奇思】从牌堆或弃牌堆获得。弃置武器牌会锻造“神工”武器，弃置防具牌会锻造“神工”防具，弃置坐骑牌或宝物牌会锻造“神工”宝物。锻造结束后，蒲元从本次锻造出的牌中选择一张置入一名角色的装备区。",
-        "q_en": "Where do the 「Divine Craft」 Equipment cards come from?",
-        "a_en": "They come from a separate 「Divine Craft forge pool」, not from the normal Draw Pile, and 〖Inspired Design〗 cannot take them from the Draw Pile or Discard Pile. Discarding a Weapon forges 「Divine Craft」 Weapons, discarding Armor forges 「Divine Craft」 Armor, and discarding a Mount or Treasure forges 「Divine Craft」 Treasures. After the forge, Pu Yuan chooses 1 of the forged cards and places it into a character's Equipment Zone."
+        "q_cn": "〖神工〗锻造出的“神工”装备来自哪里？",
+        "a_cn": "这些“神工”装备来自独立的「天工宝库」，不加入普通牌堆，也不能被〖奇思〗从牌堆或弃牌堆获得。弃置武器牌会锻造“神工”武器，弃置防具牌会锻造“神工”防具，弃置坐骑牌或宝物牌会锻造“神工”宝物。锻造结束后，蒲元从本次锻造出的牌中选择一张置入一名角色的装备区。",
+        "q_en": "Where do the 「Divine Treasury」 Equipment cards forged by 〖Divine Craft〗 come from?",
+        "a_en": "They come from the separate 「Divine Treasury」, not from the normal Draw Pile, and 〖Inspired Design〗 cannot take them from the Draw Pile or Discard Pile. Discarding a Weapon forges a 「Divine Treasury」 Weapon, discarding Armor forges a 「Divine Treasury」 Armor, and discarding a Mount or Treasure forges a 「Divine Treasury」 Treasure. After the forge, Pu Yuan chooses 1 of the forged cards and places it into a character's Equipment Zone."
       },
       {
         "q_cn": "只有一张【助力点数】和一张【妨害点数】实体牌时，锻造时怎么使用？",
-        "a_cn": "这两张牌不是要分发或消耗的牌，而是本次锻造的小计分牌。蒲元发动【神工】后，蒲元默认助力，其他角色依次选择助力、妨害或不参与；每名选择助力或妨害的角色亮出牌堆顶一张牌。将助力一方亮出牌的点数合计记录在【助力点数】上，将妨害一方亮出牌的点数合计记录在【妨害点数】上。一次锻造结算完后，这两个点数清零，下次锻造重新计算。",
+        "a_cn": "这两张牌不是要分发或消耗的牌，而是本次锻造的小计分牌。蒲元发动〖神工〗后，蒲元默认助力，其他角色依次选择助力、妨害或不参与；每名选择助力或妨害的角色亮出牌堆顶一张牌。将助力一方亮出牌的点数合计记录在【助力点数】上，将妨害一方亮出牌的点数合计记录在【妨害点数】上。一次锻造结算完后，这两个点数清零，下次锻造重新计算。",
         "q_en": "If I only own one [Assist Points] card and one [Obstruct Points] card, how are they used during forging?",
         "a_en": "They are not dealt out or spent; they are score cards for the current forge only. After Pu Yuan activates 〖Divine Craft〗, Pu Yuan assists by default, and each other character chooses to assist, obstruct, or abstain. Each assisting or obstructing character reveals the top card of the Draw Pile. Record the total ranks of assisting revealed cards on [Assist Points], and the total ranks of obstructing revealed cards on [Obstruct Points]. After that forge resolves, both totals reset to 0 and are recalculated for the next forge."
       },
@@ -1778,13 +1778,13 @@
         "q_cn": "【助力点数】和【妨害点数】如何决定锻造结果？",
         "a_cn": "若无人妨害，本次为完美锻造，蒲元从3张对应副类别的“神工”装备中选择1张；若有人妨害且助力点数大于或等于妨害点数，本次为锻造成功，蒲元从2张对应副类别的“神工”装备中选择1张；若助力点数小于妨害点数，本次为锻造失败，蒲元只获得1张对应副类别的“神工”装备并将其置入一名角色的装备区。",
         "q_en": "How do [Assist Points] and [Obstruct Points] determine the forge result?",
-        "a_en": "If nobody obstructs, it is a perfect forge and Pu Yuan chooses 1 from 3 eligible 「Divine Craft」 Equipment cards. If at least one character obstructs and Assist Points are greater than or equal to Obstruct Points, the forge succeeds and Pu Yuan chooses 1 from 2 eligible cards. If Assist Points are lower than Obstruct Points, the forge fails and Pu Yuan gets only 1 eligible 「Divine Craft」 Equipment card, then places it into a character's Equipment Zone."
+        "a_en": "If nobody obstructs, it is a perfect forge and Pu Yuan chooses 1 from 3 eligible 「Divine Treasury」 Equipment cards. If at least one character obstructs and Assist Points are greater than or equal to Obstruct Points, the forge succeeds and Pu Yuan chooses 1 from 2 eligible cards. If Assist Points are lower than Obstruct Points, the forge fails and Pu Yuan gets only 1 eligible 「Divine Treasury」 Equipment card, then places it into a character's Equipment Zone."
       },
       {
         "q_cn": "“神工”装备离开装备区后一定会移出游戏吗？",
-        "a_cn": "按实体牌文字，若“神工”装备于本回合移出游戏，蒲元在该回合结束时摸一张牌。线上规则进一步说明：以【神工】获得的装备进入弃牌堆时会被销毁/移出游戏；若它被其他效果移动到牌堆顶、手牌等非弃牌堆区域，则不会因此立刻销毁。",
-        "q_en": "Does a 「Divine Craft」 Equipment always leave the game after leaving the Equipment Zone?",
-        "a_en": "The printed card says Pu Yuan draws 1 card at that turn's end if a 「Divine Craft」 Equipment left the game during that turn. Online rules clarify that Equipment gained through 〖Divine Craft〗 is destroyed/removed from the game when it enters the Discard Pile. If another effect moves it to a non-discard zone, such as the top of the Draw Pile or a hand, it is not immediately destroyed for that reason."
+        "a_cn": "按实体牌文字，若“神工”装备于本回合移出游戏，蒲元在该回合结束时摸一张牌。线上规则进一步说明：以〖神工〗获得的装备进入弃牌堆时会被销毁/移出游戏；若它被其他效果移动到牌堆顶、手牌等非弃牌堆区域，则不会因此立刻销毁。",
+        "q_en": "Does a 「Divine Treasury」 Equipment always leave the game after leaving the Equipment Zone?",
+        "a_en": "The printed card says Pu Yuan draws 1 card at that turn's end if a 「Divine Treasury」 Equipment left the game during that turn. Online rules clarify that Equipment gained through 〖Divine Craft〗 is destroyed/removed from the game when it enters the Discard Pile. If another effect moves it to a non-discard zone, such as the top of the Draw Pile or a hand, it is not immediately destroyed for that reason."
       }
     ],
     "skills": [

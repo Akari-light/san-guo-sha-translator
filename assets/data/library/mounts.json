@@ -9,13 +9,13 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1."
+      "The Distance you calculate to another character is reduced by 1."
     ],
     "faq": [
       {
         "q_cn": "赤兔会增加我的武器攻击距离吗？",
         "a_cn": "不会。赤兔减少的是你到其他角色的距离，让更多目标变得可达——但不会改变你的武器射程数值。此修正适用于所有需要检测你到某角色距离的情形，例如【顺手牵羊】的距离判断。",
-        "q_en": "Does Red Hare increase my weapon attack range?",
+        "q_en": "Does [Red Hare] increase my weapon attack range?",
         "a_en": "No. It reduces the Distance from you to other characters, making more targets reachable — but it does not change your weapon range value. This modifier applies to all Distance checks from you to another character, not only attacks (e.g. [Steal] also checks distance)."
       }
     ]
@@ -30,7 +30,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1."
+      "The Distance you calculate to another character is reduced by 1."
     ],
     "faq": []
   },
@@ -44,7 +44,7 @@
       "你计算与其他角色的距离-1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1."
+      "The Distance you calculate to another character is reduced by 1."
     ],
     "faq": []
   },
@@ -58,14 +58,14 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +1."
+      "The Distance other characters calculate to you is increased by 1."
     ],
     "faq": [
       {
         "q_cn": "的卢会影响需要判断距离的锦囊牌（如【顺手牵羊】）吗？",
         "a_cn": "会。的卢令其他任意角色计算与你的距离+1，此修正适用于所有以你为目标时的距离检测，不限于攻击。",
-        "q_en": "Does Di Lu affect Tool Cards like [Steal] that require Distance checks?",
-        "a_en": "Yes. Di Lu increases the Distance any other character measures to you by 1. This modifier applies to all Distance checks targeting you, not only attacks."
+        "q_en": "Does [Di Lu] affect Tool Cards like [Steal] that require Distance checks?",
+        "a_en": "Yes. [Di Lu] increases the Distance any other character measures to you by 1. This modifier applies to all Distance checks targeting you, not only attacks."
       }
     ]
   },
@@ -79,7 +79,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +1."
+      "The Distance other characters calculate to you is increased by 1."
     ],
     "faq": []
   },
@@ -93,7 +93,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +1."
+      "The Distance other characters calculate to you is increased by 1."
     ],
     "faq": []
   },
@@ -107,7 +107,7 @@
       "其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +1."
+      "The Distance other characters calculate to you is increased by 1."
     ],
     "faq": []
   },
@@ -122,8 +122,8 @@
       "锁定技，当你造成属性伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1.",
-      "Locked Skill: When you deal elemental damage, that damage +1."
+      "The Distance you calculate to another character is reduced by 1.",
+      "Locked Skill: When you deal elemental damage, increase that damage by 1."
     ],
     "faq": []
   },
@@ -137,7 +137,7 @@
       "其他角色计算与你的距离+2。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +2."
+      "The Distance other characters calculate to you is increased by 2."
     ],
     "faq": []
   },
@@ -151,14 +151,14 @@
       "你计算与其他角色的距离-1。其他角色计算与你的距离+1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1. When other characters calculate the Distance to you, +1."
+      "The Distance you calculate to another character is reduced by 1. The Distance other characters calculate to you is increased by 1."
     ],
     "faq": [
       {
-        "q_cn": "装备了【梦魇赤兔】还能装备其他马吗？",
-        "a_cn": "不可以，一只【梦魇赤兔】抵两匹马。",
-        "q_en": "Can I equip other mounts alongside [Nightmare Red Hare]?",
-        "a_en": "[Nightmare Red Hare] occupies both mount slots simultaneously. No other mount can be equipped while it is in play."
+        "q_cn": "装备【梦魇赤兔】的角色还能装备其他坐骑吗？",
+        "a_cn": "不能。【梦魇赤兔】同时占用进攻坐骑栏和防御坐骑栏。装备着它的角色不能再装备其他坐骑。",
+        "q_en": "Can a character equipped with [Nightmare Red Hare] equip another Mount Card?",
+        "a_en": "No. [Nightmare Red Hare] occupies both the offensive and defensive mount slots. The character equipped with it cannot equip another Mount Card."
       }
     ]
   },
@@ -172,7 +172,7 @@
       "你计算与其他角色的距离-2。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -2."
+      "The Distance you calculate to another character is reduced by 2."
     ],
     "faq": []
   },
@@ -186,7 +186,7 @@
       "其他角色计算与你的距离+2。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +2."
+      "The Distance other characters calculate to you is increased by 2."
     ],
     "faq": []
   },
@@ -201,7 +201,7 @@
       "出牌阶段，你每使用或打出一张黑色牌时，你可以摸一张牌。回合外，你不能成为普通【杀】的目标。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -2.",
+      "The Distance you calculate to another character is reduced by 2.",
       "During your Play Phase, each time you use or play a black card, you may draw 1 card. Outside of your turn, you cannot be the target of normal [Kill]."
     ],
     "faq": []
@@ -231,8 +231,8 @@
       "锁定技，你的手牌上限+X，X为你装备区内的牌数。"
     ],
     "effect_en": [
-      "When other characters calculate the Distance to you, +1.",
-      "Locked Skill: Your Hand Limit +X, where X is the number of cards in your Equipment Zone."
+      "The Distance other characters calculate to you is increased by 1.",
+      "Locked Skill: Your Hand Limit increases by X, where X is the number of cards in your Equipment Zone."
     ],
     "faq": []
   },
@@ -246,7 +246,7 @@
       "装备后，若目标角色的装备区里没有牌，你使用【杀】或【决斗】（你为伤害来源时）造成的伤害+1。"
     ],
     "effect_en": [
-      "When you use [Kill] or [Duel] (when you are the damage source) and the target character's Equipment Zone has no cards, the damage dealt +1."
+      "When you use [Kill] or [Duel] (when you are the damage source) and the target character's Equipment Zone has no cards, increase the damage dealt by 1."
     ],
     "faq": []
   },
@@ -261,10 +261,17 @@
       "你无视所有装备效果。其他角色的摸牌阶段，你可以观看之，并获得其中点数为偶数的牌。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -2.",
-      "You Ignore all equipment effects. During another character's Draw Phase, you may look at the cards they draw and gain any among them with an even rank."
+      "The Distance you calculate to another character is reduced by 2.",
+      "You Ignore all equipment effects. During another character's Draw Phase, you may look at the cards they draw and gain all cards among them with even ranks."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【通天仙鹿】的“无视所有装备效果”如何结算？",
+        "a_cn": "其他角色装备区里的牌所提供的效果不能影响你，也不能影响你对其使用的牌或产生的效果。你自己装备区里的牌仍然正常生效。",
+        "q_en": "How does [Celestial Deer] resolve 'Ignore all equipment effects'?",
+        "a_en": "Effects provided by cards in other characters' Equipment Zones cannot affect you or the cards and effects you use against those characters. Cards in your own Equipment Zone continue to function normally."
+      }
+    ]
   },
   {
     "id": "mount_snow_wolf",
@@ -274,10 +281,10 @@
     "category_en": "Mount",
     "effect_cn": [
       "你计算与其他角色的距离-2。",
-      "锁定技，若你的体力值为1，你视为拥有技能\"狂骨\"。"
+      "锁定技，若你的体力值为1，你视为拥有技能〖狂骨〗。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -2.",
+      "The Distance you calculate to another character is reduced by 2.",
       "Locked Skill: If your HP Value is 1, you are treated as having the skill 〖Bloodthirst〗."
     ],
     "faq": []
@@ -293,7 +300,7 @@
       "锁定技，其他角色计算与你的距离始终为1。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -1.",
+      "The Distance you calculate to another character is reduced by 1.",
       "Locked Skill: When other characters calculate the Distance to you, it is always 1."
     ],
     "faq": []
@@ -309,15 +316,21 @@
       "准备阶段，你须对一名角色造成1点雷电伤害。每轮结束时，所有死亡角色同时秘密选择上家或下家，然后按死亡先后顺序依次将此牌移动至所选角色的装备区。"
     ],
     "effect_en": [
-      "When you calculate the Distance to another character, -2.",
+      "The Distance you calculate to another character is reduced by 2.",
       "During your Preparation Phase, you must deal 1 Lightning damage to one character. At the end of each round, all dead characters secretly and simultaneously choose previous player or next player. Then, in death order, each moves this card to the chosen character's Equipment Zone."
     ],
     "faq": [
       {
         "q_cn": "每轮结束时，【軨軨】如何移动？",
-        "a_cn": "所有已死亡角色同时秘密选择上家或下家，然后按死亡先后顺序依次结算，将此牌移动至对应角色的装备区。",
+        "a_cn": "所有已死亡角色先同时秘密选择上家或下家，再按死亡先后顺序依次结算。每次结算均尝试将【軨軨】从当前区域移动至所选角色的进攻坐骑栏。若该栏已有装备，此次移动无法执行，【軨軨】留在原处，之后的选择仍继续结算。",
         "q_en": "How does [Ling Ling] move at the end of each round?",
-        "a_en": "All dead characters secretly and simultaneously choose previous player or next player. Then the choices resolve in death order, moving this card to the corresponding character's Equipment Zone."
+        "a_en": "All dead characters first choose previous player or next player secretly and simultaneously, then resolve those choices in death order. Each resolution attempts to move [Ling Ling] from its current zone into the chosen character's offensive mount slot. If that slot is occupied, the move cannot be performed and [Ling Ling] remains where it is; later choices still resolve."
+      },
+      {
+        "q_cn": "准备阶段未能实际造成【軨軨】的雷电伤害时怎么办？",
+        "a_cn": "你必须选择一名存活角色并尝试对其造成1点雷电伤害；可以选择你自己。若此伤害被防止，则此效果结算完毕，不重新选择角色，也没有额外惩罚。",
+        "q_en": "What happens if [Ling Ling]'s Lightning damage is not actually dealt during the Preparation Phase?",
+        "a_en": "You must choose a living character and attempt to deal 1 Lightning damage to them; you may choose yourself. If that damage is prevented, the effect finishes resolving. You do not choose another character and suffer no additional penalty."
       }
     ]
   }

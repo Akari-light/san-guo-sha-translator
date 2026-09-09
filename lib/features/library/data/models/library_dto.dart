@@ -71,5 +71,6 @@ class LibraryDTO {
     'Armor',
     'Treasure',
     'Mount',
+    'Divine Treasury',
   ];
 }

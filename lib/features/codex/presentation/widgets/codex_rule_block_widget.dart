@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/widgets/inline_suit_text.dart';
 import '../../../../core/theme/app_theme.dart';
-import 'codex_reference_text.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 
 // â”€â”€ Tap callback type â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 //
@@ -457,7 +457,7 @@ class _ExampleTile extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: CodexReferenceText(
+                child: ReferenceText(
                   text: text,
                   isDark: isDark,
                   onReferenceTap: onSegmentTap,

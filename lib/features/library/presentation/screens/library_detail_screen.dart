@@ -6,6 +6,8 @@ import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/constants/app_assets.dart';
 import '../../../reference/services/resolver_service.dart';
+import '../../../reference/presentation/widgets/reference_sheet.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 
 class LibraryDetailScreen extends StatefulWidget {
   final LibraryDTO card;
@@ -698,6 +700,17 @@ class _FaqRow extends StatefulWidget {
 class _FaqRowState extends State<_FaqRow> {
   bool _open = false;
 
+  Future<void> _showReference(String bracketText, bool isChinese) async {
+    final isDark = widget.theme.brightness == Brightness.dark;
+    await ReferenceSheet.show(
+      context: context,
+      bracketText: bracketText,
+      isChinese: isChinese,
+      isDark: isDark,
+      showChinese: !widget.isEnglish,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final q = widget.isEnglish
@@ -729,8 +742,11 @@ class _FaqRowState extends State<_FaqRow> {
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: Text(
-                    q,
+                  child: ReferenceText(
+                    text: q,
+                    isDark: widget.theme.brightness == Brightness.dark,
+                    isChineseText: !widget.isEnglish,
+                    onReferenceTap: _showReference,
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.6,
@@ -756,8 +772,11 @@ class _FaqRowState extends State<_FaqRow> {
           firstChild: const SizedBox.shrink(),
           secondChild: Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 12),
-            child: Text(
-              a,
+            child: ReferenceText(
+              text: a,
+              isDark: widget.theme.brightness == Brightness.dark,
+              isChineseText: !widget.isEnglish,
+              onReferenceTap: _showReference,
               style: TextStyle(
                 fontSize: 14,
                 height: 1.6,

@@ -31,10 +31,10 @@
         "a_en": "No. [Qing Gang Sword] Nullifies the target's armor, so [Eight Trigrams Formation] cannot trigger its Judgment for that [Kill]."
       },
       {
-        "q_cn": "【八卦阵】可以响应【南蛮入侵】或【万箭齐发】需要的【闪】吗？",
-        "a_cn": "可以。只要有效果要求你使用或打出【闪】，【八卦阵】均可触发判定。",
-        "q_en": "Can [Eight Trigrams Formation] respond to [Barbarians] or [Raining Arrows] when a [Dodge] is required?",
-        "a_en": "Yes. Whenever any effect requires you to use or play a [Dodge], [Eight Trigrams Formation] may trigger its Judgment."
+        "q_cn": "【八卦阵】可以响应【南蛮入侵】或【万箭齐发】吗？",
+        "a_cn": "【八卦阵】可以提供响应【万箭齐发】所需的【闪】，但不能提供响应【南蛮入侵】所需的【杀】。",
+        "q_en": "Can [Eight Trigrams Formation] respond to [Barbarians] or [Raining Arrows]?",
+        "a_en": "[Eight Trigrams Formation] can provide the [Dodge] required by [Raining Arrows], but it cannot provide the [Kill] required by [Barbarians]."
       }
     ]
   },
@@ -159,7 +159,7 @@
       "锁定技，【南蛮入侵】、【万箭齐发】和普通【杀】对你无效；当你受到火焰伤害时，此伤害+1。"
     ],
     "effect_en": [
-      "Locked Skill: [Barbarians], [Raining Arrows], and normal [Kill] cards are Nullified against you. When you take Fire damage, that damage +1."
+      "Locked Skill: [Barbarians], [Raining Arrows], and normal [Kill] cards are Nullified against you. When you take Fire damage, increase that damage by 1."
     ],
     "faq": [
       {
@@ -189,76 +189,6 @@
     ]
   },
   {
-    "id": "armor_mystical_eight_trigrams",
-    "name_cn": "奇門八卦",
-    "name_en": "Mystical Eight Trigrams",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "锁定技，【杀】对你无效。"
-    ],
-    "effect_en": [
-      "Locked Skill: [Kill] cards are Nullified against you."
-    ],
-    "faq": []
-  },
-  {
-    "id": "armor_black_radiance_armor",
-    "name_cn": "黑光鎧",
-    "name_en": "Black Radiance Armor",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "锁定技，当你成为【杀】或伤害类锦囊牌、黑色锦囊牌的目标后，若此牌目标数大于1，此牌对你无效。"
-    ],
-    "effect_en": [
-      "Locked Skill: When you become the target of a [Kill], a damage-dealing Tool card, or a black Tool card, if that card has more than one target, that card is Nullified against you."
-    ],
-    "faq": []
-  },
-  {
-    "id": "armor_hundred_blossom_robe",
-    "name_cn": "紅棉百花袍",
-    "name_en": "Hundred Blossom Robe",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "锁定技，防止你受到的属性伤害。"
-    ],
-    "effect_en": [
-      "Locked Skill: Prevent all elemental damage you take."
-    ],
-    "faq": []
-  },
-  {
-    "id": "armor_jade_robe",
-    "name_cn": "國風玉袍",
-    "name_en": "Jade Robe",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "锁定技，其他角色不能对你使用普通锦囊牌。"
-    ],
-    "effect_en": [
-      "Locked Skill: Other characters cannot use Non-Time-Delayed Tool Cards on you."
-    ],
-    "faq": []
-  },
-  {
-    "id": "armor_exquisite_lion_sash",
-    "name_cn": "玲瓏獅蠻帶",
-    "name_en": "Exquisite Lion Sash",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "其他角色使用牌指定你为唯一目标后，你可以进行判定，若结果为红桃 ，此牌对你无效。"
-    ],
-    "effect_en": [
-      "After another character uses a card and designates you as the only target, you may perform a Judgment. If the result is Hearts, that card is Nullified against you."
-    ],
-    "faq": []
-  },
-  {
     "id": "armor_tarnished_silver_armor",
     "name_cn": "爛銀甲",
     "name_en": "Tarnished Silver Armor",
@@ -271,45 +201,6 @@
       "This card cannot be ignored and its effects cannot be Nullified: 1. You may use a hand card as a [Dodge]; 2. When you take damage from a [Kill], discard [Tarnished Silver Armor] from your Equipment Zone."
     ],
     "faq": []
-  },
-  {
-    "id": "armor_sentinel_mirror",
-    "name_cn": "護心鏡",
-    "name_en": "Sentinel Mirror",
-    "category_cn": "防具牌",
-    "category_en": "Armor",
-    "effect_cn": [
-      "出牌阶段，你可以将手牌中的【护心镜】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
-    ],
-    "effect_en": [
-      "During your Play Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you take damage that would reduce your HP to 0 or below, or damage exceeding 1, you may place [Sentinel Mirror] from any Equipment Zone into the Discard Pile to prevent that damage."
-    ],
-    "faq": [
-      {
-        "q_cn": "【护心镜】是锁定技吗？",
-        "a_cn": "不是。【护心镜】是可选效果，你可以选择不发动。",
-        "q_en": "Is [Sentinel Mirror] a Locked skill?",
-        "a_en": "No. It is optional; you may choose not to activate it."
-      },
-      {
-        "q_cn": "体力值为1时受到1点伤害，是否可以发动【护心镜】？",
-        "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
-        "q_en": "If my current HP is 1 and I receive 1 damage, can [Sentinel Mirror] activate?",
-        "a_en": "Yes. When your HP is 1, 1 point of damage would reduce it to 0 — that qualifies as damage that would reduce your HP to 0 or below, so the trigger condition is satisfied."
-      },
-      {
-        "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
-        "a_cn": "不算。【护心镜】是被「置入」弃牌堆，不属于弃置，因此不会触发依赖「弃置装备」的技能（如【枭姬】）。",
-        "q_en": "When [Sentinel Mirror] is placed into the Discard Pile upon activation, does it count as being 'discarded'?",
-        "a_en": "No. It is placed into the Discard Pile, which is distinct from being discarded. Skills that trigger on discarding equipment (such as 〖Fierce Lady〗) are not activated."
-      },
-      {
-        "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
-        "a_cn": "可以。只要伤害会使体力值降至0或以下，或伤害值大于1，无论伤害来源均可发动。",
-        "q_en": "Can [Sentinel Mirror] prevent damage from general skills?",
-        "a_en": "Yes. As long as the damage would reduce your HP to 0 or below, or the damage value exceeds 1, [Sentinel Mirror] can be activated regardless of the damage source."
-      }
-    ]
   },
   {
     "id": "armor_hundred_flowers_skirt",
@@ -332,8 +223,8 @@
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
-      "锁定技,你每次受到大于等于2点伤宫时,该伤害-1。",
-      "锁定技,武将牌不能被翻面。"
+      "锁定技，你每次受到大于等于2点伤害时，该伤害-1。",
+      "锁定技，武将牌不能被翻面。"
     ],
     "effect_en": [
       "Locked Skill: Whenever you take damage of 2 or more, that damage is reduced by 1.",
@@ -381,7 +272,20 @@
     "effect_en": [
       "When you become the target of a [Kill], you may discard 1 hand card to redirect that [Kill] to a character at Distance 1 from you."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【天龙炎盾】可以将【杀】转移给谁？",
+        "a_cn": "你弃置一张手牌后，可以将此【杀】对你的目标转移给与你距离为1的另一名合法角色。不能转移给此【杀】的使用者或已经是此【杀】目标的角色。距离从你计算，并计入适用的距离修正；新目标不必在使用者的攻击范围内。",
+        "q_en": "Who can receive a [Kill] redirected by [Celestial Dragon Flame Shield]?",
+        "a_en": "After discarding 1 hand card, you may redirect the [Kill] from yourself to another legal target at Distance 1 from you. You cannot choose the [Kill]'s user or a character already targeted by that [Kill]. Measure Distance from you, including applicable modifiers; the new target need not be within the user's Attack Range."
+      },
+      {
+        "q_cn": "转移多目标【杀】时，其他目标也会改变吗？",
+        "a_cn": "不会。新目标只替代你，你不再结算被转移的这一次目标效果；此【杀】的其他目标不变。",
+        "q_en": "Does redirecting a multi-target [Kill] change its other targets?",
+        "a_en": "No. The new target replaces only you, and you no longer resolve the redirected target occurrence. All other targets of that [Kill] remain unchanged."
+      }
+    ]
   },
   {
     "id": "armor_sleeping_dragon_chariot",
@@ -421,9 +325,16 @@
       "血量上限+1；主公无法装备，但可打出此牌，恢复1点血(不能进行濒死恢复)。"
     ],
     "effect_en": [
-      "Your Max HP +1. The Lord cannot equip this card, but may Play it to recover 1 HP (cannot be played during a Dying Event)."
+      "Your Max HP increases by 1. The Lord cannot equip this card, but may Play it to recover 1 HP (cannot be played during the Verge of Death State)."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "主公如何打出【玄武護臂】？装备此牌会回复体力吗？",
+        "a_cn": "主公不能装备【玄武護臂】，但可于自己的出牌阶段内，在已受伤时打出此牌并回复1点体力，然后将此牌置入弃牌堆；不能在濒死状态中以此法打出。其他角色装备此牌时，体力上限增加1点，但不会因此回复体力。",
+        "q_en": "How does the Lord play [Black Tortoise Bracer], and does equipping it recover HP?",
+        "a_en": "The Lord cannot equip [Black Tortoise Bracer], but may play it during their own Play Phase while Wounded to recover 1 HP, then place it into the Discard Pile. It cannot be played during the Verge of Death State. When another character equips it, their Max HP increases by 1, but they do not recover HP."
+      }
+    ]
   },
   {
     "id": "armor_primal_chaos_plate",
@@ -432,12 +343,25 @@
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
-      "锁定技,防止你受到的所有伤害，当你失去装备区的【混沌甲】时，你失去X点体力，X为【混沌甲】防止过的伤害次数。"
+      "锁定技，防止你受到的所有伤害，当你失去装备区的【混沌甲】时，你失去X点体力，X为【混沌甲】防止过的伤害次数。"
     ],
     "effect_en": [
       "Locked Skill: Prevent all damage you take. When you lose [Primal Chaos Plate] from your Equipment Zone, you lose X HP, where X equals the number of times damage was prevented by this card."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【混沌甲】如何累计离开装备区时要失去的体力？",
+        "a_cn": "每防止一次伤害，离开装备区时要失去的体力就增加1点，与该次伤害的点数无关。防止伤害时不会增加或扣减你的体力。例如，先后防止一次3点伤害和一次1点伤害，累计的是2点体力流失；此牌离开你的装备区时，你一次失去2点体力，而不是4点。这是体力流失，不是伤害。",
+        "q_en": "How does [Primal Chaos Plate] accumulate its HP-loss cost?",
+        "a_en": "Each time this armor prevents a damage event, add 1 to the HP you must lose when it leaves your Equipment Zone, regardless of the damage amount prevented. Preventing damage does not increase or reduce your HP. For example, preventing one 3-damage event and one 1-damage event means you lose 2 HP at once when the armor leaves, not 4. This is HP loss, not damage."
+      },
+      {
+        "q_cn": "【混沌甲】的累计数何时清零？",
+        "a_cn": "推荐房规：只记录此牌本次连续留在当前装备者装备区期间防止伤害的次数。此牌离开时，原装备者按累计数失去体力，然后清零。再次装备或转移给另一名角色时，从零重新累计。",
+        "q_en": "When does [Primal Chaos Plate]'s count reset?",
+        "a_en": "Recommended house rule: count only damage events prevented during this card's current continuous stay in its wearer's Equipment Zone. When it leaves, that wearer loses HP equal to the count, then the count resets. Re-equipping it or moving it to another wearer starts a new count at zero."
+      }
+    ]
   },
   {
     "id": "armor_blade_shield",
@@ -451,7 +375,14 @@
     "effect_en": [
       "Locked Skill: After each time you use or play a [Dodge], the attacker takes 1 damage dealt by you."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【刃盾】所指的“对方”是谁？视为使用或打出的【闪】会触发吗？",
+        "a_cn": "“对方”指令你需要使用或打出【闪】的牌或有来源效果的使用者。例如，响应【杀】或【万箭齐发】时，对方分别为【杀】或【万箭齐发】的使用者；若该要求没有存活的角色来源，则不造成伤害。因其他效果视为使用或打出的【闪】也会触发【刃盾】。",
+        "q_en": "Who is 'the other side' for [Blade Shield], and does a virtual [Dodge] trigger it?",
+        "a_en": "It is the character who used the card or sourced effect that required the [Dodge]. For example, when responding to [Kill] or [Raining Arrows], it is that card's user. If the requirement has no living character source, no damage is dealt. A [Dodge] treated as used or played by another effect also triggers [Blade Shield]."
+      }
+    ]
   },
   {
     "id": "armor_ancient_paperweight",
@@ -467,7 +398,20 @@
       "Locked Skill: Whenever a character draws cards, if they would draw more than 1, the number of cards drawn is reduced to 1.",
       "At the start of a character's Preparation Phase, each character may choose to discard 1 card to have [Ancient Paperweight]'s effect Nullified against them."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "弃牌后，【古铜镇尺】对谁无效，持续多久？",
+        "a_cn": "推荐房规：在一名角色的准备阶段开始时，选择弃置一张牌的角色不受【古铜镇尺】的摸牌限制，直到当前回合结束。每名角色分别选择，弃牌只使自己获得此次豁免。",
+        "q_en": "Who is exempt from [Ancient Paperweight] after discarding, and for how long?",
+        "a_en": "Recommended house rule: at the start of a character's Preparation Phase, each character who chooses to discard 1 card is exempt from [Ancient Paperweight]'s draw restriction until the current turn ends. Each character chooses separately; discarding exempts only that character."
+      },
+      {
+        "q_cn": "【古铜镇尺】会把多次摸牌合并为只摸一张吗？",
+        "a_cn": "不会。它分别检查每次摸牌事件，未获得豁免的角色一次摸多于一张牌时才改为一张。例如，两次各摸一张仍共摸两张；一次摸两张则改为一张。",
+        "q_en": "Does [Ancient Paperweight] combine separate draws into a single card?",
+        "a_en": "No. It checks each draw event separately. Unless exempt, a character drawing more than 1 card in one event draws 1 instead. Two separate draws of 1 card still give 2 cards in total; one draw of 2 cards gives only 1."
+      }
+    ]
   },
   {
     "id": "armor_womens_garb",
@@ -490,17 +434,17 @@
     "category_cn": "防具牌",
     "category_en": "Armor",
     "effect_cn": [
-      "当你需要使用或打出【闪】时，你可以进行一次判定，若结果为红色，视为你使用或打出之。判定前，你可以令一名死亡角色卜算3。"
+      "当你需要使用或打出【闪】时，你可以进行一次判定，若结果为红色，视为你使用或打出之。判定前，你可以令一名死亡角色「卜算3」。"
     ],
     "effect_en": [
-      "When you need to use or play a [Dodge], you may perform a Judgment. If the result is red, it is treated as you using or playing a [Dodge]. Before the Judgment, you may have one dead character perform Foresight 3."
+      "When you need to use or play a [Dodge], you may perform a Judgment. If the result is red, it is treated as you using or playing a [Dodge]. Before the Judgment, you may have one dead character perform 「Foresight 3」."
     ],
     "faq": [
       {
-        "q_cn": "什么是卜算X？",
-        "a_cn": "卜算X指观看牌堆顶的X张牌，然后将这些牌以任意顺序置于牌堆顶或牌堆底。",
-        "q_en": "What is Foresight X?",
-        "a_en": "Foresight X means looking at the top X cards of the Draw Pile, then placing them on the top or bottom of the Draw Pile in any order."
+        "q_cn": "什么是「卜算X」？",
+        "a_cn": "「卜算X」指观看牌堆顶的X张牌，然后将这些牌以任意顺序置于牌堆顶或牌堆底。",
+        "q_en": "What is 「Foresight X」?",
+        "a_en": "「Foresight X」 means looking at the top X cards of the Draw Pile, then placing them on the top or bottom of the Draw Pile in any order."
       },
       {
         "q_cn": "【魂·八卦阵】的判定流程中，可以操作提供此技能的装备牌吗？",

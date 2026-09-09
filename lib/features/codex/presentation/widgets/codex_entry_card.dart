@@ -2,7 +2,7 @@
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import 'codex_rule_block_widget.dart';
-import 'codex_reference_text.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 
 class CodexEntryCard extends StatefulWidget {
   final CodexEntryDTO entry;
@@ -111,7 +111,7 @@ class _CodexEntryCardState extends State<CodexEntryCard> {
           if (preview.isNotEmpty)
             Padding(
               padding: const EdgeInsets.only(top: 12),
-              child: CodexReferenceText(
+              child: ReferenceText(
                 text: preview,
                 isDark: isDark,
                 onReferenceTap: widget.onSegmentTap,

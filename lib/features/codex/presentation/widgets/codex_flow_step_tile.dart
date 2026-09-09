@@ -15,7 +15,7 @@
 import 'package:flutter/material.dart';
 import '../../data/models/codex_entry_dto.dart';
 import '../../../../core/theme/app_theme.dart';
-import 'codex_reference_text.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 import 'codex_rule_block_widget.dart';
 
 class CodexFlowStepTile extends StatelessWidget {
@@ -163,7 +163,7 @@ class _ExampleChip extends StatelessWidget {
   final String text;
   final bool isDark;
   final bool indent;
-  final CodexReferenceTap? onReferenceTap;
+  final ReferenceTap? onReferenceTap;
 
   const _ExampleChip({
     required this.text,
@@ -191,7 +191,7 @@ class _ExampleChip extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: CodexReferenceText(
+            child: ReferenceText(
               text: text,
               isDark: isDark,
               onReferenceTap: onReferenceTap,

@@ -50,22 +50,22 @@
         "a_en": "Yes. The weapon skill is optional."
       },
       {
-        "q_cn": "装备【雌雄双股剑】攻击大乔，大乔发动【流离】将目标转移后，如何结算？",
-        "a_cn": "武器技能在【流离】结算后判断。若新目标满足发动条件（与攻击者性别不同），则由新目标承担武器效果。",
+        "q_cn": "装备【雌雄双股剑】攻击大乔，大乔发动〖流离〗将目标转移后，如何结算？",
+        "a_cn": "武器技能在〖流离〗结算后判断。若新目标满足发动条件（与攻击者性别不同），则由新目标承担武器效果。",
         "q_en": "If the attacker targets Da Qiao with [Twin Swords] equipped and Da Qiao uses 〖Displaced〗 to redirect the [Kill], how is the weapon resolved?",
         "a_en": "The weapon skill is evaluated after 〖Displaced〗 resolves. If the new target meets the condition (different gender), they bear the weapon's effect instead."
       },
       {
         "q_cn": "马超或黄忠装备【雌雄双股剑】并使用【杀】指定异性目标后，武将技能和武器技能如何结算？",
-        "a_cn": "先发动武将技能，再发动武器技能。例如：马超对黄月英使用【杀】并发动【铁骑】，判定结果出来后，黄月英再选择弃手牌或令马超摸牌，然后结算伤害。",
+        "a_cn": "先发动武将技能，再发动武器技能。例如：马超对黄月英使用【杀】并发动〖铁骑〗，判定结果出来后，黄月英再选择弃手牌或令马超摸牌，然后结算伤害。",
         "q_en": "If Ma Chao or Huang Zhong (equipped with [Twin Swords]) uses [Kill] on an opposite-gender target, in what order do the general skill and weapon skill resolve?",
         "a_en": "The general's skill resolves first, then the weapon skill. For example: Ma Chao uses [Kill] on Huang Yueying and activates 〖Iron Cavalry〗; after the judgment, Huang Yueying chooses to discard or let Ma Chao draw, then damage is dealt."
       },
       {
-        "q_cn": "女性角色装备【雌雄双股剑】对只有一张手牌的诸葛亮使用【杀】，若诸葛亮弃置该牌后进入空城状态，伤害如何结算？",
-        "a_cn": "诸葛亮弃牌后仍须承受此【杀】的伤害，受伤后再进入空城状态。一旦已成为【杀】的目标，空城状态无法阻止伤害结算。",
-        "q_en": "A female general equipped with [Twin Swords] uses [Kill] on Zhuge Liang who has only one hand card. If Zhuge Liang discards that card (entering Empty City), is the damage still dealt?",
-        "a_en": "Yes. Once Zhuge Liang is already the target of a [Kill], Empty City cannot prevent the damage. He discards the card, takes the damage, and then enters Empty City."
+        "q_cn": "女性角色装备【雌雄双股剑】对只有一张手牌的诸葛亮使用【杀】，若诸葛亮弃置该牌后满足〖空城〗的条件，此【杀】如何结算？",
+        "a_cn": "诸葛亮没有手牌时，〖空城〗立即生效，但不会取消已经以其为目标的【杀】。此【杀】继续正常结算，并非必然造成伤害。",
+        "q_en": "A female general equipped with [Twin Swords] uses [Kill] on Zhuge Liang, who has one hand card. If he discards it and meets 〖Empty Fort〗's condition, how does the [Kill] resolve?",
+        "a_en": "〖Empty Fort〗 applies as soon as Zhuge Liang has no hand cards, but does not cancel a [Kill] that already targeted him. That [Kill] continues resolving normally; damage is not automatic."
       }
     ]
   },
@@ -96,26 +96,26 @@
         "a_en": "Yes, unless the game-ending condition has been met."
       },
       {
-        "q_cn": "发动【方天画戟】技能时，若诸葛亮是目标之一，轮到其结算时进入空城状态，如何处理？",
-        "a_cn": "空城状态无法阻止已成为目标的结算。诸葛亮正常受到此【杀】的伤害。",
-        "q_en": "If Zhuge Liang is one of the [Sky Piercer]'s targets and enters Empty City by the time his resolution is reached, what happens?",
-        "a_en": "Empty City cannot prevent resolution once he is already a target. Zhuge Liang takes the damage normally."
+        "q_cn": "发动【方天画戟】技能时，若诸葛亮是目标之一，轮到其结算时已满足〖空城〗的条件，如何处理？",
+        "a_cn": "诸葛亮没有手牌时，〖空城〗立即生效，但不会取消已经以其为目标的【杀】。此【杀】继续正常结算，并非必然造成伤害。",
+        "q_en": "If Zhuge Liang is one of [Sky Piercer]'s targets and meets 〖Empty Fort〗's condition by the time the [Kill] resolves against him, what happens?",
+        "a_en": "〖Empty Fort〗 applies as soon as Zhuge Liang has no hand cards, but does not cancel a [Kill] that already targeted him. That [Kill] continues resolving normally; damage is not automatic."
       },
       {
-        "q_cn": "无手牌的刘备装备【方天画戟】，通过【激将】借用他人的【杀】，能发动武器技能吗？",
-        "a_cn": "不能。【方天画戟】要求必须是使用者自己的最后一张手牌，通过【激将】使用的【杀】不满足此条件。",
+        "q_cn": "无手牌的刘备装备【方天画戟】，通过〖激将〗借用他人的【杀】，能发动武器技能吗？",
+        "a_cn": "不能。【方天画戟】要求必须是使用者自己的最后一张手牌，通过〖激将〗使用的【杀】不满足此条件。",
         "q_en": "Liu Bei has no hand cards and is equipped with [Sky Piercer]. He activates 〖Rally the Vanguard〗 to have an ally play a [Kill]. Can the weapon skill activate?",
         "a_en": "No. [Sky Piercer] requires the [Kill] to be the attacker's own last hand card. A [Kill] played via 〖Rally the Vanguard〗 does not satisfy this condition."
       },
       {
-        "q_cn": "夏侯渊发动【神速】打出的最后一张装备牌（而非【杀】），能否触发【方天画戟】特效？",
+        "q_cn": "夏侯渊发动〖神速〗打出的最后一张装备牌（而非【杀】），能否触发【方天画戟】特效？",
         "a_cn": "不可以。武器技能只由【杀】触发，且必须是手牌中的最后一张。",
         "q_en": "Xiahou Yuan activates 〖Lightning Speed〗 and the last card played is an equipment card, not a [Kill]. Can [Sky Piercer]'s skill activate?",
         "a_en": "No. The weapon skill only triggers when the last hand card played is a [Kill]."
       },
       {
-        "q_cn": "发动【方天画戟】技能时，大乔发动【流离】将自己身上的【杀】转移给另一个目标，如何结算？",
-        "a_cn": "被【流离】的角色须承受两次【杀】的结算。大乔必须在被指定为目标时立即发动【流离】，而非轮到她结算时才发动。",
+        "q_cn": "发动【方天画戟】技能时，大乔发动〖流离〗将自己身上的【杀】转移给另一个目标，如何结算？",
+        "a_cn": "被〖流离〗的角色须承受两次【杀】的结算。大乔必须在被指定为目标时立即发动〖流离〗，而非轮到她结算时才发动。",
         "q_en": "During [Sky Piercer]'s resolution, Da Qiao uses 〖Displaced〗 to redirect the [Kill] aimed at her onto another existing target. How is this resolved?",
         "a_en": "The redirected character must resolve two separate [Kill] instances. Da Qiao must activate 〖Displaced〗 immediately when she is designated as a target, not when the [Kill] resolves on her in turn order."
       }
@@ -136,16 +136,10 @@
     ],
     "faq": [
       {
-        "q_cn": "【飞龙夺凤】转移装备时，若目标装备区对应位置已有装备，如何处理？",
-        "a_cn": "被转移的装备替换你装备区内原有的同类装备，原有装备被弃置。",
+        "q_cn": "【飞龙夺凤】转移装备时，若你的装备区对应位置已有装备，如何处理？",
+        "a_cn": "只有你的装备区对应位置可用时，才能将该装备移入。此效果不能替换已有装备。",
         "q_en": "If your Equipment Zone already has a card in the same slot as the one you are taking with [Soaring Dragon Blade], what happens?",
-        "a_en": "The taken equipment replaces your existing card in that slot; your old equipment is discarded."
-      },
-      {
-        "q_cn": "使用此牌时，是否须先将【黑桃2 雌雄双股剑】从牌堆中移除？",
-        "a_cn": "是的。按照游戏规则，【飞龙夺凤】在加入游戏时须替换标准版中的【黑桃2 雌雄双股剑】。",
-        "q_en": "Does [Soaring Dragon Blade] replace another card in the deck?",
-        "a_en": "Yes. When including this card, it replaces the ♠2 [Twin Swords] from the standard deck."
+        "a_en": "You can move the equipment only if its corresponding slot in your Equipment Zone is available. This effect does not replace existing equipment."
       }
     ]
   },
@@ -160,7 +154,7 @@
       "锁定技，当你使用【杀】对目标角色造成伤害时，若该角色没有手牌，则此伤害+1。"
     ],
     "effect_en": [
-      "Locked Skill: When your [Kill] deals damage to a target, if that target has no hand cards, the damage dealt +1."
+      "Locked Skill: When your [Kill] deals damage to a target, if that target has no hand cards, increase the damage dealt by 1."
     ],
     "faq": [
       {
@@ -170,20 +164,20 @@
         "a_en": "No. [Ancient Scimitar] only applies to the direct target of the [Kill]; it does not affect chain-spread damage."
       },
       {
-        "q_cn": "装备【古锭刀】攻击没有手牌的大乔，大乔发动【流离】后，新目标若也没有手牌，伤害是否+1？",
-        "a_cn": "对大乔本人的伤害不+1（她不再是目标）。若【流离】的新目标没有手牌，则对新目标的伤害+1。",
+        "q_cn": "装备【古锭刀】攻击没有手牌的大乔，大乔发动〖流离〗后，新目标若也没有手牌，伤害是否+1？",
+        "a_cn": "对大乔本人的伤害不+1（她不再是目标）。若〖流离〗的新目标没有手牌，则对新目标的伤害+1。",
         "q_en": "The attacker equipped with [Ancient Scimitar] targets Da Qiao (no hand cards); Da Qiao uses 〖Displaced〗 to redirect the [Kill]. If the new target also has no hand cards, does the bonus damage apply?",
         "a_en": "The bonus does not apply to Da Qiao since she is no longer the target. If the new target has no hand cards, the +1 bonus applies to them."
       },
       {
-        "q_cn": "装备【古锭刀】攻击小乔，小乔发动【天香】将伤害转移给一名无手牌的角色，该角色是否受到+1伤害？",
-        "a_cn": "不会。【古锭刀】只针对【杀】的直接目标（小乔），【天香】转移的伤害不触发武器效果。",
-        "q_en": "The attacker uses [Kill] on Xiao Qiao (equipped with [Ancient Scimitar]); Xiao Qiao activates 〖Celestial Fragrance〗 to redirect the damage to another character with no hand cards. Does the bonus apply?",
+        "q_cn": "装备【古锭刀】攻击小乔，小乔发动〖天香〗将伤害转移给一名无手牌的角色，该角色是否受到+1伤害？",
+        "a_cn": "不会。【古锭刀】只针对【杀】的直接目标（小乔），〖天香〗转移的伤害不触发武器效果。",
+        "q_en": "The attacker, equipped with [Ancient Scimitar], uses [Kill] on Xiao Qiao; Xiao Qiao activates 〖Celestial Fragrance〗 to redirect the damage to another character with no hand cards. Does the bonus apply?",
         "a_en": "No. [Ancient Scimitar] only affects the direct target of the [Kill] (Xiao Qiao). Damage redirected by 〖Celestial Fragrance〗 does not trigger the weapon bonus."
       },
       {
-        "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动【天妒】将判定牌收入手牌，此时是否受到+1伤害？",
-        "a_cn": "不受+1伤害。郭嘉通过【天妒】获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
+        "q_cn": "装备【古锭刀】攻击无手牌但装备【八卦阵】的郭嘉，郭嘉判定为黑色后发动〖天妒〗将判定牌收入手牌，此时是否受到+1伤害？",
+        "a_cn": "不受+1伤害。郭嘉通过〖天妒〗获得了手牌，因此在伤害结算时有手牌，不满足触发条件。",
         "q_en": "Guo Jia has no hand cards but is equipped with [Eight Trigrams Formation]. He fails the judgment and activates 〖Heaven's Envy〗 to take the Judgment Card into his hand. Does [Ancient Scimitar]'s bonus now apply?",
         "a_en": "No. Guo Jia now has a hand card (from 〖Heaven's Envy〗), so the condition for the bonus is no longer met at the time damage is resolved."
       }
@@ -210,13 +204,13 @@
         "a_en": "Yes, but [Stonepiercer] itself cannot be discarded."
       },
       {
-        "q_cn": "装备【贯石斧】命中曹操后，曹操发动【奸雄】可以收取什么牌？",
+        "q_cn": "装备【贯石斧】命中曹操后，曹操发动〖奸雄〗可以收取什么牌？",
         "a_cn": "曹操收取对其造成伤害的那张【杀】。",
         "q_en": "If [Stonepiercer] forces damage through and hits Cao Cao, what card does 〖Treacherous Hero〗 collect?",
         "a_en": "Cao Cao collects the [Kill] card that dealt damage to him."
       },
       {
-        "q_cn": "陆逊装备【贯石斧】发动武器技能，是否可以先弃一张手牌触发【连营】，再弃第二张来凑够两张？",
+        "q_cn": "陆逊装备【贯石斧】发动武器技能，是否可以先弃一张手牌触发〖连营〗，再弃第二张来凑够两张？",
         "a_cn": "不能。弃置两张牌必须同时进行。",
         "q_en": "Lu Xun is equipped with [Stonepiercer] and wants to activate the weapon skill. Can he discard one card first to trigger 〖Linked Camps〗, then discard a second card?",
         "a_en": "No. The two cards must be discarded simultaneously."
@@ -228,14 +222,14 @@
         "a_en": "Yes. The discard happens before damage is resolved. Even if the target is now out of range, the damage still applies."
       },
       {
-        "q_cn": "装备【贯石斧】攻击只有一张【闪】手牌的诸葛亮，诸葛亮打出【闪】后进入空城状态，是否可以发动武器技能并造成伤害？",
-        "a_cn": "可以。诸葛亮已成为【杀】的目标，发动武器技能后他须承受伤害，无论此时是否处于空城状态。",
-        "q_en": "The attacker uses [Kill] on Zhuge Liang (only hand card is a [Dodge]); Zhuge Liang plays [Dodge] and enters Empty City. Can [Stonepiercer] force the damage through?",
-        "a_en": "Yes. Zhuge Liang is already the target of the [Kill]. Once the weapon skill activates, he takes the damage regardless of his Empty City state."
+        "q_cn": "装备【贯石斧】攻击只有一张【闪】手牌的诸葛亮，诸葛亮使用【闪】后满足〖空城〗的条件，是否可以发动武器技能并造成伤害？",
+        "a_cn": "可以。〖空城〗不会取消已经确定的目标。【贯石斧】可以令被【闪】抵消的【杀】依然造成伤害，但其他适用效果仍然生效。",
+        "q_en": "The attacker uses [Kill] on Zhuge Liang, whose only hand card is a [Dodge]. He uses it and meets 〖Empty Fort〗's condition. Can [Stonepiercer] still make the [Kill] deal damage?",
+        "a_en": "Yes. 〖Empty Fort〗 does not cancel an existing target. [Stonepiercer] can make the [Kill] still deal damage after it is Dodged, subject to other applicable effects."
       },
       {
-        "q_cn": "装备【贯石斧】攻击张角，若张角使用【闪】触发【雷击】，如何结算？",
-        "a_cn": "先结算【雷击】判定。判定完成后，若攻击者仍存活，可选择是否弃两张牌强制命中。",
+        "q_cn": "装备【贯石斧】攻击张角，若张角使用【闪】触发〖雷击〗，如何结算？",
+        "a_cn": "先结算〖雷击〗判定。判定完成后，若攻击者仍存活，可选择是否弃两张牌强制命中。",
         "q_en": "The attacker equipped with [Stonepiercer] uses [Kill] on Zhang Jiao; Zhang Jiao plays [Dodge] and activates 〖Lightning Strike〗. How does this resolve?",
         "a_en": "Resolve 〖Lightning Strike〗's judgment first. After it resolves, if the attacker is still alive, they may choose to discard two cards to force the damage through."
       },
@@ -345,12 +339,10 @@
     "category_en": "Weapon",
     "range": 3,
     "effect_cn": [
-      "当你使用的【杀】被目标角色使用的【闪】抵消后，你可以对该角色再使用一张【杀】。",
-      "锁定技，当你使用【杀】时，所有目标角色不能明置武将牌，直到此【杀】结算完毕为止。"
+      "当你使用的【杀】被目标角色使用的【闪】抵消后，你可以对该角色再使用一张【杀】。"
     ],
     "effect_en": [
-      "When your [Kill] is Negated by a target's [Dodge], you may immediately use another [Kill] against that same target.",
-      "Locked Skill: When you use [Kill], all target characters cannot reveal (flip face-up) their general cards until the [Kill] finishes resolving."
+      "When your [Kill] is Negated by a target's [Dodge], you may immediately use another [Kill] against that same target."
     ],
     "faq": [
       {
@@ -358,12 +350,6 @@
         "a_cn": "可以，若追加的【杀】也被【闪】抵消，可再次发动武器技能。",
         "q_en": "If the follow-up [Kill] from [Green Dragon Crescent Blade] is also Negated by a [Dodge], can the weapon skill activate again?",
         "a_en": "Yes. If the follow-up [Kill] is also Negated, the weapon skill can trigger again."
-      },
-      {
-        "q_cn": "锁定技（禁止明置）是否影响无武将牌明置需求的技能？",
-        "a_cn": "只影响需要明置武将牌的技能，不涉及明置的技能均不受影响。",
-        "q_en": "Does the Locked effect (preventing general card reveal) affect skills that do not require revealing a general card?",
-        "a_en": "No. It only prevents skills that specifically require flipping or revealing the general card. Skills with no such requirement are unaffected."
       }
     ]
   },
@@ -457,9 +443,9 @@
       },
       {
         "q_cn": "用【丈八蛇矛】打出的【杀】，其点数、花色和颜色如何判定？",
-        "a_cn": "通过【丈八蛇矛】使用的【杀】是将两张实体牌当【杀】操作，依据「将…牌当A牌操作」规则：牌名变为【杀】，但花色、点数、颜色仍为原来两张牌各自的信息。由于是两张牌，具体使用哪张牌的属性（如拼点）以实际结算为准。",
+        "a_cn": "按本应用采用的规则，此【杀】无花色。两张牌均为红色则为红色，均为黑色则为黑色，否则无色。点数为两张牌的点数之和，至多为K。",
         "q_en": "What are the rank, suit, and color of a [Kill] produced by [Serpent Spear]?",
-        "a_en": "A [Kill] from [Serpent Spear] uses two physical cards treated as [Kill] under the 'treat card as' rule: the card name becomes [Kill], but each card's original suit, rank, and color are retained. Since two cards are involved, the specific attributes used in any subsequent check (e.g. a Point Duel) follow the normal resolution for whichever card applies."
+        "a_en": "Under this app's adopted rules, the resulting [Kill] has no suit. It is red if both cards are red, black if both are black, and colorless otherwise. Its rank is the sum of their ranks, capped at K."
       },
       {
         "q_cn": "是否可以发动【丈八蛇矛】响应【南蛮入侵】或【决斗】？",
@@ -468,7 +454,7 @@
         "a_en": "Yes."
       },
       {
-        "q_cn": "蜀国武将装备【丈八蛇矛】时，可以用武器技能响应刘备的【激将】吗？",
+        "q_cn": "蜀国武将装备【丈八蛇矛】时，可以用武器技能响应刘备的〖激将〗吗？",
         "a_cn": "可以。",
         "q_en": "If a Shu general is equipped with [Serpent Spear], can they use its skill to respond to Liu Bei's 〖Rally the Vanguard〗?",
         "a_en": "Yes."
@@ -486,20 +472,20 @@
       "锁定技，你使用【杀】无次数限制。"
     ],
     "effect_en": [
-      "Locked Skill: You may use [Kill] any number of times per turn (the normal once-per-turn limit is removed)."
+      "Locked Skill: Your [Kill] usage limit is removed."
     ],
     "faq": [
       {
-        "q_cn": "装备【诸葛连弩】后，若将其换掉，本回合还能继续无限使用【杀】吗？",
-        "a_cn": "不能。失去【诸葛连弩】后，【杀】的使用次数恢复正常限制。若本回合已超出正常次数，则不能再使用【杀】。",
-        "q_en": "If [Repeating Crossbow] is replaced during the turn, can [Kill] still be used freely for the rest of that turn?",
-        "a_en": "No. Once [Repeating Crossbow] is gone, the normal [Kill] limit is restored. If the normal limit has already been exceeded, no further [Kill] cards may be played that turn."
+        "q_cn": "失去装备区里的【诸葛连弩】后，此出牌阶段还能继续无限使用【杀】吗？",
+        "a_cn": "不能。失去【诸葛连弩】后，正常次数限制重新生效。若你在此出牌阶段已达到该限制，则此阶段不能再使用【杀】，除非其他效果允许。",
+        "q_en": "After you lose your equipped [Repeating Crossbow], can you still use unlimited [Kill] cards during this Play Phase?",
+        "a_en": "No. After you lose [Repeating Crossbow], the normal limit applies again. If you have already reached that limit during this Play Phase, you cannot use another [Kill] during that phase unless another effect permits it."
       },
       {
-        "q_cn": "【诸葛连弩】是否解除每回合只能使用一张【杀】的限制？",
-        "a_cn": "是的，装备【诸葛连弩】期间，使用【杀】不受次数限制。",
-        "q_en": "Does [Repeating Crossbow] completely remove the once-per-turn [Kill] limit?",
-        "a_en": "Yes. While equipped, there is no limit to how many [Kill] cards can be used per turn."
+        "q_cn": "【诸葛连弩】是否解除每个出牌阶段通常只能使用一张【杀】的限制？",
+        "a_cn": "是的，但其他使用时机和目标限制仍然适用。",
+        "q_en": "Does [Repeating Crossbow] remove the normal one-[Kill]-per-Play-Phase limit?",
+        "a_en": "Yes. It does not remove other timing or targeting restrictions."
       }
     ]
   },
@@ -532,51 +518,6 @@
     ]
   },
   {
-    "id": "weapon_rippling_wave_sword",
-    "name_cn": "水波劍",
-    "name_en": "Rippling Wave Sword",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 2,
-    "effect_cn": [
-      "每回合限两次，你使用【杀】或普通锦囊牌可以增加一个目标；此牌离开你的装备区后，你回复1点体力；此牌置入弃牌堆时移出游戏。"
-    ],
-    "effect_en": [
-      "Twice per turn, when you use [Kill] or a Non-Time-Delayed Tool Card, you may add one additional target. When this card leaves your Equipment Zone, you recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_celestial_thunder_blade",
-    "name_cn": "天雷刃",
-    "name_en": "Celestial Thunder Blade",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 4,
-    "effect_cn": [
-      "当你使用【杀】指定目标后，你可以令其进行判定，若结果为黑桃，其受到3点雷电伤害；梅花，其受到1点雷电伤害，你回复1点体力并摸一张牌；此牌置入弃牌堆时移出游戏。"
-    ],
-    "effect_en": [
-      "After you use [Kill] and designate a target, you may have that character perform a Judgment: if the result is Spades, they take 3 Lightning damage; if Clubs, they take 1 Lightning damage and you recover 1 HP and draw 1 card. When this card enters the Discard Pile, it is instead Removed from the Game."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_dark_iron_chain",
-    "name_cn": "烏鐵鎖鏈",
-    "name_en": "Dark Iron Chain",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 3,
-    "effect_cn": [
-      "锁定技，当你使用【杀】指定目标后，你令其横置。"
-    ],
-    "effect_en": [
-      "Locked Skill: After you use [Kill] and designate a target, that character is placed into the Chained state."
-    ],
-    "faq": []
-  },
-  {
     "id": "weapon_houyi_bow",
     "name_cn": "金烏落日弓",
     "name_en": "Houyi Bow",
@@ -588,51 +529,6 @@
     ],
     "effect_en": [
       "During your Play Phase, after you lose at least 2 hand cards at once, you may discard an equal number of cards from one other character."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_venom_curved_dagger",
-    "name_cn": "混毒彎匕",
-    "name_en": "Venom Curved Dagger",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 1,
-    "effect_cn": [
-      "当你使用【杀】指定目标后，你可以令其失去X点体力(X为你本回合发动该技能的次数且至多为5)；此牌置入弃牌堆时移出游戏。"
-    ],
-    "effect_en": [
-      "After you use [Kill] and designate a target, you may have that character lose X HP (X = the number of times you have activated this effect this turn, up to 5). When this card enters the Discard Pile, it is instead Removed from the Game."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_crimson_satin_spear",
-    "name_cn": "紅緞槍",
-    "name_en": "Crimson Satin Spear",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 3,
-    "effect_cn": [
-      "每回合限一次，当你使用【杀】造成伤害后，你可以进行判定，若结果为黑色，你摸两张牌，红色，你回复1点体力；此牌置入弃牌堆时移出游戏。"
-    ],
-    "effect_en": [
-      "Once per turn, after your [Kill] deals damage, you may perform a Judgment: if the result is Black, draw 2 cards; if Red, recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_refined_iron_twin_halberd",
-    "name_cn": "鑌鐵雙戟",
-    "name_en": "Refined Iron Twin Halberd",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 3,
-    "effect_cn": [
-      "当你使用的【杀】被抵消时，你可以失去1点体力。然后获得此【杀】并摸一张牌，本回合你使用【杀】的次数+1。"
-    ],
-    "effect_en": [
-      "When a [Kill] you use is Negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] usage limit increases by 1 this turn."
     ],
     "faq": []
   },
@@ -652,66 +548,6 @@
     "faq": []
   },
   {
-    "id": "weapon_crimson_edge",
-    "name_cn": "赤血青鋒",
-    "name_en": "Crimson Edge",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 2,
-    "effect_cn": [
-      "锁定技，你使用【杀】无视目标角色防具，其不能使用或打出手牌直到结算完成。"
-    ],
-    "effect_en": [
-      "Locked Skill: When you use [Kill], Ignore the target character's armor. That character cannot use or play hand cards until the resolution is complete."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_blazeforged_blade",
-    "name_cn": "烈淬刀",
-    "name_en": "Blazeforged Blade",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 2,
-    "effect_cn": [
-      "每回合限两次，当你使用【杀】对目标角色造成伤害时，你可以弃置一张牌令此伤害+1；出牌阶段，你使用【杀】的次数+1；此牌置入弃牌堆时移出游戏。"
-    ],
-    "effect_en": [
-      "Twice per turn, when your [Kill] deals damage to a target character, you may discard 1 card to increase that damage by 1. During your Play Phase, your [Kill] usage limit increases by 1. When this card enters the Discard Pile, it is instead Removed from the Game."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_ghost_dragon_moonsever",
-    "name_cn": "鬼龍斬月刀",
-    "name_en": "Ghost Dragon Moonsever",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 3,
-    "effect_cn": [
-      "锁定技，你使用的红色【杀】不能被响应。"
-    ],
-    "effect_en": [
-      "Locked Skill: Red [Kill] cards you use cannot be responded to."
-    ],
-    "faq": []
-  },
-  {
-    "id": "weapon_peerless_sky_halberd",
-    "name_cn": "無雙方天戟",
-    "name_en": "Peerless Sky Halberd",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 4,
-    "effect_cn": [
-      "当你使用【杀】对目标角色造成伤害后，你可以摸一张牌或弃置其一张牌。"
-    ],
-    "effect_en": [
-      "After your [Kill] deals damage to a target character, you may draw 1 card or discard 1 of their cards."
-    ],
-    "faq": []
-  },
-  {
     "id": "weapon_seven_treasures_blade",
     "name_cn": "七寶刀",
     "name_en": "Seven Treasures Blade",
@@ -722,7 +558,7 @@
       "锁定技，你使用【杀】无视目标角色防具；当你使用【杀】对目标角色造成伤害时，若其未受伤，此伤害+1。"
     ],
     "effect_en": [
-      "Locked Skill: When you use [Kill], Ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, that damage +1."
+      "Locked Skill: When you use [Kill], Ignore the target character's armor. When your [Kill] deals damage to a target character, if that character is Unwounded, increase that damage by 1."
     ],
     "faq": []
   },
@@ -734,7 +570,7 @@
     "category_en": "Weapon",
     "range": 3,
     "effect_cn": [
-      "当你使用【杀】指定一名角色为目标后,你可令该角色弃置你的一张手牌,然后你弃置其一张手牌。"
+      "当你使用【杀】指定一名角色为目标后，你可令该角色弃置你的一张手牌，然后你弃置其一张手牌。"
     ],
     "effect_en": [
       "After you use [Kill] and designate a target, you may have that character discard 1 of your hand cards, then you discard 1 of their hand cards."
@@ -753,21 +589,6 @@
         "a_en": "Yes. Once activated, both steps must be carried out where possible."
       }
     ]
-  },
-  {
-    "id": "weapon_five_elements_crane_fan",
-    "name_cn": "五行鶴翎扇",
-    "name_en": "Five Elements Crane Fan",
-    "category_cn": "武器牌",
-    "category_en": "Weapon",
-    "range": 4,
-    "effect_cn": [
-      "你使用的属性【杀】可以视为任意属性。"
-    ],
-    "effect_en": [
-      "Elemental [Kill] cards you use may be treated as any elemental type."
-    ],
-    "faq": []
   },
   {
     "id": "weapon_xingtian_war_axe",
@@ -800,21 +621,27 @@
     "faq": [
       {
         "q_cn": "【藏锋】是什么类型的牌？它如何占用装备栏？",
-        "a_cn": "【藏锋】是游戏中第一张“双副类别装备牌”，同时视为武器牌和宝物牌。处于装备区时，同时占用武器栏和宝物栏。",
+        "a_cn": "【藏锋】是“双副类别装备牌”，同时视为武器牌和宝物牌。处于装备区时，同时占用武器栏和宝物栏。",
         "q_en": "What type of card is [Ink Brush], and how does it occupy Equipment Zone slots?",
-        "a_en": "[Ink Brush] is the first 'dual sub-category equipment card' in the game. It is simultaneously treated as both a Weapon Card and a Treasure Card, and occupies both the Weapon slot and the Treasure slot of the Equipment Zone at the same time."
+        "a_en": "[Ink Brush] is a dual-subcategory Equipment Card. It is treated as both a Weapon Card and a Treasure Card, and occupies both the Weapon and Treasure slots while in the Equipment Zone."
       },
       {
-        "q_cn": "将【藏锋】置入装备区时，会替换什么？",
-        "a_cn": "将【藏锋】置入一名角色的装备区时，同时替换该角色装备区中的武器牌和宝物牌（若有）。",
-        "q_en": "When [Ink Brush] is placed into a character's Equipment Zone, what does it replace?",
-        "a_en": "When [Ink Brush] is placed into a character's Equipment Zone, it simultaneously replaces both their equipped Weapon Card and their equipped Treasure Card, if any."
+        "q_cn": "使用【藏锋】将其置入装备区时，会替换什么？",
+        "a_cn": "使用【藏锋】将其置入一名角色的装备区时，同时替换该角色装备区中的武器牌和宝物牌（若有）。",
+        "q_en": "When [Ink Brush] is used and placed into a character's Equipment Zone, what does it replace?",
+        "a_en": "It replaces both that character's equipped Weapon Card and Treasure Card, if any."
       },
       {
         "q_cn": "已装备【藏锋】的角色使用武器牌或宝物牌时，会发生什么？",
         "a_cn": "当已装备【藏锋】的角色使用武器牌或宝物牌时，该武器牌或宝物牌会替换【藏锋】。",
         "q_en": "What happens when a character equipped with [Ink Brush] uses a Weapon Card or Treasure Card?",
         "a_en": "When a character equipped with [Ink Brush] uses a Weapon Card or Treasure Card, that card replaces [Ink Brush] in their Equipment Zone."
+      },
+      {
+        "q_cn": "其他效果可以将【藏锋】移动至已有武器牌或宝物牌的装备区吗？",
+        "a_cn": "不可以。移动装备牌时不能替换已有装备。由于【藏锋】同时占用武器栏和宝物栏，目标角色的这两个装备栏均须为空，才能将其移动至该角色的装备区。",
+        "q_en": "Can another effect move [Ink Brush] into an Equipment Zone that already contains a Weapon Card or Treasure Card?",
+        "a_en": "No. Moving an Equipment Card does not replace existing equipment. Because [Ink Brush] occupies both the Weapon and Treasure slots, both slots must be empty before it can be moved into that character's Equipment Zone."
       }
     ]
   },
@@ -841,7 +668,7 @@
     "category_en": "Weapon",
     "range": 4,
     "effect_cn": [
-      "你可以将你的任一普通 【杀】当着雷电伤害的 【杀】来使用。"
+      "你可以将你的任一普通【杀】当着雷电伤害的【杀】来使用。"
     ],
     "effect_en": [
       "You may use any normal [Kill] as a thunder [Kill]."
@@ -856,7 +683,7 @@
     "category_en": "Weapon",
     "range": 5,
     "effect_cn": [
-      "你使用【杀】对一名角色造成伤害时,你可以获得对方装备区里的一张牌。"
+      "你使用【杀】对一名角色造成伤害时，你可以获得对方装备区里的一张牌。"
     ],
     "effect_en": [
       "When your [Kill] deals damage to a character, you may gain one card from their Equipment Zone."
@@ -923,7 +750,7 @@
     "category_en": "Weapon",
     "range": 2,
     "effect_cn": [
-      "任何时候,你每打出一张【杀】，则立即摸1张手牌。"
+      "任何时候，你每打出一张【杀】，则立即摸1张手牌。"
     ],
     "effect_en": [
       "At any time, whenever you play a [Kill], immediately draw 1 card."
@@ -953,7 +780,7 @@
     "category_en": "Weapon",
     "range": 1,
     "effect_cn": [
-      "在任意角色的判定牌生效前,你可以打出一张手牌代替之。"
+      "在任意角色的判定牌生效前，你可以打出一张手牌代替之。"
     ],
     "effect_en": [
       "Before any character's Judgment Card takes effect, you may play a hand card to substitute for it."
@@ -1028,7 +855,7 @@
     "category_en": "Weapon",
     "range": 4,
     "effect_cn": [
-      "你打出【杀】时,可弃置两张手牌使【杀】 伤害+1。"
+      "你打出【杀】时，可弃置两张手牌使【杀】伤害+1。"
     ],
     "effect_en": [
       "When you play a [Kill], you may discard 2 hand cards to increase that [Kill]'s damage by 1."
@@ -1108,7 +935,7 @@
       "你使用【杀】指定异性为目标时，你可以选择一项：此【杀】不可被抵消；此【杀】造成的伤害+1。"
     ],
     "effect_en": [
-      "When you use [Kill] targeting a character of the opposite gender, choose one: 1. This [Kill] cannot be Negated; 2. The damage dealt by this [Kill] +1."
+      "When you use [Kill] targeting a character of the opposite gender, you may choose one: 1. This [Kill] cannot be Negated; 2. Increase the damage dealt by this [Kill] by 1."
     ],
     "faq": []
   },
@@ -1138,7 +965,7 @@
       "锁定技，每当你使用【杀】造成伤害时，若目标角色未受伤，你令伤害+1。"
     ],
     "effect_en": [
-      "Locked Skill: Whenever your [Kill] deals damage to a target character, if that character is Unwounded, that damage +1."
+      "Locked Skill: Whenever your [Kill] deals damage to a target character, if that character is Unwounded, increase that damage by 1."
     ],
     "faq": []
   },
@@ -1153,7 +980,7 @@
       "锁定技，使用【杀】造成伤害后，目标扣减1点体力上限。"
     ],
     "effect_en": [
-      "Locked Skill: After your [Kill] deals damage, the target character's Max HP -1."
+      "Locked Skill: After your [Kill] deals damage, the target character's Max HP decreases by 1."
     ],
     "faq": []
   },
@@ -1212,12 +1039,31 @@
     "category_en": "Weapon",
     "range": 3,
     "effect_cn": [
-      "你的打出的【杀】可定义为禁技杀，并且额外指定多一名目标角色。 失去此牌后，你对一名角色造成3点体力伤害。"
+      "你的打出的【杀】可定义为禁技杀，并且额外指定多一名目标角色。失去此牌后，你对一名角色造成3点体力伤害。"
     ],
     "effect_en": [
       "[Kill] cards you play may be designated as Skill-Suppressing [Kill]s, and may designate one additional target. When you lose this weapon, deal 3 damage to one character."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "「禁技杀」是官方术语吗？",
+        "a_cn": "不是已确认的官方标准术语。【閉月鏡】是同人牌，「禁技杀」应按玩家事先约定的房规结算。",
+        "q_en": "Is 「Skill-Suppressing [Kill]」 an official term?",
+        "a_en": "No confirmed official rules term defines it. [Moonhiding Mirror] is a fanmade card, so 「Skill-Suppressing [Kill]」 should resolve according to the house rule agreed by the players before the game."
+      },
+      {
+        "q_cn": "推荐如何结算「禁技杀」？",
+        "a_cn": "推荐房规：当此【杀】指定目标后，直到此【杀】对该目标的结算结束，该目标的非锁定技无效。锁定技仍然生效，且此效果本身不禁止目标使用或打出牌。",
+        "q_en": "What is the recommended meaning of 「Skill-Suppressing [Kill]」?",
+        "a_en": "Recommended house rule: after this [Kill] targets a character, that target's non-Locked skills are invalid until this [Kill] finishes resolving against them. Locked skills still apply, and this effect by itself does not prevent the target from using or playing cards."
+      },
+      {
+        "q_cn": "【閉月鏡】从手牌离开时也会触发3点伤害吗？",
+        "a_cn": "推荐房规：不会。只有【閉月鏡】离开你的装备区时，才触发对一名角色造成3点伤害的效果，例如被弃置、被获得、移走或被其他武器替换。从手牌中弃置、被获得或从手牌装备此牌，均不触发此效果。",
+        "q_en": "Does losing [Moonhiding Mirror] from your hand trigger its 3-damage effect?",
+        "a_en": "Recommended house rule: no. The effect triggers only when [Moonhiding Mirror] leaves your Equipment Zone, such as when it is discarded, taken, moved away, or replaced by another weapon. Discarding it from your hand, having it taken from your hand, or equipping it from your hand does not trigger this effect."
+      }
+    ]
   },
   {
     "id": "weapon_talisman_of_peace",
@@ -1227,7 +1073,7 @@
     "category_en": "Weapon",
     "range": 2,
     "effect_cn": [
-      "有判定牌生效前，你可以拿一张牌替换之。 当失去此牌后，你可弃置一名角色区域内的所有牌，并将其体力值改为一点。"
+      "有判定牌生效前，你可以拿一张牌替换之。当失去此牌后，你可弃置一名角色区域内的所有牌，并将其体力值改为一点。"
     ],
     "effect_en": [
       "Before any Judgment Card takes effect, you may replace it with a card from your hand (you keep the original Judgment Card). When you lose this weapon, you may discard all cards in one character's zone and set their HP Value to 1."
@@ -1245,7 +1091,7 @@
       "锁定技，你的【杀】无视目标角色的防具。若你手牌大于或血量小于目标角色，此【杀】不能被响应，且伤害+1。"
     ],
     "effect_en": [
-      "Locked Skill: Your [Kill] Ignores the target character's armor. If your hand card count is greater than, or your HP Value is less than, the target's, that [Kill] cannot be responded to and its damage +1."
+      "Locked Skill: Your [Kill] Ignores the target character's armor. If your hand card count is greater than, or your HP Value is less than, the target's, that [Kill] cannot be responded to and its damage increases by 1."
     ],
     "faq": []
   },
@@ -1272,7 +1118,7 @@
     "category_en": "Weapon",
     "range": 4,
     "effect_cn": [
-      "当你对目标角色造成伤害后，可以获得其区域内的所有牌。失去此牌后，你对一名角色造成X点伤害，X为为你已受伤的体力值。"
+      "当你对目标角色造成伤害后，可以获得其区域内的所有牌。失去此牌后，你对一名角色造成X点伤害，X为你已受伤的体力值。"
     ],
     "effect_en": [
       "After you deal damage to a target character, you may gain all cards in their zone. When you lose this weapon, deal X damage to one character, where X equals your HP Lost."
@@ -1307,7 +1153,20 @@
     "effect_en": [
       "Locked Skill: [Kill] cards you play against a target are treated as carrying 「Poison」. After damage is dealt, that character enters the Poisoned State."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【毒吹矢】的「毒杀」和「中毒」是官方规则吗？",
+        "a_cn": "不是。【毒吹矢】是采用《三国杀毒杀，幻杀，冰杀（民间圣包）的作用即可。》所述民间扩展概念的同人牌；官方规则没有定义「毒杀」或「中毒」的统一结算，需按玩家事先约定的房规结算。",
+        "q_en": "Are 「Poison Kill」 and the Poisoned State on [Poison Blowdart] official rules?",
+        "a_en": "No. [Poison Blowdart] is a fanmade card using the fan-expansion concept described in “Sanguosha Poison Kill, Illusion Kill, and Ice Kill (Fan Saint Pack) effects.” Official rules do not define a universal resolution for 「Poison Kill」 or the Poisoned State, so players should agree on a house rule before the game."
+      },
+      {
+        "q_cn": "推荐如何结算「中毒」以保持平衡？",
+        "a_cn": "推荐房规：当【毒吹矢】的【杀】造成伤害后，受伤角色获得1枚「毒」标记，与此次伤害点数无关。每名角色至多有3枚「毒」标记；达到上限后，后续命中仍正常造成伤害，但不再增加标记。\n该角色的准备阶段开始时，对此时已有的每枚「毒」标记依次各进行一次判定。若为梅花，其失去1点体力，实际失去体力后移去对应标记；否则保留该标记，留待下次准备阶段再次判定。每枚标记分别结算，因此同一阶段可以多次失去体力并移去多枚标记。\n本次结算中新获得的标记留待下次准备阶段。已有标记不因武器离开游戏或装备区而消失。没有标记时不进行毒判定，且不再处于「中毒」状态。\n此体力流失没有伤害来源，不属于伤害，不触发连环传导。",
+        "q_en": "What is the recommended balanced way to resolve the Poisoned State?",
+        "a_en": "Recommended house rule: after a [Kill] from [Poison Blowdart] deals damage, the damaged character gains 1 「Poison」 marker, regardless of the damage amount. Each character can have at most 3 markers. Further hits at the cap still deal damage normally but add no marker.\nAt the start of that character's Preparation Phase, perform one Judgment for each marker present at that moment, resolving them sequentially. For Clubs, they lose 1 HP; remove the corresponding marker after the HP loss occurs. Otherwise, retain that marker for another Judgment at their next Preparation Phase. Each marker resolves separately, so multiple markers can cause HP loss and be removed in the same phase.\nMarkers gained during this sequence wait until the next Preparation Phase. Existing markers persist after the weapon leaves play or its Equipment Zone. With no markers, make no poison Judgment and the 「Poisoned」 state ends.\nThis HP loss has no damage source, is not damage, and does not trigger chain propagation."
+      }
+    ]
   },
   {
     "id": "weapon_luoyang_shovel",
@@ -1357,8 +1216,21 @@
       "你使用【杀】无次数限制。你使用【杀】指定目标后，可以令任意名已死亡角色依次观看目标的手牌并可以重铸其中一张牌。"
     ],
     "effect_en": [
-      "Your use of [Kill] has no usage limit. After you use [Kill] and designate a target, you may have any number of dead characters, in sequence, each view the target's hand cards and optionally recast one of them."
+      "Your [Kill] usage limit is removed. After a [Kill] you use targets a character, you may choose any number of dead characters to act in sequence. Each looks at that target's hand and may choose one card from it to Reforge."
     ],
-    "faq": []
+    "faq": [
+      {
+        "q_cn": "【魂·诸葛连弩】令已死亡角色重铸目标手牌时，谁摸牌？",
+        "a_cn": "推荐房规：已死亡角色只负责选择目标当前手牌中的一张牌。将选中的牌置入弃牌堆后，由目标角色摸一张牌，再处理下一名已死亡角色的选择。已死亡角色不摸牌，也不会因此复活。",
+        "q_en": "Who draws when a dead character selects a card to Reforge through [Soul · Zhuge Repeating Crossbow]?",
+        "a_en": "Recommended house rule: the dead character only selects a card from the target's current hand. Place that card into the Discard Pile, then the target draws 1 card before the next dead character acts. Dead characters do not draw cards or return to play."
+      },
+      {
+        "q_cn": "多名已死亡角色按什么顺序执行？",
+        "a_cn": "推荐房规：从当前回合角色开始，按逆时针座次顺序，由被选中的已死亡角色依次执行。每名角色观看目标当时的手牌，并可以选择其中一张牌重铸。",
+        "q_en": "In what order do the selected dead characters act?",
+        "a_en": "Recommended house rule: the selected dead characters act in counter-clockwise seating order, starting from the current turn's character. Each looks at the target's hand as it exists at that moment and may select one card from it to Reforge."
+      }
+    ]
   }
 ]

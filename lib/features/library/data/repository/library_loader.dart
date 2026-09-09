@@ -21,6 +21,7 @@ class LibraryLoader {
     'assets/data/library/armor.json',
     'assets/data/library/treasure.json',
     'assets/data/library/mounts.json',
+    'assets/data/library/divine_treasure.json',
   ];
 
   // ── Public API 

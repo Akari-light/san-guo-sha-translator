@@ -1,0 +1,381 @@
+[
+  {
+    "id": "weapon_crimson_satin_spear",
+    "name_cn": "紅緞槍",
+    "name_en": "Crimson Satin Spear",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 3,
+    "effect_cn": [
+      "每回合限一次，当你使用【杀】造成伤害后，你可以进行判定，若结果为黑色，你摸两张牌，红色，你回复1点体力；此牌置入弃牌堆时移出游戏。"
+    ],
+    "effect_en": [
+      "Once per turn, after your [Kill] deals damage, you may perform a Judgment: if the result is Black, draw 2 cards; if Red, recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_blazeforged_blade",
+    "name_cn": "烈淬刀",
+    "name_en": "Blazeforged Blade",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 2,
+    "effect_cn": [
+      "每回合限两次，当你使用【杀】对目标角色造成伤害时，你可以弃置一张牌令此伤害+1；出牌阶段，你使用【杀】的次数+1；此牌置入弃牌堆时移出游戏。"
+    ],
+    "effect_en": [
+      "Twice per turn, when your [Kill] deals damage to a target character, you may discard 1 card to increase that damage by 1. During your Play Phase, your [Kill] usage limit increases by 1. When this card enters the Discard Pile, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_venom_curved_dagger",
+    "name_cn": "混毒彎匕",
+    "name_en": "Venom Curved Dagger",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 1,
+    "effect_cn": [
+      "当你使用【杀】指定目标后，你可以令其失去X点体力(X为你本回合发动该技能的次数且至多为5)；此牌置入弃牌堆时移出游戏。"
+    ],
+    "effect_en": [
+      "After you use [Kill] and designate a target, you may have that character lose X HP (X = the number of times you have activated this effect this turn, up to 5). When this card enters the Discard Pile, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_rippling_wave_sword",
+    "name_cn": "水波劍",
+    "name_en": "Rippling Wave Sword",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 2,
+    "effect_cn": [
+      "每回合限两次，你使用【杀】或普通锦囊牌可以增加一个目标；此牌离开你的装备区后，你回复1点体力；此牌置入弃牌堆时移出游戏。"
+    ],
+    "effect_en": [
+      "Twice per turn, when you use [Kill] or a Non-Time-Delayed Tool Card, you may add one additional target. When this card leaves your Equipment Zone, you recover 1 HP. When this card enters the Discard Pile, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_celestial_thunder_blade",
+    "name_cn": "天雷刃",
+    "name_en": "Celestial Thunder Blade",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 4,
+    "effect_cn": [
+      "当你使用【杀】指定目标后，你可以令其进行判定，若结果为黑桃，其受到3点雷电伤害；梅花，其受到1点雷电伤害，你回复1点体力并摸一张牌；此牌置入弃牌堆时移出游戏。"
+    ],
+    "effect_en": [
+      "After you use [Kill] and designate a target, you may have that character perform a Judgment: if the result is Spades, they take 3 Lightning damage; if Clubs, they take 1 Lightning damage and you recover 1 HP and draw 1 card. When this card enters the Discard Pile, it is instead Removed from the Game."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_peerless_sky_halberd",
+    "name_cn": "無雙方天戟",
+    "name_en": "Peerless Sky Halberd",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 4,
+    "effect_cn": [
+      "当你使用【杀】对目标角色造成伤害后，你可以摸一张牌或弃置其一张牌。"
+    ],
+    "effect_en": [
+      "After your [Kill] deals damage to a target character, you may draw 1 card or discard 1 of their cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_ghost_dragon_moonsever",
+    "name_cn": "鬼龍斬月刀",
+    "name_en": "Ghost Dragon Moonsever",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 3,
+    "effect_cn": [
+      "锁定技，你使用的红色【杀】不能被响应。"
+    ],
+    "effect_en": [
+      "Locked Skill: Red [Kill] cards you use cannot be responded to."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_crimson_edge",
+    "name_cn": "赤血青鋒",
+    "name_en": "Crimson Edge",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 2,
+    "effect_cn": [
+      "锁定技，你使用【杀】无视目标角色防具，其不能使用或打出手牌直到结算完成。"
+    ],
+    "effect_en": [
+      "Locked Skill: When you use [Kill], Ignore the target character's armor. That character cannot use or play hand cards until the resolution is complete."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_refined_iron_twin_halberd",
+    "name_cn": "鑌鐵雙戟",
+    "name_en": "Refined Iron Twin Halberd",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 3,
+    "effect_cn": [
+      "当你使用的【杀】被抵消时，你可以失去1点体力。然后获得此【杀】并摸一张牌，本回合你使用【杀】的次数+1。"
+    ],
+    "effect_en": [
+      "When a [Kill] you use is Negated, you may lose 1 HP. If you do, gain that [Kill] and draw 1 card, and your [Kill] usage limit increases by 1 this turn."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_dark_iron_chain",
+    "name_cn": "烏鐵鎖鏈",
+    "name_en": "Dark Iron Chain",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 3,
+    "effect_cn": [
+      "锁定技，当你使用【杀】指定目标后，你令其横置。"
+    ],
+    "effect_en": [
+      "Locked Skill: After you use [Kill] and designate a target, that character is placed into the Chained state."
+    ],
+    "faq": []
+  },
+  {
+    "id": "weapon_five_elements_crane_fan",
+    "name_cn": "五行鶴翎扇",
+    "name_en": "Five Elements Crane Fan",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "range": 4,
+    "effect_cn": [
+      "你使用的属性【杀】可以视为任意属性。"
+    ],
+    "effect_en": [
+      "Elemental [Kill] cards you use may be treated as any elemental type."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_exquisite_lion_sash",
+    "name_cn": "玲瓏獅蠻帶",
+    "name_en": "Exquisite Lion Sash",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "其他角色使用牌指定你为唯一目标后，你可以进行判定，若结果为红桃，此牌对你无效。"
+    ],
+    "effect_en": [
+      "After another character uses a card and designates you as the only target, you may perform a Judgment. If the result is Hearts, that card is Nullified against you."
+    ],
+    "faq": [
+      {
+        "q_cn": "什么牌可以触发【玲珑狮蛮带】？",
+        "a_cn": "其他角色使用且只以你为目标的牌，例如仅对你使用的【杀】或【顺手牵羊】。你可以判定，若结果为红桃，此牌对你无效；若此牌同时以其他角色为目标，则不满足条件。",
+        "q_en": "Which cards can trigger [Exquisite Lion Sash]?",
+        "a_en": "A card used by another character that targets you and no one else, such as a [Kill] or [Steal] used only on you. You may perform a Judgment; if the result is Hearts, the card has no effect on you. A card that also targets other characters does not qualify."
+      }
+    ]
+  },
+  {
+    "id": "armor_hundred_blossom_robe",
+    "name_cn": "紅棉百花袍",
+    "name_en": "Hundred Blossom Robe",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，防止你受到的属性伤害。"
+    ],
+    "effect_en": [
+      "Locked Skill: Prevent all elemental damage you take."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_jade_robe",
+    "name_cn": "國風玉袍",
+    "name_en": "Jade Robe",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，其他角色不能对你使用普通锦囊牌。"
+    ],
+    "effect_en": [
+      "Locked Skill: Other characters cannot use Non-Time-Delayed Tool Cards on you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_mystical_eight_trigrams",
+    "name_cn": "奇門八卦",
+    "name_en": "Mystical Eight Trigrams",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，【杀】对你无效。"
+    ],
+    "effect_en": [
+      "Locked Skill: [Kill] cards are Nullified against you."
+    ],
+    "faq": []
+  },
+  {
+    "id": "armor_sentinel_mirror",
+    "name_cn": "護心鏡",
+    "name_en": "Sentinel Mirror",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "出牌阶段，你可以将手牌中的【护心镜】置入其他角色的装备区；当你受到致命伤害或大于1点的伤害时，你可以将装备区里的【护心镜】置入弃牌堆，然后防止此伤害。"
+    ],
+    "effect_en": [
+      "During your Play Phase, you may place [Sentinel Mirror] from your hand into another character's Equipment Zone. When you take damage that would reduce your HP to 0 or below, or damage exceeding 1, you may place [Sentinel Mirror] from any Equipment Zone into the Discard Pile to prevent that damage."
+    ],
+    "faq": [
+      {
+        "q_cn": "【护心镜】是锁定技吗？",
+        "a_cn": "不是。【护心镜】是可选效果，你可以选择不发动。",
+        "q_en": "Is [Sentinel Mirror] a Locked skill?",
+        "a_en": "No. It is optional; you may choose not to activate it."
+      },
+      {
+        "q_cn": "体力值为1时受到1点伤害，是否可以发动【护心镜】？",
+        "a_cn": "可以。1点伤害等于当前体力值1，满足触发条件。",
+        "q_en": "If my current HP is 1 and I receive 1 damage, can [Sentinel Mirror] activate?",
+        "a_en": "Yes. When your HP is 1, 1 point of damage would reduce it to 0 — that qualifies as damage that would reduce your HP to 0 or below, so the trigger condition is satisfied."
+      },
+      {
+        "q_cn": "发动【护心镜】将其置入弃牌堆，是否算作「弃置」？",
+        "a_cn": "不算。将其置入弃牌堆不属于弃置，但它仍然离开了你的装备区，因此可以触发〖枭姬〗。",
+        "q_en": "When [Sentinel Mirror] is placed into the Discard Pile upon activation, does it count as being 'discarded'?",
+        "a_en": "No. Placing it into the Discard Pile is not discarding it. However, it still leaves your Equipment Zone, so 〖Fierce Lady〗 can trigger."
+      },
+      {
+        "q_cn": "【护心镜】可以防止武将技能造成的伤害吗？",
+        "a_cn": "可以。只要伤害会使体力值降至0或以下，或伤害值大于1，无论伤害来源均可发动。",
+        "q_en": "Can [Sentinel Mirror] prevent damage from general skills?",
+        "a_en": "Yes. As long as the damage would reduce your HP to 0 or below, or the damage value exceeds 1, [Sentinel Mirror] can be activated regardless of the damage source."
+      }
+    ]
+  },
+  {
+    "id": "armor_black_radiance_armor",
+    "name_cn": "黑光鎧",
+    "name_en": "Black Radiance Armor",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，当你成为【杀】或伤害类锦囊牌、黑色锦囊牌的目标后，若此牌目标数大于1，此牌对你无效。"
+    ],
+    "effect_en": [
+      "Locked Skill: When you become the target of a [Kill], a damage-dealing Tool card, or a black Tool card, if that card has more than one target, that card is Nullified against you."
+    ],
+    "faq": [
+      {
+        "q_cn": "【黑光铠】会令整张多目标牌无效吗？",
+        "a_cn": "不会。满足牌面条件时，仅该牌对你的效果无效，其他目标正常结算。",
+        "q_en": "Does [Black Radiance Armor] nullify the entire multi-target card?",
+        "a_en": "No. When its printed conditions are met, only the card's effect on you is nullified. Other targets resolve normally."
+      }
+    ]
+  },
+  {
+    "id": "treasure_lv_bu_war_crown",
+    "name_cn": "束發紫金冠",
+    "name_en": "Lü Bu's War Crown",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "回合开始时，你可以对一名其他角色造成1点伤害。"
+    ],
+    "effect_en": [
+      "At the start of your turn, you may deal 1 damage to another character."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_crown_of_delusion",
+    "name_cn": "虚妄之冕",
+    "name_en": "Crown of Delusion",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，摸牌阶段，你多摸两张牌；你的手牌上限-1。"
+    ],
+    "effect_en": [
+      "Locked Skill: During your Draw Phase, draw 2 additional cards. Your Hand Limit is reduced by 1."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_three_strategies",
+    "name_cn": "三略",
+    "name_en": "Three Strategies",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，你的攻击范围+1；你的手牌上限+1；你使用【杀】的次数 +1。"
+    ],
+    "effect_en": [
+      "Locked Skill: Your Attack Range, Hand Limit, and [Kill] usage limit each increase by 1."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_oracle_mirror",
+    "name_cn": "照骨鏡",
+    "name_en": "Oracle Mirror",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "出牌阶段结束时，你可以展示手牌中的一张基本牌或普通锦囊牌，然后视为使用一张副类别相同的同名牌。"
+    ],
+    "effect_en": [
+      "At the end of your Play Phase, you may show a Basic card or Non-Time-Delayed Tool Card from your hand, then you are treated as having used one additional card of the same name and same sub-category."
+    ],
+    "faq": [
+      {
+        "q_cn": "【照骨镜】的虚拟牌是什么？展示牌会被消耗吗？",
+        "a_cn": "此效果视为使用一张与展示牌同名、同副类别的虚拟牌。该虚拟牌没有对应的实体牌；展示牌不会因此被使用或弃置，仍留在你的手牌区。",
+        "q_en": "What virtual card does [Oracle Mirror] create, and is the shown card spent?",
+        "a_en": "The effect lets you use a virtual card with the same name and sub-category as the shown card. The virtual card has no physical card associated with it. The shown card is not used or discarded by this effect and stays in your hand."
+      }
+    ]
+  },
+  {
+    "id": "treasure_celestial_scheme",
+    "name_cn": "天機圖",
+    "name_en": "Celestial Scheme",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "锁定技，此牌置入你的装备区后，你弃置另一张牌；此牌离开你的装备区后，你将手牌摸至5。"
+    ],
+    "effect_en": [
+      "Locked Skill: When this card enters your Equipment Zone, discard 1 other card. When this card leaves your Equipment Zone, draw cards until you have 5 hand cards."
+    ],
+    "faq": []
+  },
+  {
+    "id": "treasure_taigong_cipher",
+    "name_cn": "太公陰符",
+    "name_en": "Taigong's Cipher",
+    "category_cn": "天工宝库",
+    "category_en": "Divine Treasury",
+    "effect_cn": [
+      "出牌阶段开始时，你可以令一名角色横置或重置；出牌阶段结束时，你可以重铸一张手牌。"
+    ],
+    "effect_en": [
+      "At the start of your Play Phase, you may place one character into the Chained state or Reset it. At the end of your Play Phase, you may Reforge 1 hand card."
+    ],
+    "faq": []
+  }
+]

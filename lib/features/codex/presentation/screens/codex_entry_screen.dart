@@ -1,7 +1,7 @@
 ﻿import 'package:flutter/material.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../data/models/codex_entry_dto.dart';
-import '../widgets/codex_reference_text.dart';
+import '../../../reference/presentation/widgets/reference_text.dart';
 import '../widgets/codex_rule_block_widget.dart';
 
 class CodexEntryScreen extends StatefulWidget {
@@ -101,7 +101,7 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
             _ContentBlock(
               title: showCn ? '简述' : 'Brief',
               isDark: isDark,
-              child: CodexReferenceText(
+              child: ReferenceText(
                 text: primaryDef,
                 isDark: isDark,
                 onReferenceTap: widget.onSegmentTap,
@@ -117,7 +117,7 @@ class _CodexEntryScreenState extends State<CodexEntryScreen> {
             _ContentBlock(
               title: showCn ? '对照' : 'Counterpart',
               isDark: isDark,
-              child: CodexReferenceText(
+              child: ReferenceText(
                 text: secondaryDef,
                 isDark: isDark,
                 onReferenceTap: widget.onSegmentTap,

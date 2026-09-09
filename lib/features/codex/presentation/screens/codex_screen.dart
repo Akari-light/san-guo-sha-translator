@@ -5,7 +5,7 @@ import '../codex_chapter_config.dart';
 import 'codex_entry_screen.dart';
 import '../widgets/codex_section_tile.dart';
 import '../widgets/codex_entry_card.dart';
-import '../widgets/codex_reference_sheet.dart';
+import '../../../reference/presentation/widgets/reference_sheet.dart';
 import '../widgets/codex_rule_block_widget.dart';
 import '../../../../core/theme/app_theme.dart';
 
@@ -112,7 +112,7 @@ class _CodexScreenState extends State<CodexScreen>
 
   void _showReferenceSheet(String bracketText, bool isChinese) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    CodexReferenceSheet.show(
+    ReferenceSheet.show(
       context: context,
       bracketText: bracketText,
       isChinese: isChinese,

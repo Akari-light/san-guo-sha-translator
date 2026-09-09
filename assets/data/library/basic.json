@@ -62,9 +62,9 @@
       },
       {
         "q_cn": "在自己的回合可以给另一名角色用桃吗？",
-        "a_cn": "不可以。只有在其他角色进入濒死状态时才能对其使用桃。",
+        "a_cn": "只有当该角色处于濒死状态时才可以；否则不可以。",
         "q_en": "Can I use a [Peach] on another character during my turn?",
-        "a_en": "No. [Peach] can only be used on another character when they are in the Verge of Death State."
+        "a_en": "Only when that character is in the Verge of Death State; otherwise, you cannot."
       }
     ]
   },
@@ -75,7 +75,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "出牌階段，對自己使用，令自己的下一張使用的【殺】造成的傷害+1 (每回合限使用1次); 任何時候，當自己進入濒死階段時，對自己使用，立即恢復 1 點體力值。"
+      "出牌階段，對自己使用，令自己的下一張使用的【殺】造成的傷害+1（每回合限使用1次）；任何時候，當自己進入濒死階段時，對自己使用，立即恢復1點體力值。"
     ],
     "effect_en": [
       "During your Play Phase, use on yourself; your next [Kill] this turn deals 1 additional damage (once per turn). At any time, when you enter the Verge of Death State, use on yourself to immediately recover 1 HP."
@@ -88,10 +88,10 @@
         "a_en": "No. [Wine] can only be used on yourself."
       },
       {
-        "q_cn": "在濒死状态下使用酒，回复的是体力还是体力值？",
-        "a_cn": "回复1点体力。使用酒进入濒死状态结算时，令角色回复1点体力，使其脱离濒死状态。",
-        "q_en": "When [Wine] is used in the Verge of Death State, does it recover HP or HP Value?",
-        "a_en": "It recovers 1 HP. Using [Wine] during Verge of Death Resolution recovers 1 HP for the character, which can bring them out of the Verge of Death State."
+        "q_cn": "在濒死状态下使用【酒】后，一定会脱离濒死状态吗？",
+        "a_cn": "不一定。【酒】只回复1点体力。角色的体力值须回复至至少1点才能脱离濒死状态；例如，从-1点回复至0点后仍处于濒死状态。",
+        "q_en": "Does using [Wine] in the Verge of Death State always end that state?",
+        "a_en": "No. [Wine] recovers only 1 HP. The character must recover to at least 1 HP to leave the Verge of Death State; for example, recovering from -1 HP to 0 HP leaves them in that state."
       }
     ]
   },
@@ -135,14 +135,14 @@
     ],
     "effect_en": [
       "When [Poison] leaves your hand area face-up (including being transformed into another card) or is revealed as a Point Duel card, you lose 1 HP. When you gain a [Poison] by drawing a card, you may show it and give it to another character (to prevent the effect of [Poison]).",
-      "Gift: During your Play Phase, you may give this card from your hand face-up to another character. "
+      "Gift: During your Play Phase, you may give this card from your hand face-up to another character."
     ],
     "faq": [
       {
-        "q_cn": "如果【毒】被【顺手牵羊】或【过河拆桥】离开手牌，谁扣血？",
-        "a_cn": "原持有者扣1点体力，因为【毒】离开了该玩家的手牌。",
-        "q_en": "If [Poison] leaves my hand via [Steal] or [Dismantle], who loses HP?",
-        "a_en": "The original holder loses 1 HP, because [Poison] left their hand."
+        "q_cn": "如果【毒】因【顺手牵羊】或【过河拆桥】离开手牌，我会失去体力吗？",
+        "a_cn": "只有当【毒】以正面向上的形式离开手牌时，原持有者才失去1点体力。若被【过河拆桥】弃置并正面朝上离开手牌，会触发；若被【顺手牵羊】从手牌中获得且未展示，则不会触发。",
+        "q_en": "If [Poison] leaves my hand because of [Steal] or [Dismantle], do I lose HP?",
+        "a_en": "You lose 1 HP only if [Poison] leaves your hand face-up. If it is discarded face-up by [Dismantle], it triggers. If it is taken from your hand by [Steal] without being revealed, it does not trigger."
       },
       {
         "q_cn": "【毒】作为拼点牌亮出后，谁失去体力？",
@@ -151,10 +151,10 @@
         "a_en": "The character who reveals [Poison] as their Point Duel card loses 1 HP. Revealing a card in a Point Duel counts as it leaving the hand face-up."
       },
       {
-        "q_cn": "我可以在出牌阶段主动使用【毒】吗？",
-        "a_cn": "可以，使用它属于离开手牌，你失去1点体力，然后将其置于牌堆顶。",
-        "q_en": "Can I actively use [Poison] during my Play Phase?",
-        "a_en": "Yes. Using it counts as leaving your hand — you lose 1 HP and it is placed on top of the Draw Pile."
+        "q_cn": "我可以在出牌阶段将【毒】交给其他角色吗？",
+        "a_cn": "可以。你可以发动「赠予」效果，将手牌中的【毒】正面向上交给其他角色。此移动属于以正面向上的形式离开手牌，除非有规则或效果特别防止，否则会结算【毒】自身的失去体力效果。",
+        "q_en": "Can I give [Poison] to another character during my Play Phase?",
+        "a_en": "Yes. Use its 「Gift」 effect: reveal [Poison] from your hand and give it to another character. This is a face-up movement, so resolve [Poison]'s own HP-loss effect unless a rule or effect specifically prevents it."
       }
     ]
   }
