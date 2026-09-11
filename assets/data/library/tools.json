@@ -590,6 +590,8 @@
     "name_en": "Seven Armies Flooded",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对至多两名角色使用。第一名角色受到1点雷电伤害并弃置一张牌，第二名角色受到1点雷电伤害并摸一张牌。"
     ],
@@ -604,6 +606,8 @@
     "name_en": "Besiege the City",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，对一名其他角色使用。若如此做，你亮出牌堆顶四张牌并依次对目标角色使用其中的【杀】，结算结束后，将其余的牌置入弃牌堆。"
     ],
@@ -618,6 +622,8 @@
     "name_en": "Season with Salt and Plum",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-Time-Delayed Tool",
     "effect_cn": [
       "出牌阶段，选择两名手牌数不同的角色并记录其各自手牌数，令手牌数多的角色弃置一张牌，手牌数少的角色摸一张牌。此牌结算结束时，若此两名角色手牌数相同，且执行此锦囊所弃的牌仍在弃牌堆中，你可以将此牌交给任一角色。",
       "重铸：出牌阶段，你可以将此牌置入弃牌堆，然后摸一张牌。"
@@ -632,6 +638,35 @@
         "a_cn": "是执行此效果时弃置的那张牌，不是【调剂盐梅】本身。结算结束时，两名目标的手牌数须相同，且该弃牌仍在弃牌堆中。",
         "q_en": "Which card can be given away after [Season with Salt and Plum] resolves?",
         "a_en": "The card discarded by this effect, not [Season with Salt and Plum] itself. At the end of resolution, both targets must have equal hand card counts, and that discarded card must still be in the Discard Pile."
+      }
+    ]
+  },
+  {
+    "id": "tool_orthodox_and_unorthodox",
+    "name_cn": "奇正相生",
+    "name_en": "Orthodox and Unorthodox",
+    "category_cn": "锦囊牌",
+    "category_en": "Tool",
+    "sub_category_cn": "普通锦囊牌",
+    "sub_category_en": "Non-Time-Delayed Tool",
+    "effect_cn": [
+      "出牌阶段，对一名其他角色使用。你为其指定「正兵」或「奇兵」（仅你可见），然后其可以打出一张【杀】或【闪】。若「奇兵」目标未打出【杀】，你对其造成1点伤害；若「正兵」目标未打出【闪】，你获得其一张牌。"
+    ],
+    "effect_en": [
+      "Play Phase: use this card on another character. Secretly assign that character as 「Orthodox」 or 「Unorthodox」, visible only to you. Then they may play a [Kill] or [Dodge]. If an 「Unorthodox」 target does not play a [Kill], you deal 1 damage to them. If an 「Orthodox」 target does not play a [Dodge], you gain one of their cards."
+    ],
+    "faq": [
+      {
+        "q_cn": "「正兵」和「奇兵」是否公开？",
+        "a_cn": "不公开。你因此牌的执行动作而选择的选项和获得的标记，对所有其他角色均不可见。",
+        "q_en": "Are 「Orthodox」 and 「Unorthodox」 public?",
+        "a_en": "No. The option you choose and the marker you gain through this card's execution action are not visible to any other character."
+      },
+      {
+        "q_cn": "「正兵」和「奇兵」如何结算？",
+        "a_cn": "按此次使用【奇正相生】时为此目标作出的秘密选择结算。「奇兵」目标未打出【杀】，则你对其造成1点普通伤害；「正兵」目标未打出【闪】，则你获得其一张牌。此前使用此牌时的选择不计入此次结算。",
+        "q_en": "How do 「Orthodox」 and 「Unorthodox」 resolve?",
+        "a_en": "Resolve using the hidden choice made for this target during this use of [Orthodox and Unorthodox]. For 「Unorthodox」, failure to play [Kill] causes 1 normal damage. For 「Orthodox」, failure to play [Dodge] lets the user gain one of the target's cards. Choices from earlier uses do not count."
       }
     ]
   },
@@ -725,35 +760,6 @@
         "a_cn": "推荐房规：按下家顺序寻找下一个能合法接收【美人计】的判定区，跳过不合法的去处；若没有合法去处，则将【美人计】置入弃牌堆。",
         "q_en": "What if the next character cannot receive [Beauty Stratagem] after a non-Hearts result?",
         "a_en": "Recommended house rule: continue in next-player order to the next Judgment Zone that can legally receive [Beauty Stratagem], skipping illegal destinations. If no legal destination exists, place it into the Discard Pile."
-      }
-    ]
-  },
-  {
-    "id": "tool_orthodox_and_unorthodox",
-    "name_cn": "奇正相生",
-    "name_en": "Orthodox and Unorthodox",
-    "category_cn": "锦囊牌",
-    "category_en": "Tool",
-    "sub_category_cn": "普通锦囊牌",
-    "sub_category_en": "Non-Time-Delayed Tool",
-    "effect_cn": [
-      "出牌阶段，对一名其他角色使用。你为其指定「正兵」或「奇兵」（仅你可见），然后其可以打出一张【杀】或【闪】。若「奇兵」目标未打出【杀】，你对其造成1点伤害；若「正兵」目标未打出【闪】，你获得其一张牌。"
-    ],
-    "effect_en": [
-      "Play Phase: use this card on another character. Secretly assign that character as 「Orthodox」 or 「Unorthodox」, visible only to you. Then they may play a [Kill] or [Dodge]. If an 「Unorthodox」 target does not play a [Kill], you deal 1 damage to them. If an 「Orthodox」 target does not play a [Dodge], you gain one of their cards."
-    ],
-    "faq": [
-      {
-        "q_cn": "「正兵」和「奇兵」是否公开？",
-        "a_cn": "不公开。你因此牌的执行动作而选择的选项和获得的标记，对所有其他角色均不可见。",
-        "q_en": "Are 「Orthodox」 and 「Unorthodox」 public?",
-        "a_en": "No. The option you choose and the marker you gain through this card's execution action are not visible to any other character."
-      },
-      {
-        "q_cn": "「正兵」和「奇兵」如何结算？",
-        "a_cn": "按此次使用【奇正相生】时为此目标作出的秘密选择结算。「奇兵」目标未打出【杀】，则你对其造成1点普通伤害；「正兵」目标未打出【闪】，则你获得其一张牌。此前使用此牌时的选择不计入此次结算。",
-        "q_en": "How do 「Orthodox」 and 「Unorthodox」 resolve?",
-        "a_en": "Resolve using the hidden choice made for this target during this use of [Orthodox and Unorthodox]. For 「Unorthodox」, failure to play [Kill] causes 1 normal damage. For 「Orthodox」, failure to play [Dodge] lets the user gain one of the target's cards. Choices from earlier uses do not count."
       }
     ]
   }
