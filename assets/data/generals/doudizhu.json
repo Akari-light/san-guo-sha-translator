@@ -235,24 +235,6 @@
     ]
   },
   {
-    "id": "DZ_DiZhu",
-    "standard_id": "",
-    "name_cn": "地主技能",
-    "name_en": "Landlord Skills",
-    "gender": "",
-    "faction": "Utilities",
-    "health": 0,
-    "power_index": 0,
-    "traits_cn": [],
-    "traits_en": [],
-    "expansion": "Doudizhu",
-    "faq": [],
-    "skills": [
-      "skill_dz_soar",
-      "skill_dz_domineering"
-    ]
-  },
-  {
     "id": "DZ_QUN021",
     "standard_id": "char_yuanshu",
     "name_cn": "袁术",
