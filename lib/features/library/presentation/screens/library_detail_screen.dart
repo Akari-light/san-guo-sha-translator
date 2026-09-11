@@ -5,6 +5,7 @@ import '../../../../core/navigation/app_router.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/services/pin_service.dart';
 import '../../../../core/constants/app_assets.dart';
+import '../../../../core/widgets/inline_suit_text.dart';
 import '../../../reference/services/resolver_service.dart';
 import '../../../reference/presentation/widgets/reference_sheet.dart';
 import '../../../reference/presentation/widgets/reference_text.dart';
@@ -636,8 +637,9 @@ class _EffectBody extends StatelessWidget {
         ? (isEnglish ? AppTheme.descriptionEnDark : AppTheme.descriptionCnDark)
         : theme.textTheme.bodyLarge?.color;
 
-    return Text(
-      text,
+    return InlineSuitText(
+      text: text,
+      isDark: isDark,
       style: theme.textTheme.bodyLarge?.copyWith(
         height: 1.7,
         color: textColor,
