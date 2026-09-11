@@ -5938,14 +5938,14 @@
     "description_cn": "每回合限一次，当你造成伤害后，你可以进行判定，若结果为：红色，你可以令一名角色回复1点体力，然后若其未受伤，其摸一张牌；黑色，你对受伤角色的上家或下家造成1点伤害，若其未因此进入濒死状态，你可以再次进行判定并执行对应效果。",
     "description_en": "Once per turn: After you deal damage, you may perform a Judgment. If the result is red, you may have a character recover 1 HP — if they are Unwounded, they draw 1 card. If the result is black, deal 1 damage to the Left or Right Neighbor of the damaged character — if they do not enter the Verge of Death State from this, you may perform another Judgment and apply the corresponding effect."
   },
-  "skill_xin_loyal_discernment": {
+  "skill_sp_loyal_discernment": {
     "skill_type": "active",
     "name_cn": "忠鉴",
     "name_en": "Loyal Discernment",
     "description_cn": "出牌阶段限一次，你可以选择一名角色并选择一项直到你的下个回合开始：1. 该角色下次造成伤害后弃置两张牌，你摸一张牌；2. 该角色下次受到伤害后摸两张牌，你摸一张牌。",
     "description_en": "Once per Play Phase, choose a character and one option, lasting until the start of your next turn: 1. The next time that character deals damage, they discard 2 cards and you draw 1 card; 2. The next time that character receives damage, they draw 2 cards and you draw 1 card."
   },
-  "skill_xin_gifted_insight": {
+  "skill_sp_gifted_insight": {
     "skill_type": "active",
     "name_cn": "才识",
     "name_en": "Gifted Insight",
