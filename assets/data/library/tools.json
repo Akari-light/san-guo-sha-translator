@@ -339,7 +339,7 @@
   },
   {
     "id": "tool_one_against_thousands",
-    "name_cn": "一騎當千",
+    "name_cn": "一骑当千",
     "name_en": "One Against Thousands",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -378,7 +378,7 @@
   },
   {
     "id": "tool_water_takes_no_form",
-    "name_cn": "水無常形",
+    "name_cn": "水无常形",
     "name_en": "Water Takes No Form",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -401,7 +401,7 @@
   },
   {
     "id": "tool_desperate_counterattack",
-    "name_cn": "絕地反擊",
+    "name_cn": "绝地反击",
     "name_en": "Desperate Counterattack",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -415,7 +415,7 @@
     ],
     "faq": [
       {
-        "q_cn": "若【絕地反擊】的拼点牌点数相同，如何结算？",
+        "q_cn": "若【绝地反击】的拼点牌点数相同，如何结算？",
         "a_cn": "若双方拼点牌点数相同，则双方均未赢，因此没有胜方或败方，也不会有角色因此获得另一方的手牌。",
         "q_en": "What happens if the Point Duel for [Desperate Counterattack] is tied?",
         "a_en": "If the Point Duel ranks are equal, neither character wins. There is therefore no winner or loser, and neither character gains the other's hand cards."
@@ -424,7 +424,7 @@
   },
   {
     "id": "tool_siege_war_tiger",
-    "name_cn": "攻城戰虎",
+    "name_cn": "攻城战虎",
     "name_en": "Siege War Tiger",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -477,7 +477,7 @@
   },
   {
     "id": "tool_breach_the_formation",
-    "name_cn": "陷陣",
+    "name_cn": "陷阵",
     "name_en": "Breach the Formation",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -509,7 +509,7 @@
   },
   {
     "id": "tool_barbarian_soldiers",
-    "name_cn": "蠻兵",
+    "name_cn": "蛮兵",
     "name_en": "Barbarian Soldiers",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -525,7 +525,7 @@
   },
   {
     "id": "tool_preemptive_strike",
-    "name_cn": "先發製人",
+    "name_cn": "先发制人",
     "name_en": "Preemptive Strike",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -541,7 +541,7 @@
   },
   {
     "id": "tool_war_signals",
-    "name_cn": "烽火狼煙",
+    "name_cn": "烽火狼烟",
     "name_en": "War Signals",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -555,7 +555,7 @@
     ],
     "faq": [
       {
-        "q_cn": "【烽火狼煙】何时比较摸牌与未摸牌的角色数？",
+        "q_cn": "【烽火狼烟】何时比较摸牌与未摸牌的角色数？",
         "a_cn": "所有其他角色依次完成打出【杀】或摸一张牌的结算后再比较。只计算此牌的目标：因未打出【杀】而摸牌的角色计入摸牌人数，打出【杀】而未摸牌的角色计入未摸牌人数；此牌的使用者不计入。",
         "q_en": "When does [War Signals] compare the numbers of characters who drew and did not draw?",
         "a_en": "Compare them after all other characters have resolved whether to play a [Kill] or draw 1 card. Count only this card's targets: characters who drew because they did not play a [Kill] are in the drawing group, while those who played a [Kill] are in the non-drawing group. Do not count the card's user."
@@ -570,7 +570,7 @@
   },
   {
     "id": "tool_fire_at_red_cliffs",
-    "name_cn": "火燒赤壁",
+    "name_cn": "火烧赤壁",
     "name_en": "Fire at Red Cliffs",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -602,7 +602,7 @@
   },
   {
     "id": "tool_besiege_the_city",
-    "name_cn": "兵臨城下",
+    "name_cn": "兵临城下",
     "name_en": "Besiege the City",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -618,7 +618,7 @@
   },
   {
     "id": "tool_season_with_salt_and_plum",
-    "name_cn": "調劑鹽梅",
+    "name_cn": "调剂盐梅",
     "name_en": "Season with Salt and Plum",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -720,7 +720,7 @@
   },
   {
     "id": "tool_summon_god",
-    "name_cn": "喚神",
+    "name_cn": "唤神",
     "name_en": "Summon God",
     "category_cn": "锦囊牌",
     "category_en": "Tool",
@@ -736,7 +736,7 @@
   },
   {
     "id": "tool_beauty_stratagem",
-    "name_cn": "美人計",
+    "name_cn": "美人计",
     "name_en": "Beauty Stratagem",
     "category_cn": "锦囊牌",
     "category_en": "Tool",

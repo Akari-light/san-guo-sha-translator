@@ -6,7 +6,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "出牌階段。你攻擊範圍內的一名其他角色。【殺】對目標角色造成1點傷害"
+      "出牌階段。你攻擊範圍內的一名其他角色。【杀】對目標角色造成1點傷害"
     ],
     "effect_en": [
       "During your Play Phase, use this card on another character within your Attack Range. Deal 1 damage to the target. The target may play a [Dodge] to Negate the [Kill]."
@@ -27,7 +27,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "以你為目標的【殺】生效前。抵消以你為目標的【殺】。"
+      "以你為目標的【杀】生效前。抵消以你為目標的【杀】。"
     ],
     "effect_en": [
       "Before a [Kill] targeting you takes effect, Negate the [Kill] targeting you."
@@ -75,7 +75,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "出牌階段，對自己使用，令自己的下一張使用的【殺】造成的傷害+1（每回合限使用1次）；任何時候，當自己進入濒死階段時，對自己使用，立即恢復1點體力值。"
+      "出牌階段，對自己使用，令自己的下一張使用的【杀】造成的傷害+1（每回合限使用1次）；任何時候，當自己進入濒死階段時，對自己使用，立即恢復1點體力值。"
     ],
     "effect_en": [
       "During your Play Phase, use on yourself; your next [Kill] this turn deals 1 additional damage (once per turn). At any time, when you enter the Verge of Death State, use on yourself to immediately recover 1 HP."
@@ -102,7 +102,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "出牌階段。你攻擊範圍內的一名其他角色。【殺】對目標角色造成1點火屬性傷害"
+      "出牌階段。你攻擊範圍內的一名其他角色。【杀】對目標角色造成1點火屬性傷害"
     ],
     "effect_en": [
       "During your Play Phase, use this card on another character within your Attack Range. Deal 1 Fire damage to the target. The target may play a [Dodge] to Negate the [Kill]."
@@ -116,7 +116,7 @@
     "category_cn": "基本牌",
     "category_en": "Basic",
     "effect_cn": [
-      "出牌階段。你攻擊範圍內的一名其他角色。【殺】對目標角色造成1點雷屬性傷害"
+      "出牌階段。你攻擊範圍內的一名其他角色。【杀】對目標角色造成1點雷屬性傷害"
     ],
     "effect_en": [
       "During your Play Phase, use this card on another character within your Attack Range. Deal 1 Thunder damage to the target. The target may play a [Dodge] to Negate the [Kill]."

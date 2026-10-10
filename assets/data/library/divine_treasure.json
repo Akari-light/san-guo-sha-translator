@@ -1,7 +1,7 @@
 [
   {
     "id": "weapon_crimson_satin_spear",
-    "name_cn": "紅緞槍",
+    "name_cn": "红缎枪",
     "name_en": "Crimson Satin Spear",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -31,7 +31,7 @@
   },
   {
     "id": "weapon_venom_curved_dagger",
-    "name_cn": "混毒彎匕",
+    "name_cn": "混毒弯匕",
     "name_en": "Venom Curved Dagger",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -46,7 +46,7 @@
   },
   {
     "id": "weapon_rippling_wave_sword",
-    "name_cn": "水波劍",
+    "name_cn": "水波剑",
     "name_en": "Rippling Wave Sword",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -76,7 +76,7 @@
   },
   {
     "id": "weapon_peerless_sky_halberd",
-    "name_cn": "無雙方天戟",
+    "name_cn": "无双方天戟",
     "name_en": "Peerless Sky Halberd",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -91,7 +91,7 @@
   },
   {
     "id": "weapon_ghost_dragon_moonsever",
-    "name_cn": "鬼龍斬月刀",
+    "name_cn": "鬼龙斩月刀",
     "name_en": "Ghost Dragon Moonsever",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -106,7 +106,7 @@
   },
   {
     "id": "weapon_crimson_edge",
-    "name_cn": "赤血青鋒",
+    "name_cn": "赤血青锋",
     "name_en": "Crimson Edge",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -121,7 +121,7 @@
   },
   {
     "id": "weapon_refined_iron_twin_halberd",
-    "name_cn": "鑌鐵雙戟",
+    "name_cn": "镔铁双戟",
     "name_en": "Refined Iron Twin Halberd",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -136,7 +136,7 @@
   },
   {
     "id": "weapon_dark_iron_chain",
-    "name_cn": "烏鐵鎖鏈",
+    "name_cn": "乌铁锁链",
     "name_en": "Dark Iron Chain",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -151,7 +151,7 @@
   },
   {
     "id": "weapon_five_elements_crane_fan",
-    "name_cn": "五行鶴翎扇",
+    "name_cn": "五行鹤翎扇",
     "name_en": "Five Elements Crane Fan",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -166,7 +166,7 @@
   },
   {
     "id": "armor_exquisite_lion_sash",
-    "name_cn": "玲瓏獅蠻帶",
+    "name_cn": "玲珑狮蛮带",
     "name_en": "Exquisite Lion Sash",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -187,7 +187,7 @@
   },
   {
     "id": "armor_hundred_blossom_robe",
-    "name_cn": "紅棉百花袍",
+    "name_cn": "红棉百花袍",
     "name_en": "Hundred Blossom Robe",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -201,7 +201,7 @@
   },
   {
     "id": "armor_jade_robe",
-    "name_cn": "國風玉袍",
+    "name_cn": "国风玉袍",
     "name_en": "Jade Robe",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -215,7 +215,7 @@
   },
   {
     "id": "armor_mystical_eight_trigrams",
-    "name_cn": "奇門八卦",
+    "name_cn": "奇门八卦",
     "name_en": "Mystical Eight Trigrams",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -229,7 +229,7 @@
   },
   {
     "id": "armor_sentinel_mirror",
-    "name_cn": "護心鏡",
+    "name_cn": "护心镜",
     "name_en": "Sentinel Mirror",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -268,7 +268,7 @@
   },
   {
     "id": "armor_black_radiance_armor",
-    "name_cn": "黑光鎧",
+    "name_cn": "黑光铠",
     "name_en": "Black Radiance Armor",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -289,7 +289,7 @@
   },
   {
     "id": "treasure_lv_bu_war_crown",
-    "name_cn": "束發紫金冠",
+    "name_cn": "束发紫金冠",
     "name_en": "Lü Bu's War Crown",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -331,7 +331,7 @@
   },
   {
     "id": "treasure_oracle_mirror",
-    "name_cn": "照骨鏡",
+    "name_cn": "照骨镜",
     "name_en": "Oracle Mirror",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -352,7 +352,7 @@
   },
   {
     "id": "treasure_celestial_scheme",
-    "name_cn": "天機圖",
+    "name_cn": "天机图",
     "name_en": "Celestial Scheme",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",
@@ -366,7 +366,7 @@
   },
   {
     "id": "treasure_taigong_cipher",
-    "name_cn": "太公陰符",
+    "name_cn": "太公阴符",
     "name_en": "Taigong's Cipher",
     "category_cn": "天工宝库",
     "category_en": "Divine Treasury",

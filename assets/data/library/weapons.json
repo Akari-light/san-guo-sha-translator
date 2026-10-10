@@ -519,7 +519,7 @@
   },
   {
     "id": "weapon_houyi_bow",
-    "name_cn": "金烏落日弓",
+    "name_cn": "金乌落日弓",
     "name_en": "Houyi Bow",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -534,7 +534,7 @@
   },
   {
     "id": "weapon_phoenix_harmony_sword",
-    "name_cn": "鸞鳳和鳴劍",
+    "name_cn": "鸾凤和鸣剑",
     "name_en": "Phoenix Harmony Sword",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -549,7 +549,7 @@
   },
   {
     "id": "weapon_seven_treasures_blade",
-    "name_cn": "七寶刀",
+    "name_cn": "七宝刀",
     "name_en": "Seven Treasures Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -564,7 +564,7 @@
   },
   {
     "id": "weapon_tempered_steel_lance",
-    "name_cn": "衝鋼槊",
+    "name_cn": "冲钢槊",
     "name_en": "Tempered Steel Lance",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -592,7 +592,7 @@
   },
   {
     "id": "weapon_xingtian_war_axe",
-    "name_cn": "刑天破軍斧",
+    "name_cn": "刑天破军斧",
     "name_en": "Xingtian War Axe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -647,7 +647,7 @@
   },
   {
     "id": "weapon_divine_ghost_dragon_moonsever",
-    "name_cn": "神鬼龍斬月刀",
+    "name_cn": "神鬼龙斩月刀",
     "name_en": "Divine Ghost Dragon Moonsever",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -662,7 +662,7 @@
   },
   {
     "id": "weapon_soul_calming_zither",
-    "name_cn": "鎮魂琴",
+    "name_cn": "镇魂琴",
     "name_en": "Soul-Calming Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -692,7 +692,7 @@
   },
   {
     "id": "weapon_moon_spear",
-    "name_cn": "銀月槍",
+    "name_cn": "银月枪",
     "name_en": "Moon Spear",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -705,7 +705,7 @@
     ],
     "faq": [
       {
-        "q_cn": "【银月槍】在自己的回合内可以发动吗？",
+        "q_cn": "【银月枪】在自己的回合内可以发动吗？",
         "a_cn": "不能，只能在自己回合外发动。",
         "q_en": "Can [Moon Spear] be activated during your own turn?",
         "a_en": "No. It can only activate outside of your own turn."
@@ -714,7 +714,7 @@
   },
   {
     "id": "weapon_dragon_chant_zither",
-    "name_cn": "吟龍琴",
+    "name_cn": "吟龙琴",
     "name_en": "Dragon Chant Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -729,7 +729,7 @@
   },
   {
     "id": "weapon_demon_dragon_moonsever",
-    "name_cn": "魔龍斬月",
+    "name_cn": "魔龙斩月",
     "name_en": "Demon Dragon Moonsever",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -744,7 +744,7 @@
   },
   {
     "id": "weapon_yitian_sword",
-    "name_cn": "倚天劍",
+    "name_cn": "倚天剑",
     "name_en": "Yitian Sword",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -759,7 +759,7 @@
   },
   {
     "id": "weapon_savage_bone_demon_zither",
-    "name_cn": "蠻骨魔琴",
+    "name_cn": "蛮骨魔琴",
     "name_en": "Savage Bone Demon Zither",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -789,7 +789,7 @@
   },
   {
     "id": "weapon_sky_splitting_axe",
-    "name_cn": "開天斧",
+    "name_cn": "开天斧",
     "name_en": "Sky-Splitting Axe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -849,7 +849,7 @@
   },
   {
     "id": "weapon_bloodthirst_war_axe",
-    "name_cn": "嗜血戰斧",
+    "name_cn": "嗜血战斧",
     "name_en": "Bloodthirst War Axe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -881,7 +881,7 @@
   },
   {
     "id": "weapon_xuanyuan_sword",
-    "name_cn": "軒轅劍",
+    "name_cn": "轩辕剑",
     "name_en": "Xuanyuan Sword",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -896,7 +896,7 @@
   },
   {
     "id": "weapon_fly_whisk",
-    "name_cn": "拂塵",
+    "name_cn": "拂尘",
     "name_en": "Fly-Whisk",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -911,7 +911,7 @@
   },
   {
     "id": "weapon_scythe",
-    "name_cn": "烈刃飛刀",
+    "name_cn": "烈刃飞刀",
     "name_en": "Scythe",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -926,7 +926,7 @@
   },
   {
     "id": "weapon_heroines_blade",
-    "name_cn": "巾幗之刃",
+    "name_cn": "巾帼之刃",
     "name_en": "Heroine's Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -956,7 +956,7 @@
   },
   {
     "id": "weapon_great_ring_blade",
-    "name_cn": "大環刀",
+    "name_cn": "大环刀",
     "name_en": "Great Ring Blade",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -986,7 +986,7 @@
   },
   {
     "id": "weapon_divine_hawk_mask",
-    "name_cn": "神鷹假面",
+    "name_cn": "神鹰假面",
     "name_en": "Divine Hawk Mask",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -1018,7 +1018,7 @@
   },
   {
     "id": "weapon_nine_section_whip",
-    "name_cn": "九節鞭",
+    "name_cn": "九节鞭",
     "name_en": "Nine-Section Whip",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -1033,7 +1033,7 @@
   },
   {
     "id": "weapon_moonhiding_mirror",
-    "name_cn": "閉月鏡",
+    "name_cn": "闭月镜",
     "name_en": "Moonhiding Mirror",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -1047,7 +1047,7 @@
     "faq": [
       {
         "q_cn": "「禁技杀」是官方术语吗？",
-        "a_cn": "不是已确认的官方标准术语。【閉月鏡】是同人牌，「禁技杀」应按玩家事先约定的房规结算。",
+        "a_cn": "不是已确认的官方标准术语。【闭月镜】是同人牌，「禁技杀」应按玩家事先约定的房规结算。",
         "q_en": "Is 「Skill-Suppressing [Kill]」 an official term?",
         "a_en": "No confirmed official rules term defines it. [Moonhiding Mirror] is a fanmade card, so 「Skill-Suppressing [Kill]」 should resolve according to the house rule agreed by the players before the game."
       },
@@ -1058,8 +1058,8 @@
         "a_en": "Recommended house rule: after this [Kill] targets a character, that target's non-Locked skills are invalid until this [Kill] finishes resolving against them. Locked skills still apply, and this effect by itself does not prevent the target from using or playing cards."
       },
       {
-        "q_cn": "【閉月鏡】从手牌离开时也会触发3点伤害吗？",
-        "a_cn": "推荐房规：不会。只有【閉月鏡】离开你的装备区时，才触发对一名角色造成3点伤害的效果，例如被弃置、被获得、移走或被其他武器替换。从手牌中弃置、被获得或从手牌装备此牌，均不触发此效果。",
+        "q_cn": "【闭月镜】从手牌离开时也会触发3点伤害吗？",
+        "a_cn": "推荐房规：不会。只有【闭月镜】离开你的装备区时，才触发对一名角色造成3点伤害的效果，例如被弃置、被获得、移走或被其他武器替换。从手牌中弃置、被获得或从手牌装备此牌，均不触发此效果。",
         "q_en": "Does losing [Moonhiding Mirror] from your hand trigger its 3-damage effect?",
         "a_en": "Recommended house rule: no. The effect triggers only when [Moonhiding Mirror] leaves your Equipment Zone, such as when it is discarded, taken, moved away, or replaced by another weapon. Discarding it from your hand, having it taken from your hand, or equipping it from your hand does not trigger this effect."
       }
@@ -1082,7 +1082,7 @@
   },
   {
     "id": "weapon_chain_ring_armor",
-    "name_cn": "環鎖鎧",
+    "name_cn": "环锁铠",
     "name_en": "Chain Ring Armor",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -1097,7 +1097,7 @@
   },
   {
     "id": "weapon_bright_silver_spear",
-    "name_cn": "亮銀槍",
+    "name_cn": "亮银枪",
     "name_en": "Bright Silver Spear",
     "category_cn": "武器牌",
     "category_en": "Weapon",
@@ -1127,7 +1127,7 @@
   },
   {
     "id": "weapon_sword_of_heaven",
-    "name_cn": "神倚天劍",
+    "name_cn": "神倚天剑",
     "name_en": "Sword of Heaven",
     "category_cn": "武器牌",
     "category_en": "Weapon",

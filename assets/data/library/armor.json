@@ -190,7 +190,7 @@
   },
   {
     "id": "armor_tarnished_silver_armor",
-    "name_cn": "爛銀甲",
+    "name_cn": "烂银甲",
     "name_en": "Tarnished Silver Armor",
     "category_cn": "防具牌",
     "category_en": "Armor",
@@ -248,7 +248,7 @@
   },
   {
     "id": "armor_radiant_white_robe",
-    "name_cn": "聖光白衣",
+    "name_cn": "圣光白衣",
     "name_en": "Radiant White Robe",
     "category_cn": "防具牌",
     "category_en": "Armor",
@@ -262,7 +262,7 @@
   },
   {
     "id": "armor_celestial_dragon_flame_shield",
-    "name_cn": "天龍炎盾",
+    "name_cn": "天龙炎盾",
     "name_en": "Celestial Dragon Flame Shield",
     "category_cn": "防具牌",
     "category_en": "Armor",
@@ -289,7 +289,7 @@
   },
   {
     "id": "armor_sleeping_dragon_chariot",
-    "name_cn": "臥龍四輪車",
+    "name_cn": "卧龙四轮车",
     "name_en": "Sleeping Dragon's Chariot",
     "category_cn": "防具牌",
     "category_en": "Armor",
@@ -317,7 +317,7 @@
   },
   {
     "id": "armor_black_tortoise_bracer",
-    "name_cn": "玄武護臂",
+    "name_cn": "玄武护臂",
     "name_en": "Black Tortoise Bracer",
     "category_cn": "防具牌",
     "category_en": "Armor",
@@ -329,8 +329,8 @@
     ],
     "faq": [
       {
-        "q_cn": "主公如何打出【玄武護臂】？装备此牌会回复体力吗？",
-        "a_cn": "主公不能装备【玄武護臂】，但可于自己的出牌阶段内，在已受伤时打出此牌并回复1点体力，然后将此牌置入弃牌堆；不能在濒死状态中以此法打出。其他角色装备此牌时，体力上限增加1点，但不会因此回复体力。",
+        "q_cn": "主公如何打出【玄武护臂】？装备此牌会回复体力吗？",
+        "a_cn": "主公不能装备【玄武护臂】，但可于自己的出牌阶段内，在已受伤时打出此牌并回复1点体力，然后将此牌置入弃牌堆；不能在濒死状态中以此法打出。其他角色装备此牌时，体力上限增加1点，但不会因此回复体力。",
         "q_en": "How does the Lord play [Black Tortoise Bracer], and does equipping it recover HP?",
         "a_en": "The Lord cannot equip [Black Tortoise Bracer], but may play it during their own Play Phase while Wounded to recover 1 HP, then place it into the Discard Pile. It cannot be played during the Verge of Death State. When another character equips it, their Max HP increases by 1, but they do not recover HP."
       }
@@ -386,7 +386,7 @@
   },
   {
     "id": "armor_ancient_paperweight",
-    "name_cn": "古銅鎮尺",
+    "name_cn": "古铜镇尺",
     "name_en": "Ancient Paperweight",
     "category_cn": "防具牌",
     "category_en": "Armor",

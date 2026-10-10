@@ -52,7 +52,7 @@
   },
   {
     "id": "treasure_catapult",
-    "name_cn": "霹靂車",
+    "name_cn": "霹雳车",
     "name_en": "Catapult",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -73,7 +73,7 @@
   },
   {
     "id": "treasure_siege_engine",
-    "name_cn": "大攻車",
+    "name_cn": "大攻车",
     "name_en": "Siege Engine",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -100,7 +100,7 @@
   },
   {
     "id": "treasure_grain_wagon",
-    "name_cn": "四乘糧輿",
+    "name_cn": "四乘粮舆",
     "name_en": "Grain Wagon",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -114,7 +114,7 @@
   },
   {
     "id": "treasure_flywheel_war_chariot",
-    "name_cn": "飛輪戰輿",
+    "name_cn": "飞轮战舆",
     "name_en": "Flywheel War Chariot",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -128,7 +128,7 @@
   },
   {
     "id": "treasure_iron_caltrop_chariot",
-    "name_cn": "鐵蒺玄輿",
+    "name_cn": "铁蒺玄舆",
     "name_en": "Iron Caltrop Chariot",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -170,7 +170,7 @@
   },
   {
     "id": "treasure_jade_comb",
-    "name_cn": "瓊梳",
+    "name_cn": "琼梳",
     "name_en": "Jade Comb",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -184,7 +184,7 @@
   },
   {
     "id": "treasure_kongming_lantern",
-    "name_cn": "孔明燈",
+    "name_cn": "孔明灯",
     "name_en": "Kongming Lantern",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -205,7 +205,7 @@
   },
   {
     "id": "treasure_hua_tuo_scripture",
-    "name_cn": "青囊書",
+    "name_cn": "青囊书",
     "name_en": "Hua Tuo's Scripture",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -219,7 +219,7 @@
   },
   {
     "id": "treasure_alchemy_furnace",
-    "name_cn": "熔爐",
+    "name_cn": "熔炉",
     "name_en": "Alchemy Furnace",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
@@ -233,7 +233,7 @@
   },
   {
     "id": "treasure_imperial_seal",
-    "name_cn": "玉璽",
+    "name_cn": "玉玺",
     "name_en": "Imperial Seal",
     "category_cn": "宝物牌",
     "category_en": "Treasure",
