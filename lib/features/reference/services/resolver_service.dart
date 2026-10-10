@@ -60,6 +60,7 @@ class ResolvedReference {
       ResolvedReference._(
         bracketText: text,
         type: ReferenceType.skill,
+        id: skill.id,
         nameCn: skill.nameCn,
         nameEn: skill.nameEn,
         skillType: skill.skillType,
@@ -117,8 +118,8 @@ class ResolverService {
   Set<String>? _resolvableCn;
   Map<String, LibraryDTO>? _libByCn;
   Map<String, LibraryDTO>? _libByEn;
-  Map<String, SkillDTO>? _skillByCn;
-  Map<String, SkillDTO>? _skillByEn;
+  Map<String, List<SkillDTO>>? _skillByCn;
+  Map<String, List<SkillDTO>>? _skillByEn;
   Map<String, GeneralCard>? _tokenByCn;
   Map<String, GeneralCard>? _tokenByEn;
   Map<String, List<GeneralCard>>? _tokensBySourceSkillId;
@@ -175,10 +176,12 @@ class ResolverService {
     _libByEn = {
       for (final card in libraryCards) card.nameEn.toLowerCase(): card,
     };
-    _skillByCn = {for (final skill in skillMap.values) skill.nameCn: skill};
-    _skillByEn = {
-      for (final skill in skillMap.values) skill.nameEn.toLowerCase(): skill,
-    };
+    _skillByCn = {};
+    _skillByEn = {};
+    for (final skill in skillMap.values) {
+      _skillByCn!.putIfAbsent(skill.nameCn, () => []).add(skill);
+      _skillByEn!.putIfAbsent(skill.nameEn.toLowerCase(), () => []).add(skill);
+    }
     _tokenByCn = {
       for (final token in tokenCards) _normalizeTokenKey(token.nameCn): token,
       for (final token in tokenCards)
@@ -204,6 +207,7 @@ class ResolverService {
   Future<List<ResolvedReference>> resolve(
     String text, {
     bool isChinese = true,
+    List<SkillDTO> skillContext = const [],
   }) async {
     await _ensureCache();
     final tokens = _extractBracketTokens(text, isChinese: isChinese);
@@ -213,44 +217,43 @@ class ResolverService {
     final results = <ResolvedReference>[];
     final seen = <String>{};
 
-    for (final token in tokens) {
-      if (!seen.add(token)) continue;
-
-      ResolvedReference? ref;
-
-      if (isChinese) {
-        final libraryCard = _libByCn?[token];
-        final skill = _skillByCn?[token];
-        final tokenCard = _tokenByCn == null
-            ? null
-            : _tokenByCn![_normalizeTokenKey(token)];
-        if (libraryCard != null) {
-          ref = ResolvedReference.fromLibrary(token, libraryCard);
-        } else if (skill != null) {
-          ref = ResolvedReference.fromSkill(token, skill);
-        } else if (tokenCard != null) {
-          ref = ResolvedReference.fromTokenCard(token, tokenCard);
-        }
-      } else {
-        final lower = token.toLowerCase();
-        final libraryCard = _libByEn?[lower];
-        final skill = _skillByEn?[lower];
-        final tokenCard = _tokenByEn == null
-            ? null
-            : _tokenByEn![_normalizeTokenKey(token).toLowerCase()];
-        if (libraryCard != null) {
-          ref = ResolvedReference.fromLibrary(token, libraryCard);
-        } else if (skill != null) {
-          ref = ResolvedReference.fromSkill(token, skill);
-        } else if (tokenCard != null) {
-          ref = ResolvedReference.fromTokenCard(token, tokenCard);
-        }
+    void addReference(ResolvedReference ref) {
+      if (seen.add('${ref.type.name}:${ref.id ?? ref.bracketText}')) {
+        results.add(ref);
       }
+    }
 
-      if (ref != null) {
-        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
-          results.add(ref);
+    for (final bracketToken in tokens) {
+      if (!seen.add(bracketToken)) continue;
+      final token = bracketToken.substring(1, bracketToken.length - 1);
+      final isSkill = bracketToken.startsWith('\u3016');
+      final key = isChinese ? token : token.toLowerCase();
+      final libraryCard = isSkill
+          ? null
+          : (isChinese ? _libByCn![key] : _libByEn![key]);
+      final localSkills = skillContext.where((skill) {
+        return (isChinese ? skill.nameCn : skill.nameEn.toLowerCase()) == key;
+      }).toList();
+      final skills = localSkills.isNotEmpty
+          ? localSkills
+          : ((isChinese ? _skillByCn![key] : _skillByEn![key]) ??
+                const <SkillDTO>[]);
+      final tokenKey = isChinese
+          ? _normalizeTokenKey(token)
+          : _normalizeTokenKey(token).toLowerCase();
+      final tokenCard = isChinese
+          ? _tokenByCn![tokenKey]
+          : _tokenByEn![tokenKey];
+
+      if (libraryCard != null) {
+        addReference(ResolvedReference.fromLibrary(token, libraryCard));
+      } else if (skills.isNotEmpty) {
+        // Keep ambiguous versions available for explicit selection.
+        for (final skill in skills) {
+          addReference(ResolvedReference.fromSkill(token, skill));
         }
+      } else if (tokenCard != null) {
+        addReference(ResolvedReference.fromTokenCard(token, tokenCard));
       } else {
         debugPrint('[ResolverService] Unresolved reference: $token');
       }
@@ -265,9 +268,7 @@ class ResolverService {
       final ref = tokenCard == null
           ? ResolvedReference.fromToken(token)
           : ResolvedReference.fromTokenCard(token, tokenCard);
-      if (seen.add('${ref.type.name}:${ref.bracketText}')) {
-        results.add(ref);
-      }
+      addReference(ref);
     }
 
     return results;
@@ -283,9 +284,13 @@ class ResolverService {
 
     for (final skill in skills) {
       final text = isChinese ? skill.descriptionCn : skill.descriptionEn;
-      final refs = await resolve(text, isChinese: isChinese);
+      final refs = await resolve(
+        text,
+        isChinese: isChinese,
+        skillContext: skills,
+      );
       for (final ref in refs) {
-        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
+        if (seen.add('${ref.type.name}:${ref.id ?? ref.bracketText}')) {
           results.add(ref);
         }
       }
@@ -317,7 +322,7 @@ class ResolverService {
     for (final text in effects) {
       final refs = await resolve(text, isChinese: isChinese);
       for (final ref in refs) {
-        if (seen.add('${ref.type.name}:${ref.bracketText}')) {
+        if (seen.add('${ref.type.name}:${ref.id ?? ref.bracketText}')) {
           results.add(ref);
         }
       }
@@ -330,7 +335,7 @@ class ResolverService {
     final pattern = isChinese ? _cnBrackets : _enBrackets;
     return pattern
         .allMatches(text)
-        .map((m) => m.group(1) ?? m.group(2) ?? '')
+        .map((m) => m.group(0) ?? '')
         .where((t) => t.isNotEmpty)
         .toList();
   }

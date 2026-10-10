@@ -427,6 +427,7 @@ class _GeneralDetailScreenState extends State<GeneralDetailScreen>
                 } else {
                   return _FaqList(
                     faq: card.faq,
+                    skillContext: card.skills,
                     isEnglish: _isEnglish,
                     theme: theme,
                   );
@@ -1693,11 +1694,13 @@ class _SkillCardBorderPainter extends CustomPainter {
 // FAQ list
 class _FaqList extends StatelessWidget {
   final List<Map<String, String>> faq;
+  final List<SkillDTO> skillContext;
   final bool isEnglish;
   final ThemeData theme;
 
   const _FaqList({
     required this.faq,
+    required this.skillContext,
     required this.isEnglish,
     required this.theme,
   });
@@ -1720,7 +1723,12 @@ class _FaqList extends StatelessWidget {
     return Column(
       children: faq
           .map(
-            (item) => _FaqRow(item: item, isEnglish: isEnglish, theme: theme),
+            (item) => _FaqRow(
+              item: item,
+              skillContext: skillContext,
+              isEnglish: isEnglish,
+              theme: theme,
+            ),
           )
           .toList(),
     );
@@ -1729,11 +1737,13 @@ class _FaqList extends StatelessWidget {
 
 class _FaqRow extends StatefulWidget {
   final Map<String, String> item;
+  final List<SkillDTO> skillContext;
   final bool isEnglish;
   final ThemeData theme;
 
   const _FaqRow({
     required this.item,
+    required this.skillContext,
     required this.isEnglish,
     required this.theme,
   });
@@ -1750,6 +1760,7 @@ class _FaqRowState extends State<_FaqRow> {
     await ReferenceSheet.show(
       context: context,
       bracketText: bracketText,
+      skillContext: widget.skillContext,
       isChinese: isChinese,
       isDark: isDark,
       showChinese: !widget.isEnglish,

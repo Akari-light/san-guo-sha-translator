@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_assets.dart';
+import '../../../../core/models/skill_dto.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../services/resolver_service.dart';
 
@@ -21,19 +22,51 @@ class ReferenceSheet extends StatelessWidget {
     required bool isChinese,
     required bool isDark,
     required bool showChinese,
+    List<SkillDTO> skillContext = const [],
   }) async {
     final refs = await ResolverService().resolve(
       bracketText,
       isChinese: isChinese,
+      skillContext: skillContext,
     );
     if (refs.isEmpty || !context.mounted) return;
+
+    final ResolvedReference? selected;
+    if (refs.length == 1) {
+      selected = refs.first;
+    } else {
+      selected = await showModalBottomSheet<ResolvedReference>(
+        context: context,
+        isScrollControlled: true,
+        builder: (sheetContext) => SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (final ref in refs)
+                  ListTile(
+                    title: Text(showChinese ? ref.nameCn : ref.nameEn),
+                    subtitle: Text(
+                      (showChinese ? ref.descriptionCn : ref.descriptionEn) ??
+                          '',
+                    ),
+                    onTap: () => Navigator.of(sheetContext).pop(ref),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+    final chosen = selected;
+    if (chosen == null || !context.mounted) return;
 
     showModalBottomSheet<void>(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
       builder: (_) => ReferenceSheet._(
-        ref: refs.first,
+        ref: chosen,
         showChinese: showChinese,
         isDark: isDark,
       ),
