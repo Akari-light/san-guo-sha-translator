@@ -142,7 +142,7 @@
     "faq": [],
     "skills": [
       "skill_fated_end",
-      "skill_burn_the_heart"
+      "skill_burning_resolve"
     ]
   },
   {
@@ -167,22 +167,22 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "SP孙尚香的【良助】技能描述中「当一名角色于其出牌阶段内回复体力后」，如何理解？",
-        "a_cn": "若有角色于自己出牌阶段内因为【桃】、【桃园结义】、【白银狮子】与技能效果而使自己回复体力时可以发动，另外在出牌阶段内因濒死而使用【桃】、【酒】或技能回复体力也能发动【良助】。但仅限于当前回合角色回复体力时，例如：華陀的出牌阶段对其他角色发动【青囊】而使其他角色回复体力时，【良助】不能发动，但華陀对自己发动【青囊】则可以发动【良助】。同时也限制出牌阶段回复体力才能发动【良助】，例如：当前回合角色在判定阶段受到【闪電】造成的伤害进入濒死狀态使用【桃】、【酒】或技能回复体力时不能发动【良助】。另外当前回合角色在出牌阶段内因为濒死狀态而多次使用【桃】、【酒】多次回复体力时可以多次发动【良助】；但一次性回复多点体力的场合，例如：庞统的【涅槃】与SP姜维的【逢亮】等技能只能发动一次【良助】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "什么时候可以发动〖良助〗？",
+        "a_cn": "只有正在进行自己出牌阶段的角色回复体力后才可以发动。每次回复事件分别触发；一次回复多点体力仍只触发一次。其他角色在该阶段回复体力，或在其他阶段回复体力，都不满足条件。",
+        "q_en": "When can 〖Good Aid〗 activate?",
+        "a_en": "After the character whose Play Phase is in progress recovers HP. Each recovery event triggers it once, even if several HP are recovered at once. Recovery by another character during that phase, or recovery during another phase, does not qualify."
       },
       {
-        "q_cn": "SP孙尚香在自己的出牌阶段内回复体力时能否对自己发动【良助】？",
-        "a_cn": "可以，此时SP孙尚香可以选择摸一张牌或是令自己摸两张牌。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "可以对自己发动〖良助〗吗？",
+        "a_cn": "可以。在你自己的出牌阶段回复体力后，你可以选择自己摸一张牌，或令自己摸两张牌。",
+        "q_en": "Can 〖Good Aid〗 benefit you?",
+        "a_en": "Yes. After you recover HP during your Play Phase, you may choose to draw 1 card or have yourself draw 2 cards."
       },
       {
-        "q_cn": "SP孙尚香的【返乡】技能描述中「你发动过【良助】令其摸牌的角色」，如何理解？",
-        "a_cn": "是指所有SP孙尚香发动【良助】令其摸两张牌的角色，若SP孙尚香的准备阶段时这些角色中最少有一人已受伤，则触发【返乡】並执行觉醒技效果。另外SP孙尚香对自己发动【良助】时选择摸一张牌效果的场合不会触发【返乡】的觉醒条件，但SP孙尚香对自己发动【良助】令自己摸两张牌时，下个准备阶段若已受伤则会触发【返乡】的觉醒条件。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖返乡〗检查哪些角色？",
+        "a_cn": "记录你以〖良助〗第二项令其摸两张牌的角色。你的准备阶段，若其中至少一名角色已受伤，就满足觉醒条件。你选择自己摸一张牌不计入此记录；以第二项令自己摸两张牌则计入。",
+        "q_en": "Which characters count for 〖Return Home〗?",
+        "a_en": "Track characters you have had draw 2 cards with option 2 of 〖Good Aid〗. If at least one is Wounded during your Preparation Phase, the awakening condition is met. Drawing 1 card for yourself with option 1 does not add you to this record; choosing option 2 for yourself does."
       }
     ],
     "skills": [
@@ -213,70 +213,46 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "SP蔡文姬的【陈情】技能描述中「每轮限一次」，如何理解？",
-        "a_cn": "每次主公的回合开始时，视为新的一轮，例如游戏开始时第一次主公的回合就是第一轮，因此若SP蔡文姬在第一轮的时候发动【陈情】后，必须等到第二次主公的回合开始时才能再次发动【陈情】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖陈情〗的「每轮限一次」如何计算？可以在自己濒死时发动吗？",
+        "a_cn": "每次主公的回合开始时进入新的一轮，第一次主公回合为第一轮。每轮至多发动一次，也可以在你自己进入濒死状态时发动。",
+        "q_en": "How does 〖Poignant Plea〗 reset, and can it save you?",
+        "a_en": "A new round begins at the start of each Lord turn; the first Lord turn starts round 1. You may activate it once per round, including when you enter the Verge of Death State."
       },
       {
-        "q_cn": "SP蔡文姬的【陈情】技能描述中「你可以令另一名其他角色摸四张牌，然后弃置四张牌」，如果因为该角色发动技能(例如界夏侯惇的【清儉】)导致剩余的牌数不足四张怎么办？",
-        "a_cn": "不足则全弃。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖陈情〗由谁摸牌、弃牌和使用【桃】？",
+        "a_cn": "选择除你和濒死角色以外的一名角色。该角色先摸四张牌，再自行选择弃置四张牌，可以弃置手牌或装备区里的牌。若可弃置的牌不足四张，则全部弃置。只有实际弃置四张且花色各不相同时，才视为对濒死角色使用【桃】。",
+        "q_en": "Who draws, discards, and uses [Peach] for 〖Poignant Plea〗?",
+        "a_en": "Choose a character other than you and the dying character. They draw 4 cards, then choose 4 of their hand or equipped cards to discard. If they have fewer than 4 discardable cards, they discard all of them. The virtual [Peach] occurs only if they actually discard 4 cards of four different suits."
       },
       {
-        "q_cn": "SP蔡文姬的【陈情】能否在自己濒死的时候发动？",
-        "a_cn": "能。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖默识〗记录哪些牌，是否必须依次使用？",
+        "a_cn": "按你出牌阶段内使用的顺序，记录第一张和第二张基本牌或普通锦囊牌，装备牌和延时锦囊牌不占这两个位置。结束阶段先用一张手牌转化使用记录的第一张牌；完成后，才可以再用一张手牌转化使用第二张牌，不能跳过第一张直接使用第二张。",
+        "q_en": "Which cards does 〖Silent Memory〗 copy, and in what order?",
+        "a_en": "Track the first and second Basic or Non-Time-Delayed Tool Cards you use during your Play Phase. Equipment and Time-Delayed Tool Cards do not occupy these positions. In your End Phase, first convert a hand card into the first recorded card. After that use, you may convert another hand card into the second. You cannot skip directly to the second."
       },
       {
-        "q_cn": "SP蔡文姬发动【陈情】令一名角色摸四张牌弃置四张牌，该角色弃置四张牌时，周泰能否发动【奋激】？",
-        "a_cn": "不行，因为【陈情】的弃牌属于该角色主动弃置。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖默识〗转化牌的花色和点数是什么？",
+        "a_cn": "花色和点数来自用于转化的那张手牌，牌名来自〖默识〗记录的牌。",
+        "q_en": "What suit and rank does a card converted by 〖Silent Memory〗 have?",
+        "a_en": "It keeps the suit and rank of the hand card used for the conversion. Its name comes from the recorded card."
       },
       {
-        "q_cn": "SP蔡文姬的【陈情】、周泰的【不屈】、吴国太的【补益】、SP姜维的【逢亮】和曹冲的【仁心】，这些技能之间的结算顺序是如何？",
-        "a_cn": "【陈情】、【补益】和【逢亮】的发动时机都是某角色「进入濒死」；而【不屈】的发动时机是「处于濒死」；【仁心】则是「受到伤害时」。因此【仁心】优先选择发动，其次是【陈情】、【补益】和【逢亮】(这三个技能都同时机发动，因此会按当前回合角色开始逆时針结算)，最后才是【不屈】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖默识〗能记录通过其他效果转化或视为使用的【杀】吗？",
+        "a_cn": "可以，只要该【杀】是在你的出牌阶段内使用的，并属于记录的第一张或第二张基本牌或普通锦囊牌。",
+        "q_en": "Can 〖Silent Memory〗 record a converted or virtual [Kill]?",
+        "a_en": "Yes, if you used that [Kill] during your Play Phase and it was the first or second qualifying Basic or Non-Time-Delayed Tool Card."
       },
       {
-        "q_cn": "SP蔡文姬的【默识】技能描述中「你可以将一张手牌A当你本回合出牌阶段使用的第一张B基本牌或B非延时锦囊牌使用」，那么B有花色吗？",
-        "a_cn": "有，花色与A相同。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖默识〗使用的牌是否仍需满足使用条件？",
+        "a_cn": "需要。没有使用【闪】或【无懈可击】的响应时机，就不能以〖默识〗主动使用它们；未受伤不能使用【桃】，没有合法目标也不能使用相应的牌。使用【酒】仍须检查其本回合的使用次数限制。",
+        "q_en": "Must cards used through 〖Silent Memory〗 still be legal?",
+        "a_en": "Yes. You cannot proactively use [Dodge] or [Nullification] without the appropriate response window. You cannot use [Peach] while Unwounded, or use a card without a legal target. [Wine] remains subject to its usage limit for the turn."
       },
       {
-        "q_cn": "SP蔡文姬在回合内使用的第1张与第2张牌分别是【酒】和【杀】，在结束阶段发动【默识】时，能不使用【酒】直接使用【杀】吗？",
-        "a_cn": "不能，必须按照顺序使用。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "SP蔡文姬发动【丈八舌矛】效果将两张手牌当作【杀】使用，能否发动【默识】视为使用【杀】？",
-        "a_cn": "可以",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "SP蔡文姬发动【默识】使用的【杀】能否被【朱雀羽扇】转化为【火杀】？",
-        "a_cn": "可以，如果你出牌阶段使用的【杀】是普通的【杀】，那可以透过【朱雀羽扇】转化。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "SP蔡文姬在出牌阶段内依次使用【杀】、【酒】，在回合结束阶段发动【默识】视为使用【杀】的时候，有此【杀】是否还有【酒】的伤害+1的效果？",
-        "a_cn": "有，因为【酒】的效果是「本回合下一张使用的【杀】造成的伤害+1」，结束阶段还是SP蔡文姬的回合，因此【酒】的效果还在。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "除了【闪】之外，有哪些基本牌或非延时锦囊牌不能通过【默识】使用？",
-        "a_cn": "【酒】和【无懈可击】，因为【酒】的使用时机是在出牌阶段，而【无懈可击】的目标必须是锦囊牌。此外，SP蔡文姬满体力的时候不能透过【默识】使用【桃】；在没有合法目标的情况下也不能透过【默识】使用【杀】和部分非延时锦囊牌。例如：场上SP蔡文姬之外的其他角色之手牌区、装备区、判定区全部没有牌，此时SP蔡文姬不能发动【默识】使用【顺手牵羊】和【过河拆桥】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "出牌阶段使用【酒】后，结束阶段以〖默识〗使用的【杀】还有加伤效果吗？",
+        "a_cn": "若该【酒】的加伤效果尚未被下一张【杀】消耗，则有。结束阶段仍属于同一回合；已经被之前的【杀】消耗的效果不会再次生效。",
+        "q_en": "Can earlier [Wine] boost a [Kill] used through 〖Silent Memory〗 in the End Phase?",
+        "a_en": "Yes, if its bonus has not already been consumed by your next [Kill]. The End Phase is still part of the same turn. A bonus consumed by an earlier [Kill] does not apply again."
       }
     ],
     "skills": [
@@ -306,40 +282,34 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "关银屏满血的时后能否发动【雪恨】？",
-        "a_cn": "能。因为既能有“X至少为1”的描述。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "满体力时能发动〖血祭〗吗？",
+        "a_cn": "可以。X至少为1，所以满体力时也可以选择至多一名角色。",
+        "q_en": "Can you activate 〖Blood Sacrifice〗 at full HP?",
+        "a_en": "Yes. X is at least 1, so you may choose up to 1 character at full HP."
       },
       {
-        "q_cn": "【雪恨】描述中的“横置这些角色”是否包括解除连环状态？如果关银屏指定一名已处于连环状态的角色为【雪恨】的目标，会发生什么？",
-        "a_cn": "不包括，只能横置，不能解除连环。如果关银屏指定一名已处于连环状态的角色，则什么也不会发生，相当于少指定一名目标。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖血祭〗能解除连环状态吗？已横置的角色还会受到伤害吗？",
+        "a_cn": "不能解除连环。已经横置的角色保持横置，也可以被选为造成1点火焰伤害的那名角色。横置操作没有变化，不代表后续伤害无效。",
+        "q_en": "Can 〖Blood Sacrifice〗 unchain a character? Can an already Chained character take its damage?",
+        "a_en": "It cannot unchain anyone. An already Chained character stays Chained and can still be chosen to take the 1 Fire damage. The unchanged Chained state does not cancel the damage."
       },
       {
-        "q_cn": "【虎啸】令受伤的角色摸牌，是否受到【铁索连环】的影响？",
-        "a_cn": "是，所有在连环状态下并受到火焰伤害的角色都摸一张。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "连环传导的火焰伤害会触发〖虎啸〗吗？",
+        "a_cn": "会。每名实际受到你造成的火焰伤害的角色各摸一张牌，本回合你对这些角色使用牌没有次数限制。",
+        "q_en": "Does chained Fire damage trigger 〖Tiger's Roar〗?",
+        "a_en": "Yes. Each character who actually takes Fire damage from you draws 1 card, and your card uses targeting those characters have no usage limit for the rest of this turn."
       },
       {
-        "q_cn": "关银屏的【虎啸】与郭嘉的【遗计】、夏侯惇的【刚烈】、荀彧的【节命】等技能结算顺序是如何？",
-        "a_cn": "假如关银屏对郭嘉/夏侯惇/荀彧造成了火焰伤害，技能结算如下： 1.先进行濒死结算；2.若未进入濒死状态(未死亡)或脱离濒死状态(被救回)，则【虎啸】先触发，让对方摸一张牌；3.结算完【虎啸】的摸牌后，其他角色依照当前回合的角色依逆时针顺序依次发动技能；4.若有其他角色处于连环状态，则继续进行火焰伤害的传递，然后重复1.2.3.的流程。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖虎啸〗与受伤角色的伤后技能如何排序？",
+        "a_cn": "若需要濒死结算，先完成濒死结算。〖虎啸〗的「造成伤害后」时机先于受伤角色技能的「受到伤害后」时机；这些结算完成后，才继续处理连环传导。",
+        "q_en": "When does 〖Tiger's Roar〗 resolve relative to the damaged character's skills?",
+        "a_en": "Resolve any dying procedure first. 〖Tiger's Roar〗 triggers after damage is dealt, before skills that trigger after damage is received. Finish those events before continuing chained damage."
       },
       {
-        "q_cn": "关银屏的【虎啸】与防止伤害类的技能(如曹冲的【仁心】、黄皓的【贿生】)如何结算？转移伤害类呢(如大乔的【流离】、小乔的【天香】)？",
-        "a_cn": "【虎啸】是在“造成伤害后”触发，而防止伤害类技能是在“造成伤害时”发动，所以这些武将在防止关银屏的火焰伤害后，不会触发【虎啸】的摸牌效果。转移伤害类的则是由实际受到火焰伤害的角色摸一张牌。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "发动【武继】觉醒并获得的【青龙偃月刀】能直接使用吗?",
-        "a_cn": "不能。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖武继〗获得【青龙偃月刀】后会立即装备吗？",
+        "a_cn": "不会。获得是将牌加入手牌，技能没有立即使用或置入装备区的效果。",
+        "q_en": "Does [Green Dragon Crescent Blade] equip immediately when gained through 〖Inherit the Blade〗?",
+        "a_en": "No. Gaining it adds it to your hand. The skill does not immediately use or equip it."
       }
     ],
     "skills": [
@@ -427,10 +397,10 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "若一名角色在结束阶段开始时有技能发动，例如闭月，那么骁果和闭月哪个先发动?",
-        "a_cn": "按当前回合角色开始逆时針的顺序结算，当前回合角色先发动。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖骁果〗与当前回合角色的结束阶段技能谁先结算？",
+        "a_cn": "若在同一时机触发，按从当前回合角色开始的行动顺序结算，因此当前回合角色先处理自己的技能，再轮到乐进处理〖骁果〗。",
+        "q_en": "Which resolves first: 〖Valiant Drive〗 or the current character's End Phase skill?",
+        "a_en": "If they trigger at the same timing, resolve them in action order starting with the current character. That character handles their skill before Yue Jin handles 〖Valiant Drive〗."
       }
     ],
     "skills": [
@@ -556,106 +526,52 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "一名角色的出牌阶段开始时何太后对其发动【鸩毒】，之后该角色在这个出牌阶段内还能使用【酒】吗？",
-        "a_cn": "在出牌阶段不能使用【酒】的效果使下一张【杀】的伤害+1，但可以在濒死狀态时使用【酒】回复体力。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖鸩毒〗会消耗目标普通使用【酒】的次数吗？能用于救人吗？",
+        "a_cn": "会计入其本回合普通使用【酒】的次数。此【酒】使其本回合下一张【杀】伤害+1，不是濒死救援。该角色之后若濒死，仍可按濒死规则对自己使用【酒】回复体力。",
+        "q_en": "Does 〖Poison Wine〗 count as ordinary [Wine] use? Can it heal?",
+        "a_en": "It counts toward the character's ordinary [Wine] usage limit for the turn. It boosts their next [Kill] this turn by 1 damage; it is not a dying rescue. If that character later becomes dying, they may still use [Wine] on themselves under the dying rules."
       },
       {
-        "q_cn": "被杨修发动【雞肋】限制不能使用基本牌的角色（如夏侯渊），何太后可以对该角色发动【鸩毒】吗？",
-        "a_cn": "可以。并且依然会执行该角色视为使用一张【酒】的效果。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "不能使用某类手牌，会阻止〖鸩毒〗视为使用【酒】吗？",
+        "a_cn": "仅限制某类手牌的使用，不会阻止没有对应实体牌的虚拟【酒】。若其他效果直接禁止使用【酒】，则须按该禁止效果处理，不能把手牌限制和牌名禁止混为一谈。",
+        "q_en": "Does a restriction on using a category of hand cards stop 〖Poison Wine〗?",
+        "a_en": "A restriction on hand cards alone does not stop the virtual [Wine], which has no physical card. An effect that directly prohibits using [Wine] must be handled separately; it is not merely a hand-card restriction."
       },
       {
-        "q_cn": "何太后能否对发动【巧變】跳过出牌阶段的张郃发动【鸩毒】？",
-        "a_cn": "不可以。因为「跳过出牌阶段」也等于「跳过出牌阶段开始时」的时机，同理也不能对受到【乐不思蜀】效果影响的角色发动【鸩毒】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "跳过出牌阶段和额外出牌阶段如何影响〖鸩毒〗？",
+        "a_cn": "跳过整个出牌阶段时，没有该阶段开始的发动时机。额外出牌阶段有自己的阶段开始时机，符合条件时可以再次发动。",
+        "q_en": "How do skipped and extra Play Phases affect 〖Poison Wine〗?",
+        "a_en": "A skipped Play Phase has no start-of-phase trigger. An extra Play Phase has its own start, so you may activate the skill again if its conditions are met."
       },
       {
-        "q_cn": "何太后是否可以对高顺发动【鸩毒】？",
-        "a_cn": "可以。高顺会视为使用了一张【酒】（此【酒】並不是高顺的牌，所以不会受到【禁酒】的影响），然后受到何太后对他造成的1点伤害。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖鸩毒〗视为使用的【酒】有花色吗？会触发使用牌的效果吗？",
+        "a_cn": "此【酒】没有对应实体牌，因此没有颜色、花色和点数，但仍是目标角色使用了一张牌，会触发符合条件的使用牌效果。",
+        "q_en": "Does the virtual [Wine] from 〖Poison Wine〗 have a suit, and does it count as using a card?",
+        "a_en": "It has no physical card, so it has no color, suit, or rank. It still counts as the target character using a card and can trigger applicable card-use effects."
       },
       {
-        "q_cn": "何太后发动【鸩毒】视为使用的【酒】能用于回复体力吗？",
-        "a_cn": "不能，只能令目标角色于当前回合内使用的下一张【杀】的伤害值基数+1。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖鸩毒〗的弃牌与【酒】如何依次结算？",
+        "a_cn": "先弃置发动用的手牌，并处理因此触发的结算，再继续视为目标角色使用【酒】，最后对其造成1点伤害。",
+        "q_en": "In what order does 〖Poison Wine〗 resolve?",
+        "a_en": "Discard the activation card and handle events triggered by that discard. Then the target virtually uses [Wine]. Finally, deal 1 damage to that character."
       },
       {
-        "q_cn": "何太后是否可以在廖化【当先】的额外出牌阶段发动【鸩毒】？",
-        "a_cn": "可以，因为【当先】的额外出牌阶段也是有「出牌阶段开始时」的时机，因此何太后实际上可以对廖化发动两次【鸩毒】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖鸩毒〗的【酒】无效时，还会造成伤害吗？",
+        "a_cn": "会。令【酒】无效只影响【酒】本身的效果；〖鸩毒〗后续造成1点伤害的效果仍继续结算。",
+        "q_en": "If the [Wine] from 〖Poison Wine〗 is nullified, does the damage still happen?",
+        "a_en": "Yes. Nullifying [Wine] affects that card's effect. The skill still proceeds to deal 1 damage."
       },
       {
-        "q_cn": "刘禪发动【放權】时，何太后可以对刘禪发动【鸩毒】吗？",
-        "a_cn": "不行，因为发动【放權】时已經跳过刘禪的出牌阶段了，因此不能发动【鸩毒】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖戚乱〗如何计算摸牌，是否与击杀奖励冲突？",
+        "a_cn": "每个回合结束时，按你在该回合内杀死的其他角色数，每名摸三张牌，可以在其他角色的回合结束时触发。击杀身份奖励另行结算，不会扣除〖戚乱〗的摸牌数。",
+        "q_en": "How many cards does 〖Tragic Chaos〗 draw, and does it replace kill rewards?",
+        "a_en": "At the end of each turn, draw 3 cards for each other character you killed during that turn, including turns belonging to other characters. Identity-based kill rewards resolve separately and do not reduce this draw."
       },
       {
-        "q_cn": "曹植在场，何太后弃置一张梅花牌发动【鸩毒】，此时先结算谁的技能？",
-        "a_cn": "此时先插入结算【落英】的效果，结算完之后再继续执行【鸩毒】的效果。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后对吴懿发动【鸩毒】时，是否会触发【奔袭】的效果？",
-        "a_cn": "会，因为【鸩毒】的效果是「该角色视为使用一张【酒】」，符合【奔袭】「本回合使用牌」的条件。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "张松的出牌阶段开始时，先结算张松的【强识】还是何太后的【鸩毒】？",
-        "a_cn": "同时机发动的技能互相衝突时，由当前回合角色开始逆时針结算，因此张松先执行【强识】的效果，之后再结算何太后的【鸩毒】，若张松发动【强识】时展示一名角色手牌中的基本牌，则结算【鸩毒】时，会因为「视为使用一张【酒】」的效果而摸一张牌。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后发动【鸩毒】时，程昱是否可以对【鸩毒】技能描述中：「视为使用一张【酒】」而对【酒】发动【设伏】？",
-        "a_cn": "可以，发动【设伏】后不执行【酒】的效果，但【鸩毒】还是对该角色造成1点伤害。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后在自己回合杀死了一个反贼摸了三张獎励牌，之后在自己回合结束后，是否可以发动【戚乱】再摸三张牌再摸三张牌？",
-        "a_cn": "可以。杀死反贼獎励的三张牌和发动【戚乱】的三张牌是两回事，互不影响。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后在回合内杀死蔡文姬，回合结束后能发动【戚乱】摸三张牌吗？",
-        "a_cn": "不能。何太后在杀死蔡文姬时，会触发蔡文姬的【断肠】导致何太后失去所有武将技能，等到这个回合结束后，何太后早就没有【戚乱】这个技能了。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后在自己的回合杀死了两个反贼，如何结算？",
-        "a_cn": "首先，何太后每一次杀死反贼，都可以摸三张獎励牌。然后在此回合结束后，何太后可以发动【戚乱】一次摸六张牌。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "体力值为2且拥有【纏怨】的何太后在回合内杀死一名角色后，体力值變为1，在回合结束后能发动【戚乱】摸三张牌吗？",
-        "a_cn": "不可以。体力值为1的何太后此时因为【纏怨】的效果，其他武将技都无效，不能发动。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "体力值为1且拥有【纏怨】的何太后在回合内杀死一名角色后，体力變成2，在回合结束后能发动【戚乱】摸三张牌吗？",
-        "a_cn": "可以。杀死角色只是发动【戚乱】的条件，满足条件时【戚乱】是否有效都无所谓，只要在发动的时机有效就可以发动。",
-        "q_en": "",
-        "a_en": ""
-      },
-      {
-        "q_cn": "何太后在李儒的回合内杀死一名角色，没有手牌，在李儒的回合结束时，先执行【戚乱】摸三张牌的效果还是先执行李儒【绝策】的效果？",
-        "a_cn": "先执行李儒对沒手牌的角色发动【绝策】的效果，再执行【戚乱】摸三张牌的效果。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "击杀时或回合结束时失去、无效的〖戚乱〗能发动吗？",
+        "a_cn": "在回合结束的发动时机，你必须仍拥有有效的〖戚乱〗。若已失去或此时无效，则不能发动；只要此时有效，击杀发生时曾经无效并不妨碍按本回合击杀数计算。",
+        "q_en": "What if 〖Tragic Chaos〗 is lost or nullified?",
+        "a_en": "You must still have an active 〖Tragic Chaos〗 at its turn-end trigger. You cannot activate it if it has been lost or is nullified then. If it is active at turn end, kills earlier that turn still count even if the skill was nullified when they occurred."
       }
     ],
     "skills": [
@@ -847,34 +763,34 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "【郡兵】发动的主动權是谁？",
-        "a_cn": "当前回合角色，该角色可以自己选择是否发动。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖郡兵〗由谁决定是否发动？",
+        "a_cn": "由正在进行结束阶段的角色决定。其手牌数不大于1时，可以选择执行该效果。",
+        "q_en": "Who chooses whether to use 〖County Troops〗?",
+        "a_en": "The character whose End Phase is in progress chooses. They may use the effect if they have at most 1 hand card."
       },
       {
-        "q_cn": "发动【郡兵】时，司马朗是否可以将装备区里的装备牌交给对方？",
-        "a_cn": "可以。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖郡兵〗交换哪些牌？司马朗可以交出装备吗？",
+        "a_cn": "该角色摸一张牌后，将所有手牌交给司马朗。司马朗再交还等量的牌，可以从手牌或装备区选择，不要求交回原来的牌。",
+        "q_en": "Which cards are exchanged through 〖County Troops〗? Can Sima Lang give Equipment?",
+        "a_en": "After drawing 1 card, the character gives Sima Lang all their hand cards. Sima Lang then gives them the same number of cards, chosen from his hand or Equipment Zone. They need not be the original cards."
       },
       {
-        "q_cn": "发动【郡兵】时，司马朗是否可以将【木牛流马】下的牌交出去？",
-        "a_cn": "不可以，【木牛流马】下的牌只能使用或打出，没有包含弃置、置于牌堆頂、给出等其他用途。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "能把【木牛流马】下的牌作为〖郡兵〗交出的牌吗？",
+        "a_cn": "不能。那些牌不属于你的手牌或装备区里的牌；可以使用或打出它们，不代表可以直接交给别人。",
+        "q_en": "Can cards stored under [Wooden Ox] be given through 〖County Troops〗?",
+        "a_en": "No. Stored cards are not cards in your hand or Equipment Zone. Permission to use or play them does not let you give them away directly."
       },
       {
-        "q_cn": "司马朗在自己的回合结束阶段发动【郡兵】，是否能将装备区里的装备牌交给自己？",
-        "a_cn": "不能，司马朗在自己的回合结束阶段发动【郡兵】只进行摸一张牌的效果。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "司马朗在自己的结束阶段发动〖郡兵〗会怎样？",
+        "a_cn": "若满足手牌数条件，只摸一张牌，不通过把牌交给自己来移动装备区里的牌。",
+        "q_en": "What happens when Sima Lang uses 〖County Troops〗 during his own End Phase?",
+        "a_en": "If the hand-count condition is met, he simply draws 1 card. Giving cards to himself does not move cards out of his Equipment Zone."
       },
       {
-        "q_cn": "【去疾】是否可以弃置装备牌？",
-        "a_cn": "可以。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖去疾〗可以弃置装备区里的牌吗？",
+        "a_cn": "可以。技能要求弃置牌，没有限定为手牌。",
+        "q_en": "Can 〖Remove Affliction〗 discard equipped cards?",
+        "a_en": "Yes. Its cost says cards, not only hand cards."
       }
     ],
     "skills": [
@@ -904,16 +820,16 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "【机巧】发动的时机具体是什么时候？",
-        "a_cn": "出牌阶段开始；具体而言，就是摸完两张牌之后，出牌之前。参考简雍的【巧说】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖机巧〗何时发动？",
+        "a_cn": "在你的出牌阶段开始时发动，先处理该时机的效果，再进入可以自由出牌的时间点。不是固定在「摸两张牌之后」发动。",
+        "q_en": "When does 〖Mechanical Ingenuity〗 activate?",
+        "a_en": "At the start of your Play Phase. Resolve start-of-phase effects before freely using cards. Its timing is not defined as after drawing exactly 2 cards."
       },
       {
-        "q_cn": "【乐不思蜀】判定生效，此回合是否能发动【机巧】？",
-        "a_cn": "不能。因为【乐不思蜀】使SP黄月英直接跳过了整个出牌阶段。因为「出牌阶段开始」也包含在出牌阶段内，所以SP黄月英发动【机巧】的时机被跳过了。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "出牌阶段被跳过时能发动〖机巧〗吗？",
+        "a_cn": "不能。跳过整个出牌阶段，也跳过该阶段开始时的发动时机。",
+        "q_en": "Can 〖Mechanical Ingenuity〗 activate if the Play Phase is skipped?",
+        "a_en": "No. Skipping the whole Play Phase also skips its start-of-phase trigger."
       }
     ],
     "skills": [
@@ -942,7 +858,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「梅影」？",
+        "a_cn": "你使用【杀】造成伤害后获得的计数标记。移去一枚可发动〖龙胆〗并摸一张牌。〖扶汉〗按本局累计移去的数量计算体力上限，不只看发动时剩余的数量。",
+        "q_en": "What does 「Plum Shadow」 mean?",
+        "a_en": "A counter gained after your [Kill] deals damage. Spend 1 to activate 〖Dragon's Courage〗 and draw 1 card. 〖Restore Han〗 uses the total spent during the game when setting Max HP, not just the number remaining at activation."
+      }
+    ],
     "skills": [
       "skill_fragrant_soul",
       "skill_restore_han",
@@ -971,28 +894,28 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "【秉正】可以对董允自己发动吗？",
-        "a_cn": "若董允符合「手牌数不等于体力值」这个条件的話，可以对自己发动；若董允执行摸一张牌效果后手牌数等于体力值，则董允可以再摸一张牌，之后进入弃牌阶段。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖秉正〗可以选择自己吗？",
+        "a_cn": "可以，只要你的手牌数不等于体力值。若第一步后你的手牌数等于体力值，你再摸一张牌。",
+        "q_en": "Can 〖Upright Service〗 choose you?",
+        "a_en": "Yes, if your hand count differs from your HP. If the first step makes them equal, you draw another card."
       },
       {
-        "q_cn": "【秉正】技能描述中的「令手牌数不等于体力值的一名角色弃置一张手牌」，弃置的手牌是董允选择的吗？",
-        "a_cn": "否，由被董允选择的角色自行选择。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖秉正〗的弃牌由谁选择？",
+        "a_cn": "董允决定令所选角色弃置一张手牌还是摸一张牌；若令其弃置，由该角色选择弃哪张手牌。",
+        "q_en": "Who chooses the discard for 〖Upright Service〗?",
+        "a_en": "Dong Yun chooses whether the selected character discards 1 hand card or draws 1 card. If they must discard, that character chooses the hand card."
       },
       {
-        "q_cn": "董允选择角色A发动【秉正】后，若A手牌数等于体力值，董允是否可以选择摸一张牌后不交给A一张牌？",
-        "a_cn": "可以，【秉正】的摸一张牌是根据目标A的手牌与体力值来判斷的；若符合，摸一张牌效果强制执行，但后续的给一张牌效果则是董允自行选择的。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖秉正〗后续摸牌和交牌可以分别放弃吗？",
+        "a_cn": "若第一步后所选角色的手牌数等于体力值，你摸一张牌；之后是否交给其一张牌由你选择。",
+        "q_en": "Can you decline the follow-up draw or gift from 〖Upright Service〗?",
+        "a_en": "If the selected character's hand count equals their HP after the first step, you draw 1 card. You then choose whether to give that character 1 card."
       },
       {
-        "q_cn": "若第一位角色A对第二位的董允使用【顺手牵羊】时，董允可以发动【舍宴】额外增加距离不为1的第四位角色D为目标吗？",
-        "a_cn": "可以，【舍宴】额外增加的目标可以不受距离限制选择。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖舍宴〗增加的目标受距离限制吗？",
+        "a_cn": "增加目标时不受距离限制，但仍须满足该牌的其他目标条件。减少目标后，此牌至少保留一个目标。",
+        "q_en": "Does 〖Decline the Feast〗 require an added target to be within Distance?",
+        "a_en": "The added target ignores Distance restrictions but must meet the card's other target conditions. Removing a target must leave at least 1 target."
       }
     ],
     "skills": [
@@ -1075,40 +998,40 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "孙乾装备区没有牌，判定区有【乐不思蜀】，若成为【过河拆桥】的目标后发动【谦雅】将所有手牌交给一名其他角色，此时如何结算【过河拆桥】的效果？",
-        "a_cn": "强制弃置判定区的【乐不思蜀】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖谦雅〗交出全部手牌后，【过河拆桥】如何结算？",
+        "a_cn": "继续按结算时的区域情况处理。若此时你仅判定区有一张【乐不思蜀】，则弃置这张牌；交出手牌不会自动令【过河拆桥】无效。",
+        "q_en": "What happens to [Dismantle] after 〖Modest Elegance〗 gives away all your hand cards?",
+        "a_en": "Resolve it using the cards remaining in your zones. If only an [Acedia] in your Judgment Zone remains, that card is discarded. Giving away your hand does not automatically nullify [Dismantle]."
       },
       {
-        "q_cn": "孙乾成为锦囊牌的目标后，可以发动【谦雅】将装备区里的牌交给其他角色吗？",
-        "a_cn": "不行，只能交出手牌。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖谦雅〗可以交出装备区里的牌吗？",
+        "a_cn": "不能，只能交出手牌。",
+        "q_en": "Can 〖Modest Elegance〗 give away equipped cards?",
+        "a_en": "No. It can give away only hand cards."
       },
       {
-        "q_cn": "孙乾对简雍发动【说盟】並进行拼点，若孙乾赢，如何结算？",
-        "a_cn": "简雍先发动【纵适】获得本次孙乾的拼点牌，之后执行【无中生有】的效果。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "〖说盟〗拼点后，相关拼点技能与锦囊效果如何排序？",
+        "a_cn": "先完成拼点及该时机触发的技能结算，再继续〖说盟〗视为使用锦囊牌的效果。若你没赢，包括平局，都视为对方对你使用【过河拆桥】。",
+        "q_en": "How do Point Duel skills and the Tool Card from 〖Negotiate an Alliance〗 resolve?",
+        "a_en": "Finish the Point Duel and its triggered skills before continuing to the virtual Tool Card. If you do not win, including a tie, the other character virtually uses [Dismantle] on you."
       },
       {
-        "q_cn": "当孙乾被其他角色指定为【乐不思蜀】或【兵粮寸断】的目标时，孙乾可以发动【谦雅】吗？",
-        "a_cn": "可以，同理当孙乾成为【闪電】的目标时一樣可以发动【谦雅】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "成为延时锦囊牌的目标能发动〖谦雅〗吗？",
+        "a_cn": "可以。〖谦雅〗没有限定为普通锦囊牌；在使用延时锦囊牌而令你成为目标后，也满足时机。",
+        "q_en": "Can 〖Modest Elegance〗 trigger for a Time-Delayed Tool Card?",
+        "a_en": "Yes. It is not restricted to Non-Time-Delayed Tool Cards. Being targeted when a Time-Delayed Tool Card is used also qualifies."
       },
       {
-        "q_cn": "孙乾发动【无中生有】时，可以摸两张牌后再发动【谦雅】吗？",
-        "a_cn": "不行，使用【无中生有】时发动【谦雅】的时机是孙乾执行摸两张牌的效果之前，因此孙乾使用【无中生有】时必须在摸牌前发动【谦雅】。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "对自己使用【无中生有】时，〖谦雅〗在摸牌前还是摸牌后发动？",
+        "a_cn": "在成为目标后、执行【无中生有】摸两张牌的效果前发动，不能先摸两张牌再交出。",
+        "q_en": "Does 〖Modest Elegance〗 activate before or after drawing from your own [Resupply]?",
+        "a_en": "After you become its target and before [Resupply] draws 2 cards. You cannot draw those cards first and then give them away with this trigger."
       },
       {
-        "q_cn": "孙乾使用【无中生有】时，若有其他角色使用【无懈可击】抵销此效果，此时孙乾还可以发动【谦雅】吗？",
-        "a_cn": "无論本次【无中生有】是否有被【无懈可击】的效果抵销，孙乾依舊可以发动【谦雅】的效果。",
-        "q_en": "",
-        "a_en": ""
+        "q_cn": "锦囊牌被【无懈可击】抵消，是否影响已触发的〖谦雅〗？",
+        "a_cn": "不影响。〖谦雅〗的时机是成为锦囊牌的目标后，不以锦囊效果最终生效为条件。",
+        "q_en": "Does [Nullification] prevent the earlier 〖Modest Elegance〗 trigger?",
+        "a_en": "No. It triggers after you become the Tool Card's target, regardless of whether that card's effect later takes effect."
       }
     ],
     "skills": [
@@ -1136,7 +1059,14 @@
       "Scaling"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「傀」？",
+        "a_cn": "由〖纵傀〗或〖拜假〗给予角色的标记。有标记的角色受到伤害后触发〖骨疽〗；〖蚕食〗取消目标或增加目标时，按技能文字移去相应角色的标记。",
+        "q_en": "What does 「Puppet」 mean?",
+        "a_en": "A marker assigned by 〖Deploy the Puppet〗 or 〖Bow and Deceive〗. Damage received by a marked character triggers 〖Bone Rot〗. 〖Consume〗 removes the relevant markers when cancelling or adding targets as its text directs."
+      }
+    ],
     "skills": [
       "skill_deploy_the_puppet",
       "skill_bone_rot",
@@ -1164,7 +1094,14 @@
       "Scaling"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「暴戾」？",
+        "a_cn": "由〖凶镬〗和〖杀绝〗获得、可交给其他角色的标记。徐荣对有标记角色造成的伤害+1；该角色的出牌阶段开始时移去标记，再随机执行〖凶镬〗列出的三项效果之一。",
+        "q_en": "What does 「Savage」 mean?",
+        "a_en": "A marker gained through 〖Savage Cauldron〗 or 〖Kill Without Mercy〗 and transferable to another character. Xu Rong deals +1 damage to a marked character. At that character's Play Phase start, remove the marker and randomly resolve one of the three listed effects."
+      }
+    ],
     "skills": [
       "skill_savage_cauldron",
       "skill_kill_without_mercy"
@@ -1190,7 +1127,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "「法箓」标记如何记录，〖点化〗的X是多少？",
+        "a_cn": "分别记录黑桃对应「紫微」、梅花对应「后土」、红桃对应「玉清」、方块对应「勾陈」，每种至多一枚，游戏开始时四种各一枚。〖点化〗的X为你当前拥有的标记总数，即0至4；不是花色点数或累计获得数。",
+        "q_en": "How are 「Sacred Talisman」 markers tracked, and what is X for 〖Illuminate〗?",
+        "a_en": "Track Spades as 「Purple Star」, Clubs as 「Earth Queen」, Hearts as 「Jade Clarity」, and Diamonds as 「Curved Hook」, at most 1 each. Start with all four. X for 〖Illuminate〗 is your current total, from 0 to 4, not card ranks or the total gained during the game."
+      }
+    ],
     "skills": [
       "skill_sacred_talisman",
       "skill_true_ritual",
@@ -1217,7 +1161,14 @@
       "Multi-Strike"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「损」？",
+        "a_cn": "〖缮甲〗的计数标记，不是伤害点数。游戏开始时有三个，每失去一张装备牌移去一个；发动〖缮甲〗时按标记数确定后续需要弃牌的手牌使用次数。",
+        "q_en": "What does 「Damage」 mean?",
+        "a_en": "Counters for 〖Repair the Armor〗, not points of damage. Start with 3 and remove 1 after each Equipment Card you lose. Their count determines how many following hand-card uses require discarding after you activate the skill."
+      }
+    ],
     "skills": [
       "skill_sp_repair_the_armor"
     ]
@@ -1349,7 +1300,14 @@
       "Control"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「箓」？",
+        "a_cn": "〖授符〗放在角色武将牌上的实体牌，不是额外的手牌。该角色不能使用或打出与此牌类别相同的牌；受到伤害后，或在弃牌阶段弃置至少两张该类别的牌后，将「箓」置入弃牌堆。",
+        "q_en": "What does 「Talisman」 mean?",
+        "a_en": "A physical card placed on a General Card by 〖Bestow the Talisman〗, not an extra hand card. That character cannot use or play cards of its category. Discard the 「Talisman」 after that character takes damage or discards at least 2 cards of that category during their Discard Phase."
+      }
+    ],
     "skills": [
       "skill_tiger_cavalry",
       "skill_bestow_the_talisman"
@@ -1506,7 +1464,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「宝梳」？",
+        "a_cn": "指【琼梳】、【犀梳】、【金梳】三张衍生宝物。它们是实际装备牌，不是「梳」计数标记。〖妆梳〗按弃置牌类别选择对应宝梳，宝梳进入非装备区时被销毁。",
+        "q_en": "What are 「Precious Combs」?",
+        "a_en": "They are the generated Treasures [Jade Comb], [Rhinoceros Comb], and [Golden Comb]. They are actual Equipment Cards, not 「Comb」 counters. 〖Adorned Comb〗 selects one according to the discarded card's category. A comb is destroyed when it enters a non-Equipment Zone."
+      }
+    ],
     "skills": [
       "skill_adorned_comb",
       "skill_tearful_offering"
@@ -1688,7 +1653,14 @@
       "Scaling"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「灵杉」和「玉树」？",
+        "a_cn": "〖化木〗置于武将牌上的实体牌，黑色为「灵杉」，红色为「玉树」，不属于手牌。〖良缘〗分别将场上所有「灵杉」当【酒】或所有「玉树」当【桃】使用，每轮每种方式各限一次。",
+        "q_en": "What are 「Spirit Fir」 and 「Jade Tree」?",
+        "a_en": "Physical cards placed on a General Card by 〖Transform to Wood〗: black cards are 「Spirit Fir」 and red cards are 「Jade Tree」. They are not hand cards. 〖Auspicious Bond〗 uses all 「Spirit Fir」 cards on the field as [Wine], or all 「Jade Tree」 cards as [Peach], once per option per round."
+      }
+    ],
     "skills": [
       "skill_transform_to_wood",
       "skill_ancient_pact",
@@ -1718,8 +1690,8 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "【铸刀】中的“铸刀”装备如何使用？",
-        "a_cn": "“铸刀”装备是蒲元通过【铸刀】获得的专属衍生武器，不加入普通牌堆。按弃置牌的花色决定可获得的武器：红桃为【红缎枪】，方块为【烈淬刀】，黑桃为【混毒弯匕】，梅花为【水波剑】；【天雷刃】只能通过弃置【闪电】获得，且跳过判定。",
+        "q_cn": "〖铸刀〗中的“铸刀”装备如何使用？",
+        "a_cn": "“铸刀”装备是蒲元通过〖铸刀〗获得的专属衍生武器，不加入普通牌堆。按弃置牌的花色决定可获得的武器：红桃为【红缎枪】，方块为【烈淬刀】，黑桃为【混毒弯匕】，梅花为【水波剑】；【天雷刃】只能通过弃置【闪电】获得，且跳过判定。",
         "q_en": "How do the 「Forged Blade」 Equipment cards from 〖Forge the Blade〗 work?",
         "a_en": "They are Pu Yuan's exclusive generated weapons and are not added to the normal Draw Pile. The discarded card's suit determines the weapon: Hearts = [Crimson Satin Spear], Diamonds = [Blazeforged Blade], Spades = [Venom Curved Dagger], Clubs = [Rippling Wave Sword]. [Celestial Thunder Blade] can only be gained by discarding [Lightning], and the Judgment is skipped."
       },
@@ -1731,7 +1703,7 @@
       },
       {
         "q_cn": "【天雷刃】具体如何获得？",
-        "a_cn": "发动【铸刀】时，若你弃置的手牌是【闪电】，则不进行判定，直接尝试获得【天雷刃】。若【天雷刃】尚未加入游戏，你获得【天雷刃】；若【天雷刃】已经加入游戏，则改为获得一张【杀】。【天雷刃】不是通过弃置黑桃牌、判定出黑桃牌或普通“铸刀”花色对应关系获得的。",
+        "a_cn": "发动〖铸刀〗时，若你弃置的手牌是【闪电】，则不进行判定，直接尝试获得【天雷刃】。若【天雷刃】尚未加入游戏，你获得【天雷刃】；若【天雷刃】已经加入游戏，则改为获得一张【杀】。【天雷刃】不是通过弃置黑桃牌、判定出黑桃牌或普通“铸刀”花色对应关系获得的。",
         "q_en": "How exactly do you gain [Celestial Thunder Blade]?",
         "a_en": "When you activate 〖Forge the Blade〗, if the hand card you discard is [Lightning], do not perform a Judgment and directly attempt to gain [Celestial Thunder Blade]. If [Celestial Thunder Blade] has not joined the game, you gain it; if it has already joined the game, gain 1 [Kill] instead. [Celestial Thunder Blade] is not gained by discarding a Spade card, revealing a Spade Judgment, or through the normal suit-to-weapon mapping."
       }
@@ -1769,15 +1741,15 @@
         "a_en": "They come from the separate 「Divine Treasury」, not from the normal Draw Pile, and 〖Inspired Design〗 cannot take them from the Draw Pile or Discard Pile. Discarding a Weapon forges a 「Divine Treasury」 Weapon, discarding Armor forges a 「Divine Treasury」 Armor, and discarding a Mount or Treasure forges a 「Divine Treasury」 Treasure. After the forge, Pu Yuan chooses 1 of the forged cards and places it into a character's Equipment Zone."
       },
       {
-        "q_cn": "只有一张【助力点数】和一张【妨害点数】实体牌时，锻造时怎么使用？",
-        "a_cn": "这两张牌不是要分发或消耗的牌，而是本次锻造的小计分牌。蒲元发动〖神工〗后，蒲元默认助力，其他角色依次选择助力、妨害或不参与；每名选择助力或妨害的角色亮出牌堆顶一张牌。将助力一方亮出牌的点数合计记录在【助力点数】上，将妨害一方亮出牌的点数合计记录在【妨害点数】上。一次锻造结算完后，这两个点数清零，下次锻造重新计算。",
-        "q_en": "If I only own one [Assist Points] card and one [Obstruct Points] card, how are they used during forging?",
-        "a_en": "They are not dealt out or spent; they are score cards for the current forge only. After Pu Yuan activates 〖Divine Craft〗, Pu Yuan assists by default, and each other character chooses to assist, obstruct, or abstain. Each assisting or obstructing character reveals the top card of the Draw Pile. Record the total ranks of assisting revealed cards on [Assist Points], and the total ranks of obstructing revealed cards on [Obstruct Points]. After that forge resolves, both totals reset to 0 and are recalculated for the next forge."
+        "q_cn": "只有一张「助力点数」和一张「妨害点数」实体牌时，锻造时怎么使用？",
+        "a_cn": "这两张牌不是要分发或消耗的牌，而是本次锻造的小计分牌。蒲元发动〖神工〗后，蒲元默认助力，其他角色依次选择助力、妨害或不参与；每名选择助力或妨害的角色亮出牌堆顶一张牌。将助力一方亮出牌的点数合计记录在「助力点数」上，将妨害一方亮出牌的点数合计记录在「妨害点数」上。一次锻造结算完后，这两个点数清零，下次锻造重新计算。",
+        "q_en": "If I only own one 「Assist Points」 card and one 「Obstruct Points」 card, how are they used during forging?",
+        "a_en": "They are not dealt out or spent; they are score cards for the current forge only. After Pu Yuan activates 〖Divine Craft〗, Pu Yuan assists by default, and each other character chooses to assist, obstruct, or abstain. Each assisting or obstructing character reveals the top card of the Draw Pile. Record the total ranks of assisting revealed cards on 「Assist Points」, and the total ranks of obstructing revealed cards on 「Obstruct Points」. After that forge resolves, both totals reset to 0 and are recalculated for the next forge."
       },
       {
-        "q_cn": "【助力点数】和【妨害点数】如何决定锻造结果？",
+        "q_cn": "「助力点数」和「妨害点数」如何决定锻造结果？",
         "a_cn": "若无人妨害，本次为完美锻造，蒲元从3张对应副类别的“神工”装备中选择1张；若有人妨害且助力点数大于或等于妨害点数，本次为锻造成功，蒲元从2张对应副类别的“神工”装备中选择1张；若助力点数小于妨害点数，本次为锻造失败，蒲元只获得1张对应副类别的“神工”装备并将其置入一名角色的装备区。",
-        "q_en": "How do [Assist Points] and [Obstruct Points] determine the forge result?",
+        "q_en": "How do 「Assist Points」 and 「Obstruct Points」 determine the forge result?",
         "a_en": "If nobody obstructs, it is a perfect forge and Pu Yuan chooses 1 from 3 eligible 「Divine Treasury」 Equipment cards. If at least one character obstructs and Assist Points are greater than or equal to Obstruct Points, the forge succeeds and Pu Yuan chooses 1 from 2 eligible cards. If Assist Points are lower than Obstruct Points, the forge fails and Pu Yuan gets only 1 eligible 「Divine Treasury」 Equipment card, then places it into a character's Equipment Zone."
       },
       {
@@ -2088,7 +2060,14 @@
       "Card Flow"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "〖藏心〗展示的牌会离开牌堆吗？",
+        "a_cn": "展示本身不移动牌；未被后续效果移走的牌仍留在牌堆原位置。技能写的是牌堆底，按牌堆底处理。",
+        "q_en": "Does showing cards through 〖Conceal the Heart〗 move them out of the Draw Pile?",
+        "a_en": "Showing cards does not itself move them. Cards not moved by a later effect remain in their original positions. This skill uses the bottom of the Draw Pile."
+      }
+    ],
     "skills": [
       "skill_conceal_the_heart",
       "skill_gentle_subtlety"
@@ -2194,7 +2173,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「蓄发」？",
+        "a_cn": "〖蓄发〗放在武将牌上的实体牌，不属于手牌。第一项先存放至少半数手牌，再用一张牌转化为存牌中的普通锦囊；第二项先移去至少半数存牌，再用一张牌转化为本次移去牌中的普通锦囊。",
+        "q_en": "What does 「Stored」 mean?",
+        "a_en": "Physical cards placed on the General Card by 〖Store the Hair〗, not hand cards. Option 1 stores at least half your hand, then converts a card into a Non-Time-Delayed Tool Card among those stored. Option 2 removes at least half the stored cards, then converts a card into a Non-Time-Delayed Tool Card among those just removed."
+      }
+    ],
     "skills": [
       "skill_unruffled_calm",
       "skill_store_the_hair"
@@ -2220,7 +2206,14 @@
       "Card Flow"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「闾」？",
+        "a_cn": "通过〖联句〗获得的牌，以及〖思闾〗在你受到伤害后摸到的那张牌。它们是带记录的实体牌；因弃置进入弃牌堆后，由失去该牌的角色获得。",
+        "q_en": "What does 「Lü」 mean?",
+        "a_en": "Physical cards gained through 〖Linked Verses〗, or the card drawn through 〖Longing for Home〗 after you take damage. Track those cards. If discarded into the Discard Pile, they are regained by the character who lost them."
+      }
+    ],
     "skills": [
       "skill_linked_verses",
       "skill_longing_for_home"
@@ -2272,7 +2265,20 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「玄注」牌？装备牌也计入吗？",
+        "a_cn": "本应用采用所核对百科的结算：每次发动〖玄注〗移出游戏的牌都计为「玄注」牌，包括本次移出的装备牌。先结算视为使用的牌；若移出的是非装备牌，你弃置一张牌；若是装备牌，将所有「玄注」牌置入弃牌堆并摸等量张牌。例如原有两张「玄注」，本次再移出一张装备牌，便清除三张并摸三张。",
+        "q_en": "What are 「Profound Notes」 cards? Does the Equipment Card count?",
+        "a_en": "This app follows the checked wiki ruling: every card removed through this skill is a 「Profound Notes」 card, including the Equipment Card just removed. Resolve the virtual card first. For a non-Equipment card, discard 1 card. For Equipment, place all 「Profound Notes」 cards in the Discard Pile and draw that many cards. With 2 stored cards plus the current Equipment Card, clear 3 cards and draw 3."
+      },
+      {
+        "q_cn": "〖謇谔〗的「不能抵消牌」等于「不能响应」吗？",
+        "a_cn": "不等于。不能用【闪】抵消【杀】，也不能用【无懈可击】抵消锦囊效果；但仍可打出【杀】响应【决斗】或【南蛮入侵】。其他使用、打出和响应仍须符合各自规则。",
+        "q_en": "Does being unable to Negate cards through 〖Frank Remonstrance〗 prevent every response?",
+        "a_en": "No. The affected character cannot use [Dodge] to Negate [Kill] or [Nullification] to Negate a Tool Card effect. They can still play [Kill] in response to [Duel] or [Barbarians]. Other uses, plays, and responses follow their normal rules."
+      }
+    ],
     "skills": [
       "skill_profound_notes",
       "skill_sp_blunt_remonstrance"
@@ -2323,7 +2329,14 @@
       "Simple"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「轻缘」？",
+        "a_cn": "〖轻缘〗在游戏开始时和你首次受到伤害时选定的其他角色，不是额外卡牌。每回合至多一次，当一名已选角色获得牌后，你获得一名已选角色的一张手牌。",
+        "q_en": "What does 「Light Karma」 mean?",
+        "a_en": "Other characters selected by 〖Light Karma〗 at game start and when you first take damage. It is a character designation, not an extra card. Once per turn, after a selected character gains cards, gain 1 hand card from a selected character."
+      }
+    ],
     "skills": [
       "skill_light_karma",
       "skill_mirror_self"
@@ -2637,7 +2650,14 @@
       "Simple"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "〖车悬〗所说的「舆」是哪几张牌？",
+        "a_cn": "你的牌组中「舆」指三张宝物：【飞轮战舆】、【四乘粮舆】和【铁蒺玄舆】。按〖车悬〗的对应效果选择或随机置入宝物栏；不是任意宝物牌。",
+        "q_en": "Which cards are 「Chariot」 for 〖Chariot Wheel〗?",
+        "a_en": "In this deck, the pool is [Flywheel War Chariot], [Grain Wagon], and [Iron Caltrop Chariot]. Follow 〖Chariot Wheel〗 when selecting or randomly placing one into the Treasure slot. The pool does not include every Treasure Card."
+      }
+    ],
     "skills": [
       "skill_chariot_wheel",
       "skill_qiang_chieftain"
@@ -2978,7 +2998,20 @@
       "Burst"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "〖力激〗如何计算本回合进入弃牌堆的牌数？何时开始和清零？",
+        "a_cn": "从留赞的回合开始时起，计算该回合内进入弃牌堆的所有牌，不限牌的原拥有者和进入弃牌堆时所处的阶段。留赞发动〖力激〗时弃置的牌也计入。手牌上限仅于弃牌阶段检查，不限制留赞在此前摸牌、使用牌或让牌进入弃牌堆，因此留赞无需同时持有4张或8张牌。回合结束后，计数和增加的使用次数均清零；额外回合是新的回合，重新计数。阈值由该回合开始时的存活角色数决定：少于5名角色时每4张增加1次，否则每8张增加1次。弃牌阶段或结束阶段进入弃牌堆的牌仍会计入，但若回合结束前没有另一个出牌阶段，新增的使用次数便无法使用。",
+        "q_en": "How does 〖Force Surge〗 count cards entering the Discard Pile, and when does the count reset?",
+        "a_en": "The count starts at the start of Liu Zan's turn and includes every card that enters the Discard Pile during that turn, regardless of who owned it or which phase it entered during. A card discarded to activate 〖Force Surge〗 also counts. Hand Limit is checked only during the Discard Phase; it does not restrict how many cards Liu Zan may draw, use, or cause to enter the Discard Pile earlier in the turn, so he does not need to hold 4 or 8 cards at once. At the end of the turn, both the count and the increased usage limit reset. An extra turn is a new turn and starts a new count. The threshold is determined by the number of living characters at the start of that turn: every 4 cards if fewer than 5 characters were alive; otherwise, every 8 cards. Cards entering the Discard Pile during the Discard or End Phase still count, but any newly gained uses cannot be spent unless another Play Phase occurs before the turn ends."
+      },
+      {
+        "q_cn": "若留赞在同一回合内获得额外的出牌阶段，〖力激〗如何计算？",
+        "a_cn": "额外的出牌阶段不是新的回合，因此进入弃牌堆的牌数不清零，继续从该回合开始时累计。〖力激〗在每个出牌阶段内的使用次数分别计算：该阶段内可使用X次，X为截至当时本回合进入弃牌堆的牌数除以8后向下取整；若本回合开始时存活角色数小于5，则改为除以4。先前出牌阶段已使用〖力激〗的次数不占用额外出牌阶段的次数。",
+        "q_en": "How does an extra Play Phase during the same turn affect 〖Force Surge〗?",
+        "a_en": "An extra Play Phase is not a new turn, so the discard count continues from the start of the current turn. The skill's usage limit is calculated separately for each Play Phase. In each Play Phase, its usage limit equals the cumulative number of cards that have entered the Discard Pile during the current turn divided by 8, rounded down; divide by 4 instead if fewer than 5 characters were alive at the start of the turn. Uses from an earlier Play Phase do not count against the limit in the extra Play Phase."
+      }
+    ],
     "skills": [
       "skill_battle_cry",
       "skill_force_surge"
@@ -3186,7 +3219,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「钝」？",
+        "a_cn": "〖钝袭〗给予目标的计数标记。有标记的角色于其出牌阶段用基本牌或锦囊牌指定唯一目标后，移去一枚并按技能进行判定、改目标；新旧目标相同时，其失去1点体力并结束该出牌阶段。",
+        "q_en": "What does 「Blunted」 mean?",
+        "a_en": "A counter given by 〖Blunted Strike〗. During a marked character's Play Phase, after a Basic or Tool Card they use designates exactly 1 target, remove 1 counter and perform the listed Judgments and target change. If the target is unchanged, they lose 1 HP and end that Play Phase."
+      }
+    ],
     "skills": [
       "skill_blunted_strike"
     ]
@@ -3524,7 +3564,14 @@
       "Simple"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「铃」？",
+        "a_cn": "〖锦帆〗放在武将牌上的实体手牌，每种花色至多一张。它们不属于手牌区，但技能允许你将其当手牌使用或打出；每次如此做后摸一张牌。",
+        "q_en": "What does 「Bell」 mean?",
+        "a_en": "Physical hand cards stored on the General Card by 〖Brocade Sail〗, at most 1 per suit. They are outside the Hand Zone, but the skill allows you to use or play them as hand cards. Draw 1 card whenever you do so."
+      }
+    ],
     "skills": [
       "skill_shoot_from_afar",
       "skill_brocade_sail"
@@ -3816,7 +3863,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「硝引」？",
+        "a_cn": "〖硝引〗将亮出的黑色牌放在其他角色武将牌上形成的实体牌。受到火焰伤害时，伤害来源可弃置同类别牌并移去一张该类别「硝引」，令伤害+1；受到非火焰伤害时，来源可获得一张「硝引」并改为火焰伤害。",
+        "q_en": "What does 「Fuse」 mean?",
+        "a_en": "Black cards revealed and placed on other General Cards by 〖Fuse the Trail〗. For incoming Fire damage, the source may discard a card and remove a 「Fuse」 of the same category to add 1 damage. For non-Fire damage, the source may gain a 「Fuse」 and change the damage to Fire."
+      }
+    ],
     "skills": [
       "skill_sun_the_steeds",
       "skill_fuse_the_trail",
@@ -3895,7 +3949,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「器」？",
+        "a_cn": "〖易型〗置于武将牌上的装备牌。你拥有这些装备的效果，但它们不在装备区。再次发动〖易型〗时先移去所有「器」并摸等量的牌，再决定是否放置新的装备牌。",
+        "q_en": "What does 「Implement」 mean?",
+        "a_en": "Equipment Cards placed on the General Card by 〖Reconfigure〗. You have their effects, but they are not in the Equipment Zone. When activating 〖Reconfigure〗 again, first remove all 「Implement」 cards and draw that many cards, then decide whether to store new Equipment Cards."
+      }
+    ],
     "skills": [
       "skill_commandeer",
       "skill_reconfigure"
@@ -4084,7 +4145,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「基」？",
+        "a_cn": "〖夯筑〗放在武将牌上的实体牌，按点数记录。点数重复的「基」全部移去并摸等量牌；包含全部点数时，可以将所有「基」交给一名角色并令其回复至体力上限。",
+        "q_en": "What does 「Foundation」 mean?",
+        "a_en": "Physical cards stored on the General Card by 〖Lay the Foundation〗, tracked by rank. Remove all stored cards whose ranks are duplicated and draw that many cards. If every rank is represented, you may give all 「Foundation」 cards to a character and heal them to Max HP."
+      }
+    ],
     "skills": [
       "skill_palace_map",
       "skill_lay_the_foundation"
@@ -4118,10 +4186,10 @@
         "a_en": "Cards placed into your Equipment Zone via 〖Ornate Garb〗 are placed into the Discard Pile when they leave your Equipment Zone."
       },
       {
-        "q_cn": "〖逾制〗中弃置装备区里的牌视为使用【闪】的效果，在什么时机生效？",
-        "a_cn": "【闪】只应当在【杀】对目标进行使用结算中使用。随意在过早的时机使用【闪】的设计存在问题，因此〖逾制〗的弃置装备视为【闪】的效果，仅在【杀】对你进行结算的正确时机内生效。",
-        "q_en": "At what timing does 〖Exceed Protocol〗's effect of discarding an equipped card to be treated as [Dodge] apply?",
-        "a_en": "[Dodge] should only be used during the resolution of a [Kill] against its target. Using [Dodge] at an earlier timing would be problematic, so the discard-as-[Dodge] effect of 〖Exceed Protocol〗 only applies during the correct timing window in which a [Kill] is resolving against you."
+        "q_cn": "〖逾制〗如何选择？第一项多久恢复？",
+        "a_cn": "在成为【杀】的目标时选择：弃置一张装备区里的牌，按技能视为使用【闪】，并失去第一项直到你的回合开始；或令此【杀】伤害+1。没有可弃置的装备区牌，或第一项尚未恢复时，只能选择第二项。选择第二项并不禁止你之后正常使用【闪】响应。",
+        "q_en": "How do you choose an option for 〖Exceed Protocol〗, and when does option 1 return?",
+        "a_en": "Choose when you become a [Kill] target: discard 1 card from your Equipment Zone and virtually use [Dodge] as the skill directs, then lose option 1 until your turn starts; or increase that [Kill]'s damage by 1. If you have no discardable equipped card or option 1 is unavailable, choose option 2. Option 2 does not prevent a later normal [Dodge] response."
       }
     ],
     "skills": [
@@ -4228,7 +4296,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「翼」？",
+        "a_cn": "〖灵犀〗或〖知否〗放在武将牌上的实体牌。它们被移去后，按剩余「翼」的花色数，将手牌调整至其两倍；〖知否〗的三个选项分别记录每回合的使用次数。",
+        "q_en": "What does 「Wing」 mean?",
+        "a_en": "Physical cards placed on the General Card by 〖Kindred Spirit〗 or 〖Know or Not〗. After cards are removed, adjust your hand to twice the number of suits among the remaining 「Wing」 cards. Track each of 〖Know or Not〗's three options separately each turn."
+      }
+    ],
     "skills": [
       "skill_kindred_spirit",
       "skill_know_or_not"
@@ -4334,10 +4409,16 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "当〖隅泣〗所有数值均提升至上限时，该技能的完整描述是什么？",
-        "a_cn": "当所有数值均提升至最大后，〖隅泣〗的描述为：每回合限两次，当你距离5以内的一名角色受到伤害后，你可以观看牌堆顶的5张牌，将其中至多5张牌交给受伤角色并获得至多5张牌，其余牌置于牌堆顶。",
-        "q_en": "What does 〖Mourning Vigil〗 look like when all of its values have been raised to the maximum?",
-        "a_en": "When fully upgraded, 〖Mourning Vigil〗 reads: Twice per turn, after a character within distance 5 of you receives damage, you may look at the top 5 cards of the Draw Pile, give up to 5 of them to the damaged character and gain up to 5 of them, then place the remaining cards on top of the Draw Pile."
+        "q_cn": "〖隅泣〗中哪些数字可以改变？",
+        "a_cn": "方括号中的四个数字分别是距离、观看牌数、交给受伤角色的牌数上限、自己获得的牌数上限，初始为［0］、［3］、［1］、［1］。〖善身〗和〖娴静〗只改变这些数值，每项不能超过5；「每回合限两次」不是可变数值。",
+        "q_en": "Which values in 〖Mourning Vigil〗 can change?",
+        "a_en": "The four bracketed values are Distance, cards viewed, maximum cards given to the damaged character, and maximum cards you gain. They start at ［0］, ［3］, ［1］, and ［1］. 〖Care for Oneself〗 and 〖Serene Grace〗 change only these values, each of which cannot exceed 5. The twice-per-turn limit is not a mutable value."
+      },
+      {
+        "q_cn": "〖隅泣〗四项全为5时，能交出五张再获得五张吗？",
+        "a_cn": "不能凭空多得牌。你只观看五张牌，先从中交给受伤角色至多五张，再从剩余牌中获得至多五张，最后将仍剩余的牌放回牌堆顶。交出的牌和自己获得的牌合计不会超过本次观看的五张。",
+        "q_en": "With all four 〖Mourning Vigil〗 values at 5, can you give 5 cards and then gain another 5?",
+        "a_en": "No. You view only 5 cards. First give up to 5 of them to the damaged character, then gain up to 5 from those remaining. Return any leftovers to the top of the Draw Pile. You cannot distribute more cards than the 5 viewed."
       }
     ],
     "skills": [
@@ -4395,9 +4476,15 @@
     "faq": [
       {
         "q_cn": "什么是「背水」？",
-        "a_cn": "背水是一种特殊的选项。发动技能时，若无法执行背水的后果，则无法选择背水。选择背水时，你将该技能的其余选项依次执行，再执行背水的后果。",
-        "q_en": "What is the \"Last Resort\" ?",
-        "a_en": "Last Resort is a special option. When activating the skill, if you cannot execute the consequence of Last Resort, the skill activation fails. When you choose Last Resort, all other options of the skill are executed in sequence first, then the Last Resort consequence is executed."
+        "a_cn": "背水是技能中的特殊选项。选择后依次执行其余选项，再执行技能列出的背水后果。若不能执行该后果，则不能选择背水，但不因此禁止选择普通选项。具体条件和后果以当前版本的技能文字为准。",
+        "q_en": "What is 「Last Resort」?",
+        "a_en": "It is a special option that executes the other options in order, followed by any Last Resort consequence stated by that skill. If that consequence cannot be performed, Last Resort is unavailable; the ordinary options are not automatically unavailable. Follow the conditions and consequences of the current skill version."
+      },
+      {
+        "q_cn": "本版本〖震袭〗的「背水」如何执行？",
+        "a_cn": "若目标的体力值大于你，或其体力值为全场最高（并列最高也算），你可以选择背水，先弃置其X张手牌，再移动其场上的一张牌。这个版本没有写额外的背水代价，不另加失去体力、翻面或失去技能等后果。",
+        "q_en": "How does 「Last Resort」 work for this version of 〖Thunderstrike Raid〗?",
+        "a_en": "If the target has more HP than you or is tied for the highest HP on the field, you may choose Last Resort: first discard X of their hand cards, then move 1 card on their field. This version states no additional Last Resort cost. Do not add HP loss, turning over, or losing the skill."
       }
     ],
     "skills": [
@@ -4503,7 +4590,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「妄」？",
+        "a_cn": "〖妄缘〗等效果放在武将牌上的基本牌或锦囊牌，不属于手牌。每种牌名至多一张，总数至多为游戏人数。〖铃音〗在出牌阶段开始时可获得至多游戏轮数张。",
+        "q_en": "What does 「Whim」 mean?",
+        "a_en": "Basic or Tool Cards stored on the General Card through 〖Wandering Fate〗 and related effects. They are not hand cards. Store at most 1 per card name, up to the player count in total. At Play Phase start, 〖Bell Chime〗 can gain up to the current round number of them."
+      }
+    ],
     "skills": [
       "skill_wandering_fate",
       "skill_bell_chime",
@@ -4582,7 +4676,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「激峭」？",
+        "a_cn": "〖激峭〗在出牌阶段开始时从牌堆顶放到武将牌上的实体牌，保留到该阶段结束。你使用牌结算结束后获得其中一张，再比较剩余两种颜色牌的数量：相等回复1点体力，否则失去1点体力。",
+        "q_en": "What does 「Fierce Peak」 mean?",
+        "a_en": "Physical cards moved from the top of the Draw Pile to the General Card at Play Phase start, until that phase ends. After you finish using a card, gain 1 stored card, then compare the numbers of remaining red and black cards: recover 1 HP if equal, otherwise lose 1 HP."
+      }
+    ],
     "skills": [
       "skill_fierce_peak",
       "skill_ominous_doubt",
@@ -4637,7 +4738,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "〖蹈节〗的「同族」是否指同势力？",
+        "a_cn": "不是。「同族」按武将所属宗族判断，不按魏、蜀、吴、群势力判断。未标明所属宗族的武将，不仅因同势力或同姓就视为同族。",
+        "q_en": "Does the same clan in 〖Uphold the Code〗 mean the same faction?",
+        "a_en": "No. Use the general’s stated clan membership, not their Wei, Shu, Wu, or Qun faction. Do not infer clan membership solely from a shared faction or surname."
+      }
+    ],
     "skills": [
       "skill_stabilize_and_secure",
       "skill_nurturing_grace",
@@ -4821,7 +4929,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「沙」？",
+        "a_cn": "〖绡舞〗等效果获得的计数标记。〖沙舞〗可移去一枚来造成1点伤害并摸两张牌；〖化萍〗可按其两种发动方式移去全部标记并摸等量牌，或将标记交给另一名角色。",
+        "q_en": "What does 「Sand」 mean?",
+        "a_en": "Counters gained through 〖Silk Dance〗 and related effects. 〖Sand Dance〗 can spend 1 to deal 1 damage and draw 2 cards. Depending on how 〖Transform to Duckweed〗 activates, remove all counters and draw that many cards, or give the counters to another character."
+      }
+    ],
     "skills": [
       "skill_silk_dance",
       "skill_transform_to_duckweed",
@@ -4848,7 +4963,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「梳」？",
+        "a_cn": "〖宝梳〗给予角色的计数标记，与实体宝物「宝梳」不是同一个概念。有标记的角色在摸牌阶段额外摸等同于标记数的牌，然后移去全部「梳」。",
+        "q_en": "What does 「Comb」 mean?",
+        "a_en": "Counters assigned by 〖Precious Comb〗, distinct from the physical 「Precious Comb」 Treasures. During a marked character's Draw Phase, they draw extra cards equal to their counter count, then remove all 「Comb」 counters."
+      }
+    ],
     "skills": [
       "skill_tearful_lament",
       "skill_precious_comb"
@@ -4874,7 +4996,14 @@
       "Sturdy"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「抗」？",
+        "a_cn": "〖顽抗〗救援后获得的计数标记。该回合结束时，反复选择对本回合伤害过你的角色合法使用【杀】并移去一枚，或选择死亡，直到没有标记；若该流程中有本回合伤害过你的角色死亡，则移去全部标记。",
+        "q_en": "What does 「Resist」 mean?",
+        "a_en": "Counters gained after being saved by 〖Stubborn Resistance〗. At that turn's end, repeatedly choose either a legal [Kill] against someone who damaged you that turn and remove 1 counter, or death, until none remain. If someone who damaged you that turn dies during this procedure, remove all counters."
+      }
+    ],
     "skills": [
       "skill_lead_the_garrison",
       "skill_stubborn_resistance"
@@ -4926,7 +5055,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「连招技」？",
+        "a_cn": "连招技（A+B）表示：当你使用符合B类别的牌时，若你使用的上一张牌符合A类别，且上一张牌未发动此技能，你可以发动后续效果。比较的是你自己连续使用的牌，不要求A和B是同一种类别；发动后，当前牌不能再作为下一次发动此技能的前一张牌。",
+        "q_en": "What is a 「Combo Skill」?",
+        "a_en": "For Combo (A + B), when you use a card matching B, check your previous card use. If it matched A and did not activate this skill, you may activate the combo effect. Check your own consecutive card uses. A card that activates this skill cannot serve as the previous card for another activation of the same skill."
+      }
+    ],
     "skills": [
       "skill_launch_raid",
       "skill_relentless_pursuit"
@@ -4978,7 +5114,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「军合」？",
+        "a_cn": "按〖军合〗展示的牌记录颜色或类别，以及剩余效果次数。造成伤害时可弃置符合条件的牌令伤害+1，再减少一次；受到伤害后摸两张牌，再减少一次。〖雄威〗可以按技能条件转移剩余次数。",
+        "q_en": "What does 「Coalition」 mean?",
+        "a_en": "Track the color or category of the cards shown for 〖Coalition〗 and its remaining uses. When dealing damage, a matching discard can add 1 damage and spend 1 use. After receiving damage, draw 2 cards and spend 1 use. 〖Domineering Might〗 can transfer remaining uses under its stated conditions."
+      }
+    ],
     "skills": [
       "skill_pluck_the_moon",
       "skill_coalition",
@@ -5033,7 +5176,56 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「摸金」？〖定宝〗如何配合？",
+        "a_cn": "「摸金」是带有成功条件和奖励的任务。游戏开始时开始一次；达成当前条件后获得该任务奖励，再开始下一次。〖定宝〗直接令当前任务成功，不必先达成条件，但会结束当前出牌阶段。",
+        "q_en": "What is a 「Grave Robbing」 attempt, and how does 〖Secure the Treasure〗 interact with it?",
+        "a_en": "Each attempt is an objective with a reward. Start one at game start. Completing its objective grants its reward and starts another attempt. 〖Secure the Treasure〗 completes the current objective without first meeting its condition, but ends the current Play Phase."
+      },
+      {
+        "q_cn": "「摸金」有哪些使用牌类的成功条件？",
+        "a_cn": "来源列出的条件包括：使用三张非基本牌；使用两张装备牌；使用三张基本牌；使用两张锦囊牌；使用【酒】和【杀】；连续使用牌指定一名角色为目标；使用延时锦囊牌。每次只检查当前任务指定的条件，不是同时完成所有条件。",
+        "q_en": "Which card-use objectives can 「Grave Robbing」 have?",
+        "a_en": "The source lists: use 3 non-Basic Cards; use 2 Equipment Cards; use 3 Basic Cards; use 2 Tool Cards; use [Wine] and [Kill]; target a character with consecutive card uses; or use a Time-Delayed Tool Card. Check the objective assigned to the current attempt, not all objectives at once."
+      },
+      {
+        "q_cn": "「摸金」还有哪些成功条件？",
+        "a_cn": "其余条件为：一回合内因弃置失去两张牌；造成2点伤害；令一名角色进入濒死状态；造成属性伤害；获得一名角色的牌；一回合内获得四张牌；任意角色装备区里的牌变化后，你的装备区牌数全场最多；其他角色失去手牌后，有其他角色没有手牌。只在条件明确写「一回合内」时按该限制记录，不给其他条件自行添加此限制。",
+        "q_en": "What other objectives can 「Grave Robbing」 have?",
+        "a_en": "The remaining objectives are: lose 2 cards by discarding within one turn; deal 2 damage; cause a character to enter the Verge of Death State; deal Elemental damage; gain a character's card; gain 4 cards within one turn; have the most equipped cards after any character's Equipment Zone changes; or have another character with no hand cards after another character loses hand cards. Apply a one-turn requirement where the objective explicitly states it."
+      },
+      {
+        "q_cn": "线上「摸金」的奖励是什么？",
+        "a_cn": "按该任务标明的奖励获得0至2张类别相同的牌；若奖励为装备牌，则为一张。非装备奖励牌可能附有「不能被响应」效果，【桃】或【酒】可能附有「回复值+1」效果；只有该奖励实际附有的效果才适用。普通牌堆中的同名牌不会自动获得这些强化。",
+        "q_en": "What rewards does online 「Grave Robbing」 give?",
+        "a_en": "Gain the reward specified for the attempt: 0–2 cards of the same category, or exactly 1 Equipment Card. Non-Equipment reward cards may be unrespondable; [Peach] or [Wine] rewards may have +1 recovery. Apply only bonuses actually assigned to that reward. Ordinary copies in the Draw Pile do not automatically gain these bonuses."
+      },
+      {
+        "q_cn": "回合开始时放入【洛阳铲】是否需要从手牌使用？",
+        "a_cn": "不需要。技能直接将【洛阳铲】置入装备区，替换原武器，不是从手牌使用。",
+        "q_en": "Must [Luoyang Shovel] be used from hand at turn start?",
+        "a_en": "No. The skill places it directly into the Equipment Zone, replacing the existing weapon. It is not used from hand."
+      },
+      {
+        "q_cn": "线下如何进行「摸金」？（建议家规）",
+        "a_cn": "以下是建议家规，不是官方线下规则。把上文列出的15种成功条件各写一张纸签。游戏开始时随机抽一张并公开，作为当前任务，抽后放回。完成任务后固定摸两张普通牌作为奖励；奖励全部结算完，再抽取新任务。此家规替代线上奖励池，不给奖励牌附加强化，也不用另加奖励牌。〖定宝〗直接完成当前任务，照常领奖并开始新任务，然后结束出牌阶段。",
+        "q_en": "How can 「Grave Robbing」 work offline? (Suggested house rule)",
+        "a_en": "This is a suggested house rule, not an official offline rule. Write each of the 15 objectives listed above on a separate slip. At game start, randomly draw and announce one objective, then return its slip to the pool. Completing it rewards 2 ordinary card draws. Finish resolving the reward before drawing the next objective. This replaces the online reward pool; no special reward cards or bonuses are used. 〖Secure the Treasure〗 completes the current task, grants the reward, starts the next task, then ends the Play Phase."
+      },
+      {
+        "q_cn": "家规「摸金」如何记录进度？",
+        "a_cn": "新任务的进度从零开始，只计算任务公布后的事件；完成旧任务的事件和领取旧奖励的过程不计入新任务。明确要求「一回合内」的计数在回合结束时清零，其余累计条件可跨回合。使用牌不包含仅打出牌。「连续指定同一角色」按自己连续两次使用的牌有同一个目标判断；「使用【酒】和【杀】」两者各使用至少一次，顺序不限。",
+        "q_en": "How is progress tracked under the house rule?",
+        "a_en": "Start each new task at zero and count only events after it is announced. The event completing the old task and the old reward do not count toward the new task. Reset one-turn tallies at turn end; other cumulative objectives can span turns. Playing a card without using it does not count as a use. For consecutive targeting, two consecutive cards you use must share a target. For [Wine] and [Kill], use each at least once, in either order."
+      },
+      {
+        "q_cn": "家规中「装备最多」和「其他角色没有手牌」如何判断？",
+        "a_cn": "任意角色的装备区变化后，若你的装备数并列或单独最多，便满足当前「装备最多」任务。其他角色失去手牌后，若至少一名其他角色没有手牌，便满足对应任务；失去手牌的角色本人也可算入。只检查当前抽到的任务。",
+        "q_en": "How do the house-rule Equipment and empty-hand objectives work?",
+        "a_en": "After any Equipment Zone changes, complete the Equipment objective if your equipped-card count is highest; ties count. After another character loses hand cards, complete the empty-hand objective if any other character has no hand cards, including the character who just lost cards. Check only the currently assigned objective."
+      }
+    ],
     "skills": [
       "skill_grave_robbing",
       "skill_secure_the_treasure"
@@ -5164,7 +5356,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「连招技」？",
+        "a_cn": "连招技（A+B）表示：当你使用符合B类别的牌时，若你使用的上一张牌符合A类别，且上一张牌未发动此技能，你可以发动后续效果。比较的是你自己连续使用的牌，不要求A和B是同一种类别；发动后，当前牌不能再作为下一次发动此技能的前一张牌。",
+        "q_en": "What is a 「Combo Skill」?",
+        "a_en": "For Combo (A + B), when you use a card matching B, check your previous card use. If it matched A and did not activate this skill, you may activate the combo effect. Check your own consecutive card uses. A card that activates this skill cannot serve as the previous card for another activation of the same skill."
+      }
+    ],
     "skills": [
       "skill_rally_the_hunt",
       "skill_supreme_slash"
@@ -5190,7 +5389,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「连招技」？",
+        "a_cn": "连招技（A+B）表示：当你使用符合B类别的牌时，若你使用的上一张牌符合A类别，且上一张牌未发动此技能，你可以发动后续效果。比较的是你自己连续使用的牌，不要求A和B是同一种类别；发动后，当前牌不能再作为下一次发动此技能的前一张牌。",
+        "q_en": "What is a 「Combo Skill」?",
+        "a_en": "For Combo (A + B), when you use a card matching B, check your previous card use. If it matched A and did not activate this skill, you may activate the combo effect. Check your own consecutive card uses. A card that activates this skill cannot serve as the previous card for another activation of the same skill."
+      }
+    ],
     "skills": [
       "skill_ride_and_strike",
       "skill_break_the_enemy"
@@ -5218,10 +5424,16 @@
     "expansion": "Other",
     "faq": [
       {
-        "q_cn": "〖骁武〗中「牌面信息中有【杀】的牌」包含哪些？",
-        "a_cn": "牌面信息中有【杀】的牌包括：【杀】、【闪】、【酒】、【借刀杀人】、【南蛮入侵】、【决斗】、武器牌、【仁王盾】、【藤甲】。",
-        "q_en": "Which cards qualify as having [Kill] in their card text for 〖Valiant Strike〗?",
-        "a_en": "Cards that contain [Kill] in their card information include: [Kill], [Dodge], [Wine], [Proxy Attack], [Barbarians], [Duel], Weapon Cards, [Renwang Shield], and [Vine Armor]."
+        "q_cn": "〖骁武〗如何判断「牌面信息中有【杀】」？",
+        "a_cn": "检查当前实体牌的牌面信息是否含「杀」字。例如【杀】、【闪】、【酒】、【决斗】、【仁王盾】和【藤甲】可按各自牌面判断。武器牌也须实际含有「杀」字，不能只因其类别是武器就一律算入。",
+        "q_en": "How do you check whether a card qualifies for 〖Valiant Strike〗?",
+        "a_en": "Check whether the physical card's printed information contains the Chinese character 杀. Examples to check include [Kill], [Dodge], [Wine], [Duel], [Vajra Shield], and [Rattan Armour]. A Weapon must also contain 杀 in its printed information; its Equipment subtype alone is insufficient."
+      },
+      {
+        "q_cn": "什么是「连招技」？",
+        "a_cn": "连招技（A+B）表示：当你使用符合B类别的牌时，若你使用的上一张牌符合A类别，且上一张牌未发动此技能，你可以发动后续效果。比较的是你自己连续使用的牌，不要求A和B是同一种类别；发动后，当前牌不能再作为下一次发动此技能的前一张牌。",
+        "q_en": "What is a 「Combo Skill」?",
+        "a_en": "For Combo (A + B), when you use a card matching B, check your previous card use. If it matched A and did not activate this skill, you may activate the combo effect. Check your own consecutive card uses. A card that activates this skill cannot serve as the previous card for another activation of the same skill."
       }
     ],
     "skills": [
@@ -5249,7 +5461,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「连招技」？",
+        "a_cn": "连招技（A+B）表示：当你使用符合B类别的牌时，若你使用的上一张牌符合A类别，且上一张牌未发动此技能，你可以发动后续效果。比较的是你自己连续使用的牌，不要求A和B是同一种类别；发动后，当前牌不能再作为下一次发动此技能的前一张牌。",
+        "q_en": "What is a 「Combo Skill」?",
+        "a_en": "For Combo (A + B), when you use a card matching B, check your previous card use. If it matched A and did not activate this skill, you may activate the combo effect. Check your own consecutive card uses. A card that activates this skill cannot serve as the previous card for another activation of the same skill."
+      }
+    ],
     "skills": [
       "skill_brute_force",
       "skill_hold_the_frontier"
@@ -5339,9 +5558,9 @@
     "faq": [
       {
         "q_cn": "「蓄力技」的规则是什么？",
-        "a_cn": "蓄力技是一种特殊的技能。1. 描述中含有「蓄力技（X/Y）」，X为游戏开始时获得的初始蓄力值数量，Y为可积累的蓄力值上限。2. 发动蓄力技需要根据技能条件消耗蓄力值。3. 当一名角色同时拥有多个蓄力技时，所有蓄力技消耗同样的蓄力值，X和Y分别相加后生效。",
+        "a_cn": "蓄力技（X/Y）中，X为游戏开始时的初始蓄力值，Y为蓄力值上限。按技能文字获得或消耗蓄力值，并非每个效果都需要消耗。多个蓄力技共用同一蓄力值，初始值和上限分别相加。此版本邓艾以0/0开始，因此第一名角色的回合开始时已满：摸一张牌，将上限增加至1，当前蓄力值仍为0。",
         "q_en": "What are the rules for Charge Skills?",
-        "a_en": "A Charge Skill is a special skill type. 1. Its description contains \"Charge Skill (X/Y)\": X is the starting number of Charge Points gained at the beginning of the game; Y is the maximum number of Charge Points that can be accumulated. 2. Activating a Charge Skill requires spending Charge Points according to the skill's conditions. 3. When a character has multiple Charge Skills simultaneously, all of them draw from the same pool of Charge Points, and their X and Y values are each added together."
+        "a_en": "In Charge Skill (X/Y), X is the starting number of Charge Points and Y is the cap. Gain or spend points only as the skill states; not every effect costs points. Multiple Charge Skills share one pool, with their starting values and caps added separately. This version of Deng Ai starts at 0/0, so his points are already full at the start of the first character's turn: draw 1 card and increase the cap to 1; the current value remains 0."
       }
     ],
     "skills": [
@@ -5396,7 +5615,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「帷谟」？",
+        "a_cn": "〖帷谟〗和〖览策〗放在武将牌上的实体牌，不属于手牌。每回合至多两次，在「帷谟」数或手牌数变化后两者相等时摸一张牌；若此时为自己的出牌阶段，再获得一张「帷谟」。",
+        "q_en": "What does 「Veil」 mean?",
+        "a_en": "Physical cards stored on the General Card by 〖Veil of Stratagem〗 or 〖Survey the Plan〗, not hand cards. Up to twice per turn, when either count changes and the stored-card count equals your hand count, draw 1 card. During your own Play Phase, also gain 1 「Veil」 card."
+      }
+    ],
     "skills": [
       "skill_veil_of_stratagem",
       "skill_survey_the_plan"
@@ -5561,7 +5787,14 @@
       "High Difficulty"
     ],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「胡笳」？",
+        "a_cn": "游戏开始时由〖霜笳〗标记的起始手牌，不是另加的牌。它们不计入手牌上限，并按你拥有的数量增加其他角色到你的距离（至多+5）。失去此类牌后，〖悲愤〗按手牌中剩余「胡笳」的花色计算获得哪些花色的牌。",
+        "q_en": "What does 「Hújiā」 mean?",
+        "a_en": "Starting hand cards marked by 〖Frost Lute〗, not extra cards. They do not count toward Hand Limit and increase other characters' Distance to you by their count, up to +5. After you lose one, 〖Grief and Fury〗 checks the suits of the 「Hújiā」 cards remaining in your hand."
+      }
+    ],
     "skills": [
       "skill_frost_lute",
       "skill_grief_and_fury"
@@ -5605,7 +5838,14 @@
     "traits_cn": ["控制", "过牌", "困难"],
     "traits_en": ["Control", "Card Flow", "High Difficulty"],
     "expansion": "Other",
-    "faq": [],
+    "faq": [
+      {
+        "q_cn": "什么是「旋」？",
+        "a_cn": "〖周旋〗放在武将牌上的手牌，至多五张，不属于手牌区。使用牌时移去一张并摸一张牌；若还满足额外摸牌条件，X按移去后剩余的「旋」数量计算。出牌阶段结束后移去全部。",
+        "q_en": "What does 「Maneuver」 mean?",
+        "a_en": "Hand cards stored on the General Card by 〖Maneuver〗, up to 5, outside the Hand Zone. When using a card, remove 1 and draw 1 card. If the extra-draw condition also applies, X is the number remaining after that removal. Remove all of them after the Play Phase ends."
+      }
+    ],
     "skills": [
       "skill_maneuver"
     ]
